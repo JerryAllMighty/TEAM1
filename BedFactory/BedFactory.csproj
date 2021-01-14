@@ -130,12 +130,6 @@
     <Compile Include="FactoryInfoRegister.designer.cs">
       <DependentUpon>FactoryInfoRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="FactoryManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FactoryManagement.designer.cs">
-      <DependentUpon>FactoryManagement.cs</DependentUpon>
-    </Compile>
     <Compile Include="FaultyStatusLargeCategory.cs">
       <SubType>Form</SubType>
     </Compile>

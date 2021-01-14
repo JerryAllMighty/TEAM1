@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BadFactory
+namespace BedFactory
 {
-    public partial class FactoryManagement : Form
+    public partial class FactoryManagement : BedFactory.BaseForm.BaseForm1
     {
         public FactoryManagement()
         {
