@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <settings>
+    <add key="MyDB"><![CDATA[Server=192.168.123.110;Database=TEAM1;Uid=sa;Pwd=1234]]></add>
+  </settings>
+</configuration>
