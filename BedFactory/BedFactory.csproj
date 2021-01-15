@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EncryptDecryp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Users\장경진\Documents\카카오톡 받은 파일\EncryptDecryp\EncryptDecryp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -204,6 +208,7 @@
     <Compile Include="ResourceManagement.designer.cs">
       <DependentUpon>ResourceManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\Helper.cs" />
     <Compile Include="WorkManagment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +257,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Library\EncryptDecryp.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

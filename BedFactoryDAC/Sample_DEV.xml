@@ -1,6 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <configuration>
-  <settings>
-    <add key="MyDB"><![CDATA[Server=192.168.123.110;Database=TEAM1;Uid=sa;Pwd=1234]]></add>
-  </settings>
+
+  <configSections>
+    <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net" />
+  </configSections>
+
+  <connectionStrings>
+    <add name="MyDB" connectionString="l95uovUeDBRWpTnM8Bbou8SnosG9TpNoG5PCbsP+qKNK0Yi0UHkwRn1fiqkNki7xsIgLwsgmBxoCmmSyee3BjA==" />
+  </connectionStrings>
 </configuration>
