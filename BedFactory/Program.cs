@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BadFactory;
 using BedFactory.BaseForms;
 
 namespace BedFactory
@@ -17,7 +18,7 @@ namespace BedFactory
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BaseForm3());
+            Application.Run(new frmMain());
         }
     }
 }
