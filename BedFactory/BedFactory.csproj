@@ -140,11 +140,59 @@
     <Compile Include="FaultyStatusLargeCategory.designer.cs">
       <DependentUpon>FaultyStatusLargeCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGroupAuthority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGroupAuthority.Designer.cs">
+      <DependentUpon>frmGroupAuthority.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCommonCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCommonCode.Designer.cs">
+      <DependentUpon>frmCommonCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGroupAuthorityModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGroupAuthorityModify.Designer.cs">
+      <DependentUpon>frmGroupAuthorityModify.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuManagement.Designer.cs">
+      <DependentUpon>frmMenuManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployeeGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployeeGroup.Designer.cs">
+      <DependentUpon>frmEmployeeGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuRegister.Designer.cs">
+      <DependentUpon>frmMenuRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmScreenManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScreenManagement.Designer.cs">
+      <DependentUpon>frmScreenManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUserManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserManagement.Designer.cs">
+      <DependentUpon>frmUserManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="ItemManagement.cs">
       <SubType>Form</SubType>
@@ -245,8 +293,32 @@
     <EmbeddedResource Include="FactoryAdmin.resx">
       <DependentUpon>FactoryAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGroupAuthority.resx">
+      <DependentUpon>frmGroupAuthority.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCommonCode.resx">
+      <DependentUpon>frmCommonCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGroupAuthorityModify.resx">
+      <DependentUpon>frmGroupAuthorityModify.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuManagement.resx">
+      <DependentUpon>frmMenuManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployeeGroup.resx">
+      <DependentUpon>frmEmployeeGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuRegister.resx">
+      <DependentUpon>frmMenuRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmScreenManagement.resx">
+      <DependentUpon>frmScreenManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserManagement.resx">
+      <DependentUpon>frmUserManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
