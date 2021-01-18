@@ -104,41 +104,11 @@
     <Compile Include="DatagridviewControl.Designer.cs">
       <DependentUpon>DatagridviewControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="FactoryInfoRegister.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FactoryInfoRegister.designer.cs">
-      <DependentUpon>FactoryInfoRegister.cs</DependentUpon>
-    </Compile>
     <Compile Include="FaultyStatusLargeCategory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FaultyStatusLargeCategory.designer.cs">
       <DependentUpon>FaultyStatusLargeCategory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmEnterpriseManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEnterpriseManagement.designer.cs">
-      <DependentUpon>frmEnterpriseManagement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmFacilityShow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmFacilityShow.Designer.cs">
-      <DependentUpon>frmFacilityShow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmFaciltiesManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmFaciltiesManagement.Designer.cs">
-      <DependentUpon>frmFaciltiesManagement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmFactoryAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmFactoryAdmin.Designer.cs">
-      <DependentUpon>frmFactoryAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGroupAuthority.cs">
       <SubType>Form</SubType>
@@ -323,18 +293,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DatagridviewControl.resx">
       <DependentUpon>DatagridviewControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEnterpriseManagement.resx">
-      <DependentUpon>frmEnterpriseManagement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmFacilityShow.resx">
-      <DependentUpon>frmFacilityShow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmFaciltiesManagement.resx">
-      <DependentUpon>frmFaciltiesManagement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmFactoryAdmin.resx">
-      <DependentUpon>frmFactoryAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGroupAuthority.resx">
       <DependentUpon>frmGroupAuthority.cs</DependentUpon>
