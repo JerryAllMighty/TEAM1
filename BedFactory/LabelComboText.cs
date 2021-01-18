@@ -18,11 +18,7 @@ namespace BedFactory
         public bool MultiLine { get; set; }
         public int MultiLineCnt { get; set; }
         public bool Important { get; set; }
-        public string Header 
-        {
-            get { return "* " + label1.Text; }
-            set { label1.Text = value; }
-        }
+        public string Header { get; set; }
 
         public LabelComboText()
         {
@@ -31,6 +27,8 @@ namespace BedFactory
 
         private void LabelComboText_Load(object sender, EventArgs e)
         {
+            label1.Text = "* " + Header;
+
             if(BoxKind == Kind.combo)
             {
                 ComboBox cbo = new ComboBox();
