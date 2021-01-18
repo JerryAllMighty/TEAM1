@@ -45,12 +45,14 @@ namespace BadFactory
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(358, 37);
+            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(378, 28);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(95, 40);
             this.button1.TabIndex = 4;
             this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pnMenu1
@@ -86,12 +88,14 @@ namespace BadFactory
             // 
             this.btnMenuPut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMenuPut.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnMenuPut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMenuPut.Location = new System.Drawing.Point(182, 196);
             this.btnMenuPut.Name = "btnMenuPut";
             this.btnMenuPut.Size = new System.Drawing.Size(19, 133);
             this.btnMenuPut.TabIndex = 0;
             this.btnMenuPut.Text = "◁";
-            this.btnMenuPut.UseVisualStyleBackColor = true;
+            this.btnMenuPut.UseVisualStyleBackColor = false;
             this.btnMenuPut.Click += new System.EventHandler(this.btnPut_Click);
             // 
             // pnSplitScreen
@@ -119,12 +123,14 @@ namespace BadFactory
             // 
             this.btnTabPut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTabPut.Location = new System.Drawing.Point(372, 0);
+            this.btnTabPut.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnTabPut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTabPut.Location = new System.Drawing.Point(372, -1);
             this.btnTabPut.Name = "btnTabPut";
-            this.btnTabPut.Size = new System.Drawing.Size(153, 19);
+            this.btnTabPut.Size = new System.Drawing.Size(133, 19);
             this.btnTabPut.TabIndex = 1;
             this.btnTabPut.Text = "▽";
-            this.btnTabPut.UseVisualStyleBackColor = true;
+            this.btnTabPut.UseVisualStyleBackColor = false;
             this.btnTabPut.Click += new System.EventHandler(this.btnTabPut_Click);
             // 
             // tabControl1
