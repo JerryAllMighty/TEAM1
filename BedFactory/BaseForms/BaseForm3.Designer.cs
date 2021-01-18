@@ -147,13 +147,14 @@ namespace BedFactory.BaseForms
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Label label4;
         protected System.Windows.Forms.Button button4;
         protected System.Windows.Forms.Label label1;
         protected System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel3;
         protected System.Windows.Forms.Button btnSelect;
-        protected System.Windows.Forms.Panel panel2;
-        protected System.Windows.Forms.Panel panel1;
-        protected System.Windows.Forms.Panel panel3;
     }
 }
