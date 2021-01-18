@@ -32,7 +32,9 @@ namespace BedFactory
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +50,8 @@ namespace BedFactory
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1257, 100);
@@ -63,6 +67,16 @@ namespace BedFactory
             this.dataGridView2.Size = new System.Drawing.Size(603, 603);
             this.dataGridView2.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(38, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
             // frmGroupAuthority
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -74,6 +88,8 @@ namespace BedFactory
             this.Name = "frmGroupAuthority";
             this.Text = "그룹별 권한 관리";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
@@ -84,5 +100,6 @@ namespace BedFactory
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label1;
     }
 }

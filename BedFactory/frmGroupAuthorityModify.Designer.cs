@@ -35,7 +35,8 @@ namespace BedFactory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.Azure;
+            this.ClientSize = new System.Drawing.Size(1190, 538);
             this.Name = "frmGroupAuthorityModify";
             this.Text = "그룹별 권한 수정";
             this.ResumeLayout(false);

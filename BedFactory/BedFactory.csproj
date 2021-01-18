@@ -98,6 +98,12 @@
     <Compile Include="CostManagemen.designer.cs">
       <DependentUpon>CostManagemen.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatagridviewControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DatagridviewControl.Designer.cs">
+      <DependentUpon>DatagridviewControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="EnterpriseInfoRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,6 +275,7 @@
       <DependentUpon>TabCustomControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Helper.cs" />
+    <Compile Include="Util\CommonUtil.cs" />
     <Compile Include="WorkManagment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\BaseForm3.resx">
       <DependentUpon>BaseForm3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatagridviewControl.resx">
+      <DependentUpon>DatagridviewControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FactoryAdmin.resx">
       <DependentUpon>FactoryAdmin.cs</DependentUpon>

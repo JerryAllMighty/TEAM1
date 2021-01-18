@@ -42,67 +42,80 @@ namespace BedFactory
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.lblEmployee);
-            this.panel1.Location = new System.Drawing.Point(13, 13);
+            this.panel1.Location = new System.Drawing.Point(16, 20);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1257, 100);
+            this.panel1.Size = new System.Drawing.Size(1571, 153);
             this.panel1.TabIndex = 0;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(483, 38);
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSearch.Location = new System.Drawing.Point(604, 58);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(134, 23);
+            this.btnSearch.Size = new System.Drawing.Size(168, 35);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "검색";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(225, 37);
+            this.textBox1.Location = new System.Drawing.Point(281, 57);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 25);
+            this.textBox1.Size = new System.Drawing.Size(238, 30);
             this.textBox1.TabIndex = 1;
             // 
             // lblEmployee
             // 
-            this.lblEmployee.Location = new System.Drawing.Point(19, 26);
+            this.lblEmployee.Location = new System.Drawing.Point(24, 40);
+            this.lblEmployee.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmployee.Name = "lblEmployee";
-            this.lblEmployee.Size = new System.Drawing.Size(126, 43);
+            this.lblEmployee.Size = new System.Drawing.Size(158, 66);
             this.lblEmployee.TabIndex = 0;
             this.lblEmployee.Text = "직원";
             this.lblEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgvEmployee
             // 
+            this.dgvEmployee.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmployee.Location = new System.Drawing.Point(13, 157);
+            this.dgvEmployee.Location = new System.Drawing.Point(16, 241);
+            this.dgvEmployee.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvEmployee.Name = "dgvEmployee";
             this.dgvEmployee.RowHeadersWidth = 51;
             this.dgvEmployee.RowTemplate.Height = 27;
-            this.dgvEmployee.Size = new System.Drawing.Size(307, 374);
+            this.dgvEmployee.Size = new System.Drawing.Size(384, 573);
             this.dgvEmployee.TabIndex = 1;
             // 
             // dgvAuthorities
             // 
+            this.dgvAuthorities.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvAuthorities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAuthorities.Location = new System.Drawing.Point(348, 157);
+            this.dgvAuthorities.Location = new System.Drawing.Point(435, 241);
+            this.dgvAuthorities.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvAuthorities.Name = "dgvAuthorities";
             this.dgvAuthorities.RowHeadersWidth = 51;
             this.dgvAuthorities.RowTemplate.Height = 27;
-            this.dgvAuthorities.Size = new System.Drawing.Size(428, 374);
+            this.dgvAuthorities.Size = new System.Drawing.Size(535, 573);
             this.dgvAuthorities.TabIndex = 2;
             // 
             // frmEmployeeGroup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1282, 753);
+            this.BackColor = System.Drawing.Color.Azure;
+            this.ClientSize = new System.Drawing.Size(1602, 1055);
             this.Controls.Add(this.dgvAuthorities);
             this.Controls.Add(this.dgvEmployee);
             this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmEmployeeGroup";
             this.Text = "직원별 그룹 조회";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
