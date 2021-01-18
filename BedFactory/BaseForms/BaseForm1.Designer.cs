@@ -32,8 +32,8 @@ namespace BedFactory.BaseForm
             this.button4 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnSelect = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,15 +70,6 @@ namespace BedFactory.BaseForm
             this.panel1.Size = new System.Drawing.Size(1282, 229);
             this.panel1.TabIndex = 20;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 302);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1282, 451);
-            this.panel2.TabIndex = 21;
-            // 
             // btnSelect
             // 
             this.btnSelect.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -90,6 +81,15 @@ namespace BedFactory.BaseForm
             this.btnSelect.TabIndex = 22;
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 302);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1282, 451);
+            this.panel2.TabIndex = 21;
             // 
             // BaseForm1
             // 
@@ -112,8 +112,8 @@ namespace BedFactory.BaseForm
         #endregion
         protected System.Windows.Forms.Button button4;
         protected System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Button btnSelect;
-        private System.Windows.Forms.Panel panel2;
+        protected System.Windows.Forms.Panel panel1;
+        protected System.Windows.Forms.Panel panel2;
     }
 }
