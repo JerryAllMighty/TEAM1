@@ -8,13 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BedFactory
+namespace BedFactory.Controls
 {
-    public partial class frmNewMaterials : Form
+    public partial class MaterialsCheckList : UserControl
     {
-        int materialID, checkID; //자재ID, 검사ID
-
-        public frmNewMaterials()
+        public MaterialsCheckList()
         {
             InitializeComponent();
         }

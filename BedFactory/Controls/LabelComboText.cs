@@ -20,6 +20,7 @@ namespace BedFactory
         public bool Important { get; set; }
         public string Header { get; set; }
         public object ComboData { get; set; }
+        public ComboBoxStyle DropDownStyle { get; set; }
 
         public LabelComboText()
         {
@@ -37,6 +38,7 @@ namespace BedFactory
                 cbo.Size = new Size(this.Size.Width - cbo.Location.X - 5, 25);
                 cbo.Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left;
                 cbo.DataSource = ComboData;
+                cbo.DropDownStyle = DropDownStyle;
                 this.Controls.Add(cbo);
             }
             else if(BoxKind == Kind.text)
