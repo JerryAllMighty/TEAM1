@@ -23,14 +23,21 @@ namespace BadFactory
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (tabControl1.Dock == DockStyle.Fill)
+            if (!pnSplitScreen.Visible)
             {
                 BaseForm1 frm = new BaseForm1();
                 FormChildTab(frm, tabControl1);
             }
             else
             {
-                TabControl tc = (TabControl)panel3.Controls["newTab"];
+                if (btnTabPut.Text.Equals("△"))
+                {
+                    BaseForm1 frm1 = new BaseForm1();
+                    FormChildTab(frm1, tabControl1);
+                    return;
+                }
+
+                TabControl tc = (TabControl)pnNewTab.Controls["newTab"];
                 BaseForm1 frm = new BaseForm1();
                 FormChildTab(frm, tc);
             }
@@ -53,10 +60,14 @@ namespace BadFactory
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (tabControl1.Dock == DockStyle.Fill)
+            if (pnSplitScreen.Visible == false)
             {
-                tabControl1.Dock = DockStyle.Top;
-                tabControl1.Size = new Size(493, 281);
+                pnSplitScreen.Visible = true;
+                tabControl1.Dock = DockStyle.None;
+                //panel4.Dock = DockStyle.Bottom;
+                tabControl1.Dock = DockStyle.Fill;
+                //tabControl1.Dock = DockStyle.Top;
+                //tabControl1.Size = new Size(493, 281);
                 if (tabControl1.TabPages.Count > 0)
                 {
                     Form f = (Form)tabControl1.SelectedTab.Controls[0];
@@ -64,19 +75,24 @@ namespace BadFactory
                     f.WindowState = FormWindowState.Maximized;
                 }
 
+                pnSplitScreen.Size = new Size(this.Width - pnMenu2.Width, (this.Height - pnMenu1.Height) / 2);
+
                 TabCustomControl1 tc = new TabCustomControl1();
                 tc.Name = "newTab";
                 tc.Size = new Size(493, 281);
-                tc.Dock = DockStyle.Bottom;
+                tc.Dock = DockStyle.Fill;
                 tc.MouseDown += tabControl1_MouseDown;
-                panel3.Controls.Add(tc);
+                pnNewTab.Controls.Add(tc);
             }
             else
             {
-                panel3.Controls.RemoveByKey("newTab");
-                tabControl1.Dock = DockStyle.Fill;
+                btnTabPut.Text = "▽";
+                //panel4.Dock = DockStyle.None;
+                pnSplitScreen.Visible = false;
+                //panel3.Controls.RemoveByKey("newTab");
+                //tabControl1.Dock = DockStyle.Fill;
 
-                if(tabControl1.Controls.Count > 0)
+                if (tabControl1.Controls.Count > 0)
                 {
                     Form f = (Form)tabControl1.SelectedTab.Controls[0];
                     f.WindowState = FormWindowState.Normal;
@@ -113,6 +129,48 @@ namespace BadFactory
                 f.WindowState = FormWindowState.Normal;
                 f.WindowState = FormWindowState.Maximized;
             }            
+        }
+
+        private void btnPut_Click(object sender, EventArgs e)
+        {
+            if (btnMenuPut.Text.Equals("◁"))
+            {
+                btnMenuPut.Text = "▷";
+                pnMenu2.Size = new Size(18, 561);
+            }
+            else
+            {
+                btnMenuPut.Text = "◁";
+                pnMenu2.Size = new Size(200, 561);
+            }
+
+            if (tabControl1.Controls.Count > 0)
+            {
+                Form f = (Form)tabControl1.SelectedTab.Controls[0];
+                f.WindowState = FormWindowState.Normal;
+                f.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void btnTabPut_Click(object sender, EventArgs e)
+        {
+            if (btnTabPut.Text.Equals("▽"))
+            {
+                btnTabPut.Text = "△";
+                pnSplitScreen.Size = new Size(984, 18);
+            }
+            else
+            {
+                btnTabPut.Text = "▽";
+                pnSplitScreen.Size = new Size(this.Width - pnMenu2.Width, (this.Height - pnMenu1.Height) / 2);
+            }
+
+            if (tabControl1.Controls.Count > 0)
+            {
+                Form f = (Form)tabControl1.SelectedTab.Controls[0];
+                f.WindowState = FormWindowState.Normal;
+                f.WindowState = FormWindowState.Maximized;
+            }
         }
     }
 }
