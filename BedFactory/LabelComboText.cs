@@ -19,6 +19,7 @@ namespace BedFactory
         public int MultiLineCnt { get; set; }
         public bool Important { get; set; }
         public string Header { get; set; }
+        public object ComboData { get; set; }
 
         public LabelComboText()
         {
@@ -34,7 +35,8 @@ namespace BedFactory
                 ComboBox cbo = new ComboBox();
                 cbo.Location = new Point(label1.Location.X + label1.Size.Width + 30, 6);
                 cbo.Size = new Size(this.Size.Width - cbo.Location.X - 5, 25);
-                cbo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                cbo.Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left;
+                cbo.DataSource = ComboData;
                 this.Controls.Add(cbo);
             }
             else if(BoxKind == Kind.text)
