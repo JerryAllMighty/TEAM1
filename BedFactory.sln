@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BedFactoryVO", "BedFactoryV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BedFatory_POP", "BedFatory_POP\BedFatory_POP.csproj", "{4CFCF23A-41FF-486A-90B8-AC12566D8B63}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BedFactoryWeb", "BedFactoryWeb\BedFactoryWeb.csproj", "{B05F5C56-7572-4705-A917-0B7B7A23EDC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{4CFCF23A-41FF-486A-90B8-AC12566D8B63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CFCF23A-41FF-486A-90B8-AC12566D8B63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CFCF23A-41FF-486A-90B8-AC12566D8B63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B05F5C56-7572-4705-A917-0B7B7A23EDC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B05F5C56-7572-4705-A917-0B7B7A23EDC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B05F5C56-7572-4705-A917-0B7B7A23EDC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B05F5C56-7572-4705-A917-0B7B7A23EDC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
