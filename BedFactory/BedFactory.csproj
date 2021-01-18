@@ -110,6 +110,12 @@
     <Compile Include="FaultyStatusLargeCategory.designer.cs">
       <DependentUpon>FaultyStatusLargeCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBusinessCostManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusinessCostManagement.Designer.cs">
+      <DependentUpon>frmBusinessCostManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGroupAuthority.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,18 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMaterialsCostManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaterialsCostManagement.Designer.cs">
+      <DependentUpon>frmMaterialsCostManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaterialsCostManagement_Popup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaterialsCostManagement_Popup.Designer.cs">
+      <DependentUpon>frmMaterialsCostManagement_Popup.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenuManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,11 +170,47 @@
     <Compile Include="frmMenuRegister.Designer.cs">
       <DependentUpon>frmMenuRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPurchasingOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPurchasingOrder.Designer.cs">
+      <DependentUpon>frmPurchasingOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPurchasingOrderState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPurchasingOrderState.Designer.cs">
+      <DependentUpon>frmPurchasingOrderState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPurchasingOrder_Popup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPurchasingOrder_Popup.Designer.cs">
+      <DependentUpon>frmPurchasingOrder_Popup.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmScreenManagement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmScreenManagement.Designer.cs">
       <DependentUpon>frmScreenManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShiftInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShiftInfo.Designer.cs">
+      <DependentUpon>frmShiftInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShiftMangement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShiftMangement.Designer.cs">
+      <DependentUpon>frmShiftMangement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShift_Popup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShift_Popup.Designer.cs">
+      <DependentUpon>frmShift_Popup.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUserManagement.cs">
       <SubType>Form</SubType>
@@ -294,6 +348,9 @@
     <EmbeddedResource Include="DatagridviewControl.resx">
       <DependentUpon>DatagridviewControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBusinessCostManagement.resx">
+      <DependentUpon>frmBusinessCostManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGroupAuthority.resx">
       <DependentUpon>frmGroupAuthority.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +363,12 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMaterialsCostManagement.resx">
+      <DependentUpon>frmMaterialsCostManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaterialsCostManagement_Popup.resx">
+      <DependentUpon>frmMaterialsCostManagement_Popup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMenuManagement.resx">
       <DependentUpon>frmMenuManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,8 +378,26 @@
     <EmbeddedResource Include="frmMenuRegister.resx">
       <DependentUpon>frmMenuRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPurchasingOrder.resx">
+      <DependentUpon>frmPurchasingOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPurchasingOrderState.resx">
+      <DependentUpon>frmPurchasingOrderState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPurchasingOrder_Popup.resx">
+      <DependentUpon>frmPurchasingOrder_Popup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmScreenManagement.resx">
       <DependentUpon>frmScreenManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShiftInfo.resx">
+      <DependentUpon>frmShiftInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShiftMangement.resx">
+      <DependentUpon>frmShiftMangement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShift_Popup.resx">
+      <DependentUpon>frmShift_Popup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUserManagement.resx">
       <DependentUpon>frmUserManagement.cs</DependentUpon>
