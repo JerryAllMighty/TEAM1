@@ -104,36 +104,6 @@
     <Compile Include="DatagridviewControl.Designer.cs">
       <DependentUpon>DatagridviewControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="EnterpriseInfoRegistration.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EnterpriseInfoRegistration.designer.cs">
-      <DependentUpon>EnterpriseInfoRegistration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EnterpriseManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EnterpriseManagement.designer.cs">
-      <DependentUpon>EnterpriseManagement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FacilityManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FacilityManagement.designer.cs">
-      <DependentUpon>FacilityManagement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FacilityTegistration.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FacilityTegistration.designer.cs">
-      <DependentUpon>FacilityTegistration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FactoryAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FactoryAdmin.designer.cs">
-      <DependentUpon>FactoryAdmin.cs</DependentUpon>
-    </Compile>
     <Compile Include="FactoryInfoRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +115,30 @@
     </Compile>
     <Compile Include="FaultyStatusLargeCategory.designer.cs">
       <DependentUpon>FaultyStatusLargeCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEnterpriseManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnterpriseManagement.designer.cs">
+      <DependentUpon>frmEnterpriseManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFacilityShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacilityShow.Designer.cs">
+      <DependentUpon>frmFacilityShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFaciltiesManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFaciltiesManagement.Designer.cs">
+      <DependentUpon>frmFaciltiesManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFactoryAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFactoryAdmin.Designer.cs">
+      <DependentUpon>frmFactoryAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGroupAuthority.cs">
       <SubType>Form</SubType>
@@ -242,6 +236,36 @@
     <Compile Include="Off-pumpLargeCategory.designer.cs">
       <DependentUpon>Off-pumpLargeCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUp\frmBORreg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmBORreg.Designer.cs">
+      <DependentUpon>frmBORreg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmEnterpriseInfoReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmEnterpriseInfoReg.Designer.cs">
+      <DependentUpon>frmEnterpriseInfoReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmFacilitiesReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmFacilitiesReg.Designer.cs">
+      <DependentUpon>frmFacilitiesReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmFacilitycsReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmFacilitycsReg.Designer.cs">
+      <DependentUpon>frmFacilitycsReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmFactoryInfoReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmFactoryInfoReg.Designer.cs">
+      <DependentUpon>frmFactoryInfoReg.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProcessConditionSet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,7 +298,7 @@
     <Compile Include="TabCustomControl1.Designer.cs">
       <DependentUpon>TabCustomControl1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utils\Helper.cs" />
+    <Compile Include="Util\Helper.cs" />
     <Compile Include="Util\CommonUtil.cs" />
     <Compile Include="WorkManagment.cs">
       <SubType>Form</SubType>
@@ -300,8 +324,17 @@
     <EmbeddedResource Include="DatagridviewControl.resx">
       <DependentUpon>DatagridviewControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FactoryAdmin.resx">
-      <DependentUpon>FactoryAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="frmEnterpriseManagement.resx">
+      <DependentUpon>frmEnterpriseManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFacilityShow.resx">
+      <DependentUpon>frmFacilityShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFaciltiesManagement.resx">
+      <DependentUpon>frmFaciltiesManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFactoryAdmin.resx">
+      <DependentUpon>frmFactoryAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGroupAuthority.resx">
       <DependentUpon>frmGroupAuthority.cs</DependentUpon>
@@ -329,6 +362,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUserManagement.resx">
       <DependentUpon>frmUserManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmBORreg.resx">
+      <DependentUpon>frmBORreg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmEnterpriseInfoReg.resx">
+      <DependentUpon>frmEnterpriseInfoReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmFacilitiesReg.resx">
+      <DependentUpon>frmFacilitiesReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmFacilitycsReg.resx">
+      <DependentUpon>frmFacilitycsReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmFactoryInfoReg.resx">
+      <DependentUpon>frmFactoryInfoReg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
