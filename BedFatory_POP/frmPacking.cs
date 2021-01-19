@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BedFatory_POP
-{
+{ 
     public partial class frmPacking : Form
     {
         public frmPacking()
