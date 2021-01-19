@@ -99,10 +99,10 @@
     <Compile Include="frmWorkOrder.Designer.cs">
       <DependentUpon>frmWorkOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pop-up\frmLogin.cs">
+    <Compile Include="Pop-Up\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pop-up\frmLogin.Designer.cs">
+    <Compile Include="Pop-Up\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -128,7 +128,7 @@
     <EmbeddedResource Include="frmWorkOrder.resx">
       <DependentUpon>frmWorkOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pop-up\frmLogin.resx">
+    <EmbeddedResource Include="Pop-Up\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
