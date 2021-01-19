@@ -146,6 +146,48 @@
     <Compile Include="frmBusinessCostManagement.Designer.cs">
       <DependentUpon>frmBusinessCostManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMaterialLedgerRawMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaterialLedgerRawMaterial.Designer.cs">
+      <DependentUpon>frmMaterialLedgerRawMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaterialLedgerStockWarehousing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaterialLedgerStockWarehousing.Designer.cs">
+      <DependentUpon>frmMaterialLedgerStockWarehousing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMaterialLedgerStockWarehousingState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMaterialLedgerStockWarehousingState.Designer.cs">
+      <DependentUpon>FrmMaterialLedgerStockWarehousingState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaterialRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaterialRequest.Designer.cs">
+      <DependentUpon>frmMaterialRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStockState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStockState.Designer.cs">
+      <DependentUpon>frmStockState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStockWOState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStockWOState.Designer.cs">
+      <DependentUpon>frmStockWOState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSupplierWarehousingWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSupplierWarehousingWait.Designer.cs">
+      <DependentUpon>frmSupplierWarehousingWait.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUserGroupAuthority.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -407,6 +449,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBusinessCostManagement.resx">
       <DependentUpon>frmBusinessCostManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaterialLedgerRawMaterial.resx">
+      <DependentUpon>frmMaterialLedgerRawMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaterialLedgerStockWarehousing.resx">
+      <DependentUpon>frmMaterialLedgerStockWarehousing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMaterialLedgerStockWarehousingState.resx">
+      <DependentUpon>FrmMaterialLedgerStockWarehousingState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaterialRequest.resx">
+      <DependentUpon>frmMaterialRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStockState.resx">
+      <DependentUpon>frmStockState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStockWOState.resx">
+      <DependentUpon>frmStockWOState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSupplierWarehousingWait.resx">
+      <DependentUpon>frmSupplierWarehousingWait.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUserGroupAuthority.resx">
       <DependentUpon>frmUserGroupAuthority.cs</DependentUpon>
