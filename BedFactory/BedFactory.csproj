@@ -33,12 +33,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.Desktop.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EncryptDecryp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Users\장경진\Documents\카카오톡 받은 파일\EncryptDecryp\EncryptDecryp.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +58,8 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseForms\BaseForm1.cs">
@@ -146,6 +158,48 @@
     <Compile Include="frmBusinessCostManagement.Designer.cs">
       <DependentUpon>frmBusinessCostManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDemandPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDemandPlan.Designer.cs">
+      <DependentUpon>frmDemandPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaterialRequirementPlanning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaterialRequirementPlanning.Designer.cs">
+      <DependentUpon>frmMaterialRequirementPlanning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProductionPlanning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductionPlanning.Designer.cs">
+      <DependentUpon>frmProductionPlanning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pop-up\frmSalesOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pop-up\frmSalesOrder.Designer.cs">
+      <DependentUpon>frmSalesOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalesMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalesMaster.Designer.cs">
+      <DependentUpon>frmSalesMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pop-up\frmSalesMasterRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pop-up\frmSalesMasterRegister.Designer.cs">
+      <DependentUpon>frmSalesMasterRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalesMasterUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalesMasterUpload.Designer.cs">
+      <DependentUpon>frmSalesMasterUpload.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUserGroupAuthority.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,10 +236,10 @@
     <Compile Include="frmMaterialsCostManagement.Designer.cs">
       <DependentUpon>frmMaterialsCostManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\frmMaterials.cs">
+    <Compile Include="Pop-up\frmMaterials.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\frmMaterials.Designer.cs">
+    <Compile Include="Pop-up\frmMaterials.Designer.cs">
       <DependentUpon>frmMaterials.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMenuManagement.cs">
@@ -218,10 +272,10 @@
     <Compile Include="frmPurchasingOrderState.Designer.cs">
       <DependentUpon>frmPurchasingOrderState.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\frmPurchasing.cs">
+    <Compile Include="Pop-up\frmPurchasing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\frmPurchasing.Designer.cs">
+    <Compile Include="Pop-up\frmPurchasing.Designer.cs">
       <DependentUpon>frmPurchasing.cs</DependentUpon>
     </Compile>
     <Compile Include="frmScreenManagement.cs">
@@ -242,10 +296,10 @@
     <Compile Include="frmShiftMangement.Designer.cs">
       <DependentUpon>frmShiftMangement.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\frmShift.cs">
+    <Compile Include="Pop-up\frmShift.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\frmShift.Designer.cs">
+    <Compile Include="Pop-up\frmShift.Designer.cs">
       <DependentUpon>frmShift.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUserGroupManagement.cs">
@@ -254,10 +308,10 @@
     <Compile Include="frmUserGroupManagement.Designer.cs">
       <DependentUpon>frmUserGroupManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\frmUserRegister.cs">
+    <Compile Include="Pop-up\frmUserRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\frmUserRegister.Designer.cs">
+    <Compile Include="Pop-up\frmUserRegister.Designer.cs">
       <DependentUpon>frmUserRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="ItemManagement.cs">
@@ -302,34 +356,34 @@
     <Compile Include="Off-pumpLargeCategory.designer.cs">
       <DependentUpon>Off-pumpLargeCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\frmBORreg.cs">
+    <Compile Include="Pop-up\frmBORreg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\frmBORreg.Designer.cs">
+    <Compile Include="Pop-up\frmBORreg.Designer.cs">
       <DependentUpon>frmBORreg.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\frmEnterpriseInfoReg.cs">
+    <Compile Include="Pop-up\frmEnterpriseInfoReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\frmEnterpriseInfoReg.Designer.cs">
+    <Compile Include="Pop-up\frmEnterpriseInfoReg.Designer.cs">
       <DependentUpon>frmEnterpriseInfoReg.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\frmFacilitiesReg.cs">
+    <Compile Include="Pop-up\frmFacilitiesReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\frmFacilitiesReg.Designer.cs">
+    <Compile Include="Pop-up\frmFacilitiesReg.Designer.cs">
       <DependentUpon>frmFacilitiesReg.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\frmFacilitycsReg.cs">
+    <Compile Include="Pop-up\frmFacilitycsReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\frmFacilitycsReg.Designer.cs">
+    <Compile Include="Pop-up\frmFacilitycsReg.Designer.cs">
       <DependentUpon>frmFacilitycsReg.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\frmFactoryInfoReg.cs">
+    <Compile Include="Pop-up\frmFactoryInfoReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\frmFactoryInfoReg.Designer.cs">
+    <Compile Include="Pop-up\frmFactoryInfoReg.Designer.cs">
       <DependentUpon>frmFactoryInfoReg.cs</DependentUpon>
     </Compile>
     <Compile Include="ProcessConditionSet.cs">
@@ -408,6 +462,27 @@
     <EmbeddedResource Include="frmBusinessCostManagement.resx">
       <DependentUpon>frmBusinessCostManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDemandPlan.resx">
+      <DependentUpon>frmDemandPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaterialRequirementPlanning.resx">
+      <DependentUpon>frmMaterialRequirementPlanning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductionPlanning.resx">
+      <DependentUpon>frmProductionPlanning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pop-up\frmSalesOrder.resx">
+      <DependentUpon>frmSalesOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalesMaster.resx">
+      <DependentUpon>frmSalesMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pop-up\frmSalesMasterRegister.resx">
+      <DependentUpon>frmSalesMasterRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalesMasterUpload.resx">
+      <DependentUpon>frmSalesMasterUpload.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmUserGroupAuthority.resx">
       <DependentUpon>frmUserGroupAuthority.cs</DependentUpon>
     </EmbeddedResource>
@@ -426,7 +501,7 @@
     <EmbeddedResource Include="frmMaterialsCostManagement.resx">
       <DependentUpon>frmMaterialsCostManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\frmMaterials.resx">
+    <EmbeddedResource Include="Pop-up\frmMaterials.resx">
       <DependentUpon>frmMaterials.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuManagement.resx">
@@ -444,7 +519,7 @@
     <EmbeddedResource Include="frmPurchasingOrderState.resx">
       <DependentUpon>frmPurchasingOrderState.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\frmPurchasing.resx">
+    <EmbeddedResource Include="Pop-up\frmPurchasing.resx">
       <DependentUpon>frmPurchasing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmScreenManagement.resx">
@@ -456,28 +531,28 @@
     <EmbeddedResource Include="frmShiftMangement.resx">
       <DependentUpon>frmShiftMangement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\frmShift.resx">
+    <EmbeddedResource Include="Pop-up\frmShift.resx">
       <DependentUpon>frmShift.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUserGroupManagement.resx">
       <DependentUpon>frmUserGroupManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\frmUserRegister.resx">
+    <EmbeddedResource Include="Pop-up\frmUserRegister.resx">
       <DependentUpon>frmUserRegister.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\frmBORreg.resx">
+    <EmbeddedResource Include="Pop-up\frmBORreg.resx">
       <DependentUpon>frmBORreg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\frmEnterpriseInfoReg.resx">
+    <EmbeddedResource Include="Pop-up\frmEnterpriseInfoReg.resx">
       <DependentUpon>frmEnterpriseInfoReg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\frmFacilitiesReg.resx">
+    <EmbeddedResource Include="Pop-up\frmFacilitiesReg.resx">
       <DependentUpon>frmFacilitiesReg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\frmFacilitycsReg.resx">
+    <EmbeddedResource Include="Pop-up\frmFacilitycsReg.resx">
       <DependentUpon>frmFacilitycsReg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\frmFactoryInfoReg.resx">
+    <EmbeddedResource Include="Pop-up\frmFactoryInfoReg.resx">
       <DependentUpon>frmFactoryInfoReg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

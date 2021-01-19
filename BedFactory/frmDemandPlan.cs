@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BedFatory_POP
+namespace BedFactory
 {
-    public partial class Form1 : Form
+    public partial class frmDemandㅖㅣ무 : Form
     {
-        public Form1()
+        public frmDemandㅖㅣ무()
         {
             InitializeComponent();
         }

@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BedFactoryDAC", "BedFactory
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BedFactoryVO", "BedFactoryVO\BedFactoryVO.csproj", "{7EA8A2D7-E87F-4655-A509-E607ABF4E253}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BedFatory_POP", "BedFatory_POP\BedFatory_POP.csproj", "{4CFCF23A-41FF-486A-90B8-AC12566D8B63}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BedFactory_POP", "BedFatory_POP\BedFactory_POP.csproj", "{4CFCF23A-41FF-486A-90B8-AC12566D8B63}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BedFactoryWeb", "BedFactoryWeb\BedFactoryWeb.csproj", "{B05F5C56-7572-4705-A917-0B7B7A23EDC3}"
 EndProject
