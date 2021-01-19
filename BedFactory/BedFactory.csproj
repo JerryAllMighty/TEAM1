@@ -296,6 +296,12 @@
     <Compile Include="frmUserGroupManagement.Designer.cs">
       <DependentUpon>frmUserGroupManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUp\frmStockBackgroundCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmStockBackgroundCheck.Designer.cs">
+      <DependentUpon>frmStockBackgroundCheck.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUp\frmUserRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -524,6 +530,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUserGroupManagement.resx">
       <DependentUpon>frmUserGroupManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmStockBackgroundCheck.resx">
+      <DependentUpon>frmStockBackgroundCheck.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\frmUserRegister.resx">
       <DependentUpon>frmUserRegister.cs</DependentUpon>
