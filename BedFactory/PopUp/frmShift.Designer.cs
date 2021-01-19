@@ -1,7 +1,7 @@
 ﻿
 namespace BedFactory
 {
-    partial class frmShift_Popup
+    partial class frmShift
     {
         /// <summary>
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmUserManagement : Form
+    public partial class frmUserRegister : Form
     {
-        public frmUserManagement()
+        public frmUserRegister()
         {
             InitializeComponent();
         }

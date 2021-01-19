@@ -92,17 +92,47 @@
     <Compile Include="ByUserManagementScreen.designer.cs">
       <DependentUpon>ByUserManagementScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LabelComboText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LabelComboText.Designer.cs">
+      <DependentUpon>LabelComboText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MaterialsCheckList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MaterialsCheckList.Designer.cs">
+      <DependentUpon>MaterialsCheckList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OnlyCharTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\OnlyCharTextBox.designer.cs">
+      <DependentUpon>OnlyCharTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OnlyNumberTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\OnlyNumberTextBox.designer.cs">
+      <DependentUpon>OnlyNumberTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="CostManagemen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CostManagemen.designer.cs">
       <DependentUpon>CostManagemen.cs</DependentUpon>
     </Compile>
-    <Compile Include="DatagridviewControl.cs">
+    <Compile Include="Controls\DatagridviewControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DatagridviewControl.Designer.cs">
+    <Compile Include="Controls\DatagridviewControl.Designer.cs">
       <DependentUpon>DatagridviewControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FactoryManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FactoryManagement.designer.cs">
+      <DependentUpon>FactoryManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="FaultyStatusLargeCategory.cs">
       <SubType>Form</SubType>
@@ -116,11 +146,11 @@
     <Compile Include="frmBusinessCostManagement.Designer.cs">
       <DependentUpon>frmBusinessCostManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGroupAuthority.cs">
+    <Compile Include="frmUserGroupAuthority.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGroupAuthority.Designer.cs">
-      <DependentUpon>frmGroupAuthority.cs</DependentUpon>
+    <Compile Include="frmUserGroupAuthority.Designer.cs">
+      <DependentUpon>frmUserGroupAuthority.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCommonCode.cs">
       <SubType>Form</SubType>
@@ -128,11 +158,17 @@
     <Compile Include="frmCommonCode.Designer.cs">
       <DependentUpon>frmCommonCode.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGroupAuthorityModify.cs">
+    <Compile Include="frmUserGroupAuthorityModify.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGroupAuthorityModify.Designer.cs">
-      <DependentUpon>frmGroupAuthorityModify.cs</DependentUpon>
+    <Compile Include="frmUserGroupAuthorityModify.Designer.cs">
+      <DependentUpon>frmUserGroupAuthorityModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGroupManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGroupManagement.Designer.cs">
+      <DependentUpon>frmGroupManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -146,11 +182,11 @@
     <Compile Include="frmMaterialsCostManagement.Designer.cs">
       <DependentUpon>frmMaterialsCostManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMaterialsCostManagement_Popup.cs">
+    <Compile Include="PopUp\frmMaterials.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMaterialsCostManagement_Popup.Designer.cs">
-      <DependentUpon>frmMaterialsCostManagement_Popup.cs</DependentUpon>
+    <Compile Include="PopUp\frmMaterials.Designer.cs">
+      <DependentUpon>frmMaterials.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMenuManagement.cs">
       <SubType>Form</SubType>
@@ -158,17 +194,17 @@
     <Compile Include="frmMenuManagement.Designer.cs">
       <DependentUpon>frmMenuManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEmployeeGroup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEmployeeGroup.Designer.cs">
-      <DependentUpon>frmEmployeeGroup.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMenuRegister.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMenuRegister.Designer.cs">
       <DependentUpon>frmMenuRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewMaterials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewMaterials.Designer.cs">
+      <DependentUpon>frmNewMaterials.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPurchasingOrder.cs">
       <SubType>Form</SubType>
@@ -182,11 +218,11 @@
     <Compile Include="frmPurchasingOrderState.Designer.cs">
       <DependentUpon>frmPurchasingOrderState.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPurchasingOrder_Popup.cs">
+    <Compile Include="PopUp\frmPurchasing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPurchasingOrder_Popup.Designer.cs">
-      <DependentUpon>frmPurchasingOrder_Popup.cs</DependentUpon>
+    <Compile Include="PopUp\frmPurchasing.Designer.cs">
+      <DependentUpon>frmPurchasing.cs</DependentUpon>
     </Compile>
     <Compile Include="frmScreenManagement.cs">
       <SubType>Form</SubType>
@@ -206,17 +242,23 @@
     <Compile Include="frmShiftMangement.Designer.cs">
       <DependentUpon>frmShiftMangement.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmShift_Popup.cs">
+    <Compile Include="PopUp\frmShift.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmShift_Popup.Designer.cs">
-      <DependentUpon>frmShift_Popup.cs</DependentUpon>
+    <Compile Include="PopUp\frmShift.Designer.cs">
+      <DependentUpon>frmShift.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUserManagement.cs">
+    <Compile Include="frmUserGroupManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUserManagement.Designer.cs">
-      <DependentUpon>frmUserManagement.cs</DependentUpon>
+    <Compile Include="frmUserGroupManagement.Designer.cs">
+      <DependentUpon>frmUserGroupManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmUserRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmUserRegister.Designer.cs">
+      <DependentUpon>frmUserRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="ItemManagement.cs">
       <SubType>Form</SubType>
@@ -316,10 +358,10 @@
     <Compile Include="ResourceManagement.designer.cs">
       <DependentUpon>ResourceManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="TabCustomControl1.cs">
+    <Compile Include="Controls\TabCustomControl1.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="TabCustomControl1.Designer.cs">
+    <Compile Include="Controls\TabCustomControl1.Designer.cs">
       <DependentUpon>TabCustomControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\Helper.cs" />
@@ -345,20 +387,38 @@
     <EmbeddedResource Include="BaseForms\BaseForm3.resx">
       <DependentUpon>BaseForm3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DatagridviewControl.resx">
+    <EmbeddedResource Include="Controls\DatagridviewControl.resx">
       <DependentUpon>DatagridviewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LabelComboText.resx">
+      <DependentUpon>LabelComboText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MaterialsCheckList.resx">
+      <DependentUpon>MaterialsCheckList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OnlyCharTextBox.resx">
+      <DependentUpon>OnlyCharTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OnlyNumberTextBox.resx">
+      <DependentUpon>OnlyNumberTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactoryManagement.resx">
+      <DependentUpon>FactoryManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBusinessCostManagement.resx">
       <DependentUpon>frmBusinessCostManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGroupAuthority.resx">
-      <DependentUpon>frmGroupAuthority.cs</DependentUpon>
+    <EmbeddedResource Include="frmUserGroupAuthority.resx">
+      <DependentUpon>frmUserGroupAuthority.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCommonCode.resx">
       <DependentUpon>frmCommonCode.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGroupAuthorityModify.resx">
-      <DependentUpon>frmGroupAuthorityModify.cs</DependentUpon>
+    <EmbeddedResource Include="frmUserGroupAuthorityModify.resx">
+      <DependentUpon>frmUserGroupAuthorityModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGroupManagement.resx">
+      <DependentUpon>frmGroupManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -366,17 +426,17 @@
     <EmbeddedResource Include="frmMaterialsCostManagement.resx">
       <DependentUpon>frmMaterialsCostManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMaterialsCostManagement_Popup.resx">
-      <DependentUpon>frmMaterialsCostManagement_Popup.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\frmMaterials.resx">
+      <DependentUpon>frmMaterials.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuManagement.resx">
       <DependentUpon>frmMenuManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEmployeeGroup.resx">
-      <DependentUpon>frmEmployeeGroup.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMenuRegister.resx">
       <DependentUpon>frmMenuRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewMaterials.resx">
+      <DependentUpon>frmNewMaterials.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPurchasingOrder.resx">
       <DependentUpon>frmPurchasingOrder.cs</DependentUpon>
@@ -384,8 +444,8 @@
     <EmbeddedResource Include="frmPurchasingOrderState.resx">
       <DependentUpon>frmPurchasingOrderState.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPurchasingOrder_Popup.resx">
-      <DependentUpon>frmPurchasingOrder_Popup.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\frmPurchasing.resx">
+      <DependentUpon>frmPurchasing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmScreenManagement.resx">
       <DependentUpon>frmScreenManagement.cs</DependentUpon>
@@ -396,11 +456,14 @@
     <EmbeddedResource Include="frmShiftMangement.resx">
       <DependentUpon>frmShiftMangement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmShift_Popup.resx">
-      <DependentUpon>frmShift_Popup.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\frmShift.resx">
+      <DependentUpon>frmShift.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUserManagement.resx">
-      <DependentUpon>frmUserManagement.cs</DependentUpon>
+    <EmbeddedResource Include="frmUserGroupManagement.resx">
+      <DependentUpon>frmUserGroupManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmUserRegister.resx">
+      <DependentUpon>frmUserRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\frmBORreg.resx">
       <DependentUpon>frmBORreg.cs</DependentUpon>
@@ -440,9 +503,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Library\EncryptDecryp.dll" />
     <None Include="Resources\pngegg %281%29.png" />

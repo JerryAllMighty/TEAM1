@@ -16,5 +16,17 @@ namespace BedFactory
         {
             InitializeComponent();
         }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            tblParent.Visible = false;
+            tblChild.Visible = true;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            tblParent.Visible = true;
+            tblChild.Visible = false;
+        }
     }
 }

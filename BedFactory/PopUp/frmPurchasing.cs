@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmEmployeeGroup : Form
+    public partial class frmPurchasing : Form
     {
-        public frmEmployeeGroup()
+        public frmPurchasing()
         {
             InitializeComponent();
         }

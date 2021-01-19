@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmMaterialsCostManagement_Popup : Form
+    public partial class frmUserGroupAuthorityModify : Form
     {
-        public frmMaterialsCostManagement_Popup()
+        public frmUserGroupAuthorityModify()
         {
             InitializeComponent();
         }

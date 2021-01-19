@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmGroupAuthorityModify : Form
+    public partial class frmUserGroupManagement : Form
     {
-        public frmGroupAuthorityModify()
+        public frmUserGroupManagement()
         {
             InitializeComponent();
         }

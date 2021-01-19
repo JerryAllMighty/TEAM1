@@ -1,7 +1,7 @@
 ﻿
 namespace BedFactory
 {
-    partial class frmMaterialsCostManagement_Popup
+    partial class frmMaterials
     {
         /// <summary>
         /// Required designer variable.

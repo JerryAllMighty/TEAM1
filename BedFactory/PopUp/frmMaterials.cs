@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmShift_Popup : Form
+    public partial class frmMaterials : Form
     {
-        public frmShift_Popup()
+        public frmMaterials()
         {
             InitializeComponent();
         }
