@@ -224,6 +224,12 @@
     <Compile Include="frmMaterialsCostManagement.Designer.cs">
       <DependentUpon>frmMaterialsCostManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUp\frmDuedateChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmDuedateChange.Designer.cs">
+      <DependentUpon>frmDuedateChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUp\frmMaterials.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -494,6 +500,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMaterialsCostManagement.resx">
       <DependentUpon>frmMaterialsCostManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmDuedateChange.resx">
+      <DependentUpon>frmDuedateChange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\frmMaterials.resx">
       <DependentUpon>frmMaterials.cs</DependentUpon>
