@@ -36,10 +36,10 @@ namespace BedFactory
             this.dgvAuthorities = new System.Windows.Forms.DataGridView();
             this.dgvEmployee = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.asd = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.asd = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAuthorities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
@@ -123,16 +123,6 @@ namespace BedFactory
             this.dataGridView1.Size = new System.Drawing.Size(405, 573);
             this.dataGridView1.TabIndex = 6;
             // 
-            // asd
-            // 
-            this.asd.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.asd.Location = new System.Drawing.Point(12, 183);
-            this.asd.Name = "asd";
-            this.asd.Size = new System.Drawing.Size(132, 23);
-            this.asd.TabIndex = 7;
-            this.asd.Text = "사용자목록";
-            this.asd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -161,6 +151,16 @@ namespace BedFactory
             this.button1.TabIndex = 10;
             this.button1.Text = "저장";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // asd
+            // 
+            this.asd.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.asd.Location = new System.Drawing.Point(12, 183);
+            this.asd.Name = "asd";
+            this.asd.Size = new System.Drawing.Size(132, 23);
+            this.asd.TabIndex = 7;
+            this.asd.Text = "사용자목록";
+            this.asd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmUserGroupManagement
             // 
@@ -196,9 +196,9 @@ namespace BedFactory
         private System.Windows.Forms.DataGridView dgvAuthorities;
         private System.Windows.Forms.DataGridView dgvEmployee;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label asd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label asd;
     }
 }
