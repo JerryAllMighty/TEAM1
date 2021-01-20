@@ -278,13 +278,6 @@
     <Compile Include="frmMaterialsCostManagement.Designer.cs">
       <DependentUpon>frmMaterialsCostManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\frmDuedateChange.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\frmDuedateChange.Designer.cs">
-      <DependentUpon>frmDuedateChange.cs</DependentUpon>
-    </Compile>
-    
     <Compile Include="Pop-up\frmMaterials.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -357,13 +350,6 @@
     <Compile Include="frmUserGroupManagement.Designer.cs">
       <DependentUpon>frmUserGroupManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\frmStockBackgroundCheck.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\frmStockBackgroundCheck.Designer.cs">
-      <DependentUpon>frmStockBackgroundCheck.cs</DependentUpon>
-    </Compile>
-    
     <Compile Include="Pop-up\frmUserRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -578,10 +564,6 @@
     <EmbeddedResource Include="frmMaterialsCostManagement.resx">
       <DependentUpon>frmMaterialsCostManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\frmDuedateChange.resx">
-      <DependentUpon>frmDuedateChange.cs</DependentUpon>
-    </EmbeddedResource>
-    
     <EmbeddedResource Include="Pop-up\frmMaterials.resx">
       <DependentUpon>frmMaterials.cs</DependentUpon>
     </EmbeddedResource>
@@ -618,10 +600,6 @@
     <EmbeddedResource Include="frmUserGroupManagement.resx">
       <DependentUpon>frmUserGroupManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\frmStockBackgroundCheck.resx">
-      <DependentUpon>frmStockBackgroundCheck.cs</DependentUpon>
-    </EmbeddedResource>
-    
     <EmbeddedResource Include="Pop-up\frmUserRegister.resx">
       <DependentUpon>frmUserRegister.cs</DependentUpon>
     </EmbeddedResource>
