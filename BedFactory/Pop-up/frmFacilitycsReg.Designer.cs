@@ -54,149 +54,154 @@ namespace BedFactory.PopUp
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(25, 301);
+            this.label18.Location = new System.Drawing.Point(32, 353);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(15, 17);
+            this.label18.Size = new System.Drawing.Size(17, 23);
             this.label18.TabIndex = 75;
             this.label18.Text = "*";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(25, 224);
+            this.label19.Location = new System.Drawing.Point(32, 285);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(15, 17);
+            this.label19.Size = new System.Drawing.Size(17, 23);
             this.label19.TabIndex = 74;
             this.label19.Text = "*";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(25, 177);
+            this.label20.Location = new System.Drawing.Point(32, 221);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(15, 17);
+            this.label20.Size = new System.Drawing.Size(17, 23);
             this.label20.TabIndex = 73;
             this.label20.Text = "*";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(25, 128);
+            this.label21.Location = new System.Drawing.Point(32, 155);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(15, 17);
+            this.label21.Size = new System.Drawing.Size(17, 23);
             this.label21.TabIndex = 72;
             this.label21.Text = "*";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(25, 80);
+            this.label22.Location = new System.Drawing.Point(32, 90);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(15, 17);
+            this.label22.Size = new System.Drawing.Size(17, 23);
             this.label22.TabIndex = 71;
             this.label22.Text = "*";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(25, 32);
+            this.label23.Location = new System.Drawing.Point(32, 25);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(15, 17);
+            this.label23.Size = new System.Drawing.Size(17, 23);
             this.label23.TabIndex = 70;
             this.label23.Text = "*";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(254, 177);
+            this.textBox4.Location = new System.Drawing.Point(282, 221);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(258, 26);
+            this.textBox4.Size = new System.Drawing.Size(286, 34);
             this.textBox4.TabIndex = 69;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(254, 80);
+            this.textBox2.Location = new System.Drawing.Point(282, 90);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(258, 26);
+            this.textBox2.Size = new System.Drawing.Size(286, 34);
             this.textBox2.TabIndex = 68;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(47, 301);
+            this.label7.Location = new System.Drawing.Point(52, 353);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 17);
+            this.label7.Size = new System.Drawing.Size(78, 23);
             this.label7.TabIndex = 64;
             this.label7.Text = "자재차감";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(47, 224);
+            this.label8.Location = new System.Drawing.Point(52, 285);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 17);
+            this.label8.Size = new System.Drawing.Size(78, 23);
             this.label8.TabIndex = 62;
             this.label8.Text = "수정시간";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(47, 177);
+            this.label3.Location = new System.Drawing.Point(52, 221);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 17);
+            this.label3.Size = new System.Drawing.Size(61, 23);
             this.label3.TabIndex = 61;
             this.label3.Text = "수정자";
             // 
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(254, 128);
+            this.comboBox4.Location = new System.Drawing.Point(282, 155);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(258, 25);
+            this.comboBox4.Size = new System.Drawing.Size(286, 31);
             this.comboBox4.TabIndex = 60;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(47, 128);
+            this.label4.Location = new System.Drawing.Point(52, 155);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 17);
+            this.label4.Size = new System.Drawing.Size(78, 23);
             this.label4.TabIndex = 59;
             this.label4.Text = "사용유무";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 80);
+            this.label2.Location = new System.Drawing.Point(52, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 17);
+            this.label2.Size = new System.Drawing.Size(84, 23);
             this.label2.TabIndex = 58;
             this.label2.Text = "설비군 명";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 32);
+            this.label1.Location = new System.Drawing.Point(52, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 17);
+            this.label1.Size = new System.Drawing.Size(101, 23);
             this.label1.TabIndex = 56;
             this.label1.Text = "설비군 코드";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(28, 334);
+            this.textBox1.Location = new System.Drawing.Point(31, 398);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(484, 156);
+            this.textBox1.Size = new System.Drawing.Size(537, 180);
             this.textBox1.TabIndex = 76;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Lavender;
-            this.button1.Location = new System.Drawing.Point(313, 516);
+            this.button1.Location = new System.Drawing.Point(346, 602);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 39);
+            this.button1.Size = new System.Drawing.Size(108, 53);
             this.button1.TabIndex = 77;
             this.button1.Text = "저장";
             this.button1.UseVisualStyleBackColor = false;
@@ -204,35 +209,38 @@ namespace BedFactory.PopUp
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Lavender;
-            this.button2.Location = new System.Drawing.Point(416, 516);
+            this.button2.Location = new System.Drawing.Point(460, 602);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 39);
+            this.button2.Size = new System.Drawing.Size(108, 53);
             this.button2.TabIndex = 78;
             this.button2.Text = "취소";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(254, 221);
+            this.textBox3.Location = new System.Drawing.Point(282, 281);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(258, 26);
+            this.textBox3.Size = new System.Drawing.Size(286, 34);
             this.textBox3.TabIndex = 79;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(254, 28);
+            this.textBox5.Location = new System.Drawing.Point(282, 20);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(258, 26);
+            this.textBox5.Size = new System.Drawing.Size(286, 34);
             this.textBox5.TabIndex = 80;
             // 
             // frmFacilitycsReg
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(536, 568);
+            this.ClientSize = new System.Drawing.Size(596, 668);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.button2);
@@ -253,9 +261,10 @@ namespace BedFactory.PopUp
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmFacilitycsReg";
-            this.Text = "Facilitycs";
+            this.Text = "설비군등록";
             this.ResumeLayout(false);
             this.PerformLayout();
 

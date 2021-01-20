@@ -43,17 +43,18 @@ namespace BedFactory.BaseForms
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.btnSelect);
             this.panel1.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1282, 167);
+            this.panel1.Size = new System.Drawing.Size(1258, 154);
             this.panel1.TabIndex = 33;
             // 
             // btnSelect
             // 
+            this.btnSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSelect.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSelect.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSelect.Location = new System.Drawing.Point(1167, 109);
+            this.btnSelect.Location = new System.Drawing.Point(1143, 94);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(103, 46);
             this.btnSelect.TabIndex = 22;
@@ -64,26 +65,25 @@ namespace BedFactory.BaseForms
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.panel2.Location = new System.Drawing.Point(0, 216);
+            this.panel2.Location = new System.Drawing.Point(12, 216);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1282, 242);
+            this.panel2.Size = new System.Drawing.Size(1258, 242);
             this.panel2.TabIndex = 34;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.panel3.Location = new System.Drawing.Point(0, 511);
+            this.panel3.Location = new System.Drawing.Point(12, 511);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1282, 242);
+            this.panel3.Size = new System.Drawing.Size(1258, 230);
             this.panel3.TabIndex = 35;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(1, 196);
+            this.label4.Location = new System.Drawing.Point(12, 193);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 17);
             this.label4.TabIndex = 36;
@@ -91,10 +91,10 @@ namespace BedFactory.BaseForms
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.Lavender;
+            this.button4.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.Location = new System.Drawing.Point(1207, 188);
+            this.button4.Location = new System.Drawing.Point(1198, 186);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(72, 24);
             this.button4.TabIndex = 37;

@@ -39,23 +39,22 @@ namespace BedFactory.BaseForm
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.Lavender;
+            this.button4.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.Location = new System.Drawing.Point(1206, 274);
+            this.button4.Location = new System.Drawing.Point(1184, 170);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(72, 24);
             this.button4.TabIndex = 19;
-            this.button4.Text = "설정";
             this.button4.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(-1, 278);
+            this.label4.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(9, 176);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 17);
+            this.label4.Size = new System.Drawing.Size(96, 25);
             this.label4.TabIndex = 17;
             this.label4.Text = "ex)설비군";
             // 
@@ -63,21 +62,21 @@ namespace BedFactory.BaseForm
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.btnSelect);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1282, 229);
+            this.panel1.Size = new System.Drawing.Size(1258, 140);
             this.panel1.TabIndex = 20;
             // 
             // btnSelect
             // 
+            this.btnSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSelect.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSelect.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSelect.Location = new System.Drawing.Point(1167, 170);
+            this.btnSelect.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSelect.Location = new System.Drawing.Point(1101, 92);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(103, 46);
+            this.btnSelect.Size = new System.Drawing.Size(143, 33);
             this.btnSelect.TabIndex = 22;
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = false;
@@ -85,10 +84,9 @@ namespace BedFactory.BaseForm
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 302);
+            this.panel2.Location = new System.Drawing.Point(12, 200);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1282, 451);
+            this.panel2.Size = new System.Drawing.Size(1258, 541);
             this.panel2.TabIndex = 21;
             // 
             // BaseForm1

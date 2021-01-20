@@ -140,23 +140,41 @@
     <Compile Include="Controls\DatagridviewControl.Designer.cs">
       <DependentUpon>DatagridviewControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="FactoryManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FactoryManagement.designer.cs">
-      <DependentUpon>FactoryManagement.cs</DependentUpon>
-    </Compile>
     <Compile Include="FaultyStatusLargeCategory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FaultyStatusLargeCategory.designer.cs">
       <DependentUpon>FaultyStatusLargeCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBOR.Designer.cs">
+      <DependentUpon>frmBOR.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBusinessCostManagement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmBusinessCostManagement.Designer.cs">
       <DependentUpon>frmBusinessCostManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCreateWorkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCreateWorkOrder.Designer.cs">
+      <DependentUpon>frmCreateWorkOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEnterPriseManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnterPriseManagement.Designer.cs">
+      <DependentUpon>frmEnterPriseManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFacilitiesManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacilitiesManagement.Designer.cs">
+      <DependentUpon>frmFacilitiesManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMaterialLedgerRawMaterial.cs">
       <SubType>Form</SubType>
@@ -498,11 +516,20 @@
     <EmbeddedResource Include="Controls\OnlyNumberTextBox.resx">
       <DependentUpon>OnlyNumberTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FactoryManagement.resx">
-      <DependentUpon>FactoryManagement.cs</DependentUpon>
+    <EmbeddedResource Include="frmBOR.resx">
+      <DependentUpon>frmBOR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBusinessCostManagement.resx">
       <DependentUpon>frmBusinessCostManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCreateWorkOrder.resx">
+      <DependentUpon>frmCreateWorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEnterPriseManagement.resx">
+      <DependentUpon>frmEnterPriseManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFacilitiesManagement.resx">
+      <DependentUpon>frmFacilitiesManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMaterialLedgerRawMaterial.resx">
       <DependentUpon>frmMaterialLedgerRawMaterial.cs</DependentUpon>
