@@ -52,7 +52,7 @@ namespace BedFactory
             // 
             this.button6.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.Location = new System.Drawing.Point(734, 99);
+            this.button6.Location = new System.Drawing.Point(734, 100);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(48, 23);
             this.button6.TabIndex = 17;
@@ -63,7 +63,7 @@ namespace BedFactory
             // 
             this.button5.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Location = new System.Drawing.Point(788, 99);
+            this.button5.Location = new System.Drawing.Point(788, 100);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(48, 23);
             this.button5.TabIndex = 16;
@@ -74,7 +74,7 @@ namespace BedFactory
             // 
             this.button4.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Location = new System.Drawing.Point(842, 99);
+            this.button4.Location = new System.Drawing.Point(842, 100);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(48, 23);
             this.button4.TabIndex = 15;
@@ -85,7 +85,7 @@ namespace BedFactory
             // 
             this.button3.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(896, 99);
+            this.button3.Location = new System.Drawing.Point(896, 100);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(48, 23);
             this.button3.TabIndex = 14;
@@ -96,7 +96,7 @@ namespace BedFactory
             // 
             this.button2.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(950, 99);
+            this.button2.Location = new System.Drawing.Point(950, 100);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(104, 23);
             this.button2.TabIndex = 13;
@@ -107,7 +107,7 @@ namespace BedFactory
             // 
             this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(1060, 99);
+            this.button1.Location = new System.Drawing.Point(1060, 100);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 12;
@@ -117,7 +117,7 @@ namespace BedFactory
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 105);
+            this.label4.Location = new System.Drawing.Point(9, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 17);
             this.label4.TabIndex = 11;
@@ -126,7 +126,7 @@ namespace BedFactory
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(12, 128);
+            this.panel2.Location = new System.Drawing.Point(12, 129);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1123, 463);
             this.panel2.TabIndex = 10;

@@ -236,6 +236,12 @@
     <Compile Include="frmProductionPlanning.Designer.cs">
       <DependentUpon>frmProductionPlanning.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pop-up\frmDuedateChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pop-up\frmDuedateChange.Designer.cs">
+      <DependentUpon>frmDuedateChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pop-up\frmSalesOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -367,6 +373,12 @@
     </Compile>
     <Compile Include="frmUserGroupManagement.Designer.cs">
       <DependentUpon>frmUserGroupManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pop-up\frmStockBackgroundCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pop-up\frmStockBackgroundCheck.Designer.cs">
+      <DependentUpon>frmStockBackgroundCheck.cs</DependentUpon>
     </Compile>
     <Compile Include="Pop-up\frmUserRegister.cs">
       <SubType>Form</SubType>
@@ -561,6 +573,9 @@
     <EmbeddedResource Include="frmProductionPlanning.resx">
       <DependentUpon>frmProductionPlanning.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pop-up\frmDuedateChange.resx">
+      <DependentUpon>frmDuedateChange.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmSalesOrder.resx">
       <DependentUpon>frmSalesOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -626,6 +641,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUserGroupManagement.resx">
       <DependentUpon>frmUserGroupManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pop-up\frmStockBackgroundCheck.resx">
+      <DependentUpon>frmStockBackgroundCheck.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmUserRegister.resx">
       <DependentUpon>frmUserRegister.cs</DependentUpon>
