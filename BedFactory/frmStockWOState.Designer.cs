@@ -33,6 +33,9 @@ namespace BedFactory
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
@@ -42,13 +45,8 @@ namespace BedFactory
             this.label12 = new System.Windows.Forms.Label();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +54,7 @@ namespace BedFactory
             // 
             this.button3.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(1228, 183);
+            this.button3.Location = new System.Drawing.Point(1228, 147);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(48, 23);
             this.button3.TabIndex = 34;
@@ -67,7 +65,7 @@ namespace BedFactory
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(10, 189);
+            this.label4.Location = new System.Drawing.Point(10, 153);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 20);
             this.label4.TabIndex = 33;
@@ -76,15 +74,14 @@ namespace BedFactory
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(14, 212);
+            this.panel2.Location = new System.Drawing.Point(14, 176);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1262, 462);
+            this.panel2.Size = new System.Drawing.Size(1262, 499);
             this.panel2.TabIndex = 32;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.label3);
@@ -97,14 +94,37 @@ namespace BedFactory
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.comboBox6);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.btnSelect);
             this.panel1.Location = new System.Drawing.Point(14, 12);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1262, 153);
+            this.panel1.Size = new System.Drawing.Size(1262, 111);
             this.panel1.TabIndex = 31;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(133, 63);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(216, 25);
+            this.comboBox1.TabIndex = 64;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(870, 22);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(216, 25);
+            this.textBox2.TabIndex = 63;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 17);
+            this.label3.TabIndex = 62;
+            this.label3.Text = "입출고일";
             // 
             // comboBox5
             // 
@@ -182,15 +202,6 @@ namespace BedFactory
             this.label8.TabIndex = 38;
             this.label8.Text = "카테고리";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 107);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 17);
-            this.label6.TabIndex = 31;
-            this.label6.Text = "관리등급";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -205,44 +216,12 @@ namespace BedFactory
             this.btnSelect.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSelect.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSelect.Location = new System.Drawing.Point(1127, 94);
+            this.btnSelect.Location = new System.Drawing.Point(1128, 53);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(114, 35);
             this.btnSelect.TabIndex = 23;
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 17);
-            this.label3.TabIndex = 62;
-            this.label3.Text = "입출고일";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(870, 22);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(216, 25);
-            this.textBox2.TabIndex = 63;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(133, 63);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(216, 25);
-            this.comboBox1.TabIndex = 64;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(133, 104);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(216, 25);
-            this.comboBox2.TabIndex = 65;
             // 
             // frmStockWOState
             // 
@@ -271,7 +250,6 @@ namespace BedFactory
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
@@ -284,7 +262,6 @@ namespace BedFactory
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         protected System.Windows.Forms.Button btnSelect;
     }
