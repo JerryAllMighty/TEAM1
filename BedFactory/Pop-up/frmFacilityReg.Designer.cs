@@ -47,7 +47,6 @@ namespace BedFactory.PopUp
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -70,6 +69,7 @@ namespace BedFactory.PopUp
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label18
@@ -102,6 +102,7 @@ namespace BedFactory.PopUp
             // label21
             // 
             this.label21.AutoSize = true;
+            this.label21.ForeColor = System.Drawing.Color.Red;
             this.label21.Location = new System.Drawing.Point(26, 168);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(17, 23);
@@ -111,6 +112,7 @@ namespace BedFactory.PopUp
             // label22
             // 
             this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.Color.Red;
             this.label22.Location = new System.Drawing.Point(26, 103);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(17, 23);
@@ -120,6 +122,7 @@ namespace BedFactory.PopUp
             // label23
             // 
             this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.Color.Red;
             this.label23.Location = new System.Drawing.Point(26, 37);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(17, 23);
@@ -174,6 +177,7 @@ namespace BedFactory.PopUp
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
             this.label4.Location = new System.Drawing.Point(49, 168);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 23);
@@ -183,6 +187,7 @@ namespace BedFactory.PopUp
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
             this.label2.Location = new System.Drawing.Point(49, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 23);
@@ -192,6 +197,7 @@ namespace BedFactory.PopUp
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(49, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 23);
@@ -219,6 +225,7 @@ namespace BedFactory.PopUp
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Red;
             this.label9.Location = new System.Drawing.Point(362, 103);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(17, 23);
@@ -228,29 +235,21 @@ namespace BedFactory.PopUp
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Red;
             this.label10.Location = new System.Drawing.Point(362, 37);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(17, 23);
             this.label10.TabIndex = 81;
             this.label10.Text = "*";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(492, 229);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 34);
-            this.textBox1.TabIndex = 80;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(383, 233);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 23);
+            this.label11.Size = new System.Drawing.Size(78, 23);
             this.label11.TabIndex = 78;
-            this.label11.Text = "순서";
+            this.label11.Text = "수정시간";
             // 
             // label12
             // 
@@ -259,25 +258,27 @@ namespace BedFactory.PopUp
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(78, 23);
             this.label12.TabIndex = 76;
-            this.label12.Text = "시설구분";
+            this.label12.Text = "MES설비";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.Red;
             this.label13.Location = new System.Drawing.Point(383, 103);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(78, 23);
             this.label13.TabIndex = 75;
-            this.label13.Text = "시설코드";
+            this.label13.Text = "양품창고";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.Red;
             this.label14.Location = new System.Drawing.Point(383, 37);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(61, 23);
+            this.label14.Size = new System.Drawing.Size(78, 23);
             this.label14.TabIndex = 73;
-            this.label14.Text = "사설군";
+            this.label14.Text = "설비코드";
             // 
             // label15
             // 
@@ -300,6 +301,7 @@ namespace BedFactory.PopUp
             // label17
             // 
             this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.Color.Red;
             this.label17.Location = new System.Drawing.Point(693, 42);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(17, 23);
@@ -322,7 +324,7 @@ namespace BedFactory.PopUp
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(78, 23);
             this.label24.TabIndex = 88;
-            this.label24.Text = "시설구분";
+            this.label24.Text = "외주여부";
             // 
             // label25
             // 
@@ -331,11 +333,12 @@ namespace BedFactory.PopUp
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(78, 23);
             this.label25.TabIndex = 87;
-            this.label25.Text = "시설코드";
+            this.label25.Text = "불량창고";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
+            this.label26.ForeColor = System.Drawing.Color.Red;
             this.label26.Location = new System.Drawing.Point(714, 42);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(61, 23);
@@ -449,12 +452,21 @@ namespace BedFactory.PopUp
             this.textBox8.Size = new System.Drawing.Size(161, 34);
             this.textBox8.TabIndex = 104;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(492, 229);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(161, 30);
+            this.dateTimePicker1.TabIndex = 105;
+            // 
             // frmFacilitiesReg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1008, 803);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox3);
@@ -477,7 +489,6 @@ namespace BedFactory.PopUp
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
@@ -526,7 +537,6 @@ namespace BedFactory.PopUp
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
@@ -549,5 +559,6 @@ namespace BedFactory.PopUp
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

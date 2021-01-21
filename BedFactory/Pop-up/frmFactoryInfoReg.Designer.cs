@@ -81,6 +81,7 @@ namespace BedFactory.PopUp
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(50, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 23);
@@ -99,6 +100,7 @@ namespace BedFactory.PopUp
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
             this.label2.Location = new System.Drawing.Point(50, 104);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 23);
@@ -126,6 +128,7 @@ namespace BedFactory.PopUp
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
             this.label4.Location = new System.Drawing.Point(50, 169);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 23);
@@ -207,6 +210,7 @@ namespace BedFactory.PopUp
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Red;
             this.label9.Location = new System.Drawing.Point(451, 429);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 23);
@@ -279,6 +283,7 @@ namespace BedFactory.PopUp
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.Red;
             this.label14.Location = new System.Drawing.Point(451, 104);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(61, 23);
@@ -297,6 +302,7 @@ namespace BedFactory.PopUp
             // label15
             // 
             this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.Color.Red;
             this.label15.Location = new System.Drawing.Point(451, 38);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(78, 23);
@@ -396,6 +402,7 @@ namespace BedFactory.PopUp
             // label21
             // 
             this.label21.AutoSize = true;
+            this.label21.ForeColor = System.Drawing.Color.Red;
             this.label21.Location = new System.Drawing.Point(32, 169);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(17, 23);
@@ -405,6 +412,7 @@ namespace BedFactory.PopUp
             // label22
             // 
             this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.Color.Red;
             this.label22.Location = new System.Drawing.Point(32, 104);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(17, 23);
@@ -414,6 +422,7 @@ namespace BedFactory.PopUp
             // label23
             // 
             this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.Color.Red;
             this.label23.Location = new System.Drawing.Point(32, 38);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(17, 23);
@@ -423,6 +432,7 @@ namespace BedFactory.PopUp
             // label25
             // 
             this.label25.AutoSize = true;
+            this.label25.ForeColor = System.Drawing.Color.Red;
             this.label25.Location = new System.Drawing.Point(433, 429);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(17, 23);
@@ -468,6 +478,7 @@ namespace BedFactory.PopUp
             // label30
             // 
             this.label30.AutoSize = true;
+            this.label30.ForeColor = System.Drawing.Color.Red;
             this.label30.Location = new System.Drawing.Point(433, 104);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(17, 23);
@@ -477,6 +488,7 @@ namespace BedFactory.PopUp
             // label31
             // 
             this.label31.AutoSize = true;
+            this.label31.ForeColor = System.Drawing.Color.Red;
             this.label31.Location = new System.Drawing.Point(433, 38);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(17, 23);
