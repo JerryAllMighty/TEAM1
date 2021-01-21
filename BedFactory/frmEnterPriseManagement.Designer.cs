@@ -50,13 +50,12 @@ namespace BedFactory
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(807, 163);
-            this.button4.Size = new System.Drawing.Size(72, 26);
+            this.button4.Location = new System.Drawing.Point(807, 160);
+            this.button4.Size = new System.Drawing.Size(72, 29);
             this.button4.Text = "등록";
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label4.Location = new System.Drawing.Point(14, 169);
             this.label4.Size = new System.Drawing.Size(126, 25);
@@ -81,7 +80,6 @@ namespace BedFactory
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label14);
-            this.panel1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.panel1.Size = new System.Drawing.Size(1258, 122);
             this.panel1.Controls.SetChildIndex(this.label14, 0);
             this.panel1.Controls.SetChildIndex(this.label10, 0);
@@ -107,9 +105,9 @@ namespace BedFactory
             this.button2.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.Location = new System.Drawing.Point(1039, 163);
+            this.button2.Location = new System.Drawing.Point(1039, 160);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 26);
+            this.button2.Size = new System.Drawing.Size(122, 29);
             this.button2.TabIndex = 23;
             this.button2.Text = "양식 다운로드";
             this.button2.UseVisualStyleBackColor = false;
@@ -119,9 +117,9 @@ namespace BedFactory
             this.button3.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.Location = new System.Drawing.Point(962, 163);
+            this.button3.Location = new System.Drawing.Point(962, 160);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(71, 26);
+            this.button3.Size = new System.Drawing.Size(71, 29);
             this.button3.TabIndex = 24;
             this.button3.Text = "액셀";
             this.button3.UseVisualStyleBackColor = false;
@@ -131,9 +129,9 @@ namespace BedFactory
             this.button5.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button5.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.Location = new System.Drawing.Point(885, 163);
+            this.button5.Location = new System.Drawing.Point(885, 160);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(71, 26);
+            this.button5.Size = new System.Drawing.Size(71, 29);
             this.button5.TabIndex = 25;
             this.button5.Text = "복사";
             this.button5.UseVisualStyleBackColor = false;
@@ -143,9 +141,9 @@ namespace BedFactory
             this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(1167, 163);
+            this.button1.Location = new System.Drawing.Point(1167, 160);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 26);
+            this.button1.Size = new System.Drawing.Size(95, 29);
             this.button1.TabIndex = 27;
             this.button1.Text = "Excel등록";
             this.button1.UseVisualStyleBackColor = false;
