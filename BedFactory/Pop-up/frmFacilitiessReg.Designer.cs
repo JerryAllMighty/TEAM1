@@ -81,6 +81,7 @@ namespace BedFactory.PopUp
             // label21
             // 
             this.label21.AutoSize = true;
+            this.label21.ForeColor = System.Drawing.Color.Red;
             this.label21.Location = new System.Drawing.Point(32, 155);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(17, 23);
@@ -90,6 +91,7 @@ namespace BedFactory.PopUp
             // label22
             // 
             this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.Color.Red;
             this.label22.Location = new System.Drawing.Point(32, 90);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(17, 23);
@@ -99,6 +101,7 @@ namespace BedFactory.PopUp
             // label23
             // 
             this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.Color.Red;
             this.label23.Location = new System.Drawing.Point(32, 25);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(17, 23);
@@ -162,6 +165,7 @@ namespace BedFactory.PopUp
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
             this.label4.Location = new System.Drawing.Point(52, 155);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 23);
@@ -171,6 +175,7 @@ namespace BedFactory.PopUp
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
             this.label2.Location = new System.Drawing.Point(52, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 23);
@@ -180,6 +185,7 @@ namespace BedFactory.PopUp
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(52, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 23);
