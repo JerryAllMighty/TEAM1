@@ -35,11 +35,9 @@ namespace BedFactory
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -97,11 +95,9 @@ namespace BedFactory
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.dateTimePicker3);
             this.panel1.Controls.Add(this.dateTimePicker4);
             this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.comboBox3);
@@ -121,14 +117,6 @@ namespace BedFactory
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(216, 25);
             this.comboBox2.TabIndex = 56;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(506, 63);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(216, 25);
-            this.comboBox1.TabIndex = 55;
             // 
             // dateTimePicker3
             // 
@@ -153,15 +141,6 @@ namespace BedFactory
             this.textBox2.Size = new System.Drawing.Size(216, 25);
             this.textBox2.TabIndex = 49;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(397, 66);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 17);
-            this.label11.TabIndex = 45;
-            this.label11.Text = "납품업체";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -169,16 +148,16 @@ namespace BedFactory
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(34, 17);
             this.label12.TabIndex = 44;
-            this.label12.Text = "품목";
+            this.label12.Text = "자재";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(397, 25);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(34, 17);
+            this.label9.Size = new System.Drawing.Size(47, 17);
             this.label9.TabIndex = 36;
-            this.label9.Text = "업체";
+            this.label9.Text = "거래처";
             // 
             // comboBox3
             // 
@@ -292,11 +271,9 @@ namespace BedFactory
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox3;

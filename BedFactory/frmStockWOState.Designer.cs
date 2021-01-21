@@ -38,13 +38,9 @@ namespace BedFactory
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -54,7 +50,7 @@ namespace BedFactory
             // 
             this.button3.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(1228, 147);
+            this.button3.Location = new System.Drawing.Point(1228, 145);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(48, 23);
             this.button3.TabIndex = 34;
@@ -65,7 +61,7 @@ namespace BedFactory
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(10, 153);
+            this.label4.Location = new System.Drawing.Point(10, 151);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 20);
             this.label4.TabIndex = 33;
@@ -74,9 +70,9 @@ namespace BedFactory
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(14, 176);
+            this.panel2.Location = new System.Drawing.Point(14, 174);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1262, 499);
+            this.panel2.Size = new System.Drawing.Size(1262, 501);
             this.panel2.TabIndex = 32;
             // 
             // panel1
@@ -87,13 +83,9 @@ namespace BedFactory
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.comboBox5);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.comboBox7);
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.comboBox6);
-            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.btnSelect);
             this.panel1.Location = new System.Drawing.Point(14, 12);
@@ -143,14 +135,6 @@ namespace BedFactory
             this.label1.TabIndex = 56;
             this.label1.Text = "창고";
             // 
-            // comboBox7
-            // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(870, 63);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(216, 25);
-            this.comboBox7.TabIndex = 55;
-            // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -167,15 +151,6 @@ namespace BedFactory
             this.dateTimePicker1.Size = new System.Drawing.Size(105, 25);
             this.dateTimePicker1.TabIndex = 50;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(761, 66);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 17);
-            this.label11.TabIndex = 45;
-            this.label11.Text = "품목유형";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -183,24 +158,7 @@ namespace BedFactory
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(34, 17);
             this.label12.TabIndex = 44;
-            this.label12.Text = "품목";
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(506, 63);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(216, 25);
-            this.comboBox6.TabIndex = 42;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(397, 66);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 17);
-            this.label8.TabIndex = 38;
-            this.label8.Text = "카테고리";
+            this.label12.Text = "자재";
             // 
             // label5
             // 
@@ -213,10 +171,11 @@ namespace BedFactory
             // 
             // btnSelect
             // 
+            this.btnSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSelect.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSelect.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSelect.Location = new System.Drawing.Point(1128, 53);
+            this.btnSelect.Location = new System.Drawing.Point(1127, 52);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(114, 35);
             this.btnSelect.TabIndex = 23;
@@ -255,13 +214,9 @@ namespace BedFactory
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
         protected System.Windows.Forms.Button btnSelect;
     }

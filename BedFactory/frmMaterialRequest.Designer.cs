@@ -37,6 +37,7 @@ namespace BedFactory
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -46,7 +47,6 @@ namespace BedFactory
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -139,6 +139,13 @@ namespace BedFactory
             this.panel1.Size = new System.Drawing.Size(1262, 111);
             this.panel1.TabIndex = 53;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(506, 22);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(216, 25);
+            this.textBox1.TabIndex = 57;
+            // 
             // dateTimePicker3
             // 
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -167,9 +174,9 @@ namespace BedFactory
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(761, 25);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 17);
+            this.label12.Size = new System.Drawing.Size(86, 17);
             this.label12.TabIndex = 44;
-            this.label12.Text = "작업지시ID";
+            this.label12.Text = "작업지시번호";
             // 
             // label9
             // 
@@ -178,7 +185,7 @@ namespace BedFactory
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(34, 17);
             this.label9.TabIndex = 36;
-            this.label9.Text = "품목";
+            this.label9.Text = "자재";
             // 
             // comboBox3
             // 
@@ -193,9 +200,9 @@ namespace BedFactory
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(24, 66);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 17);
+            this.label5.Size = new System.Drawing.Size(47, 17);
             this.label5.TabIndex = 30;
-            this.label5.Text = "설비";
+            this.label5.Text = "작업장";
             // 
             // label1
             // 
@@ -217,13 +224,6 @@ namespace BedFactory
             this.btnSelect.TabIndex = 23;
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(506, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(216, 25);
-            this.textBox1.TabIndex = 57;
             // 
             // button2
             // 
