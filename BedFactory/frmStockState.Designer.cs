@@ -179,9 +179,9 @@ namespace BedFactory
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.Location = new System.Drawing.Point(10, 151);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 20);
+            this.label4.Size = new System.Drawing.Size(99, 20);
             this.label4.TabIndex = 55;
-            this.label4.Text = "입고대기리스트";
+            this.label4.Text = "자재재고현황";
             // 
             // frmStockState
             // 
