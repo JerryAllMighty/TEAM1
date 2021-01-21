@@ -13,7 +13,6 @@ namespace BedFactory
     public partial class LabelComboText : UserControl
     {
         public enum Kind { combo, text };
-
         public Kind BoxKind { get; set; }
         public bool MultiLine { get; set; }
         public int MultiLineCnt { get; set; }
@@ -21,6 +20,9 @@ namespace BedFactory
         public string Header { get; set; }
         public object ComboData { get; set; }
         public ComboBoxStyle DropDownStyle { get; set; }
+
+        public ComboBox cbo;
+        public TextBox text;
 
         public LabelComboText()
         {
@@ -33,7 +35,7 @@ namespace BedFactory
 
             if(BoxKind == Kind.combo)
             {
-                ComboBox cbo = new ComboBox();
+                cbo = new ComboBox();
                 cbo.Location = new Point(label1.Location.X + label1.Size.Width + 30, 6);
                 cbo.Size = new Size(this.Size.Width - cbo.Location.X - 5, 25);
                 cbo.Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left;
@@ -43,7 +45,7 @@ namespace BedFactory
             }
             else if(BoxKind == Kind.text)
             {
-                TextBox text = new TextBox();
+                text = new TextBox();
                 text.Location = new Point(label1.Location.X + label1.Size.Width + 30, 6);
                 text.Multiline = MultiLine;
 

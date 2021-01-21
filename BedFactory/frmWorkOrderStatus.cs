@@ -8,17 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BedFactory.Controls
+namespace BedFactory
 {
-    public partial class MaterialsCheckList : UserControl
+    public partial class frmWorkOrderStatus : Form
     {
-        public LabelComboText cboText;
-        public TextBox text;
-        public MaterialsCheckList()
+        public frmWorkOrderStatus()
         {
             InitializeComponent();
-            cboText = labelComboText1;
-            text = textBox1;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
