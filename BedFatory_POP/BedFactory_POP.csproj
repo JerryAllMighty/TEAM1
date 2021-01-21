@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmDrilling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDrilling.Designer.cs">
+      <DependentUpon>frmDrilling.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmError.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmDrilling.resx">
+      <DependentUpon>frmDrilling.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmError.resx">
       <DependentUpon>frmError.cs</DependentUpon>
     </EmbeddedResource>
