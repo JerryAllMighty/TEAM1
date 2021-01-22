@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmMaterialRequirementPlanning : Form
+    public partial class frmProductionPlan : Form
     {
-        public frmMaterialRequirementPlanning()
+        public frmProductionPlan()
         {
             InitializeComponent();
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

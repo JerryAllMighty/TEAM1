@@ -31,10 +31,11 @@ namespace BedFactory
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.datagridviewControl1 = new BedFactory.DatagridviewControl();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -49,24 +50,33 @@ namespace BedFactory
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.datagridviewControl1);
             this.panel1.Location = new System.Drawing.Point(12, 129);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1258, 363);
             this.panel1.TabIndex = 1;
             // 
+            // datagridviewControl1
+            // 
+            this.datagridviewControl1.Location = new System.Drawing.Point(287, 149);
+            this.datagridviewControl1.Name = "datagridviewControl1";
+            this.datagridviewControl1.Size = new System.Drawing.Size(75, 23);
+            this.datagridviewControl1.TabIndex = 0;
+            this.datagridviewControl1.Text = "datagridviewControl1";
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(813, 82);
+            this.button1.Location = new System.Drawing.Point(894, 83);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 23);
+            this.button1.Size = new System.Drawing.Size(147, 23);
             this.button1.TabIndex = 2;
-            this.button1.Text = "영업마스터 생성";
+            this.button1.Text = "영업마스터 업로드";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(953, 82);
+            this.button2.Location = new System.Drawing.Point(1047, 83);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(123, 23);
             this.button2.TabIndex = 3;
@@ -75,21 +85,12 @@ namespace BedFactory
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1082, 82);
+            this.button3.Location = new System.Drawing.Point(1176, 83);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(94, 23);
             this.button3.TabIndex = 4;
-            this.button3.Text = "Excel 등록";
+            this.button3.Text = "저장";
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(1182, 82);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "설정";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // frmSalesMasterUpload
             // 
@@ -97,7 +98,6 @@ namespace BedFactory
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1282, 753);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -106,6 +106,7 @@ namespace BedFactory
             this.Name = "frmSalesMasterUpload";
             this.Text = "영업마스터 업로드";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -117,6 +118,6 @@ namespace BedFactory
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private DatagridviewControl datagridviewControl1;
     }
 }
