@@ -128,6 +128,12 @@
     <Compile Include="frmBusinessCostManagement.Designer.cs">
       <DependentUpon>frmBusinessCostManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCompanySales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompanySales.Designer.cs">
+      <DependentUpon>frmCompanySales.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCreateWorkOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,18 @@
     </Compile>
     <Compile Include="frmEnterPriseManagement.Designer.cs">
       <DependentUpon>frmEnterPriseManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmErrorChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmErrorChart.Designer.cs">
+      <DependentUpon>frmErrorChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmErrorList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmErrorList.Designer.cs">
+      <DependentUpon>frmErrorList.cs</DependentUpon>
     </Compile>
     <Compile Include="frmFacilitiesManagement.cs">
       <SubType>Form</SubType>
@@ -188,11 +206,29 @@
     <Compile Include="frmMaterialRequest.Designer.cs">
       <DependentUpon>frmMaterialRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmOrderStockList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderStockList.Designer.cs">
+      <DependentUpon>frmOrderStockList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProductShipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductShipment.Designer.cs">
+      <DependentUpon>frmProductShipment.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRegistrationOfWork.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmRegistrationOfWork.Designer.cs">
       <DependentUpon>frmRegistrationOfWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSales.Designer.cs">
+      <DependentUpon>frmSales.cs</DependentUpon>
     </Compile>
     <Compile Include="frmStockState.cs">
       <SubType>Form</SubType>
@@ -241,6 +277,18 @@
     </Compile>
     <Compile Include="Pop-up\frmDuedateChange.Designer.cs">
       <DependentUpon>frmDuedateChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pop-up\frmErrorInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pop-up\frmErrorInfo.Designer.cs">
+      <DependentUpon>frmErrorInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pop-up\frmNewMaterials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pop-up\frmNewMaterials.Designer.cs">
+      <DependentUpon>frmNewMaterials.cs</DependentUpon>
     </Compile>
     <Compile Include="Pop-up\frmRegistrationWorkDeadLine.cs">
       <SubType>Form</SubType>
@@ -428,6 +476,18 @@
     <Compile Include="Pop-up\frmFactoryInfoReg.Designer.cs">
       <DependentUpon>frmFactoryInfoReg.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProcessConditionSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessConditionSet.designer.cs">
+      <DependentUpon>ProcessConditionSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessControl.designer.cs">
+      <DependentUpon>ProcessControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controls\TabCustomControl1.cs">
@@ -471,11 +531,20 @@
     <EmbeddedResource Include="frmBusinessCostManagement.resx">
       <DependentUpon>frmBusinessCostManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCompanySales.resx">
+      <DependentUpon>frmCompanySales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCreateWorkOrder.resx">
       <DependentUpon>frmCreateWorkOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEnterPriseManagement.resx">
       <DependentUpon>frmEnterPriseManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmErrorChart.resx">
+      <DependentUpon>frmErrorChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmErrorList.resx">
+      <DependentUpon>frmErrorList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFacilitiesManagement.resx">
       <DependentUpon>frmFacilitiesManagement.cs</DependentUpon>
@@ -501,8 +570,17 @@
     <EmbeddedResource Include="frmMaterialRequest.resx">
       <DependentUpon>frmMaterialRequest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderStockList.resx">
+      <DependentUpon>frmOrderStockList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductShipment.resx">
+      <DependentUpon>frmProductShipment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRegistrationOfWork.resx">
       <DependentUpon>frmRegistrationOfWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSales.resx">
+      <DependentUpon>frmSales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStockState.resx">
       <DependentUpon>frmStockState.cs</DependentUpon>
@@ -527,6 +605,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmDuedateChange.resx">
       <DependentUpon>frmDuedateChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pop-up\frmErrorInfo.resx">
+      <DependentUpon>frmErrorInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pop-up\frmNewMaterials.resx">
+      <DependentUpon>frmNewMaterials.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmRegistrationWorkDeadLine.resx">
       <DependentUpon>frmRegistrationWorkDeadLine.cs</DependentUpon>
