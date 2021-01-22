@@ -224,6 +224,12 @@
     <Compile Include="frmMaterialRequest.Designer.cs">
       <DependentUpon>frmMaterialRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pop-up\frmProductionPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pop-up\frmProductionPlan.Designer.cs">
+      <DependentUpon>frmProductionPlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRegistrationOfWork.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -590,6 +596,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMaterialRequest.resx">
       <DependentUpon>frmMaterialRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pop-up\frmProductionPlan.resx">
+      <DependentUpon>frmProductionPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistrationOfWork.resx">
       <DependentUpon>frmRegistrationOfWork.cs</DependentUpon>
