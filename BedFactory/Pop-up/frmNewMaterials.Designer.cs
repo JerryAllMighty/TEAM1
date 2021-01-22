@@ -29,8 +29,14 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("원자재");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("반자재");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("완제품");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("메트릭스");
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.materialsCheckList4 = new BedFactory.Controls.MaterialsCheckList();
             this.materialsCheckList3 = new BedFactory.Controls.MaterialsCheckList();
@@ -51,8 +57,6 @@ namespace BedFactory
             this.label1 = new System.Windows.Forms.Label();
             this.labelComboText2 = new BedFactory.LabelComboText();
             this.labelComboText1 = new BedFactory.LabelComboText();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -99,8 +103,41 @@ namespace BedFactory
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
+            treeNode1.Name = "노드0";
+            treeNode1.Text = "원자재";
+            treeNode2.Name = "노드1";
+            treeNode2.Text = "반자재";
+            treeNode3.Name = "노드2";
+            treeNode3.Text = "완제품";
+            treeNode4.Name = "노드3";
+            treeNode4.Text = "메트릭스";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4});
             this.treeView1.Size = new System.Drawing.Size(199, 459);
             this.treeView1.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Location = new System.Drawing.Point(50, 19);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(112, 21);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "자재정보 설정";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(465, 19);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 21);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "검사항목 설정";
             // 
             // panel1
             // 
@@ -342,26 +379,6 @@ namespace BedFactory
             this.labelComboText1.Name = "labelComboText1";
             this.labelComboText1.Size = new System.Drawing.Size(413, 38);
             this.labelComboText1.TabIndex = 0;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(465, 19);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 21);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "검사항목 설정";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(50, 19);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 21);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "자재정보 설정";
             // 
             // frmNewMaterials
             // 
