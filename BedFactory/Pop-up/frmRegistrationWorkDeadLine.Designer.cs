@@ -74,7 +74,7 @@ namespace BedFactory.Pop_up
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.panel1.Location = new System.Drawing.Point(10, 60);
+            this.panel1.Location = new System.Drawing.Point(10, 49);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1262, 152);
             this.panel1.TabIndex = 11;
@@ -84,7 +84,7 @@ namespace BedFactory.Pop_up
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(12, 32);
+            this.label2.Location = new System.Drawing.Point(12, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 25);
             this.label2.TabIndex = 16;

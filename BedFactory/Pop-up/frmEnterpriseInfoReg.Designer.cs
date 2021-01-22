@@ -83,7 +83,6 @@ namespace BedFactory.PopUp
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
@@ -91,11 +90,13 @@ namespace BedFactory.PopUp
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.ForeColor = System.Drawing.Color.Red;
             this.label18.Location = new System.Drawing.Point(20, 349);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(17, 23);
@@ -141,6 +142,7 @@ namespace BedFactory.PopUp
             // label23
             // 
             this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.Color.Red;
             this.label23.Location = new System.Drawing.Point(20, 23);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(17, 23);
@@ -168,6 +170,7 @@ namespace BedFactory.PopUp
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Red;
             this.label7.Location = new System.Drawing.Point(44, 349);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 23);
@@ -222,6 +225,7 @@ namespace BedFactory.PopUp
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(44, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 23);
@@ -231,6 +235,7 @@ namespace BedFactory.PopUp
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.Location = new System.Drawing.Point(359, 349);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(17, 23);
@@ -276,6 +281,7 @@ namespace BedFactory.PopUp
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.Red;
             this.label12.Location = new System.Drawing.Point(359, 23);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(17, 23);
@@ -303,6 +309,7 @@ namespace BedFactory.PopUp
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.Red;
             this.label13.Location = new System.Drawing.Point(383, 349);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(78, 23);
@@ -348,6 +355,7 @@ namespace BedFactory.PopUp
             // label24
             // 
             this.label24.AutoSize = true;
+            this.label24.ForeColor = System.Drawing.Color.Red;
             this.label24.Location = new System.Drawing.Point(383, 23);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(61, 23);
@@ -366,6 +374,7 @@ namespace BedFactory.PopUp
             // label26
             // 
             this.label26.AutoSize = true;
+            this.label26.ForeColor = System.Drawing.Color.Red;
             this.label26.Location = new System.Drawing.Point(738, 284);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(17, 23);
@@ -402,6 +411,7 @@ namespace BedFactory.PopUp
             // label30
             // 
             this.label30.AutoSize = true;
+            this.label30.ForeColor = System.Drawing.Color.Red;
             this.label30.Location = new System.Drawing.Point(738, 23);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(17, 23);
@@ -438,6 +448,7 @@ namespace BedFactory.PopUp
             // label32
             // 
             this.label32.AutoSize = true;
+            this.label32.ForeColor = System.Drawing.Color.Red;
             this.label32.Location = new System.Drawing.Point(762, 284);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(112, 23);
@@ -483,6 +494,7 @@ namespace BedFactory.PopUp
             // label36
             // 
             this.label36.AutoSize = true;
+            this.label36.ForeColor = System.Drawing.Color.Red;
             this.label36.Location = new System.Drawing.Point(762, 23);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(78, 23);
@@ -585,15 +597,6 @@ namespace BedFactory.PopUp
             this.textBox4.Size = new System.Drawing.Size(164, 34);
             this.textBox4.TabIndex = 120;
             // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(147, 410);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(164, 34);
-            this.textBox10.TabIndex = 121;
-            // 
             // textBox11
             // 
             this.textBox11.Location = new System.Drawing.Point(528, 279);
@@ -641,7 +644,7 @@ namespace BedFactory.PopUp
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(528, 208);
+            this.dateTimePicker1.Location = new System.Drawing.Point(528, 216);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(164, 30);
@@ -649,11 +652,19 @@ namespace BedFactory.PopUp
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(896, 208);
+            this.dateTimePicker2.Location = new System.Drawing.Point(896, 215);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(164, 30);
             this.dateTimePicker2.TabIndex = 128;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(147, 411);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(164, 30);
+            this.dateTimePicker3.TabIndex = 129;
             // 
             // frmEnterpriseInfoReg
             // 
@@ -661,6 +672,7 @@ namespace BedFactory.PopUp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1077, 756);
+            this.Controls.Add(this.dateTimePicker3);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBox5);
@@ -668,7 +680,6 @@ namespace BedFactory.PopUp
             this.Controls.Add(this.textBox12);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox8);
@@ -788,7 +799,6 @@ namespace BedFactory.PopUp
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox12;
@@ -796,5 +806,6 @@ namespace BedFactory.PopUp
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
     }
 }

@@ -25,20 +25,20 @@ namespace BadFactory
         {
             if (!pnSplitScreen.Visible)
             {
-                BaseForm1 frm = new BaseForm1();
+                frmShift frm = new frmShift();
                 FormChildTab(frm, tabControl1);
             }
             else
             {
                 if (btnTabPut.Text.Equals("△"))
                 {
-                    BaseForm1 frm1 = new BaseForm1();
+                    frmShift frm1 = new frmShift();
                     FormChildTab(frm1, tabControl1);
                     return;
                 }
 
                 TabControl tc = (TabControl)pnNewTab.Controls["newTab"];
-                BaseForm1 frm = new BaseForm1();
+                frmShift frm = new frmShift();
                 FormChildTab(frm, tc);
             }
         }

@@ -207,7 +207,7 @@ namespace BedFactory
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 23);
             this.label6.TabIndex = 140;
-            this.label6.Text = "설비";
+            this.label6.Text = "상태";
             // 
             // label7
             // 

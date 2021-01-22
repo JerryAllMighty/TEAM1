@@ -80,30 +80,6 @@
     <Compile Include="BaseForms\BaseForm3.Designer.cs">
       <DependentUpon>BaseForm3.cs</DependentUpon>
     </Compile>
-    <Compile Include="BusinessCostManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BusinessCostManagement.designer.cs">
-      <DependentUpon>BusinessCostManagement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ByGroupAuthorityScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ByGroupAuthorityScreen.designer.cs">
-      <DependentUpon>ByGroupAuthorityScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ByUserAuthorityManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ByUserAuthorityManagement.designer.cs">
-      <DependentUpon>ByUserAuthorityManagement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ByUserManagementScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ByUserManagementScreen.designer.cs">
-      <DependentUpon>ByUserManagementScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\LabelComboText.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -128,23 +104,11 @@
     <Compile Include="Controls\OnlyNumberTextBox.designer.cs">
       <DependentUpon>OnlyNumberTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="CostManagemen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CostManagemen.designer.cs">
-      <DependentUpon>CostManagemen.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\DatagridviewControl.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\DatagridviewControl.Designer.cs">
       <DependentUpon>DatagridviewControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FaultyStatusLargeCategory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FaultyStatusLargeCategory.designer.cs">
-      <DependentUpon>FaultyStatusLargeCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBOM.cs">
       <SubType>Form</SubType>
@@ -428,36 +392,6 @@
     <Compile Include="Pop-up\frmUserRegister.Designer.cs">
       <DependentUpon>frmUserRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ItemManagement.designer.cs">
-      <DependentUpon>ItemManagement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ItemRegistration.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ItemRegistration.designer.cs">
-      <DependentUpon>ItemRegistration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MaterialsCostManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MaterialsCostManagement.designer.cs">
-      <DependentUpon>MaterialsCostManagement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NoticeManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NoticeManagement.designer.cs">
-      <DependentUpon>NoticeManagement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NoticeWrite.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NoticeWrite.designer.cs">
-      <DependentUpon>NoticeWrite.cs</DependentUpon>
-    </Compile>
     <Compile Include="Off-pumpDetailCategorization.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -482,17 +416,17 @@
     <Compile Include="Pop-up\frmEnterpriseInfoReg.Designer.cs">
       <DependentUpon>frmEnterpriseInfoReg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pop-up\frmFacilitiesReg.cs">
+    <Compile Include="Pop-up\frmFacilityReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pop-up\frmFacilitiesReg.Designer.cs">
-      <DependentUpon>frmFacilitiesReg.cs</DependentUpon>
+    <Compile Include="Pop-up\frmFacilityReg.Designer.cs">
+      <DependentUpon>frmFacilityReg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pop-up\frmFacilitycsReg.cs">
+    <Compile Include="Pop-up\frmFacilitiessReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pop-up\frmFacilitycsReg.Designer.cs">
-      <DependentUpon>frmFacilitycsReg.cs</DependentUpon>
+    <Compile Include="Pop-up\frmFacilitiessReg.Designer.cs">
+      <DependentUpon>frmFacilitiessReg.cs</DependentUpon>
     </Compile>
     <Compile Include="Pop-up\frmFactoryInfoReg.cs">
       <SubType>Form</SubType>
@@ -502,18 +436,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QualityStandardSetting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QualityStandardSetting.designer.cs">
-      <DependentUpon>QualityStandardSetting.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ResourceManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ResourceManagement.designer.cs">
-      <DependentUpon>ResourceManagement.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\TabCustomControl1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -522,18 +444,6 @@
     </Compile>
     <Compile Include="Util\Helper.cs" />
     <Compile Include="Util\CommonUtil.cs" />
-    <Compile Include="WorkManagment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WorkManagment.designer.cs">
-      <DependentUpon>WorkManagment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WorkRotationSchedule.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WorkRotationSchedule.designer.cs">
-      <DependentUpon>WorkRotationSchedule.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="BaseForms\BaseForm1.resx">
       <DependentUpon>BaseForm1.cs</DependentUpon>
     </EmbeddedResource>
@@ -705,11 +615,11 @@
     <EmbeddedResource Include="Pop-up\frmEnterpriseInfoReg.resx">
       <DependentUpon>frmEnterpriseInfoReg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pop-up\frmFacilitiesReg.resx">
-      <DependentUpon>frmFacilitiesReg.cs</DependentUpon>
+    <EmbeddedResource Include="Pop-up\frmFacilityReg.resx">
+      <DependentUpon>frmFacilityReg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pop-up\frmFacilitycsReg.resx">
-      <DependentUpon>frmFacilitycsReg.cs</DependentUpon>
+    <EmbeddedResource Include="Pop-up\frmFacilitiessReg.resx">
+      <DependentUpon>frmFacilitiessReg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmFactoryInfoReg.resx">
       <DependentUpon>frmFactoryInfoReg.cs</DependentUpon>

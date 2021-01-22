@@ -34,6 +34,10 @@ namespace BedFactory
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -49,10 +53,6 @@ namespace BedFactory
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.button3 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,11 +72,11 @@ namespace BedFactory
             this.button2.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.Location = new System.Drawing.Point(1053, 150);
+            this.button2.Location = new System.Drawing.Point(1087, 150);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(105, 31);
             this.button2.TabIndex = 13;
-            this.button2.Text = "WO취소";
+            this.button2.Text = "이력조회";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // button1
@@ -84,11 +84,11 @@ namespace BedFactory
             this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(1164, 150);
+            this.button1.Location = new System.Drawing.Point(1198, 150);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 31);
+            this.button1.Size = new System.Drawing.Size(71, 31);
             this.button1.TabIndex = 12;
-            this.button1.Text = "WO일괄취소";
+            this.button1.Text = "액셀";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // panel2
@@ -125,6 +125,42 @@ namespace BedFactory
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1262, 109);
             this.panel1.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 21);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(17, 23);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "*";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(29, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(78, 23);
+            this.label9.TabIndex = 34;
+            this.label9.Text = "입출고일";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(400, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(17, 23);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "*";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(413, 15);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 23);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "품목";
             // 
             // comboBox2
             // 
@@ -257,42 +293,6 @@ namespace BedFactory
             this.button3.TabIndex = 5;
             this.button3.Text = "조회";
             this.button3.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(400, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(17, 23);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "*";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(413, 15);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 23);
-            this.label10.TabIndex = 32;
-            this.label10.Text = "품목";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 21);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(17, 23);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "*";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(29, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 23);
-            this.label9.TabIndex = 34;
-            this.label9.Text = "입출고일";
             // 
             // frmFairStockStatus
             // 
