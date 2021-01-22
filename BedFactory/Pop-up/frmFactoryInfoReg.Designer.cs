@@ -1,5 +1,5 @@
 ﻿
-namespace BedFactory.PopUp
+namespace BedFactory.Pop_up
 {
     partial class frmFactoryInfoReg
     {
@@ -578,7 +578,6 @@ namespace BedFactory.PopUp
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmFactoryInfoReg";
             this.Text = "공장정보등록";
-            this.Load += new System.EventHandler(this.FactoryInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

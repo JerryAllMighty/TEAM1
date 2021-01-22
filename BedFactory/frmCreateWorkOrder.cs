@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmCreateWorkOrder : BedFactory.BaseForm.BaseForm1
+    public partial class frmCreateWorkOrder : BedFactory.BaseForms.BaseForm1
     {
         public frmCreateWorkOrder()
         {

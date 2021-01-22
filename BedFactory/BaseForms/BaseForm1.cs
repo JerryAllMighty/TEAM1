@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BedFactory.BaseForm
+namespace BedFactory.BaseForms
 {
     public partial class BaseForm1 : Form
     {

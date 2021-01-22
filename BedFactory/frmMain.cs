@@ -1,5 +1,6 @@
 ﻿using BedFactory;
-using BedFactory.BaseForm;
+using BedFactory.BaseForms;
+using BedFactory.Pop_up;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmEnterPriseManagement : BedFactory.BaseForm.BaseForm1
+    public partial class frmEnterPriseManagement : BedFactory.BaseForms.BaseForm1
     {
         public frmEnterPriseManagement()
         {

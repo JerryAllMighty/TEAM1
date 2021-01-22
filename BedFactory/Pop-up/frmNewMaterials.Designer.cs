@@ -1,5 +1,5 @@
 ﻿
-namespace BedFactory
+namespace BedFactory.Pop_up
 {
     partial class frmNewMaterials
     {
@@ -153,7 +153,7 @@ namespace BedFactory
             // 
             // materialsCheckList4
             // 
-            this.materialsCheckList4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.materialsCheckList4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialsCheckList4.BackColor = System.Drawing.Color.Transparent;
             this.materialsCheckList4.Font = new System.Drawing.Font("맑은 고딕", 10F);
@@ -165,7 +165,7 @@ namespace BedFactory
             // 
             // materialsCheckList3
             // 
-            this.materialsCheckList3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.materialsCheckList3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialsCheckList3.BackColor = System.Drawing.Color.Transparent;
             this.materialsCheckList3.Font = new System.Drawing.Font("맑은 고딕", 10F);
@@ -177,7 +177,7 @@ namespace BedFactory
             // 
             // materialsCheckList2
             // 
-            this.materialsCheckList2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.materialsCheckList2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialsCheckList2.BackColor = System.Drawing.Color.Transparent;
             this.materialsCheckList2.Font = new System.Drawing.Font("맑은 고딕", 10F);
@@ -189,7 +189,7 @@ namespace BedFactory
             // 
             // materialsCheckList1
             // 
-            this.materialsCheckList1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.materialsCheckList1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialsCheckList1.BackColor = System.Drawing.Color.Transparent;
             this.materialsCheckList1.Font = new System.Drawing.Font("맑은 고딕", 10F);

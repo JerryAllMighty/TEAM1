@@ -1,5 +1,5 @@
 ﻿
-namespace BedFactory.PopUp
+namespace BedFactory.Pop_up
 {
     partial class frmStockBackgroundCheck
     {

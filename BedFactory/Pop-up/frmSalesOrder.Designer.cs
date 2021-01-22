@@ -1,5 +1,5 @@
 ﻿
-namespace BedFactory
+namespace BedFactory.Pop_up
 {
     partial class frmDemandPlan
     {

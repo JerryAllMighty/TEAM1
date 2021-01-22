@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BedFactory
+namespace BedFactory.Pop_up
 {
     public partial class frmUserRegister : Form
     {

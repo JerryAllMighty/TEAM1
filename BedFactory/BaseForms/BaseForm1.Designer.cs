@@ -1,5 +1,5 @@
 ﻿
-namespace BedFactory.BaseForm
+namespace BedFactory.BaseForms
 {
     partial class BaseForm1
     {
@@ -32,8 +32,8 @@ namespace BedFactory.BaseForm
             this.button4 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSelect = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSelect = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +68,14 @@ namespace BedFactory.BaseForm
             this.panel1.Size = new System.Drawing.Size(1258, 140);
             this.panel1.TabIndex = 20;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Location = new System.Drawing.Point(12, 200);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1258, 541);
+            this.panel2.TabIndex = 21;
+            // 
             // btnSelect
             // 
             this.btnSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -80,14 +88,6 @@ namespace BedFactory.BaseForm
             this.btnSelect.TabIndex = 22;
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Location = new System.Drawing.Point(12, 200);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1258, 541);
-            this.panel2.TabIndex = 21;
             // 
             // BaseForm1
             // 
@@ -110,8 +110,8 @@ namespace BedFactory.BaseForm
         #endregion
         protected System.Windows.Forms.Button button4;
         protected System.Windows.Forms.Label label4;
-        protected System.Windows.Forms.Button btnSelect;
         protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Panel panel2;
+        protected System.Windows.Forms.Button btnSelect;
     }
 }

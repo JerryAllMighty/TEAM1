@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BedFactory.PopUp
-{
+namespace BedFactory.Pop_up
+{ 
     public partial class frmFacilitiesReg : Form
     {
         public frmFacilitiesReg()
