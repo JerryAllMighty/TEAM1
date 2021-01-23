@@ -1,4 +1,5 @@
-﻿using log4net.Core;
+﻿using EncrytLibrary;
+using log4net.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,18 +28,20 @@ namespace BedFactoryDAC
 
                 configXml.Load(path);
 
-                XmlNodeList addNodes = configXml.SelectNodes("configuration/settings/add");
+                XmlNodeList addNodes = configXml.SelectNodes("configuration/connectionStrings/add");
 
                 foreach (XmlNode node in addNodes)
                 {
-                    if (node.Attributes["key"].InnerText == "MyDB")
+                    if (node.Attributes["name"].InnerText == "MyDB")
                     {
-                        strConn = (node.ChildNodes[0]).InnerText;
+                        strConn = (node.Attributes["connectionString"]).InnerText;
                         break;
                     }
                 }
 
-                return strConn; 
+                AESSalt enc = new AESSalt();
+
+                return enc.Decrypt(strConn); 
             }
         }
     }

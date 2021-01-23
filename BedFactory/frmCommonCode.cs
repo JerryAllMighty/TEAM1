@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BedFactory.Util;
-
+using BedFactoryService;
 
 namespace BedFactory
 {
@@ -25,6 +25,9 @@ namespace BedFactory
             dgvCommonCode.SetGridViewColumn("Code_Name", "Code_Name");
             dgvCommonCode.SetGridViewColumn("Category", "Category");
             dgvCommonCode.SetGridViewColumn("P_Code", "P_Code");
+
+            CommonCodeService service = new CommonCodeService();
+             dgvCommonCode.DataSource = service.GetCommonCodeInfo();
         }
     }
 }

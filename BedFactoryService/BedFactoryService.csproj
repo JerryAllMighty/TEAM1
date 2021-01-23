@@ -44,5 +44,11 @@
     <Compile Include="CommonCodeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BedFactoryDAC\BedFactoryDAC.csproj">
+      <Project>{501bc76c-86d9-4224-a2da-be1f08ce8b4f}</Project>
+      <Name>BedFactoryDAC</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

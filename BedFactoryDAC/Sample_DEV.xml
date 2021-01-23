@@ -1,11 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <configuration>
-
   <configSections>
     <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net" />
   </configSections>
-
   <connectionStrings>
-    <add name="MyDB" connectionString="l95uovUeDBRWpTnM8Bbou8SnosG9TpNoG5PCbsP+qKNK0Yi0UHkwRn1fiqkNki7xsIgLwsgmBxoCmmSyee3BjA==" />
+    <add name="MyDB" connectionString="MKjL3xk7ELFmZa1W2wPKCG/DGcsO5FIyhbZlo+ulz4Ansnqeh1wYB7olPMcMmZQRNzkjhrV6uTkxqks+vXgQ84otk4BKHqa9sKGE3dCbksMAxNHbHY8fLaHYoPoQu8FIWK8X1tH7I3sl7f9p1IXI9TwGAYsUM6z08Z/iGjqHtvZm9xHMCzkeRLI7Z4mcUgVT"></add>
   </connectionStrings>
 </configuration>
