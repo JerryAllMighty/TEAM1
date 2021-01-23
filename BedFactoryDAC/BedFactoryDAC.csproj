@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonCodeDAC.cs" />
     <Compile Include="ConnectionAccess.cs" />
     <Compile Include="LoggingUtillity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
