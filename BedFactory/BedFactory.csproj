@@ -501,6 +501,7 @@
     <Compile Include="Controls\TabCustomControl1.Designer.cs">
       <DependentUpon>TabCustomControl1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="Util\Helper.cs" />
     <Compile Include="Util\CommonUtil.cs" />
     <EmbeddedResource Include="BaseForms\BaseForm1.resx">
@@ -732,6 +733,10 @@
     <ProjectReference Include="..\BedFactoryService\BedFactoryService.csproj">
       <Project>{fe7b7bdb-bd0f-48ea-b928-17debb269f03}</Project>
       <Name>BedFactoryService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BedFactoryVO\BedFactoryVO.csproj">
+      <Project>{ae37a2c5-fb35-466a-a9fd-dfde4cdab745}</Project>
+      <Name>BedFactoryVO</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

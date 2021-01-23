@@ -49,6 +49,10 @@
       <Project>{501bc76c-86d9-4224-a2da-be1f08ce8b4f}</Project>
       <Name>BedFactoryDAC</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BedFactoryVO\BedFactoryVO.csproj">
+      <Project>{ae37a2c5-fb35-466a-a9fd-dfde4cdab745}</Project>
+      <Name>BedFactoryVO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

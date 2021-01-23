@@ -49,6 +49,7 @@
     <Compile Include="AESSalt.cs" />
     <Compile Include="CommonCodeDAC.cs" />
     <Compile Include="ConnectionAccess.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="LoggingUtillity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -59,6 +60,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BedFactoryVO\BedFactoryVO.csproj">
+      <Project>{ae37a2c5-fb35-466a-a9fd-dfde4cdab745}</Project>
+      <Name>BedFactoryVO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

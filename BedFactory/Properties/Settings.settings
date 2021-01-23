@@ -1,7 +1,30 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BedFactory.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ValidationCheckMsg" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">*표시는 필수입력사항입니다. 반드시 입력해주세요.</Value>
+    </Setting>
+    <Setting Name="InsertSuccess" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">성공적으로 등록하였습니다.</Value>
+    </Setting>
+    <Setting Name="InsertFail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">등록에 실패하였습니다.</Value>
+    </Setting>
+    <Setting Name="UpdateSuccess" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">성공적으로 수정하였습니다.</Value>
+    </Setting>
+    <Setting Name="UpdateFail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">수정에 실패하였습니다.</Value>
+    </Setting>
+    <Setting Name="DeleteSuccess" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">성공적으로 삭제하였습니다.</Value>
+    </Setting>
+    <Setting Name="DeleteFail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">삭제에 실패하였습니다.</Value>
+    </Setting>
+    <Setting Name="ValidationCheckCaption" Type="System.String" Scope="User">
+      <Value Profile="(Default)">필수 입력사항 체크</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>
