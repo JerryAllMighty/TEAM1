@@ -70,7 +70,7 @@ namespace BedFactory.Pop_up
             {
                 if(service.UpdateCheckInfo(vo))
                 {
-                    MessageBox.Show("검사항목 수정을 성공하였습니다.")
+                    MessageBox.Show("검사항목 수정을 성공하였습니다.");
                 }
                 else
                 {
