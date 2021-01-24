@@ -30,8 +30,8 @@ namespace BedFactory
         private void InitializeComponent()
         {
             this.btnInsert = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnCopy = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -42,10 +42,9 @@ namespace BedFactory
             this.label1 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.dgvShift = new System.Windows.Forms.DataGridView();
+            this.dgvShift = new BedFactory.DatagridviewControl();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvShift)).BeginInit();
             this.SuspendLayout();
             // 
             // btnInsert
@@ -58,28 +57,31 @@ namespace BedFactory
             this.btnInsert.TabIndex = 17;
             this.btnInsert.Text = "등록";
             this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
-            // button5
+            // btnDelete
             // 
-            this.button5.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Location = new System.Drawing.Point(979, 101);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(48, 23);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "삭제";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.Location = new System.Drawing.Point(1033, 101);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(48, 23);
+            this.btnDelete.TabIndex = 16;
+            this.btnDelete.Text = "삭제";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button4
+            // btnCopy
             // 
-            this.button4.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Location = new System.Drawing.Point(1033, 101);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(48, 23);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "복사";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnCopy.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCopy.Location = new System.Drawing.Point(979, 101);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(48, 23);
+            this.btnCopy.TabIndex = 15;
+            this.btnCopy.Text = "복사";
+            this.btnCopy.UseVisualStyleBackColor = false;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // button3
             // 
@@ -180,17 +182,16 @@ namespace BedFactory
             this.btnUpdate.TabIndex = 18;
             this.btnUpdate.Text = "수정";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // dgvShift
             // 
-            this.dgvShift.BackgroundColor = System.Drawing.Color.White;
-            this.dgvShift.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvShift.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvShift.Location = new System.Drawing.Point(0, 0);
             this.dgvShift.Name = "dgvShift";
-            this.dgvShift.RowTemplate.Height = 23;
             this.dgvShift.Size = new System.Drawing.Size(1123, 463);
             this.dgvShift.TabIndex = 0;
+            this.dgvShift.Text = "datagridviewControl1";
             // 
             // frmShiftInfo
             // 
@@ -200,8 +201,8 @@ namespace BedFactory
             this.ClientSize = new System.Drawing.Size(1147, 604);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnInsert);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel2);
@@ -214,7 +215,6 @@ namespace BedFactory
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvShift)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,8 +223,8 @@ namespace BedFactory
         #endregion
 
         private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
@@ -235,6 +235,6 @@ namespace BedFactory
         protected System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.DataGridView dgvShift;
+        private DatagridviewControl dgvShift;
     }
 }

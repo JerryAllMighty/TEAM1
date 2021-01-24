@@ -106,6 +106,7 @@ namespace BedFactoryDAC
                     cmd.Parameters.AddWithValue("@LastMan", shift.LastMan);
                     cmd.Parameters.AddWithValue("@LastDate", shift.LastDate);
                     cmd.Parameters.AddWithValue("@IsUse", shift.IsUse);
+                    cmd.Parameters.AddWithValue("@Shift_Num", shift.Shift_Num);
 
                     cmd.ExecuteNonQuery();
                     conn.Close();
