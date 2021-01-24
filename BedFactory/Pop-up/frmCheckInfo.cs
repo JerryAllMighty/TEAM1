@@ -14,6 +14,7 @@ namespace BedFactory.Pop_up
 {
     public partial class frmCheckInfo : Form
     {
+        public CheckInfoVO Info { get; set; }
         public bool formCheck = true;   //등록 : true, 수정 : false
 
         public frmCheckInfo()
@@ -23,15 +24,6 @@ namespace BedFactory.Pop_up
 
         private void frmCheckInfo_Load(object sender, EventArgs e)
         {
-            if(formCheck)
-            {
-                btnOk.Text = "등 록";
-            }
-            else
-            {
-                btnOk.Text = "수 정";
-            }
-
             #region 콤보박스 바인딩
             //CommonCodeService service = new CommonCodeService();
 
@@ -40,6 +32,17 @@ namespace BedFactory.Pop_up
 
             //lctCheckKind.cbo.DataSource = list;
             #endregion
+
+            if (formCheck)
+            {
+                btnOk.Text = "등 록";
+            }
+            else
+            {
+                btnOk.Text = "수 정";
+                lctCheckKind.cbo.Text = Info.CheckKind;
+                lctCheckDetail.text.Text = Info.Check_Detail;
+            }
         }
 
         /// <summary>
