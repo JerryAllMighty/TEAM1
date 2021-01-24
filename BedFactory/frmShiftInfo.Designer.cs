@@ -29,31 +29,35 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.dgvShift = new System.Windows.Forms.DataGridView();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShift)).BeginInit();
             this.SuspendLayout();
             // 
-            // button6
+            // btnInsert
             // 
-            this.button6.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.Location = new System.Drawing.Point(925, 101);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(48, 23);
-            this.button6.TabIndex = 17;
-            this.button6.Text = "등록";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnInsert.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnInsert.Location = new System.Drawing.Point(871, 101);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(48, 23);
+            this.btnInsert.TabIndex = 17;
+            this.btnInsert.Text = "등록";
+            this.btnInsert.UseVisualStyleBackColor = false;
             // 
             // button5
             // 
@@ -100,6 +104,7 @@ namespace BedFactory
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.dgvShift);
             this.panel2.Location = new System.Drawing.Point(12, 127);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1123, 463);
@@ -118,6 +123,14 @@ namespace BedFactory
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1123, 67);
             this.panel1.TabIndex = 9;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(487, 22);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(182, 25);
+            this.comboBox2.TabIndex = 30;
             // 
             // comboBox1
             // 
@@ -157,13 +170,27 @@ namespace BedFactory
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = false;
             // 
-            // comboBox2
+            // btnUpdate
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(487, 22);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(182, 25);
-            this.comboBox2.TabIndex = 30;
+            this.btnUpdate.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpdate.Location = new System.Drawing.Point(925, 101);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(48, 23);
+            this.btnUpdate.TabIndex = 18;
+            this.btnUpdate.Text = "수정";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            // 
+            // dgvShift
+            // 
+            this.dgvShift.BackgroundColor = System.Drawing.Color.White;
+            this.dgvShift.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvShift.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvShift.Location = new System.Drawing.Point(0, 0);
+            this.dgvShift.Name = "dgvShift";
+            this.dgvShift.RowTemplate.Height = 23;
+            this.dgvShift.Size = new System.Drawing.Size(1123, 463);
+            this.dgvShift.TabIndex = 0;
             // 
             // frmShiftInfo
             // 
@@ -171,7 +198,8 @@ namespace BedFactory
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1147, 604);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -182,8 +210,11 @@ namespace BedFactory
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmShiftInfo";
             this.Text = "frmShiftInfo";
+            this.Load += new System.EventHandler(this.frmShiftInfo_Load);
+            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShift)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,7 +222,7 @@ namespace BedFactory
 
         #endregion
 
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
@@ -203,5 +234,7 @@ namespace BedFactory
         private System.Windows.Forms.Label label1;
         protected System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.DataGridView dgvShift;
     }
 }

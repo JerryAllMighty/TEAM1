@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BedFactory.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace BedFactory
         public frmShiftInfo()
         {
             InitializeComponent();
+        }
+
+        private void frmShiftInfo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
