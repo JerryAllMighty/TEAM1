@@ -29,87 +29,90 @@ namespace BedFactory.Pop_up
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelComboText2 = new BedFactory.LabelComboText();
-            this.button1 = new System.Windows.Forms.Button();
-            this.labelComboText1 = new BedFactory.LabelComboText();
-            this.button2 = new System.Windows.Forms.Button();
+            this.lctCheckDetail = new BedFactory.LabelComboText();
+            this.btnOk = new System.Windows.Forms.Button();
+            this.lctCheckKind = new BedFactory.LabelComboText();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // labelComboText2
+            // lctCheckDetail
             // 
-            this.labelComboText2.BackColor = System.Drawing.Color.Transparent;
-            this.labelComboText2.BoxKind = BedFactory.LabelComboText.Kind.text;
-            this.labelComboText2.ComboData = null;
-            this.labelComboText2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.labelComboText2.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.labelComboText2.Header = "검사내용";
-            this.labelComboText2.Important = true;
-            this.labelComboText2.Location = new System.Drawing.Point(44, 93);
-            this.labelComboText2.MultiLine = true;
-            this.labelComboText2.MultiLineCnt = 5;
-            this.labelComboText2.Name = "labelComboText2";
-            this.labelComboText2.Size = new System.Drawing.Size(485, 139);
-            this.labelComboText2.TabIndex = 10;
+            this.lctCheckDetail.BackColor = System.Drawing.Color.Transparent;
+            this.lctCheckDetail.BoxKind = BedFactory.LabelComboText.Kind.text;
+            this.lctCheckDetail.ComboData = null;
+            this.lctCheckDetail.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.lctCheckDetail.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.lctCheckDetail.Header = "검사내용";
+            this.lctCheckDetail.Important = true;
+            this.lctCheckDetail.Location = new System.Drawing.Point(44, 93);
+            this.lctCheckDetail.MultiLine = true;
+            this.lctCheckDetail.MultiLineCnt = 5;
+            this.lctCheckDetail.Name = "lctCheckDetail";
+            this.lctCheckDetail.Size = new System.Drawing.Size(485, 139);
+            this.lctCheckDetail.TabIndex = 10;
             // 
-            // button1
+            // btnOk
             // 
-            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(353, 247);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 41);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "등 록";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnOk.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnOk.Location = new System.Drawing.Point(353, 247);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(85, 41);
+            this.btnOk.TabIndex = 12;
+            this.btnOk.Text = "등 록";
+            this.btnOk.UseVisualStyleBackColor = false;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
-            // labelComboText1
+            // lctCheckKind
             // 
-            this.labelComboText1.BackColor = System.Drawing.Color.Transparent;
-            this.labelComboText1.BoxKind = BedFactory.LabelComboText.Kind.combo;
-            this.labelComboText1.ComboData = null;
-            this.labelComboText1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.labelComboText1.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.labelComboText1.Header = "검사종류";
-            this.labelComboText1.Important = true;
-            this.labelComboText1.Location = new System.Drawing.Point(44, 33);
-            this.labelComboText1.MultiLine = false;
-            this.labelComboText1.MultiLineCnt = 0;
-            this.labelComboText1.Name = "labelComboText1";
-            this.labelComboText1.Size = new System.Drawing.Size(485, 38);
-            this.labelComboText1.TabIndex = 13;
+            this.lctCheckKind.BackColor = System.Drawing.Color.Transparent;
+            this.lctCheckKind.BoxKind = BedFactory.LabelComboText.Kind.combo;
+            this.lctCheckKind.ComboData = null;
+            this.lctCheckKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.lctCheckKind.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.lctCheckKind.Header = "검사종류";
+            this.lctCheckKind.Important = true;
+            this.lctCheckKind.Location = new System.Drawing.Point(44, 33);
+            this.lctCheckKind.MultiLine = false;
+            this.lctCheckKind.MultiLineCnt = 0;
+            this.lctCheckKind.Name = "lctCheckKind";
+            this.lctCheckKind.Size = new System.Drawing.Size(485, 38);
+            this.lctCheckKind.TabIndex = 13;
             // 
-            // button2
+            // btnCancel
             // 
-            this.button2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(444, 247);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 41);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "취 소";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCancel.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel.Location = new System.Drawing.Point(444, 247);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(85, 41);
+            this.btnCancel.TabIndex = 14;
+            this.btnCancel.Text = "취 소";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmCheckInfo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(578, 321);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.labelComboText1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.labelComboText2);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.lctCheckKind);
+            this.Controls.Add(this.btnOk);
+            this.Controls.Add(this.lctCheckDetail);
             this.Font = new System.Drawing.Font("맑은 고딕", 10F);
             this.Name = "frmCheckInfo";
             this.Text = "검사항목 설정";
+            this.Load += new System.EventHandler(this.frmCheckInfo_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private LabelComboText labelComboText2;
-        private System.Windows.Forms.Button button1;
-        private LabelComboText labelComboText1;
-        private System.Windows.Forms.Button button2;
+        private LabelComboText lctCheckDetail;
+        private System.Windows.Forms.Button btnOk;
+        private LabelComboText lctCheckKind;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
