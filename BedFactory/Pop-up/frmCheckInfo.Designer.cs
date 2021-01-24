@@ -1,7 +1,7 @@
 ﻿
 namespace BedFactory.Pop_up
 {
-    partial class frmErrorInfo
+    partial class frmCheckInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,7 @@ namespace BedFactory.Pop_up
             this.labelComboText2.ComboData = null;
             this.labelComboText2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.labelComboText2.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.labelComboText2.Header = "오류내용";
+            this.labelComboText2.Header = "검사내용";
             this.labelComboText2.Important = true;
             this.labelComboText2.Location = new System.Drawing.Point(44, 93);
             this.labelComboText2.MultiLine = true;
@@ -65,11 +65,11 @@ namespace BedFactory.Pop_up
             // labelComboText1
             // 
             this.labelComboText1.BackColor = System.Drawing.Color.Transparent;
-            this.labelComboText1.BoxKind = BedFactory.LabelComboText.Kind.text;
+            this.labelComboText1.BoxKind = BedFactory.LabelComboText.Kind.combo;
             this.labelComboText1.ComboData = null;
-            this.labelComboText1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.labelComboText1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.labelComboText1.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.labelComboText1.Header = "오류종류";
+            this.labelComboText1.Header = "검사종류";
             this.labelComboText1.Important = true;
             this.labelComboText1.Location = new System.Drawing.Point(44, 33);
             this.labelComboText1.MultiLine = false;
@@ -89,7 +89,7 @@ namespace BedFactory.Pop_up
             this.button2.Text = "취 소";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // frmErrorInfo
+            // frmCheckInfo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Azure;
@@ -99,8 +99,8 @@ namespace BedFactory.Pop_up
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelComboText2);
             this.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.Name = "frmErrorInfo";
-            this.Text = "frmErrorInfo";
+            this.Name = "frmCheckInfo";
+            this.Text = "검사항목 설정";
             this.ResumeLayout(false);
 
         }

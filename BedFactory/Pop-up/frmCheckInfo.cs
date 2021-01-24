@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BedFactory.Pop_up
 {
-    public partial class frmErrorInfo : Form
+    public partial class frmCheckInfo : Form
     {
-        public frmErrorInfo()
+        public frmCheckInfo()
         {
             InitializeComponent();
         }
