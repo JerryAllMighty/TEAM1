@@ -50,6 +50,7 @@ namespace BedFactory.BaseForms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.labelComboText3);
             this.panel1.Controls.Add(this.labelComboText2);
             this.panel1.Controls.Add(this.labelComboText1);
@@ -116,7 +117,7 @@ namespace BedFactory.BaseForms
             this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(1278, 15);
+            this.button1.Location = new System.Drawing.Point(1276, 13);
             this.button1.Margin = new System.Windows.Forms.Padding(10);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(70, 40);
