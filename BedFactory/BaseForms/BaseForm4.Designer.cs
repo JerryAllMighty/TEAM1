@@ -30,7 +30,6 @@ namespace BedFactory.BaseForms
         private void InitializeComponent()
         {
             this.pnlSelect = new System.Windows.Forms.Panel();
-            this.btnSelect = new System.Windows.Forms.Button();
             this.pnlDgv = new System.Windows.Forms.Panel();
             this.btn1 = new System.Windows.Forms.Button();
             this.btn4 = new System.Windows.Forms.Button();
@@ -38,7 +37,10 @@ namespace BedFactory.BaseForms
             this.btn5 = new System.Windows.Forms.Button();
             this.btn3 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
+            this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlSelect.SuspendLayout();
+            this.searchLocationControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSelect
@@ -48,31 +50,18 @@ namespace BedFactory.BaseForms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSelect.BackColor = System.Drawing.Color.White;
             this.pnlSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSelect.Controls.Add(this.btnSelect);
+            this.pnlSelect.Controls.Add(this.searchLocationControl1);
             this.pnlSelect.Location = new System.Drawing.Point(12, 12);
             this.pnlSelect.Name = "pnlSelect";
             this.pnlSelect.Size = new System.Drawing.Size(1358, 65);
             this.pnlSelect.TabIndex = 0;
-            // 
-            // btnSelect
-            // 
-            this.btnSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSelect.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSelect.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSelect.Location = new System.Drawing.Point(1276, 13);
-            this.btnSelect.Margin = new System.Windows.Forms.Padding(10);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(70, 40);
-            this.btnSelect.TabIndex = 0;
-            this.btnSelect.Text = "조회";
-            this.btnSelect.UseVisualStyleBackColor = false;
             // 
             // pnlDgv
             // 
             this.pnlDgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlDgv.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.pnlDgv.Location = new System.Drawing.Point(12, 130);
             this.pnlDgv.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.pnlDgv.Name = "pnlDgv";
@@ -146,6 +135,43 @@ namespace BedFactory.BaseForms
             this.btn2.TabIndex = 8;
             this.btn2.UseVisualStyleBackColor = false;
             // 
+            // searchLocationControl1
+            // 
+            this.searchLocationControl1.ColumnCount = 10;
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
+            this.searchLocationControl1.Controls.Add(this.button1, 9, 0);
+            this.searchLocationControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchLocationControl1.Location = new System.Drawing.Point(0, 0);
+            this.searchLocationControl1.Name = "searchLocationControl1";
+            this.searchLocationControl1.RowCount = 1;
+            this.searchLocationControl1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.searchLocationControl1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.searchLocationControl1.Size = new System.Drawing.Size(1356, 63);
+            this.searchLocationControl1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Location = new System.Drawing.Point(1275, 11);
+            this.button1.Margin = new System.Windows.Forms.Padding(10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(70, 40);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "조회";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // BaseForm4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -163,6 +189,7 @@ namespace BedFactory.BaseForms
             this.Name = "BaseForm4";
             this.Text = "BaseForm4";
             this.pnlSelect.ResumeLayout(false);
+            this.searchLocationControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,12 +198,13 @@ namespace BedFactory.BaseForms
         #endregion
         protected System.Windows.Forms.Panel pnlSelect;
         protected System.Windows.Forms.Panel pnlDgv;
-        protected System.Windows.Forms.Button btnSelect;
         protected System.Windows.Forms.Button btn1;
         protected System.Windows.Forms.Button btn4;
         protected System.Windows.Forms.Label label1;
         protected System.Windows.Forms.Button btn5;
         protected System.Windows.Forms.Button btn3;
         protected System.Windows.Forms.Button btn2;
+        private Controls.SearchLocationControl searchLocationControl1;
+        protected System.Windows.Forms.Button button1;
     }
 }

@@ -17,5 +17,9 @@ namespace BedFactory.BaseForms
             InitializeComponent();
         }
 
+        private void searchLocationControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
