@@ -185,6 +185,7 @@ namespace BedFactory.BaseForms
             this.Controls.Add(this.pnlDgv);
             this.Controls.Add(this.btn4);
             this.Controls.Add(this.pnlSelect);
+            this.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Name = "BaseForm4";
             this.Text = "BaseForm4";
             this.pnlSelect.ResumeLayout(false);
