@@ -121,6 +121,12 @@
     <Compile Include="Controls\DatagridviewControl.Designer.cs">
       <DependentUpon>DatagridviewControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SearchLocationControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchLocationControl.Designer.cs">
+      <DependentUpon>SearchLocationControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBOM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -518,6 +524,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OnlyNumberTextBox.resx">
       <DependentUpon>OnlyNumberTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SearchLocationControl.resx">
+      <DependentUpon>SearchLocationControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBOM.resx">
       <DependentUpon>frmBOM.cs</DependentUpon>
