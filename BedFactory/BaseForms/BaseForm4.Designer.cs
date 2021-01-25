@@ -38,9 +38,6 @@ namespace BedFactory.BaseForms
             this.btn5 = new System.Windows.Forms.Button();
             this.btn3 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
-            this.labelComboText3 = new BedFactory.LabelComboText();
-            this.labelComboText2 = new BedFactory.LabelComboText();
-            this.labelComboText1 = new BedFactory.LabelComboText();
             this.pnlSelect.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,9 +48,6 @@ namespace BedFactory.BaseForms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSelect.BackColor = System.Drawing.Color.White;
             this.pnlSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSelect.Controls.Add(this.labelComboText3);
-            this.pnlSelect.Controls.Add(this.labelComboText2);
-            this.pnlSelect.Controls.Add(this.labelComboText1);
             this.pnlSelect.Controls.Add(this.btnSelect);
             this.pnlSelect.Location = new System.Drawing.Point(12, 12);
             this.pnlSelect.Name = "pnlSelect";
@@ -152,57 +146,6 @@ namespace BedFactory.BaseForms
             this.btn2.TabIndex = 8;
             this.btn2.UseVisualStyleBackColor = false;
             // 
-            // labelComboText3
-            // 
-            this.labelComboText3.AutoSize = true;
-            this.labelComboText3.BackColor = System.Drawing.Color.Transparent;
-            this.labelComboText3.BoxKind = BedFactory.LabelComboText.Kind.combo;
-            this.labelComboText3.ComboData = null;
-            this.labelComboText3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.labelComboText3.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.labelComboText3.Header = null;
-            this.labelComboText3.Important = false;
-            this.labelComboText3.Location = new System.Drawing.Point(867, 3);
-            this.labelComboText3.MultiLine = false;
-            this.labelComboText3.MultiLineCnt = 0;
-            this.labelComboText3.Name = "labelComboText3";
-            this.labelComboText3.Size = new System.Drawing.Size(398, 34);
-            this.labelComboText3.TabIndex = 9;
-            // 
-            // labelComboText2
-            // 
-            this.labelComboText2.AutoSize = true;
-            this.labelComboText2.BackColor = System.Drawing.Color.Transparent;
-            this.labelComboText2.BoxKind = BedFactory.LabelComboText.Kind.combo;
-            this.labelComboText2.ComboData = null;
-            this.labelComboText2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.labelComboText2.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.labelComboText2.Header = null;
-            this.labelComboText2.Important = false;
-            this.labelComboText2.Location = new System.Drawing.Point(437, 3);
-            this.labelComboText2.MultiLine = false;
-            this.labelComboText2.MultiLineCnt = 0;
-            this.labelComboText2.Name = "labelComboText2";
-            this.labelComboText2.Size = new System.Drawing.Size(398, 34);
-            this.labelComboText2.TabIndex = 8;
-            // 
-            // labelComboText1
-            // 
-            this.labelComboText1.AutoSize = true;
-            this.labelComboText1.BackColor = System.Drawing.Color.Transparent;
-            this.labelComboText1.BoxKind = BedFactory.LabelComboText.Kind.combo;
-            this.labelComboText1.ComboData = null;
-            this.labelComboText1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.labelComboText1.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.labelComboText1.Header = null;
-            this.labelComboText1.Important = false;
-            this.labelComboText1.Location = new System.Drawing.Point(5, 3);
-            this.labelComboText1.MultiLine = false;
-            this.labelComboText1.MultiLineCnt = 0;
-            this.labelComboText1.Name = "labelComboText1";
-            this.labelComboText1.Size = new System.Drawing.Size(398, 34);
-            this.labelComboText1.TabIndex = 7;
-            // 
             // BaseForm4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -220,7 +163,6 @@ namespace BedFactory.BaseForms
             this.Name = "BaseForm4";
             this.Text = "BaseForm4";
             this.pnlSelect.ResumeLayout(false);
-            this.pnlSelect.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,10 +176,7 @@ namespace BedFactory.BaseForms
         protected System.Windows.Forms.Button btn4;
         protected System.Windows.Forms.Label label1;
         protected System.Windows.Forms.Button btn5;
-        protected LabelComboText labelComboText3;
-        protected LabelComboText labelComboText2;
         protected System.Windows.Forms.Button btn3;
         protected System.Windows.Forms.Button btn2;
-        protected LabelComboText labelComboText1;
     }
 }
