@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckService.cs" />
     <Compile Include="CommonCodeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShiftsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BedFactoryDAC\BedFactoryDAC.csproj">
