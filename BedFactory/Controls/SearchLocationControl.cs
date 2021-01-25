@@ -41,6 +41,27 @@ namespace BedFactory.Controls
                 base.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18));
                 base.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13));
                 base.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 7));
+                
+                Button btn = new Button();
+                btn.Name = "btnSearch";
+                btn.Text = "조회";
+                btn.Size = new Size(70, 30);
+                btn.BackColor = Color.LightSteelBlue;
+                btn.FlatStyle = FlatStyle.Popup;
+                btn.Anchor = AnchorStyles.None;                
+                this.Controls.Add(btn, 9, RowCount);
+            }
+
+            if(RowCount == 1 && GetControlFromPosition(9, 0) != null)
+            {
+                Control ctrl = GetControlFromPosition(9, 0);
+                SetRow(ctrl, 1);
+            }
+
+            if (RowCount == 2 && GetControlFromPosition(9, 1) != null)
+            {
+                Control ctrl = GetControlFromPosition(9, 1);
+                SetRow(ctrl, 2);
             }
         }
     }
