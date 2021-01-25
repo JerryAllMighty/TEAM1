@@ -187,7 +187,7 @@ namespace BedFactory.BaseForms
             this.Controls.Add(this.pnlSelect);
             this.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Name = "BaseForm1";
-            this.Text = "BaseForm4";
+            this.Text = "BaseForm";
             this.pnlSelect.ResumeLayout(false);
             this.searchLocationControl1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -204,7 +204,7 @@ namespace BedFactory.BaseForms
         protected System.Windows.Forms.Button btn5;
         protected System.Windows.Forms.Button btn3;
         protected System.Windows.Forms.Button btn2;
-        private Controls.SearchLocationControl searchLocationControl1;
         protected System.Windows.Forms.Button btnSelect;
+        protected Controls.SearchLocationControl searchLocationControl1;
     }
 }
