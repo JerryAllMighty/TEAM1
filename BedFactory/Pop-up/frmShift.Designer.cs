@@ -32,8 +32,13 @@ namespace BedFactory.Pop_up
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtEndTime = new BedFactory.Controls.OnlyNumberTextBox();
-            this.txtStartTime = new BedFactory.Controls.OnlyNumberTextBox();
+            this.cboShift = new System.Windows.Forms.ComboBox();
+            this.lblShift = new System.Windows.Forms.Label();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.txtWp = new System.Windows.Forms.TextBox();
+            this.txtMan = new System.Windows.Forms.TextBox();
             this.lblMan = new System.Windows.Forms.Label();
             this.cboIsUse = new System.Windows.Forms.ComboBox();
             this.lblDate = new System.Windows.Forms.Label();
@@ -43,13 +48,10 @@ namespace BedFactory.Pop_up
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMan = new System.Windows.Forms.TextBox();
-            this.txtWp = new System.Windows.Forms.TextBox();
-            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpDate = new System.Windows.Forms.DateTimePicker();
-            this.lblShift = new System.Windows.Forms.Label();
-            this.cboShift = new System.Windows.Forms.ComboBox();
+            this.txtEndTime = new BedFactory.Controls.OnlyNumberTextBox();
+            this.txtStartTime = new BedFactory.Controls.OnlyNumberTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtPeopleCnt = new BedFactory.Controls.OnlyNumberTextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +82,8 @@ namespace BedFactory.Pop_up
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.txtPeopleCnt);
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.cboShift);
             this.panel2.Controls.Add(this.lblShift);
             this.panel2.Controls.Add(this.dtpDate);
@@ -103,28 +107,70 @@ namespace BedFactory.Pop_up
             this.panel2.Size = new System.Drawing.Size(759, 256);
             this.panel2.TabIndex = 5;
             // 
-            // txtEndTime
+            // cboShift
             // 
-            this.txtEndTime.Decimal = false;
-            this.txtEndTime.Location = new System.Drawing.Point(178, 113);
-            this.txtEndTime.MaxLength = 6;
-            this.txtEndTime.Name = "txtEndTime";
-            this.txtEndTime.Size = new System.Drawing.Size(176, 25);
-            this.txtEndTime.TabIndex = 82;
+            this.cboShift.FormattingEnabled = true;
+            this.cboShift.Items.AddRange(new object[] {
+            "주간",
+            "야산"});
+            this.cboShift.Location = new System.Drawing.Point(178, 22);
+            this.cboShift.Name = "cboShift";
+            this.cboShift.Size = new System.Drawing.Size(176, 25);
+            this.cboShift.TabIndex = 89;
             // 
-            // txtStartTime
+            // lblShift
             // 
-            this.txtStartTime.Decimal = false;
-            this.txtStartTime.Location = new System.Drawing.Point(526, 67);
-            this.txtStartTime.MaxLength = 6;
-            this.txtStartTime.Name = "txtStartTime";
-            this.txtStartTime.Size = new System.Drawing.Size(176, 25);
-            this.txtStartTime.TabIndex = 81;
+            this.lblShift.AutoSize = true;
+            this.lblShift.ForeColor = System.Drawing.Color.Red;
+            this.lblShift.Location = new System.Drawing.Point(52, 25);
+            this.lblShift.Name = "lblShift";
+            this.lblShift.Size = new System.Drawing.Size(40, 17);
+            this.lblShift.TabIndex = 88;
+            this.lblShift.Text = "*Shift";
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDate.Location = new System.Drawing.Point(526, 209);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(176, 25);
+            this.dtpDate.TabIndex = 87;
+            // 
+            // dtpEndDate
+            // 
+            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEndDate.Location = new System.Drawing.Point(178, 161);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(176, 25);
+            this.dtpEndDate.TabIndex = 86;
+            // 
+            // dtpStartDate
+            // 
+            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStartDate.Location = new System.Drawing.Point(526, 113);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(176, 25);
+            this.dtpStartDate.TabIndex = 85;
+            this.dtpStartDate.ValueChanged += new System.EventHandler(this.dtpStartDate_ValueChanged);
+            // 
+            // txtWp
+            // 
+            this.txtWp.Location = new System.Drawing.Point(178, 67);
+            this.txtWp.Name = "txtWp";
+            this.txtWp.Size = new System.Drawing.Size(176, 25);
+            this.txtWp.TabIndex = 84;
+            // 
+            // txtMan
+            // 
+            this.txtMan.Location = new System.Drawing.Point(178, 209);
+            this.txtMan.Name = "txtMan";
+            this.txtMan.Size = new System.Drawing.Size(176, 25);
+            this.txtMan.TabIndex = 83;
             // 
             // lblMan
             // 
             this.lblMan.AutoSize = true;
-            this.lblMan.Location = new System.Drawing.Point(400, 164);
+            this.lblMan.Location = new System.Drawing.Point(52, 212);
             this.lblMan.Name = "lblMan";
             this.lblMan.Size = new System.Drawing.Size(53, 17);
             this.lblMan.TabIndex = 79;
@@ -211,65 +257,41 @@ namespace BedFactory.Pop_up
             this.label1.TabIndex = 65;
             this.label1.Text = "*설비코드";
             // 
-            // txtMan
+            // txtEndTime
             // 
-            this.txtMan.Location = new System.Drawing.Point(526, 161);
-            this.txtMan.Name = "txtMan";
-            this.txtMan.Size = new System.Drawing.Size(176, 25);
-            this.txtMan.TabIndex = 83;
+            this.txtEndTime.Decimal = false;
+            this.txtEndTime.Location = new System.Drawing.Point(178, 113);
+            this.txtEndTime.MaxLength = 6;
+            this.txtEndTime.Name = "txtEndTime";
+            this.txtEndTime.Size = new System.Drawing.Size(176, 25);
+            this.txtEndTime.TabIndex = 82;
             // 
-            // txtWp
+            // txtStartTime
             // 
-            this.txtWp.Location = new System.Drawing.Point(178, 67);
-            this.txtWp.Name = "txtWp";
-            this.txtWp.Size = new System.Drawing.Size(176, 25);
-            this.txtWp.TabIndex = 84;
+            this.txtStartTime.Decimal = false;
+            this.txtStartTime.Location = new System.Drawing.Point(526, 67);
+            this.txtStartTime.MaxLength = 6;
+            this.txtStartTime.Name = "txtStartTime";
+            this.txtStartTime.Size = new System.Drawing.Size(176, 25);
+            this.txtStartTime.TabIndex = 81;
             // 
-            // dtpStartDate
+            // label4
             // 
-            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStartDate.Location = new System.Drawing.Point(526, 113);
-            this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(176, 25);
-            this.dtpStartDate.TabIndex = 85;
-            this.dtpStartDate.ValueChanged += new System.EventHandler(this.dtpStartDate_ValueChanged);
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(400, 167);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 17);
+            this.label4.TabIndex = 90;
+            this.label4.Text = "*투입인원";
             // 
-            // dtpEndDate
+            // txtPeopleCnt
             // 
-            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEndDate.Location = new System.Drawing.Point(178, 161);
-            this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(176, 25);
-            this.dtpEndDate.TabIndex = 86;
-            // 
-            // dtpDate
-            // 
-            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDate.Location = new System.Drawing.Point(526, 209);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(176, 25);
-            this.dtpDate.TabIndex = 87;
-            // 
-            // lblShift
-            // 
-            this.lblShift.AutoSize = true;
-            this.lblShift.ForeColor = System.Drawing.Color.Red;
-            this.lblShift.Location = new System.Drawing.Point(52, 25);
-            this.lblShift.Name = "lblShift";
-            this.lblShift.Size = new System.Drawing.Size(40, 17);
-            this.lblShift.TabIndex = 88;
-            this.lblShift.Text = "*Shift";
-            // 
-            // cboShift
-            // 
-            this.cboShift.FormattingEnabled = true;
-            this.cboShift.Items.AddRange(new object[] {
-            "주간",
-            "야산"});
-            this.cboShift.Location = new System.Drawing.Point(178, 22);
-            this.cboShift.Name = "cboShift";
-            this.cboShift.Size = new System.Drawing.Size(176, 25);
-            this.cboShift.TabIndex = 89;
+            this.txtPeopleCnt.Decimal = false;
+            this.txtPeopleCnt.Location = new System.Drawing.Point(526, 161);
+            this.txtPeopleCnt.Name = "txtPeopleCnt";
+            this.txtPeopleCnt.Size = new System.Drawing.Size(176, 25);
+            this.txtPeopleCnt.TabIndex = 91;
             // 
             // frmShift
             // 
@@ -314,5 +336,7 @@ namespace BedFactory.Pop_up
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.Label lblShift;
         private System.Windows.Forms.ComboBox cboShift;
+        private Controls.OnlyNumberTextBox txtPeopleCnt;
+        private System.Windows.Forms.Label label4;
     }
 }

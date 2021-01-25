@@ -36,6 +36,7 @@ namespace BedFactory
             dgvShift.SetGridViewColumn("최종등록자", "LastMan");
             dgvShift.SetGridViewColumn("최종등록일", "LastDate");
             dgvShift.SetGridViewColumn("사용유무", "IsUse");
+            dgvShift.SetGridViewColumn("투입인원", "PeopleCnt", visibility: false);
 
             DataLoad();
         }
@@ -66,15 +67,16 @@ namespace BedFactory
             ShiftVO vo = new ShiftVO
             {
                 Shift_Num = Convert.ToInt32(dgvShift[1, dgvShift.SelectedRows[0].Index].Value),
-                Shift_Name = dgvShift[1, dgvShift.SelectedRows[2].Index].Value.ToString(),
+                Shift_Name = dgvShift[2, dgvShift.SelectedRows[0].Index].Value.ToString(),
                 WP_Num = Convert.ToInt32(dgvShift[3, dgvShift.SelectedRows[0].Index].Value),
-                Start_Time = Convert.ToInt32(dgvShift[4, dgvShift.SelectedRows[0].Index].Value),
-                End_Time = Convert.ToInt32(dgvShift[5, dgvShift.SelectedRows[0].Index].Value),
-                Start_Date = (DateTime)dgvShift[6, dgvShift.SelectedRows[0].Index].Value,
-                End_Date = (DateTime)dgvShift[7, dgvShift.SelectedRows[0].Index].Value,
-                LastMan = Convert.ToInt32(dgvShift[8, dgvShift.SelectedRows[0].Index].Value),
-                LastDate = (DateTime)dgvShift[9, dgvShift.SelectedRows[0].Index].Value,
-                IsUse = dgvShift[10, dgvShift.SelectedRows[0].Index].Value.ToString()
+                Start_Time = dgvShift[4, dgvShift.SelectedRows[0].Index].Value.ToString(),
+                End_Time = dgvShift[5, dgvShift.SelectedRows[0].Index].Value.ToString(),
+                Start_Date = Convert.ToDateTime(dgvShift[6, dgvShift.SelectedRows[0].Index].Value),
+                End_Date = Convert.ToDateTime(dgvShift[7, dgvShift.SelectedRows[0].Index].Value),
+                LastMan = Convert.ToInt32(dgvShift[10, dgvShift.SelectedRows[0].Index].Value),
+                LastDate = Convert.ToDateTime(dgvShift[11, dgvShift.SelectedRows[0].Index].Value),
+                IsUse = dgvShift[12, dgvShift.SelectedRows[0].Index].Value.ToString(),
+                PeopleCnt = Convert.ToInt32(dgvShift[13, dgvShift.SelectedRows[0].Index].Value)
             };
 
             frmShift frm = new frmShift(vo);
@@ -96,13 +98,14 @@ namespace BedFactory
             {
                 Shift_Name = dgvShift[1, dgvShift.SelectedRows[0].Index].Value.ToString(),
                 WP_Num = Convert.ToInt32(dgvShift[3, dgvShift.SelectedRows[0].Index].Value),
-                Start_Time = Convert.ToInt32(dgvShift[4, dgvShift.SelectedRows[0].Index].Value),
-                End_Time = Convert.ToInt32(dgvShift[5, dgvShift.SelectedRows[0].Index].Value),
-                Start_Date = (DateTime)dgvShift[6, dgvShift.SelectedRows[0].Index].Value,
-                End_Date = (DateTime)dgvShift[7, dgvShift.SelectedRows[0].Index].Value,
-                LastMan = Convert.ToInt32(dgvShift[8, dgvShift.SelectedRows[0].Index].Value),
-                LastDate = (DateTime)dgvShift[9, dgvShift.SelectedRows[0].Index].Value,
-                IsUse = dgvShift[10, dgvShift.SelectedRows[0].Index].Value.ToString()
+                Start_Time = dgvShift[4, dgvShift.SelectedRows[0].Index].Value.ToString(),
+                End_Time = dgvShift[5, dgvShift.SelectedRows[0].Index].Value.ToString(),
+                Start_Date = Convert.ToDateTime(dgvShift[6, dgvShift.SelectedRows[0].Index].Value),
+                End_Date = Convert.ToDateTime(dgvShift[7, dgvShift.SelectedRows[0].Index].Value),
+                LastMan = Convert.ToInt32(dgvShift[10, dgvShift.SelectedRows[0].Index].Value),
+                LastDate = Convert.ToDateTime(dgvShift[11, dgvShift.SelectedRows[0].Index].Value),
+                IsUse = dgvShift[12, dgvShift.SelectedRows[0].Index].Value.ToString(),
+                PeopleCnt = Convert.ToInt32(dgvShift[13, dgvShift.SelectedRows[0].Index].Value)
             };
 
             frmShift frm = new frmShift(vo, "복사");
@@ -138,3 +141,4 @@ namespace BedFactory
         }
     }
 }
+

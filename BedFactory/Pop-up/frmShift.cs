@@ -42,6 +42,7 @@ namespace BedFactory.Pop_up
             dtpStartDate.Value = vo.Start_Date.Date;
             dtpEndDate.Value = vo.End_Date.Date;
             cboIsUse.Text = vo.IsUse;
+            txtPeopleCnt.Text = vo.PeopleCnt.ToString();
 
             SetShow();
         }
@@ -61,6 +62,7 @@ namespace BedFactory.Pop_up
             dtpStartDate.Value = vo.Start_Date.Date;
             dtpEndDate.Value = vo.End_Date.Date;
             cboIsUse.Text = vo.IsUse;
+            txtPeopleCnt.Text = vo.PeopleCnt.ToString();
 
             SetShow();
         }
@@ -77,7 +79,7 @@ namespace BedFactory.Pop_up
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtStartTime.Text.Length == 6 || txtEndTime.Text.Length == 6
+            if (txtStartTime.Text.Length != 6 || txtEndTime.Text.Length != 6
                     || int.Parse(txtStartTime.Text.Substring(0, 2)) > 24
                     || int.Parse(txtStartTime.Text.Substring(2, 2)) > 60
                     || int.Parse(txtStartTime.Text.Substring(4, 2)) > 60)
@@ -86,7 +88,7 @@ namespace BedFactory.Pop_up
                 return;
             }
 
-            if (txtWp.Text.Length > 0)
+            if (txtWp.Text.Length < 1 || txtPeopleCnt.Text.Length < 1)
             {
                 MessageBox.Show("필수 입력사항입니다.");
                 return;
@@ -98,13 +100,14 @@ namespace BedFactory.Pop_up
                 {
                     Shift_Name = cboShift.Text,
                     WP_Num = int.Parse(txtWp.Text),
-                    Start_Time = int.Parse(txtStartTime.Text),
-                    End_Time = int.Parse(txtEndTime.Text),
+                    Start_Time = txtStartTime.Text,
+                    End_Time = txtEndTime.Text,
                     Start_Date = dtpStartDate.Value.Date,
                     End_Date = dtpEndDate.Value.Date,
                     FirstMan = int.Parse(txtMan.Text),
                     FirstDate = dtpDate.Value.Date,
-                    IsUse = cboIsUse.Text
+                    IsUse = cboIsUse.Text,
+                    PeopleCnt = int.Parse(txtPeopleCnt.Text)
                 };
 
                 ShiftsService service = new ShiftsService();
@@ -130,13 +133,14 @@ namespace BedFactory.Pop_up
                     Shift_Num = Convert.ToInt32(lblShift.Tag),
                     Shift_Name = cboShift.Text,
                     WP_Num = int.Parse(txtWp.Text),
-                    Start_Time = int.Parse(txtStartTime.Text),
-                    End_Time = int.Parse(txtEndTime.Text),
+                    Start_Time = txtStartTime.Text,
+                    End_Time = txtEndTime.Text,
                     Start_Date = dtpStartDate.Value.Date,
                     End_Date = dtpEndDate.Value.Date,
                     LastMan = int.Parse(txtMan.Text),
                     LastDate = dtpDate.Value.Date,
-                    IsUse = cboIsUse.Text
+                    IsUse = cboIsUse.Text,
+                    PeopleCnt = int.Parse(txtPeopleCnt.Text)
                 };
 
                 ShiftsService service = new ShiftsService();

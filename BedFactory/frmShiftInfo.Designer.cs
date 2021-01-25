@@ -29,6 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCopy = new System.Windows.Forms.Button();
@@ -45,6 +47,7 @@ namespace BedFactory
             this.dgvShift = new BedFactory.DatagridviewControl();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShift)).BeginInit();
             this.SuspendLayout();
             // 
             // btnInsert
@@ -186,9 +189,18 @@ namespace BedFactory
             // 
             // dgvShift
             // 
+            this.dgvShift.AllowUserToAddRows = false;
+            this.dgvShift.AllowUserToResizeRows = false;
+            this.dgvShift.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvShift.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvShift.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvShift.Location = new System.Drawing.Point(0, 0);
             this.dgvShift.Name = "dgvShift";
+            this.dgvShift.RowHeadersVisible = false;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvShift.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvShift.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvShift.Size = new System.Drawing.Size(1123, 463);
             this.dgvShift.TabIndex = 0;
             this.dgvShift.Text = "datagridviewControl1";
@@ -215,6 +227,7 @@ namespace BedFactory
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShift)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
