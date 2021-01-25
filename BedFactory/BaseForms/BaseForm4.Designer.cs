@@ -174,8 +174,7 @@ namespace BedFactory.BaseForms
             // 
             // BaseForm4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1382, 853);
             this.Controls.Add(this.btn2);
