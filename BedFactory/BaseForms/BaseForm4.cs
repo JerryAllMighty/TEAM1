@@ -16,5 +16,6 @@ namespace BedFactory.BaseForms
         {
             InitializeComponent();
         }
+
     }
 }
