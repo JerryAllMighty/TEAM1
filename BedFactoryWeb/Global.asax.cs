@@ -18,11 +18,6 @@ namespace BedFactoryWeb
 
         void Application_Start(object sender, EventArgs e)
         {
-            // 애플리케이션 시작 시 실행되는 코드
-            AreaRegistration.RegisterAllAreas();
-            GlobalConfiguration.Configure(WebApiConfig.Register);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-
             GlobalConfiguration.Configure(WebApiConfig.Register);
 
             strConn = WebConfigurationManager.ConnectionStrings["MesDB"].ConnectionString;
