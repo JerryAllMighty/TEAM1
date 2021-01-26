@@ -130,8 +130,6 @@ namespace BedFactory
             this.Columns.Add(btn);
         }
 
-
-
         protected override void OnPaint(PaintEventArgs pe)
         {
             base.OnPaint(pe);

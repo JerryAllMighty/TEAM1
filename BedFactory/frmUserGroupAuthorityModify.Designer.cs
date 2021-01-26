@@ -29,10 +29,10 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -44,13 +44,13 @@ namespace BedFactory
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.datagridviewControl1 = new BedFactory.DatagridviewControl();
             this.datagridviewControl2 = new BedFactory.DatagridviewControl();
+            this.datagridviewControl1 = new BedFactory.DatagridviewControl();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridviewControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridviewControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridviewControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -118,7 +118,7 @@ namespace BedFactory
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(574, 39);
+            this.label2.Location = new System.Drawing.Point(573, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 1;
@@ -154,26 +154,6 @@ namespace BedFactory
             this.label6.Text = "추가할 권한";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // datagridviewControl1
-            // 
-            this.datagridviewControl1.AllowUserToAddRows = false;
-            this.datagridviewControl1.AllowUserToResizeRows = false;
-            this.datagridviewControl1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold);
-            this.datagridviewControl1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.datagridviewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridviewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datagridviewControl1.Location = new System.Drawing.Point(0, 0);
-            this.datagridviewControl1.Name = "datagridviewControl1";
-            this.datagridviewControl1.RowHeadersVisible = false;
-            this.datagridviewControl1.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.datagridviewControl1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.datagridviewControl1.RowTemplate.Height = 27;
-            this.datagridviewControl1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridviewControl1.Size = new System.Drawing.Size(435, 503);
-            this.datagridviewControl1.TabIndex = 0;
-            // 
             // datagridviewControl2
             // 
             this.datagridviewControl2.AllowUserToAddRows = false;
@@ -194,6 +174,26 @@ namespace BedFactory
             this.datagridviewControl2.Size = new System.Drawing.Size(807, 347);
             this.datagridviewControl2.TabIndex = 0;
             // 
+            // datagridviewControl1
+            // 
+            this.datagridviewControl1.AllowUserToAddRows = false;
+            this.datagridviewControl1.AllowUserToResizeRows = false;
+            this.datagridviewControl1.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold);
+            this.datagridviewControl1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.datagridviewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridviewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.datagridviewControl1.Location = new System.Drawing.Point(0, 0);
+            this.datagridviewControl1.Name = "datagridviewControl1";
+            this.datagridviewControl1.RowHeadersVisible = false;
+            this.datagridviewControl1.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.datagridviewControl1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.datagridviewControl1.RowTemplate.Height = 27;
+            this.datagridviewControl1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datagridviewControl1.Size = new System.Drawing.Size(435, 503);
+            this.datagridviewControl1.TabIndex = 0;
+            // 
             // frmUserGroupAuthorityModify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -213,8 +213,8 @@ namespace BedFactory
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.datagridviewControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridviewControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridviewControl1)).EndInit();
             this.ResumeLayout(false);
 
         }

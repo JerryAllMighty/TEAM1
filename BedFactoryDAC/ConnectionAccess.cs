@@ -23,8 +23,7 @@ namespace BedFactoryDAC
             {                 
                 string strConn = string.Empty;
                 XmlDocument configXml = new XmlDocument();
-                string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)
-                    + "/Sample_DEV.xml";
+                string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/Sample_DEV.xml";
 
                 configXml.Load(path);
 

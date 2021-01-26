@@ -58,10 +58,9 @@ namespace BedFactory
         /// </summary>
         private void LoadData()
         {
-            service = new CommonCodeService();
-
             if (commonList == null)
             {
+                service = new CommonCodeService();
                 if (service.GetCommonCodeInfo() != null)
                 {
                     //처음 한 번만 DB를 갔다오기 위해서 처음 정보를 가져온 후 리스트에 저장

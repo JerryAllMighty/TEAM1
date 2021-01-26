@@ -8,19 +8,19 @@ namespace BedFactoryVO
 {
     public class AuthorityVO
     {
-        public string ListNum { get; set; }
+        public int ListNum { get; set; }
         public string Auth_Department { get; set; }
-        public string LFirstMan { get; set; }
-        public string LFirstDate { get; set; }
-        public string LLastMan { get; set; }
-        public string LLastDate { get; set; }
-        public string LIsDeleted { get; set; }
-        public string Auth_Num { get; set; }
-        public string Auth_Info { get; set; }
-        public string FirstMan { get; set; }
-        public string FirstDate { get; set; }
-        public string LastMan { get; set; }
-        public string LastDate { get; set; }
+        //public int LFirstMan { get; set; }
+        //public string LFirstDate { get; set; }
+        //public int LLastMan { get; set; }
+        //public string LLastDate { get; set; }
+        //public string LIsDeleted { get; set; }
+        public int Auth_Num { get; set; }
+        public string Auth_Name { get; set; }
+        public int FirstMan { get; set; }
+        public DateTime FirstDate { get; set; }
+        public int LastMan { get; set; }
+        public DateTime LastDate { get; set; }
         public string IsDeleted { get; set; }
 
     }
