@@ -151,6 +151,12 @@
     <Compile Include="frmErrorList.Designer.cs">
       <DependentUpon>frmErrorList.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProcessManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcessManagement.Designer.cs">
+      <DependentUpon>frmProcessManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFairStockStatus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -513,6 +519,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmErrorList.resx">
       <DependentUpon>frmErrorList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcessManagement.resx">
+      <DependentUpon>frmProcessManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFairStockStatus.resx">
       <DependentUpon>frmFairStockStatus.cs</DependentUpon>

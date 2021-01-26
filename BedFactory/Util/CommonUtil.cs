@@ -12,6 +12,37 @@ namespace BedFactory.Util
     public static class CommonUtil
     {
         /// <summary>
+        /// 데이터그리드뷰
+        /// </summary>
+        /// <param name="dgv"></param>
+        public static void SetInitGridView(DataGridView dgv)
+        {
+            dgv.AutoGenerateColumns = false;
+            dgv.AllowUserToAddRows = false;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        public static void AddGridTextColumn(
+                            DataGridView dgv,
+                            string headerText,
+                            string dataPropertyName,
+                            int colWidth = 100,
+                            bool visibility = true,
+                            DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft)
+        {
+            DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+            col.Name = dataPropertyName;
+            col.HeaderText = headerText;
+            col.DataPropertyName = dataPropertyName;
+            col.Width = colWidth;
+            col.DefaultCellStyle.Alignment = textAlign;
+            col.Visible = visibility;
+            col.ReadOnly = true;
+
+            dgv.Columns.Add(col);
+        }
+
+        /// <summary>
         /// 콤보박스 바인딩
         /// </summary>
         /// <param name="cbo">콤보박스</param>
