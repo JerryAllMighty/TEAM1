@@ -79,6 +79,12 @@
     <Compile Include="BaseForms\BaseForm1.Designer.cs">
       <DependentUpon>BaseForm1.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseForms\BaseForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForms\BaseForm2.Designer.cs">
+      <DependentUpon>BaseForm2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LabelComboText.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -144,6 +150,12 @@
     </Compile>
     <Compile Include="frmErrorList.Designer.cs">
       <DependentUpon>frmErrorList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProcessManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcessManagement.Designer.cs">
+      <DependentUpon>frmProcessManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="frmFairStockStatus.cs">
       <SubType>Form</SubType>
@@ -235,6 +247,12 @@
     <Compile Include="frmProductionPlanning.Designer.cs">
       <DependentUpon>frmProductionPlanning.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUserGroupAuthority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserGroupAuthority.Designer.cs">
+      <DependentUpon>frmUserGroupAuthority.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmWorkOrderStatus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,12 +312,6 @@
     </Compile>
     <Compile Include="frmSalesMasterUpload.Designer.cs">
       <DependentUpon>frmSalesMasterUpload.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmUserGroupAuthority.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmUserGroupAuthority.Designer.cs">
-      <DependentUpon>frmUserGroupAuthority.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCommonCode.cs">
       <SubType>Form</SubType>
@@ -472,6 +484,9 @@
     <EmbeddedResource Include="BaseForms\BaseForm1.resx">
       <DependentUpon>BaseForm1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BaseForms\BaseForm2.resx">
+      <DependentUpon>BaseForm2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\DatagridviewControl.resx">
       <DependentUpon>DatagridviewControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -504,6 +519,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmErrorList.resx">
       <DependentUpon>frmErrorList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcessManagement.resx">
+      <DependentUpon>frmProcessManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFairStockStatus.resx">
       <DependentUpon>frmFairStockStatus.cs</DependentUpon>
@@ -550,6 +568,9 @@
     <EmbeddedResource Include="frmProductionPlanning.resx">
       <DependentUpon>frmProductionPlanning.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmUserGroupAuthority.resx">
+      <DependentUpon>frmUserGroupAuthority.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmWorkOrderStatus.resx">
       <DependentUpon>frmWorkOrderStatus.cs</DependentUpon>
     </EmbeddedResource>
@@ -579,9 +600,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSalesMasterUpload.resx">
       <DependentUpon>frmSalesMasterUpload.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmUserGroupAuthority.resx">
-      <DependentUpon>frmUserGroupAuthority.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCommonCode.resx">
       <DependentUpon>frmCommonCode.cs</DependentUpon>

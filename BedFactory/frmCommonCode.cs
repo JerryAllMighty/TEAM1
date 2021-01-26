@@ -17,16 +17,21 @@ namespace BedFactory
     {
         CommonCodeService service;
 
-        public CommonCodedVO CommonCodeInfo { 
-            get {
-                return new CommonCodedVO
+        //처음에 폼이 로드될 때 공통코드 정보를 가져온 후 commonList에 저장. DB에 여러 번 들리지 않기 위함.
+        public static List<CommonCodedVO> commonList;
+
+        public CommonCodedVO CommonCodeInfo
         {
-            Code_Num = txtCode_Num.Text,
-            Code_Name = txtCode_Name.Text,
-            Category = txtCode_Category.Text,
-            P_Code = txtCode_P_Code.Text
-        }; 
-                }
+            get
+            {
+                return new CommonCodedVO
+                {
+                    Code_Num = txtCode_Num.Text,
+                    Code_Name = txtCode_Name.Text,
+                    Category = txtCode_Category.Text,
+                    P_Code = txtCode_P_Code.Text
+                };
+            }
         }
 
         public frmCommonCode()
@@ -47,20 +52,27 @@ namespace BedFactory
             dgvCommonCode.SetGridViewColumn("P_Code", "P_Code");
 
             LoadData();
-
-
         }
         /// <summary>
         /// 공통코드 정보를 데이터그리드 뷰에 바인딩하는 함수
         /// </summary>
         private void LoadData()
         {
-            service = new CommonCodeService();
-            if (service.GetCommonCodeInfo() != null)
+            if (commonList == null)
             {
-                dgvCommonCode.DataSource = service.GetCommonCodeInfo();
+                service = new CommonCodeService();
+                if (service.GetCommonCodeInfo() != null)
+                {
+                    //처음 한 번만 DB를 갔다오기 위해서 처음 정보를 가져온 후 리스트에 저장
+                    commonList = service.GetCommonCodeInfo();
+                }
             }
+            dgvCommonCode.DataSource = commonList;
         }
+
+        /// <summary>
+        /// 텍스트 박스를 비워주는 함수
+        /// </summary>
         private void ClearTextBox()
         {
             txtCode_Num.Text = txtCode_Name.Text = txtCode_Category.Text = txtCode_P_Code.Text = "";

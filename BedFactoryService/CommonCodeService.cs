@@ -15,7 +15,7 @@ namespace BedFactoryService
         /// 공통코드 정보를 모두 가져옴
         /// </summary>
         /// <returns></returns>
-        public DataTable GetCommonCodeInfo()
+        public List<CommonCodedVO> GetCommonCodeInfo()
         {
             CommonCodeDAC dac = new CommonCodeDAC();
             return dac.GetCommonCodeInfo();

@@ -92,6 +92,7 @@ namespace BedFactory.BaseForms
             this.btnSelect.TabIndex = 2;
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // pnlDgv
             // 

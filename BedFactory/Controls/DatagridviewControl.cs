@@ -116,7 +116,7 @@ namespace BedFactory
         /// <param name="buttonText">버튼텍스트</param>
         /// <param name="width">버튼넓이</param>
         /// <returns></returns>
-        public void GridButtonAdd(string headerText,
+        public void AddGridButton(string headerText,
                                           string dataPropertyName, string buttonText, Padding padding, int width = 10)
         {
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
