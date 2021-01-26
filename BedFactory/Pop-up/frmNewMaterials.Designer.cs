@@ -29,16 +29,16 @@ namespace BedFactory.Pop_up
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("원자재");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("반자재");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("완제품");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("메트릭스");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("원자재");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("반자재");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("완제품");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("메트릭스");
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.trvMaterials = new System.Windows.Forms.TreeView();
+            this.lctCategory = new BedFactory.LabelComboText();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.materialsCheckList1 = new BedFactory.Controls.MaterialsCheckList();
             this.ontPrice = new BedFactory.Controls.OnlyNumberTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lctKind = new BedFactory.LabelComboText();
@@ -53,7 +53,7 @@ namespace BedFactory.Pop_up
             this.ontSizeX = new BedFactory.Controls.OnlyNumberTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lctProductName = new BedFactory.LabelComboText();
-            this.lctCategory = new BedFactory.LabelComboText();
+            this.materialsCheckList1 = new BedFactory.Controls.MaterialsCheckList();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -100,22 +100,39 @@ namespace BedFactory.Pop_up
             this.trvMaterials.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trvMaterials.Location = new System.Drawing.Point(0, 0);
             this.trvMaterials.Name = "trvMaterials";
-            treeNode13.Name = "노드0";
-            treeNode13.Text = "원자재";
-            treeNode14.Name = "노드1";
-            treeNode14.Text = "반자재";
-            treeNode15.Name = "노드2";
-            treeNode15.Text = "완제품";
-            treeNode16.Name = "노드3";
-            treeNode16.Text = "메트릭스";
+            treeNode1.Name = "노드0";
+            treeNode1.Text = "원자재";
+            treeNode2.Name = "노드1";
+            treeNode2.Text = "반자재";
+            treeNode3.Name = "노드2";
+            treeNode3.Text = "완제품";
+            treeNode4.Name = "노드3";
+            treeNode4.Text = "메트릭스";
             this.trvMaterials.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode13,
-            treeNode14,
-            treeNode15,
-            treeNode16});
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4});
             this.trvMaterials.Size = new System.Drawing.Size(199, 459);
             this.trvMaterials.TabIndex = 0;
             this.trvMaterials.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.trvMaterials_NodeMouseClick);
+            // 
+            // lctCategory
+            // 
+            this.lctCategory.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lctCategory.BackColor = System.Drawing.Color.Transparent;
+            this.lctCategory.BoxKind = BedFactory.LabelComboText.Kind.combo;
+            this.lctCategory.ComboData = null;
+            this.lctCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.lctCategory.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.lctCategory.Header = "구  분";
+            this.lctCategory.Important = false;
+            this.lctCategory.Location = new System.Drawing.Point(50, 275);
+            this.lctCategory.MultiLine = false;
+            this.lctCategory.MultiLineCnt = 0;
+            this.lctCategory.Name = "lctCategory";
+            this.lctCategory.Size = new System.Drawing.Size(413, 38);
+            this.lctCategory.TabIndex = 23;
             // 
             // label6
             // 
@@ -145,18 +162,6 @@ namespace BedFactory.Pop_up
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(500, 337);
             this.panel1.TabIndex = 19;
-            // 
-            // materialsCheckList1
-            // 
-            this.materialsCheckList1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialsCheckList1.BackColor = System.Drawing.Color.Transparent;
-            this.materialsCheckList1.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.materialsCheckList1.Location = new System.Drawing.Point(5, 1);
-            this.materialsCheckList1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.materialsCheckList1.Name = "materialsCheckList1";
-            this.materialsCheckList1.Size = new System.Drawing.Size(490, 43);
-            this.materialsCheckList1.TabIndex = 0;
             // 
             // ontPrice
             // 
@@ -322,22 +327,17 @@ namespace BedFactory.Pop_up
             this.lctProductName.Size = new System.Drawing.Size(413, 38);
             this.lctProductName.TabIndex = 0;
             // 
-            // lctCategory
+            // materialsCheckList1
             // 
-            this.lctCategory.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lctCategory.BackColor = System.Drawing.Color.Transparent;
-            this.lctCategory.BoxKind = BedFactory.LabelComboText.Kind.combo;
-            this.lctCategory.ComboData = null;
-            this.lctCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.lctCategory.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.lctCategory.Header = "구  분";
-            this.lctCategory.Important = false;
-            this.lctCategory.Location = new System.Drawing.Point(50, 275);
-            this.lctCategory.MultiLine = false;
-            this.lctCategory.MultiLineCnt = 0;
-            this.lctCategory.Name = "lctCategory";
-            this.lctCategory.Size = new System.Drawing.Size(413, 38);
-            this.lctCategory.TabIndex = 23;
+            this.materialsCheckList1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialsCheckList1.BackColor = System.Drawing.Color.Transparent;
+            this.materialsCheckList1.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.materialsCheckList1.Location = new System.Drawing.Point(3, 4);
+            this.materialsCheckList1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.materialsCheckList1.Name = "materialsCheckList1";
+            this.materialsCheckList1.Size = new System.Drawing.Size(490, 43);
+            this.materialsCheckList1.TabIndex = 1;
             // 
             // frmNewMaterials
             // 
@@ -378,9 +378,9 @@ namespace BedFactory.Pop_up
         private Controls.OnlyNumberTextBox ontPrice;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
-        private Controls.MaterialsCheckList materialsCheckList1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private LabelComboText lctCategory;
+        private Controls.MaterialsCheckList materialsCheckList1;
     }
 }
