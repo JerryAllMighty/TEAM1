@@ -34,7 +34,8 @@ namespace BedFactoryDAC
                     cmd.Connection = conn;
                     cmd.CommandText = @"select Shift_Num, Shift_Name, WP_Num, Start_Time, End_Time, Start_Date
                                                , End_Date, FirstMan, FirstDate, LastMan, LastDate, IsUse
-                                               , Row_Number() over(order by Shift_Num) Rownum
+                                               , Convert(int, Row_Number() over(order by Shift_Num)) Rownum
+                                               , PeopleCnt
                                           from tblShifts";
                     List<ShiftVO> list = Helper.DataReaderMapToList<ShiftVO>(cmd.ExecuteReader());
                     conn.Close();
@@ -70,6 +71,7 @@ namespace BedFactoryDAC
                     cmd.Parameters.AddWithValue("@FirstMan", shift.FirstMan);
                     cmd.Parameters.AddWithValue("@FirstDate", shift.FirstDate);
                     cmd.Parameters.AddWithValue("@IsUse", shift.IsUse);
+                    cmd.Parameters.AddWithValue("@PeopleCnt", shift.PeopleCnt);
 
                     cmd.ExecuteNonQuery();
                     conn.Close();
@@ -107,6 +109,7 @@ namespace BedFactoryDAC
                     cmd.Parameters.AddWithValue("@LastDate", shift.LastDate);
                     cmd.Parameters.AddWithValue("@IsUse", shift.IsUse);
                     cmd.Parameters.AddWithValue("@Shift_Num", shift.Shift_Num);
+                    cmd.Parameters.AddWithValue("@PeopleCnt", shift.PeopleCnt);
 
                     cmd.ExecuteNonQuery();
                     conn.Close();
@@ -138,6 +141,30 @@ namespace BedFactoryDAC
             {
                 Log.WriteError(err.Message);
                 return false;
+            }
+        }
+
+        public List<ShiftVO> ShiftChangeSelect()
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"select S.Shift_Num, S.WP_Num, S.Shift_Name, Change_Date, S.Start_Time Before_Start_Time
+                                               , S.End_Time After_End_Time, S.PeopleCnt Before_PeopleCnt, Start_Date, End_Date
+                                               , isnull(SD.Start_Time, s.Start_Time) Start_Time
+	                                           , isnull(SD.End_Time, S.End_Time) End_Time, isnull(SD.PeopleCnt, S.PeopleCnt) PeopleCnt
+                                          from tblShifts S left outer join tblShifts_D SD on S.Shift_Num = SD.Shift_Num";
+                    List<ShiftVO> list = Helper.DataReaderMapToList<ShiftVO>(cmd.ExecuteReader());
+                    conn.Close();
+                    return list;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
             }
         }
     }

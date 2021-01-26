@@ -18,7 +18,6 @@ namespace BedFactory.Controls
         {
             InitializeComponent();
             cboText = labelComboText1;
-            text = textBox1;
         }
     }
 }

@@ -24,14 +24,15 @@ namespace BedFactory.Pop_up
 
         private void frmCheckInfo_Load(object sender, EventArgs e)
         {
-            #region 콤보박스 바인딩
+            //#region 콤보박스 바인딩
             //CommonCodeService service = new CommonCodeService();
 
             //var list = (from item in service.GetCommonCodeInfo()
-            //            where item.Category == "검사항목").ToList();
+            //            where item.Category == "검사항목"
+            //            select item).ToList();
 
             //lctCheckKind.cbo.DataSource = list;
-            #endregion
+            //#endregion
 
             if (formCheck)
             {
