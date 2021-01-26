@@ -46,12 +46,18 @@
     <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -235,6 +241,12 @@
     <Compile Include="frmWorkOrderStatus.Designer.cs">
       <DependentUpon>frmWorkOrderStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pop-up\frmCheckInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pop-up\frmCheckInfo.Designer.cs">
+      <DependentUpon>frmCheckInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pop-up\frmDuedateChange.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +258,12 @@
     </Compile>
     <Compile Include="Pop-up\frmNewMaterials.Designer.cs">
       <DependentUpon>frmNewMaterials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pop-up\frmProductionPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pop-up\frmProductionPlan.Designer.cs">
+      <DependentUpon>frmProductionPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="Pop-up\frmRegistrationWorkDeadLine.cs">
       <SubType>Form</SubType>
@@ -379,6 +397,12 @@
     <Compile Include="frmUserGroupManagement.Designer.cs">
       <DependentUpon>frmUserGroupManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pop-up\frmShiftChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pop-up\frmShiftChange.Designer.cs">
+      <DependentUpon>frmShiftChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pop-up\frmStockBackgroundCheck.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -444,6 +468,7 @@
     <Compile Include="Settings.cs" />
     <Compile Include="Util\Helper.cs" />
     <Compile Include="Util\CommonUtil.cs" />
+    <Compile Include="Util\ServiceHelp.cs" />
     <EmbeddedResource Include="BaseForms\BaseForm1.resx">
       <DependentUpon>BaseForm1.cs</DependentUpon>
     </EmbeddedResource>
@@ -528,11 +553,17 @@
     <EmbeddedResource Include="frmWorkOrderStatus.resx">
       <DependentUpon>frmWorkOrderStatus.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pop-up\frmCheckInfo.resx">
+      <DependentUpon>frmCheckInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmDuedateChange.resx">
       <DependentUpon>frmDuedateChange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmNewMaterials.resx">
       <DependentUpon>frmNewMaterials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pop-up\frmProductionPlan.resx">
+      <DependentUpon>frmProductionPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmRegistrationWorkDeadLine.resx">
       <DependentUpon>frmRegistrationWorkDeadLine.cs</DependentUpon>
@@ -599,6 +630,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUserGroupManagement.resx">
       <DependentUpon>frmUserGroupManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pop-up\frmShiftChange.resx">
+      <DependentUpon>frmShiftChange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmStockBackgroundCheck.resx">
       <DependentUpon>frmStockBackgroundCheck.cs</DependentUpon>
