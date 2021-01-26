@@ -45,6 +45,7 @@
     <Compile Include="CheckInfoVO.cs" />
     <Compile Include="CommonCodedVO.cs" />
     <Compile Include="MaterialsVO.cs" />
+    <Compile Include="ProcessDetailVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShiftVO.cs" />
   </ItemGroup>
