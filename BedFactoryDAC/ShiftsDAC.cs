@@ -167,5 +167,37 @@ namespace BedFactoryDAC
                 return null;
             }
         }
+
+        public int ShiftChangeIandU(ShiftVO shift)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = @"SP_ShiftDateChange";
+
+                    cmd.Parameters.Add("@Amount", System.Data.SqlDbType.Int);
+                    cmd.Parameters["@Amount"].Direction = System.Data.ParameterDirection.Output;
+
+                    cmd.Parameters.AddWithValue("@Shift_Num", shift.Shift_Num);
+                    cmd.Parameters.AddWithValue("@Start_Time", shift.Start_Time);
+                    cmd.Parameters.AddWithValue("@End_Time", shift.End_Time);
+                    cmd.Parameters.AddWithValue("@Change_Date", shift.Change_Date);
+                    cmd.Parameters.AddWithValue("@PeopleCnt", shift.PeopleCnt);
+
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    return Convert.ToInt32(cmd.Parameters["@Amount"].Value);
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return 2;
+            }
+        }
     }
 }

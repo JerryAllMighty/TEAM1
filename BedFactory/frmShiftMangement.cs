@@ -96,7 +96,7 @@ namespace BedFactory
                     dgvShift.Rows.Add(ob1);
 
                     object[] ob2 = new object[dgvShift.ColumnCount];
-                    ob1[0] = "";
+                    ob2[0] = "";
                     ob2[1] = "";
                     ob2[2] = "";
                     for (int i = 3; i < ob2.Length; i++)
@@ -120,7 +120,7 @@ namespace BedFactory
                     dgvShift.Rows.Add(ob2);
 
                     object[] ob3 = new object[dgvShift.ColumnCount];
-                    ob1[0] = "";
+                    ob3[0] = "";
                     ob3[1] = "";
                     ob3[2] = "";
                     for (int i = 3; i < ob3.Length; i++)
@@ -175,7 +175,7 @@ namespace BedFactory
         private void btnChange_Click(object sender, EventArgs e)
         {
             int i = dgvShift.SelectedRows[0].Index;
-            while (dgvShift[1, i].Value.ToString().Trim().Equals(""))
+            while (dgvShift[0, i].Value.ToString().Trim().Equals(""))
             {
                 i--;
 
@@ -188,12 +188,15 @@ namespace BedFactory
             Dictionary<string, List<int>> changeDic = new Dictionary<string, List<int>>();
             for(int k = 3; k < dgvShift.Columns.Count - 1; k++)
             {
-                List<int> list = new List<int>();
-                list.Add(Convert.ToInt32(dgvShift[k, i].Value));
-                list.Add(Convert.ToInt32(dgvShift[k, i + 1].Value));
-                list.Add(Convert.ToInt32(dgvShift[k, i + 2].Value));
+                if(!dgvShift[k, i].Value.ToString().Equals("해당없음"))
+                {
+                    List<int> list = new List<int>();
+                    list.Add(Convert.ToInt32(dgvShift[k, i].Value));
+                    list.Add(Convert.ToInt32(dgvShift[k, i + 1].Value));
+                    list.Add(Convert.ToInt32(dgvShift[k, i + 2].Value));
 
-                changeDic.Add(dgvShift.Columns[k].Name, list);
+                    changeDic.Add(dgvShift.Columns[k].Name, list);
+                }                
             }
 
             frmShiftChange frm = new frmShiftChange(dgvShift[0, i].Value.ToString(), changeDic);
