@@ -29,10 +29,10 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.datagridviewControl2 = new BedFactory.DatagridviewControl();
@@ -76,16 +76,16 @@ namespace BedFactory
             this.datagridviewControl2.AllowUserToAddRows = false;
             this.datagridviewControl2.AllowUserToResizeRows = false;
             this.datagridviewControl2.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold);
-            this.datagridviewControl2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.datagridviewControl2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.datagridviewControl2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridviewControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.datagridviewControl2.Location = new System.Drawing.Point(0, 0);
             this.datagridviewControl2.Name = "datagridviewControl2";
             this.datagridviewControl2.RowHeadersVisible = false;
             this.datagridviewControl2.RowHeadersWidth = 51;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.datagridviewControl2.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.datagridviewControl2.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.datagridviewControl2.RowTemplate.Height = 27;
             this.datagridviewControl2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.datagridviewControl2.Size = new System.Drawing.Size(736, 711);
@@ -96,16 +96,16 @@ namespace BedFactory
             this.datagridviewControl1.AllowUserToAddRows = false;
             this.datagridviewControl1.AllowUserToResizeRows = false;
             this.datagridviewControl1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.datagridviewControl1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.datagridviewControl1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.datagridviewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridviewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.datagridviewControl1.Location = new System.Drawing.Point(0, 0);
             this.datagridviewControl1.Name = "datagridviewControl1";
             this.datagridviewControl1.RowHeadersVisible = false;
             this.datagridviewControl1.RowHeadersWidth = 51;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.datagridviewControl1.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.datagridviewControl1.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.datagridviewControl1.RowTemplate.Height = 27;
             this.datagridviewControl1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.datagridviewControl1.Size = new System.Drawing.Size(615, 711);

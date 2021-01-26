@@ -36,7 +36,6 @@ namespace BedFactoryDAC
 
                     List<CommonCodedVO> list = Helper.DataReaderMapToList<CommonCodedVO>(cmd.ExecuteReader());
                     return list != null ? list : null;
-                    
                 }
             }
             catch (Exception err)
