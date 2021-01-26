@@ -79,6 +79,12 @@
     <Compile Include="BaseForms\BaseForm1.Designer.cs">
       <DependentUpon>BaseForm1.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseForms\BaseForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForms\BaseForm2.Designer.cs">
+      <DependentUpon>BaseForm2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LabelComboText.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -471,6 +477,9 @@
     <Compile Include="Util\ServiceHelp.cs" />
     <EmbeddedResource Include="BaseForms\BaseForm1.resx">
       <DependentUpon>BaseForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForms\BaseForm2.resx">
+      <DependentUpon>BaseForm2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\DatagridviewControl.resx">
       <DependentUpon>DatagridviewControl.cs</DependentUpon>

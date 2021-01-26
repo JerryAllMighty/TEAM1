@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmUserGroupAuthority : BedFactory.BaseForms.BaseForm4
+    public partial class frmUserGroupAuthority : BedFactory.BaseForms.BaseForm1
     {
         public frmUserGroupAuthority()
         {
