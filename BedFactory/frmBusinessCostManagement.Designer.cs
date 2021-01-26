@@ -43,8 +43,8 @@ namespace BedFactory
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -188,15 +188,6 @@ namespace BedFactory
             this.dateTimePicker1.Size = new System.Drawing.Size(116, 25);
             this.dateTimePicker1.TabIndex = 25;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 17);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "기준일자";
-            // 
             // btnSelect
             // 
             this.btnSelect.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -208,6 +199,15 @@ namespace BedFactory
             this.btnSelect.TabIndex = 23;
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 17);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "기준일자";
             // 
             // frmBusinessCostManagement
             // 
@@ -249,7 +249,7 @@ namespace BedFactory
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label1;
         protected System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.Label label1;
     }
 }

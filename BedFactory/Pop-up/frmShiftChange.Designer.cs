@@ -30,17 +30,17 @@ namespace BedFactory.Pop_up
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblShift = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtStartTime = new BedFactory.Controls.OnlyCharTextBox();
-            this.txtEndTime = new BedFactory.Controls.OnlyCharTextBox();
+            this.cboDate = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.nudPeopleCnt = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblShift = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cboDate = new System.Windows.Forms.ComboBox();
+            this.txtEndTime = new BedFactory.Controls.OnlyCharTextBox();
+            this.txtStartTime = new BedFactory.Controls.OnlyCharTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPeopleCnt)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +62,63 @@ namespace BedFactory.Pop_up
             this.panel1.Size = new System.Drawing.Size(375, 289);
             this.panel1.TabIndex = 0;
             // 
+            // cboDate
+            // 
+            this.cboDate.FormattingEnabled = true;
+            this.cboDate.Location = new System.Drawing.Point(116, 37);
+            this.cboDate.Name = "cboDate";
+            this.cboDate.Size = new System.Drawing.Size(235, 25);
+            this.cboDate.TabIndex = 8;
+            this.cboDate.SelectedIndexChanged += new System.EventHandler(this.cboDate_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(28, 40);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 17);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "*날짜";
+            // 
+            // nudPeopleCnt
+            // 
+            this.nudPeopleCnt.Location = new System.Drawing.Point(116, 225);
+            this.nudPeopleCnt.Name = "nudPeopleCnt";
+            this.nudPeopleCnt.Size = new System.Drawing.Size(235, 25);
+            this.nudPeopleCnt.TabIndex = 6;
+            this.nudPeopleCnt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(28, 227);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 17);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "*인원";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(28, 161);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "*완료시간";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(28, 101);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "*시작시간";
+            // 
             // lblShift
             // 
             this.lblShift.AutoSize = true;
@@ -71,60 +128,6 @@ namespace BedFactory.Pop_up
             this.lblShift.TabIndex = 0;
             this.lblShift.Text = "Shift번호";
             this.lblShift.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 101);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "*시작시간";
-            this.label2.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 161);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "*완료시간";
-            this.label1.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 227);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 17);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "*인원";
-            this.label3.Visible = false;
-            // 
-            // txtStartTime
-            // 
-            this.txtStartTime.Location = new System.Drawing.Point(116, 98);
-            this.txtStartTime.MaxLength = 6;
-            this.txtStartTime.Name = "txtStartTime";
-            this.txtStartTime.Size = new System.Drawing.Size(235, 25);
-            this.txtStartTime.TabIndex = 4;
-            // 
-            // txtEndTime
-            // 
-            this.txtEndTime.Location = new System.Drawing.Point(116, 161);
-            this.txtEndTime.MaxLength = 6;
-            this.txtEndTime.Name = "txtEndTime";
-            this.txtEndTime.Size = new System.Drawing.Size(235, 25);
-            this.txtEndTime.TabIndex = 5;
-            // 
-            // nudPeopleCnt
-            // 
-            this.nudPeopleCnt.Location = new System.Drawing.Point(116, 225);
-            this.nudPeopleCnt.Name = "nudPeopleCnt";
-            this.nudPeopleCnt.Size = new System.Drawing.Size(235, 25);
-            this.nudPeopleCnt.TabIndex = 6;
-            this.nudPeopleCnt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnCancel
             // 
@@ -136,6 +139,7 @@ namespace BedFactory.Pop_up
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -147,25 +151,25 @@ namespace BedFactory.Pop_up
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label4
+            // txtEndTime
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 40);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 17);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "*날짜";
-            this.label4.Visible = false;
+            this.txtEndTime.Location = new System.Drawing.Point(116, 161);
+            this.txtEndTime.MaxLength = 6;
+            this.txtEndTime.Name = "txtEndTime";
+            this.txtEndTime.Size = new System.Drawing.Size(235, 25);
+            this.txtEndTime.TabIndex = 5;
+            this.txtEndTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // cboDate
+            // txtStartTime
             // 
-            this.cboDate.FormattingEnabled = true;
-            this.cboDate.Location = new System.Drawing.Point(116, 37);
-            this.cboDate.Name = "cboDate";
-            this.cboDate.Size = new System.Drawing.Size(235, 25);
-            this.cboDate.TabIndex = 8;
-            this.cboDate.SelectedIndexChanged += new System.EventHandler(this.cboDate_SelectedIndexChanged);
+            this.txtStartTime.Location = new System.Drawing.Point(116, 98);
+            this.txtStartTime.MaxLength = 6;
+            this.txtStartTime.Name = "txtStartTime";
+            this.txtStartTime.Size = new System.Drawing.Size(235, 25);
+            this.txtStartTime.TabIndex = 4;
+            this.txtStartTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // frmShiftChange
             // 

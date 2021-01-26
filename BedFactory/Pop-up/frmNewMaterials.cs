@@ -22,12 +22,15 @@ namespace BedFactory.Pop_up
         private void frmNewMaterials_Load(object sender, EventArgs e)
         {
             #region 트리노드 바인딩(카테고리)
-            //CommonCodeService service = new CommonCodeService();
-            //p_List = (from common in service.GetCommonCodeInfo()
-            //          where common.Category == "자재종류"
-            //          select common).ToList();
-            //
-            //CommonUtil.AddTreeNode(trvMaterials, p_List, "자재종류", false);
+            CommonCodeService service = new CommonCodeService();
+            p_List = (from common in service.GetCommonCodeInfo()
+                      where common.Category == "자재종류"
+                      select common).ToList();
+
+            foreach(CommonCodedVO item in p_List)
+            {
+                trvMaterials.Nodes.Add(item.Code_Name);
+            }
             #endregion
 
             #region 자식노드 바인딩(자재정보)

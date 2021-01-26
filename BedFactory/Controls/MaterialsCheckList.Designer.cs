@@ -30,7 +30,6 @@ namespace BedFactory.Controls
         private void InitializeComponent()
         {
             this.labelComboText1 = new BedFactory.LabelComboText();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -50,24 +49,14 @@ namespace BedFactory.Controls
             this.labelComboText1.Size = new System.Drawing.Size(417, 33);
             this.labelComboText1.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(462, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 25);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(431, 7);
+            this.button2.Location = new System.Drawing.Point(426, 7);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(25, 25);
+            this.button2.Size = new System.Drawing.Size(61, 24);
             this.button2.TabIndex = 3;
-            this.button2.Text = "-";
+            this.button2.Text = "삭 제";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // MaterialsCheckList
@@ -76,7 +65,6 @@ namespace BedFactory.Controls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.labelComboText1);
             this.Font = new System.Drawing.Font("맑은 고딕", 10F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -89,7 +77,6 @@ namespace BedFactory.Controls
         #endregion
 
         private LabelComboText labelComboText1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }
 }
