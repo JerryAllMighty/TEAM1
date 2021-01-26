@@ -33,5 +33,12 @@ namespace BedFactoryService
             ShiftsDAC dac = new ShiftsDAC();
             return dac.ShiftDelete(num);
         }
+
+        public List<ShiftVO> ShiftChangeSelect()
+        {
+            ShiftsDAC dac = new ShiftsDAC();
+            return dac.ShiftChangeSelect();
+        }
+
     }
 }
