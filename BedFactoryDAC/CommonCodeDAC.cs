@@ -25,7 +25,7 @@ namespace BedFactoryDAC
         /// 공통코드 정보를 모두 가져오는 함수
         /// </summary>
         /// <returns></returns>
-        public DataTable GetCommonCodeInfo()
+        public List<CommonCodedVO> GetCommonCodeInfo()
         {
             try
             {
@@ -34,10 +34,9 @@ namespace BedFactoryDAC
                     cmd.Connection = conn;
                     cmd.CommandText = @"select Code_Num, Code_Name, Category, P_Code from CommonCode";
 
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    return dt != null ? dt : null;
+                    List<CommonCodedVO> list = Helper.DataReaderMapToList<CommonCodedVO>(cmd.ExecuteReader());
+                    return list != null ? list : null;
+                    
                 }
             }
             catch (Exception err)

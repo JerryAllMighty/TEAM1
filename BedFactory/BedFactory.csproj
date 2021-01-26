@@ -277,6 +277,12 @@
     <Compile Include="frmProductionPlanning.Designer.cs">
       <DependentUpon>frmProductionPlanning.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUserGroupAuthority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserGroupAuthority.Designer.cs">
+      <DependentUpon>frmUserGroupAuthority.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmWorkOrderStatus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,12 +330,6 @@
     </Compile>
     <Compile Include="frmSalesMasterUpload.Designer.cs">
       <DependentUpon>frmSalesMasterUpload.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmUserGroupAuthority.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmUserGroupAuthority.Designer.cs">
-      <DependentUpon>frmUserGroupAuthority.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCommonCode.cs">
       <SubType>Form</SubType>
@@ -597,6 +597,9 @@
     <EmbeddedResource Include="frmProductionPlanning.resx">
       <DependentUpon>frmProductionPlanning.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmUserGroupAuthority.resx">
+      <DependentUpon>frmUserGroupAuthority.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmWorkOrderStatus.resx">
       <DependentUpon>frmWorkOrderStatus.cs</DependentUpon>
     </EmbeddedResource>
@@ -620,9 +623,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSalesMasterUpload.resx">
       <DependentUpon>frmSalesMasterUpload.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmUserGroupAuthority.resx">
-      <DependentUpon>frmUserGroupAuthority.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCommonCode.resx">
       <DependentUpon>frmCommonCode.cs</DependentUpon>
