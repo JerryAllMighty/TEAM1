@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BedFactoryService;
+using BedFactoryVO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,7 +35,16 @@ namespace BedFactory
 
         private void LoadData()
         {
-            throw new NotImplementedException();
+            CommonCodeService service = new CommonCodeService();
+            List<CommonCodedVO> list = service.GetCommonCodeInfo();
+            if (list != null)
+            {
+                var AuthorityList = (from authitems in list
+                                     where authitems.Category == "화면"
+                                     select authitems).ToList();
+                datagridviewControl1.DataSource = AuthorityList;
+                datagridviewControl2.DataSource = AuthorityList;
+            }
         }
     }
 }

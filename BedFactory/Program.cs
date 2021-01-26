@@ -18,7 +18,7 @@ namespace BedFactory
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmUserGroupAuthority());
+            Application.Run(new frmUserGroupAuthorityModify());
         }
     }
 }
