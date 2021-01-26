@@ -1,7 +1,7 @@
 ﻿
 namespace BedFactory
 {
-    partial class frmProcessManagement
+    partial class frmCompanyManagement
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -29,39 +29,39 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelComboText1 = new BedFactory.LabelComboText();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblFcsName = new System.Windows.Forms.Label();
-            this.lblFcsNum = new System.Windows.Forms.Label();
-            this.datagridviewControl1 = new BedFactory.DatagridviewControl();
+            this.lblPrcName = new System.Windows.Forms.Label();
+            this.lblPrcDName = new System.Windows.Forms.Label();
+            this.dvgProcessInfo = new BedFactory.DatagridviewControl();
             this.label2 = new System.Windows.Forms.Label();
             this.cboName = new System.Windows.Forms.ComboBox();
-            this.cboNum_D = new System.Windows.Forms.ComboBox();
+            this.cboName_D = new System.Windows.Forms.ComboBox();
             this.pnlSelect.SuspendLayout();
             this.pnlDgv.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridviewControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgProcessInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSelect
             // 
-            this.pnlSelect.Controls.Add(this.cboNum_D);
+            this.pnlSelect.Controls.Add(this.cboName_D);
             this.pnlSelect.Controls.Add(this.cboName);
             this.pnlSelect.Controls.Add(this.label2);
-            this.pnlSelect.Controls.Add(this.lblFcsNum);
-            this.pnlSelect.Controls.Add(this.lblFcsName);
+            this.pnlSelect.Controls.Add(this.lblPrcDName);
+            this.pnlSelect.Controls.Add(this.lblPrcName);
             this.pnlSelect.Controls.Add(this.label3);
             this.pnlSelect.Controls.SetChildIndex(this.label3, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.lblFcsName, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.lblFcsNum, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.lblPrcName, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.lblPrcDName, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label2, 0);
             this.pnlSelect.Controls.SetChildIndex(this.cboName, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.cboNum_D, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.cboName_D, 0);
             // 
             // pnlDgv
             // 
-            this.pnlDgv.Controls.Add(this.datagridviewControl1);
+            this.pnlDgv.Controls.Add(this.dvgProcessInfo);
             // 
             // btn1
             // 
@@ -114,45 +114,45 @@ namespace BedFactory
             this.label3.TabIndex = 12;
             this.label3.Text = "*";
             // 
-            // lblFcsName
+            // lblPrcName
             // 
-            this.lblFcsName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFcsName.AutoSize = true;
-            this.lblFcsName.Location = new System.Drawing.Point(26, 20);
-            this.lblFcsName.Name = "lblFcsName";
-            this.lblFcsName.Size = new System.Drawing.Size(78, 23);
-            this.lblFcsName.TabIndex = 13;
-            this.lblFcsName.Text = "공정분류";
+            this.lblPrcName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPrcName.AutoSize = true;
+            this.lblPrcName.Location = new System.Drawing.Point(26, 20);
+            this.lblPrcName.Name = "lblPrcName";
+            this.lblPrcName.Size = new System.Drawing.Size(61, 23);
+            this.lblPrcName.TabIndex = 13;
+            this.lblPrcName.Text = "공정명";
             // 
-            // lblFcsNum
+            // lblPrcDName
             // 
-            this.lblFcsNum.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFcsNum.AutoSize = true;
-            this.lblFcsNum.Location = new System.Drawing.Point(391, 20);
-            this.lblFcsNum.Name = "lblFcsNum";
-            this.lblFcsNum.Size = new System.Drawing.Size(112, 23);
-            this.lblFcsNum.TabIndex = 17;
-            this.lblFcsNum.Text = "공정상세번호";
+            this.lblPrcDName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPrcDName.AutoSize = true;
+            this.lblPrcDName.Location = new System.Drawing.Point(391, 20);
+            this.lblPrcDName.Name = "lblPrcDName";
+            this.lblPrcDName.Size = new System.Drawing.Size(95, 23);
+            this.lblPrcDName.TabIndex = 17;
+            this.lblPrcDName.Text = "상세공정명";
             // 
-            // datagridviewControl1
+            // dvgProcessInfo
             // 
-            this.datagridviewControl1.AllowUserToAddRows = false;
-            this.datagridviewControl1.AllowUserToResizeRows = false;
-            this.datagridviewControl1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.datagridviewControl1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.datagridviewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridviewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datagridviewControl1.Location = new System.Drawing.Point(0, 0);
-            this.datagridviewControl1.Name = "datagridviewControl1";
-            this.datagridviewControl1.RowHeadersVisible = false;
-            this.datagridviewControl1.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.datagridviewControl1.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.datagridviewControl1.RowTemplate.Height = 27;
-            this.datagridviewControl1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridviewControl1.Size = new System.Drawing.Size(1358, 711);
-            this.datagridviewControl1.TabIndex = 0;
+            this.dvgProcessInfo.AllowUserToAddRows = false;
+            this.dvgProcessInfo.AllowUserToResizeRows = false;
+            this.dvgProcessInfo.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dvgProcessInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dvgProcessInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgProcessInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dvgProcessInfo.Location = new System.Drawing.Point(0, 0);
+            this.dvgProcessInfo.Name = "dvgProcessInfo";
+            this.dvgProcessInfo.RowHeadersVisible = false;
+            this.dvgProcessInfo.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dvgProcessInfo.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dvgProcessInfo.RowTemplate.Height = 27;
+            this.dvgProcessInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dvgProcessInfo.Size = new System.Drawing.Size(1358, 711);
+            this.dvgProcessInfo.TabIndex = 0;
             // 
             // label2
             // 
@@ -171,19 +171,19 @@ namespace BedFactory
             this.cboName.Size = new System.Drawing.Size(212, 31);
             this.cboName.TabIndex = 19;
             // 
-            // cboNum_D
+            // cboName_D
             // 
-            this.cboNum_D.FormattingEnabled = true;
-            this.cboNum_D.Location = new System.Drawing.Point(509, 16);
-            this.cboNum_D.Name = "cboNum_D";
-            this.cboNum_D.Size = new System.Drawing.Size(212, 31);
-            this.cboNum_D.TabIndex = 20;
+            this.cboName_D.FormattingEnabled = true;
+            this.cboName_D.Location = new System.Drawing.Point(509, 16);
+            this.cboName_D.Name = "cboName_D";
+            this.cboName_D.Size = new System.Drawing.Size(212, 31);
+            this.cboName_D.TabIndex = 20;
             // 
-            // frmFacilitiesManagement
+            // frmCompanyManagement
             // 
             this.ClientSize = new System.Drawing.Size(1382, 853);
             this.Controls.Add(this.labelComboText1);
-            this.Name = "frmFacilitiesManagement";
+            this.Name = "frmCompanyManagement";
             this.Text = "공정관리";
             this.Load += new System.EventHandler(this.frmFacilitiesManagement_Load);
             this.Controls.SetChildIndex(this.labelComboText1, 0);
@@ -198,7 +198,7 @@ namespace BedFactory
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
             this.pnlDgv.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.datagridviewControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgProcessInfo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,13 +206,13 @@ namespace BedFactory
 
         #endregion
 
-        private System.Windows.Forms.Label lblFcsNum;
-        private System.Windows.Forms.Label lblFcsName;
+        private System.Windows.Forms.Label lblPrcDName;
+        private System.Windows.Forms.Label lblPrcName;
         private System.Windows.Forms.Label label3;
         private LabelComboText labelComboText1;
-        private DatagridviewControl datagridviewControl1;
+        private DatagridviewControl dvgProcessInfo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cboNum_D;
+        private System.Windows.Forms.ComboBox cboName_D;
         private System.Windows.Forms.ComboBox cboName;
     }
 }

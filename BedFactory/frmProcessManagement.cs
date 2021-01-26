@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmProcessManagement : BedFactory.BaseForms.BaseForm1
+    public partial class frmCompanyManagement : BedFactory.BaseForms.BaseForm1
     {
-        public frmProcessManagement()
+        public frmCompanyManagement()
         {
             InitializeComponent();
         }
@@ -22,31 +22,33 @@ namespace BedFactory
         {
             //컬럼추가
             //그리드뷰 바인딩
-            CommonUtil.SetInitGridView(datagridviewControl1);
-            CommonUtil.AddGridTextColumn(datagridviewControl1, "공정상세번호", "Process_D_Name");
-            CommonUtil.AddGridTextColumn(datagridviewControl1, "공정상세명", "Process_D_Name");
-            CommonUtil.AddGridTextColumn(datagridviewControl1, "공정조건", "Process_D_Condition");
-            CommonUtil.AddGridTextColumn(datagridviewControl1, "최초등록자", "Firstman");
-            CommonUtil.AddGridTextColumn(datagridviewControl1, "최초등록일", "Firstdate");
-            CommonUtil.AddGridTextColumn(datagridviewControl1, "최종등록자", "Lastman");
-            CommonUtil.AddGridTextColumn(datagridviewControl1, "최종수정일", "Lastdate");
-            CommonUtil.AddGridTextColumn(datagridviewControl1, "정보삭제여부", "IsDeleted");
+            CommonUtil.SetInitGridView(dvgProcessInfo);
+            CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정번호", "Process_Num");
+            CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정명", "Process_Name");
+            CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정상세번호", "Process_D_Num");
+            CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정상세명", "Process_D_Name");
+            CommonUtil.AddGridTextColumn(dvgProcessInfo, "최초등록자", "Firstman");
+            CommonUtil.AddGridTextColumn(dvgProcessInfo, "최초등록일", "Firstdate");
+            CommonUtil.AddGridTextColumn(dvgProcessInfo, "최종등록자", "Lastman");
+            CommonUtil.AddGridTextColumn(dvgProcessInfo, "최종수정일", "Lastdate");
+            CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정조건", "Process_D_Condition");
+            CommonUtil.AddGridTextColumn(dvgProcessInfo, "정보삭제여부", "IsDeleted");
 
 
             //콤보박스 바인딩
         }
 
 
-        //조회
-        //public override void btnSelect_Click(object sender, EventArgs e)
-        //{
-        //    string procCate = ""; //cboName.SelectedValue.ToString();
-        //    string procdNum = "";
+        //조회버튼
+        public override void btnSelect_Click(object sender, EventArgs e)
+        {
+            string prcName = ""; //cboName.SelectedValue.ToString();
+            string prcName_D = "";
 
-        //    ProcessService service = new ProcessService();
-        //    List<ProcessDetailVO> list = service.GetProcessDetailInfo(procCate, procdNum);
-        //    datagridviewControl1.DataSource = list;
-        //}
+            ProcessService service = new ProcessService();
+            List<ProcessDetailVO> list = service.GetProcessDetailInfo(prcName, prcName_D);
+            dvgProcessInfo.DataSource = list;
+        }
 
 
         // 등록버튼
@@ -54,7 +56,6 @@ namespace BedFactory
         {
 
         }
-
 
         // 삭제버튼
         private void btn1_Click(object sender, EventArgs e)

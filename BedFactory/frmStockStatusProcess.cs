@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmFairStockStatus : Form
+    public partial class frmStockStatusProcess : Form
     {
-        public frmFairStockStatus()
+        public frmStockStatusProcess()
         {
             InitializeComponent();
         }

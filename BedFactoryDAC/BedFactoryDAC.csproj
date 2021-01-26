@@ -49,6 +49,7 @@
     <Compile Include="AESSalt.cs" />
     <Compile Include="CheckDAC.cs" />
     <Compile Include="CommonCodeDAC.cs" />
+    <Compile Include="CompanyDAC.cs" />
     <Compile Include="ConnectionAccess.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="LoggingUtillity.cs" />

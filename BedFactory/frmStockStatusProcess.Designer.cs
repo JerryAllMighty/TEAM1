@@ -1,7 +1,7 @@
 ﻿
 namespace BedFactory
 {
-    partial class frmFairStockStatus
+    partial class frmStockStatusProcess
     {
         /// <summary>
         /// Required designer variable.

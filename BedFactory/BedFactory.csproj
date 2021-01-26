@@ -157,11 +157,11 @@
     <Compile Include="frmProcessManagement.Designer.cs">
       <DependentUpon>frmProcessManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFairStockStatus.cs">
+    <Compile Include="frmStockStatusProcess.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFairStockStatus.Designer.cs">
-      <DependentUpon>frmFairStockStatus.cs</DependentUpon>
+    <Compile Include="frmStockStatusProcess.Designer.cs">
+      <DependentUpon>frmStockStatusProcess.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMaterialLedgerRawMaterial.cs">
       <SubType>Form</SubType>
@@ -175,11 +175,11 @@
     <Compile Include="frmMaterialLedgerStockWarehousing.Designer.cs">
       <DependentUpon>frmMaterialLedgerStockWarehousing.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMaterialLedgerStockWarehousingState.cs">
+    <Compile Include="frmMaterialLedgerStockWarehousingState.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMaterialLedgerStockWarehousingState.Designer.cs">
-      <DependentUpon>FrmMaterialLedgerStockWarehousingState.cs</DependentUpon>
+    <Compile Include="frmMaterialLedgerStockWarehousingState.Designer.cs">
+      <DependentUpon>frmMaterialLedgerStockWarehousingState.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMaterialRequest.cs">
       <SubType>Form</SubType>
@@ -258,6 +258,12 @@
     </Compile>
     <Compile Include="frmWorkOrderStatus.Designer.cs">
       <DependentUpon>frmWorkOrderStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCompanyManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompanyManagement.Designer.cs">
+      <DependentUpon>frmCompanyManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Pop-up\frmCheckInfo.cs">
       <SubType>Form</SubType>
@@ -451,17 +457,17 @@
     <Compile Include="Pop-up\frmEnterpriseInfoReg.Designer.cs">
       <DependentUpon>frmEnterpriseInfoReg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pop-up\frmFacilityReg.cs">
+    <Compile Include="Pop-up\frmWorkplaceReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pop-up\frmFacilityReg.Designer.cs">
-      <DependentUpon>frmFacilityReg.cs</DependentUpon>
+    <Compile Include="Pop-up\frmWorkplaceReg.Designer.cs">
+      <DependentUpon>frmWorkplaceReg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pop-up\frmFacilitiessReg.cs">
+    <Compile Include="Pop-up\frmProcessReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pop-up\frmFacilitiessReg.Designer.cs">
-      <DependentUpon>frmFacilitiessReg.cs</DependentUpon>
+    <Compile Include="Pop-up\frmProcessReg.Designer.cs">
+      <DependentUpon>frmProcessReg.cs</DependentUpon>
     </Compile>
     <Compile Include="Pop-up\frmFactoryInfoReg.cs">
       <SubType>Form</SubType>
@@ -523,8 +529,8 @@
     <EmbeddedResource Include="frmProcessManagement.resx">
       <DependentUpon>frmProcessManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFairStockStatus.resx">
-      <DependentUpon>frmFairStockStatus.cs</DependentUpon>
+    <EmbeddedResource Include="frmStockStatusProcess.resx">
+      <DependentUpon>frmStockStatusProcess.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMaterialLedgerRawMaterial.resx">
       <DependentUpon>frmMaterialLedgerRawMaterial.cs</DependentUpon>
@@ -532,8 +538,8 @@
     <EmbeddedResource Include="frmMaterialLedgerStockWarehousing.resx">
       <DependentUpon>frmMaterialLedgerStockWarehousing.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMaterialLedgerStockWarehousingState.resx">
-      <DependentUpon>FrmMaterialLedgerStockWarehousingState.cs</DependentUpon>
+    <EmbeddedResource Include="frmMaterialLedgerStockWarehousingState.resx">
+      <DependentUpon>frmMaterialLedgerStockWarehousingState.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMaterialRequest.resx">
       <DependentUpon>frmMaterialRequest.cs</DependentUpon>
@@ -573,6 +579,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmWorkOrderStatus.resx">
       <DependentUpon>frmWorkOrderStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCompanyManagement.resx">
+      <DependentUpon>frmCompanyManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmCheckInfo.resx">
       <DependentUpon>frmCheckInfo.cs</DependentUpon>
@@ -664,11 +673,11 @@
     <EmbeddedResource Include="Pop-up\frmEnterpriseInfoReg.resx">
       <DependentUpon>frmEnterpriseInfoReg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pop-up\frmFacilityReg.resx">
-      <DependentUpon>frmFacilityReg.cs</DependentUpon>
+    <EmbeddedResource Include="Pop-up\frmWorkplaceReg.resx">
+      <DependentUpon>frmWorkplaceReg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pop-up\frmFacilitiessReg.resx">
-      <DependentUpon>frmFacilitiessReg.cs</DependentUpon>
+    <EmbeddedResource Include="Pop-up\frmProcessReg.resx">
+      <DependentUpon>frmProcessReg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmFactoryInfoReg.resx">
       <DependentUpon>frmFactoryInfoReg.cs</DependentUpon>
