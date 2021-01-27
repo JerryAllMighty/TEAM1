@@ -20,6 +20,21 @@ namespace BedFactory
         //처음에 폼이 로드될 때 공통코드 정보를 가져온 후 commonList에 저장. DB에 여러 번 들리지 않기 위함.
         public static List<CommonCodedVO> commonList;
 
+        public static List<CommonCodedVO> CheckCommonInfo()
+        {
+            if (commonList == null)
+            {
+                CommonCodeService service = new CommonCodeService();
+                if (service.GetCommonCodeInfo() != null)
+                {
+                    //처음 한 번만 DB를 갔다오기 위해서 처음 정보를 가져온 후 리스트에 저장
+                    commonList = service.GetCommonCodeInfo();
+                    return commonList;
+                }
+            }
+            return commonList;
+        }
+
         public CommonCodedVO CommonCodeInfo
         {
             get

@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
             this.lblPrcName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -177,7 +177,7 @@ namespace BedFactory
             // 
             this.cboComType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboComType.FormattingEnabled = true;
-            this.cboComType.Location = new System.Drawing.Point(886, 16);
+            this.cboComType.Location = new System.Drawing.Point(886, 20);
             this.cboComType.Name = "cboComType";
             this.cboComType.Size = new System.Drawing.Size(215, 31);
             this.cboComType.TabIndex = 21;
@@ -199,16 +199,16 @@ namespace BedFactory
             this.dgvComList.AllowUserToAddRows = false;
             this.dgvComList.AllowUserToResizeRows = false;
             this.dgvComList.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvComList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvComList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvComList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvComList.Location = new System.Drawing.Point(0, 0);
             this.dgvComList.Name = "dgvComList";
             this.dgvComList.RowHeadersVisible = false;
             this.dgvComList.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvComList.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvComList.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvComList.RowTemplate.Height = 27;
             this.dgvComList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvComList.Size = new System.Drawing.Size(1358, 711);

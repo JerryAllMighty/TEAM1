@@ -1,4 +1,5 @@
-﻿using BedFactoryService;
+﻿using BedFactory.Util;
+using BedFactoryService;
 using BedFactoryVO;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,9 @@ namespace BedFactory
         /// <param name="e"></param>
         private void frmUserGroupAuthority_Load(object sender, EventArgs e)
         {
+            //조회 조건의 콤보박스 바인딩
+            CommonUtil.CommonCodeBindig(cboGroupCode, frmCommonCode.commonList, "그룹", "");
+
             //그룹 목록 세팅
             datagridviewControl1.SetGridViewColumn("그룹코드", "Code_Num");
             datagridviewControl1.SetGridViewColumn("그룹명", "Code_Name");
@@ -34,7 +38,9 @@ namespace BedFactory
             datagridviewControl2.SetGridViewColumn("화면코드", "Code_Num");
             datagridviewControl2.SetGridViewColumn("화면명", "Code_Name");
 
-            LoadData();
+            
+
+           // LoadData();
         }
 
         private void LoadData()

@@ -22,17 +22,16 @@ namespace BedFactory
         {
             //컬럼추가
             //그리드뷰 바인딩
-            CommonUtil.SetInitGridView(dvgProcessInfo);
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정번호", "Process_Num");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정명", "Process_Name");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정상세번호", "Process_D_Num");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정상세명", "Process_D_Name");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "최초등록자", "Firstman");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "최초등록일", "Firstdate");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "최종등록자", "Lastman");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "최종수정일", "Lastdate");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정조건", "Process_D_Condition");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "정보삭제여부", "IsDeleted");
+           dvgProcessInfo.SetGridViewColumn( "공정번호", "Process_Num");
+           dvgProcessInfo.SetGridViewColumn( "공정명", "Process_Name");
+           dvgProcessInfo.SetGridViewColumn( "공정상세번호", "Process_D_Num");
+           dvgProcessInfo.SetGridViewColumn( "공정상세명", "Process_D_Name");
+           dvgProcessInfo.SetGridViewColumn( "최초등록자", "Firstman");
+           dvgProcessInfo.SetGridViewColumn( "최초등록일", "Firstdate");
+           dvgProcessInfo.SetGridViewColumn( "최종등록자", "Lastman");
+           dvgProcessInfo.SetGridViewColumn( "최종수정일", "Lastdate");
+           dvgProcessInfo.SetGridViewColumn( "공정조건", "Process_D_Condition");
+           dvgProcessInfo.SetGridViewColumn( "정보삭제여부", "IsDeleted");
 
 
             //콤보박스 바인딩
