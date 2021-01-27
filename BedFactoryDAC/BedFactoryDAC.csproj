@@ -60,7 +60,7 @@
     <Compile Include="ShiftsDAC.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Sample_DEV.xml">
+    <Content Include="Simple_DEV.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -85,10 +85,10 @@ namespace BedFactory.BaseForms
             this.btnSelect.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSelect.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSelect.Location = new System.Drawing.Point(1275, 11);
+            this.btnSelect.Location = new System.Drawing.Point(1275, 16);
             this.btnSelect.Margin = new System.Windows.Forms.Padding(10);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(70, 40);
+            this.btnSelect.Size = new System.Drawing.Size(70, 30);
             this.btnSelect.TabIndex = 2;
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = false;

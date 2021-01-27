@@ -1,7 +1,7 @@
 ﻿
 namespace BedFactory
 {
-    partial class frmCompanyManagement
+    partial class frmProcessManagement
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -37,8 +37,8 @@ namespace BedFactory
             this.lblPrcDName = new System.Windows.Forms.Label();
             this.dvgProcessInfo = new BedFactory.DatagridviewControl();
             this.label2 = new System.Windows.Forms.Label();
-            this.cboName = new System.Windows.Forms.ComboBox();
-            this.cboName_D = new System.Windows.Forms.ComboBox();
+            this.cboCategory = new System.Windows.Forms.ComboBox();
+            this.txtProcessName = new System.Windows.Forms.TextBox();
             this.pnlSelect.SuspendLayout();
             this.pnlDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgProcessInfo)).BeginInit();
@@ -46,8 +46,8 @@ namespace BedFactory
             // 
             // pnlSelect
             // 
-            this.pnlSelect.Controls.Add(this.cboName_D);
-            this.pnlSelect.Controls.Add(this.cboName);
+            this.pnlSelect.Controls.Add(this.txtProcessName);
+            this.pnlSelect.Controls.Add(this.cboCategory);
             this.pnlSelect.Controls.Add(this.label2);
             this.pnlSelect.Controls.Add(this.lblPrcDName);
             this.pnlSelect.Controls.Add(this.lblPrcName);
@@ -56,8 +56,8 @@ namespace BedFactory
             this.pnlSelect.Controls.SetChildIndex(this.lblPrcName, 0);
             this.pnlSelect.Controls.SetChildIndex(this.lblPrcDName, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label2, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.cboName, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.cboName_D, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.cboCategory, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.txtProcessName, 0);
             // 
             // pnlDgv
             // 
@@ -83,7 +83,8 @@ namespace BedFactory
             // 
             // btn3
             // 
-            this.btn3.Visible = false;
+            this.btn3.Text = "수정";
+            this.btn3.Click += new System.EventHandler(this.btn3_Click);
             // 
             // btn2
             // 
@@ -120,9 +121,9 @@ namespace BedFactory
             this.lblPrcName.AutoSize = true;
             this.lblPrcName.Location = new System.Drawing.Point(26, 20);
             this.lblPrcName.Name = "lblPrcName";
-            this.lblPrcName.Size = new System.Drawing.Size(61, 23);
+            this.lblPrcName.Size = new System.Drawing.Size(78, 23);
             this.lblPrcName.TabIndex = 13;
-            this.lblPrcName.Text = "공정명";
+            this.lblPrcName.Text = "공정분류";
             // 
             // lblPrcDName
             // 
@@ -130,9 +131,9 @@ namespace BedFactory
             this.lblPrcDName.AutoSize = true;
             this.lblPrcDName.Location = new System.Drawing.Point(391, 20);
             this.lblPrcDName.Name = "lblPrcDName";
-            this.lblPrcDName.Size = new System.Drawing.Size(95, 23);
+            this.lblPrcDName.Size = new System.Drawing.Size(61, 23);
             this.lblPrcDName.TabIndex = 17;
-            this.lblPrcDName.Text = "상세공정명";
+            this.lblPrcDName.Text = "공정명";
             // 
             // dvgProcessInfo
             // 
@@ -163,27 +164,27 @@ namespace BedFactory
             this.label2.TabIndex = 18;
             this.label2.Text = "*";
             // 
-            // cboName
+            // cboCategory
             // 
-            this.cboName.FormattingEnabled = true;
-            this.cboName.Location = new System.Drawing.Point(129, 16);
-            this.cboName.Name = "cboName";
-            this.cboName.Size = new System.Drawing.Size(212, 31);
-            this.cboName.TabIndex = 19;
+            this.cboCategory.FormattingEnabled = true;
+            this.cboCategory.Location = new System.Drawing.Point(129, 16);
+            this.cboCategory.Name = "cboCategory";
+            this.cboCategory.Size = new System.Drawing.Size(212, 31);
+            this.cboCategory.TabIndex = 19;
+            this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.cboCategory_SelectedIndexChanged);
             // 
-            // cboName_D
+            // txtProcessName
             // 
-            this.cboName_D.FormattingEnabled = true;
-            this.cboName_D.Location = new System.Drawing.Point(509, 16);
-            this.cboName_D.Name = "cboName_D";
-            this.cboName_D.Size = new System.Drawing.Size(212, 31);
-            this.cboName_D.TabIndex = 20;
+            this.txtProcessName.Location = new System.Drawing.Point(517, 24);
+            this.txtProcessName.Name = "txtProcessName";
+            this.txtProcessName.Size = new System.Drawing.Size(100, 30);
+            this.txtProcessName.TabIndex = 20;
             // 
-            // frmCompanyManagement
+            // frmProcessManagement
             // 
             this.ClientSize = new System.Drawing.Size(1382, 853);
             this.Controls.Add(this.labelComboText1);
-            this.Name = "frmCompanyManagement";
+            this.Name = "frmProcessManagement";
             this.Text = "공정관리";
             this.Load += new System.EventHandler(this.frmFacilitiesManagement_Load);
             this.Controls.SetChildIndex(this.labelComboText1, 0);
@@ -212,7 +213,7 @@ namespace BedFactory
         private LabelComboText labelComboText1;
         private DatagridviewControl dvgProcessInfo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cboName_D;
-        private System.Windows.Forms.ComboBox cboName;
+        private System.Windows.Forms.ComboBox cboCategory;
+        private System.Windows.Forms.TextBox txtProcessName;
     }
 }

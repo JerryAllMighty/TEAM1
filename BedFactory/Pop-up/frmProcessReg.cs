@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BedFactory.Pop_up
+namespace BedFactory
 {
-    public partial class frmFacilitycsReg : Form
+    public partial class frmProcessReg : Form
     {
-        public frmFacilitycsReg()
+        public frmProcessReg()
         {
             InitializeComponent();
         }

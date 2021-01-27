@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmCompanyManagement : BedFactory.BaseForms.BaseForm1
-    {
-        public frmCompanyManagement()
+    public partial class frmProcessManagement : BedFactory.BaseForms.BaseForm1
+    { 
+        public frmProcessManagement()
         {
             InitializeComponent();
         }
@@ -24,29 +24,28 @@ namespace BedFactory
             //그리드뷰 바인딩
             CommonUtil.SetInitGridView(dvgProcessInfo);
             CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정번호", "Process_Num");
+            CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정분류", "Process_Category_Name");
             CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정명", "Process_Name");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정상세번호", "Process_D_Num");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정상세명", "Process_D_Name");
+            CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정조건", "Process_D_Condition");
+            CommonUtil.AddGridTextColumn(dvgProcessInfo, "정보삭제여부", "IsDeleted");
             CommonUtil.AddGridTextColumn(dvgProcessInfo, "최초등록자", "Firstman");
             CommonUtil.AddGridTextColumn(dvgProcessInfo, "최초등록일", "Firstdate");
             CommonUtil.AddGridTextColumn(dvgProcessInfo, "최종등록자", "Lastman");
             CommonUtil.AddGridTextColumn(dvgProcessInfo, "최종수정일", "Lastdate");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정조건", "Process_D_Condition");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "정보삭제여부", "IsDeleted");
-
 
             //콤보박스 바인딩
+
         }
 
 
         //조회버튼
         public override void btnSelect_Click(object sender, EventArgs e)
         {
-            string prcName = ""; //cboName.SelectedValue.ToString();
-            string prcName_D = "";
+            string prcCategory = ""; // cboCategory.SelectedValue.ToString();
+            string prcName = txtProcessName.Text.Trim();
 
             ProcessService service = new ProcessService();
-            List<ProcessDetailVO> list = service.GetProcessDetailInfo(prcName, prcName_D);
+            List<ProcessVO> list = service.GetProcessDetailInfo(prcCategory, prcName);
             dvgProcessInfo.DataSource = list;
         }
 
@@ -54,11 +53,26 @@ namespace BedFactory
         // 등록버튼
         private void btn2_Click(object sender, EventArgs e)
         {
-
+            //팝업호출
+            frmProcessReg frm = new frmProcessReg();
+            frm.ShowDialog();
         }
+
+
+        // 수정버튼
+        private void btn3_Click(object sender, EventArgs e)
+        {
+            //팝업호출
+        }
+
 
         // 삭제버튼
         private void btn1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

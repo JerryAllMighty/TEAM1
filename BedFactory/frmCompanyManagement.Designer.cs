@@ -1,7 +1,7 @@
 ﻿
 namespace BedFactory
 {
-    partial class frmWorkspaceManagement
+    partial class frmCompanyManagement
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
             this.lblPrcName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -164,10 +164,10 @@ namespace BedFactory
             this.btnSelect.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSelect.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSelect.Location = new System.Drawing.Point(1275, 11);
+            this.btnSelect.Location = new System.Drawing.Point(1275, 16);
             this.btnSelect.Margin = new System.Windows.Forms.Padding(10);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(70, 40);
+            this.btnSelect.Size = new System.Drawing.Size(70, 30);
             this.btnSelect.TabIndex = 22;
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = false;
@@ -199,27 +199,27 @@ namespace BedFactory
             this.dgvComList.AllowUserToAddRows = false;
             this.dgvComList.AllowUserToResizeRows = false;
             this.dgvComList.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvComList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvComList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvComList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvComList.Location = new System.Drawing.Point(0, 0);
             this.dgvComList.Name = "dgvComList";
             this.dgvComList.RowHeadersVisible = false;
             this.dgvComList.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvComList.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvComList.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvComList.RowTemplate.Height = 27;
             this.dgvComList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvComList.Size = new System.Drawing.Size(1358, 711);
             this.dgvComList.TabIndex = 0;
             // 
-            // frmWorkspaceManagement
+            // frmCompanyManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.ClientSize = new System.Drawing.Size(1382, 853);
             this.Controls.Add(this.button1);
-            this.Name = "frmWorkspaceManagement";
+            this.Name = "frmCompanyManagement";
             this.Text = "업체관리";
             this.Load += new System.EventHandler(this.frmWorkspaceManagement_Load);
             this.Controls.SetChildIndex(this.pnlSelect, 0);
