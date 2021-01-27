@@ -31,6 +31,7 @@ namespace BedFactory
 
         }
 
+        //조회버튼
         private void btnSelect_Click(object sender, EventArgs e)
         {
             

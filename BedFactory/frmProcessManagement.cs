@@ -23,7 +23,7 @@ namespace BedFactory
             //컬럼추가
             //그리드뷰 바인딩
   
-            dgvProcessInfo.SetGridViewColumn( "공정번호", "Process_Num");
+            dgvProcessInfo.SetGridViewColumn("공정번호", "Process_Num");
             dgvProcessInfo.SetGridViewColumn("공정분류", "Process_Category_Name");
             dgvProcessInfo.SetGridViewColumn("공정명", "Process_Name");
             dgvProcessInfo.SetGridViewColumn("공정조건", "Process_D_Condition");
@@ -67,14 +67,10 @@ namespace BedFactory
 
 
         // 삭제버튼
-        private void btn1_Click(object sender, EventArgs e)
+        public override void btn1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void cboCategory_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

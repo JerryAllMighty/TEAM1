@@ -106,5 +106,33 @@ namespace BedFactoryDAC
                 return false;
             }
         }
+
+        /// <summary>
+        /// 작업장 정보 수정
+        /// </summary>
+        /// <param name="vo"></param>
+        /// <returns></returns>
+        public bool UpdateWorkplaceInfo(WorkplaceVO vo)
+        {
+            using(SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = Conn;
+                cmd.CommandText = @"update tblWorkplace 
+                                    set WP_Name=@WP_Name, WP_Note=@WP_Note, WP_Other=@WP_Other, IsDeleted=@IsDeleted, 
+                                    Lastman=@Lastman, Lastdate=@Lastdate
+                                    where WP_Num = =@WP_Num ";
+
+                cmd.Parameters.AddWithValue("WP_Name", vo.WP_Name);
+                cmd.Parameters.AddWithValue("WP_Note", vo.WP_Note);
+                cmd.Parameters.AddWithValue("WP_Other", vo.WP_Other);
+                cmd.Parameters.AddWithValue("IsDeleted", vo.IsDeleted);
+                cmd.Parameters.AddWithValue("Lastman", vo.Lastman);
+                cmd.Parameters.AddWithValue("Lastdate", vo.Lastdate);
+
+                int iRowAffect = cmd.ExecuteNonQuery();
+
+                return iRowAffect > 0 ? true : false;
+            }
+        }
     }
 }

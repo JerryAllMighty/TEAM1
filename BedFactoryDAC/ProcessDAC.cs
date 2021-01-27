@@ -42,7 +42,7 @@ namespace BedFactoryDAC
             {
                 StringBuilder sb = new StringBuilder();
                 sb.Append(@"select Process_Num, Process_Category, Code_Name as Process_Category_Name, Process_Name, Process_Condition, 
-                        Firstman, CONVERT(varchar(10), Firstdate, 23) Firstdate, Lastman, CONVERT(varchar(10), Lastdate, 23) Lastdate, IsDeleted
+                        Firstman, CONVERT(varchar(10), Firstdate, 23) Firstdate, Lastman, Lastdate, IsDeleted
                         from tblProcess inner join CommonCode C on Process_Category = Code_Num
                         where 1 = 1 ");
 
@@ -68,12 +68,12 @@ namespace BedFactoryDAC
                     return list;
                 }
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 Log.WriteError(err.Message);
                 return null;
             }
-            
+
         }
 
         /// <summary>
@@ -119,13 +119,13 @@ namespace BedFactoryDAC
         /// <returns></returns>
         public bool UpdateProcessInfo(ProcessVO vo, string prcCategory)
         {
-            using(SqlCommand cmd = new SqlCommand())
+            using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = Conn;
                 cmd.CommandText = @"update tblProcess 
                                     set Process_Category = @Process_Category, 
                                         Process_Name = @Process_Name, Process_Condition = @Process_Condition,
-                                        IsDeleted = @IsDeleted, Lastman=@Lastman, Lastdate=getdate()   
+                                        IsDeleted = @IsDeleted, Lastman=@Lastman, Lastdate=@Lastdate
                                          where Process_Num = @Process_Num";
 
                 cmd.Parameters.AddWithValue("@Process_Category", vo.Process_Category);
@@ -133,6 +133,7 @@ namespace BedFactoryDAC
                 cmd.Parameters.AddWithValue("@Process_Condition", vo.Process_Condition);
                 cmd.Parameters.AddWithValue("@IsDeleted", vo.IsDeleted);
                 cmd.Parameters.AddWithValue("@Lastman", vo.Lastman);
+                cmd.Parameters.AddWithValue("@Lastdate", vo.Lastdate);
                 cmd.Parameters.AddWithValue("@Process_Num", vo.Process_Num);
 
                 int iRowAffect = cmd.ExecuteNonQuery();
@@ -140,6 +141,5 @@ namespace BedFactoryDAC
                 return iRowAffect > 0 ? true : false;
             }
         }
-
     }
 }

@@ -14,9 +14,9 @@ namespace BedFactoryVO
         public string Process_Name { get; set; }
         public string Process_Condition { get; set; }
         public int Firstman { get; set; }
-        public string Firstdate { get; set; }
+        public DateTime Firstdate { get; set; }
         public int Lastman { get; set; }
-        public string Lastdate { get; set; }
+        public DateTime Lastdate { get; set; }
         public string IsDeleted { get; set; }
     }
 }

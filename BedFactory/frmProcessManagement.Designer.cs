@@ -141,7 +141,7 @@ namespace BedFactory
             // 
             this.cboCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Location = new System.Drawing.Point(126, 20);
+            this.cboCategory.Location = new System.Drawing.Point(126, 16);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(215, 31);
             this.cboCategory.TabIndex = 23;
@@ -179,7 +179,6 @@ namespace BedFactory
             this.ClientSize = new System.Drawing.Size(1382, 853);
             this.Name = "frmProcessManagement";
             this.Text = "공정관리";
-        
             this.pnlDgv.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
             this.searchLocationControl1.ResumeLayout(false);

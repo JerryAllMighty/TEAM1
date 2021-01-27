@@ -259,6 +259,12 @@
     <Compile Include="frmCompanyManagement.Designer.cs">
       <DependentUpon>frmCompanyManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmWorkplaceManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkplaceManagement.Designer.cs">
+      <DependentUpon>frmWorkplaceManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pop-up\frmCheckInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -445,11 +451,11 @@
     <Compile Include="Pop-up\frmBORreg.Designer.cs">
       <DependentUpon>frmBORreg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pop-up\frmEnterpriseInfoReg.cs">
+    <Compile Include="Pop-up\frmCompanyInfoReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pop-up\frmEnterpriseInfoReg.Designer.cs">
-      <DependentUpon>frmEnterpriseInfoReg.cs</DependentUpon>
+    <Compile Include="Pop-up\frmCompanyInfoReg.Designer.cs">
+      <DependentUpon>frmCompanyInfoReg.cs</DependentUpon>
     </Compile>
     <Compile Include="Pop-up\frmWorkplaceReg.cs">
       <SubType>Form</SubType>
@@ -574,6 +580,9 @@
     <EmbeddedResource Include="frmCompanyManagement.resx">
       <DependentUpon>frmCompanyManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkplaceManagement.resx">
+      <DependentUpon>frmWorkplaceManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmCheckInfo.resx">
       <DependentUpon>frmCheckInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -661,8 +670,8 @@
     <EmbeddedResource Include="Pop-up\frmBORreg.resx">
       <DependentUpon>frmBORreg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pop-up\frmEnterpriseInfoReg.resx">
-      <DependentUpon>frmEnterpriseInfoReg.cs</DependentUpon>
+    <EmbeddedResource Include="Pop-up\frmCompanyInfoReg.resx">
+      <DependentUpon>frmCompanyInfoReg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmWorkplaceReg.resx">
       <DependentUpon>frmWorkplaceReg.cs</DependentUpon>

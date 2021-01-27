@@ -21,5 +21,11 @@ namespace BedFactoryService
             WorkplaceDAC dac = new WorkplaceDAC();
             return dac.InsertWorkplaceInfo(vo);
         }
+
+        public bool UpdateWorkplaceInfo(WorkplaceVO vo)
+        {
+            WorkplaceDAC dac = new WorkplaceDAC();
+            return dac.UpdateWorkplaceInfo(vo);
+        }
     }
 }

@@ -19,10 +19,10 @@ namespace BedFactory
 
         private void frmWorkplaceManagement_Load(object sender, EventArgs e)
         {
-            dgvWorkplace.SetGridViewColumn("작업장번호", "WP_Num");
             dgvWorkplace.SetGridViewColumn("공정번호", "Process_Num");
             dgvWorkplace.SetGridViewColumn("공정명", "Process_Name");
-            dgvWorkplace.SetGridViewColumn("작업장명", "WP_Name"); // 공정명 + 숫자
+            dgvWorkplace.SetGridViewColumn("작업장번호", "WP_Num");
+            dgvWorkplace.SetGridViewColumn("작업장명", "WP_Name"); // 공정명 + 숫자로 등록
             dgvWorkplace.SetGridViewColumn("정보삭제여부", "IsDeleted");
             dgvWorkplace.SetGridViewColumn("최초등록자", "Firstman");
             dgvWorkplace.SetGridViewColumn("최초등록일", "Firstdate");
@@ -33,6 +33,7 @@ namespace BedFactory
             //공정명 바인딩
         }
 
+        //조회버튼
         private void btnSelect_Click(object sender, EventArgs e)
         {
             string prcName = cboProcessName.SelectedValue.ToString();
@@ -51,9 +52,11 @@ namespace BedFactory
         }
 
         //수정버튼
+        //데이터그리드뷰 셀을 선택하고 수정버튼 누를시 or 셀 더블클릭시 => 등록,수정폼에 정보 바인딩 되고 수정 가능하게끔 코딩
         public override void btn3_Click(object sender, EventArgs e)
         {
-
+            frmWorkplaceReg frm = new frmWorkplaceReg();
+            frm.ShowDialog();
         }
     }
 }
