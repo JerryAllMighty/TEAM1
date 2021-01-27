@@ -35,13 +35,13 @@ namespace BedFactory
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblGroupNameBinding = new System.Windows.Forms.Label();
+            this.lblGroupCodeBinding = new System.Windows.Forms.Label();
+            this.lblGroupName = new System.Windows.Forms.Label();
+            this.lblGroupCode = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.datagridviewControl2 = new BedFactory.DatagridviewControl();
@@ -56,90 +56,100 @@ namespace BedFactory
             // panel1
             // 
             this.panel1.Controls.Add(this.datagridviewControl1);
-            this.panel1.Location = new System.Drawing.Point(22, 226);
+            this.panel1.Location = new System.Drawing.Point(30, 301);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(435, 503);
+            this.panel1.Size = new System.Drawing.Size(544, 740);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.datagridviewControl2);
-            this.panel2.Location = new System.Drawing.Point(463, 226);
+            this.panel2.Location = new System.Drawing.Point(581, 301);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(807, 347);
+            this.panel2.Size = new System.Drawing.Size(1009, 740);
             this.panel2.TabIndex = 1;
             // 
-            // button1
+            // btnUpdate
             // 
-            this.button1.Location = new System.Drawing.Point(978, 679);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 62);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "저장";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(1414, 211);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(81, 38);
+            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.Text = "저장";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnCancel
             // 
-            this.button2.Location = new System.Drawing.Point(1127, 679);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 62);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "취소";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(1502, 211);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(81, 38);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "취소";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(22, 13);
+            this.panel3.Controls.Add(this.lblGroupNameBinding);
+            this.panel3.Controls.Add(this.lblGroupCodeBinding);
+            this.panel3.Controls.Add(this.lblGroupName);
+            this.panel3.Controls.Add(this.lblGroupCode);
+            this.panel3.Location = new System.Drawing.Point(28, 20);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1248, 100);
+            this.panel3.Size = new System.Drawing.Size(1560, 153);
             this.panel3.TabIndex = 4;
             // 
-            // label4
+            // lblGroupNameBinding
             // 
-            this.label4.Location = new System.Drawing.Point(768, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 23);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "여기에 그룹명";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblGroupNameBinding.Location = new System.Drawing.Point(960, 60);
+            this.lblGroupNameBinding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGroupNameBinding.Name = "lblGroupNameBinding";
+            this.lblGroupNameBinding.Size = new System.Drawing.Size(125, 35);
+            this.lblGroupNameBinding.TabIndex = 3;
+            this.lblGroupNameBinding.Text = "여기에 그룹명";
+            this.lblGroupNameBinding.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // lblGroupCodeBinding
             // 
-            this.label3.Location = new System.Drawing.Point(335, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 23);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "여기에 그룹코드";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblGroupCodeBinding.Location = new System.Drawing.Point(419, 51);
+            this.lblGroupCodeBinding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGroupCodeBinding.Name = "lblGroupCodeBinding";
+            this.lblGroupCodeBinding.Size = new System.Drawing.Size(125, 35);
+            this.lblGroupCodeBinding.TabIndex = 2;
+            this.lblGroupCodeBinding.Text = "여기에 그룹코드";
+            this.lblGroupCodeBinding.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lblGroupName
             // 
-            this.label2.Location = new System.Drawing.Point(573, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 23);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "그룹명";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblGroupName.Location = new System.Drawing.Point(716, 51);
+            this.lblGroupName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGroupName.Name = "lblGroupName";
+            this.lblGroupName.Size = new System.Drawing.Size(125, 35);
+            this.lblGroupName.TabIndex = 1;
+            this.lblGroupName.Text = "그룹명";
+            this.lblGroupName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lblGroupCode
             // 
-            this.label1.Location = new System.Drawing.Point(49, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "그룹코드";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblGroupCode.Location = new System.Drawing.Point(61, 51);
+            this.lblGroupCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGroupCode.Name = "lblGroupCode";
+            this.lblGroupCode.Size = new System.Drawing.Size(125, 35);
+            this.lblGroupCode.TabIndex = 0;
+            this.lblGroupCode.Text = "그룹코드";
+            this.lblGroupCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(17, 177);
+            this.label5.Location = new System.Drawing.Point(25, 261);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(154, 23);
+            this.label5.Size = new System.Drawing.Size(192, 35);
             this.label5.TabIndex = 10;
             this.label5.Text = "전체 화면 목록";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -147,9 +157,10 @@ namespace BedFactory
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(458, 177);
+            this.label6.Location = new System.Drawing.Point(576, 261);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(132, 23);
+            this.label6.Size = new System.Drawing.Size(165, 35);
             this.label6.TabIndex = 11;
             this.label6.Text = "추가할 권한";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -159,11 +170,12 @@ namespace BedFactory
             this.datagridviewControl2.AllowUserToAddRows = false;
             this.datagridviewControl2.AllowUserToResizeRows = false;
             this.datagridviewControl2.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.datagridviewControl2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.datagridviewControl2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridviewControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.datagridviewControl2.Location = new System.Drawing.Point(0, 0);
+            this.datagridviewControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.datagridviewControl2.Name = "datagridviewControl2";
             this.datagridviewControl2.RowHeadersVisible = false;
             this.datagridviewControl2.RowHeadersWidth = 51;
@@ -171,7 +183,7 @@ namespace BedFactory
             this.datagridviewControl2.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.datagridviewControl2.RowTemplate.Height = 27;
             this.datagridviewControl2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridviewControl2.Size = new System.Drawing.Size(807, 347);
+            this.datagridviewControl2.Size = new System.Drawing.Size(1009, 740);
             this.datagridviewControl2.TabIndex = 0;
             // 
             // datagridviewControl1
@@ -179,11 +191,12 @@ namespace BedFactory
             this.datagridviewControl1.AllowUserToAddRows = false;
             this.datagridviewControl1.AllowUserToResizeRows = false;
             this.datagridviewControl1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.datagridviewControl1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.datagridviewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridviewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.datagridviewControl1.Location = new System.Drawing.Point(0, 0);
+            this.datagridviewControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.datagridviewControl1.Name = "datagridviewControl1";
             this.datagridviewControl1.RowHeadersVisible = false;
             this.datagridviewControl1.RowHeadersWidth = 51;
@@ -191,22 +204,24 @@ namespace BedFactory
             this.datagridviewControl1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.datagridviewControl1.RowTemplate.Height = 27;
             this.datagridviewControl1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridviewControl1.Size = new System.Drawing.Size(435, 503);
+            this.datagridviewControl1.Size = new System.Drawing.Size(544, 740);
             this.datagridviewControl1.TabIndex = 0;
             // 
             // frmUserGroupAuthorityModify
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1282, 753);
+            this.ClientSize = new System.Drawing.Size(1602, 1055);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmUserGroupAuthorityModify";
             this.Text = "그룹별 권한 수정";
             this.Load += new System.EventHandler(this.frmUserGroupAuthorityModify_Load);
@@ -223,13 +238,13 @@ namespace BedFactory
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblGroupCode;
+        private System.Windows.Forms.Label lblGroupNameBinding;
+        private System.Windows.Forms.Label lblGroupCodeBinding;
+        private System.Windows.Forms.Label lblGroupName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private DatagridviewControl datagridviewControl1;

@@ -18,16 +18,15 @@ namespace BedFactory
 
         private void frmWorkspaceManagement_Load(object sender, EventArgs e)
         {
-            CommonUtil.SetInitGridView(dgvComList);
-            CommonUtil.AddGridTextColumn(dgvComList, "거래처번호", "Process_Num");
-            CommonUtil.AddGridTextColumn(dgvComList, "거래처이름", "Process_Name");
-            CommonUtil.AddGridTextColumn(dgvComList, "거래처구분", "Process_D_Num");
-            CommonUtil.AddGridTextColumn(dgvComList, "공정상세명", "Process_D_Name");
-            CommonUtil.AddGridTextColumn(dgvComList, "거래처담당직원", "Firstman");
-            CommonUtil.AddGridTextColumn(dgvComList, "최초등록자", "FirstMan");
-            CommonUtil.AddGridTextColumn(dgvComList, "최초등록일", "Firstdate");
-            CommonUtil.AddGridTextColumn(dgvComList, "최종등록자", "Lastman");
-            CommonUtil.AddGridTextColumn(dgvComList, "최종수정일", "Lastdate");
+            dgvComList.SetGridViewColumn("거래처번호", "Process_Num");
+            dgvComList.SetGridViewColumn("거래처이름", "Process_Name");
+            dgvComList.SetGridViewColumn("거래처구분", "Process_D_Num");
+            dgvComList.SetGridViewColumn("공정상세명", "Process_D_Name");
+            dgvComList.SetGridViewColumn("거래처담당직원", "Firstman");
+            dgvComList.SetGridViewColumn("최초등록자", "FirstMan");
+            dgvComList.SetGridViewColumn("최초등록일", "Firstdate");
+            dgvComList.SetGridViewColumn("최종등록자", "Lastman");
+            dgvComList.SetGridViewColumn("최종수정일", "Lastdate");
 
 
         }

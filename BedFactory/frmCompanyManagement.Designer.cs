@@ -177,7 +177,7 @@ namespace BedFactory
             // 
             this.cboComType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboComType.FormattingEnabled = true;
-            this.cboComType.Location = new System.Drawing.Point(886, 16);
+            this.cboComType.Location = new System.Drawing.Point(886, 20);
             this.cboComType.Name = "cboComType";
             this.cboComType.Size = new System.Drawing.Size(215, 31);
             this.cboComType.TabIndex = 21;
