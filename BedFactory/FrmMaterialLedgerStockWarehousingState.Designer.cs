@@ -1,7 +1,7 @@
 ﻿
 namespace BedFactory
 {
-    partial class FrmMaterialLedgerStockWarehousingState
+    partial class frmMaterialLedgerStockWarehousingState
     {
         /// <summary>
         /// Required designer variable.

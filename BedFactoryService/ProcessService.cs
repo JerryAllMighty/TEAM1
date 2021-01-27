@@ -10,10 +10,10 @@ namespace BedFactoryService
 {
     public class ProcessService
     {
-        public List<ProcessDetailVO> GetProcessDetailInfo(string procCate, string procdNum)
+        public List<ProcessDetailVO> GetProcessDetailInfo(string prcName, string prcName_D)
         {
             ProcessDAC dac = new ProcessDAC();
-            return dac.GetProcessDetailInfo(procCate, procdNum);
+            return dac.GetProcessDetailInfo(prcName, prcName_D);
         }
     }
 }

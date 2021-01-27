@@ -1,4 +1,5 @@
-﻿using BedFactoryService;
+﻿using BedFactory.Util;
+using BedFactoryService;
 using BedFactoryVO;
 using System;
 using System.Collections.Generic;
@@ -25,34 +26,57 @@ namespace BedFactory
         /// <param name="e"></param>
         private void frmUserGroupAuthority_Load(object sender, EventArgs e)
         {
+            //조회 조건의 콤보박스 바인딩
+            //CommonUtil.CommonCodeBindig(cboGroupName, frmCommonCode.CheckCommonInfo(), "그룹", "");
+
             //그룹 목록 세팅
-            datagridviewControl1.SetGridViewColumn("그룹코드", "Code_Num");
-            datagridviewControl1.SetGridViewColumn("그룹명", "Code_Name");
-            datagridviewControl1.AddGridButton("수정", "btnModify", "수정", new Padding(0,0,0,0), 100);
+            dgvGroupList.SetGridViewColumn("그룹코드", "Code_Num");
+            dgvGroupList.SetGridViewColumn("그룹명", "Code_Name");
+            dgvGroupList.AddGridButton("수정", "btnModify", "수정", new Padding(0, 0, 0, 0), 100);
+            dgvGroupList.CellClick += DgvGroupList_CellClick;
+            dgvGroupList.CellContentClick += DgvGroupList_CellContentClick;
 
             //허용된 권한
-            datagridviewControl2.SetGridViewColumn("화면코드", "Code_Num");
-            datagridviewControl2.SetGridViewColumn("화면명", "Code_Name");
+            dgvAllowedAuthorities.SetGridViewColumn("화면번호", "Auth_Num");
+            dgvAllowedAuthorities.SetGridViewColumn("화면명", "Auth_Name", 150);
 
-            LoadData();
+            var GroupList = (from items in frmCommonCode.CheckCommonInfo()
+                             where items.Category == "그룹"
+                             select items).ToList();
+
+            dgvGroupList.DataSource = GroupList;
         }
 
-        private void LoadData()
+        private void DgvGroupList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            CommonCodeService service = new CommonCodeService();
-            List<CommonCodedVO>  list = service.GetCommonCodeInfo();
-            if (list != null)
-            {
-                 var GroupList = (from groupitem in list
-                                     where groupitem.Category == "그룹"
-                                     select groupitem).ToList();
-                datagridviewControl1.DataSource = GroupList;
+            frmUserGroupAuthorityModify frm = new frmUserGroupAuthorityModify(dgvGroupList[0, e.RowIndex].Value.ToString(), dgvGroupList[1, e.RowIndex].Value.ToString());
+            frm.ShowDialog();
+        }
 
-                var AuthorityList = (from authitems in list
-                                     where authitems.Category == "화면"
-                                     select authitems).ToList();
-                datagridviewControl2.DataSource = AuthorityList;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DgvGroupList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        /// <summary>
+        /// 그룹목록 클릭시 허용된 권한 그리드뷰에 바인딩
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvGroupList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            AuthorityService service = new AuthorityService();
+            List<AuthorityVO> authList = service.GetAuthorityInfoByGroupName(dgvGroupList[1, e.RowIndex].Value.ToString());
+            if (authList != null)
+            {
+                dgvAllowedAuthorities.DataSource = authList;
             }
+
         }
     }
 }
