@@ -32,7 +32,7 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select Convert(int, Row_Number() over(order by Com_Num, Mat_Num)) Rownum, UnitCost_Num
+                    cmd.CommandText = @"select Convert(int, Row_Number() over(order by Com_Num, Mat_Num, Start_Date)) Rownum, UnitCost_Num
                                                , U.Com_Num, C.Com_Name, U.Mat_Num, M.Mat_Name, Now_UnitCost, Before_UnitCost
                                                , Start_Date, End_Date, U.FirstMan, U.FirstDate, U.LastMan, U.LastDate
                                           from tblUnitCost U join tblCompany C on U.Com_Num = C.Com_Num 

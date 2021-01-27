@@ -20,6 +20,10 @@ namespace BedFactory
         //처음에 폼이 로드될 때 공통코드 정보를 가져온 후 commonList에 저장. DB에 여러 번 들리지 않기 위함.
         public static List<CommonCodedVO> commonList;
 
+        /// <summary>
+        /// 처음 한 번만 DB를 갔다와서 공통코드 정보를 전역 리스트에 추가해주는 함수
+        /// </summary>
+        /// <returns></returns>
         public static List<CommonCodedVO> CheckCommonInfo()
         {
             if (commonList == null)
@@ -36,6 +40,9 @@ namespace BedFactory
             return commonList;
         }
 
+        /// <summary>
+        /// 공통코드 정보를 한 번에 넘기기 위한 프로퍼티
+        /// </summary>
         public CommonCodedVO CommonCodeInfo
         {
             get
@@ -67,8 +74,9 @@ namespace BedFactory
             dgvCommonCode.SetGridViewColumn("Category", "Category");
             dgvCommonCode.SetGridViewColumn("P_Code", "P_Code");
 
-            LoadData();
+             dgvCommonCode.DataSource = CheckCommonInfo();
         }
+
         /// <summary>
         /// 공통코드 정보를 데이터그리드 뷰에 바인딩하는 함수
         /// </summary>
