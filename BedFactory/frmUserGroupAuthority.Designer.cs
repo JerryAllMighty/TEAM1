@@ -35,33 +35,29 @@ namespace BedFactory
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.datagridviewControl2 = new BedFactory.DatagridviewControl();
-            this.datagridviewControl1 = new BedFactory.DatagridviewControl();
+            this.dgvAllowedAuthorities = new BedFactory.DatagridviewControl();
+            this.dgvGroupList = new BedFactory.DatagridviewControl();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
-            this.searchLocationControl2 = new BedFactory.Controls.SearchLocationControl();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lblGroupCode = new System.Windows.Forms.Label();
-            this.lblGroupName = new System.Windows.Forms.Label();
-            this.cboGroupCode = new System.Windows.Forms.ComboBox();
-            this.cboGroupName = new System.Windows.Forms.ComboBox();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridviewControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridviewControl1)).BeginInit();
-            this.searchLocationControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllowedAuthorities)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupList)).BeginInit();
             this.SuspendLayout();
             // 
             // btn2
             // 
+            this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn2.Location = new System.Drawing.Point(1233, 161);
             // 
             // btn3
             // 
+            this.btn3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn3.Location = new System.Drawing.Point(1162, 161);
             // 
             // btn5
             // 
+            this.btn5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn5.Location = new System.Drawing.Point(925, 161);
             // 
             // label1
@@ -72,26 +68,29 @@ namespace BedFactory
             // 
             // btn1
             // 
+            this.btn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn1.Location = new System.Drawing.Point(1304, 161);
             // 
             // pnlDgv
             // 
-            this.pnlDgv.Controls.Add(this.datagridviewControl1);
+            this.pnlDgv.Controls.Add(this.dgvGroupList);
             this.pnlDgv.Location = new System.Drawing.Point(12, 200);
             this.pnlDgv.Size = new System.Drawing.Size(615, 711);
             // 
             // btn4
             // 
+            this.btn4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn4.Location = new System.Drawing.Point(1056, 161);
             // 
             // pnlSelect
             // 
-            this.pnlSelect.Controls.Add(this.searchLocationControl2);
             this.pnlSelect.Controls.Add(this.searchLocationControl1);
             this.pnlSelect.Size = new System.Drawing.Size(1358, 67);
+            this.pnlSelect.Visible = false;
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(629, 163);
             this.label2.Name = "label2";
@@ -102,51 +101,53 @@ namespace BedFactory
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.datagridviewControl2);
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.dgvAllowedAuthorities);
             this.panel1.Location = new System.Drawing.Point(634, 200);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(736, 641);
             this.panel1.TabIndex = 12;
             // 
-            // datagridviewControl2
+            // dgvAllowedAuthorities
             // 
-            this.datagridviewControl2.AllowUserToAddRows = false;
-            this.datagridviewControl2.AllowUserToResizeRows = false;
-            this.datagridviewControl2.BackgroundColor = System.Drawing.Color.White;
+            this.dgvAllowedAuthorities.AllowUserToAddRows = false;
+            this.dgvAllowedAuthorities.AllowUserToResizeRows = false;
+            this.dgvAllowedAuthorities.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvAllowedAuthorities.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.datagridviewControl2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.datagridviewControl2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridviewControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datagridviewControl2.Location = new System.Drawing.Point(0, 0);
-            this.datagridviewControl2.Name = "datagridviewControl2";
-            this.datagridviewControl2.RowHeadersVisible = false;
-            this.datagridviewControl2.RowHeadersWidth = 51;
+            this.dgvAllowedAuthorities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvAllowedAuthorities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAllowedAuthorities.Location = new System.Drawing.Point(0, 0);
+            this.dgvAllowedAuthorities.Name = "dgvAllowedAuthorities";
+            this.dgvAllowedAuthorities.RowHeadersVisible = false;
+            this.dgvAllowedAuthorities.RowHeadersWidth = 51;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.datagridviewControl2.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.datagridviewControl2.RowTemplate.Height = 27;
-            this.datagridviewControl2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridviewControl2.Size = new System.Drawing.Size(736, 641);
-            this.datagridviewControl2.TabIndex = 0;
+            this.dgvAllowedAuthorities.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvAllowedAuthorities.RowTemplate.Height = 27;
+            this.dgvAllowedAuthorities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAllowedAuthorities.Size = new System.Drawing.Size(736, 641);
+            this.dgvAllowedAuthorities.TabIndex = 0;
             // 
-            // datagridviewControl1
+            // dgvGroupList
             // 
-            this.datagridviewControl1.AllowUserToAddRows = false;
-            this.datagridviewControl1.AllowUserToResizeRows = false;
-            this.datagridviewControl1.BackgroundColor = System.Drawing.Color.White;
+            this.dgvGroupList.AllowUserToAddRows = false;
+            this.dgvGroupList.AllowUserToResizeRows = false;
+            this.dgvGroupList.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.datagridviewControl1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.datagridviewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridviewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datagridviewControl1.Location = new System.Drawing.Point(0, 0);
-            this.datagridviewControl1.Name = "datagridviewControl1";
-            this.datagridviewControl1.RowHeadersVisible = false;
-            this.datagridviewControl1.RowHeadersWidth = 51;
+            this.dgvGroupList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvGroupList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGroupList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvGroupList.Location = new System.Drawing.Point(0, 0);
+            this.dgvGroupList.Name = "dgvGroupList";
+            this.dgvGroupList.RowHeadersVisible = false;
+            this.dgvGroupList.RowHeadersWidth = 51;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.datagridviewControl1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.datagridviewControl1.RowTemplate.Height = 27;
-            this.datagridviewControl1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridviewControl1.Size = new System.Drawing.Size(615, 711);
-            this.datagridviewControl1.TabIndex = 0;
+            this.dgvGroupList.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvGroupList.RowTemplate.Height = 27;
+            this.dgvGroupList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGroupList.Size = new System.Drawing.Size(615, 711);
+            this.dgvGroupList.TabIndex = 0;
+            this.dgvGroupList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroupList_CellDoubleClick);
             // 
             // searchLocationControl1
             // 
@@ -172,82 +173,6 @@ namespace BedFactory
             this.searchLocationControl1.Size = new System.Drawing.Size(1400, 0);
             this.searchLocationControl1.TabIndex = 0;
             // 
-            // searchLocationControl2
-            // 
-            this.searchLocationControl2.ColumnCount = 10;
-            this.searchLocationControl2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.searchLocationControl2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.searchLocationControl2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
-            this.searchLocationControl2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.searchLocationControl2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.searchLocationControl2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
-            this.searchLocationControl2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.searchLocationControl2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.searchLocationControl2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13F));
-            this.searchLocationControl2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
-            this.searchLocationControl2.Controls.Add(this.button1, 9, 0);
-            this.searchLocationControl2.Controls.Add(this.lblGroupCode, 0, 0);
-            this.searchLocationControl2.Controls.Add(this.lblGroupName, 3, 0);
-            this.searchLocationControl2.Controls.Add(this.cboGroupCode, 1, 0);
-            this.searchLocationControl2.Controls.Add(this.cboGroupName, 4, 0);
-            this.searchLocationControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.searchLocationControl2.Location = new System.Drawing.Point(0, 0);
-            this.searchLocationControl2.Name = "searchLocationControl2";
-            this.searchLocationControl2.RowCount = 1;
-            this.searchLocationControl2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.searchLocationControl2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.searchLocationControl2.Size = new System.Drawing.Size(1356, 65);
-            this.searchLocationControl2.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button1.Location = new System.Drawing.Point(1275, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 30);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "조회";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // lblGroupCode
-            // 
-            this.lblGroupCode.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblGroupCode.AutoSize = true;
-            this.lblGroupCode.Location = new System.Drawing.Point(22, 21);
-            this.lblGroupCode.Name = "lblGroupCode";
-            this.lblGroupCode.Size = new System.Drawing.Size(78, 23);
-            this.lblGroupCode.TabIndex = 17;
-            this.lblGroupCode.Text = "그룹코드";
-            // 
-            // lblGroupName
-            // 
-            this.lblGroupName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblGroupName.AutoSize = true;
-            this.lblGroupName.Location = new System.Drawing.Point(411, 21);
-            this.lblGroupName.Name = "lblGroupName";
-            this.lblGroupName.Size = new System.Drawing.Size(61, 23);
-            this.lblGroupName.TabIndex = 18;
-            this.lblGroupName.Text = "그룹명";
-            // 
-            // cboGroupCode
-            // 
-            this.cboGroupCode.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboGroupCode.FormattingEnabled = true;
-            this.cboGroupCode.Location = new System.Drawing.Point(126, 20);
-            this.cboGroupCode.Name = "cboGroupCode";
-            this.cboGroupCode.Size = new System.Drawing.Size(215, 31);
-            this.cboGroupCode.TabIndex = 19;
-            // 
-            // cboGroupName
-            // 
-            this.cboGroupName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboGroupName.FormattingEnabled = true;
-            this.cboGroupName.Location = new System.Drawing.Point(506, 20);
-            this.cboGroupName.Name = "cboGroupName";
-            this.cboGroupName.Size = new System.Drawing.Size(215, 31);
-            this.cboGroupName.TabIndex = 20;
-            // 
             // frmUserGroupAuthority
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -270,10 +195,8 @@ namespace BedFactory
             this.pnlDgv.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.datagridviewControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridviewControl1)).EndInit();
-            this.searchLocationControl2.ResumeLayout(false);
-            this.searchLocationControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllowedAuthorities)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,14 +205,8 @@ namespace BedFactory
         #endregion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private DatagridviewControl datagridviewControl1;
-        private DatagridviewControl datagridviewControl2;
+        private DatagridviewControl dgvGroupList;
+        private DatagridviewControl dgvAllowedAuthorities;
         private Controls.SearchLocationControl searchLocationControl1;
-        private Controls.SearchLocationControl searchLocationControl2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lblGroupCode;
-        private System.Windows.Forms.Label lblGroupName;
-        private System.Windows.Forms.ComboBox cboGroupCode;
-        private System.Windows.Forms.ComboBox cboGroupName;
     }
 }

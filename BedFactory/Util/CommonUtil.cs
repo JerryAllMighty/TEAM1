@@ -31,8 +31,11 @@ namespace BedFactory.Util
                 { Code_Num = blankText, Code_Name = blankText };
                 codeList.Insert(0, blank);
             }
-            cbo.DisplayMember = "CodeName";
-            cbo.ValueMember = "Code";
+            //codeList.ForEach(p => cbo.DisplayMember = p.Code_Name);
+            //codeList.ForEach(p => cbo.ValueMember = p.Code_Num);
+
+            cbo.DisplayMember = "Code_Name";
+            cbo.ValueMember = "Code_Num";
             cbo.DataSource = codeList;
         }
 

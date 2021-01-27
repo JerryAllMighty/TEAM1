@@ -15,9 +15,12 @@ namespace BedFactory
     public partial class frmUserGroupAuthorityModify : Form
     {
         List<AuthorityVO> AddAuthorityList = new List<AuthorityVO>();
-        public frmUserGroupAuthorityModify()
+        public frmUserGroupAuthorityModify(string groupCode, string groupName)
         {
             InitializeComponent();
+            lblGroupCodeBinding.Text = groupCode;
+            lblGroupNameBinding.Text = groupName;
+
         }
 
         private void frmUserGroupAuthorityModify_Load(object sender, EventArgs e)

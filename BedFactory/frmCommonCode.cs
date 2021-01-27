@@ -25,10 +25,11 @@ namespace BedFactory
             if (commonList == null)
             {
                 CommonCodeService service = new CommonCodeService();
-                if (service.GetCommonCodeInfo() != null)
+               List<CommonCodedVO> ccList= service.GetCommonCodeInfo();
+                if (ccList != null)
                 {
                     //처음 한 번만 DB를 갔다오기 위해서 처음 정보를 가져온 후 리스트에 저장
-                    commonList = service.GetCommonCodeInfo();
+                    commonList = ccList;
                     return commonList;
                 }
             }
