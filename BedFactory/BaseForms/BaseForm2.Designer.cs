@@ -49,6 +49,7 @@ namespace BedFactory.BaseForms
             this.btn2.Size = new System.Drawing.Size(65, 25);
             this.btn2.TabIndex = 16;
             this.btn2.UseVisualStyleBackColor = false;
+            this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
             // btn3
             // 
@@ -60,6 +61,7 @@ namespace BedFactory.BaseForms
             this.btn3.Size = new System.Drawing.Size(65, 25);
             this.btn3.TabIndex = 15;
             this.btn3.UseVisualStyleBackColor = false;
+            this.btn3.Click += new System.EventHandler(this.btn3_Click);
             // 
             // btn5
             // 
@@ -71,6 +73,7 @@ namespace BedFactory.BaseForms
             this.btn5.Size = new System.Drawing.Size(125, 25);
             this.btn5.TabIndex = 14;
             this.btn5.UseVisualStyleBackColor = false;
+            this.btn5.Click += new System.EventHandler(this.btn5_Click);
             // 
             // label1
             // 
@@ -94,6 +97,7 @@ namespace BedFactory.BaseForms
             this.btn1.Size = new System.Drawing.Size(65, 25);
             this.btn1.TabIndex = 12;
             this.btn1.UseVisualStyleBackColor = false;
+            this.btn1.Click += new System.EventHandler(this.btn1_Click);
             // 
             // pnlDgv
             // 
@@ -117,6 +121,7 @@ namespace BedFactory.BaseForms
             this.btn4.Size = new System.Drawing.Size(100, 25);
             this.btn4.TabIndex = 11;
             this.btn4.UseVisualStyleBackColor = false;
+            this.btn4.Click += new System.EventHandler(this.btn4_Click);
             // 
             // pnlSelect
             // 
@@ -132,8 +137,7 @@ namespace BedFactory.BaseForms
             // 
             // BaseForm2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1382, 853);
             this.Controls.Add(this.btn2);

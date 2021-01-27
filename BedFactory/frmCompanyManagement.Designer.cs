@@ -33,14 +33,12 @@ namespace BedFactory
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
             this.lblPrcName = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtComName = new System.Windows.Forms.TextBox();
-            this.txtComNum = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
-            this.cboComType = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvComList = new BedFactory.DatagridviewControl();
+            this.cboComType = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.searchLocationControl1.SuspendLayout();
@@ -97,12 +95,10 @@ namespace BedFactory
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
             this.searchLocationControl1.Controls.Add(this.lblPrcName, 0, 0);
-            this.searchLocationControl1.Controls.Add(this.label2, 3, 0);
-            this.searchLocationControl1.Controls.Add(this.txtComName, 4, 0);
-            this.searchLocationControl1.Controls.Add(this.txtComNum, 1, 0);
-            this.searchLocationControl1.Controls.Add(this.label3, 6, 0);
+            this.searchLocationControl1.Controls.Add(this.txtComName, 1, 0);
             this.searchLocationControl1.Controls.Add(this.btnSelect, 9, 0);
-            this.searchLocationControl1.Controls.Add(this.cboComType, 7, 0);
+            this.searchLocationControl1.Controls.Add(this.label3, 3, 0);
+            this.searchLocationControl1.Controls.Add(this.cboComType, 4, 0);
             this.searchLocationControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchLocationControl1.Location = new System.Drawing.Point(0, 0);
             this.searchLocationControl1.Name = "searchLocationControl1";
@@ -116,47 +112,19 @@ namespace BedFactory
             // 
             this.lblPrcName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPrcName.AutoSize = true;
-            this.lblPrcName.Location = new System.Drawing.Point(22, 20);
+            this.lblPrcName.Location = new System.Drawing.Point(31, 20);
             this.lblPrcName.Name = "lblPrcName";
-            this.lblPrcName.Size = new System.Drawing.Size(78, 23);
+            this.lblPrcName.Size = new System.Drawing.Size(61, 23);
             this.lblPrcName.TabIndex = 14;
-            this.lblPrcName.Text = "업체번호";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(411, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 23);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "업체명";
+            this.lblPrcName.Text = "업체명";
             // 
             // txtComName
             // 
             this.txtComName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtComName.Location = new System.Drawing.Point(506, 16);
+            this.txtComName.Location = new System.Drawing.Point(126, 16);
             this.txtComName.Name = "txtComName";
             this.txtComName.Size = new System.Drawing.Size(215, 30);
-            this.txtComName.TabIndex = 17;
-            // 
-            // txtComNum
-            // 
-            this.txtComNum.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtComNum.Location = new System.Drawing.Point(126, 16);
-            this.txtComNum.Name = "txtComNum";
-            this.txtComNum.Size = new System.Drawing.Size(215, 30);
-            this.txtComNum.TabIndex = 16;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(782, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 23);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "업체타입";
+            this.txtComName.TabIndex = 16;
             // 
             // btnSelect
             // 
@@ -172,15 +140,6 @@ namespace BedFactory
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = false;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
-            // 
-            // cboComType
-            // 
-            this.cboComType.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboComType.FormattingEnabled = true;
-            this.cboComType.Location = new System.Drawing.Point(886, 20);
-            this.cboComType.Name = "cboComType";
-            this.cboComType.Size = new System.Drawing.Size(215, 31);
-            this.cboComType.TabIndex = 21;
             // 
             // button1
             // 
@@ -214,14 +173,33 @@ namespace BedFactory
             this.dgvComList.Size = new System.Drawing.Size(1358, 711);
             this.dgvComList.TabIndex = 0;
             // 
+            // cboComType
+            // 
+            this.cboComType.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboComType.FormattingEnabled = true;
+            this.cboComType.Location = new System.Drawing.Point(506, 16);
+            this.cboComType.Name = "cboComType";
+            this.cboComType.Size = new System.Drawing.Size(215, 31);
+            this.cboComType.TabIndex = 21;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(402, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 23);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "업체타입";
+            // 
             // frmCompanyManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.ClientSize = new System.Drawing.Size(1382, 853);
             this.Controls.Add(this.button1);
             this.Name = "frmCompanyManagement";
             this.Text = "업체관리";
             this.Load += new System.EventHandler(this.frmWorkspaceManagement_Load);
+            this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.pnlSelect, 0);
             this.Controls.SetChildIndex(this.btn4, 0);
             this.Controls.SetChildIndex(this.pnlDgv, 0);
@@ -230,7 +208,6 @@ namespace BedFactory
             this.Controls.SetChildIndex(this.btn5, 0);
             this.Controls.SetChildIndex(this.btn3, 0);
             this.Controls.SetChildIndex(this.btn2, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
             this.pnlDgv.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
             this.searchLocationControl1.ResumeLayout(false);
@@ -245,13 +222,11 @@ namespace BedFactory
 
         private Controls.SearchLocationControl searchLocationControl1;
         private System.Windows.Forms.Label lblPrcName;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtComName;
-        private System.Windows.Forms.TextBox txtComNum;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cboComType;
         protected System.Windows.Forms.Button btnSelect;
         protected System.Windows.Forms.Button button1;
         private DatagridviewControl dgvComList;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboComType;
     }
 }

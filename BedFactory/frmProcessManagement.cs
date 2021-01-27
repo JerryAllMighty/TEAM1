@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmProcessManagement : BedFactory.BaseForms.BaseForm1
+    public partial class frmProcessManagement : BedFactory.BaseForms.BaseForm2
     { 
         public frmProcessManagement()
         {
@@ -22,16 +22,16 @@ namespace BedFactory
         {
             //컬럼추가
             //그리드뷰 바인딩
-            CommonUtil.SetInitGridView(dvgProcessInfo);
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정번호", "Process_Num");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정분류", "Process_Category_Name");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정명", "Process_Name");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "공정조건", "Process_D_Condition");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "정보삭제여부", "IsDeleted");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "최초등록자", "Firstman");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "최초등록일", "Firstdate");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "최종등록자", "Lastman");
-            CommonUtil.AddGridTextColumn(dvgProcessInfo, "최종수정일", "Lastdate");
+  
+            dgvProcessInfo.SetGridViewColumn( "공정번호", "Process_Num");
+            dgvProcessInfo.SetGridViewColumn("공정분류", "Process_Category_Name");
+            dgvProcessInfo.SetGridViewColumn("공정명", "Process_Name");
+            dgvProcessInfo.SetGridViewColumn("공정조건", "Process_D_Condition");
+            dgvProcessInfo.SetGridViewColumn("정보삭제여부", "IsDeleted");
+            dgvProcessInfo.SetGridViewColumn("최초등록자", "Firstman");
+            dgvProcessInfo.SetGridViewColumn("최초등록일", "Firstdate");
+            dgvProcessInfo.SetGridViewColumn("최종등록자", "Lastman");
+            dgvProcessInfo.SetGridViewColumn("최종수정일", "Lastdate");
 
             //콤보박스 바인딩
 
@@ -39,19 +39,19 @@ namespace BedFactory
 
 
         //조회버튼
-        public override void btnSelect_Click(object sender, EventArgs e)
+        public void btnSelect_Click(object sender, EventArgs e)
         {
-            string prcCategory = ""; // cboCategory.SelectedValue.ToString();
-            string prcName = txtProcessName.Text.Trim();
+            string prcCategory = cboCategory.SelectedValue.ToString();
+            string prcName = txtName.Text.Trim();
 
             ProcessService service = new ProcessService();
-            List<ProcessVO> list = service.GetProcessDetailInfo(prcCategory, prcName);
-            dvgProcessInfo.DataSource = list;
+            List<ProcessVO> list = service.GetProcessInfo(prcCategory, prcName);
+            dgvProcessInfo.DataSource = list;
         }
 
 
         // 등록버튼
-        private void btn2_Click(object sender, EventArgs e)
+        public override void btn2_Click(object sender, EventArgs e)
         {
             //팝업호출
             frmProcessReg frm = new frmProcessReg();
@@ -60,7 +60,7 @@ namespace BedFactory
 
 
         // 수정버튼
-        private void btn3_Click(object sender, EventArgs e)
+        public override void btn3_Click(object sender, EventArgs e)
         {
             //팝업호출
         }

@@ -36,35 +36,44 @@ namespace BedFactoryDAC
         /// <param name="prcName">공정명</param>
         /// <returns></returns>
         /// 
-        public List<ProcessVO> GetProcessDetailInfo(string prcCategory, string prcName)
+        public List<ProcessVO> GetProcessInfo(string prcCategory, string prcName)
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(@"select Process_Num, Process_Category, Code_Name as Process_Category_Name, Process_Name, Process_Condition, 
-      Firstman, CONVERT(varchar(10), Firstdate, 23) Firstdate, Lastman, CONVERT(varchar(10), Lastdate, 23) Lastdate, IsDeleted
-from tblProcess inner join CommonCode C on Process_Category = Code_Num
-where 1 = 1 ");
-
-            if (!string.IsNullOrEmpty(prcCategory))
-                sb.Append(" and Process_Category = @prcCategory");
-            if (!string.IsNullOrEmpty(prcName))
-                sb.Append(" and Process_Name like @prcName");
-
-            using (SqlCommand cmd = new SqlCommand())
+            try
             {
-                cmd.CommandText = sb.ToString();
-                cmd.Connection = Conn;
+                StringBuilder sb = new StringBuilder();
+                sb.Append(@"select Process_Num, Process_Category, Code_Name as Process_Category_Name, Process_Name, Process_Condition, 
+                        Firstman, CONVERT(varchar(10), Firstdate, 23) Firstdate, Lastman, CONVERT(varchar(10), Lastdate, 23) Lastdate, IsDeleted
+                        from tblProcess inner join CommonCode C on Process_Category = Code_Num
+                        where 1 = 1 ");
 
                 if (!string.IsNullOrEmpty(prcCategory))
-                    cmd.Parameters.AddWithValue("@Process_Category", prcCategory);
-
+                    sb.Append(" and Process_Category = @prcCategory");
                 if (!string.IsNullOrEmpty(prcName))
-                    cmd.Parameters.AddWithValue("@Process_Name", $"'%{prcName}%'");
+                    sb.Append(" and Process_Name like @prcName"); // 앞글자 쓰면 해당하는 목록 보이게끔
 
-                List<ProcessVO> list = Helper.DataReaderMapToList<ProcessVO>(cmd.ExecuteReader());
-                Conn.Close();
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = sb.ToString();
+                    cmd.Connection = Conn;
 
-                return list;
+                    if (!string.IsNullOrEmpty(prcCategory))
+                        cmd.Parameters.AddWithValue("@Process_Category", prcCategory);
+
+                    if (!string.IsNullOrEmpty(prcName))
+                        cmd.Parameters.AddWithValue("@Process_Name", $"'%{prcName}%'");
+
+                    List<ProcessVO> list = Helper.DataReaderMapToList<ProcessVO>(cmd.ExecuteReader());
+                    Conn.Close();
+
+                    return list;
+                }
             }
+            catch(Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
+            }
+            
         }
 
         /// <summary>
@@ -79,15 +88,15 @@ where 1 = 1 ");
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = Conn;
-                    cmd.CommandText = @"insert into tblProcess (Process_Category, Process_Name, Process_Condition, IsDeleted) 
-                                    value (@Process_Category, @Process_Name, @Process_Condition, @IsDeleted, @Firstman, @Lastman) ";
+                    cmd.CommandText = @"insert into tblProcess (Process_Category, Process_Name, Process_Condition, IsDeleted, Firstman, Lastman) 
+                                        values (@Process_Category, @Process_Name, @Process_Condition, @IsDeleted, @Firstman, @Lastman) ";
 
                     cmd.Parameters.AddWithValue("@Process_Category", vo.Process_Category);
                     cmd.Parameters.AddWithValue("@Process_Name", vo.Process_Name);
                     cmd.Parameters.AddWithValue("@Process_Condition", vo.Process_Condition);
                     cmd.Parameters.AddWithValue("@IsDeleted", vo.IsDeleted);
-                    cmd.Parameters.AddWithValue("@Firstman", vo.IsDeleted);
-                    cmd.Parameters.AddWithValue("@Lastman", vo.IsDeleted);
+                    cmd.Parameters.AddWithValue("@Firstman", vo.Firstman);
+                    cmd.Parameters.AddWithValue("@Lastman", vo.Lastman);
 
                     int iRowAffect = cmd.ExecuteNonQuery();
                     Conn.Close();
@@ -102,6 +111,12 @@ where 1 = 1 ");
             }
         }
 
+        /// <summary>
+        /// 공정 정보 수정
+        /// </summary>
+        /// <param name="vo">수정목록</param>
+        /// <param name="prcCategory"></param>
+        /// <returns></returns>
         public bool UpdateProcessInfo(ProcessVO vo, string prcCategory)
         {
             using(SqlCommand cmd = new SqlCommand())
@@ -111,7 +126,7 @@ where 1 = 1 ");
                                     set Process_Category = @Process_Category, 
                                         Process_Name = @Process_Name, Process_Condition = @Process_Condition,
                                         IsDeleted = @IsDeleted, Lastman=@Lastman, Lastdate=getdate()   
-                                    where Process_Num = @Process_Num";
+                                         where Process_Num = @Process_Num";
 
                 cmd.Parameters.AddWithValue("@Process_Category", vo.Process_Category);
                 cmd.Parameters.AddWithValue("@Process_Name", vo.Process_Name);

@@ -48,6 +48,7 @@
     <Compile Include="ProcessService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShiftsService.cs" />
+    <Compile Include="WorkplaceService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BedFactoryDAC\BedFactoryDAC.csproj">
