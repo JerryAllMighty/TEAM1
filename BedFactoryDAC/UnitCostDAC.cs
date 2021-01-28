@@ -25,7 +25,7 @@ namespace BedFactoryDAC
             conn.Close();
         }
 
-        public List<UnitCostVO> UnitCostSelect(string category)
+        public List<UnitCostVO> UnitCostSelect(string category, DateTime date)
         {
             try
             {
@@ -37,10 +37,105 @@ namespace BedFactoryDAC
                                                , Start_Date, End_Date, U.FirstMan, U.FirstDate, U.LastMan, U.LastDate
                                           from tblUnitCost U join tblCompany C on U.Com_Num = C.Com_Num 
 	                                           join tblMaterials M on U.Mat_Num = M.Mat_Num
-                                         where C.Com_Category = @Com_Category";
+                                         where C.Com_Category = @Com_Category and Start_Date <= @Date and End_Date >= @Date";
 
                     cmd.Parameters.AddWithValue("@Com_Category", category);
+                    cmd.Parameters.AddWithValue("@Date", date.Date);
                     List<UnitCostVO> list = Helper.DataReaderMapToList<UnitCostVO>(cmd.ExecuteReader());
+                    conn.Close();
+                    return list;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
+            }
+        }
+
+        public int UnitCostInsert(UnitCostVO vo)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = @"SP_UnitCostInsert";
+
+                    cmd.Parameters.Add("@Amount", System.Data.SqlDbType.Int);
+                    cmd.Parameters["@Amount"].Direction = System.Data.ParameterDirection.Output;
+
+                    cmd.Parameters.AddWithValue("@Com_Num", vo.Com_Num);
+                    cmd.Parameters.AddWithValue("@Mat_Num", vo.Mat_Num);
+                    cmd.Parameters.AddWithValue("@Now_UnitCost", vo.Now_UnitCost);
+                    cmd.Parameters.AddWithValue("@Before_UnitCost", vo.Before_UnitCost);
+                    cmd.Parameters.AddWithValue("@Start_Date", vo.Start_Date);
+                    cmd.Parameters.AddWithValue("@End_Date", vo.End_Date);
+                    cmd.Parameters.AddWithValue("@FirstMan", vo.FirstMan);
+                    cmd.Parameters.AddWithValue("@FirstDate", vo.FirstDate);
+
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    return Convert.ToInt32(cmd.Parameters["@Amount"].Value);
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return 2;
+            }
+        }
+
+        public int UnitCostUpdate(UnitCostVO vo)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = @"SP_UnitCostUpdate";
+
+                    cmd.Parameters.Add("@Amount", System.Data.SqlDbType.Int);
+                    cmd.Parameters["@Amount"].Direction = System.Data.ParameterDirection.Output;
+
+                    cmd.Parameters.AddWithValue("@UnitCost_Num", vo.Com_Num);
+                    cmd.Parameters.AddWithValue("@Com_Num", vo.Com_Num);
+                    cmd.Parameters.AddWithValue("@Mat_Num", vo.Mat_Num);
+                    cmd.Parameters.AddWithValue("@Now_UnitCost", vo.Now_UnitCost);
+                    cmd.Parameters.AddWithValue("@Before_UnitCost", vo.Before_UnitCost);
+                    cmd.Parameters.AddWithValue("@Start_Date", vo.Start_Date);
+                    cmd.Parameters.AddWithValue("@End_Date", vo.End_Date);
+                    cmd.Parameters.AddWithValue("@LastMan", vo.FirstMan);
+                    cmd.Parameters.AddWithValue("@LastDate", vo.FirstDate);
+
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    return Convert.ToInt32(cmd.Parameters["@Amount"].Value);
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return 2;
+            }
+        }
+
+        public List<CommonCodedVO> UnitCostCombo()
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"select Com_Num Code_No, Com_Name Code_Name, '거래처' Category from tblCompany
+                                        union
+                                        select Mat_Num Code_No, Mat_Name Code_Name, '자재' Category from tblMaterials";
+
+                    List<CommonCodedVO> list = Helper.DataReaderMapToList<CommonCodedVO>(cmd.ExecuteReader());
                     conn.Close();
                     return list;
                 }
