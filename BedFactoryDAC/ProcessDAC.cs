@@ -141,7 +141,7 @@ namespace BedFactoryDAC
             }
         }
 
-        public List<CommonCodedVO> GetProcessCombo()
+        public List<CommonCodeVO> GetProcessCombo()
         {
             string sql = @"select cast(Process_Num as nvarchar) as Code_Num, Process_Name as Code_Name, '공정' as Category
                             from tblProcess 
@@ -149,7 +149,7 @@ namespace BedFactoryDAC
 
             using (SqlCommand cmd = new SqlCommand(sql, Conn))
             {
-                List<CommonCodedVO> list = Helper.DataReaderMapToList<CommonCodedVO>(cmd.ExecuteReader());
+                List<CommonCodeVO> list = Helper.DataReaderMapToList<CommonCodeVO>(cmd.ExecuteReader());
                 Conn.Close();
 
                 return list;

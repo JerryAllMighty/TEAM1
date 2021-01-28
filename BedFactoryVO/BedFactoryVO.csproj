@@ -44,7 +44,7 @@
     <Compile Include="APIMessage.cs" />
     <Compile Include="AuthorityVO.cs" />
     <Compile Include="CheckInfoVO.cs" />
-    <Compile Include="CommonCodedVO.cs" />
+    <Compile Include="CommonCodeVO.cs" />
     <Compile Include="CompanyVO.cs" />
     <Compile Include="MaterialsVO.cs" />
     <Compile Include="ProcessVO.cs" />

@@ -21,11 +21,11 @@ namespace BedFactory
         /// <summary>
         /// 공통코드 정보를 한 번에 넘기기 위한 프로퍼티
         /// </summary>
-        public CommonCodedVO CommonCodeInfo
+        public CommonCodeVO CommonCodeInfo
         {
             get
             {
-                return new CommonCodedVO
+                return new CommonCodeVO
                 {
                     Code_Num = GroupCode,
                     Code_Name = GroupName,

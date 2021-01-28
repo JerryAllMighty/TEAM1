@@ -32,7 +32,7 @@ namespace BedFactoryService
         /// 공정명조회
         /// </summary>
         /// <returns></returns>
-        public List<CommonCodedVO> GetProcessCombo()
+        public List<CommonCodeVO> GetProcessCombo()
         {
             ProcessDAC dac = new ProcessDAC();
             return dac.GetProcessCombo();

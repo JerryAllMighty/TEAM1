@@ -15,25 +15,25 @@ namespace BedFactoryService
         /// 공통코드 정보를 모두 가져옴
         /// </summary>
         /// <returns></returns>
-        public List<CommonCodedVO> GetCommonCodeInfo()
+        public List<CommonCodeVO> GetCommonCodeInfo()
         {
             CommonCodeDAC dac = new CommonCodeDAC();
             return dac.GetCommonCodeInfo();
         }
 
-        public bool InsertCommonCode(CommonCodedVO commoncodeinfo)
+        public bool InsertCommonCode(CommonCodeVO commoncodeinfo)
         {
             CommonCodeDAC dac = new CommonCodeDAC();
             return dac.InsertCommonCode(commoncodeinfo);
         }
 
-        public bool UpdateCommonCode(CommonCodedVO commoncodeinfo, string currentCodeNum)
+        public bool UpdateCommonCode(CommonCodeVO commoncodeinfo, string currentCodeNum)
         {
             CommonCodeDAC dac = new CommonCodeDAC();
             return dac.UpdateCommonCode(commoncodeinfo, currentCodeNum);
         }
 
-        public bool DeleteCommonCode(CommonCodedVO commoncodeinfo)
+        public bool DeleteCommonCode(CommonCodeVO commoncodeinfo)
         {
             CommonCodeDAC dac = new CommonCodeDAC();
             return dac.DeleteCommonCode(commoncodeinfo);

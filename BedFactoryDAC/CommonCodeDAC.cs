@@ -25,7 +25,7 @@ namespace BedFactoryDAC
         /// 공통코드 정보를 모두 가져오는 함수
         /// </summary>
         /// <returns></returns>
-        public List<CommonCodedVO> GetCommonCodeInfo()
+        public List<CommonCodeVO> GetCommonCodeInfo()
         {
             try
             {
@@ -34,7 +34,7 @@ namespace BedFactoryDAC
                     cmd.Connection = conn;
                     cmd.CommandText = @"select Code_Num, Code_Name, Category, P_Code from CommonCode";
 
-                    List<CommonCodedVO> list = Helper.DataReaderMapToList<CommonCodedVO>(cmd.ExecuteReader());
+                    List<CommonCodeVO> list = Helper.DataReaderMapToList<CommonCodeVO>(cmd.ExecuteReader());
                     return list != null ? list : null;
                 }
             }
@@ -50,7 +50,7 @@ namespace BedFactoryDAC
         /// 공통코드 정보에 등록하는 함수
         /// </summary>
         /// <returns></returns>
-        public bool InsertCommonCode(CommonCodedVO commoncodeinfo)
+        public bool InsertCommonCode(CommonCodeVO commoncodeinfo)
         {
             try
             {
@@ -81,7 +81,7 @@ namespace BedFactoryDAC
         /// </summary>
         /// <returns></returns>
 
-        public bool UpdateCommonCode(CommonCodedVO commoncodeinfo, string currentCodeNum)
+        public bool UpdateCommonCode(CommonCodeVO commoncodeinfo, string currentCodeNum)
         {
             try
             {
@@ -118,7 +118,7 @@ namespace BedFactoryDAC
         /// 공통코드 정보 삭제하는 함수
         /// </summary>
         /// <returns></returns>
-        public bool DeleteCommonCode(CommonCodedVO commoncodeinfo)
+        public bool DeleteCommonCode(CommonCodeVO commoncodeinfo)
         {
             try
             {

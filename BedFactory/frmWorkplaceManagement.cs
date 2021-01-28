@@ -33,7 +33,7 @@ namespace BedFactory
 
             //공정명 바인딩
             ProcessService service = new ProcessService();
-            List<CommonCodedVO> list = service.GetProcessCombo();
+            List<CommonCodeVO> list = service.GetProcessCombo();
             CommonUtil.ComboBinding(cboProcessName, list, "공정");
         }
 

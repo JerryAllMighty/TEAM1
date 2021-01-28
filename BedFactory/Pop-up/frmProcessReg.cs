@@ -26,7 +26,7 @@ namespace BedFactory
         private void frmProcessReg_Load(object sender, EventArgs e)
         {
             //콤보박스 바인딩
-            List<CommonCodedVO> ccList = frmCommonCode.CheckCommonInfo();
+            List<CommonCodeVO> ccList = frmCommonCode.CheckCommonInfo();
             CommonUtil.CommonCodeBindig(cboCategory, ccList, "공정", "");
 
             if (IsEditMode && EditProcess != null)

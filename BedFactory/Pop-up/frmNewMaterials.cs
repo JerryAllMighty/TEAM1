@@ -16,7 +16,7 @@ namespace BedFactory.Pop_up
     public partial class frmNewMaterials : Form
     {
         int materialID, checkID; //자재ID, 검사ID
-        List<CommonCodedVO> p_List = new List<CommonCodedVO>();
+        List<CommonCodeVO> p_List = new List<CommonCodeVO>();
         List<MaterialsVO> m_List = new List<MaterialsVO>();
 
         private void frmNewMaterials_Load(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace BedFactory.Pop_up
                       where common.Category == "자재종류"
                       select common).ToList();
 
-            foreach(CommonCodedVO item in p_List)
+            foreach(CommonCodeVO item in p_List)
             {
                 trvMaterials.Nodes.Add(item.Code_Name);
             }
@@ -42,12 +42,12 @@ namespace BedFactory.Pop_up
             {
                 m_List = result.Data;
 
-                List<CommonCodedVO> list = new List<CommonCodedVO>();   //공통코드 변수선언
+                List<CommonCodeVO> list = new List<CommonCodeVO>();   //공통코드 변수선언
                 //공통코드 리스트 형태로 재구성
-                m_List.ForEach(p => list.Add(new CommonCodedVO { Code_Num = p.Mat_Num, Code_Name = p.Mat_Name, Category = p.Mat_Category }));
+                m_List.ForEach(p => list.Add(new CommonCodeVO { Code_Num = p.Mat_Num, Code_Name = p.Mat_Name, Category = p.Mat_Category }));
 
                 //자식노드 바인딩
-                foreach (CommonCodedVO vo in p_List)    //부모노드 
+                foreach (CommonCodeVO vo in p_List)    //부모노드 
                 {
                     CommonUtil.AddTreeNode(trvMaterials.Nodes[vo.Code_Num], list, vo.Code_Name, false);
                 }
