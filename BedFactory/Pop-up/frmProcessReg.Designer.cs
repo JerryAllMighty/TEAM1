@@ -82,7 +82,7 @@ namespace BedFactory
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(286, 31);
-            this.txtName.TabIndex = 68;
+            this.txtName.TabIndex = 1;
             // 
             // label7
             // 
@@ -120,7 +120,7 @@ namespace BedFactory
             this.txtCondition.Multiline = true;
             this.txtCondition.Name = "txtCondition";
             this.txtCondition.Size = new System.Drawing.Size(537, 180);
-            this.txtCondition.TabIndex = 76;
+            this.txtCondition.TabIndex = 3;
             // 
             // btnSave
             // 
@@ -130,7 +130,7 @@ namespace BedFactory
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(120, 50);
-            this.btnSave.TabIndex = 77;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.button1_Click);
@@ -143,7 +143,7 @@ namespace BedFactory
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(120, 50);
-            this.btnCancel.TabIndex = 78;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
@@ -164,7 +164,7 @@ namespace BedFactory
             this.cboCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(286, 31);
-            this.cboCategory.TabIndex = 87;
+            this.cboCategory.TabIndex = 0;
             // 
             // label3
             // 
@@ -179,23 +179,23 @@ namespace BedFactory
             // rdoY
             // 
             this.rdoY.AutoSize = true;
-            this.rdoY.Location = new System.Drawing.Point(265, 107);
+            this.rdoY.Location = new System.Drawing.Point(351, 107);
             this.rdoY.Name = "rdoY";
-            this.rdoY.Size = new System.Drawing.Size(41, 27);
-            this.rdoY.TabIndex = 89;
+            this.rdoY.Size = new System.Drawing.Size(99, 27);
+            this.rdoY.TabIndex = 2;
             this.rdoY.TabStop = true;
-            this.rdoY.Text = "Y";
+            this.rdoY.Text = "사용안함";
             this.rdoY.UseVisualStyleBackColor = true;
             // 
             // rdoN
             // 
             this.rdoN.AutoSize = true;
-            this.rdoN.Location = new System.Drawing.Point(338, 107);
+            this.rdoN.Location = new System.Drawing.Point(265, 107);
             this.rdoN.Name = "rdoN";
-            this.rdoN.Size = new System.Drawing.Size(44, 27);
+            this.rdoN.Size = new System.Drawing.Size(65, 27);
             this.rdoN.TabIndex = 90;
             this.rdoN.TabStop = true;
-            this.rdoN.Text = "N";
+            this.rdoN.Text = "사용";
             this.rdoN.UseVisualStyleBackColor = true;
             // 
             // frmProcessReg

@@ -146,7 +146,7 @@ namespace BedFactory
             // 
             this.cboProcessName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboProcessName.FormattingEnabled = true;
-            this.cboProcessName.Location = new System.Drawing.Point(126, 16);
+            this.cboProcessName.Location = new System.Drawing.Point(126, 20);
             this.cboProcessName.Name = "cboProcessName";
             this.cboProcessName.Size = new System.Drawing.Size(215, 31);
             this.cboProcessName.TabIndex = 23;

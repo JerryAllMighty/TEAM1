@@ -22,10 +22,20 @@ namespace BedFactoryService
             return dac.InsertProcessInfo(vo);
         }
 
-        public bool UpdateProcessInfo(ProcessVO vo, string prcCategory)
+        public bool UpdateProcessInfo(ProcessVO vo)
         {
             ProcessDAC dac = new ProcessDAC();
-            return dac.UpdateProcessInfo(vo, prcCategory);
+            return dac.UpdateProcessInfo(vo);
+        }
+
+        /// <summary>
+        /// 공정명조회
+        /// </summary>
+        /// <returns></returns>
+        public List<CommonCodedVO> GetProcessCombo()
+        {
+            ProcessDAC dac = new ProcessDAC();
+            return dac.GetProcessCombo();
         }
     }
 }

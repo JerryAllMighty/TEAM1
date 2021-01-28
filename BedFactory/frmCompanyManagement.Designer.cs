@@ -29,16 +29,16 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
             this.lblPrcName = new System.Windows.Forms.Label();
             this.txtComName = new System.Windows.Forms.TextBox();
             this.btnSelect = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.cboComType = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvComList = new BedFactory.DatagridviewControl();
-            this.cboComType = new System.Windows.Forms.ComboBox();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.searchLocationControl1.SuspendLayout();
@@ -151,6 +151,15 @@ namespace BedFactory
             this.label3.TabIndex = 18;
             this.label3.Text = "업체타입";
             // 
+            // cboComType
+            // 
+            this.cboComType.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboComType.FormattingEnabled = true;
+            this.cboComType.Location = new System.Drawing.Point(506, 20);
+            this.cboComType.Name = "cboComType";
+            this.cboComType.Size = new System.Drawing.Size(215, 31);
+            this.cboComType.TabIndex = 23;
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -168,29 +177,20 @@ namespace BedFactory
             this.dgvComList.AllowUserToAddRows = false;
             this.dgvComList.AllowUserToResizeRows = false;
             this.dgvComList.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvComList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvComList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvComList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvComList.Location = new System.Drawing.Point(0, 0);
             this.dgvComList.Name = "dgvComList";
             this.dgvComList.RowHeadersVisible = false;
             this.dgvComList.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvComList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvComList.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvComList.RowTemplate.Height = 27;
             this.dgvComList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvComList.Size = new System.Drawing.Size(1358, 711);
             this.dgvComList.TabIndex = 0;
-            // 
-            // cboComType
-            // 
-            this.cboComType.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboComType.FormattingEnabled = true;
-            this.cboComType.Location = new System.Drawing.Point(506, 16);
-            this.cboComType.Name = "cboComType";
-            this.cboComType.Size = new System.Drawing.Size(215, 31);
-            this.cboComType.TabIndex = 23;
             // 
             // frmCompanyManagement
             // 

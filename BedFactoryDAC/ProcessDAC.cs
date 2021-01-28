@@ -42,7 +42,7 @@ namespace BedFactoryDAC
             {
                 StringBuilder sb = new StringBuilder();
                 sb.Append(@"select Process_Num, Process_Category, Code_Name as Process_Category_Name, Process_Name, Process_Condition, 
-                        Firstman, CONVERT(varchar(10), Firstdate, 23) Firstdate, Lastman, Lastdate, IsDeleted
+                        Firstman, Firstdate, Lastman, Lastdate, IsDeleted
                         from tblProcess inner join CommonCode C on Process_Category = Code_Num
                         where 1 = 1 ");
 
@@ -117,7 +117,7 @@ namespace BedFactoryDAC
         /// <param name="vo">수정목록</param>
         /// <param name="prcCategory"></param>
         /// <returns></returns>
-        public bool UpdateProcessInfo(ProcessVO vo, string prcCategory)
+        public bool UpdateProcessInfo(ProcessVO vo)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -125,7 +125,7 @@ namespace BedFactoryDAC
                 cmd.CommandText = @"update tblProcess 
                                     set Process_Category = @Process_Category, 
                                         Process_Name = @Process_Name, Process_Condition = @Process_Condition,
-                                        IsDeleted = @IsDeleted, Lastman=@Lastman, Lastdate=@Lastdate
+                                        IsDeleted = @IsDeleted, Lastman=@Lastman, Lastdate=getdate()
                                          where Process_Num = @Process_Num";
 
                 cmd.Parameters.AddWithValue("@Process_Category", vo.Process_Category);
@@ -133,12 +133,26 @@ namespace BedFactoryDAC
                 cmd.Parameters.AddWithValue("@Process_Condition", vo.Process_Condition);
                 cmd.Parameters.AddWithValue("@IsDeleted", vo.IsDeleted);
                 cmd.Parameters.AddWithValue("@Lastman", vo.Lastman);
-                cmd.Parameters.AddWithValue("@Lastdate", vo.Lastdate);
                 cmd.Parameters.AddWithValue("@Process_Num", vo.Process_Num);
 
                 int iRowAffect = cmd.ExecuteNonQuery();
 
                 return iRowAffect > 0 ? true : false;
+            }
+        }
+
+        public List<CommonCodedVO> GetProcessCombo()
+        {
+            string sql = @"select cast(Process_Num as nvarchar) as Code_Num, Process_Name as Code_Name, '공정' as Category
+                            from tblProcess 
+                            where Isdeleted = 'N' ";
+
+            using (SqlCommand cmd = new SqlCommand(sql, Conn))
+            {
+                List<CommonCodedVO> list = Helper.DataReaderMapToList<CommonCodedVO>(cmd.ExecuteReader());
+                Conn.Close();
+
+                return list;
             }
         }
     }

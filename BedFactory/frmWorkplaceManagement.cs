@@ -1,4 +1,5 @@
-﻿using BedFactoryService;
+﻿using BedFactory.Util;
+using BedFactoryService;
 using BedFactoryVO;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,9 @@ namespace BedFactory
 
 
             //공정명 바인딩
+            ProcessService service = new ProcessService();
+            List<CommonCodedVO> list = service.GetProcessCombo();
+            CommonUtil.ComboBinding(cboProcessName, list, "공정");
         }
 
         //조회버튼
