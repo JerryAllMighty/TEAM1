@@ -13,6 +13,6 @@ namespace BedFactoryVO
         public int Check_Info_Num { get; set; }
         public string Mat_Num { get; set; }
         public int Lastman { get; set; }
-        public DateTime Lastdate { get; set; }
+        public DateTime Lastdate { get; set; } 
     }
 }
