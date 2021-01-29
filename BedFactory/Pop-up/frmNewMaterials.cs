@@ -216,12 +216,12 @@ namespace BedFactory.Pop_up
             CheckService service2 = new CheckService();
             if(service1.DeleteMaterilas(materialID) && service2.DeleteCheck(materialID))
             {
-                MessageBox.Show("성공적으로 저장하였습니다.");
+                MessageBox.Show("성공적으로 삭제하였습니다.");
                 search.PerformClick();
             }
             else
             {
-                MessageBox.Show("저장에 실패하였습니다.");
+                MessageBox.Show("삭제에 실패하였습니다.");
             }
         }
 
