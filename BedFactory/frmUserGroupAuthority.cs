@@ -34,7 +34,6 @@ namespace BedFactory
             dgvGroupList.SetGridViewColumn("그룹명", "Code_Name");
             dgvGroupList.AddGridButton("수정", "btnModify", "수정", new Padding(0, 0, 0, 0), 100);
             dgvGroupList.CellClick += DgvGroupList_CellClick;
-            dgvGroupList.CellContentClick += DgvGroupList_CellContentClick;
 
             //허용된 권한
             dgvAllowedAuthorities.SetGridViewColumn("화면번호", "Auth_Num");
@@ -47,12 +46,6 @@ namespace BedFactory
             dgvGroupList.DataSource = GroupList;
         }
 
-        private void DgvGroupList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            frmUserGroupAuthorityModify frm = new frmUserGroupAuthorityModify(dgvGroupList[0, e.RowIndex].Value.ToString(), dgvGroupList[1, e.RowIndex].Value.ToString());
-            frm.ShowDialog();
-        }
-
         /// <summary>
         /// 
         /// </summary>
@@ -60,7 +53,12 @@ namespace BedFactory
         /// <param name="e"></param>
         private void DgvGroupList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            //컬럼 넘버 필터를 해서 버튼컬럼 눌렀을 때랑 비고해보자
+            if (e.ColumnIndex == 2)
+            {
+                frmUserGroupAuthorityModify frm = new frmUserGroupAuthorityModify(dgvGroupList[0, e.RowIndex].Value.ToString(), dgvGroupList[1, e.RowIndex].Value.ToString());
+                frm.ShowDialog();
+            }
         }
 
         /// <summary>
