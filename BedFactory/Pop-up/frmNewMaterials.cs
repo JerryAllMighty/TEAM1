@@ -19,8 +19,8 @@ namespace BedFactory.Pop_up
         string materialID; //자재ID
         int cnt;    //새로 추가된 검사항목 입력란 개수
         MaterialsVO materialsVO;    //자재정보
-        List<CommonCodedVO> codeList = new List<CommonCodedVO>();   //제품 당 검사항목
-        List<CommonCodedVO> allList = new List<CommonCodedVO>();    //전체공통코드
+        List<CommonCodeVO> codeList = new List<CommonCodeVO>();   //제품 당 검사항목
+        List<CommonCodeVO> allList = new List<CommonCodeVO>();    //전체공통코드
         List<MaterialsVO> m_List = new List<MaterialsVO>(); //자재정보
 
         public frmNewMaterials()
@@ -39,7 +39,7 @@ namespace BedFactory.Pop_up
         private void TreeNodeBinding()
         {
             #region 트리노드 바인딩(카테고리)
-            List<CommonCodedVO> p_List = new List<CommonCodedVO>();
+            List<CommonCodeVO> p_List = new List<CommonCodeVO>();
             CommonCodeService service1 = new CommonCodeService();
             allList = service1.GetCommonCodeInfo();
             p_List = (from common in allList
@@ -48,7 +48,7 @@ namespace BedFactory.Pop_up
 
             CommonUtil.CommonCodeBindig(lctCategory.cbo, p_List, "", "선택");   //자재종류 콤보박스 바인딩
 
-            foreach (CommonCodedVO item in p_List)
+            foreach (CommonCodeVO item in p_List)
             {
                 trvMaterials.Nodes.Add(item.Code_Num, item.Code_Name);
             }
@@ -62,12 +62,12 @@ namespace BedFactory.Pop_up
             {
                 m_List = result.Data;
 
-                List<CommonCodedVO> list = new List<CommonCodedVO>();   //공통코드 변수선언
+                List<CommonCodeVO> list = new List<CommonCodeVO>();   //공통코드 변수선언
                 //공통코드 리스트 형태로 재구성
-                m_List.ForEach(p => list.Add(new CommonCodedVO { Code_Num = p.Mat_Num, Code_Name = p.Mat_Name, Category = p.Mat_Category }));
+                m_List.ForEach(p => list.Add(new CommonCodeVO { Code_Num = p.Mat_Num, Code_Name = p.Mat_Name, Category = p.Mat_Category }));
 
                 //자식노드 바인딩
-                foreach (CommonCodedVO vo in p_List)    //부모노드 
+                foreach (CommonCodeVO vo in p_List)    //부모노드 
                 {
                     CommonUtil.AddTreeNode(trvMaterials.Nodes[vo.Code_Num], list, vo.Code_Name, false);
                 }
@@ -196,7 +196,7 @@ namespace BedFactory.Pop_up
             List<CheckInfoVO> ci_list = new List<CheckInfoVO>();
             CheckService service2 = new CheckService();
             ci_list = service2.GetCheckInfo();
-            ci_list.ForEach(p => codeList.Add(new CommonCodedVO { Code_Num = p.Check_Info_Num.ToString(), Code_Name = p.CheckName, Category = p.CheckKind }));
+            ci_list.ForEach(p => codeList.Add(new CommonCodeVO { Code_Num = p.Check_Info_Num.ToString(), Code_Name = p.CheckName, Category = p.CheckKind }));
 
 
         }
@@ -268,10 +268,10 @@ namespace BedFactory.Pop_up
             CheckService service = new CheckService();
             List<CheckVO> c_list = service.GetCheck(e.Node.Name);
             List<CheckInfoVO> ci_list = service.GetCheckInfo();
-            List<CommonCodedVO> codeList = new List<CommonCodedVO>();
+            List<CommonCodeVO> codeList = new List<CommonCodeVO>();
 
             panel1.Controls.Clear();
-            ci_list.ForEach(p => codeList.Add(new CommonCodedVO { Code_Num = p.Check_Info_Num.ToString(), Code_Name = p.CheckKind }));
+            ci_list.ForEach(p => codeList.Add(new CommonCodeVO { Code_Num = p.Check_Info_Num.ToString(), Code_Name = p.CheckKind }));
 
             foreach(CheckVO item in c_list)
             {
