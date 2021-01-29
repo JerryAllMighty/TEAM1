@@ -4,19 +4,21 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Web.Http;
 
 namespace BedFactoryWeb
 {
     public class RouteConfig
     {
-        public static void RegisterRoutes(RouteCollection routes)
+        public static void RegisterRoutes(HttpConfiguration config)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            // Web API 경로(https://localhost:44375/)
+            config.MapHttpAttributeRoutes();
 
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            config.Routes.MapHttpRoute(
+                name: "DefaultApi",
+                routeTemplate: "{controller}/{id}", //localhost:OOOOO/ControllerName(User)
+                defaults: new { id = RouteParameter.Optional }
             );
         }
     }
