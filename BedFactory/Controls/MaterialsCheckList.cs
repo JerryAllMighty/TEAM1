@@ -13,7 +13,6 @@ namespace BedFactory.Controls
     public partial class MaterialsCheckList : UserControl
     {
         public LabelComboText cboText;
-        public TextBox text;
         public MaterialsCheckList()
         {
             InitializeComponent();

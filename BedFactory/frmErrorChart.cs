@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BedFactory.BaseForms;
 
 namespace BedFactory
 {
-    public partial class frmErrorChart : Form
+    public partial class frmErrorChart : BaseForm2
     {
         public frmErrorChart()
         {

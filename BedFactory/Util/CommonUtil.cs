@@ -22,7 +22,7 @@ namespace BedFactory.Util
         public static void ComboBinding(ComboBox cbo, List<CommonCodeVO> list, string category, bool blankItem = true, string blankText = "")
         {
             var codeList = (from item in list
-                            where item.Category.Equals(category)
+                            where item.Category.Contains(category)
                             select item).ToList();
 
             if (blankItem)
