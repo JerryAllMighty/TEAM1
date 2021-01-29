@@ -18,7 +18,7 @@ namespace BedFactory
         public DatagridviewControl()
         {
             InitializeComponent();
-            
+
             this.BackgroundColor = Color.White;
             this.Dock = DockStyle.Fill;
 
@@ -50,13 +50,15 @@ namespace BedFactory
         /// <param name="fillWidth">fill일 때 컬럼넓이</param>
         /// <param name="visibility">컬럼식별유무</param>
         /// <param name="textAlign">컬럼정렬</param>
-        public void SetGridViewColumn(
+        public void SetGridViewColumn
+            (
            string headerText,
            string dataPropertyName,
            int colWidth = 100,
            int fillWidth = 100,
            bool visibility = true,
-           DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft)
+           DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft
+            )
         {
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
             col.Name = dataPropertyName;
@@ -116,8 +118,7 @@ namespace BedFactory
         /// <param name="buttonText">버튼텍스트</param>
         /// <param name="width">버튼넓이</param>
         /// <returns></returns>
-        public void AddGridButton(string headerText,
-                                          string dataPropertyName, string buttonText, Padding padding, int width = 10)
+        public void AddGridButton(string headerText, string dataPropertyName, string buttonText, Padding padding, int width = 10)
         {
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             btn.HeaderText = headerText;

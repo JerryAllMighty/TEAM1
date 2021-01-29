@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmWorkspaceManagement : BedFactory.BaseForms.BaseForm2
+    public partial class frmCompanyManagement : BedFactory.BaseForms.BaseForm2
     {
-        public frmWorkspaceManagement()
+        public frmCompanyManagement()
         {
             InitializeComponent();
         }
@@ -31,6 +31,7 @@ namespace BedFactory
 
         }
 
+        //조회버튼
         private void btnSelect_Click(object sender, EventArgs e)
         {
             

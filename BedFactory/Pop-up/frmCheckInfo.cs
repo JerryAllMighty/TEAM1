@@ -16,6 +16,7 @@ namespace BedFactory.Pop_up
     {
         public CheckInfoVO Info { get; set; }
         public bool formCheck = true;   //등록 : true, 수정 : false
+        int checkInfoNum;
 
         public frmCheckInfo()
         {
@@ -29,7 +30,7 @@ namespace BedFactory.Pop_up
 
             var list = (from item in service.GetCommonCodeInfo()
                         where item.Category == "검사항목"
-                        select item).ToList();
+                        select item.Code_Name).ToList();
 
             lctCheckKind.cbo.DataSource = list;
             #endregion
@@ -43,6 +44,7 @@ namespace BedFactory.Pop_up
                 btnOk.Text = "수 정";
                 lctCheckKind.cbo.Text = Info.CheckKind;
                 lctCheckDetail.text.Text = Info.Check_Detail;
+                checkInfoNum = Info.Check_Info_Num;
             }
         }
 
@@ -58,12 +60,17 @@ namespace BedFactory.Pop_up
         {
             CheckService service = new CheckService();
             CheckInfoVO vo = new CheckInfoVO();
+            vo.Check_Info_Num = checkInfoNum;
+            vo.CheckName = lctCheckName.text.Text;
+            vo.CheckKind = lctCheckKind.cbo.Text;
+            vo.Check_Detail = lctCheckDetail.text.Text;
 
             if(btnOk.Text.Replace(" ", "") == "등록")
             {
                 if(service.InsertCheckInfo(vo))
                 {
                     MessageBox.Show("검사항목 등록을 성공하였습니다.");
+                    lctCheckName.text.Text = lctCheckDetail.text.Text = "";
                 }
                 else
                 {
@@ -75,6 +82,7 @@ namespace BedFactory.Pop_up
                 if(service.UpdateCheckInfo(vo))
                 {
                     MessageBox.Show("검사항목 수정을 성공하였습니다.");
+                    lctCheckName.text.Text = lctCheckDetail.text.Text = "";
                 }
                 else
                 {

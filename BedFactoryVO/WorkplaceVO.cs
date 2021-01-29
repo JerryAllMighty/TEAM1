@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace BedFactoryVO
 {
-    public class ProcessDetailVO
+    public class WorkplaceVO
     {
-        public string Process_Category { get; set; }
+        public int WP_Num { get; set; }
         public int Process_Num { get; set; }
-        public string Process_D_Name { get; set; }
-        public int Process_D_Num { get; set; }
-        public string Process_D_Condition { get; set; }
+        public string WP_Name { get; set; }
+        public string IsDeleted { get; set; }
+        public string WP_Note { get; set; }
+        public string WP_Other { get; set; }
         public int Firstman { get; set; }
         public DateTime Firstdate { get; set; }
         public int Lastman { get; set; }
         public DateTime Lastdate { get; set; }
-        public string IsDeleted { get; set; }
+   
     }
 }
-

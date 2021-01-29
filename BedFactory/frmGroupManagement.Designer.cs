@@ -29,124 +29,269 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.pnlGroupList = new System.Windows.Forms.Panel();
+            this.pnlAddGroup = new System.Windows.Forms.Panel();
+            this.txtGroupName2 = new System.Windows.Forms.TextBox();
+            this.lblGroupName2 = new System.Windows.Forms.Label();
+            this.txtGroupCode2 = new System.Windows.Forms.TextBox();
+            this.lblGroupCode2 = new System.Windows.Forms.Label();
+            this.btnAddGroup = new System.Windows.Forms.Button();
+            this.lblGroupList = new System.Windows.Forms.Label();
+            this.btnModify = new System.Windows.Forms.Button();
+            this.pnlGroupModify = new System.Windows.Forms.Panel();
+            this.txtGroupName = new System.Windows.Forms.TextBox();
+            this.lblGroupName = new System.Windows.Forms.Label();
+            this.txtGroupCode = new System.Windows.Forms.TextBox();
+            this.lblGroupCode = new System.Windows.Forms.Label();
+            this.lblGroupModify = new System.Windows.Forms.Label();
+            this.lblAddGroup = new System.Windows.Forms.Label();
+            this.dgvGroupList = new BedFactory.DatagridviewControl();
+            this.pnlGroupList.SuspendLayout();
+            this.pnlAddGroup.SuspendLayout();
+            this.pnlGroupModify.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupList)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlGroupList
             // 
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(627, 562);
-            this.panel1.TabIndex = 1;
+            this.pnlGroupList.Controls.Add(this.dgvGroupList);
+            this.pnlGroupList.Location = new System.Drawing.Point(15, 77);
+            this.pnlGroupList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlGroupList.Name = "pnlGroupList";
+            this.pnlGroupList.Size = new System.Drawing.Size(477, 964);
+            this.pnlGroupList.TabIndex = 1;
             // 
-            // panel2
+            // pnlAddGroup
             // 
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Location = new System.Drawing.Point(663, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(607, 562);
-            this.panel2.TabIndex = 2;
+            this.pnlAddGroup.Controls.Add(this.txtGroupName2);
+            this.pnlAddGroup.Controls.Add(this.lblGroupName2);
+            this.pnlAddGroup.Controls.Add(this.txtGroupCode2);
+            this.pnlAddGroup.Controls.Add(this.lblGroupCode2);
+            this.pnlAddGroup.Controls.Add(this.btnAddGroup);
+            this.pnlAddGroup.Location = new System.Drawing.Point(990, 77);
+            this.pnlAddGroup.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlAddGroup.Name = "pnlAddGroup";
+            this.pnlAddGroup.Size = new System.Drawing.Size(599, 964);
+            this.pnlAddGroup.TabIndex = 2;
             // 
-            // panel3
+            // txtGroupName2
             // 
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Location = new System.Drawing.Point(12, 604);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1258, 138);
-            this.panel3.TabIndex = 2;
+            this.txtGroupName2.Location = new System.Drawing.Point(264, 238);
+            this.txtGroupName2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtGroupName2.Name = "txtGroupName2";
+            this.txtGroupName2.Size = new System.Drawing.Size(235, 30);
+            this.txtGroupName2.TabIndex = 8;
+            this.txtGroupName2.TextChanged += new System.EventHandler(this.txtGroupName2_TextChanged);
             // 
-            // button1
+            // lblGroupName2
             // 
-            this.button1.Location = new System.Drawing.Point(1129, 66);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 59);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "그룹 추가";
-            this.button1.UseVisualStyleBackColor = true;
+            this.lblGroupName2.AutoSize = true;
+            this.lblGroupName2.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGroupName2.ForeColor = System.Drawing.Color.Red;
+            this.lblGroupName2.Location = new System.Drawing.Point(128, 239);
+            this.lblGroupName2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGroupName2.Name = "lblGroupName2";
+            this.lblGroupName2.Size = new System.Drawing.Size(78, 25);
+            this.lblGroupName2.TabIndex = 7;
+            this.lblGroupName2.Text = "*그룹명";
             // 
-            // label1
+            // txtGroupCode2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 66);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "그룹 코드";
+            this.txtGroupCode2.Location = new System.Drawing.Point(264, 157);
+            this.txtGroupCode2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtGroupCode2.Name = "txtGroupCode2";
+            this.txtGroupCode2.Size = new System.Drawing.Size(235, 30);
+            this.txtGroupCode2.TabIndex = 6;
+            this.txtGroupCode2.TextChanged += new System.EventHandler(this.txtGroupCode2_TextChanged);
             // 
-            // textBox1
+            // lblGroupCode2
             // 
-            this.textBox1.Location = new System.Drawing.Point(155, 63);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(227, 25);
-            this.textBox1.TabIndex = 2;
+            this.lblGroupCode2.AutoSize = true;
+            this.lblGroupCode2.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGroupCode2.ForeColor = System.Drawing.Color.Red;
+            this.lblGroupCode2.Location = new System.Drawing.Point(128, 162);
+            this.lblGroupCode2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGroupCode2.Name = "lblGroupCode2";
+            this.lblGroupCode2.Size = new System.Drawing.Size(97, 25);
+            this.lblGroupCode2.TabIndex = 5;
+            this.lblGroupCode2.Text = "*그룹코드";
             // 
-            // textBox2
+            // btnAddGroup
             // 
-            this.textBox2.Location = new System.Drawing.Point(572, 57);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(227, 25);
-            this.textBox2.TabIndex = 4;
+            this.btnAddGroup.Location = new System.Drawing.Point(379, 381);
+            this.btnAddGroup.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAddGroup.Name = "btnAddGroup";
+            this.btnAddGroup.Size = new System.Drawing.Size(120, 50);
+            this.btnAddGroup.TabIndex = 0;
+            this.btnAddGroup.Text = "그룹 추가";
+            this.btnAddGroup.UseVisualStyleBackColor = true;
+            this.btnAddGroup.Click += new System.EventHandler(this.btnAddGroup_Click);
             // 
-            // label2
+            // lblGroupList
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(460, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "그룹 명";
+            this.lblGroupList.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGroupList.Location = new System.Drawing.Point(16, 18);
+            this.lblGroupList.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblGroupList.Name = "lblGroupList";
+            this.lblGroupList.Size = new System.Drawing.Size(240, 54);
+            this.lblGroupList.TabIndex = 11;
+            this.lblGroupList.Text = "그룹 목록";
+            this.lblGroupList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button2
+            // btnModify
             // 
-            this.button2.Location = new System.Drawing.Point(481, 480);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 66);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "수정";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnModify.Location = new System.Drawing.Point(299, 381);
+            this.btnModify.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(120, 50);
+            this.btnModify.TabIndex = 0;
+            this.btnModify.Text = "수정";
+            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
+            // 
+            // pnlGroupModify
+            // 
+            this.pnlGroupModify.Controls.Add(this.txtGroupName);
+            this.pnlGroupModify.Controls.Add(this.lblGroupName);
+            this.pnlGroupModify.Controls.Add(this.txtGroupCode);
+            this.pnlGroupModify.Controls.Add(this.lblGroupCode);
+            this.pnlGroupModify.Controls.Add(this.btnModify);
+            this.pnlGroupModify.Location = new System.Drawing.Point(500, 77);
+            this.pnlGroupModify.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlGroupModify.Name = "pnlGroupModify";
+            this.pnlGroupModify.Size = new System.Drawing.Size(482, 964);
+            this.pnlGroupModify.TabIndex = 2;
+            // 
+            // txtGroupName
+            // 
+            this.txtGroupName.Location = new System.Drawing.Point(184, 243);
+            this.txtGroupName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtGroupName.Name = "txtGroupName";
+            this.txtGroupName.Size = new System.Drawing.Size(235, 30);
+            this.txtGroupName.TabIndex = 4;
+            this.txtGroupName.TextChanged += new System.EventHandler(this.txtGroupName_TextChanged);
+            // 
+            // lblGroupName
+            // 
+            this.lblGroupName.AutoSize = true;
+            this.lblGroupName.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGroupName.Location = new System.Drawing.Point(48, 244);
+            this.lblGroupName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGroupName.Name = "lblGroupName";
+            this.lblGroupName.Size = new System.Drawing.Size(69, 25);
+            this.lblGroupName.TabIndex = 3;
+            this.lblGroupName.Text = "그룹명";
+            // 
+            // txtGroupCode
+            // 
+            this.txtGroupCode.Location = new System.Drawing.Point(184, 162);
+            this.txtGroupCode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtGroupCode.Name = "txtGroupCode";
+            this.txtGroupCode.Size = new System.Drawing.Size(235, 30);
+            this.txtGroupCode.TabIndex = 2;
+            this.txtGroupCode.TextChanged += new System.EventHandler(this.txtGroupCode_TextChanged);
+            // 
+            // lblGroupCode
+            // 
+            this.lblGroupCode.AutoSize = true;
+            this.lblGroupCode.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGroupCode.Location = new System.Drawing.Point(48, 167);
+            this.lblGroupCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGroupCode.Name = "lblGroupCode";
+            this.lblGroupCode.Size = new System.Drawing.Size(88, 25);
+            this.lblGroupCode.TabIndex = 1;
+            this.lblGroupCode.Text = "그룹코드";
+            // 
+            // lblGroupModify
+            // 
+            this.lblGroupModify.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGroupModify.Location = new System.Drawing.Point(495, 18);
+            this.lblGroupModify.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblGroupModify.Name = "lblGroupModify";
+            this.lblGroupModify.Size = new System.Drawing.Size(240, 54);
+            this.lblGroupModify.TabIndex = 12;
+            this.lblGroupModify.Text = "그룹 수정";
+            this.lblGroupModify.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblAddGroup
+            // 
+            this.lblAddGroup.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblAddGroup.Location = new System.Drawing.Point(985, 9);
+            this.lblAddGroup.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblAddGroup.Name = "lblAddGroup";
+            this.lblAddGroup.Size = new System.Drawing.Size(240, 54);
+            this.lblAddGroup.TabIndex = 13;
+            this.lblAddGroup.Text = "그룹 추가";
+            this.lblAddGroup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // dgvGroupList
+            // 
+            this.dgvGroupList.AllowUserToAddRows = false;
+            this.dgvGroupList.AllowUserToResizeRows = false;
+            this.dgvGroupList.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvGroupList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvGroupList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGroupList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvGroupList.Location = new System.Drawing.Point(0, 0);
+            this.dgvGroupList.Name = "dgvGroupList";
+            this.dgvGroupList.RowHeadersVisible = false;
+            this.dgvGroupList.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvGroupList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvGroupList.RowTemplate.Height = 27;
+            this.dgvGroupList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGroupList.Size = new System.Drawing.Size(477, 964);
+            this.dgvGroupList.TabIndex = 0;
+            this.dgvGroupList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroupList_CellDoubleClick);
             // 
             // frmGroupManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1282, 753);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1602, 1055);
+            this.Controls.Add(this.lblAddGroup);
+            this.Controls.Add(this.pnlAddGroup);
+            this.Controls.Add(this.lblGroupModify);
+            this.Controls.Add(this.lblGroupList);
+            this.Controls.Add(this.pnlGroupModify);
+            this.Controls.Add(this.pnlGroupList);
+            this.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmGroupManagement";
             this.Text = "그룹관리";
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.Load += new System.EventHandler(this.frmGroupManagement_Load);
+            this.pnlGroupList.ResumeLayout(false);
+            this.pnlAddGroup.ResumeLayout(false);
+            this.pnlAddGroup.PerformLayout();
+            this.pnlGroupModify.ResumeLayout(false);
+            this.pnlGroupModify.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupList)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel pnlGroupList;
+        private System.Windows.Forms.Panel pnlAddGroup;
+        private System.Windows.Forms.Button btnAddGroup;
+        private System.Windows.Forms.Label lblGroupList;
+        private System.Windows.Forms.Button btnModify;
+        private System.Windows.Forms.Panel pnlGroupModify;
+        private System.Windows.Forms.Label lblGroupModify;
+        private System.Windows.Forms.TextBox txtGroupCode;
+        private System.Windows.Forms.Label lblGroupCode;
+        private System.Windows.Forms.TextBox txtGroupName;
+        private System.Windows.Forms.Label lblGroupName;
+        private System.Windows.Forms.TextBox txtGroupName2;
+        private System.Windows.Forms.Label lblGroupName2;
+        private System.Windows.Forms.TextBox txtGroupCode2;
+        private System.Windows.Forms.Label lblGroupCode2;
+        private System.Windows.Forms.Label lblAddGroup;
+        private DatagridviewControl dgvGroupList;
     }
 }

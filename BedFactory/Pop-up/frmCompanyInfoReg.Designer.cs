@@ -1,7 +1,7 @@
 ﻿
 namespace BedFactory.Pop_up
 {
-    partial class frmEnterpriseInfoReg
+    partial class frmCompanyInfoReg
     {
         /// <summary>
         /// Required designer variable.
@@ -666,7 +666,7 @@ namespace BedFactory.Pop_up
             this.dateTimePicker3.Size = new System.Drawing.Size(164, 30);
             this.dateTimePicker3.TabIndex = 129;
             // 
-            // frmEnterpriseInfoReg
+            // frmCompanyInfoReg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -736,7 +736,7 @@ namespace BedFactory.Pop_up
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmEnterpriseInfoReg";
+            this.Name = "frmCompanyInfoReg";
             this.Text = "업체등록";
             this.ResumeLayout(false);
             this.PerformLayout();

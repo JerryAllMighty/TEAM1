@@ -16,5 +16,30 @@ namespace BedFactory.BaseForms
         {
             InitializeComponent();
         }
+
+        public virtual void btn1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public virtual void btn2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public virtual void btn3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public virtual void btn4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public virtual void btn5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

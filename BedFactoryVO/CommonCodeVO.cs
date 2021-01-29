@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BedFactoryVO
 {
-    public class CommonCodedVO
+    public class CommonCodeVO
     {
         public string Code_Num { get; set; }
         public string Code_Name { get; set; }

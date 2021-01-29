@@ -29,77 +29,143 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("병찬");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("상우");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("경진");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("롯트와일러");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("치와와");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("손흥민");
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.trvMenu = new System.Windows.Forms.TreeView();
+            this.lblMenuBigCategory = new System.Windows.Forms.Label();
+            this.lblMenu = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dgvMenuBigCategory = new BedFactory.DatagridviewControl();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dgvMenu = new BedFactory.DatagridviewControl();
+            this.btnAddMenu_PopUp = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMenuBigCategory)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.treeView1);
-            this.panel1.Location = new System.Drawing.Point(650, 12);
+            this.panel1.Controls.Add(this.trvMenu);
+            this.panel1.Location = new System.Drawing.Point(650, 57);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(620, 729);
+            this.panel1.Size = new System.Drawing.Size(620, 684);
             this.panel1.TabIndex = 0;
             // 
-            // treeView1
+            // trvMenu
             // 
-            this.treeView1.BackColor = System.Drawing.Color.Azure;
-            this.treeView1.Location = new System.Drawing.Point(3, 6);
-            this.treeView1.Name = "treeView1";
-            treeNode1.Name = "노드0";
-            treeNode1.Text = "병찬";
-            treeNode2.Name = "노드1";
-            treeNode2.Text = "상우";
-            treeNode3.Name = "노드2";
-            treeNode3.Text = "경진";
-            treeNode4.Name = "노드3";
-            treeNode4.Text = "롯트와일러";
-            treeNode5.Name = "노드4";
-            treeNode5.Text = "치와와";
-            treeNode6.Name = "노드5";
-            treeNode6.Text = "손흥민";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5,
-            treeNode6});
-            this.treeView1.Size = new System.Drawing.Size(614, 723);
-            this.treeView1.TabIndex = 0;
+            this.trvMenu.BackColor = System.Drawing.Color.Azure;
+            this.trvMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trvMenu.Location = new System.Drawing.Point(0, 0);
+            this.trvMenu.Name = "trvMenu";
+            this.trvMenu.Size = new System.Drawing.Size(620, 684);
+            this.trvMenu.TabIndex = 0;
             // 
-            // dataGridView1
+            // lblMenuBigCategory
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 18);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(606, 334);
-            this.dataGridView1.TabIndex = 1;
+            this.lblMenuBigCategory.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblMenuBigCategory.Location = new System.Drawing.Point(13, 18);
+            this.lblMenuBigCategory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMenuBigCategory.Name = "lblMenuBigCategory";
+            this.lblMenuBigCategory.Size = new System.Drawing.Size(192, 35);
+            this.lblMenuBigCategory.TabIndex = 11;
+            this.lblMenuBigCategory.Text = "메뉴 대분류";
+            this.lblMenuBigCategory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dataGridView2
+            // lblMenu
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 377);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(606, 341);
-            this.dataGridView2.TabIndex = 2;
+            this.lblMenu.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblMenu.Location = new System.Drawing.Point(13, 378);
+            this.lblMenu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMenu.Name = "lblMenu";
+            this.lblMenu.Size = new System.Drawing.Size(192, 35);
+            this.lblMenu.TabIndex = 12;
+            this.lblMenu.Text = "메뉴 소분류";
+            this.lblMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dgvMenuBigCategory);
+            this.panel2.Location = new System.Drawing.Point(18, 57);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(600, 318);
+            this.panel2.TabIndex = 13;
+            // 
+            // dgvMenuBigCategory
+            // 
+            this.dgvMenuBigCategory.AllowUserToAddRows = false;
+            this.dgvMenuBigCategory.AllowUserToResizeRows = false;
+            this.dgvMenuBigCategory.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold);
+            this.dgvMenuBigCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvMenuBigCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMenuBigCategory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMenuBigCategory.Location = new System.Drawing.Point(0, 0);
+            this.dgvMenuBigCategory.Name = "dgvMenuBigCategory";
+            this.dgvMenuBigCategory.RowHeadersVisible = false;
+            this.dgvMenuBigCategory.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvMenuBigCategory.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMenuBigCategory.RowTemplate.Height = 27;
+            this.dgvMenuBigCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMenuBigCategory.Size = new System.Drawing.Size(600, 318);
+            this.dgvMenuBigCategory.TabIndex = 0;
+            this.dgvMenuBigCategory.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMenuBigCategory_CellDoubleClick);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dgvMenu);
+            this.panel3.Location = new System.Drawing.Point(18, 423);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(600, 318);
+            this.panel3.TabIndex = 14;
+            // 
+            // dgvMenu
+            // 
+            this.dgvMenu.AllowUserToAddRows = false;
+            this.dgvMenu.AllowUserToResizeRows = false;
+            this.dgvMenu.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold);
+            this.dgvMenu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMenu.Location = new System.Drawing.Point(0, 0);
+            this.dgvMenu.Name = "dgvMenu";
+            this.dgvMenu.RowHeadersVisible = false;
+            this.dgvMenu.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvMenu.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvMenu.RowTemplate.Height = 27;
+            this.dgvMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMenu.Size = new System.Drawing.Size(600, 318);
+            this.dgvMenu.TabIndex = 0;
+            // 
+            // btnAddMenu_PopUp
+            // 
+            this.btnAddMenu_PopUp.Location = new System.Drawing.Point(1170, 26);
+            this.btnAddMenu_PopUp.Name = "btnAddMenu_PopUp";
+            this.btnAddMenu_PopUp.Size = new System.Drawing.Size(100, 25);
+            this.btnAddMenu_PopUp.TabIndex = 16;
+            this.btnAddMenu_PopUp.Text = "메뉴 추가";
+            this.btnAddMenu_PopUp.UseVisualStyleBackColor = true;
+            this.btnAddMenu_PopUp.Click += new System.EventHandler(this.btnAddMenu_PopUp_Click);
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(645, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(192, 35);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "메뉴 트리";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmMenuManagement
             // 
@@ -107,14 +173,21 @@ namespace BedFactory
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1282, 753);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnAddMenu_PopUp);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.lblMenu);
+            this.Controls.Add(this.lblMenuBigCategory);
             this.Controls.Add(this.panel1);
             this.Name = "frmMenuManagement";
             this.Text = "메뉴 관리";
+            this.Load += new System.EventHandler(this.frmMenuManagement_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMenuBigCategory)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -122,8 +195,14 @@ namespace BedFactory
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.TreeView trvMenu;
+        private System.Windows.Forms.Label lblMenuBigCategory;
+        private System.Windows.Forms.Label lblMenu;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private DatagridviewControl dgvMenuBigCategory;
+        private DatagridviewControl dgvMenu;
+        private System.Windows.Forms.Button btnAddMenu_PopUp;
+        private System.Windows.Forms.Label label1;
     }
 }
