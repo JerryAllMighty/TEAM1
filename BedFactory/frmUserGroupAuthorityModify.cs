@@ -66,6 +66,7 @@ namespace BedFactory
             if (e.ColumnIndex == 0)
             {
                 AddAuthorityList.Remove(  AddAuthorityList.Find(p => p.Auth_Num == Convert.ToInt32(datagridviewControl2[1, e.RowIndex].Value.ToString())));
+                datagridviewControl2.DataSource = null; //**
                 datagridviewControl2.DataSource = AddAuthorityList;
             }
         }
@@ -85,6 +86,7 @@ namespace BedFactory
                     Auth_Num = Convert.ToInt32(datagridviewControl1[0, e.RowIndex].Value.ToString()),
                     Auth_Name = datagridviewControl1[1, e.RowIndex].Value.ToString()
                 });
+                datagridviewControl2.DataSource = null; //**
                 datagridviewControl2.DataSource = AddAuthorityList;
             }
         }
