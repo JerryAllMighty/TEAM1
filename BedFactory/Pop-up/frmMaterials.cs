@@ -39,7 +39,7 @@ namespace BedFactory.Pop_up
         private void frmMaterials_Load(object sender, EventArgs e)
         {
             UnitCostService service = new UnitCostService();
-            List<CommonCodedVO> list = service.UnitCostCombo();
+            List<CommonCodeVO> list = service.UnitCostCombo();
             CommonUtil.ComboBinding(cboCompany, list, "거래처", true, "선택");
             CommonUtil.ComboBinding(cboMaterial, list, "자재", true, "선택");
 

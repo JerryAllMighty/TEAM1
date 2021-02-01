@@ -124,7 +124,7 @@ namespace BedFactoryDAC
             }
         }
 
-        public List<CommonCodedVO> UnitCostCombo()
+        public List<CommonCodeVO> UnitCostCombo()
         {
             try
             {
@@ -135,7 +135,7 @@ namespace BedFactoryDAC
                                         union
                                         select Mat_Num Code_No, Mat_Name Code_Name, '자재' Category from tblMaterials";
 
-                    List<CommonCodedVO> list = Helper.DataReaderMapToList<CommonCodedVO>(cmd.ExecuteReader());
+                    List<CommonCodeVO> list = Helper.DataReaderMapToList<CommonCodeVO>(cmd.ExecuteReader());
                     conn.Close();
                     return list;
                 }

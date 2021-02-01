@@ -58,10 +58,11 @@
     <Compile Include="ProcessDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShiftsDAC.cs" />
+    <Compile Include="UnitCostDAC.cs" />
     <Compile Include="WorkplaceDAC.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Simple_DEV.xml">
+    <Content Include="Connect_DEV.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

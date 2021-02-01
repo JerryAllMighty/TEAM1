@@ -44,12 +44,14 @@
     <Compile Include="APIMessage.cs" />
     <Compile Include="AuthorityVO.cs" />
     <Compile Include="CheckInfoVO.cs" />
+    <Compile Include="CheckVO.cs" />
     <Compile Include="CommonCodeVO.cs" />
     <Compile Include="CompanyVO.cs" />
     <Compile Include="MaterialsVO.cs" />
     <Compile Include="ProcessVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShiftVO.cs" />
+    <Compile Include="UnitCostVO.cs" />
     <Compile Include="WorkplaceVO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
