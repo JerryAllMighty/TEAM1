@@ -50,6 +50,7 @@
     <Compile Include="MaterialsVO.cs" />
     <Compile Include="ProcessVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalesMasterVO.cs" />
     <Compile Include="ShiftVO.cs" />
     <Compile Include="UnitCostVO.cs" />
     <Compile Include="WorkplaceVO.cs" />

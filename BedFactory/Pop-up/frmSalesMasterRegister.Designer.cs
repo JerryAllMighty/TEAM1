@@ -30,118 +30,120 @@ namespace BedFactory.Pop_up
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtVersion = new System.Windows.Forms.TextBox();
+            this.dtpPlandate = new System.Windows.Forms.DateTimePicker();
+            this.txtChosenFile = new System.Windows.Forms.TextBox();
+            this.btnFileChoice = new System.Windows.Forms.Button();
+            this.lblVersion = new System.Windows.Forms.Label();
+            this.lblPlanDate = new System.Windows.Forms.Label();
+            this.lblChosenFile = new System.Windows.Forms.Label();
+            this.lblFileChoice = new System.Windows.Forms.Label();
+            this.btnSalesMasterUpload = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtVersion);
+            this.panel1.Controls.Add(this.dtpPlandate);
+            this.panel1.Controls.Add(this.txtChosenFile);
+            this.panel1.Controls.Add(this.btnFileChoice);
+            this.panel1.Controls.Add(this.lblVersion);
+            this.panel1.Controls.Add(this.lblPlanDate);
+            this.panel1.Controls.Add(this.lblChosenFile);
+            this.panel1.Controls.Add(this.lblFileChoice);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(383, 331);
             this.panel1.TabIndex = 0;
             // 
-            // textBox2
+            // txtVersion
             // 
-            this.textBox2.Location = new System.Drawing.Point(148, 244);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 25);
-            this.textBox2.TabIndex = 15;
+            this.txtVersion.Location = new System.Drawing.Point(148, 244);
+            this.txtVersion.Name = "txtVersion";
+            this.txtVersion.Size = new System.Drawing.Size(200, 25);
+            this.txtVersion.TabIndex = 15;
             // 
-            // dateTimePicker1
+            // dtpPlandate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(148, 183);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
-            this.dateTimePicker1.TabIndex = 14;
+            this.dtpPlandate.Location = new System.Drawing.Point(148, 183);
+            this.dtpPlandate.Name = "dtpPlandate";
+            this.dtpPlandate.Size = new System.Drawing.Size(200, 25);
+            this.dtpPlandate.TabIndex = 14;
             // 
-            // textBox1
+            // txtChosenFile
             // 
-            this.textBox1.Location = new System.Drawing.Point(148, 123);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 25);
-            this.textBox1.TabIndex = 13;
+            this.txtChosenFile.Location = new System.Drawing.Point(148, 123);
+            this.txtChosenFile.Name = "txtChosenFile";
+            this.txtChosenFile.Size = new System.Drawing.Size(200, 25);
+            this.txtChosenFile.TabIndex = 13;
             // 
-            // button1
+            // btnFileChoice
             // 
-            this.button1.Location = new System.Drawing.Point(148, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "파일선택";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnFileChoice.Location = new System.Drawing.Point(148, 39);
+            this.btnFileChoice.Name = "btnFileChoice";
+            this.btnFileChoice.Size = new System.Drawing.Size(75, 23);
+            this.btnFileChoice.TabIndex = 12;
+            this.btnFileChoice.Text = "파일선택";
+            this.btnFileChoice.UseVisualStyleBackColor = true;
+            this.btnFileChoice.Click += new System.EventHandler(this.btnFileChoice_Click);
             // 
-            // label4
+            // lblVersion
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 254);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 15);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "계획 기준 버전";
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Location = new System.Drawing.Point(20, 254);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(107, 15);
+            this.lblVersion.TabIndex = 11;
+            this.lblVersion.Text = "계획 기준 버전";
             // 
-            // label3
+            // lblPlanDate
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 193);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 15);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "계획 일자";
+            this.lblPlanDate.AutoSize = true;
+            this.lblPlanDate.Location = new System.Drawing.Point(20, 193);
+            this.lblPlanDate.Name = "lblPlanDate";
+            this.lblPlanDate.Size = new System.Drawing.Size(72, 15);
+            this.lblPlanDate.TabIndex = 10;
+            this.lblPlanDate.Text = "계획 일자";
             // 
-            // label2
+            // lblChosenFile
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 123);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 15);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "선택 계획 파일";
+            this.lblChosenFile.AutoSize = true;
+            this.lblChosenFile.Location = new System.Drawing.Point(20, 123);
+            this.lblChosenFile.Name = "lblChosenFile";
+            this.lblChosenFile.Size = new System.Drawing.Size(107, 15);
+            this.lblChosenFile.TabIndex = 9;
+            this.lblChosenFile.Text = "선택 계획 파일";
             // 
-            // label1
+            // lblFileChoice
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 15);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "파일 선택";
+            this.lblFileChoice.AutoSize = true;
+            this.lblFileChoice.Location = new System.Drawing.Point(20, 39);
+            this.lblFileChoice.Name = "lblFileChoice";
+            this.lblFileChoice.Size = new System.Drawing.Size(72, 15);
+            this.lblFileChoice.TabIndex = 8;
+            this.lblFileChoice.Text = "파일 선택";
             // 
-            // button2
+            // btnSalesMasterUpload
             // 
-            this.button2.Location = new System.Drawing.Point(107, 349);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 44);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "영업마스터 업로드";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnSalesMasterUpload.Location = new System.Drawing.Point(142, 349);
+            this.btnSalesMasterUpload.Name = "btnSalesMasterUpload";
+            this.btnSalesMasterUpload.Size = new System.Drawing.Size(150, 44);
+            this.btnSalesMasterUpload.TabIndex = 1;
+            this.btnSalesMasterUpload.Text = "영업마스터 업로드";
+            this.btnSalesMasterUpload.UseVisualStyleBackColor = true;
+            this.btnSalesMasterUpload.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(263, 349);
+            this.button3.Location = new System.Drawing.Point(298, 349);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(97, 44);
             this.button3.TabIndex = 2;
             this.button3.Text = "취소";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // frmSalesMasterRegister
             // 
@@ -150,7 +152,7 @@ namespace BedFactory.Pop_up
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(404, 450);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnSalesMasterUpload);
             this.Controls.Add(this.panel1);
             this.Name = "frmSalesMasterRegister";
             this.Text = "영업 마스터 업로드";
@@ -163,15 +165,15 @@ namespace BedFactory.Pop_up
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtVersion;
+        private System.Windows.Forms.DateTimePicker dtpPlandate;
+        private System.Windows.Forms.TextBox txtChosenFile;
+        private System.Windows.Forms.Button btnFileChoice;
+        private System.Windows.Forms.Label lblVersion;
+        private System.Windows.Forms.Label lblPlanDate;
+        private System.Windows.Forms.Label lblChosenFile;
+        private System.Windows.Forms.Label lblFileChoice;
+        private System.Windows.Forms.Button btnSalesMasterUpload;
         private System.Windows.Forms.Button button3;
     }
 }

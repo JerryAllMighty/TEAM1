@@ -1,7 +1,7 @@
 ﻿
 namespace BedFactory
 {
-    partial class frmDemandㅖㅣ무
+    partial class frmDemandPlan
     {
         /// <summary>
         /// Required designer variable.

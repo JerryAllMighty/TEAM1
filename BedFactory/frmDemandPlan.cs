@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmDemandㅖㅣ무 : Form
+    public partial class frmDemandPlan : Form
     {
-        public frmDemandㅖㅣ무()
+        public frmDemandPlan()
         {
             InitializeComponent();
         }
