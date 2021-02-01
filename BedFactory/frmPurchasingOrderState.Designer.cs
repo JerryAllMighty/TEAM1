@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboCompany = new System.Windows.Forms.ComboBox();
             this.txtOrderNum = new System.Windows.Forms.TextBox();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
@@ -44,8 +44,8 @@ namespace BedFactory
             this.label2 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.searchLocationControl2 = new BedFactory.Controls.SearchLocationControl();
             this.label3 = new System.Windows.Forms.Label();
+            this.searchLocationControl2 = new BedFactory.Controls.SearchLocationControl();
             this.dgvOrder = new BedFactory.DatagridviewControl();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
@@ -102,7 +102,7 @@ namespace BedFactory
             // 
             this.cboCompany.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(558, 12);
+            this.cboCompany.Location = new System.Drawing.Point(558, 14);
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(235, 25);
             this.cboCompany.TabIndex = 73;
@@ -123,6 +123,7 @@ namespace BedFactory
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(113, 25);
             this.dtpTo.TabIndex = 71;
+            this.dtpTo.ValueChanged += new System.EventHandler(this.dtpFrom_ValueChanged);
             // 
             // dtpFrom
             // 
@@ -132,6 +133,7 @@ namespace BedFactory
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(113, 25);
             this.dtpFrom.TabIndex = 70;
+            this.dtpFrom.ValueChanged += new System.EventHandler(this.dtpFrom_ValueChanged);
             // 
             // txtMaterial
             // 
@@ -175,7 +177,7 @@ namespace BedFactory
             // 
             this.cboState.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboState.FormattingEnabled = true;
-            this.cboState.Location = new System.Drawing.Point(139, 61);
+            this.cboState.Location = new System.Drawing.Point(139, 63);
             this.cboState.Name = "cboState";
             this.cboState.Size = new System.Drawing.Size(235, 25);
             this.cboState.TabIndex = 65;
@@ -224,6 +226,15 @@ namespace BedFactory
             this.panel1.Size = new System.Drawing.Size(235, 26);
             this.panel1.TabIndex = 0;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(109, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 17);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "~";
+            // 
             // searchLocationControl2
             // 
             this.searchLocationControl2.ColumnCount = 10;
@@ -257,33 +268,26 @@ namespace BedFactory
             this.searchLocationControl2.Size = new System.Drawing.Size(1356, 98);
             this.searchLocationControl2.TabIndex = 72;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(109, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 17);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "~";
-            // 
             // dgvOrder
             // 
             this.dgvOrder.AllowUserToAddRows = false;
             this.dgvOrder.AllowUserToResizeRows = false;
             this.dgvOrder.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvOrder.Location = new System.Drawing.Point(0, 0);
             this.dgvOrder.Name = "dgvOrder";
             this.dgvOrder.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvOrder.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvOrder.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvOrder.RowTemplate.Height = 23;
             this.dgvOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrder.Size = new System.Drawing.Size(1358, 684);
             this.dgvOrder.TabIndex = 0;
+            this.dgvOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellContentClick);
+            this.dgvOrder.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvOrder_CurrentCellDirtyStateChanged);
             // 
             // frmPurchasingOrderState
             // 
@@ -295,6 +299,7 @@ namespace BedFactory
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmPurchasingOrderState";
             this.Text = "frmPurchasingOrderState";
+            this.Load += new System.EventHandler(this.frmPurchasingOrderState_Load);
             this.pnlDgv.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
