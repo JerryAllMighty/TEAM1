@@ -18,7 +18,7 @@ namespace BedFactoryDAC
         public static LoggingUtility Log { get { return _log; } }
          
         protected string ConnectionString
-        {
+        { 
             get
             {                 
                 string strConn = string.Empty;
