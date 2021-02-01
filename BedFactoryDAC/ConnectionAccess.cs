@@ -16,9 +16,9 @@ namespace BedFactoryDAC
         private static LoggingUtility _log = new LoggingUtility("BedFactoryDAC", Level.Error, 30);
 
         public static LoggingUtility Log { get { return _log; } }
-
+         
         protected string ConnectionString
-        {
+        { 
             get
             {                 
                 string strConn = string.Empty;

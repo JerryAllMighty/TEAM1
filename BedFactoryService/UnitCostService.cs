@@ -28,7 +28,7 @@ namespace BedFactoryService
             return dac.UnitCostUpdate(vo);
         }
 
-        public List<CommonCodedVO> UnitCostCombo()
+        public List<CommonCodeVO> UnitCostCombo()
         {
             UnitCostDAC dac = new UnitCostDAC();
             return dac.UnitCostCombo();
