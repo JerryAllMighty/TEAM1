@@ -15,5 +15,17 @@ namespace BedFactoryService
             CompanyDAC dac = new CompanyDAC();
             return GetCompanyInfo(comNum, comName, comType);
         }
+        /// <summary>
+        /// 모든 회사 정보를 가져오는 함수
+        /// </summary>
+        /// <param name="comNum"></param>
+        /// <param name="comName"></param>
+        /// <param name="comType"></param>
+        /// <returns></returns>
+        public List<CompanyVO> GetEveryCompanyName()
+        {
+            CompanyDAC dac = new CompanyDAC();
+            return dac.GetEveryCompanyName();
+        }
     }
 }

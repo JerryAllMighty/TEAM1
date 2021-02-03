@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthorityService.cs" />
+    <Compile Include="BalzooService.cs" />
     <Compile Include="CheckService.cs" />
     <Compile Include="CompanyService.cs" />
     <Compile Include="CommonCodeService.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="SalesMasterService.cs" />
     <Compile Include="ShiftsService.cs" />
     <Compile Include="UnitCostService.cs" />
+    <Compile Include="WearingService.cs" />
     <Compile Include="WorkplaceService.cs" />
   </ItemGroup>
   <ItemGroup>

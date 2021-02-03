@@ -156,6 +156,12 @@
     <Compile Include="frmProcessManagement.Designer.cs">
       <DependentUpon>frmProcessManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSalesMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalesMaster.Designer.cs">
+      <DependentUpon>frmSalesMaster.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStockStatusProcess.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,12 +311,6 @@
     </Compile>
     <Compile Include="Pop-up\frmSalesOrder.Designer.cs">
       <DependentUpon>frmSalesOrder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmSalesMaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSalesMaster.Designer.cs">
-      <DependentUpon>frmSalesMaster.cs</DependentUpon>
     </Compile>
     <Compile Include="Pop-up\frmSalesMasterRegister.cs">
       <SubType>Form</SubType>
@@ -531,6 +531,9 @@
     <EmbeddedResource Include="frmProcessManagement.resx">
       <DependentUpon>frmProcessManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSalesMaster.resx">
+      <DependentUpon>frmSalesMaster.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmStockStatusProcess.resx">
       <DependentUpon>frmStockStatusProcess.cs</DependentUpon>
     </EmbeddedResource>
@@ -605,9 +608,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmSalesOrder.resx">
       <DependentUpon>frmSalesOrder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmSalesMaster.resx">
-      <DependentUpon>frmSalesMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmSalesMasterRegister.resx">
       <DependentUpon>frmSalesMasterRegister.cs</DependentUpon>

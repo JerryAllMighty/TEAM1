@@ -1,4 +1,6 @@
 ﻿using BedFactory.Pop_up;
+using BedFactoryService;
+using BedFactoryVO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +18,24 @@ namespace BedFactory
         public DataTable datasource { get {return (DataTable)dgvSalesMasterUpload.DataSource; }
             set { dgvSalesMasterUpload.DataSource = value; } }
 
-
+        public SalesMasterVO SalesInfo {
+            get
+            {
+                return new SalesMasterVO
+                {
+                    MasterVersion_Num = Convert.ToInt32(dgvSalesMasterUpload[0, 0].Value.ToString()),
+                    WO_Num = Convert.ToInt32(dgvSalesMasterUpload[1, 0].Value.ToString()),
+                    Com_Num = Convert.ToInt32(dgvSalesMasterUpload[2, 0].Value.ToString()),
+                    Mat_Name = dgvSalesMasterUpload[3, 0].Value.ToString(),
+                    TotalCnt = Convert.ToInt32(dgvSalesMasterUpload[4, 0].Value.ToString()),
+                    Ship_Cnt = Convert.ToInt32(dgvSalesMasterUpload[5, 0].Value.ToString()),
+                    Deadline = Convert.ToDateTime(dgvSalesMasterUpload[6, 0].Value.ToString().Replace("-","")),
+                    UploadDate = Convert.ToDateTime(dgvSalesMasterUpload[7, 0].Value.ToString().Replace("-", "")),
+                    Firstman = Convert.ToInt32(dgvSalesMasterUpload[8, 0].Value.ToString()),
+                    Lastman = Convert.ToInt32(dgvSalesMasterUpload[10, 0].Value.ToString())
+                };
+            }
+        }
         public frmSalesMasterUpload()
         {
             InitializeComponent();
@@ -40,20 +59,33 @@ namespace BedFactory
             dgvSalesMasterUpload.SetGridViewColumn("마스터 버전 번호", "MasterVersion_Num");
             dgvSalesMasterUpload.SetGridViewColumn("작업 지시 번호", "WO_Num");
             dgvSalesMasterUpload.SetGridViewColumn("업체 번호", "Com_Num");
-            dgvSalesMasterUpload.SetGridViewColumn("품목명", "Nat_Name");
+            dgvSalesMasterUpload.SetGridViewColumn("품목명", "Mat_Name");
             dgvSalesMasterUpload.SetGridViewColumn("총 수량", "TotalCnt");
-            dgvSalesMasterUpload.SetGridViewColumn("출고 수량", "Ship_cnt");
+            dgvSalesMasterUpload.SetGridViewColumn("출고 수량", "Ship_Cnt");
             dgvSalesMasterUpload.SetGridViewColumn("납기일", "Deadline");
-            dgvSalesMasterUpload.SetGridViewColumn("업로드 날짜", "Uploaddate");
+            dgvSalesMasterUpload.SetGridViewColumn("업로드 날짜", "UploadDate");
             dgvSalesMasterUpload.SetGridViewColumn("최초 등록자", "Firstman");
             dgvSalesMasterUpload.SetGridViewColumn("최초 등록일", "FirstDate");
             dgvSalesMasterUpload.SetGridViewColumn("최종 등록자", "Lastman");
             dgvSalesMasterUpload.SetGridViewColumn("최종 등록일", "LastDate");
         }
 
+        /// <summary>
+        /// 영업마스터 테이블에 등록한다
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            SalesMasterService service = new SalesMasterService();
+            if (service.InsertSalesMaster(SalesInfo))
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.InsertSuccess);
+            }
+            else
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.InsertFail);
+            }
         }
     }
 }

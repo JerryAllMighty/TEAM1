@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="APIMessage.cs" />
     <Compile Include="AuthorityVO.cs" />
+    <Compile Include="BalzooVO.cs" />
     <Compile Include="CheckInfoVO.cs" />
     <Compile Include="CheckVO.cs" />
     <Compile Include="CommonCodeVO.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="SalesMasterVO.cs" />
     <Compile Include="ShiftVO.cs" />
     <Compile Include="UnitCostVO.cs" />
+    <Compile Include="WearingVO.cs" />
     <Compile Include="WorkplaceVO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -65,9 +65,31 @@ namespace BedFactoryDAC
                 Conn.Dispose();
                 return list;
             }
-           
 
 
+
+        }
+
+
+        public List<CompanyVO> GetEveryCompanyName()
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = Conn;
+                    cmd.CommandText = @"select Com_Num, Com_Code, Com_Name
+                                        from tblCompany";
+
+                    List<CompanyVO> list = Helper.DataReaderMapToList<CompanyVO>(cmd.ExecuteReader());
+                    return list != null ? list : null;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
+            }
         }
     }
 }

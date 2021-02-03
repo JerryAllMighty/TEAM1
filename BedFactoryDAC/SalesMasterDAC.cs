@@ -19,25 +19,24 @@ namespace BedFactoryDAC
             conn = new SqlConnection(strConn);
             conn.Open();
         }
-        //public List<SalesMasterVO> GetSalesMasterInfo()
-        //{
-        //    try
-        //    {
-        //        using (SqlCommand cmd = new SqlCommand())
-        //        {
-        //            cmd.Connection = conn;
-        //            cmd.CommandText = @"";
 
-
-        //        }
-        //    }
-        //    catch (Exception err)
-        //    {
-        //        Log.WriteError(err.Message);
-        //        return null;
-        //    }
-
-        //}
+        public bool InsertSalesMaster(SalesMasterVO salesmasterinfo)
+        {
+            try {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"";
+                    int iRowAffect = cmd.ExecuteNonQuery();
+                    return iRowAffect > 0 ? true : false;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
         public void Dispose()
         {
             conn.Close();

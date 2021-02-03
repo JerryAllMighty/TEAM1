@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="AESSalt.cs" />
     <Compile Include="AuthorityDAC.cs" />
+    <Compile Include="BalzooDAC.cs" />
     <Compile Include="CheckDAC.cs" />
     <Compile Include="CommonCodeDAC.cs" />
     <Compile Include="CompanyDAC.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="SalesMasterDAC.cs" />
     <Compile Include="ShiftsDAC.cs" />
     <Compile Include="UnitCostDAC.cs" />
+    <Compile Include="WearingDAC.cs" />
     <Compile Include="WorkplaceDAC.cs" />
   </ItemGroup>
   <ItemGroup>

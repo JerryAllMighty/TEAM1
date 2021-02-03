@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BedFactoryDAC;
+using BedFactoryVO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +10,11 @@ namespace BedFactoryService
 {
     public class SalesMasterService
     {
-        //public GetSalesMasterInfo()
-        //{ 
-        
-        //}
+        public bool InsertSalesMaster(SalesMasterVO salesmasterinfo)
+        {
+            SalesMasterDAC dac = new SalesMasterDAC();
+            return dac.InsertSalesMaster(salesmasterinfo);
+        }
 
     }
 }
