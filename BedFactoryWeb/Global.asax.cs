@@ -20,7 +20,7 @@ namespace BedFactoryWeb
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
 
-            strConn = WebConfigurationManager.ConnectionStrings["MesDB"].ConnectionString;
+            strConn = WebConfigurationManager.ConnectionStrings["BedFactoryDB"].ConnectionString;
 
             AES aes = new AES();
             strConn = aes.AESDecrypt256(strConn);

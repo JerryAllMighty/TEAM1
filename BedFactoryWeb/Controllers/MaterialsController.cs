@@ -10,11 +10,12 @@ using BedFactoryDAC;
 
 namespace BedFactoryWeb.Controllers
 {
+    [RoutePrefix("api/Materials")]
     public class MaterialsController : ApiController
     {
         ILog log = LogManager.GetLogger(typeof(MaterialsController));
 
-        [Route("Materials/All")]
+        [Route("GetAllMaterials")]    //api/Materials/GetAllMaterials
         public IHttpActionResult GetAllMaterials()
         {
             APIMessage<List<MaterialsVO>> msg = new APIMessage<List<MaterialsVO>>();
