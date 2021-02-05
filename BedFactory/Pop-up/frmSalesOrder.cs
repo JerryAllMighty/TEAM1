@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BedFactory.Pop_up
 {
-    public partial class frmDemandPlan : Form
+    public partial class frmSalesOrder : Form
     {
-        public frmDemandPlan()
+        public frmSalesOrder()
         {
             InitializeComponent();
         }

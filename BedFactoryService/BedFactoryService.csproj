@@ -46,6 +46,7 @@
     <Compile Include="CheckService.cs" />
     <Compile Include="CompanyService.cs" />
     <Compile Include="CommonCodeService.cs" />
+    <Compile Include="DemandPlanService.cs" />
     <Compile Include="MaterialsService.cs" />
     <Compile Include="ProcessService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

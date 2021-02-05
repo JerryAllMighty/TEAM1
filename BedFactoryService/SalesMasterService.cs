@@ -10,6 +10,12 @@ namespace BedFactoryService
 {
     public class SalesMasterService
     {
+        public List<SalesMasterVO> GetSalesMaster(SalesMasterVO salesmasterinfo)
+        {
+            SalesMasterDAC dac = new SalesMasterDAC();
+            return dac.GetSalesMaster(salesmasterinfo);
+        }
+
         public bool InsertSalesMaster(SalesMasterVO salesmasterinfo)
         {
             SalesMasterDAC dac = new SalesMasterDAC();

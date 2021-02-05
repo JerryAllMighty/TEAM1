@@ -1,7 +1,7 @@
 ﻿
 namespace BedFactory.Pop_up
 {
-    partial class frmDemandPlan
+    partial class frmSalesOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -30,188 +30,188 @@ namespace BedFactory.Pop_up
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDeadLine = new System.Windows.Forms.DateTimePicker();
+            this.txtEtc = new System.Windows.Forms.TextBox();
+            this.cboBalzoo = new System.Windows.Forms.ComboBox();
+            this.cboSubject = new System.Windows.Forms.ComboBox();
+            this.cboCompany = new System.Windows.Forms.ComboBox();
+            this.txtOutputCnt = new System.Windows.Forms.TextBox();
+            this.txtOrderCnt = new System.Windows.Forms.TextBox();
+            this.lblOrderCnt = new System.Windows.Forms.Label();
+            this.lblBalzoo = new System.Windows.Forms.Label();
+            this.lblSubject = new System.Windows.Forms.Label();
+            this.lblEtc = new System.Windows.Forms.Label();
+            this.lblOutputCnt = new System.Windows.Forms.Label();
+            this.lblDeadLine = new System.Windows.Forms.Label();
+            this.lblCompany = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.comboBox7);
-            this.panel1.Controls.Add(this.comboBox6);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.dtpDeadLine);
+            this.panel1.Controls.Add(this.txtEtc);
+            this.panel1.Controls.Add(this.cboBalzoo);
+            this.panel1.Controls.Add(this.cboSubject);
+            this.panel1.Controls.Add(this.cboCompany);
+            this.panel1.Controls.Add(this.txtOutputCnt);
+            this.panel1.Controls.Add(this.txtOrderCnt);
+            this.panel1.Controls.Add(this.lblOrderCnt);
+            this.panel1.Controls.Add(this.lblBalzoo);
+            this.panel1.Controls.Add(this.lblSubject);
+            this.panel1.Controls.Add(this.lblEtc);
+            this.panel1.Controls.Add(this.lblOutputCnt);
+            this.panel1.Controls.Add(this.lblDeadLine);
+            this.panel1.Controls.Add(this.lblCompany);
             this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(617, 302);
+            this.panel1.Size = new System.Drawing.Size(656, 302);
             this.panel1.TabIndex = 0;
             // 
-            // textBox7
+            // dtpDeadLine
             // 
-            this.textBox7.Location = new System.Drawing.Point(98, 179);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(417, 93);
-            this.textBox7.TabIndex = 28;
+            this.dtpDeadLine.Location = new System.Drawing.Point(98, 71);
+            this.dtpDeadLine.Name = "dtpDeadLine";
+            this.dtpDeadLine.Size = new System.Drawing.Size(235, 25);
+            this.dtpDeadLine.TabIndex = 29;
             // 
-            // comboBox7
+            // txtEtc
             // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(408, 74);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(201, 23);
-            this.comboBox7.TabIndex = 26;
+            this.txtEtc.Location = new System.Drawing.Point(98, 179);
+            this.txtEtc.Multiline = true;
+            this.txtEtc.Name = "txtEtc";
+            this.txtEtc.Size = new System.Drawing.Size(545, 93);
+            this.txtEtc.TabIndex = 28;
             // 
-            // comboBox6
+            // cboBalzoo
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(408, 32);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(201, 23);
-            this.comboBox6.TabIndex = 25;
+            this.cboBalzoo.FormattingEnabled = true;
+            this.cboBalzoo.Location = new System.Drawing.Point(408, 74);
+            this.cboBalzoo.Name = "cboBalzoo";
+            this.cboBalzoo.Size = new System.Drawing.Size(235, 23);
+            this.cboBalzoo.TabIndex = 26;
             // 
-            // comboBox1
+            // cboSubject
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(98, 29);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(195, 23);
-            this.comboBox1.TabIndex = 20;
+            this.cboSubject.FormattingEnabled = true;
+            this.cboSubject.Location = new System.Drawing.Point(408, 32);
+            this.cboSubject.Name = "cboSubject";
+            this.cboSubject.Size = new System.Drawing.Size(235, 23);
+            this.cboSubject.TabIndex = 25;
             // 
-            // textBox6
+            // cboCompany
             // 
-            this.textBox6.Location = new System.Drawing.Point(98, 123);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(195, 25);
-            this.textBox6.TabIndex = 19;
+            this.cboCompany.FormattingEnabled = true;
+            this.cboCompany.Location = new System.Drawing.Point(98, 29);
+            this.cboCompany.Name = "cboCompany";
+            this.cboCompany.Size = new System.Drawing.Size(235, 23);
+            this.cboCompany.TabIndex = 20;
             // 
-            // textBox3
+            // txtOutputCnt
             // 
-            this.textBox3.Location = new System.Drawing.Point(408, 126);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(201, 25);
-            this.textBox3.TabIndex = 16;
+            this.txtOutputCnt.Location = new System.Drawing.Point(98, 123);
+            this.txtOutputCnt.Name = "txtOutputCnt";
+            this.txtOutputCnt.Size = new System.Drawing.Size(235, 25);
+            this.txtOutputCnt.TabIndex = 19;
             // 
-            // label12
+            // txtOrderCnt
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(337, 129);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 15);
-            this.label12.TabIndex = 12;
-            this.label12.Text = "주문 수량";
+            this.txtOrderCnt.Location = new System.Drawing.Point(408, 126);
+            this.txtOrderCnt.Name = "txtOrderCnt";
+            this.txtOrderCnt.Size = new System.Drawing.Size(235, 25);
+            this.txtOrderCnt.TabIndex = 16;
             // 
-            // label11
+            // lblOrderCnt
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(337, 77);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(67, 15);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "발주구분";
+            this.lblOrderCnt.AutoSize = true;
+            this.lblOrderCnt.Location = new System.Drawing.Point(337, 129);
+            this.lblOrderCnt.Name = "lblOrderCnt";
+            this.lblOrderCnt.Size = new System.Drawing.Size(72, 15);
+            this.lblOrderCnt.TabIndex = 12;
+            this.lblOrderCnt.Text = "주문 수량";
             // 
-            // label10
+            // lblBalzoo
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(337, 32);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 15);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "품목";
+            this.lblBalzoo.AutoSize = true;
+            this.lblBalzoo.Location = new System.Drawing.Point(337, 77);
+            this.lblBalzoo.Name = "lblBalzoo";
+            this.lblBalzoo.Size = new System.Drawing.Size(67, 15);
+            this.lblBalzoo.TabIndex = 11;
+            this.lblBalzoo.Text = "발주구분";
             // 
-            // label8
+            // lblSubject
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(21, 179);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 15);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "비고";
+            this.lblSubject.AutoSize = true;
+            this.lblSubject.Location = new System.Drawing.Point(337, 32);
+            this.lblSubject.Name = "lblSubject";
+            this.lblSubject.Size = new System.Drawing.Size(37, 15);
+            this.lblSubject.TabIndex = 10;
+            this.lblSubject.Text = "품목";
             // 
-            // label5
+            // lblEtc
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 126);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 15);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "출고수량";
+            this.lblEtc.AutoSize = true;
+            this.lblEtc.Location = new System.Drawing.Point(21, 179);
+            this.lblEtc.Name = "lblEtc";
+            this.lblEtc.Size = new System.Drawing.Size(37, 15);
+            this.lblEtc.TabIndex = 8;
+            this.lblEtc.Text = "비고";
             // 
-            // label3
+            // lblOutputCnt
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 15);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "납기일";
+            this.lblOutputCnt.AutoSize = true;
+            this.lblOutputCnt.Location = new System.Drawing.Point(21, 126);
+            this.lblOutputCnt.Name = "lblOutputCnt";
+            this.lblOutputCnt.Size = new System.Drawing.Size(67, 15);
+            this.lblOutputCnt.TabIndex = 5;
+            this.lblOutputCnt.Text = "출고수량";
             // 
-            // label2
+            // lblDeadLine
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "고객사";
+            this.lblDeadLine.AutoSize = true;
+            this.lblDeadLine.Location = new System.Drawing.Point(21, 74);
+            this.lblDeadLine.Name = "lblDeadLine";
+            this.lblDeadLine.Size = new System.Drawing.Size(52, 15);
+            this.lblDeadLine.TabIndex = 3;
+            this.lblDeadLine.Text = "납기일";
             // 
-            // button1
+            // lblCompany
             // 
-            this.button1.Location = new System.Drawing.Point(196, 334);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 44);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "저장";
-            this.button1.UseVisualStyleBackColor = true;
+            this.lblCompany.AutoSize = true;
+            this.lblCompany.Location = new System.Drawing.Point(21, 29);
+            this.lblCompany.Name = "lblCompany";
+            this.lblCompany.Size = new System.Drawing.Size(52, 15);
+            this.lblCompany.TabIndex = 2;
+            this.lblCompany.Text = "고객사";
             // 
-            // button2
+            // btnSave
             // 
-            this.button2.Location = new System.Drawing.Point(338, 334);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 44);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "취소";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(226, 334);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(120, 50);
+            this.btnSave.TabIndex = 1;
+            this.btnSave.Text = "저장";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // btnCancel
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(98, 71);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(195, 25);
-            this.dateTimePicker1.TabIndex = 29;
+            this.btnCancel.Location = new System.Drawing.Point(353, 334);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(120, 50);
+            this.btnCancel.TabIndex = 2;
+            this.btnCancel.Text = "취소";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // frmDemandPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(634, 395);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(676, 395);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel1);
             this.Name = "frmDemandPlan";
             this.Text = "S/O";
@@ -224,21 +224,21 @@ namespace BedFactory.Pop_up
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label lblOrderCnt;
+        private System.Windows.Forms.Label lblBalzoo;
+        private System.Windows.Forms.Label lblSubject;
+        private System.Windows.Forms.Label lblEtc;
+        private System.Windows.Forms.Label lblOutputCnt;
+        private System.Windows.Forms.Label lblDeadLine;
+        private System.Windows.Forms.Label lblCompany;
+        private System.Windows.Forms.TextBox txtOrderCnt;
+        private System.Windows.Forms.ComboBox cboBalzoo;
+        private System.Windows.Forms.ComboBox cboSubject;
+        private System.Windows.Forms.ComboBox cboCompany;
+        private System.Windows.Forms.TextBox txtOutputCnt;
+        private System.Windows.Forms.TextBox txtEtc;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DateTimePicker dtpDeadLine;
     }
 }
