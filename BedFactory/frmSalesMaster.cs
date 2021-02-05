@@ -41,7 +41,6 @@ namespace BedFactory
                 cboCompany.Items.Add("선택");
                 companyList.ForEach(p => cboCompany.Items.Add(p.Com_Name));
             }
-
         }
 
         /// <summary>

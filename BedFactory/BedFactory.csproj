@@ -126,6 +126,12 @@
     <Compile Include="frmBOM.Designer.cs">
       <DependentUpon>frmBOM.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBOR.Designer.cs">
+      <DependentUpon>frmBOR.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBusinessCostManagement.cs">
       <SubType>Form</SubType>
     </Compile>

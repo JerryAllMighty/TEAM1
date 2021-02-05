@@ -27,5 +27,13 @@ namespace BedFactoryService
             MaterialsDAC dac = new MaterialsDAC();
             return dac.DeleteMaterilas(id);
         }
+
+
+        //자재정보
+        public List<CommonCodeVO> GetMaterialsCombo()
+        {
+            MaterialsDAC dac = new MaterialsDAC();
+            return dac.GetMaterialsCombo();
+        }
     }
 }

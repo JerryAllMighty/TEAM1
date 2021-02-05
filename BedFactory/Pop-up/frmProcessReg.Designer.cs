@@ -1,5 +1,5 @@
 ﻿
-namespace BedFactory
+namespace BedFactory.Pop_up
 {
     partial class frmProcessReg
     {
@@ -40,7 +40,7 @@ namespace BedFactory
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboCategory = new System.Windows.Forms.ComboBox();
+            this.cboCategory_Code = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.rdoY = new System.Windows.Forms.RadioButton();
             this.rdoN = new System.Windows.Forms.RadioButton();
@@ -109,9 +109,9 @@ namespace BedFactory
             this.label2.ForeColor = System.Drawing.Color.Red;
             this.label2.Location = new System.Drawing.Point(35, 63);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 23);
+            this.label2.Size = new System.Drawing.Size(95, 23);
             this.label2.TabIndex = 58;
-            this.label2.Text = "공정명";
+            this.label2.Text = "상세공정명";
             // 
             // txtCondition
             // 
@@ -157,14 +157,14 @@ namespace BedFactory
             this.label1.TabIndex = 88;
             this.label1.Text = "*";
             // 
-            // cboCategory
+            // cboCategory_Code
             // 
-            this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Location = new System.Drawing.Point(265, 19);
-            this.cboCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cboCategory.Name = "cboCategory";
-            this.cboCategory.Size = new System.Drawing.Size(286, 31);
-            this.cboCategory.TabIndex = 0;
+            this.cboCategory_Code.FormattingEnabled = true;
+            this.cboCategory_Code.Location = new System.Drawing.Point(265, 19);
+            this.cboCategory_Code.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cboCategory_Code.Name = "cboCategory_Code";
+            this.cboCategory_Code.Size = new System.Drawing.Size(286, 31);
+            this.cboCategory_Code.TabIndex = 0;
             // 
             // label3
             // 
@@ -207,7 +207,7 @@ namespace BedFactory
             this.Controls.Add(this.rdoN);
             this.Controls.Add(this.rdoY);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cboCategory);
+            this.Controls.Add(this.cboCategory_Code);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -222,7 +222,7 @@ namespace BedFactory
             this.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmProcessReg";
-            this.Text = "공정등록";
+            this.Text = "공정등록수정";
             this.Load += new System.EventHandler(this.frmProcessReg_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -242,7 +242,7 @@ namespace BedFactory
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboCategory;
+        private System.Windows.Forms.ComboBox cboCategory_Code;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton rdoY;
         private System.Windows.Forms.RadioButton rdoN;

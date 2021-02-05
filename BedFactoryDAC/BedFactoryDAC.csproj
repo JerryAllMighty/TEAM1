@@ -49,6 +49,7 @@
     <Compile Include="AESSalt.cs" />
     <Compile Include="AuthorityDAC.cs" />
     <Compile Include="BalzooDAC.cs" />
+    <Compile Include="BORDAC.cs" />
     <Compile Include="CheckDAC.cs" />
     <Compile Include="CommonCodeDAC.cs" />
     <Compile Include="CompanyDAC.cs" />

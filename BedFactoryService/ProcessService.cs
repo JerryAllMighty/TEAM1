@@ -10,10 +10,10 @@ namespace BedFactoryService
 {
     public class ProcessService
     {
-        public List<ProcessVO> GetProcessInfo(string prcCategory, string prcName)
+        public List<ProcessVO> GetProcessInfo(string prcCode, string prcName)
         {
             ProcessDAC dac = new ProcessDAC();
-            return dac.GetProcessInfo(prcCategory, prcName);
+            return dac.GetProcessInfo(prcCode, prcName);
         }
 
         public bool InsertProcessInfo(ProcessVO vo)
@@ -28,10 +28,8 @@ namespace BedFactoryService
             return dac.UpdateProcessInfo(vo);
         }
 
-        /// <summary>
-        /// 공정명조회
-        /// </summary>
-        /// <returns></returns>
+
+        // 상세공정명 데이터를 콤보박스에 가져오기
         public List<CommonCodeVO> GetProcessCombo()
         {
             ProcessDAC dac = new ProcessDAC();

@@ -1,5 +1,5 @@
 ﻿
-namespace BedFactory
+namespace BedFactory.Pop_up
 {
     partial class frmWorkplaceReg
     {
@@ -33,7 +33,6 @@ namespace BedFactory
             this.txtOthers = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.txtPrcName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtWpName = new System.Windows.Forms.TextBox();
@@ -41,12 +40,13 @@ namespace BedFactory
             this.label6 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.rdoN = new System.Windows.Forms.RadioButton();
-            this.rdoY = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.rdoN = new System.Windows.Forms.RadioButton();
+            this.rdoY = new System.Windows.Forms.RadioButton();
+            this.cboNameD = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtNote
@@ -72,6 +72,7 @@ namespace BedFactory
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.BackColor = System.Drawing.Color.Lavender;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.Location = new System.Drawing.Point(362, 248);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
@@ -86,6 +87,7 @@ namespace BedFactory
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.BackColor = System.Drawing.Color.Lavender;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
             this.btnCancel.Location = new System.Drawing.Point(500, 248);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
@@ -94,25 +96,15 @@ namespace BedFactory
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
-            // txtPrcName
-            // 
-            this.txtPrcName.Enabled = false;
-            this.txtPrcName.Location = new System.Drawing.Point(138, 17);
-            this.txtPrcName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtPrcName.Multiline = true;
-            this.txtPrcName.Name = "txtPrcName";
-            this.txtPrcName.Size = new System.Drawing.Size(181, 34);
-            this.txtPrcName.TabIndex = 101;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Red;
             this.label9.Location = new System.Drawing.Point(37, 23);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 23);
+            this.label9.Size = new System.Drawing.Size(95, 23);
             this.label9.TabIndex = 106;
-            this.label9.Text = "공정명";
+            this.label9.Text = "상세공정명";
             // 
             // label2
             // 
@@ -173,28 +165,6 @@ namespace BedFactory
             this.label13.TabIndex = 125;
             this.label13.Text = "*";
             // 
-            // rdoN
-            // 
-            this.rdoN.AutoSize = true;
-            this.rdoN.Location = new System.Drawing.Point(884, 21);
-            this.rdoN.Name = "rdoN";
-            this.rdoN.Size = new System.Drawing.Size(44, 27);
-            this.rdoN.TabIndex = 127;
-            this.rdoN.TabStop = true;
-            this.rdoN.Text = "N";
-            this.rdoN.UseVisualStyleBackColor = true;
-            // 
-            // rdoY
-            // 
-            this.rdoY.AutoSize = true;
-            this.rdoY.Location = new System.Drawing.Point(811, 21);
-            this.rdoY.Name = "rdoY";
-            this.rdoY.Size = new System.Drawing.Size(41, 27);
-            this.rdoY.TabIndex = 126;
-            this.rdoY.TabStop = true;
-            this.rdoY.Text = "Y";
-            this.rdoY.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -235,18 +205,51 @@ namespace BedFactory
             this.label5.TabIndex = 130;
             this.label5.Text = "비고";
             // 
+            // rdoN
+            // 
+            this.rdoN.AutoSize = true;
+            this.rdoN.ForeColor = System.Drawing.Color.Black;
+            this.rdoN.Location = new System.Drawing.Point(789, 22);
+            this.rdoN.Name = "rdoN";
+            this.rdoN.Size = new System.Drawing.Size(65, 27);
+            this.rdoN.TabIndex = 133;
+            this.rdoN.TabStop = true;
+            this.rdoN.Text = "사용";
+            this.rdoN.UseVisualStyleBackColor = true;
+            // 
+            // rdoY
+            // 
+            this.rdoY.AutoSize = true;
+            this.rdoY.ForeColor = System.Drawing.Color.Black;
+            this.rdoY.Location = new System.Drawing.Point(875, 22);
+            this.rdoY.Name = "rdoY";
+            this.rdoY.Size = new System.Drawing.Size(99, 27);
+            this.rdoY.TabIndex = 132;
+            this.rdoY.TabStop = true;
+            this.rdoY.Text = "사용안함";
+            this.rdoY.UseVisualStyleBackColor = true;
+            // 
+            // cboNameD
+            // 
+            this.cboNameD.FormattingEnabled = true;
+            this.cboNameD.Location = new System.Drawing.Point(138, 18);
+            this.cboNameD.Name = "cboNameD";
+            this.cboNameD.Size = new System.Drawing.Size(181, 31);
+            this.cboNameD.TabIndex = 1;
+            // 
             // frmWorkplaceReg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(986, 311);
+            this.Controls.Add(this.cboNameD);
+            this.Controls.Add(this.rdoN);
+            this.Controls.Add(this.rdoY);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.rdoN);
-            this.Controls.Add(this.rdoY);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label6);
@@ -254,7 +257,6 @@ namespace BedFactory
             this.Controls.Add(this.txtWpName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtPrcName);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtOthers);
@@ -264,6 +266,7 @@ namespace BedFactory
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmWorkplaceReg";
             this.Text = "작업장등록";
+            this.Load += new System.EventHandler(this.frmWorkplaceReg_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,7 +277,6 @@ namespace BedFactory
         private System.Windows.Forms.TextBox txtOthers;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox txtPrcName;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtWpName;
@@ -282,11 +284,12 @@ namespace BedFactory
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.RadioButton rdoN;
-        private System.Windows.Forms.RadioButton rdoY;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RadioButton rdoN;
+        private System.Windows.Forms.RadioButton rdoY;
+        private System.Windows.Forms.ComboBox cboNameD;
     }
 }

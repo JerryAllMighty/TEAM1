@@ -44,6 +44,7 @@
     <Compile Include="APIMessage.cs" />
     <Compile Include="AuthorityVO.cs" />
     <Compile Include="BalzooVO.cs" />
+    <Compile Include="BORVO.cs" />
     <Compile Include="CheckInfoVO.cs" />
     <Compile Include="CheckVO.cs" />
     <Compile Include="CommonCodeVO.cs" />

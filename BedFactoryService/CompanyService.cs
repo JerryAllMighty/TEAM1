@@ -10,11 +10,28 @@ namespace BedFactoryService
 {
     public class CompanyService
     {
-        public List<CompanyVO> GetCompanyInfo(string comNum, string comName, string comType)
+        //회사정보조회
+        public List<CompanyVO> GetCompanyInfo(string comCode, string comName)
         {
             CompanyDAC dac = new CompanyDAC();
-            return GetCompanyInfo(comNum, comName, comType);
+            return dac.GetCompanyInfo(comCode, comName);
         }
+
+        //회사정보등록
+        public bool InsertCompnayInfo(CompanyVO vo)
+        {
+            CompanyDAC dac = new CompanyDAC();
+            return dac.InsertCompnayInfo(vo);
+        }
+
+        //회사정보수정
+        public bool UpdateCompnayInfo(CompanyVO vo)
+        {
+            CompanyDAC dac = new CompanyDAC();
+            return dac.UpdateCompnayInfo(vo);
+        }
+
+
         /// <summary>
         /// 모든 회사 정보를 가져오는 함수
         /// </summary>
@@ -28,4 +45,5 @@ namespace BedFactoryService
             return dac.GetEveryCompanyName();
         }
     }
+
 }
