@@ -23,16 +23,15 @@ namespace BedFactory
             {
                 return new SalesMasterVO
                 {
-                    MasterVersion_Num = Convert.ToInt32(dgvSalesMasterUpload[0, 0].Value.ToString()),
-                    WO_Num = Convert.ToInt32(dgvSalesMasterUpload[1, 0].Value.ToString()),
-                    Com_Num = Convert.ToInt32(dgvSalesMasterUpload[2, 0].Value.ToString()),
-                    Mat_Name = dgvSalesMasterUpload[3, 0].Value.ToString(),
-                    TotalCnt = Convert.ToInt32(dgvSalesMasterUpload[4, 0].Value.ToString()),
-                    Ship_Cnt = Convert.ToInt32(dgvSalesMasterUpload[5, 0].Value.ToString()),
-                    Deadline = Convert.ToDateTime(dgvSalesMasterUpload[6, 0].Value.ToString().Replace("-","")),
-                    UploadDate = Convert.ToDateTime(dgvSalesMasterUpload[7, 0].Value.ToString().Replace("-", "")),
-                    Firstman = Convert.ToInt32(dgvSalesMasterUpload[8, 0].Value.ToString()),
-                    Lastman = Convert.ToInt32(dgvSalesMasterUpload[10, 0].Value.ToString())
+                    Order_Num = Convert.ToInt32(dgvSalesMasterUpload[0, 0].Value.ToString()),
+                    Com_Num = Convert.ToInt32(dgvSalesMasterUpload[1, 0].Value.ToString()),
+                    Mat_Name = dgvSalesMasterUpload[2, 0].Value.ToString(),
+                    TotalCnt = Convert.ToInt32(dgvSalesMasterUpload[3, 0].Value.ToString()),
+                    Ship_Cnt = Convert.ToInt32(dgvSalesMasterUpload[4, 0].Value.ToString()),
+                    Deadline = Convert.ToDateTime(dgvSalesMasterUpload[5, 0].Value.ToString().Replace("-","")),
+                    UploadDate = Convert.ToDateTime(dgvSalesMasterUpload[6, 0].Value.ToString().Replace("-", "")),
+                    Firstman = Convert.ToInt32(dgvSalesMasterUpload[7, 0].Value.ToString()),
+                    Lastman = Convert.ToInt32(dgvSalesMasterUpload[9, 0].Value.ToString())
                 };
             }
         }
@@ -56,8 +55,7 @@ namespace BedFactory
         /// <param name="e"></param>
         private void frmSalesMasterUpload_Load(object sender, EventArgs e)
         {
-            dgvSalesMasterUpload.SetGridViewColumn("마스터 버전 번호", "MasterVersion_Num");
-            dgvSalesMasterUpload.SetGridViewColumn("작업 지시 번호", "WO_Num");
+            dgvSalesMasterUpload.SetGridViewColumn("주문 번호", "Order_Num");
             dgvSalesMasterUpload.SetGridViewColumn("업체 번호", "Com_Num");
             dgvSalesMasterUpload.SetGridViewColumn("품목명", "Mat_Name");
             dgvSalesMasterUpload.SetGridViewColumn("총 수량", "TotalCnt");

@@ -49,6 +49,7 @@
     <Compile Include="CheckVO.cs" />
     <Compile Include="CommonCodeVO.cs" />
     <Compile Include="CompanyVO.cs" />
+    <Compile Include="DemandVO.cs" />
     <Compile Include="MaterialsVO.cs" />
     <Compile Include="ProcessVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

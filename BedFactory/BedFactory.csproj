@@ -144,6 +144,12 @@
     <Compile Include="frmCompanySales.Designer.cs">
       <DependentUpon>frmCompanySales.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDemandPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDemandPlan.Designer.cs">
+      <DependentUpon>frmDemandPlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmErrorChart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,12 +245,6 @@
     </Compile>
     <Compile Include="frmSupplierWarehousingWait.Designer.cs">
       <DependentUpon>frmSupplierWarehousingWait.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmDemandPlan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDemandPlan.Designer.cs">
-      <DependentUpon>frmDemandPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMaterialRequirementPlanning.cs">
       <SubType>Form</SubType>
@@ -528,6 +528,9 @@
     <EmbeddedResource Include="frmCompanySales.resx">
       <DependentUpon>frmCompanySales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDemandPlan.resx">
+      <DependentUpon>frmDemandPlan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmErrorChart.resx">
       <DependentUpon>frmErrorChart.cs</DependentUpon>
     </EmbeddedResource>
@@ -575,9 +578,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSupplierWarehousingWait.resx">
       <DependentUpon>frmSupplierWarehousingWait.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDemandPlan.resx">
-      <DependentUpon>frmDemandPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMaterialRequirementPlanning.resx">
       <DependentUpon>frmMaterialRequirementPlanning.cs</DependentUpon>

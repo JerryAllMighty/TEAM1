@@ -1,5 +1,4 @@
 ﻿using BedFactoryVO;
-using log4net;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -13,11 +12,9 @@ namespace BedFactoryDAC
     {
         string strConn;
         SqlConnection conn;
-        ILog log = null;
 
-        public MaterialsDAC(ILog log, string strConn) 
+        public MaterialsDAC(string strConn) 
         { 
-            this.log = log;
             conn = new SqlConnection(strConn);
             conn.Open();
         }
@@ -73,7 +70,7 @@ namespace BedFactoryDAC
             }
             catch (Exception err)
             {
-                log.Error("GetAllMaterials() 오류 : " + err.Message);
+                Log.WriteError(err.Message);
                 return null;
             }
         }

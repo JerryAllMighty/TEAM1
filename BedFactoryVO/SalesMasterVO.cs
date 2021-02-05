@@ -9,8 +9,7 @@ namespace BedFactoryVO
     public class SalesMasterVO
     {
         public int SalesMaster_Num { get; set; }
-        public int MasterVersion_Num { get; set; }
-        public int WO_Num { get; set; }
+        public int Order_Num { get; set; }
         public int Com_Num { get; set; }
         public string Mat_Name { get; set; }
         public int TotalCnt { get; set; }
