@@ -1,5 +1,4 @@
 ﻿using BedFactoryVO;
-using log4net;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -13,11 +12,9 @@ namespace BedFactoryDAC
     {
         string strConn;
         SqlConnection conn;
-        ILog log = null;
 
-        public MaterialsDAC(ILog log, string strConn) 
+        public MaterialsDAC(string strConn) 
         { 
-            this.log = log;
             conn = new SqlConnection(strConn);
             conn.Open();
         }
@@ -73,7 +70,7 @@ namespace BedFactoryDAC
             }
             catch (Exception err)
             {
-                log.Error("GetAllMaterials() 오류 : " + err.Message);
+                Log.WriteError(err.Message);
                 return null;
             }
         }
@@ -158,5 +155,25 @@ namespace BedFactoryDAC
                 conn.Close();
             }
         }
+
+        /// <summary>
+        /// 자재명을 콤보박스에 바인딩
+        /// </summary>
+        /// <returns></returns>
+        public List<CommonCodeVO> GetMaterialsCombo()
+        {
+            string sql = @"select cast(Mat_Num as nvarchar) as Code_Num, Mat_Name as Code_Name, '자재' as Category
+                           from tblMaterials 
+                           where Isdeleted = 'N' ";
+
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                List<CommonCodeVO> list = Helper.DataReaderMapToList<CommonCodeVO>(cmd.ExecuteReader());
+                conn.Close();
+
+                return list;
+            }
+        }
     }
+
 }

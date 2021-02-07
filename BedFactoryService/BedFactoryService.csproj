@@ -42,14 +42,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthorityService.cs" />
+    <Compile Include="BalzooService.cs" />
+    <Compile Include="BORService.cs" />
     <Compile Include="CheckService.cs" />
     <Compile Include="CompanyService.cs" />
     <Compile Include="CommonCodeService.cs" />
+    <Compile Include="DemandPlanService.cs" />
     <Compile Include="MaterialsService.cs" />
     <Compile Include="ProcessService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalesMasterService.cs" />
     <Compile Include="ShiftsService.cs" />
     <Compile Include="UnitCostService.cs" />
+    <Compile Include="WearingService.cs" />
     <Compile Include="WorkplaceService.cs" />
   </ItemGroup>
   <ItemGroup>

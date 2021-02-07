@@ -10,7 +10,7 @@ using System.Web.Http;
 using System.Web.Configuration;
 using EncryptDecryp;
 
-namespace BedFactoryWeb
+namespace BedFactoryAPI
 {
     public class Global : HttpApplication
     {
@@ -20,12 +20,15 @@ namespace BedFactoryWeb
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
 
-            strConn = WebConfigurationManager.ConnectionStrings["MesDB"].ConnectionString;
+            strConn = WebConfigurationManager.ConnectionStrings["BedFactoryDB"].ConnectionString;
 
             AES aes = new AES();
             strConn = aes.AESDecrypt256(strConn);
-            
-            log4net.Config.XmlConfigurator.Configure();
+
+            //// 애플리케이션 시작 시 실행되는 코드
+            //AreaRegistration.RegisterAllAreas();
+            //GlobalConfiguration.Configure(WebApiConfig.Register);
+            //RouteConfig.RegisterRoutes(RouteTable.Routes);            
         }
     }
 }

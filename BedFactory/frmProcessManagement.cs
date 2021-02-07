@@ -8,11 +8,12 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using BedFactory.Pop_up;
 
 namespace BedFactory
 {
     public partial class frmProcessManagement : BedFactory.BaseForms.BaseForm2
-    { 
+    {
         public frmProcessManagement()
         {
             InitializeComponent();
@@ -22,12 +23,13 @@ namespace BedFactory
         {
             //컬럼추가
             //그리드뷰 바인딩
-  
+            dgvProcessInfo.SetGridCheckBox("선택");
             dgvProcessInfo.SetGridViewColumn("공정번호", "Process_Num");
-            dgvProcessInfo.SetGridViewColumn("공정분류", "Process_Category_Name");
-            dgvProcessInfo.SetGridViewColumn("공정명", "Process_Name");
+            dgvProcessInfo.SetGridViewColumn("공정코드", "Process_Code");
+            dgvProcessInfo.SetGridViewColumn("공정분류", "Process_Category");
+            dgvProcessInfo.SetGridViewColumn("상세공정명", "Process_Name_D");
             dgvProcessInfo.SetGridViewColumn("공정조건", "Process_Condition");
-            dgvProcessInfo.SetGridViewColumn("정보삭제여부", "IsDeleted");
+            dgvProcessInfo.SetGridViewColumn("사용여부", "IsDeleted");
             dgvProcessInfo.SetGridViewColumn("최초등록자", "Firstman");
             dgvProcessInfo.SetGridViewColumn("최초등록일", "Firstdate");
             dgvProcessInfo.SetGridViewColumn("최종등록자", "Lastman");
@@ -38,18 +40,19 @@ namespace BedFactory
             if (frmCommonCode.commonList == null) // 항상 널 체크
                 frmCommonCode.CheckCommonInfo();  // 널일때만 갖다오기
 
-            CommonUtil.CommonCodeBindig(cboCategory, frmCommonCode.commonList, "공정", "");
+            CommonUtil.CommonCodeBindig(cboCategory_Code, frmCommonCode.commonList, "공정", "");
         }
 
 
-    //조회버튼
-    public void btnSelect_Click(object sender, EventArgs e)
+        //조회버튼
+        private void btnSelect_Click(object sender, EventArgs e)
         {
-            string prcCategory = cboCategory.SelectedValue.ToString();
+            string prcCode = (cboCategory_Code.SelectedValue == null) ? "" : cboCategory_Code.SelectedValue.ToString();
+
             string prcName = txtName.Text.Trim();
 
             ProcessService service = new ProcessService();
-            List<ProcessVO> list = service.GetProcessInfo(prcCategory, prcName);
+            List<ProcessVO> list = service.GetProcessInfo(prcCode, prcName);
             dgvProcessInfo.DataSource = list;
         }
 
@@ -57,13 +60,14 @@ namespace BedFactory
         // 등록버튼
         public override void btn3_Click(object sender, EventArgs e)
         {
-            //팝업호출
+            // 팝업호출
             frmProcessReg frm = new frmProcessReg();
             frm.ShowDialog();
         }
 
 
         // 수정버튼
+        // 데이터그리드뷰 셀을 선택하고 수정버튼 누를시 or 셀 더블클릭시 => 등록,수정폼에 정보 바인딩 되고 수정 가능하게끔 코딩
         public override void btn2_Click(object sender, EventArgs e)
         {
             //팝업호출
@@ -73,9 +77,9 @@ namespace BedFactory
 
             ProcessVO vo = new ProcessVO
             {
-                Process_Num = Convert.ToInt32(item.Cells["Process_Num"].Value),
-                Process_Category = item.Cells["Process_Category"].Value.ToString(),
-                Process_Name = item.Cells["Process_Name"].Value.ToString(),
+                Process_Num = Convert.ToInt32(item.Cells["Process_Num"].Value.ToString()),
+                Process_Code = item.Cells["Process_Code"].Value.ToString(),
+                Process_Name_D = item.Cells["Process_Name_D"].Value.ToString(),
                 Process_Condition = item.Cells["Process_Condition"].Value.ToString(),
                 IsDeleted = item.Cells["IsDeleted"].Value.ToString()
             };
@@ -92,6 +96,5 @@ namespace BedFactory
         {
 
         }
-
     }
 }

@@ -46,6 +46,11 @@
     <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Downloads\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -121,6 +126,12 @@
     <Compile Include="frmBOM.Designer.cs">
       <DependentUpon>frmBOM.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBOR.Designer.cs">
+      <DependentUpon>frmBOR.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBusinessCostManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +143,12 @@
     </Compile>
     <Compile Include="frmCompanySales.Designer.cs">
       <DependentUpon>frmCompanySales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDemandPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDemandPlan.Designer.cs">
+      <DependentUpon>frmDemandPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="frmErrorChart.cs">
       <SubType>Form</SubType>
@@ -150,6 +167,12 @@
     </Compile>
     <Compile Include="frmProcessManagement.Designer.cs">
       <DependentUpon>frmProcessManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalesMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalesMaster.Designer.cs">
+      <DependentUpon>frmSalesMaster.cs</DependentUpon>
     </Compile>
     <Compile Include="frmStockStatusProcess.cs">
       <SubType>Form</SubType>
@@ -223,12 +246,6 @@
     <Compile Include="frmSupplierWarehousingWait.Designer.cs">
       <DependentUpon>frmSupplierWarehousingWait.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDemandPlan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDemandPlan.Designer.cs">
-      <DependentUpon>frmDemandPlan.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMaterialRequirementPlanning.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,12 +317,6 @@
     </Compile>
     <Compile Include="Pop-up\frmSalesOrder.Designer.cs">
       <DependentUpon>frmSalesOrder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmSalesMaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSalesMaster.Designer.cs">
-      <DependentUpon>frmSalesMaster.cs</DependentUpon>
     </Compile>
     <Compile Include="Pop-up\frmSalesMasterRegister.cs">
       <SubType>Form</SubType>
@@ -517,6 +528,9 @@
     <EmbeddedResource Include="frmCompanySales.resx">
       <DependentUpon>frmCompanySales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDemandPlan.resx">
+      <DependentUpon>frmDemandPlan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmErrorChart.resx">
       <DependentUpon>frmErrorChart.cs</DependentUpon>
     </EmbeddedResource>
@@ -525,6 +539,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcessManagement.resx">
       <DependentUpon>frmProcessManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalesMaster.resx">
+      <DependentUpon>frmSalesMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStockStatusProcess.resx">
       <DependentUpon>frmStockStatusProcess.cs</DependentUpon>
@@ -562,9 +579,6 @@
     <EmbeddedResource Include="frmSupplierWarehousingWait.resx">
       <DependentUpon>frmSupplierWarehousingWait.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDemandPlan.resx">
-      <DependentUpon>frmDemandPlan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMaterialRequirementPlanning.resx">
       <DependentUpon>frmMaterialRequirementPlanning.cs</DependentUpon>
     </EmbeddedResource>
@@ -600,9 +614,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmSalesOrder.resx">
       <DependentUpon>frmSalesOrder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmSalesMaster.resx">
-      <DependentUpon>frmSalesMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmSalesMasterRegister.resx">
       <DependentUpon>frmSalesMasterRegister.cs</DependentUpon>

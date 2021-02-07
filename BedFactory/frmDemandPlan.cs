@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmDemandㅖㅣ무 : Form
+    public partial class frmDemandPlan : BedFactory.BaseForms.BaseForm2
     {
-        public frmDemandㅖㅣ무()
+        public frmDemandPlan()
         {
             InitializeComponent();
         }

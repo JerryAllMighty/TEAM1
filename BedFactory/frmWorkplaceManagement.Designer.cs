@@ -46,12 +46,11 @@ namespace BedFactory
             // 
             // btn2
             // 
-            this.btn2.Text = "삭제";
+            this.btn2.Text = "수정";
             // 
             // btn3
             // 
-            this.btn3.Text = "수정";
-            this.btn3.Click += new System.EventHandler(this.btn3_Click);
+            this.btn3.Text = "등록";
             // 
             // btn5
             // 
@@ -65,7 +64,7 @@ namespace BedFactory
             // 
             // btn1
             // 
-            this.btn1.Text = "액셀";
+            this.btn1.Text = "삭제";
             // 
             // pnlDgv
             // 
@@ -73,10 +72,10 @@ namespace BedFactory
             // 
             // btn4
             // 
-            this.btn4.Location = new System.Drawing.Point(1092, 99);
+            this.btn4.Location = new System.Drawing.Point(1092, 100);
             this.btn4.Size = new System.Drawing.Size(65, 25);
-            this.btn4.Text = "등록";
-            this.btn4.Click += new System.EventHandler(this.btn4_Click);
+            this.btn4.Text = "엑셀";
+            this.btn4.Visible = false;
             // 
             // pnlSelect
             // 
@@ -113,11 +112,11 @@ namespace BedFactory
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 20);
+            this.label2.Location = new System.Drawing.Point(14, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 23);
+            this.label2.Size = new System.Drawing.Size(95, 23);
             this.label2.TabIndex = 21;
-            this.label2.Text = "공정명";
+            this.label2.Text = "상세공정명";
             // 
             // btnSelect
             // 

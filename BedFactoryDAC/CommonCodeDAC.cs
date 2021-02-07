@@ -32,7 +32,7 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select Code_Num, Code_Name, Category, P_Code from CommonCode";
+                    cmd.CommandText = @"select Code_Num, Code_Name, Category, P_Code from tblCommonCode";
 
                     List<CommonCodeVO> list = Helper.DataReaderMapToList<CommonCodeVO>(cmd.ExecuteReader());
                     return list != null ? list : null;
@@ -57,7 +57,7 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"insert into CommonCode(Code_Num, Code_Name, Category, P_Code)
+                    cmd.CommandText = @"insert into tblCommonCode(Code_Num, Code_Name, Category, P_Code)
                                             values(@Code_Num, @Code_Name, @Category, @P_Code)";
                     cmd.Parameters.AddWithValue("@Code_Num", commoncodeinfo.Code_Num);
                     cmd.Parameters.AddWithValue("@Code_Name", commoncodeinfo.Code_Name);
@@ -88,7 +88,7 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"update CommonCode
+                    cmd.CommandText = @"update tblCommonCode
                                                     set
                                                     Code_Num = @Code_Num,
                                                     Code_Name= @Code_Name,
@@ -126,7 +126,7 @@ namespace BedFactoryDAC
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = @"delete 
-                                        from CommonCode
+                                        from tblCommonCode
                                         where Code_Num = @Code_Num";
 
                     cmd.Parameters.AddWithValue("@Code_Num", commoncodeinfo.Code_Num);

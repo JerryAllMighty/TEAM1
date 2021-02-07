@@ -29,13 +29,16 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.datagridviewControl1 = new BedFactory.DatagridviewControl();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.dgvSalesMasterUpload = new BedFactory.DatagridviewControl();
+            this.btnSalesMasterUpload = new System.Windows.Forms.Button();
+            this.btnFormDownload = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalesMasterUpload)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -50,47 +53,60 @@ namespace BedFactory
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.datagridviewControl1);
+            this.panel1.Controls.Add(this.dgvSalesMasterUpload);
             this.panel1.Location = new System.Drawing.Point(12, 129);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1258, 363);
             this.panel1.TabIndex = 1;
             // 
-            // datagridviewControl1
+            // dgvSalesMasterUpload
             // 
-            this.datagridviewControl1.Location = new System.Drawing.Point(287, 149);
-            this.datagridviewControl1.Name = "datagridviewControl1";
-            this.datagridviewControl1.Size = new System.Drawing.Size(75, 23);
-            this.datagridviewControl1.TabIndex = 0;
-            this.datagridviewControl1.Text = "datagridviewControl1";
+            this.dgvSalesMasterUpload.AllowUserToAddRows = false;
+            this.dgvSalesMasterUpload.AllowUserToResizeRows = false;
+            this.dgvSalesMasterUpload.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold);
+            this.dgvSalesMasterUpload.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvSalesMasterUpload.ColumnHeadersHeight = 29;
+            this.dgvSalesMasterUpload.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSalesMasterUpload.Location = new System.Drawing.Point(0, 0);
+            this.dgvSalesMasterUpload.Name = "dgvSalesMasterUpload";
+            this.dgvSalesMasterUpload.RowHeadersVisible = false;
+            this.dgvSalesMasterUpload.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvSalesMasterUpload.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvSalesMasterUpload.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSalesMasterUpload.Size = new System.Drawing.Size(1258, 363);
+            this.dgvSalesMasterUpload.TabIndex = 0;
+            this.dgvSalesMasterUpload.Text = "datagridviewControl1";
             // 
-            // button1
+            // btnSalesMasterUpload
             // 
-            this.button1.Location = new System.Drawing.Point(894, 83);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "영업마스터 업로드";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSalesMasterUpload.Location = new System.Drawing.Point(894, 83);
+            this.btnSalesMasterUpload.Name = "btnSalesMasterUpload";
+            this.btnSalesMasterUpload.Size = new System.Drawing.Size(147, 23);
+            this.btnSalesMasterUpload.TabIndex = 2;
+            this.btnSalesMasterUpload.Text = "영업마스터 업로드";
+            this.btnSalesMasterUpload.UseVisualStyleBackColor = true;
+            this.btnSalesMasterUpload.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnFormDownload
             // 
-            this.button2.Location = new System.Drawing.Point(1047, 83);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "양식 다운로드";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnFormDownload.Location = new System.Drawing.Point(1047, 83);
+            this.btnFormDownload.Name = "btnFormDownload";
+            this.btnFormDownload.Size = new System.Drawing.Size(123, 23);
+            this.btnFormDownload.TabIndex = 3;
+            this.btnFormDownload.Text = "양식 다운로드";
+            this.btnFormDownload.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnSave
             // 
-            this.button3.Location = new System.Drawing.Point(1176, 83);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "저장";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(1176, 83);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(94, 23);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "저장";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmSalesMasterUpload
             // 
@@ -98,15 +114,17 @@ namespace BedFactory
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1282, 753);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnFormDownload);
+            this.Controls.Add(this.btnSalesMasterUpload);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "frmSalesMasterUpload";
             this.Text = "영업마스터 업로드";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmSalesMasterUpload_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalesMasterUpload)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -115,9 +133,9 @@ namespace BedFactory
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private DatagridviewControl datagridviewControl1;
+        private System.Windows.Forms.Button btnSalesMasterUpload;
+        private System.Windows.Forms.Button btnFormDownload;
+        private System.Windows.Forms.Button btnSave;
+        private DatagridviewControl dgvSalesMasterUpload;
     }
 }

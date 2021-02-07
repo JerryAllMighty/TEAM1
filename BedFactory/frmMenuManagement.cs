@@ -42,18 +42,16 @@ namespace BedFactory
             MenuBigList.ForEach(p => trvMenu.Nodes.Add(p.Code_Name));
 
             //각 부모 노드 당 자식 노드 추가
-            foreach (var parent in MenuBigList)
+            for(int i =0; i < MenuBigList.Count; i++)
             {
                 var MenuList = (from items in frmCommonCode.CheckCommonInfo()
-                                where parent.Code_Num == items.P_Code
+                                where MenuBigList[i].Code_Num == items.P_Code
                                 select items).ToList();
-                MenuList.ForEach(p => trvMenu.Nodes[parent.Code_Name].Nodes.Add(p.Code_Name));
+
+
+                MenuList.ForEach(p => trvMenu.Nodes[i].Nodes.Add(p.Code_Name));
 
             }
-            //trvMenu.Tag = MenuBigList;
-
-
-
         }
 
         
@@ -80,7 +78,7 @@ namespace BedFactory
                             where items.P_Code == dgvMenuBigCategory[0, e.RowIndex].Value.ToString()
                             select items).ToList();
 
-            dgvMenuBigCategory.DataSource = MenuList;
+            dgvMenu.DataSource = MenuList;
         }
     }
 }

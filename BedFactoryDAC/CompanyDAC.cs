@@ -32,42 +32,147 @@ namespace BedFactoryDAC
         /// <summary>
         /// 검색조건에 따른 업체 정보 조회
         /// </summary>
-        /// <param name="comNum">업체번호</param>
+        /// <param name="comCode">업체타입</param>
         /// <param name="comName">업체명</param>
-        /// <param name="comType">업체타입</param>
         /// <returns></returns>
-        public List<CompanyVO> GetCompanyInfo(string comNum, string comName, string comType)
+        public List<CompanyVO> GetCompanyInfo(string comCode, string comName)
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(@"select C.Com_Num, C.Com_Name, Com_Addr, Com_Represent, Com_Phone, Com_Category, Com_Emp_Num, Com_Info, 
-	                    C.FirstMan, CONVERT(varchar(10), C.FirstDate, 23) FirstDate,
-	                    C.LastMan, CONVERT(varchar(10), C.LastDate, 23) LastDate
-                        from tblCompany C inner join tblOrders O on C.Com_Num = O.Com_Num
-                        where 1 = 1 ");
-
-            if (!string.IsNullOrEmpty(comNum))
-                sb.Append(" and C.Com_Num = @comNum");
-            if (!string.IsNullOrEmpty(comName))
-                sb.Append(" and C.Com_Name = @comName");
-            if (!string.IsNullOrEmpty(comType))
-                sb.Append(" and C.Com_Category = @comType");
-
-            using (SqlCommand cmd = new SqlCommand())
+            try
             {
-                cmd.CommandText = sb.ToString();
-                cmd.Connection = Conn;
+                StringBuilder sb = new StringBuilder();
+                sb.Append(@"select Com_Num, Com_Code, Code_Name as Com_Type, Com_Name, Com_Represent, Com_Addr, Com_Phone, 
+	                           Com_Manager, Com_Info,IsUse, FirstMan, FirstDate, LastMan, LastDate
+                               from tblCompany inner join tblCommonCode C on Com_Code = Code_Num
+                               where 1 = 1 ");
 
-                cmd.Parameters.AddWithValue("@Com_Num", comNum);
-                cmd.Parameters.AddWithValue("@Com_Name", comName);
-                cmd.Parameters.AddWithValue("@Com_Category", comType);
+                if (!string.IsNullOrEmpty(comCode))
+                    sb.Append(" and Com_Code = @comCode");
+                if (!string.IsNullOrEmpty(comName))
+                    sb.Append(" and Com_Name like @comName");
 
-                List<CompanyVO> list = Helper.DataReaderMapToList<CompanyVO>(cmd.ExecuteReader());
-                Conn.Dispose();
-                return list;
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = sb.ToString();
+                    cmd.Connection = Conn;
+
+                    if (!string.IsNullOrEmpty(comCode))
+                        cmd.Parameters.AddWithValue("@comCode", comCode);
+                    if (!string.IsNullOrEmpty(comName))
+                        cmd.Parameters.AddWithValue("@comName", $"%{comName}%");
+
+                    List<CompanyVO> list = Helper.DataReaderMapToList<CompanyVO>(cmd.ExecuteReader());
+                    Conn.Dispose();
+                    return list;
+                }
             }
-           
+            catch(Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
+            }    
+        }
 
+        /// <summary>
+        /// 업체 정보 등록
+        /// </summary>
+        /// <param name="vo"></param>
+        /// <returns></returns>
+        public bool InsertCompnayInfo(CompanyVO vo)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = Conn;
+                    cmd.CommandText = @"insert into tblCompany (Com_Code, Com_Name, Com_Addr, Com_Represent,
+                                                                Com_Phone, Com_Info, IsUse, FirstMan, LastMan)
+                                        values (@Com_Code, @Com_Name, @Com_Addr, @Com_Represent, @Com_Phone, 
+                                                  Com_Manager, @Com_Info, @IsUse, @FirstMan, @LastMan) ";
 
+                    cmd.Parameters.AddWithValue("Com_Code", vo.Com_Code);
+                    cmd.Parameters.AddWithValue("Com_Name", vo.Com_Name);
+                    cmd.Parameters.AddWithValue("Com_Addr", vo.Com_Addr);
+                    cmd.Parameters.AddWithValue("Com_Represent", vo.Com_Represent);
+                    cmd.Parameters.AddWithValue("Com_Phone", vo.Com_Phone);
+                    cmd.Parameters.AddWithValue("Com_Manager", vo.Com_Manager);
+                    cmd.Parameters.AddWithValue("Com_Info", vo.Com_Info);
+                    cmd.Parameters.AddWithValue("IsUse", vo.IsUse);
+                    cmd.Parameters.AddWithValue("FirstMan", vo.FirstMan);
+                    cmd.Parameters.AddWithValue("LastMan", vo.LastMan);
+
+                    int iRowAffect = cmd.ExecuteNonQuery();
+                    Conn.Close();
+
+                    return iRowAffect > 0 ? true : false;
+                }
+            }
+
+           catch(Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 업체 정보 수정
+        /// </summary>
+        /// <param name="vo"></param>
+        /// <returns></returns>
+        public bool UpdateCompnayInfo(CompanyVO vo)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = Conn;
+                    cmd.CommandText = @"update tblCompany 
+                                       set Com_Code = @Com_Code, Com_Name = @Com_Name, Com_Addr= @Com_Addr, Com_Represent= @Com_Represent, Com_Manager= @Com_Manager,
+                                           Com_Phone = @Com_Phone,Com_Info = @Com_Info, IsUse = @IsUse, LastMan = @LastMan, LastDate = getdate()
+					                 where Com_Num = @Com_Num ";
+
+                    cmd.Parameters.AddWithValue("Com_Code", vo.Com_Code);
+                    cmd.Parameters.AddWithValue("Com_Name", vo.Com_Name);
+                    cmd.Parameters.AddWithValue("Com_Addr", vo.Com_Addr);
+                    cmd.Parameters.AddWithValue("Com_Represent", vo.Com_Represent);
+                    cmd.Parameters.AddWithValue("Com_Manager", vo.Com_Manager);
+                    cmd.Parameters.AddWithValue("Com_Phone", vo.Com_Phone);
+                    cmd.Parameters.AddWithValue("Com_Info", vo.Com_Info);
+                    cmd.Parameters.AddWithValue("IsUse", vo.IsUse);
+                    cmd.Parameters.AddWithValue("LastMan", vo.LastMan);
+                    cmd.Parameters.AddWithValue("Com_Num", vo.Com_Num);
+
+                    int iRowAffect = cmd.ExecuteNonQuery();
+
+                    return iRowAffect > 0 ? true : false;
+                }
+            }
+            catch(Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false; 
+            }
+        }
+
+        public List<CompanyVO> GetEveryCompanyName()
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = Conn;
+                    cmd.CommandText = @"select Com_Num, Com_Code, Com_Name
+                                        from tblCompany";
+
+                    List<CompanyVO> list = Helper.DataReaderMapToList<CompanyVO>(cmd.ExecuteReader());
+                    return list != null ? list : null;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
+            }
         }
     }
 }

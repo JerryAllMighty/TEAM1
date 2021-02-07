@@ -18,7 +18,7 @@ namespace BedFactory
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmBusinessCostManagement("영업"));
+            Application.Run(new frmSalesMaster());
         }
     }
 }
