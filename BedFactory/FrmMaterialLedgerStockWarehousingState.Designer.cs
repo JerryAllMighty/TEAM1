@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
@@ -112,7 +112,7 @@ namespace BedFactory
             // 
             this.comboBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(558, 12);
+            this.comboBox5.Location = new System.Drawing.Point(558, 14);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(235, 25);
             this.comboBox5.TabIndex = 72;
@@ -131,7 +131,7 @@ namespace BedFactory
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(17, 12);
+            this.comboBox1.Location = new System.Drawing.Point(17, 14);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(100, 25);
             this.comboBox1.TabIndex = 70;
@@ -247,19 +247,20 @@ namespace BedFactory
             this.dgvState.AllowUserToAddRows = false;
             this.dgvState.AllowUserToResizeRows = false;
             this.dgvState.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvState.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvState.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvState.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvState.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvState.Location = new System.Drawing.Point(0, 0);
             this.dgvState.Name = "dgvState";
             this.dgvState.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvState.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvState.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvState.RowTemplate.Height = 23;
             this.dgvState.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvState.Size = new System.Drawing.Size(1358, 659);
             this.dgvState.TabIndex = 0;
+            this.dgvState.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvState_CellContentClick);
             this.dgvState.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvState_CurrentCellDirtyStateChanged);
             // 
             // frmMaterialLedgerStockWarehousingState

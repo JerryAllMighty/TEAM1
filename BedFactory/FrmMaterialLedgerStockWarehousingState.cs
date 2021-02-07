@@ -95,5 +95,27 @@ namespace BedFactory
                 }
             }
         }
+
+        private void dgvState_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex > -1)
+            {
+                bool bCheck = false;
+
+                for (int i = 0; i < dgvState.Rows.Count; i++)
+                {
+                    if (Convert.ToBoolean(dgvState[0, i].Value))
+                    {
+                        bCheck = true;
+                        break;
+                    }
+                }
+
+                if (bCheck)
+                    headerCheck.Checked = true;
+                else
+                    headerCheck.Checked = false;
+            }
+        }
     }
 }
