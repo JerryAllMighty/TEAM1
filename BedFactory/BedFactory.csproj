@@ -264,6 +264,12 @@
     <Compile Include="frmUserGroupAuthority.Designer.cs">
       <DependentUpon>frmUserGroupAuthority.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmWorkOrderCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkOrderCreate.Designer.cs">
+      <DependentUpon>frmWorkOrderCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmWorkOrderStatus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -522,6 +528,9 @@
     <EmbeddedResource Include="frmBOM.resx">
       <DependentUpon>frmBOM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBOR.resx">
+      <DependentUpon>frmBOR.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBusinessCostManagement.resx">
       <DependentUpon>frmBusinessCostManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -587,6 +596,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUserGroupAuthority.resx">
       <DependentUpon>frmUserGroupAuthority.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkOrderCreate.resx">
+      <DependentUpon>frmWorkOrderCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmWorkOrderStatus.resx">
       <DependentUpon>frmWorkOrderStatus.cs</DependentUpon>

@@ -60,15 +60,12 @@ namespace BedFactory.Pop_up
         //저장버튼
         private void button1_Click(object sender, EventArgs e)
         {
-            if (cboPrc.SelectedValue == null || cboWp.SelectedValue == null || cboMat.SelectedValue == null)
-            {
-                return ;
-            }
-
-            if (cboPrc.SelectedValue.ToString().Length < 1 || cboWp.SelectedValue.ToString().Length < 1 || cboMat.SelectedValue.ToString().Length < 1)
-            {
+            if (cboPrc.SelectedValue == null || cboWp.SelectedValue == null || cboMat.SelectedValue == null) 
                 return;
-            }
+
+
+            if (cboPrc.SelectedValue.ToString().Length < 1 || cboWp.SelectedValue.ToString().Length < 1 || cboMat.SelectedValue.ToString().Length < 1) 
+                return;
 
             BORService service = new BORService();
             bool bResult = false;
@@ -78,8 +75,8 @@ namespace BedFactory.Pop_up
                 BORVO vo = new BORVO
                 {
                     BOR_Num = editBOR.BOR_Num,
-                    Process_Num = Convert.ToInt32(cboPrc.SelectedValue),
-                    WP_Num = Convert.ToInt32(cboWp.SelectedValue),
+                    Process_Num = Convert.ToInt32(cboPrc.SelectedValue.ToString()),
+                    WP_Num = Convert.ToInt32(cboWp.SelectedValue.ToString()),
                     Mat_Num = cboMat.SelectedValue.ToString(),
                     Tact_Time = Convert.ToInt32(txtTt.Text),
                     BOR_Comment = txtComent.Text,
@@ -98,10 +95,10 @@ namespace BedFactory.Pop_up
             {
                 BORVO vo = new BORVO
                 {
-                    Process_Num = Convert.ToInt32(cboPrc.SelectedValue),
-                    WP_Num = Convert.ToInt32(cboWp.SelectedValue),
+                    Process_Num = Convert.ToInt32(cboPrc.SelectedValue.ToString()),
+                    WP_Num = Convert.ToInt32(cboWp.SelectedValue.ToString()),
                     Mat_Num = cboMat.SelectedValue.ToString(),
-                    Tact_Time = Convert.ToInt32(txtTt.Text),
+                    Tact_Time = Convert.ToInt32(txtTt.Text.Trim()),
                     BOR_Comment = txtComent.Text,
                     IsUse = (rdoYes.Checked) ? "Y" : "N",
                     Firstman = 9,
@@ -115,6 +112,11 @@ namespace BedFactory.Pop_up
                     this.Close();
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

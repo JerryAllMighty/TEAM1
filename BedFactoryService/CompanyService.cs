@@ -31,6 +31,12 @@ namespace BedFactoryService
             return dac.UpdateCompnayInfo(vo);
         }
 
+        //회사정보삭제
+        public bool DeleteComInfo(int num)
+        {
+            CompanyDAC dac = new CompanyDAC();
+            return dac.DeleteComInfo(num);
+        }
 
         /// <summary>
         /// 모든 회사 정보를 가져오는 함수

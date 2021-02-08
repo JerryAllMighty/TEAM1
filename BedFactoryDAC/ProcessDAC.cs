@@ -166,5 +166,35 @@ namespace BedFactoryDAC
                 return list;
             }
         }
+
+        /// <summary>
+        /// 공정정보 삭제
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public bool DeleteProcessInfo(int num)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = Conn;
+                    cmd.CommandText = @"delete 
+                                        from tblProcess
+                                        where Process_Num = @Process_Num";
+
+                    cmd.Parameters.AddWithValue("@Process_Num", num);
+
+                    int iRowAffect = cmd.ExecuteNonQuery();
+
+                    return iRowAffect > 0 ? true : false;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
     }
 }

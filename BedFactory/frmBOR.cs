@@ -19,6 +19,9 @@ namespace BedFactory
             InitializeComponent();
         }
 
+        public List<BORVO> borList;
+
+
         private void frmBOR_Load(object sender, EventArgs e)
         {
             dgvBOR.SetGridCheckBox("선택");
@@ -34,7 +37,7 @@ namespace BedFactory
             dgvBOR.SetGridViewColumn("최초등록일", "Firstdate");
             dgvBOR.SetGridViewColumn("최종등록자", "Lastman");
             dgvBOR.SetGridViewColumn("최종등록일", "Lastdate");
-            dgvBOR.SetGridViewColumn("공정번호", "Process_Num", visibility : false) ;
+            dgvBOR.SetGridViewColumn("공정번호", "Process_Num", visibility: false);
             dgvBOR.SetGridViewColumn("작업장번호", "WP_Num", visibility: false);
             dgvBOR.SetGridViewColumn("자재번호", "Mat_Num", visibility: false);
 
@@ -101,9 +104,48 @@ namespace BedFactory
 
 
             frmBORreg frm = new frmBORreg();
-            frm.editBOR = vo;        
-            frm.IsEditMode = true;      
+            frm.editBOR = vo;
+            frm.IsEditMode = true;
             frm.ShowDialog();
+        }
+
+        /// <summary>
+        /// BOR 정보를 데이터그리드 뷰에 바인딩하는 함수
+        /// </summary>
+        private void LoadData()
+        {
+            BORService service = new BORService();
+            if (service.GetBORAllInfo() != null)
+            {
+                borList = service.GetBORAllInfo();
+            }
+            dgvBOR.DataSource = borList;
+        }
+
+        //삭제
+        private void btn1_Click_1(object sender, EventArgs e)
+        {
+            if (dgvBOR.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("삭제할 BOR정보를 선택해주세요.");
+                return;
+            }
+
+            if (MessageBox.Show($"{dgvBOR[1, dgvBOR.SelectedRows[0].Index].Value} 번 근무일정을 삭제하시겠습니까?"
+                , "삭제확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                BORService service = new BORService();
+                bool result = service.DeleteBORInfo(Convert.ToInt32(dgvBOR[1, dgvBOR.SelectedRows[0].Index].Value));
+
+                if (result)
+                {
+                    MessageBox.Show(BedFactory.Properties.Settings.Default.DeleteSuccess);
+                }
+                else
+                {
+                    MessageBox.Show(BedFactory.Properties.Settings.Default.DeleteFail);
+                }
+            }
         }
     }
 }

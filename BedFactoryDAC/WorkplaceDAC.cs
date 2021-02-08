@@ -138,6 +138,36 @@ namespace BedFactoryDAC
             }
         }
 
+        /// <summary>
+        /// 작업장 정보 삭제
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public bool DeleteWorkplaceInfo(int num)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = Conn;
+                    cmd.CommandText = @"delete 
+                                        from tblWorkplace
+                                        where WP_Num = @WP_Num";
+
+                    cmd.Parameters.AddWithValue("@WP_Num", num);
+
+                    int iRowAffect = cmd.ExecuteNonQuery();
+
+                    return iRowAffect > 0 ? true : false;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
+
 
         /// <summary>
         /// 작업장을 콤보박스에 바인딩

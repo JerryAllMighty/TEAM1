@@ -94,7 +94,27 @@ namespace BedFactory
         // 삭제버튼
         public override void btn1_Click(object sender, EventArgs e)
         {
+            if (dgvProcessInfo.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("삭제할 공정정보를 선택해주세요.");
+                return;
+            }
 
+            if (MessageBox.Show($"{dgvProcessInfo[1, dgvProcessInfo.SelectedRows[0].Index].Value} 번 공정정보를 삭제하시겠습니까?"
+                , "삭제확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                ProcessService service = new ProcessService();
+                bool result = service.DeleteProcessInfo(Convert.ToInt32(dgvProcessInfo[1, dgvProcessInfo.SelectedRows[0].Index].Value));
+
+                if (result)
+                {
+                    MessageBox.Show(BedFactory.Properties.Settings.Default.DeleteSuccess);
+                }
+                else
+                {
+                    MessageBox.Show(BedFactory.Properties.Settings.Default.DeleteFail);
+                }
+            }
         }
     }
 }

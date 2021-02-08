@@ -34,7 +34,7 @@ namespace BedFactory.Pop_up
                 cboCategory_Code.SelectedValue = EditProcess.Process_Code;
                 txtName.Text = EditProcess.Process_Name_D;
                 txtCondition.Text = EditProcess.Process_Condition;
-                if (EditProcess.IsDeleted == "Y")
+                if (EditProcess.IsDeleted == "N")
                     rdoY.Checked = true;
                 else
                     rdoN.Checked = true;
@@ -77,7 +77,7 @@ namespace BedFactory.Pop_up
                 }
             }
 
-            else // 저장
+            else // 등록
             {
                 ProcessVO vo = new ProcessVO
                 {

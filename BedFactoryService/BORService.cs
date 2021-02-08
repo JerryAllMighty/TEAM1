@@ -10,6 +10,13 @@ namespace BedFactoryService
 {
     public class BORService
     {
+        //전체정보
+        public List<BORVO> GetBORAllInfo()
+        {
+            BORDAC dac = new BORDAC();
+            return dac.GetBORAllInfo();
+        }
+
         //조회
         public List<BORVO> GetBorInfo(int prcNum, int wpNum, string matName)
         {
@@ -29,6 +36,13 @@ namespace BedFactoryService
         {
             BORDAC dac = new BORDAC();
             return dac.UpdateBORInfo(vo);
+        }
+
+        //삭제
+        public bool DeleteBORInfo(int num)
+        {
+            BORDAC dac = new BORDAC();
+            return dac.DeleteBORInfo(num);
         }
     }
 }
