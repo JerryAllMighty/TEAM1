@@ -32,12 +32,12 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select Convert(int, Row_Number() over(order by Com_Num, Mat_Num, Start_Date)) Rownum, UnitCost_Num
+                    cmd.CommandText = @"select Convert(int, Row_Number() over(order by U.Com_Num, U.Mat_Num, Start_Date)) Rownum, UnitCost_Num
                                                , U.Com_Num, C.Com_Name, U.Mat_Num, M.Mat_Name, Now_UnitCost, Before_UnitCost
                                                , Start_Date, End_Date, U.FirstMan, U.FirstDate, U.LastMan, U.LastDate
                                           from tblUnitCost U join tblCompany C on U.Com_Num = C.Com_Num 
 	                                           join tblMaterials M on U.Mat_Num = M.Mat_Num
-                                         where C.Com_Category = @Com_Category and Start_Date <= @Date and End_Date >= @Date";
+                                         where C.Com_Type = @Com_Category and Start_Date <= @Date and End_Date >= @Date";
 
                     cmd.Parameters.AddWithValue("@Com_Category", category);
                     cmd.Parameters.AddWithValue("@Date", date.Date);
@@ -131,9 +131,9 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select Com_Num Code_No, Com_Name Code_Name, '거래처' Category from tblCompany
+                    cmd.CommandText = @"select cast(Com_Num as VARCHAR) Code_Num, Com_Name Code_Name, '거래처' Category from tblCompany
                                         union
-                                        select Mat_Num Code_No, Mat_Name Code_Name, '자재' Category from tblMaterials";
+                                        select Mat_Num Code_Num, Mat_Name Code_Name, '자재' Category from tblMaterials";
 
                     List<CommonCodeVO> list = Helper.DataReaderMapToList<CommonCodeVO>(cmd.ExecuteReader());
                     conn.Close();

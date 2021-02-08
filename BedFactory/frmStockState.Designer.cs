@@ -31,12 +31,12 @@ namespace BedFactory
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtMaterial = new System.Windows.Forms.TextBox();
             this.cboCategory = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cboStorage = new System.Windows.Forms.ComboBox();
-            this.btnSelect = new System.Windows.Forms.Button();
+            this.btnSerch = new System.Windows.Forms.Button();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvStock = new BedFactory.DatagridviewControl();
@@ -68,19 +68,19 @@ namespace BedFactory
             // 
             this.pnlSelect.Controls.Add(this.searchLocationControl1);
             // 
-            // textBox3
+            // txtMaterial
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.Location = new System.Drawing.Point(558, 19);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(235, 25);
-            this.textBox3.TabIndex = 71;
+            this.txtMaterial.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtMaterial.Location = new System.Drawing.Point(558, 19);
+            this.txtMaterial.Name = "txtMaterial";
+            this.txtMaterial.Size = new System.Drawing.Size(235, 25);
+            this.txtMaterial.TabIndex = 71;
             // 
             // cboCategory
             // 
             this.cboCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Location = new System.Drawing.Point(977, 21);
+            this.cboCategory.Location = new System.Drawing.Point(977, 18);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(235, 25);
             this.cboCategory.TabIndex = 67;
@@ -109,23 +109,24 @@ namespace BedFactory
             // 
             this.cboStorage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboStorage.FormattingEnabled = true;
-            this.cboStorage.Location = new System.Drawing.Point(139, 21);
+            this.cboStorage.Location = new System.Drawing.Point(139, 18);
             this.cboStorage.Name = "cboStorage";
             this.cboStorage.Size = new System.Drawing.Size(235, 25);
             this.cboStorage.TabIndex = 63;
             // 
-            // btnSelect
+            // btnSerch
             // 
-            this.btnSelect.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSelect.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSelect.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSelect.Location = new System.Drawing.Point(1271, 16);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(70, 30);
-            this.btnSelect.TabIndex = 60;
-            this.btnSelect.Text = "조회";
-            this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSerch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSerch.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSerch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSerch.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSerch.Location = new System.Drawing.Point(1271, 16);
+            this.btnSerch.Name = "btnSerch";
+            this.btnSerch.Size = new System.Drawing.Size(70, 30);
+            this.btnSerch.TabIndex = 60;
+            this.btnSerch.Text = "조회";
+            this.btnSerch.UseVisualStyleBackColor = false;
+            this.btnSerch.Click += new System.EventHandler(this.btnSerch_Click);
             // 
             // searchLocationControl1
             // 
@@ -140,9 +141,9 @@ namespace BedFactory
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
-            this.searchLocationControl1.Controls.Add(this.btnSelect, 9, 0);
+            this.searchLocationControl1.Controls.Add(this.btnSerch, 9, 0);
             this.searchLocationControl1.Controls.Add(this.cboCategory, 7, 0);
-            this.searchLocationControl1.Controls.Add(this.textBox3, 4, 0);
+            this.searchLocationControl1.Controls.Add(this.txtMaterial, 4, 0);
             this.searchLocationControl1.Controls.Add(this.label11, 6, 0);
             this.searchLocationControl1.Controls.Add(this.label5, 0, 0);
             this.searchLocationControl1.Controls.Add(this.cboStorage, 1, 0);
@@ -210,9 +211,9 @@ namespace BedFactory
 
         private DatagridviewControl dgvStock;
         private Controls.SearchLocationControl searchLocationControl1;
-        protected System.Windows.Forms.Button btnSelect;
+        protected System.Windows.Forms.Button btnSerch;
         private System.Windows.Forms.ComboBox cboCategory;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtMaterial;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboStorage;

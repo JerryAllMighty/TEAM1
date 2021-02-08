@@ -224,7 +224,7 @@ namespace BedFactory.Pop_up
             this.btnSave.Location = new System.Drawing.Point(220, 249);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(107, 40);
-            this.btnSave.TabIndex = 2;
+            this.btnSave.TabIndex = 0;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);

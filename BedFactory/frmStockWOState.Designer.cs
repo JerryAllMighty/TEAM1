@@ -29,25 +29,25 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboWOcategory = new System.Windows.Forms.ComboBox();
             this.txtMaterial = new System.Windows.Forms.TextBox();
             this.cboStorage = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnSelect = new System.Windows.Forms.Button();
+            this.btnSerch = new System.Windows.Forms.Button();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
-            this.label3 = new System.Windows.Forms.Label();
+            this.cboMcategory = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cboCategory = new System.Windows.Forms.ComboBox();
-            this.cboMcategory = new System.Windows.Forms.ComboBox();
             this.dgvWO = new BedFactory.DatagridviewControl();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
@@ -97,7 +97,7 @@ namespace BedFactory
             // 
             this.cboWOcategory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboWOcategory.FormattingEnabled = true;
-            this.cboWOcategory.Location = new System.Drawing.Point(139, 61);
+            this.cboWOcategory.Location = new System.Drawing.Point(139, 60);
             this.cboWOcategory.Name = "cboWOcategory";
             this.cboWOcategory.Size = new System.Drawing.Size(235, 25);
             this.cboWOcategory.TabIndex = 76;
@@ -114,7 +114,7 @@ namespace BedFactory
             // 
             this.cboStorage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboStorage.FormattingEnabled = true;
-            this.cboStorage.Location = new System.Drawing.Point(558, 12);
+            this.cboStorage.Location = new System.Drawing.Point(558, 11);
             this.cboStorage.Name = "cboStorage";
             this.cboStorage.Size = new System.Drawing.Size(235, 25);
             this.cboStorage.TabIndex = 73;
@@ -149,18 +149,19 @@ namespace BedFactory
             this.label5.TabIndex = 66;
             this.label5.Text = "입출고유형";
             // 
-            // btnSelect
+            // btnSerch
             // 
-            this.btnSelect.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSelect.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSelect.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSelect.Location = new System.Drawing.Point(1271, 58);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(70, 30);
-            this.btnSelect.TabIndex = 65;
-            this.btnSelect.Text = "조회";
-            this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSerch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSerch.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSerch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSerch.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSerch.Location = new System.Drawing.Point(1271, 58);
+            this.btnSerch.Name = "btnSerch";
+            this.btnSerch.Size = new System.Drawing.Size(70, 30);
+            this.btnSerch.TabIndex = 65;
+            this.btnSerch.Text = "조회";
+            this.btnSerch.UseVisualStyleBackColor = false;
+            this.btnSerch.Click += new System.EventHandler(this.btnSerch_Click);
             // 
             // searchLocationControl1
             // 
@@ -175,7 +176,7 @@ namespace BedFactory
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
-            this.searchLocationControl1.Controls.Add(this.btnSelect, 9, 1);
+            this.searchLocationControl1.Controls.Add(this.btnSerch, 9, 1);
             this.searchLocationControl1.Controls.Add(this.cboMcategory, 7, 1);
             this.searchLocationControl1.Controls.Add(this.cboWOcategory, 1, 1);
             this.searchLocationControl1.Controls.Add(this.panel1, 1, 0);
@@ -197,15 +198,14 @@ namespace BedFactory
             this.searchLocationControl1.Size = new System.Drawing.Size(1356, 98);
             this.searchLocationControl1.TabIndex = 0;
             // 
-            // label3
+            // cboMcategory
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 17);
-            this.label3.TabIndex = 74;
-            this.label3.Text = "입출고일";
+            this.cboMcategory.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboMcategory.FormattingEnabled = true;
+            this.cboMcategory.Location = new System.Drawing.Point(977, 60);
+            this.cboMcategory.Name = "cboMcategory";
+            this.cboMcategory.Size = new System.Drawing.Size(235, 25);
+            this.cboMcategory.TabIndex = 81;
             // 
             // panel1
             // 
@@ -247,6 +247,16 @@ namespace BedFactory
             this.label6.TabIndex = 1;
             this.label6.Text = "~";
             // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(37, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 17);
+            this.label3.TabIndex = 74;
+            this.label3.Text = "입출고일";
+            // 
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -271,34 +281,25 @@ namespace BedFactory
             // 
             this.cboCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Location = new System.Drawing.Point(558, 61);
+            this.cboCategory.Location = new System.Drawing.Point(558, 60);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(235, 25);
             this.cboCategory.TabIndex = 80;
-            // 
-            // cboMcategory
-            // 
-            this.cboMcategory.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboMcategory.FormattingEnabled = true;
-            this.cboMcategory.Location = new System.Drawing.Point(977, 61);
-            this.cboMcategory.Name = "cboMcategory";
-            this.cboMcategory.Size = new System.Drawing.Size(235, 25);
-            this.cboMcategory.TabIndex = 81;
             // 
             // dgvWO
             // 
             this.dgvWO.AllowUserToAddRows = false;
             this.dgvWO.AllowUserToResizeRows = false;
             this.dgvWO.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvWO.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvWO.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvWO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWO.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWO.Location = new System.Drawing.Point(0, 0);
             this.dgvWO.Name = "dgvWO";
             this.dgvWO.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvWO.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvWO.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvWO.RowTemplate.Height = 23;
             this.dgvWO.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvWO.Size = new System.Drawing.Size(1358, 711);
@@ -334,7 +335,7 @@ namespace BedFactory
         private System.Windows.Forms.ComboBox cboStorage;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label12;
-        protected System.Windows.Forms.Button btnSelect;
+        protected System.Windows.Forms.Button btnSerch;
         private Controls.SearchLocationControl searchLocationControl1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;

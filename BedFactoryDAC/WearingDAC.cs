@@ -32,8 +32,10 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select Wearing_Num, W.Str_Num, S.Str_Kind, W.Mat_Num, M.Mat_Name, Mat_Cnt, W.FirstMan, W.FirstDate 
+                    cmd.CommandText = @"select Wearing_Num, C.Com_Name, W.Str_Num, S.Str_Kind, W.Mat_Num, M.Mat_Name, Mat_Cnt, W.FirstMan, W.FirstDate 
                                           from tblWearing W join tblStorages S on W.Str_Num = S.Str_Num join tblMaterials M on W.Mat_Num = M.Mat_Num
+                                               join tblBalzoo_D BD on W.Bz_D_Num = BD.Bz_D_Num join tblBalzoo B on BD.Bz_Num = B.Bz_Num
+											   join tblCompany C on B.Com_Num = C.Com_Num
                                          where W.FirstDate >= @fromDate and W.FirstDate <= @toDate";
                     cmd.Parameters.AddWithValue("@fromDate", fromDate.Date);
                     cmd.Parameters.AddWithValue("@toDate", toDate.Date);
@@ -95,9 +97,9 @@ namespace BedFactoryDAC
                                         from(
                                         select Str_Num, Mat_Num, Sum(Mat_Cnt) Mat_Cnt 
                                         from tblWearing group by Str_Num, Mat_Num
-                                        ) W left outer join tblStorages S on W.Str_Num = S.Str_Num
+                                        ) W join tblStorages S on W.Str_Num = S.Str_Num
                                         join tblMaterials M on W.Mat_Num = M.Mat_Num
-                                        join (select Str_Num, Mat_Num, sum(Ship_Cnt) Ship_Cnt 
+                                        left outer join (select Str_Num, Mat_Num, sum(Ship_Cnt) Ship_Cnt 
                                         				   from tblShipment_D group by Str_Num, Mat_Num) SD 
                                         				 on SD.Str_Num = W.Str_Num and SD.Mat_Num = W.Mat_Num
                                         order by W.Str_Num";
@@ -120,7 +122,7 @@ namespace BedFactoryDAC
         /// <param name="sNum"></param>
         /// <param name="mNum"></param>
         /// <returns></returns>
-        public List<WearingVO> StockStateSearch(int sNum, int mNum)
+        public List<WearingVO> StockStateSearch(int sNum, string mNum)
         {
             try
             {
@@ -132,6 +134,8 @@ namespace BedFactoryDAC
                                           				  join tblMaterials M on W.Mat_Num = M.Mat_Num
                                          where W.Str_Num = @Str_Num and W.Mat_Num = @Mat_Num";
 
+                    cmd.Parameters.AddWithValue("@Str_Num", sNum);
+                    cmd.Parameters.AddWithValue("@Mat_Num", mNum);
                     List<WearingVO> list = Helper.DataReaderMapToList<WearingVO>(cmd.ExecuteReader());
                     conn.Close();
                     return list;

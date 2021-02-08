@@ -16,7 +16,7 @@ namespace BedFactory.Pop_up
     {
         List<WearingVO> list;
 
-        public frmStockBackgroundCheck(int sNum, int mNum)
+        public frmStockBackgroundCheck(int sNum, string mNum)
         {
             InitializeComponent();
 
@@ -36,7 +36,7 @@ namespace BedFactory.Pop_up
                 dgvState.SetGridViewColumn("창고번호", "Str_Num");
                 dgvState.SetGridViewColumn("창고유형", "Str_Kind");
                 dgvState.SetGridViewColumn("자재명", "Mat_Name");
-                dgvState.SetGridViewColumn("자재유형", "Mat_Kind");
+                dgvState.SetGridViewColumn("자재유형", "Mat_Category");
                 dgvState.SetGridViewColumn("수량", "Mat_Cnt");
                 dgvState.SetGridViewColumn("수정일", "FirstDate");
                 dgvState.SetGridViewColumn("카테고리", "W_Category");
