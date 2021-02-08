@@ -27,7 +27,7 @@ namespace BedFactoryDAC
                     cmd.Connection = conn;
                     cmd.CommandText = @"";
 
-                    cmd.Parameters.AddWithValue();
+                    //cmd.Parameters.AddWithValue();
 
                     int iRowAffect = cmd.ExecuteNonQuery();
 

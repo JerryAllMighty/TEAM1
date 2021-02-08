@@ -41,15 +41,10 @@ namespace BedFactory
             {
                 return new DemandVO
                 {
-<<<<<<< HEAD
                     Order_Num = dgvSalesMaster.CurrentRow.Cells[1].Value.ToString(),
                     SalesMaster_Num = dgvSalesMaster.CurrentRow.Cells[0].Value.ToString(),
                     FirstMan = dgvSalesMaster.CurrentRow.Cells[9].Value.ToString(),
                     LastMan = dgvSalesMaster.CurrentRow.Cells[11].Value.ToString()
-=======
-                    //Order_Num = dgvSalesMaster[]
-
->>>>>>> d9b31351bcaf093ed4a5ca43f8af4772c4d691b9
                 }
                 ;
             }
