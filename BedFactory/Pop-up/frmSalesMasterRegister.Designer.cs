@@ -30,11 +30,9 @@ namespace BedFactory.Pop_up
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtVersion = new System.Windows.Forms.TextBox();
             this.dtpPlandate = new System.Windows.Forms.DateTimePicker();
             this.txtChosenFile = new System.Windows.Forms.TextBox();
             this.btnFileChoice = new System.Windows.Forms.Button();
-            this.lblVersion = new System.Windows.Forms.Label();
             this.lblPlanDate = new System.Windows.Forms.Label();
             this.lblChosenFile = new System.Windows.Forms.Label();
             this.lblFileChoice = new System.Windows.Forms.Label();
@@ -45,29 +43,20 @@ namespace BedFactory.Pop_up
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtVersion);
             this.panel1.Controls.Add(this.dtpPlandate);
             this.panel1.Controls.Add(this.txtChosenFile);
             this.panel1.Controls.Add(this.btnFileChoice);
-            this.panel1.Controls.Add(this.lblVersion);
             this.panel1.Controls.Add(this.lblPlanDate);
             this.panel1.Controls.Add(this.lblChosenFile);
             this.panel1.Controls.Add(this.lblFileChoice);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(383, 331);
+            this.panel1.Size = new System.Drawing.Size(362, 228);
             this.panel1.TabIndex = 0;
-            // 
-            // txtVersion
-            // 
-            this.txtVersion.Location = new System.Drawing.Point(148, 244);
-            this.txtVersion.Name = "txtVersion";
-            this.txtVersion.Size = new System.Drawing.Size(200, 25);
-            this.txtVersion.TabIndex = 15;
             // 
             // dtpPlandate
             // 
-            this.dtpPlandate.Location = new System.Drawing.Point(148, 183);
+            this.dtpPlandate.Location = new System.Drawing.Point(148, 193);
             this.dtpPlandate.Name = "dtpPlandate";
             this.dtpPlandate.Size = new System.Drawing.Size(200, 25);
             this.dtpPlandate.TabIndex = 14;
@@ -88,15 +77,6 @@ namespace BedFactory.Pop_up
             this.btnFileChoice.Text = "파일선택";
             this.btnFileChoice.UseVisualStyleBackColor = true;
             this.btnFileChoice.Click += new System.EventHandler(this.btnFileChoice_Click);
-            // 
-            // lblVersion
-            // 
-            this.lblVersion.AutoSize = true;
-            this.lblVersion.Location = new System.Drawing.Point(20, 254);
-            this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(107, 15);
-            this.lblVersion.TabIndex = 11;
-            this.lblVersion.Text = "계획 기준 버전";
             // 
             // lblPlanDate
             // 
@@ -127,7 +107,7 @@ namespace BedFactory.Pop_up
             // 
             // btnSalesMasterUpload
             // 
-            this.btnSalesMasterUpload.Location = new System.Drawing.Point(142, 349);
+            this.btnSalesMasterUpload.Location = new System.Drawing.Point(121, 246);
             this.btnSalesMasterUpload.Name = "btnSalesMasterUpload";
             this.btnSalesMasterUpload.Size = new System.Drawing.Size(150, 44);
             this.btnSalesMasterUpload.TabIndex = 1;
@@ -137,7 +117,7 @@ namespace BedFactory.Pop_up
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(298, 349);
+            this.button3.Location = new System.Drawing.Point(277, 246);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(97, 44);
             this.button3.TabIndex = 2;
@@ -150,7 +130,7 @@ namespace BedFactory.Pop_up
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(404, 450);
+            this.ClientSize = new System.Drawing.Size(387, 299);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnSalesMasterUpload);
             this.Controls.Add(this.panel1);
@@ -165,11 +145,9 @@ namespace BedFactory.Pop_up
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtVersion;
         private System.Windows.Forms.DateTimePicker dtpPlandate;
         private System.Windows.Forms.TextBox txtChosenFile;
         private System.Windows.Forms.Button btnFileChoice;
-        private System.Windows.Forms.Label lblVersion;
         private System.Windows.Forms.Label lblPlanDate;
         private System.Windows.Forms.Label lblChosenFile;
         private System.Windows.Forms.Label lblFileChoice;

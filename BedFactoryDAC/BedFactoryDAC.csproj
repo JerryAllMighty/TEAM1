@@ -59,9 +59,11 @@
     <Compile Include="LoggingUtillity.cs" />
     <Compile Include="MaterialsDAC.cs" />
     <Compile Include="ProcessDAC.cs" />
+    <Compile Include="ProductionPlanDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalesMasterDAC.cs" />
     <Compile Include="ShiftsDAC.cs" />
+    <Compile Include="ShipmentDAC.cs" />
     <Compile Include="UnitCostDAC.cs" />
     <Compile Include="WearingDAC.cs" />
     <Compile Include="WorkplaceDAC.cs" />
