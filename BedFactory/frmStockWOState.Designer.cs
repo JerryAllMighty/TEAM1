@@ -97,7 +97,7 @@ namespace BedFactory
             // 
             this.cboWOcategory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboWOcategory.FormattingEnabled = true;
-            this.cboWOcategory.Location = new System.Drawing.Point(139, 60);
+            this.cboWOcategory.Location = new System.Drawing.Point(139, 63);
             this.cboWOcategory.Name = "cboWOcategory";
             this.cboWOcategory.Size = new System.Drawing.Size(235, 25);
             this.cboWOcategory.TabIndex = 76;
@@ -114,7 +114,7 @@ namespace BedFactory
             // 
             this.cboStorage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboStorage.FormattingEnabled = true;
-            this.cboStorage.Location = new System.Drawing.Point(558, 11);
+            this.cboStorage.Location = new System.Drawing.Point(558, 14);
             this.cboStorage.Name = "cboStorage";
             this.cboStorage.Size = new System.Drawing.Size(235, 25);
             this.cboStorage.TabIndex = 73;
@@ -202,7 +202,7 @@ namespace BedFactory
             // 
             this.cboMcategory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboMcategory.FormattingEnabled = true;
-            this.cboMcategory.Location = new System.Drawing.Point(977, 60);
+            this.cboMcategory.Location = new System.Drawing.Point(977, 63);
             this.cboMcategory.Name = "cboMcategory";
             this.cboMcategory.Size = new System.Drawing.Size(235, 25);
             this.cboMcategory.TabIndex = 81;
@@ -281,7 +281,7 @@ namespace BedFactory
             // 
             this.cboCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Location = new System.Drawing.Point(558, 60);
+            this.cboCategory.Location = new System.Drawing.Point(558, 63);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(235, 25);
             this.cboCategory.TabIndex = 80;

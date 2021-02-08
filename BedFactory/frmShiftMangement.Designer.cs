@@ -247,7 +247,7 @@ namespace BedFactory
             this.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmShiftMangement";
-            this.Text = "frmShiftMangement";
+            this.Text = "Shift스케줄관리";
             this.Load += new System.EventHandler(this.frmShiftMangement_Load);
             this.pnlDgv.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);

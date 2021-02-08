@@ -1,6 +1,7 @@
 ﻿using BedFactory;
 using BedFactory.BaseForms;
 using BedFactory.Pop_up;
+using BedFactoryVO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -166,6 +167,111 @@ namespace BadFactory
                 pnSplitScreen.Size = new Size(this.Width - pnMenu2.Width, (this.Height - pnMenu1.Height) / 2);
             }
 
+            if (tabControl1.Controls.Count > 0)
+            {
+                Form f = (Form)tabControl1.SelectedTab.Controls[0];
+                f.WindowState = FormWindowState.Normal;
+                f.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            List<CommonCodeVO> list = frmCommonCode.CheckCommonInfo();
+            List<CommonCodeVO> pList = list.Where(p => p.Category == "메뉴").ToList();
+
+            pList.ForEach(p =>
+            {
+                List<CommonCodeVO> cList = list.Where(i => i.P_Code == p.Code_Num).ToList();
+                TreeNode node = new TreeNode(p.Code_Name);
+                cList.ForEach(k =>
+                {
+                    TreeNode node1 = new TreeNode(k.Code_Name);
+                    list.ForEach(j =>
+                    {
+                        if (k.Code_Name == j.Category)
+                            node1.Nodes.Add(j.Code_Name);
+                    });
+                    node.Nodes.Add(node1);
+                });
+
+                tvMenu.Nodes.Add(node);
+            });
+        }
+
+        private void tvMenu_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            bool bCheck = false;
+
+            if (tabControl1.TabPages.Count < 1)
+            {
+                Form frm = GetAssemblyForm(e.Node.Text);
+                if (frm != null)
+                {
+                    FormChildTab(frm, tabControl1);
+                }
+            }
+
+            TabControl tc = new TabControl();
+            if (!pnSplitScreen.Visible)
+            {
+                tc = tabControl1;
+            }
+            else
+            {
+                if (btnTabPut.Text.Equals("△"))
+                {
+                    tc = tabControl1;
+                }
+                else
+                {
+                    tc = (TabControl)pnNewTab.Controls["newTab"];
+                }
+            }
+
+            foreach (TabPage tab in tc.TabPages)
+            {
+                if (tab.Text.Contains(e.Node.Text))
+                {
+                    bCheck = true;
+                }
+            }
+
+            if (!bCheck)
+            {
+                Form frm = GetAssemblyForm(e.Node.Text);
+                if (frm != null)
+                {
+                    FormChildTab(frm, tc);
+                }
+            }
+        }
+
+        public static Form GetAssemblyForm(string strFormText)
+        {
+            Form f = null;
+            foreach (Type t in System.Reflection.Assembly.GetExecutingAssembly().GetTypes())
+            {
+                if (t.Name.Contains("frm"))
+                {
+                    try
+                    {
+                        object o = Activator.CreateInstance(t);
+                        f = o as Form;
+                        if (f.Text == strFormText)
+                            return f;
+                    }
+                    catch
+                    {
+
+                    }
+                }                
+            }
+            return null;
+        }
+
+        private void frmMain_SizeChanged(object sender, EventArgs e)
+        {
             if (tabControl1.Controls.Count > 0)
             {
                 Form f = (Form)tabControl1.SelectedTab.Controls[0];

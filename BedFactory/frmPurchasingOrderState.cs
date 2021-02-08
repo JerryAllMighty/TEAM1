@@ -24,7 +24,7 @@ namespace BedFactory
 
         private void frmPurchasingOrderState_Load(object sender, EventArgs e)
         {
-            dgvOrder.SetGridCheckBox("chkBalzoo");
+            dgvOrder.SetGridCheckBox("chk");
             dgvOrder.SetGridViewColumn("발주번호", "Bz_D_Num");
             dgvOrder.SetGridViewColumn("거래처명", "Com_Name");
             dgvOrder.SetGridViewColumn("자재명", "Mat_Name");

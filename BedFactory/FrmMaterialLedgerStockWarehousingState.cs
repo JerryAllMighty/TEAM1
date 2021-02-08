@@ -105,10 +105,10 @@ namespace BedFactory
                     DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk"];
                     if (Convert.ToBoolean(chk.Value) == true)
                     {
-                        if (row.Cells[6].Value != null && Convert.ToInt32(row.Cells[6].Value) > 0)
+                        if (row.Cells[7].Value != null && Convert.ToInt32(row.Cells[7].Value) > 0)
                         {
                             WearingService service = new WearingService();
-                            service.WarehousingCancel(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(row.Cells[6].Value));
+                            service.WarehousingCancel(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(row.Cells[7].Value));
 
                             bChange = true;
                         }
@@ -148,12 +148,12 @@ namespace BedFactory
         {
             if (char.IsNumber(e.KeyChar))
             {
-                if (dgvState[6, dgvState.SelectedRows[0].Index].Value == null)
-                    dgvState[6, dgvState.SelectedRows[0].Index].Value = 0;
+                if (dgvState[7, dgvState.SelectedRows[0].Index].Value == null)
+                    dgvState[7, dgvState.SelectedRows[0].Index].Value = 0;
                 
-                if(Convert.ToInt32(dgvState[6, dgvState.SelectedRows[0].Index].Value.ToString() + e.KeyChar) <= Convert.ToInt32(dgvState[5, dgvState.SelectedRows[0].Index].Value))
+                if(Convert.ToInt32(dgvState[7, dgvState.SelectedRows[0].Index].Value.ToString() + e.KeyChar) <= Convert.ToInt32(dgvState[6, dgvState.SelectedRows[0].Index].Value))
                 {
-                    dgvState[6, dgvState.SelectedRows[0].Index].Value = int.Parse(dgvState[6, dgvState.SelectedRows[0].Index].Value.ToString() + e.KeyChar);
+                    dgvState[7, dgvState.SelectedRows[0].Index].Value = int.Parse(dgvState[7, dgvState.SelectedRows[0].Index].Value.ToString() + e.KeyChar);
                 }                
             }
 
