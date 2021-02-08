@@ -16,39 +16,14 @@ namespace BadFactory
 {
     public partial class frmMain : Form
     {
-        private static int i = 0;
-
         public frmMain()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (!pnSplitScreen.Visible)
-            {
-                frmShift frm = new frmShift();
-                FormChildTab(frm, tabControl1);
-            }
-            else
-            {
-                if (btnTabPut.Text.Equals("△"))
-                {
-                    frmShift frm1 = new frmShift();
-                    FormChildTab(frm1, tabControl1);
-                    return;
-                }
-
-                TabControl tc = (TabControl)pnNewTab.Controls["newTab"];
-                frmShift frm = new frmShift();
-                FormChildTab(frm, tc);
-            }
-        }
-
         public void FormChildTab(Form f, TabControl tc)
         {
-            TabPage tp = new TabPage(f.Text + i + "      ");
-            i++;
+            TabPage tp = new TabPage(f.Text + "      ");
             tp.Parent = tc;
             tp.Tag = f;
 
