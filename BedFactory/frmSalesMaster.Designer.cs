@@ -29,20 +29,18 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
-            this.txtSubject_Name = new System.Windows.Forms.TextBox();
             this.lblCustomerDeadline = new System.Windows.Forms.Label();
-            this.lblSubject_Name = new System.Windows.Forms.Label();
             this.dtpDeadline = new System.Windows.Forms.DateTimePicker();
             this.txtOrder_Num = new System.Windows.Forms.TextBox();
             this.lblCompany = new System.Windows.Forms.Label();
             this.lblOrder_Num = new System.Windows.Forms.Label();
-            this.btnSelect = new System.Windows.Forms.Button();
             this.cboCompany = new System.Windows.Forms.ComboBox();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.cboStatus = new System.Windows.Forms.ComboBox();
+            this.btnSelect = new System.Windows.Forms.Button();
+            this.lblSubject_Name = new System.Windows.Forms.Label();
+            this.txtSubject_Name = new System.Windows.Forms.TextBox();
             this.lblUploadDate = new System.Windows.Forms.Label();
             this.dtpUploadDate = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
@@ -112,19 +110,17 @@ namespace BedFactory
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.36364F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.81818F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.363636F));
-            this.searchLocationControl1.Controls.Add(this.txtSubject_Name, 4, 1);
             this.searchLocationControl1.Controls.Add(this.lblCustomerDeadline, 0, 0);
-            this.searchLocationControl1.Controls.Add(this.lblSubject_Name, 3, 1);
             this.searchLocationControl1.Controls.Add(this.dtpDeadline, 1, 0);
             this.searchLocationControl1.Controls.Add(this.txtOrder_Num, 7, 0);
             this.searchLocationControl1.Controls.Add(this.lblCompany, 3, 0);
             this.searchLocationControl1.Controls.Add(this.lblOrder_Num, 6, 0);
             this.searchLocationControl1.Controls.Add(this.cboCompany, 4, 0);
-            this.searchLocationControl1.Controls.Add(this.lblStatus, 0, 1);
-            this.searchLocationControl1.Controls.Add(this.cboStatus, 1, 1);
             this.searchLocationControl1.Controls.Add(this.btnSelect, 9, 1);
-            this.searchLocationControl1.Controls.Add(this.lblUploadDate, 6, 1);
-            this.searchLocationControl1.Controls.Add(this.dtpUploadDate, 7, 1);
+            this.searchLocationControl1.Controls.Add(this.lblSubject_Name, 0, 1);
+            this.searchLocationControl1.Controls.Add(this.txtSubject_Name, 1, 1);
+            this.searchLocationControl1.Controls.Add(this.lblUploadDate, 3, 1);
+            this.searchLocationControl1.Controls.Add(this.dtpUploadDate, 4, 1);
             this.searchLocationControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchLocationControl1.Location = new System.Drawing.Point(0, 0);
             this.searchLocationControl1.Name = "searchLocationControl1";
@@ -135,14 +131,6 @@ namespace BedFactory
             this.searchLocationControl1.Size = new System.Drawing.Size(1356, 98);
             this.searchLocationControl1.TabIndex = 0;
             // 
-            // txtSubject_Name
-            // 
-            this.txtSubject_Name.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtSubject_Name.Location = new System.Drawing.Point(507, 58);
-            this.txtSubject_Name.Name = "txtSubject_Name";
-            this.txtSubject_Name.Size = new System.Drawing.Size(212, 30);
-            this.txtSubject_Name.TabIndex = 44;
-            // 
             // lblCustomerDeadline
             // 
             this.lblCustomerDeadline.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -152,16 +140,6 @@ namespace BedFactory
             this.lblCustomerDeadline.Size = new System.Drawing.Size(101, 23);
             this.lblCustomerDeadline.TabIndex = 29;
             this.lblCustomerDeadline.Text = "고객 납기일";
-            // 
-            // lblSubject_Name
-            // 
-            this.lblSubject_Name.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSubject_Name.AutoSize = true;
-            this.lblSubject_Name.Location = new System.Drawing.Point(408, 62);
-            this.lblSubject_Name.Name = "lblSubject_Name";
-            this.lblSubject_Name.Size = new System.Drawing.Size(67, 23);
-            this.lblSubject_Name.TabIndex = 43;
-            this.lblSubject_Name.Text = "품목 명";
             // 
             // dtpDeadline
             // 
@@ -199,6 +177,16 @@ namespace BedFactory
             this.lblOrder_Num.TabIndex = 33;
             this.lblOrder_Num.Text = "주문번호";
             // 
+            // cboCompany
+            // 
+            this.cboCompany.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboCompany.FormattingEnabled = true;
+            this.cboCompany.Location = new System.Drawing.Point(507, 13);
+            this.cboCompany.Name = "cboCompany";
+            this.cboCompany.Size = new System.Drawing.Size(212, 31);
+            this.cboCompany.TabIndex = 49;
+            this.cboCompany.Enter += new System.EventHandler(this.cboCompany_Enter);
+            // 
             // btnSelect
             // 
             this.btnSelect.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -211,40 +199,29 @@ namespace BedFactory
             this.btnSelect.UseVisualStyleBackColor = false;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
-            // cboCompany
+            // lblSubject_Name
             // 
-            this.cboCompany.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(507, 9);
-            this.cboCompany.Name = "cboCompany";
-            this.cboCompany.Size = new System.Drawing.Size(212, 31);
-            this.cboCompany.TabIndex = 49;
-            this.cboCompany.Enter += new System.EventHandler(this.cboCompany_Enter);
+            this.lblSubject_Name.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSubject_Name.AutoSize = true;
+            this.lblSubject_Name.Location = new System.Drawing.Point(28, 62);
+            this.lblSubject_Name.Name = "lblSubject_Name";
+            this.lblSubject_Name.Size = new System.Drawing.Size(67, 23);
+            this.lblSubject_Name.TabIndex = 43;
+            this.lblSubject_Name.Text = "품목 명";
             // 
-            // lblStatus
+            // txtSubject_Name
             // 
-            this.lblStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(39, 62);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(44, 23);
-            this.lblStatus.TabIndex = 50;
-            this.lblStatus.Text = "상태";
-            // 
-            // cboStatus
-            // 
-            this.cboStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboStatus.FormattingEnabled = true;
-            this.cboStatus.Location = new System.Drawing.Point(127, 58);
-            this.cboStatus.Name = "cboStatus";
-            this.cboStatus.Size = new System.Drawing.Size(212, 31);
-            this.cboStatus.TabIndex = 51;
+            this.txtSubject_Name.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtSubject_Name.Location = new System.Drawing.Point(127, 58);
+            this.txtSubject_Name.Name = "txtSubject_Name";
+            this.txtSubject_Name.Size = new System.Drawing.Size(212, 30);
+            this.txtSubject_Name.TabIndex = 44;
             // 
             // lblUploadDate
             // 
             this.lblUploadDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUploadDate.AutoSize = true;
-            this.lblUploadDate.Location = new System.Drawing.Point(791, 62);
+            this.lblUploadDate.Location = new System.Drawing.Point(411, 62);
             this.lblUploadDate.Name = "lblUploadDate";
             this.lblUploadDate.Size = new System.Drawing.Size(61, 23);
             this.lblUploadDate.TabIndex = 32;
@@ -253,7 +230,7 @@ namespace BedFactory
             // dtpUploadDate
             // 
             this.dtpUploadDate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtpUploadDate.Location = new System.Drawing.Point(887, 58);
+            this.dtpUploadDate.Location = new System.Drawing.Point(507, 58);
             this.dtpUploadDate.Name = "dtpUploadDate";
             this.dtpUploadDate.Size = new System.Drawing.Size(212, 30);
             this.dtpUploadDate.TabIndex = 42;
@@ -272,16 +249,16 @@ namespace BedFactory
             this.dgvSalesMaster.AllowUserToAddRows = false;
             this.dgvSalesMaster.AllowUserToResizeRows = false;
             this.dgvSalesMaster.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvSalesMaster.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvSalesMaster.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSalesMaster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSalesMaster.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSalesMaster.Location = new System.Drawing.Point(0, 0);
             this.dgvSalesMaster.Name = "dgvSalesMaster";
             this.dgvSalesMaster.RowHeadersVisible = false;
             this.dgvSalesMaster.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvSalesMaster.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvSalesMaster.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSalesMaster.RowTemplate.Height = 27;
             this.dgvSalesMaster.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSalesMaster.Size = new System.Drawing.Size(1358, 660);
@@ -319,7 +296,5 @@ namespace BedFactory
         private System.Windows.Forms.Button btnSelect;
         private DatagridviewControl dgvSalesMaster;
         private System.Windows.Forms.ComboBox cboCompany;
-        private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.ComboBox cboStatus;
     }
 }

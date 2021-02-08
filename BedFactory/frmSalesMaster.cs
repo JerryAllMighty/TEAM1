@@ -15,7 +15,7 @@ namespace BedFactory
     public partial class frmSalesMaster : BedFactory.BaseForms.BaseForm2
     {
         /// <summary>
-        /// 처음 영업마스터에 대한 정보를 가져올 때는 날짜만을 기준으로 필터링 후 가져온다, 이후 린큐로 추가 필터링 후 바인딩 예정
+        /// 영업마스터를 조회할 때 정보를 한 번에 넘겨주기 위한 프로퍼티
         /// </summary>
         public SalesMasterVO salesmasterinfo
         {
@@ -23,20 +23,33 @@ namespace BedFactory
             {
                 return new SalesMasterVO
                 {
-                    Deadline = Convert.ToDateTime(dtpDeadline.Value.ToShortDateString()),
-                    UploadDate = Convert.ToDateTime(dtpUploadDate.Value.ToShortDateString())
+                    Deadline = dtpDeadline.Value.ToString("yyyy-MM-dd"),
+                    UploadDate = dtpUploadDate.Value.ToString("yyyy-MM-dd"),
+                    Order_Num = txtOrder_Num.Text,
+                    Com_Name = cboCompany.Text,
+                    Mat_Name = txtSubject_Name.Text
                 };
             }
         }
 
+        /// <summary>
+        /// 수요 계획을 생성할 때 정보를 넘겨주기 위한 프로퍼티
+        /// </summary>
         public DemandVO demandinfo
         {
             get
             {
                 return new DemandVO
                 {
+<<<<<<< HEAD
+                    Order_Num = dgvSalesMaster.CurrentRow.Cells[1].Value.ToString(),
+                    SalesMaster_Num = dgvSalesMaster.CurrentRow.Cells[0].Value.ToString(),
+                    FirstMan = dgvSalesMaster.CurrentRow.Cells[9].Value.ToString(),
+                    LastMan = dgvSalesMaster.CurrentRow.Cells[11].Value.ToString()
+=======
                     //Order_Num = dgvSalesMaster[]
 
+>>>>>>> d9b31351bcaf093ed4a5ca43f8af4772c4d691b9
                 }
                 ;
             }
@@ -45,6 +58,28 @@ namespace BedFactory
         public frmSalesMaster()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// 데이터 그리드 뷰 컬럼 세팅
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void frmSalesMaster_Load(object sender, EventArgs e)
+        {
+            dgvSalesMaster.SetGridViewColumn("영업마스터 번호", "SalesMaster_Num");
+            dgvSalesMaster.SetGridViewColumn("주문 번호", "Order_Num");
+            dgvSalesMaster.SetGridViewColumn("업체 번호", "Com_Num");
+            dgvSalesMaster.SetGridViewColumn("업체 명", "Com_Name");
+            dgvSalesMaster.SetGridViewColumn("품목 번호", "Mat_Num");
+            dgvSalesMaster.SetGridViewColumn("품목명", "Mat_Name");
+            dgvSalesMaster.SetGridViewColumn("수량", "Product_Cnt");
+            dgvSalesMaster.SetGridViewColumn("납기일", "Deadline");
+            dgvSalesMaster.SetGridViewColumn("업로드 날짜", "UploadDate");
+            dgvSalesMaster.SetGridViewColumn("최초 등록자", "Firstman");
+            dgvSalesMaster.SetGridViewColumn("최초 등록일", "FirstDate");
+            dgvSalesMaster.SetGridViewColumn("최종 등록자", "Lastman");
+            dgvSalesMaster.SetGridViewColumn("최종 등록일", "LastDate");
         }
 
         /// <summary>
@@ -68,9 +103,10 @@ namespace BedFactory
             List<CompanyVO> companyList = service.GetEveryCompanyName();
             if (companyList != null)
             {
+
+                //companyList.Insert(0, new CompanyVO {Com_Num = 0, Com_Name = "" });
                 companyList.ForEach(p => cboCompany.ValueMember = p.Com_Num.ToString());
                 companyList.ForEach(p => cboCompany.DisplayMember = p.Com_Name.ToString());
-                cboCompany.SelectedIndex = 0;
             }
         }
 
@@ -84,16 +120,6 @@ namespace BedFactory
 
         }
 
-        ///// <summary>
-        ///// 영업마스터 로드
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //private void btn4_Click_1(object sender, EventArgs e)
-        //{
-        //    SalesMasterService service = new SalesMasterService();
-        //    service.GetSalesMaster();
-        //}
 
         /// <summary>
         /// 수요계획 생성
@@ -103,7 +129,14 @@ namespace BedFactory
         private void btn3_Click_1(object sender, EventArgs e)
         {
             DemandPlanService service = new DemandPlanService();
-            service.InsertDemandPlan(demandinfo);
+            if (service.InsertDemandPlan(demandinfo))
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.InsertSuccess);
+            }
+            else
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.InsertFail);
+            }
 
         }
 
@@ -130,40 +163,10 @@ namespace BedFactory
             List<SalesMasterVO> list = service.GetSalesMaster(salesmasterinfo);
             if (list != null)
             {
-                
-                var SelectList = (from item in list
-                 where item.Order_Num == Convert.ToInt32(txtOrder_Num.Text) && item.Com_Num == Convert.ToInt32(cboCompany.SelectedValue)
-                       && item.Mat_Name == txtSubject_Name.Text
-                 select item).ToList();
-
-                dgvSalesMaster.DataSource = SelectList;
+                dgvSalesMaster.DataSource = list;
             }
         }
 
-        /// <summary>
-        /// 데이터 그리드 뷰 컬럼 세팅
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void frmSalesMaster_Load(object sender, EventArgs e)
-        {
-            dgvSalesMaster.SetGridViewColumn("주문 번호", "Order_Num");
-            dgvSalesMaster.SetGridViewColumn("업체 번호", "Com_Num");
-            dgvSalesMaster.SetGridViewColumn("품목명", "Mat_Name");
-            dgvSalesMaster.SetGridViewColumn("총 수량", "TotalCnt");
-            dgvSalesMaster.SetGridViewColumn("출고 수량", "Ship_Cnt");
-            dgvSalesMaster.SetGridViewColumn("납기일", "Deadline");
-            dgvSalesMaster.SetGridViewColumn("업로드 날짜", "UploadDate");
-            dgvSalesMaster.SetGridViewColumn("최초 등록자", "Firstman");
-            dgvSalesMaster.SetGridViewColumn("최초 등록일", "FirstDate");
-            dgvSalesMaster.SetGridViewColumn("최종 등록자", "Lastman");
-            dgvSalesMaster.SetGridViewColumn("최종 등록일", "LastDate");
-        }
 
-        //Order_Num = Convert.ToInt32(txtOrder_Num.Text),
-        //            Com_Num = Convert.ToInt32(cboCompany.Text),
-        //            Mat_Name = txtSubject_Name.Text,
-        //            Deadline = Convert.ToDateTime(dtpDeadline.Value.ToString()),
-        //            UploadDate = Convert.ToDateTime(dtpUploadDate.Value.ToShortDateString())
     }
 }
