@@ -32,8 +32,9 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select BD.Bz_Num, Bz_D_Num, Com_Name, M.Mat_Name, Bz_Cnt, Bz_D_Status, ExpectedDate
+                    cmd.CommandText = @"select BD.Bz_Num, Bz_D_Num, C.Com_Name, M.Mat_Name, Bz_Cnt, Bz_D_Status, ExpectedDate
                                           from tblBalzoo_D BD join tblBalzoo B on BD.Bz_Num = B.Bz_Num join tblMaterials M on BD.Mat_Num = M.Mat_Num
+                                                join tblCompany C on B.Com_Num = C.Com_Num
                                          where Bz_IsCancel = 'N' and ExpectedDate >= @fromDate and ExpectedDate <= @toDate";
                     cmd.Parameters.AddWithValue("@fromDate", fromDate.Date);
                     cmd.Parameters.AddWithValue("@toDate", toDate.Date);
@@ -57,8 +58,9 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select BD.Bz_Num, Bz_D_Num, Com_Name, M.Mat_Name, Bz_Cnt, Bz_D_Status, ExpectedDate
+                    cmd.CommandText = @"select BD.Bz_Num, Bz_D_Num, C.Com_Name, M.Mat_Name, Bz_Cnt, Bz_D_Status, ExpectedDate
                                           from tblBalzoo_D BD join tblBalzoo B on BD.Bz_Num = B.Bz_Num join tblMaterials M on BD.Mat_Num = M.Mat_Num
+                                                join tblCompany C on B.Com_Num = C.Com_Num
                                          where Bz_IsCancel = 'N' and ExpectedDate >= @fromDate and ExpectedDate <= @toDate and Bz_D_Status = 'N'";
                     cmd.Parameters.AddWithValue("@fromDate", fromDate.Date);
                     cmd.Parameters.AddWithValue("@toDate", toDate.Date);

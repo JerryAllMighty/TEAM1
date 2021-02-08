@@ -41,6 +41,7 @@ namespace BedFactory
             dgvState.Controls.Add(headerCheck);
 
             dtpTo.MinDate = dtpFrom.Value.AddDays(-7);
+            dtpFrom.Value = DateTime.Now.AddDays(-7);
         }
 
         private void HeaderCheck_Click(object sender, EventArgs e)
@@ -107,6 +108,7 @@ namespace BedFactory
                     if (Convert.ToBoolean(dgvState[0, i].Value))
                     {
                         bCheck = true;
+                        dgvState.EndEdit();
                         break;
                     }
                 }

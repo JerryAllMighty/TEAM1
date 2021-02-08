@@ -80,7 +80,7 @@ namespace BedFactory
             // 
             this.cboCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Location = new System.Drawing.Point(977, 18);
+            this.cboCategory.Location = new System.Drawing.Point(977, 21);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(235, 25);
             this.cboCategory.TabIndex = 67;
@@ -109,7 +109,7 @@ namespace BedFactory
             // 
             this.cboStorage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboStorage.FormattingEnabled = true;
-            this.cboStorage.Location = new System.Drawing.Point(139, 18);
+            this.cboStorage.Location = new System.Drawing.Point(139, 21);
             this.cboStorage.Name = "cboStorage";
             this.cboStorage.Size = new System.Drawing.Size(235, 25);
             this.cboStorage.TabIndex = 63;

@@ -39,7 +39,7 @@ namespace BedFactory.Controls
                 base.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 3));
                 base.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10));
                 base.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18));
-                base.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13));
+                base.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 3));
                 base.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 7));
                 
                 //Button btn = new Button();

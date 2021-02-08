@@ -29,10 +29,10 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -50,15 +50,15 @@ namespace BedFactory
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dgvCheck = new BedFactory.DatagridviewControl();
             this.dgvWait = new BedFactory.DatagridviewControl();
+            this.dgvCheck = new BedFactory.DatagridviewControl();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.searchLocationControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWait)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCheck)).BeginInit();
             this.SuspendLayout();
             // 
             // btn2
@@ -108,7 +108,7 @@ namespace BedFactory
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(558, 12);
+            this.comboBox2.Location = new System.Drawing.Point(558, 14);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(235, 25);
             this.comboBox2.TabIndex = 72;
@@ -145,7 +145,7 @@ namespace BedFactory
             // 
             this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(139, 61);
+            this.comboBox3.Location = new System.Drawing.Point(139, 63);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(235, 25);
             this.comboBox3.TabIndex = 60;
@@ -264,6 +264,7 @@ namespace BedFactory
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(113, 25);
             this.dtpTo.TabIndex = 71;
+            this.dtpTo.ValueChanged += new System.EventHandler(this.dtpFrom_ValueChanged);
             // 
             // dtpFrom
             // 
@@ -297,45 +298,47 @@ namespace BedFactory
             this.panel2.Size = new System.Drawing.Size(1358, 288);
             this.panel2.TabIndex = 68;
             // 
-            // dgvCheck
-            // 
-            this.dgvCheck.AllowUserToAddRows = false;
-            this.dgvCheck.AllowUserToResizeRows = false;
-            this.dgvCheck.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvCheck.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            this.dgvCheck.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCheck.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCheck.Location = new System.Drawing.Point(0, 0);
-            this.dgvCheck.Name = "dgvCheck";
-            this.dgvCheck.RowHeadersVisible = false;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvCheck.RowsDefaultCellStyle = dataGridViewCellStyle14;
-            this.dgvCheck.RowTemplate.Height = 23;
-            this.dgvCheck.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCheck.Size = new System.Drawing.Size(1358, 343);
-            this.dgvCheck.TabIndex = 0;
-            this.dgvCheck.CurrentCellDirtyStateChanged += new System.EventHandler(this.CurrentCellDirtyStateChanged);
-            // 
             // dgvWait
             // 
             this.dgvWait.AllowUserToAddRows = false;
             this.dgvWait.AllowUserToResizeRows = false;
             this.dgvWait.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvWait.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvWait.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvWait.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWait.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWait.Location = new System.Drawing.Point(0, 0);
             this.dgvWait.Name = "dgvWait";
             this.dgvWait.RowHeadersVisible = false;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvWait.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvWait.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvWait.RowTemplate.Height = 23;
             this.dgvWait.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvWait.Size = new System.Drawing.Size(1358, 288);
             this.dgvWait.TabIndex = 0;
+            this.dgvWait.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWait_CellContentClick);
             this.dgvWait.CurrentCellDirtyStateChanged += new System.EventHandler(this.CurrentCellDirtyStateChanged);
+            // 
+            // dgvCheck
+            // 
+            this.dgvCheck.AllowUserToAddRows = false;
+            this.dgvCheck.AllowUserToResizeRows = false;
+            this.dgvCheck.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvCheck.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCheck.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCheck.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCheck.Location = new System.Drawing.Point(0, 0);
+            this.dgvCheck.Name = "dgvCheck";
+            this.dgvCheck.RowHeadersVisible = false;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvCheck.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCheck.RowTemplate.Height = 23;
+            this.dgvCheck.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCheck.Size = new System.Drawing.Size(1358, 343);
+            this.dgvCheck.TabIndex = 0;
+            this.dgvCheck.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCheck_CellContentClick);
+            this.dgvCheck.CurrentCellDirtyStateChanged += new System.EventHandler(this.CurrentCellDirtyStateChanged);
             // 
             // frmSupplierWarehousingWait
             // 
@@ -371,8 +374,8 @@ namespace BedFactory
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCheck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWait)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCheck)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

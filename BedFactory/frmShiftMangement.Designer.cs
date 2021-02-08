@@ -31,164 +31,105 @@ namespace BedFactory
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.cboWork = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.dgvShift = new BedFactory.DatagridviewControl();
             this.btnChange = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
-            this.btnSelect = new System.Windows.Forms.Button();
-            this.dgvShift = new BedFactory.DatagridviewControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pnlDgv.SuspendLayout();
+            this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShift)).BeginInit();
+            this.searchLocationControl1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnChange
+            // btn2
             // 
-            this.btnChange.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnChange.Location = new System.Drawing.Point(1033, 99);
-            this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(48, 23);
-            this.btnChange.TabIndex = 26;
-            this.btnChange.Text = "수정";
-            this.btnChange.UseVisualStyleBackColor = false;
-            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
+            this.btn2.Location = new System.Drawing.Point(997, 99);
+            this.btn2.Visible = false;
             // 
-            // button3
+            // btn3
             // 
-            this.button3.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(1087, 99);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(48, 23);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "엑셀";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn3.Location = new System.Drawing.Point(1174, 99);
+            this.btn3.Text = "수정";
+            this.btn3.Click += new System.EventHandler(this.btnChange_Click);
             // 
-            // label4
+            // btn5
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 105);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 17);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "일별조회";
+            this.btn5.Location = new System.Drawing.Point(1245, 99);
+            this.btn5.Text = "엑셀 내보내기";
             // 
-            // panel2
+            // label1
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.dgvShift);
-            this.panel2.Location = new System.Drawing.Point(12, 128);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1123, 463);
-            this.panel2.TabIndex = 19;
+            this.label1.Size = new System.Drawing.Size(69, 20);
+            this.label1.Text = "일별조회";
             // 
-            // panel1
+            // btn1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.dtpTo);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.dtpFrom);
-            this.panel1.Controls.Add(this.btnSelect);
-            this.panel1.Location = new System.Drawing.Point(12, 13);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1123, 67);
-            this.panel1.TabIndex = 18;
+            this.btn1.Location = new System.Drawing.Point(926, 99);
+            this.btn1.Visible = false;
             // 
-            // label5
+            // pnlDgv
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(228, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(17, 17);
-            this.label5.TabIndex = 32;
-            this.label5.Text = "~";
+            this.pnlDgv.Controls.Add(this.dgvShift);
+            this.pnlDgv.Controls.Add(this.btnChange);
+            this.pnlDgv.Controls.Add(this.button3);
             // 
-            // dtpTo
+            // btn4
             // 
-            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTo.Location = new System.Drawing.Point(251, 19);
-            this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(116, 25);
-            this.dtpTo.TabIndex = 31;
-            this.dtpTo.ValueChanged += new System.EventHandler(this.dtpFrom_ValueChanged);
+            this.btn4.Location = new System.Drawing.Point(1068, 99);
+            this.btn4.Visible = false;
             // 
-            // comboBox2
+            // pnlSelect
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(463, 22);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(182, 25);
-            this.comboBox2.TabIndex = 30;
+            this.pnlSelect.Controls.Add(this.searchLocationControl1);
             // 
-            // comboBox1
+            // cboWork
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(750, 22);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(182, 25);
-            this.comboBox1.TabIndex = 29;
+            this.cboWork.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboWork.FormattingEnabled = true;
+            this.cboWork.Location = new System.Drawing.Point(558, 18);
+            this.cboWork.Name = "cboWork";
+            this.cboWork.Size = new System.Drawing.Size(235, 25);
+            this.cboWork.TabIndex = 42;
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(683, 25);
+            this.label3.Location = new System.Drawing.Point(469, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 17);
-            this.label3.TabIndex = 28;
+            this.label3.TabIndex = 41;
             this.label3.Text = "설비";
             // 
-            // label2
+            // btnSearch
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(406, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 17);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Shift";
-            // 
-            // dtpFrom
-            // 
-            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFrom.Location = new System.Drawing.Point(106, 19);
-            this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(116, 25);
-            this.dtpFrom.TabIndex = 25;
-            this.dtpFrom.ValueChanged += new System.EventHandler(this.dtpFrom_ValueChanged);
-            // 
-            // btnSelect
-            // 
-            this.btnSelect.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSelect.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSelect.Location = new System.Drawing.Point(993, 16);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(114, 35);
-            this.btnSelect.TabIndex = 23;
-            this.btnSelect.Text = "조회";
-            this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSearch.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSearch.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearch.Location = new System.Drawing.Point(1271, 16);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(70, 30);
+            this.btnSearch.TabIndex = 35;
+            this.btnSearch.Text = "조회";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dgvShift
             // 
             this.dgvShift.AllowUserToAddRows = false;
             this.dgvShift.AllowUserToResizeRows = false;
             this.dgvShift.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvShift.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvShift.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvShift.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -199,59 +140,139 @@ namespace BedFactory
             this.dgvShift.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvShift.RowTemplate.Height = 23;
             this.dgvShift.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvShift.Size = new System.Drawing.Size(1123, 463);
-            this.dgvShift.TabIndex = 0;
+            this.dgvShift.Size = new System.Drawing.Size(1358, 711);
+            this.dgvShift.TabIndex = 33;
             // 
-            // label1
+            // btnChange
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 17);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "적용일자";
+            this.btnChange.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnChange.Location = new System.Drawing.Point(1033, 99);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(48, 23);
+            this.btnChange.TabIndex = 40;
+            this.btnChange.Text = "수정";
+            this.btnChange.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Location = new System.Drawing.Point(1087, 99);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(48, 23);
+            this.button3.TabIndex = 36;
+            this.button3.Text = "엑셀";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // searchLocationControl1
+            // 
+            this.searchLocationControl1.ColumnCount = 10;
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
+            this.searchLocationControl1.Controls.Add(this.panel2, 1, 0);
+            this.searchLocationControl1.Controls.Add(this.label2, 0, 0);
+            this.searchLocationControl1.Controls.Add(this.btnSearch, 9, 0);
+            this.searchLocationControl1.Controls.Add(this.label3, 3, 0);
+            this.searchLocationControl1.Controls.Add(this.cboWork, 4, 0);
+            this.searchLocationControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchLocationControl1.Location = new System.Drawing.Point(0, 0);
+            this.searchLocationControl1.Name = "searchLocationControl1";
+            this.searchLocationControl1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.searchLocationControl1.Size = new System.Drawing.Size(1356, 63);
+            this.searchLocationControl1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.Controls.Add(this.dtpTo);
+            this.panel2.Controls.Add(this.dtpFrom);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Location = new System.Drawing.Point(139, 18);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(235, 26);
+            this.panel2.TabIndex = 80;
+            // 
+            // dtpTo
+            // 
+            this.dtpTo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpTo.Location = new System.Drawing.Point(122, 0);
+            this.dtpTo.Name = "dtpTo";
+            this.dtpTo.Size = new System.Drawing.Size(113, 25);
+            this.dtpTo.TabIndex = 71;
+            // 
+            // dtpFrom
+            // 
+            this.dtpFrom.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFrom.Location = new System.Drawing.Point(0, 0);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.Size = new System.Drawing.Size(113, 25);
+            this.dtpFrom.TabIndex = 70;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(109, 3);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(17, 17);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "~";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(37, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 17);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "적용일자";
             // 
             // frmShiftMangement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1147, 604);
-            this.Controls.Add(this.btnChange);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1384, 861);
             this.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmShiftMangement";
             this.Text = "frmShiftMangement";
             this.Load += new System.EventHandler(this.frmShiftMangement_Load);
-            this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlDgv.ResumeLayout(false);
+            this.pnlSelect.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvShift)).EndInit();
+            this.searchLocationControl1.ResumeLayout(false);
+            this.searchLocationControl1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
+        protected System.Windows.Forms.Button btnSearch;
+        private DatagridviewControl dgvShift;
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dtpTo;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label3;
+        private Controls.SearchLocationControl searchLocationControl1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboWork;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DateTimePicker dtpTo;
         private System.Windows.Forms.DateTimePicker dtpFrom;
-        protected System.Windows.Forms.Button btnSelect;
-        private DatagridviewControl dgvShift;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label7;
     }
 }

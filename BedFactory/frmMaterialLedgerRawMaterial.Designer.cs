@@ -87,6 +87,7 @@ namespace BedFactory
             // btn4
             // 
             this.btn4.Location = new System.Drawing.Point(1057, 134);
+            this.btn4.Text = "창고선택";
             // 
             // pnlSelect
             // 
@@ -97,7 +98,7 @@ namespace BedFactory
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(558, 14);
+            this.comboBox1.Location = new System.Drawing.Point(558, 11);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(235, 25);
             this.comboBox1.TabIndex = 80;
@@ -195,6 +196,7 @@ namespace BedFactory
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(113, 25);
             this.dtpTo.TabIndex = 71;
+            this.dtpTo.ValueChanged += new System.EventHandler(this.dtpFrom_ValueChanged);
             // 
             // dtpFrom
             // 
@@ -204,6 +206,7 @@ namespace BedFactory
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(113, 25);
             this.dtpFrom.TabIndex = 70;
+            this.dtpFrom.ValueChanged += new System.EventHandler(this.dtpFrom_ValueChanged);
             // 
             // label7
             // 
@@ -248,7 +251,7 @@ namespace BedFactory
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(558, 63);
+            this.comboBox2.Location = new System.Drawing.Point(558, 60);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(235, 25);
             this.comboBox2.TabIndex = 82;
@@ -257,7 +260,7 @@ namespace BedFactory
             // 
             this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(977, 14);
+            this.comboBox3.Location = new System.Drawing.Point(977, 11);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(235, 25);
             this.comboBox3.TabIndex = 83;

@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboCompany = new System.Windows.Forms.ComboBox();
             this.txtOrderNum = new System.Windows.Forms.TextBox();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
@@ -65,11 +65,13 @@ namespace BedFactory
             this.btn3.Location = new System.Drawing.Point(1141, 134);
             this.btn3.Size = new System.Drawing.Size(100, 25);
             this.btn3.Text = "발주취소";
+            this.btn3.Click += new System.EventHandler(this.btn3_Click_1);
             // 
             // btn5
             // 
             this.btn5.Location = new System.Drawing.Point(904, 134);
             this.btn5.Text = "납기일자변경";
+            this.btn5.Click += new System.EventHandler(this.btn5_Click_1);
             // 
             // label1
             // 
@@ -102,7 +104,7 @@ namespace BedFactory
             // 
             this.cboCompany.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(558, 11);
+            this.cboCompany.Location = new System.Drawing.Point(558, 14);
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(235, 25);
             this.cboCompany.TabIndex = 73;
@@ -177,7 +179,7 @@ namespace BedFactory
             // 
             this.cboState.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboState.FormattingEnabled = true;
-            this.cboState.Location = new System.Drawing.Point(139, 60);
+            this.cboState.Location = new System.Drawing.Point(139, 63);
             this.cboState.Name = "cboState";
             this.cboState.Size = new System.Drawing.Size(235, 25);
             this.cboState.TabIndex = 65;
@@ -273,15 +275,15 @@ namespace BedFactory
             this.dgvOrder.AllowUserToAddRows = false;
             this.dgvOrder.AllowUserToResizeRows = false;
             this.dgvOrder.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvOrder.Location = new System.Drawing.Point(0, 0);
             this.dgvOrder.Name = "dgvOrder";
             this.dgvOrder.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvOrder.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvOrder.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvOrder.RowTemplate.Height = 23;
             this.dgvOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrder.Size = new System.Drawing.Size(1358, 684);

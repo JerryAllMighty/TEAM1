@@ -1,5 +1,6 @@
 ﻿using BedFactory.BaseForms;
 using BedFactoryService;
+using BedFactoryVO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,9 @@ namespace BedFactory
     {
         CheckBox headerCheck = new CheckBox();
         CheckBox headerCheckz = new CheckBox();
+
+        List<BalzooVO> list;
+        List<BalzooVO> copy = new List<BalzooVO>();
 
         public frmSupplierWarehousingWait()
         {
@@ -55,6 +59,7 @@ namespace BedFactory
             dgvWait.Controls.Add(headerCheckz);
 
             dtpTo.MinDate = dtpFrom.Value.AddDays(-7);
+            dtpTo.Value = DateTime.Now.AddDays(7);
         }
 
         private void HeaderCheck_Click(object sender, EventArgs e)
@@ -66,7 +71,7 @@ namespace BedFactory
 
                 foreach (DataGridViewRow row in dgvCheck.Rows)
                 {
-                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk"];
+                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chkBalzoo"];
                     chk.Value = headerCheck.Checked;
                 }
             }
@@ -76,7 +81,7 @@ namespace BedFactory
 
                 foreach (DataGridViewRow row in dgvWait.Rows)
                 {
-                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk"];
+                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chkBalzoo"];
                     chk.Value = headerCheckz.Checked;
                 }
             }
@@ -86,7 +91,8 @@ namespace BedFactory
         private void DataLoad()
         {
             BalzooService service = new BalzooService();
-            dgvCheck.DataSource = service.WarehousingWait(dtpFrom.Value, dtpTo.Value);
+            list = service.WarehousingWait(dtpFrom.Value.Date, dtpTo.Value.Date);
+            dgvCheck.DataSource = list;
         }
 
         /// <summary>
@@ -123,14 +129,27 @@ namespace BedFactory
         {
             foreach (DataGridViewRow row in dgvCheck.Rows)
             {
-                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk"];
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chkBalzoo"];
                 if(Convert.ToBoolean(chk.Value) == true)
                 {
-                    dgvWait.Rows.Add(row);
-                    row.Visible = false;
+                    if(dgvWait.Rows.Count < 1)
+                        copy.Add(list.Where(p => p.Bz_D_Num == dgvCheck[1, row.Index].Value.ToString()).ToList()[0]);
+
+                    foreach (DataGridViewRow search in dgvWait.Rows)
+                    {
+                        if (dgvWait[1, search.Index].Value != dgvCheck[1, row.Index].Value)
+                        {
+                            copy.Add(list.Where(p => p.Bz_D_Num == dgvCheck[1, row.Index].Value.ToString()).ToList()[0]);
+                        }
+                    }
+
+                    chk.Value = false;
                 }
             }
 
+            dgvWait.DataSource = null;
+            dgvWait.Rows.Clear();
+            dgvWait.DataSource = copy;
             headerCheck.Checked = false;
         }
 
@@ -138,13 +157,16 @@ namespace BedFactory
         {
             foreach (DataGridViewRow row in dgvWait.Rows)
             {
-                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk"];
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chkBalzoo"];
                 if (Convert.ToBoolean(chk.Value) == true)
                 {
-                    dgvWait.Rows.Remove(row);
+                    copy.RemoveAt(row.Index);
                 }
             }
 
+            dgvWait.DataSource = null;
+            dgvWait.Rows.Clear();
+            dgvWait.DataSource = copy;
             headerCheckz.Checked = false;
         }
 
@@ -152,13 +174,63 @@ namespace BedFactory
         {
             foreach (DataGridViewRow row in dgvWait.Rows)
             {
-                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk"];
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chkBalzoo"];
                 if (Convert.ToBoolean(chk.Value) == true)
                 {
                     BalzooService service = new BalzooService();
-                    service.StateIsWait(row.Cells[1].Value.ToString());
-                    dgvWait.Rows.Remove(row);
+                    service.StateIsWait(dgvWait[1, row.Index].Value.ToString());
+                    copy.RemoveAt(row.Index);
                 }
+            }
+
+            dgvWait.DataSource = null;
+            dgvWait.Rows.Clear();
+            dgvWait.DataSource = copy;
+            headerCheckz.Checked = false;
+            DataLoad();
+        }
+
+        private void dgvCheck_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex > -1)
+            {
+                bool bCheck = false;
+
+                for (int i = 0; i < dgvCheck.Rows.Count; i++)
+                {
+                    if (Convert.ToBoolean(dgvCheck[0, i].Value))
+                    {
+                        bCheck = true;
+                        break;
+                    }
+                }
+
+                if (bCheck)
+                    headerCheck.Checked = true;
+                else
+                    headerCheck.Checked = false;
+            }
+        }
+
+        private void dgvWait_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex > -1)
+            {
+                bool bCheck = false;
+
+                for (int i = 0; i < dgvWait.Rows.Count; i++)
+                {
+                    if (Convert.ToBoolean(dgvWait[0, i].Value))
+                    {
+                        bCheck = true;
+                        break;
+                    }
+                }
+
+                if (bCheck)
+                    headerCheckz.Checked = true;
+                else
+                    headerCheckz.Checked = false;
             }
         }
     }

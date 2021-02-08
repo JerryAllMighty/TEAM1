@@ -35,7 +35,7 @@ namespace BedFactory
             {
                 return new DemandVO
                 {
-                    Order_Num = dgvSalesMaster[]
+                    //Order_Num = dgvSalesMaster[]
 
                 }
                 ;

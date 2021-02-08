@@ -12,9 +12,19 @@ namespace BedFactory.Pop_up
 {
     public partial class frmDuedateChange : Form
     {
-        public frmDuedateChange()
+        List<string> list;
+
+        public frmDuedateChange(List<string> list, DateTime date)
         {
             InitializeComponent();
+
+            this.list = list;
+            dtpB.Value = date;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

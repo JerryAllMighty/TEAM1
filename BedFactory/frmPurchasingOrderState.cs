@@ -1,4 +1,5 @@
 ﻿using BedFactory.BaseForms;
+using BedFactory.Pop_up;
 using BedFactoryService;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,7 @@ namespace BedFactory
             dgvOrder.Controls.Add(headerCheck);
 
             dtpTo.MinDate = dtpFrom.Value.AddDays(-7);
+            dtpTo.Value = DateTime.Now.AddDays(7);
         }
 
         private void HeaderCheck_Click(object sender, EventArgs e)
@@ -55,7 +57,7 @@ namespace BedFactory
         private void DataLoad()
         {
             BalzooService service = new BalzooService();
-            dgvOrder.DataSource = service.BalzooSelect(dtpFrom.Value, dtpTo.Value);
+            dgvOrder.DataSource = service.BalzooSelect(dtpFrom.Value.Date, dtpTo.Value.Date);
         }
 
         /// <summary>
@@ -97,6 +99,35 @@ namespace BedFactory
         {
             DataLoad();
             dtpTo.MinDate = dtpFrom.Value;
+        }
+
+        private void btn5_Click_1(object sender, EventArgs e) //납기일자변경
+        {
+            List<string> list = new List<string>();
+            DateTime date = DateTime.Parse("9999-12-30");
+
+            foreach (DataGridViewRow row in dgvOrder.Rows)
+            {
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk"];
+                if (Convert.ToBoolean(chk.Value) == true)
+                {                    
+                    list.Add(dgvOrder[1, row.Index].Value.ToString());
+                    if (date.ToShortDateString() == "9999-12-30")
+                        date = Convert.ToDateTime(dgvOrder[6, row.Index].Value);
+                }
+            }
+
+            if(list != null) 
+            {
+                frmDuedateChange frm = new frmDuedateChange(list, date);
+                frm.Show();
+            }
+            headerCheck.Checked = false;
+        }
+
+        private void btn3_Click_1(object sender, EventArgs e) //발주취소
+        {
+
         }
     }
 }

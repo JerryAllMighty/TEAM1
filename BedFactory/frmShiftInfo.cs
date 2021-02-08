@@ -1,4 +1,5 @@
-﻿using BedFactory.Pop_up;
+﻿using BedFactory.BaseForms;
+using BedFactory.Pop_up;
 using BedFactory.Util;
 using BedFactoryService;
 using BedFactoryVO;
@@ -14,8 +15,10 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmShiftInfo : Form
+    public partial class frmShiftInfo : BaseForm2
     {
+        List<ShiftVO> list;
+
         public frmShiftInfo()
         {
             InitializeComponent();
@@ -44,7 +47,14 @@ namespace BedFactory
         private void DataLoad()
         {
             ShiftsService service = new ShiftsService();
-            dgvShift.DataSource = service.ShiftsSelect();
+            list = service.ShiftsSelect();
+            dgvShift.DataSource = list;
+
+            var item = list.GroupBy(p => p.WP_Num);
+            List<string> temp = item.Select(p => p.Key.ToString()).ToList();
+            temp.Insert(0, "선택");
+            cboWork.DisplayMember = "WP_Num";
+            cboWork.DataSource = temp;
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
@@ -138,6 +148,20 @@ namespace BedFactory
                     MessageBox.Show(BedFactory.Properties.Settings.Default.DeleteFail);
                 }
             }
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e) //조회
+        {
+            if (cboWork.SelectedIndex == 0)
+            {
+                dgvShift.DataSource = list;
+            }
+            else
+            {
+                dgvShift.DataSource = list.Where(p => p.WP_Num == int.Parse(cboWork.Text)).ToList();
+            }
+
+            dgvShift.ClearSelection();
         }
     }
 }
