@@ -16,6 +16,8 @@ namespace BadFactory
 {
     public partial class frmMain : Form
     {
+        TreeView tv = new TreeView();
+
         public frmMain()
         {
             InitializeComponent();
@@ -157,14 +159,14 @@ namespace BadFactory
 
             pList.ForEach(p =>
             {
-                List<CommonCodeVO> cList = list.Where(i => i.P_Code == p.Code_Num).ToList();
+                List<CommonCodeVO> cList = list.Where(n => n.P_Code == p.Code_Num).ToList();
                 TreeNode node = new TreeNode(p.Code_Name);
-                cList.ForEach(k =>
+                cList.ForEach(W =>
                 {
-                    TreeNode node1 = new TreeNode(k.Code_Name);
+                    TreeNode node1 = new TreeNode(W.Code_Name);
                     list.ForEach(j =>
                     {
-                        if (k.Code_Name == j.Category)
+                        if (W.Code_Name == j.Category)
                             node1.Nodes.Add(j.Code_Name);
                     });
                     node.Nodes.Add(node1);
@@ -172,6 +174,84 @@ namespace BadFactory
 
                 tvMenu.Nodes.Add(node);
             });
+
+            tv.Size = new Size(200, 300);
+            tv.BorderStyle = BorderStyle.None;
+            tv.Dock = DockStyle.Fill;
+            tv.NodeMouseDoubleClick += tvMenu_NodeMouseDoubleClick;
+            pnMenu.Controls.Add(tv);
+            tv.Visible = false;
+
+            int k = 1;
+            pList.OrderByDescending(l => l.Code_Num).ToList().ForEach(p =>
+            {
+                List<CommonCodeVO> cList = list.Where(i => i.P_Code == p.Code_Num).ToList();
+                Button btn = new Button();
+                btn.Text = p.Code_Name;
+                btn.Tag = k;
+                btn.Size = new Size(200, 30);
+                btn.FlatStyle = FlatStyle.Popup;
+                btn.Dock = DockStyle.Top;
+                btn.BackColor = Color.LightSteelBlue;
+                btn.Click += Btn_Click;
+                pnMenu.Controls.Add(btn);
+                k++;
+            });
+        }
+
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            foreach (Control ctrl in pnMenu.Controls)
+            {
+                if(tv.Visible)
+                {
+                    tv.Visible = false;
+                    continue;
+                }
+
+                ctrl.Dock = DockStyle.Top;
+            }
+
+
+            if(btn.BackColor != Color.Lavender)
+            {
+                for (int i = pnMenu.Controls.Count - 1; i >= 0; i--)
+                {
+                    if(pnMenu.Controls[i] as Button != null)
+                    {
+                        if (Convert.ToInt32(pnMenu.Controls[i].Tag) < Convert.ToInt32(btn.Tag))
+                        {
+                            pnMenu.Controls[i].Dock = DockStyle.Bottom;
+                        }
+
+                        pnMenu.Controls[i].BackColor = Color.LightSteelBlue;
+                    }
+                }
+
+                tv.Nodes.Clear();
+                List<CommonCodeVO> list = frmCommonCode.CheckCommonInfo();
+                List<CommonCodeVO> pList = list.Where(p => (p.Category == "메뉴" && p.Code_Name == btn.Text)).ToList();
+                List<CommonCodeVO> cList = list.Where(i => i.P_Code == pList[0].Code_Num).ToList();
+                cList.ForEach(k =>
+                {
+                    TreeNode node = new TreeNode(k.Code_Name);
+                    list.ForEach(j =>
+                    {
+                        if (k.Code_Name == j.Category)
+                            node.Nodes.Add(j.Code_Name);
+                    });
+
+                    tv.Nodes.Add(node);
+                });
+
+                tv.Visible = true;
+                btn.BackColor = Color.Lavender;
+                return;
+            }
+
+            btn.BackColor = Color.LightSteelBlue;
         }
 
         private void tvMenu_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -254,5 +334,8 @@ namespace BadFactory
                 f.WindowState = FormWindowState.Maximized;
             }
         }
+
+        //__________________________________________________________
+
     }
 }
