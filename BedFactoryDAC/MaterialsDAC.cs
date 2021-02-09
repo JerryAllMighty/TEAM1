@@ -50,32 +50,6 @@ namespace BedFactoryDAC
         }
 
         /// <summary>
-        /// 전체 자재정보 출력
-        /// </summary>
-        /// <returns></returns>
-        public List<MaterialsVO> GetAllMaterials()
-        {
-            try
-            {
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = conn;
-                    cmd.CommandText = @"select Mat_Num, Mat_Name, Mat_Category, Mat_Kind, Mat_Size, BOM_Num, FirstMan, FirstDate, LastMan, LastDate from tblMaterials
-                                        where IsDeleted = 'N'";
-
-                    List<MaterialsVO> list = Helper.DataReaderMapToList<MaterialsVO>(cmd.ExecuteReader());
-
-                    return list;
-                }
-            }
-            catch (Exception err)
-            {
-                Log.WriteError(err.Message);
-                return null;
-            }
-        }
-
-        /// <summary>
         /// 신규자재 등록
         /// </summary>
         /// <param name="vo">등록자재 정보</param>
@@ -88,7 +62,7 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"insert into tblMaterials (Mat_Num, Mat_Name, Mat_Category, Mat_Kind, Mat_Size, BOM_Num, FirstMan, FirstDate, LastMan, LastDate)
+                    cmd.CommandText = @"insert into tblMaterials (Mat_Num, Mat_Name, Mat_Category, Mat_Kind, Mat_Size, FirstMan, LastMan)
                                         values (
 	                                        (select left(Code_Num, 2) + (select REPLICATE(0, 8 - len(count(*))) + CONVERT(varchar, count(*)) from tblMaterials) from CommonCode where Code_Name = @Mat_Category),
 	                                        @Mat_Name, @Mat_Category, @Mat_Kind, @Mat_Size, @FirstMan, @LastMan
