@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlGroupList = new System.Windows.Forms.Panel();
             this.dgvGroupList = new BedFactory.DatagridviewControl();
             this.lblGroupModify = new System.Windows.Forms.Label();
@@ -66,7 +66,7 @@ namespace BedFactory
             // 
             // btn5
             // 
-            this.btn5.Location = new System.Drawing.Point(730, 100);
+            this.btn5.Location = new System.Drawing.Point(707, 99);
             this.btn5.Visible = false;
             // 
             // label1
@@ -83,14 +83,20 @@ namespace BedFactory
             // 
             // pnlDgv
             // 
+            this.pnlDgv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlDgv.Controls.Add(this.panel1);
             this.pnlDgv.Controls.Add(this.pnlGroupModify);
             this.pnlDgv.Controls.Add(this.pnlGroupList);
             // 
             // btn4
             // 
-            this.btn4.Location = new System.Drawing.Point(861, 100);
+            this.btn4.Location = new System.Drawing.Point(838, 99);
             this.btn4.Visible = false;
+            // 
+            // pnlSelect
+            // 
+            this.pnlSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnlSelect.Visible = false;
             // 
             // pnlGroupList
             // 
@@ -106,16 +112,16 @@ namespace BedFactory
             this.dgvGroupList.AllowUserToAddRows = false;
             this.dgvGroupList.AllowUserToResizeRows = false;
             this.dgvGroupList.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvGroupList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvGroupList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvGroupList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGroupList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvGroupList.Location = new System.Drawing.Point(0, 0);
             this.dgvGroupList.Name = "dgvGroupList";
             this.dgvGroupList.RowHeadersVisible = false;
             this.dgvGroupList.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvGroupList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvGroupList.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvGroupList.RowTemplate.Height = 27;
             this.dgvGroupList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGroupList.Size = new System.Drawing.Size(477, 701);
@@ -249,13 +255,14 @@ namespace BedFactory
             this.panel1.Size = new System.Drawing.Size(422, 699);
             this.panel1.TabIndex = 4;
             // 
-            // frmGroupManagement2
+            // frmGroupManagement
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1382, 853);
             this.Controls.Add(this.lblAddGroup);
             this.Controls.Add(this.lblGroupModify);
-            this.Name = "frmGroupManagement2";
-            this.Text = "그룹관리";
+            this.Name = "frmGroupManagement";
+            this.Text = "그룹 관리";
             this.Load += new System.EventHandler(this.frmGroupManagement2_Load);
             this.Controls.SetChildIndex(this.pnlSelect, 0);
             this.Controls.SetChildIndex(this.btn4, 0);

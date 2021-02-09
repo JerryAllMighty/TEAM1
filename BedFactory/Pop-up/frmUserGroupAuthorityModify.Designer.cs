@@ -29,10 +29,10 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvEveryScreen = new BedFactory.DatagridviewControl();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -54,17 +54,20 @@ namespace BedFactory
             // 
             // btn2
             // 
-            this.btn2.Location = new System.Drawing.Point(1234, 149);
+            this.btn2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn2.Location = new System.Drawing.Point(384, 131);
             this.btn2.Visible = false;
             // 
             // btn3
             // 
-            this.btn3.Location = new System.Drawing.Point(1163, 149);
+            this.btn3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn3.Location = new System.Drawing.Point(313, 131);
             this.btn3.Visible = false;
             // 
             // btn5
             // 
-            this.btn5.Location = new System.Drawing.Point(926, 149);
+            this.btn5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn5.Location = new System.Drawing.Point(207, 99);
             this.btn5.Visible = false;
             // 
             // label1
@@ -75,7 +78,8 @@ namespace BedFactory
             // 
             // btn1
             // 
-            this.btn1.Location = new System.Drawing.Point(1305, 149);
+            this.btn1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn1.Location = new System.Drawing.Point(844, 144);
             this.btn1.Text = "저장";
             this.btn1.Click += new System.EventHandler(this.btn1_Click_1);
             // 
@@ -84,26 +88,28 @@ namespace BedFactory
             this.pnlDgv.Controls.Add(this.panel1);
             this.pnlDgv.Controls.Add(this.panel2);
             this.pnlDgv.Location = new System.Drawing.Point(12, 177);
-            this.pnlDgv.Size = new System.Drawing.Size(1358, 664);
+            this.pnlDgv.Size = new System.Drawing.Size(898, 664);
             // 
             // btn4
             // 
-            this.btn4.Location = new System.Drawing.Point(1057, 149);
+            this.btn4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn4.Location = new System.Drawing.Point(207, 130);
             this.btn4.Visible = false;
             // 
             // pnlSelect
             // 
             this.pnlSelect.Controls.Add(this.panel3);
             this.pnlSelect.Location = new System.Drawing.Point(19, 12);
-            this.pnlSelect.Size = new System.Drawing.Size(1358, 67);
+            this.pnlSelect.Size = new System.Drawing.Size(891, 67);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dgvEveryScreen);
-            this.panel1.Location = new System.Drawing.Point(4, 5);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(578, 856);
+            this.panel1.Size = new System.Drawing.Size(488, 664);
             this.panel1.TabIndex = 0;
             // 
             // dgvEveryScreen
@@ -111,8 +117,8 @@ namespace BedFactory
             this.dgvEveryScreen.AllowUserToAddRows = false;
             this.dgvEveryScreen.AllowUserToResizeRows = false;
             this.dgvEveryScreen.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvEveryScreen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvEveryScreen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvEveryScreen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEveryScreen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEveryScreen.Location = new System.Drawing.Point(0, 0);
@@ -120,20 +126,21 @@ namespace BedFactory
             this.dgvEveryScreen.Name = "dgvEveryScreen";
             this.dgvEveryScreen.RowHeadersVisible = false;
             this.dgvEveryScreen.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvEveryScreen.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvEveryScreen.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvEveryScreen.RowTemplate.Height = 27;
             this.dgvEveryScreen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEveryScreen.Size = new System.Drawing.Size(578, 856);
+            this.dgvEveryScreen.Size = new System.Drawing.Size(488, 664);
             this.dgvEveryScreen.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dgvAddAuthority);
-            this.panel2.Location = new System.Drawing.Point(590, 5);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(553, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1009, 856);
+            this.panel2.Size = new System.Drawing.Size(345, 664);
             this.panel2.TabIndex = 1;
             // 
             // dgvAddAuthority
@@ -141,8 +148,8 @@ namespace BedFactory
             this.dgvAddAuthority.AllowUserToAddRows = false;
             this.dgvAddAuthority.AllowUserToResizeRows = false;
             this.dgvAddAuthority.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvAddAuthority.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvAddAuthority.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvAddAuthority.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAddAuthority.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAddAuthority.Location = new System.Drawing.Point(0, 0);
@@ -150,11 +157,11 @@ namespace BedFactory
             this.dgvAddAuthority.Name = "dgvAddAuthority";
             this.dgvAddAuthority.RowHeadersVisible = false;
             this.dgvAddAuthority.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvAddAuthority.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvAddAuthority.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvAddAuthority.RowTemplate.Height = 27;
             this.dgvAddAuthority.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAddAuthority.Size = new System.Drawing.Size(1009, 856);
+            this.dgvAddAuthority.Size = new System.Drawing.Size(345, 664);
             this.dgvAddAuthority.TabIndex = 0;
             // 
             // panel3
@@ -167,12 +174,12 @@ namespace BedFactory
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1356, 65);
+            this.panel3.Size = new System.Drawing.Size(889, 65);
             this.panel3.TabIndex = 4;
             // 
             // lblGroupNameBinding
             // 
-            this.lblGroupNameBinding.Location = new System.Drawing.Point(953, 27);
+            this.lblGroupNameBinding.Location = new System.Drawing.Point(602, 16);
             this.lblGroupNameBinding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGroupNameBinding.Name = "lblGroupNameBinding";
             this.lblGroupNameBinding.Size = new System.Drawing.Size(125, 35);
@@ -182,17 +189,17 @@ namespace BedFactory
             // 
             // lblGroupCodeBinding
             // 
-            this.lblGroupCodeBinding.Location = new System.Drawing.Point(355, 27);
+            this.lblGroupCodeBinding.Location = new System.Drawing.Point(258, 16);
             this.lblGroupCodeBinding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGroupCodeBinding.Name = "lblGroupCodeBinding";
-            this.lblGroupCodeBinding.Size = new System.Drawing.Size(125, 35);
+            this.lblGroupCodeBinding.Size = new System.Drawing.Size(137, 35);
             this.lblGroupCodeBinding.TabIndex = 2;
             this.lblGroupCodeBinding.Text = "여기에 그룹코드";
             this.lblGroupCodeBinding.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblGroupName
             // 
-            this.lblGroupName.Location = new System.Drawing.Point(654, 27);
+            this.lblGroupName.Location = new System.Drawing.Point(430, 16);
             this.lblGroupName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGroupName.Name = "lblGroupName";
             this.lblGroupName.Size = new System.Drawing.Size(125, 35);
@@ -202,7 +209,7 @@ namespace BedFactory
             // 
             // lblGroupCode
             // 
-            this.lblGroupCode.Location = new System.Drawing.Point(56, 27);
+            this.lblGroupCode.Location = new System.Drawing.Point(86, 16);
             this.lblGroupCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGroupCode.Name = "lblGroupCode";
             this.lblGroupCode.Size = new System.Drawing.Size(125, 35);
@@ -213,7 +220,7 @@ namespace BedFactory
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(597, 133);
+            this.label6.Location = new System.Drawing.Point(560, 134);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(165, 35);
@@ -226,7 +233,7 @@ namespace BedFactory
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1382, 853);
+            this.ClientSize = new System.Drawing.Size(922, 853);
             this.Controls.Add(this.label6);
             this.Name = "frmUserGroupAuthorityModify";
             this.Text = "그룹별 권한 수정";

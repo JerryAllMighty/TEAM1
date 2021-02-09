@@ -29,9 +29,10 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSalesMaster_Num = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -42,7 +43,6 @@ namespace BedFactory
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtSalesMaster_Num = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvproductionPlan)).BeginInit();
@@ -65,23 +65,32 @@ namespace BedFactory
             this.panel1.Size = new System.Drawing.Size(1266, 529);
             this.panel1.TabIndex = 0;
             // 
+            // txtSalesMaster_Num
+            // 
+            this.txtSalesMaster_Num.Location = new System.Drawing.Point(185, 46);
+            this.txtSalesMaster_Num.Name = "txtSalesMaster_Num";
+            this.txtSalesMaster_Num.Size = new System.Drawing.Size(235, 25);
+            this.txtSalesMaster_Num.TabIndex = 11;
+            // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnSave.Location = new System.Drawing.Point(509, 476);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(120, 50);
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "저장";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnCancel.Location = new System.Drawing.Point(635, 476);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(120, 50);
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "취소";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -96,16 +105,16 @@ namespace BedFactory
             this.dgvproductionPlan.AllowUserToAddRows = false;
             this.dgvproductionPlan.AllowUserToResizeRows = false;
             this.dgvproductionPlan.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold);
-            this.dgvproductionPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold);
+            this.dgvproductionPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvproductionPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvproductionPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvproductionPlan.Location = new System.Drawing.Point(0, 0);
             this.dgvproductionPlan.Name = "dgvproductionPlan";
             this.dgvproductionPlan.RowHeadersVisible = false;
             this.dgvproductionPlan.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvproductionPlan.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvproductionPlan.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvproductionPlan.RowTemplate.Height = 27;
             this.dgvproductionPlan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvproductionPlan.Size = new System.Drawing.Size(1260, 269);
@@ -113,12 +122,13 @@ namespace BedFactory
             // 
             // btnSelect
             // 
+            this.btnSelect.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnSelect.Location = new System.Drawing.Point(1156, 46);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(100, 30);
             this.btnSelect.TabIndex = 6;
             this.btnSelect.Text = "조회";
-            this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.UseVisualStyleBackColor = false;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // label5
@@ -165,13 +175,6 @@ namespace BedFactory
             this.label1.Size = new System.Drawing.Size(122, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "영업 마스터 번호";
-            // 
-            // txtSalesMaster_Num
-            // 
-            this.txtSalesMaster_Num.Location = new System.Drawing.Point(185, 46);
-            this.txtSalesMaster_Num.Name = "txtSalesMaster_Num";
-            this.txtSalesMaster_Num.Size = new System.Drawing.Size(235, 25);
-            this.txtSalesMaster_Num.TabIndex = 11;
             // 
             // frmProductionPlan
             // 

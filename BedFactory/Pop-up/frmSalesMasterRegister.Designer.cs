@@ -70,12 +70,14 @@ namespace BedFactory.Pop_up
             // 
             // btnFileChoice
             // 
+            this.btnFileChoice.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnFileChoice.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFileChoice.Location = new System.Drawing.Point(148, 39);
             this.btnFileChoice.Name = "btnFileChoice";
             this.btnFileChoice.Size = new System.Drawing.Size(75, 23);
             this.btnFileChoice.TabIndex = 12;
             this.btnFileChoice.Text = "파일선택";
-            this.btnFileChoice.UseVisualStyleBackColor = true;
+            this.btnFileChoice.UseVisualStyleBackColor = false;
             this.btnFileChoice.Click += new System.EventHandler(this.btnFileChoice_Click);
             // 
             // lblPlanDate
@@ -107,22 +109,26 @@ namespace BedFactory.Pop_up
             // 
             // btnSalesMasterUpload
             // 
+            this.btnSalesMasterUpload.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSalesMasterUpload.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalesMasterUpload.Location = new System.Drawing.Point(121, 246);
             this.btnSalesMasterUpload.Name = "btnSalesMasterUpload";
             this.btnSalesMasterUpload.Size = new System.Drawing.Size(150, 44);
             this.btnSalesMasterUpload.TabIndex = 1;
             this.btnSalesMasterUpload.Text = "영업마스터 업로드";
-            this.btnSalesMasterUpload.UseVisualStyleBackColor = true;
+            this.btnSalesMasterUpload.UseVisualStyleBackColor = false;
             this.btnSalesMasterUpload.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Location = new System.Drawing.Point(277, 246);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(97, 44);
             this.button3.TabIndex = 2;
             this.button3.Text = "취소";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // frmSalesMasterRegister
