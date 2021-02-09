@@ -7,12 +7,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmGroupManagement : Form
+    public partial class frmGroupManagement : BedFactory.BaseForms.BaseForm2
     {
         CommonCodeService service;
         string GroupCode;
@@ -45,7 +44,7 @@ namespace BedFactory
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void frmGroupManagement_Load(object sender, EventArgs e)
+        private void frmGroupManagement2_Load(object sender, EventArgs e)
         {
             dgvGroupList.SetGridViewColumn("그룹코드", "Code_Num");
             dgvGroupList.SetGridViewColumn("그룹명", "Code_Name");
@@ -65,22 +64,32 @@ namespace BedFactory
         }
 
         /// <summary>
-        /// 그룹 목록에서 더블 클릭시 그룹 수정 목록에 바인딩시키는 함수
+        /// 텍스트 박스를 비워주는 함수
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dgvGroupList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void ClearTextBox()
         {
-           txtGroupCode.Text = dgvGroupList[0, e.RowIndex].Value.ToString();
-           txtGroupName.Text = dgvGroupList[1, e.RowIndex].Value.ToString();
+            txtGroupCode.Text = txtGroupCode2.Text = txtGroupName.Text = txtGroupName2.Text = "";
         }
 
         /// <summary>
-        /// 입력받은 정보를 바탕으로 그룹 정보를 수정하는 함수
+        /// 공통코드 정보가 변경되었을 시 전역 공통코드 리스트를 업데이트해주는 함수
+        /// </summary>
+        private void UpdateCommonList()
+        {
+            service = new CommonCodeService();
+            if (service.GetCommonCodeInfo() != null)
+            {
+                frmCommonCode.commonList = service.GetCommonCodeInfo();
+            }
+        }
+
+
+        /// <summary>
+        /// 입력받은 정보 바탕으로 그룹 정보 수정
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnModify_Click(object sender, EventArgs e)
+        private void btn2_Click_1(object sender, EventArgs e)
         {
             if (lblGroupCode.Text.Length > 0)
             {
@@ -104,7 +113,7 @@ namespace BedFactory
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnAddGroup_Click(object sender, EventArgs e)
+        private void btn1_Click_1(object sender, EventArgs e)
         {
             if (txtGroupCode2.TextLength < 1 || txtGroupName2.TextLength < 1)
             {
@@ -125,10 +134,30 @@ namespace BedFactory
             }
         }
 
+        /// <summary>
+        /// 수정할 그룹 코드 값을 입력시 전역 변수에 담아준다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtGroupCode_TextChanged(object sender, EventArgs e)
+        {
+            GroupCode = txtGroupCode.Text;
+        }
+
+        /// <summary>
+        /// 수정할 그룹 이름 값을 입력시 전역 변수에 담아준다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtGroupName_TextChanged(object sender, EventArgs e)
+        {
+            GroupName = txtGroupName.Text;
+        }
+
        
 
         /// <summary>
-        /// 추가할 그룹 코드 값을 입력시 전역 변수에 담아준다.
+        /// 추가할 그룹 코드 값을 입력시 전역 변수에 담아준다
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -147,45 +176,17 @@ namespace BedFactory
             GroupName = txtGroupName2.Text;
         }
 
-
         /// <summary>
-        /// 텍스트 박스를 비워주는 함수
-        /// </summary>
-        private void ClearTextBox()
-        {
-            txtGroupCode.Text = txtGroupCode2.Text = txtGroupName.Text = txtGroupName2.Text = "";
-        }
-
-        /// <summary>
-        /// 공통코드 정보가 변경되었을 시 전역 공통코드 리스트를 업데이트해주는 함수
-        /// </summary>
-        private void UpdateCommonList()
-        {
-            service = new CommonCodeService();
-            if (service.GetCommonCodeInfo() != null)
-            {
-                frmCommonCode.commonList = service.GetCommonCodeInfo();
-            }
-        }
-
-        /// <summary>
-        /// 수정할 그룹 코드 값을 입력시 전역 변수에 담아준다
+        /// 그룹 목록에서 더블 클릭시 그룹 수정 목록에 바인딩시키는 함수
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void txtGroupCode_TextChanged(object sender, EventArgs e)
+        private void dgvGroupList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            GroupCode = txtGroupCode.Text;
+            txtGroupCode.Text = dgvGroupList[0, e.RowIndex].Value.ToString();
+            txtGroupName.Text = dgvGroupList[1, e.RowIndex].Value.ToString();
         }
 
-        /// <summary>
-        /// /// 수정할 그룹 이름 값을 입력시 전역 변수에 담아준다
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void txtGroupName_TextChanged(object sender, EventArgs e)
-        {
-            GroupName = txtGroupName.Text;
-        }
+       
     }
 }

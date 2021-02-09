@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtCode_P_Code = new System.Windows.Forms.TextBox();
             this.txtCode_Category = new System.Windows.Forms.TextBox();
@@ -192,8 +192,8 @@ namespace BedFactory
             this.dgvCommonCode.AllowUserToAddRows = false;
             this.dgvCommonCode.AllowUserToResizeRows = false;
             this.dgvCommonCode.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvCommonCode.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvCommonCode.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCommonCode.ColumnHeadersHeight = 29;
             this.dgvCommonCode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCommonCode.Location = new System.Drawing.Point(0, 0);
@@ -201,8 +201,8 @@ namespace BedFactory
             this.dgvCommonCode.Name = "dgvCommonCode";
             this.dgvCommonCode.RowHeadersVisible = false;
             this.dgvCommonCode.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvCommonCode.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvCommonCode.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCommonCode.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCommonCode.Size = new System.Drawing.Size(649, 383);
             this.dgvCommonCode.TabIndex = 0;

@@ -76,6 +76,35 @@ namespace BedFactoryDAC
             }
         }
 
+        public List<SalesMasterVO> GetSalesMasterBySalesMasterNum(string salesmasternum)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    StringBuilder sb = new StringBuilder();
+
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"";
+
+                   
+
+                    List<SalesMasterVO> list = Helper.DataReaderMapToList<SalesMasterVO>(cmd.ExecuteReader());
+
+                    return list != null ? list : null;
+
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
+            }
+        }
+
+
+
+
         /// <summary>
         /// 영업 마스터 생성하는 함수
         /// </summary>

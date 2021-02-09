@@ -25,10 +25,7 @@ namespace BedFactoryAPI
             AES aes = new AES();
             strConn = aes.AESDecrypt256(strConn);
 
-            //// 애플리케이션 시작 시 실행되는 코드
-            //AreaRegistration.RegisterAllAreas();
-            //GlobalConfiguration.Configure(WebApiConfig.Register);
-            //RouteConfig.RegisterRoutes(RouteTable.Routes);            
+            log4net.Config.XmlConfigurator.Configure(); //최초 실행 시 Log4net실행
         }
     }
 }

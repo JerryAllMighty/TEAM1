@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BedFactoryVO
+{
+    public class BOMVO
+    {
+        public int BOM_Num { get; set; }
+        public string Mat_Num { get; set; }
+        public string Use_Mat_Num { get; set; }
+        public int Cnt { get; set; }
+        public int Firstman { get; set; }
+        public DateTime Firstdate { get; set; }
+        public int Lastman { get; set; }
+        public DateTime Lastdate { get; set; }
+        public char IsDeleted { get; set; }
+    }
+}

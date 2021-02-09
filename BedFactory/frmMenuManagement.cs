@@ -1,17 +1,15 @@
-﻿using BedFactory.Util;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmMenuManagement : Form
+    public partial class frmMenuManagement : BedFactory.BaseForms.BaseForm1
     {
         public frmMenuManagement()
         {
@@ -23,14 +21,14 @@ namespace BedFactory
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void frmMenuManagement_Load(object sender, EventArgs e)
+        private void frmMenuManagement2_Load(object sender, EventArgs e)
         {
             dgvMenuBigCategory.SetGridViewColumn("메뉴 코드", "Code_Num");
             dgvMenuBigCategory.SetGridViewColumn("메뉴 이름", "Code_Name");
 
             var MenuBigList = (from items in frmCommonCode.CheckCommonInfo()
-                            where items.Category == "메뉴"
-                            select items).ToList();
+                               where items.Category == "메뉴"
+                               select items).ToList();
             dgvMenuBigCategory.DataSource = MenuBigList;
 
             dgvMenu.SetGridViewColumn("메뉴 코드", "Code_Num");
@@ -42,7 +40,7 @@ namespace BedFactory
             MenuBigList.ForEach(p => trvMenu.Nodes.Add(p.Code_Name));
 
             //각 부모 노드 당 자식 노드 추가
-            for(int i =0; i < MenuBigList.Count; i++)
+            for (int i = 0; i < MenuBigList.Count; i++)
             {
                 var MenuList = (from items in frmCommonCode.CheckCommonInfo()
                                 where MenuBigList[i].Code_Num == items.P_Code
@@ -52,19 +50,6 @@ namespace BedFactory
                 MenuList.ForEach(p => trvMenu.Nodes[i].Nodes.Add(p.Code_Name));
 
             }
-        }
-
-        
-
-        /// <summary>
-        /// 메뉴 추가 팝업을 띄우는 버튼
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnAddMenu_PopUp_Click(object sender, EventArgs e)
-        {
-            frmMenuRegister frm = new frmMenuRegister();
-            frm.ShowDialog();
         }
 
         /// <summary>
@@ -79,6 +64,17 @@ namespace BedFactory
                             select items).ToList();
 
             dgvMenu.DataSource = MenuList;
+        }
+
+        /// <summary>
+        ///  메뉴 추가 팝업을 띄우는 버튼
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn2_Click(object sender, EventArgs e)
+        {
+            frmMenuRegister frm = new frmMenuRegister();
+            frm.ShowDialog();
         }
     }
 }
