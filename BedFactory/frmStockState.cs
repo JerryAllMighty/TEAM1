@@ -1,6 +1,7 @@
 ﻿using BedFactory.BaseForms;
 using BedFactory.Pop_up;
 using BedFactoryService;
+using BedFactoryVO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace BedFactory
     public partial class frmStockState : BaseForm2
     {
         CheckBox headerCheck = new CheckBox();
+        List<WearingVO> list;
 
         public frmStockState()
         {
@@ -24,7 +26,7 @@ namespace BedFactory
 
         private void frmStockState_Load(object sender, EventArgs e)
         {
-            dgvStock.SetGridCheckBox("chkBalzoo");
+            dgvStock.SetGridCheckBox("chk");
             dgvStock.SetGridViewColumn("창고번호", "Str_Num");
             dgvStock.SetGridViewColumn("창고유형", "Str_Kind");
             dgvStock.SetGridViewColumn("자재번호", "Mat_Num", visibility:false);
@@ -56,7 +58,18 @@ namespace BedFactory
         private void DataLoad()
         {
             WearingService service = new WearingService();
-            dgvStock.DataSource = service.StockState();
+            list = service.StockState();
+            dgvStock.DataSource = list;
+
+            List<string> temp = list.GroupBy(p => p.Mat_Category).Select(p => p.Key.ToString()).ToList();
+            temp.Insert(0, "전체");
+            cboCategory.DisplayMember = "Mat_Category";
+            cboCategory.DataSource = temp;
+
+            temp = list.GroupBy(p => p.Str_Kind).Select(p => p.Key.ToString()).ToList();
+            temp.Insert(0, "전체");
+            cboStorage.DisplayMember = "Str_Kind";
+            cboStorage.DataSource = temp;
         }
 
         /// <summary>
@@ -74,6 +87,8 @@ namespace BedFactory
 
         private void dgvStock_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            dgvStock.EndEdit();
+
             if (e.ColumnIndex == 0 && e.RowIndex > -1)
             {
                 bool bCheck = false;
@@ -101,10 +116,24 @@ namespace BedFactory
                 DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk"];
                 if (Convert.ToBoolean(chk.Value) == true)
                 {
-                    frmStockBackgroundCheck frm = new frmStockBackgroundCheck(Convert.ToInt32(dgvStock[1, row.Index]), Convert.ToInt32(dgvStock[3, row.Index]));
+                    frmStockBackgroundCheck frm = new frmStockBackgroundCheck(Convert.ToInt32(dgvStock[1, row.Index].Value), dgvStock[3, row.Index].Value.ToString());
                     frm.Show();
+
+                    chk.Value = false;
                 }
             }
+            headerCheck.Checked = false;
+        }
+
+        private void btnSerch_Click(object sender, EventArgs e)
+        {
+            var item = (from temp in list
+                        where (cboStorage.SelectedIndex == 0 ? true : temp.Str_Kind == cboStorage.Text)
+                              && (cboCategory.SelectedIndex == 0 ? true : temp.Mat_Category == cboCategory.Text)
+                              && (txtMaterial.Text.Length < 1 ? true : temp.Mat_Name.Contains(txtMaterial.Text))
+                        select temp).ToList();
+
+            dgvStock.DataSource = item;
         }
     }
 }

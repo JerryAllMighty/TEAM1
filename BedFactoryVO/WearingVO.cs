@@ -18,5 +18,8 @@ namespace BedFactoryVO
         public int Mat_Cnt { get; set; } //자재수량
         public int FirstMan { get; set; } //최초등록자
         public DateTime FirstDate { get; set; } //최초등록일
+        public string W_Category { get; set; } //입고분류
+        public string Category { get; set; } //입/출고 분류
+        public string Com_Name { get; set; } //거래처명
     }
 }

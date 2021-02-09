@@ -57,7 +57,7 @@ namespace BedFactory
 
                 var item = list.GroupBy(p => p.WP_Num);
                 List<string> temp = item.Select(p => p.Key.ToString()).ToList();
-                temp.Insert(0, "선택");
+                temp.Insert(0, "전체");
                 cboWork.DisplayMember = "WP_Num";
                 cboWork.DataSource = temp;
             }

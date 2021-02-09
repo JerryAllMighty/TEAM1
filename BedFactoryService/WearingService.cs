@@ -27,7 +27,7 @@ namespace BedFactoryService
             WearingDAC dac = new WearingDAC();
             return dac.StockState();
         }
-        public List<WearingVO> StockStateSearch(int sNum, int mNum)
+        public List<WearingVO> StockStateSearch(int sNum, string mNum)
         {
             WearingDAC dac = new WearingDAC();
             return dac.StockStateSearch(sNum, mNum);

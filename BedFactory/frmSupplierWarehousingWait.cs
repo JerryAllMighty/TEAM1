@@ -21,6 +21,9 @@ namespace BedFactory
         List<BalzooVO> list;
         List<BalzooVO> copy = new List<BalzooVO>();
 
+        DateTime bFrom = DateTime.Parse("9999-12-30");
+        DateTime bTo = DateTime.Parse("9999-12-30");
+
         public frmSupplierWarehousingWait()
         {
             InitializeComponent();
@@ -60,6 +63,8 @@ namespace BedFactory
 
             dtpTo.MinDate = dtpFrom.Value.AddDays(-7);
             dtpTo.Value = DateTime.Now.AddDays(7);
+
+            DataLoad();
         }
 
         private void HeaderCheck_Click(object sender, EventArgs e)
@@ -93,6 +98,19 @@ namespace BedFactory
             BalzooService service = new BalzooService();
             list = service.WarehousingWait(dtpFrom.Value.Date, dtpTo.Value.Date);
             dgvCheck.DataSource = list;
+
+            List<string> temp = list.GroupBy(p => p.Com_Name).Select(p => p.Key.ToString()).ToList();
+            temp.Insert(0, "전체");
+            cboCom.DisplayMember = "Com_Name";
+            cboCom.DataSource = temp;
+
+            temp = list.GroupBy(p => p.Bz_D_Num).Select(p => p.Key.ToString()).ToList();
+            temp.Insert(0, "전체");
+            cboBnum.DisplayMember = "Bz_D_Num";
+            cboBnum.DataSource = temp;
+
+            bFrom = dtpFrom.Value.Date;
+            bTo = dtpTo.Value.Date;
         }
 
         /// <summary>
@@ -121,7 +139,6 @@ namespace BedFactory
 
         private void dtpFrom_ValueChanged(object sender, EventArgs e)
         {
-            DataLoad();
             dtpTo.MinDate = dtpFrom.Value;
         }
 
@@ -192,6 +209,8 @@ namespace BedFactory
 
         private void dgvCheck_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            dgvCheck.EndEdit();
+
             if (e.ColumnIndex == 0 && e.RowIndex > -1)
             {
                 bool bCheck = false;
@@ -214,6 +233,8 @@ namespace BedFactory
 
         private void dgvWait_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            dgvWait.EndEdit();
+
             if (e.ColumnIndex == 0 && e.RowIndex > -1)
             {
                 bool bCheck = false;
@@ -232,6 +253,20 @@ namespace BedFactory
                 else
                     headerCheckz.Checked = false;
             }
+        }
+
+        private void btnSerch_Click(object sender, EventArgs e)
+        {
+            if (bFrom.Date != dtpFrom.Value.Date && bTo.Date != dtpTo.Value.Date)
+                DataLoad();
+
+            var item = (from temp in list
+                        where (cboCom.SelectedIndex == 0 ? true : temp.Com_Name == cboCom.Text)
+                              && (cboBnum.SelectedIndex == 0 ? true : temp.Bz_D_Num == cboBnum.Text)
+                              && (txtMate.Text.Length < 1 ? true : temp.Mat_Name.Contains(txtMate.Text))
+                        select temp).ToList();
+
+            dgvCheck.DataSource = item;
         }
     }
 }
