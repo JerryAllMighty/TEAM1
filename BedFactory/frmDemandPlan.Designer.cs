@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
             this.lblPlanID = new System.Windows.Forms.Label();
             this.lblSubject = new System.Windows.Forms.Label();
@@ -39,9 +39,9 @@ namespace BedFactory
             this.lblDate = new System.Windows.Forms.Label();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.btnSelect = new System.Windows.Forms.Button();
-            this.dgvDemandPlan = new BedFactory.DatagridviewControl();
             this.txtDemandPlan_Num = new System.Windows.Forms.TextBox();
             this.txtSubjectName = new System.Windows.Forms.TextBox();
+            this.dgvDemandPlan = new BedFactory.DatagridviewControl();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.searchLocationControl1.SuspendLayout();
@@ -58,6 +58,7 @@ namespace BedFactory
             // btn3
             // 
             this.btn3.Location = new System.Drawing.Point(1128, 156);
+            this.btn3.Text = "수동";
             this.btn3.Visible = false;
             // 
             // btn5
@@ -192,26 +193,6 @@ namespace BedFactory
             this.btnSelect.UseVisualStyleBackColor = false;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
-            // dgvDemandPlan
-            // 
-            this.dgvDemandPlan.AllowUserToAddRows = false;
-            this.dgvDemandPlan.AllowUserToResizeRows = false;
-            this.dgvDemandPlan.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvDemandPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvDemandPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDemandPlan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDemandPlan.Location = new System.Drawing.Point(0, 0);
-            this.dgvDemandPlan.Name = "dgvDemandPlan";
-            this.dgvDemandPlan.RowHeadersVisible = false;
-            this.dgvDemandPlan.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvDemandPlan.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvDemandPlan.RowTemplate.Height = 27;
-            this.dgvDemandPlan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDemandPlan.Size = new System.Drawing.Size(1358, 649);
-            this.dgvDemandPlan.TabIndex = 0;
-            // 
             // txtDemandPlan_Num
             // 
             this.txtDemandPlan_Num.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -227,6 +208,26 @@ namespace BedFactory
             this.txtSubjectName.Name = "txtSubjectName";
             this.txtSubjectName.Size = new System.Drawing.Size(215, 30);
             this.txtSubjectName.TabIndex = 21;
+            // 
+            // dgvDemandPlan
+            // 
+            this.dgvDemandPlan.AllowUserToAddRows = false;
+            this.dgvDemandPlan.AllowUserToResizeRows = false;
+            this.dgvDemandPlan.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvDemandPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDemandPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDemandPlan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDemandPlan.Location = new System.Drawing.Point(0, 0);
+            this.dgvDemandPlan.Name = "dgvDemandPlan";
+            this.dgvDemandPlan.RowHeadersVisible = false;
+            this.dgvDemandPlan.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvDemandPlan.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDemandPlan.RowTemplate.Height = 27;
+            this.dgvDemandPlan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDemandPlan.Size = new System.Drawing.Size(1358, 649);
+            this.dgvDemandPlan.TabIndex = 0;
             // 
             // frmDemandPlan
             // 

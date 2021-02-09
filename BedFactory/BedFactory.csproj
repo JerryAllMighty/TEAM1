@@ -78,6 +78,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseForms\BaseForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForms\BaseForm1.Designer.cs">
+      <DependentUpon>BaseForm1.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseForms\BaseForm2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,12 @@
     </Compile>
     <Compile Include="frmErrorList.Designer.cs">
       <DependentUpon>frmErrorList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGroupManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGroupManagement.Designer.cs">
+      <DependentUpon>frmGroupManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProcessManagement.cs">
       <SubType>Form</SubType>
@@ -342,12 +354,6 @@
     <Compile Include="frmUserGroupAuthorityModify.Designer.cs">
       <DependentUpon>frmUserGroupAuthorityModify.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGroupManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmGroupManagement.Designer.cs">
-      <DependentUpon>frmGroupManagement.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -498,6 +504,9 @@
     <Compile Include="Util\Helper.cs" />
     <Compile Include="Util\CommonUtil.cs" />
     <Compile Include="Util\ServiceHelp.cs" />
+    <EmbeddedResource Include="BaseForms\BaseForm1.resx">
+      <DependentUpon>BaseForm1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\BaseForm2.resx">
       <DependentUpon>BaseForm2.cs</DependentUpon>
     </EmbeddedResource>
@@ -536,6 +545,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmErrorList.resx">
       <DependentUpon>frmErrorList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGroupManagement.resx">
+      <DependentUpon>frmGroupManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcessManagement.resx">
       <DependentUpon>frmProcessManagement.cs</DependentUpon>
@@ -626,9 +638,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUserGroupAuthorityModify.resx">
       <DependentUpon>frmUserGroupAuthorityModify.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmGroupManagement.resx">
-      <DependentUpon>frmGroupManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

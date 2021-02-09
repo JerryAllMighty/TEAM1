@@ -49,16 +49,19 @@ namespace BedFactory
             // 
             this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn2.Location = new System.Drawing.Point(1233, 161);
+            this.btn2.Visible = false;
             // 
             // btn3
             // 
             this.btn3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn3.Location = new System.Drawing.Point(1162, 161);
+            this.btn3.Visible = false;
             // 
             // btn5
             // 
             this.btn5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn5.Location = new System.Drawing.Point(925, 161);
+            this.btn5.Visible = false;
             // 
             // label1
             // 
@@ -70,23 +73,24 @@ namespace BedFactory
             // 
             this.btn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn1.Location = new System.Drawing.Point(1304, 161);
+            this.btn1.Visible = false;
             // 
             // pnlDgv
             // 
             this.pnlDgv.Controls.Add(this.dgvGroupList);
-            this.pnlDgv.Location = new System.Drawing.Point(12, 200);
-            this.pnlDgv.Size = new System.Drawing.Size(615, 711);
+            this.pnlDgv.Location = new System.Drawing.Point(17, 200);
+            this.pnlDgv.Size = new System.Drawing.Size(615, 641);
             // 
             // btn4
             // 
             this.btn4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn4.Location = new System.Drawing.Point(1056, 161);
+            this.btn4.Visible = false;
             // 
             // pnlSelect
             // 
             this.pnlSelect.Controls.Add(this.searchLocationControl1);
             this.pnlSelect.Size = new System.Drawing.Size(1358, 67);
-            this.pnlSelect.Visible = false;
             // 
             // label2
             // 
@@ -145,7 +149,7 @@ namespace BedFactory
             this.dgvGroupList.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvGroupList.RowTemplate.Height = 27;
             this.dgvGroupList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGroupList.Size = new System.Drawing.Size(615, 711);
+            this.dgvGroupList.Size = new System.Drawing.Size(615, 641);
             this.dgvGroupList.TabIndex = 0;
             this.dgvGroupList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroupList_CellDoubleClick);
             // 
@@ -175,7 +179,6 @@ namespace BedFactory
             // 
             // frmUserGroupAuthority
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.ClientSize = new System.Drawing.Size(1382, 853);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);

@@ -44,6 +44,11 @@ namespace BedFactoryDAC
             }
         }
 
+        /// <summary>
+        /// 그룹이름으로 해당 그룹에 해당하는 권한 정보를 가져온다
+        /// </summary>
+        /// <param name="GroupName"></param>
+        /// <returns></returns>
         public List<AuthorityVO> GetAuthorityInfoByGroupList(string GroupName)
         {
             try
@@ -67,6 +72,65 @@ namespace BedFactoryDAC
             {
                 Log.WriteError(err.Message);
                 return null;
+            }
+        }
+
+        /// <summary>
+        /// 권한을 추가한다
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public bool InsertAuthority(List<AuthorityVO> list)
+        {
+            try {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"insert into tblAuthority (ListNum, Auth_Name, FirstMan, LastMan, IsDeleted)
+                                            values(@ListNum, @Auth_Name, @FirstMan, @LastMan, @IsDeleted)";
+
+                    for (int i = 0; i < list.Count; i ++)
+                    {
+                        cmd.Parameters.AddWithValue("@ListNum", list[i].ListNum);
+                        cmd.Parameters.AddWithValue("@Auth_Name", list[i].Auth_Name);
+                        cmd.Parameters.AddWithValue("@FirstMan", list[i].FirstMan);
+                        cmd.Parameters.AddWithValue("@LastMan", list[i].LastMan);
+                        cmd.Parameters.AddWithValue("@IsDeleted", list[i].IsDeleted);
+
+                        int iRowAffect = cmd.ExecuteNonQuery();
+
+                        if (iRowAffect < 1)
+                            return false;
+                    }
+                    return true;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
+
+        public int GetAuthorityListNum(string GroupCode)
+        {
+            try {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"select ListNum
+                                        from tblAuthorityList
+                                        where GroupCode = @GroupCode";
+
+                    cmd.Parameters.AddWithValue("@GroupCode", GroupCode);
+
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return 0;
             }
         }
 
