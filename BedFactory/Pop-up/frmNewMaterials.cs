@@ -30,7 +30,24 @@ namespace BedFactory.Pop_up
 
         private void frmNewMaterials_Load(object sender, EventArgs e)
         {
+            lctCategory.cbo.SelectedIndexChanged += Cbo_SelectedIndexChanged;
             search.PerformClick();  //트리노드 바인딩
+        }
+
+        /// <summary>
+        /// 자재구분 선택에 따른 종류콤보박스 활성화
+        /// </summary>
+        private void Cbo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(lctCategory.cbo.Text == "매트릭스" || lctCategory.cbo.Text == "완제품")
+            {
+                lctKind.cbo.Enabled = true;
+            }
+            else
+            {
+                lctKind.cbo.SelectedIndex = -1;
+                lctKind.cbo.Enabled = false;
+            }
         }
 
         /// <summary>
@@ -43,10 +60,11 @@ namespace BedFactory.Pop_up
             CommonCodeService service1 = new CommonCodeService();
             allList = service1.GetCommonCodeInfo();
             p_List = (from common in allList
-                      where common.Category == "자재종류"
+                      where common.Category == "자재구분"
                       select common).ToList();
 
-            CommonUtil.CommonCodeBindig(lctCategory.cbo, p_List, "", "선택");   //자재종류 콤보박스 바인딩
+            CommonUtil.CommonCodeBindig(lctCategory.cbo, allList, "자재구분", "선택");   //자재종류 콤보박스 바인딩
+            CommonUtil.CommonCodeBindig(lctKind.cbo, allList, "사이즈", "선택"); //사이즈 콤보박스 바인딩
 
             foreach (CommonCodeVO item in p_List)
             {
@@ -54,8 +72,9 @@ namespace BedFactory.Pop_up
             }
             #endregion
 
+
             ServiceHelp serviceHelp = new ServiceHelp();
-            APIMessage<List<MaterialsVO>> result = serviceHelp.GetApiCaller<List<MaterialsVO>>("api/materials/all");    //자재정보 출력(API)
+            APIMessage<List<MaterialsVO>> result = serviceHelp.GetApiCaller<List<MaterialsVO>>("api/Mat/GetAllMaterials");    //자재정보 출력(API)
 
             //자재정보가 있을경우
             if (result != null)
@@ -189,9 +208,6 @@ namespace BedFactory.Pop_up
         {
             TreeNodeBinding();
 
-            //매트릭스 크기(싱글, 퀸, 킹, ...)정보 콤보박스 바인딩
-            CommonUtil.CommonCodeBindig(lctKind.cbo, allList, "매트릭스크기", "선택");
-
             //검사항목 콤보박스 바인딩
             List<CheckInfoVO> ci_list = new List<CheckInfoVO>();
             CheckService service2 = new CheckService();
@@ -257,10 +273,10 @@ namespace BedFactory.Pop_up
             if(list.Count <= 0) { return; } //정보가 없을 경우 리턴
 
             lctProductName.text.Text = list[0].Mat_Name;
-            ontSizeX.Text = list[0].Mat_Size.Split('/')[0].Trim();
-            ontSizeY.Text = list[0].Mat_Size.Split('/')[1].Trim();
-            ontSizeZ.Text = list[0].Mat_Size.Split('/')[2].Trim();
-            lctCategory.cbo.Text = list[0].Mat_Category;
+            ontSizeX.Text = list[0].Mat_Size.Split('/')[0].Trim() != null ? list[0].Mat_Size.Split('/')[0].Trim() : null;
+            ontSizeY.Text = list[0].Mat_Size.Split('/')[1].Trim() != null ? list[0].Mat_Size.Split('/')[1].Trim() : null;
+            ontSizeZ.Text = list[0].Mat_Size.Split('/')[2].Trim() != null ? list[0].Mat_Size.Split('/')[2].Trim() : null;
+            lctCategory.cbo.Text = list[0].Mat_Category.Trim();
             lctKind.cbo.Text = list[0].Mat_Kind;
             #endregion
 

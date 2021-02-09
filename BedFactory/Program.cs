@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BadFactory;
 using BedFactory.BaseForms;
+using BedFactory.Pop_up;
 
 namespace BedFactory
 {
@@ -18,7 +19,7 @@ namespace BedFactory
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(new frmBOM());
         }
     }
 }
