@@ -54,25 +54,30 @@ namespace BedFactory
             // 
             // btn2
             // 
+            this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn2.Location = new System.Drawing.Point(1234, 134);
             // 
             // btn3
             // 
+            this.btn3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn3.Location = new System.Drawing.Point(1163, 134);
             this.btn3.Text = "엑셀";
             // 
             // btn5
             // 
+            this.btn5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn5.Location = new System.Drawing.Point(926, 134);
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.Location = new System.Drawing.Point(12, 134);
             this.label1.Size = new System.Drawing.Size(99, 20);
             this.label1.Text = "자재입고현황";
             // 
             // btn1
             // 
+            this.btn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn1.Location = new System.Drawing.Point(1305, 134);
             // 
             // pnlDgv
@@ -83,6 +88,7 @@ namespace BedFactory
             // 
             // btn4
             // 
+            this.btn4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn4.Location = new System.Drawing.Point(1057, 134);
             this.btn4.Text = "입고취소";
             this.btn4.Click += new System.EventHandler(this.btn4_Click);
@@ -163,6 +169,9 @@ namespace BedFactory
             // 
             // searchLocationControl1
             // 
+            this.searchLocationControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.searchLocationControl1.ColumnCount = 10;
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
@@ -183,7 +192,6 @@ namespace BedFactory
             this.searchLocationControl1.Controls.Add(this.cboCom, 4, 0);
             this.searchLocationControl1.Controls.Add(this.label5, 6, 0);
             this.searchLocationControl1.Controls.Add(this.label6, 0, 1);
-            this.searchLocationControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchLocationControl1.Location = new System.Drawing.Point(0, 0);
             this.searchLocationControl1.Name = "searchLocationControl1";
             this.searchLocationControl1.RowCount = 2;
@@ -247,11 +255,12 @@ namespace BedFactory
             // 
             this.dgvState.AllowUserToAddRows = false;
             this.dgvState.AllowUserToResizeRows = false;
+            this.dgvState.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvState.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvState.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvState.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvState.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvState.Location = new System.Drawing.Point(0, 0);
             this.dgvState.Name = "dgvState";
             this.dgvState.RowHeadersVisible = false;
@@ -274,7 +283,7 @@ namespace BedFactory
             this.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMaterialLedgerStockWarehousingState";
-            this.Text = "FrmMaterialLedgerStockWarehousingState";
+            this.Text = "자재입고현황";
             this.Load += new System.EventHandler(this.frmMaterialLedgerStockWarehousingState_Load);
             this.pnlDgv.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);

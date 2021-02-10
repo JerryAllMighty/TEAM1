@@ -62,27 +62,32 @@ namespace BedFactory
             // 
             // btn2
             // 
+            this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn2.Location = new System.Drawing.Point(749, 96);
             this.btn2.Text = "등록";
             this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
             // btn3
             // 
+            this.btn3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn3.Location = new System.Drawing.Point(962, 98);
             this.btn3.Text = "삭제";
             // 
             // btn5
             // 
+            this.btn5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn5.Location = new System.Drawing.Point(1139, 99);
             this.btn5.Text = "양식 다운로드";
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.Size = new System.Drawing.Size(99, 20);
             this.label1.Text = "영업단가관리";
             // 
             // btn1
             // 
+            this.btn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn1.Location = new System.Drawing.Point(891, 97);
             this.btn1.Text = "복사";
             this.btn1.Click += new System.EventHandler(this.btn1_Click);
@@ -94,6 +99,7 @@ namespace BedFactory
             // 
             // btn4
             // 
+            this.btn4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn4.Location = new System.Drawing.Point(1270, 99);
             this.btn4.Text = "가져오기";
             // 
@@ -225,7 +231,7 @@ namespace BedFactory
             // 
             this.cboCompany.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(975, 21);
+            this.cboCompany.Location = new System.Drawing.Point(975, 18);
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(235, 25);
             this.cboCompany.TabIndex = 41;
@@ -279,6 +285,7 @@ namespace BedFactory
             // 
             // button12
             // 
+            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button12.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button12.Location = new System.Drawing.Point(1033, 99);
@@ -290,6 +297,9 @@ namespace BedFactory
             // 
             // searchLocationControl1
             // 
+            this.searchLocationControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.searchLocationControl1.ColumnCount = 10;
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
@@ -308,7 +318,6 @@ namespace BedFactory
             this.searchLocationControl1.Controls.Add(this.txtMaterial, 4, 0);
             this.searchLocationControl1.Controls.Add(this.dtpDate, 1, 0);
             this.searchLocationControl1.Controls.Add(this.label6, 3, 0);
-            this.searchLocationControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchLocationControl1.Location = new System.Drawing.Point(0, 0);
             this.searchLocationControl1.Name = "searchLocationControl1";
             this.searchLocationControl1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -332,11 +341,12 @@ namespace BedFactory
             // 
             this.dgvCost.AllowUserToAddRows = false;
             this.dgvCost.AllowUserToResizeRows = false;
+            this.dgvCost.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCost.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvCost.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCost.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCost.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCost.Location = new System.Drawing.Point(0, 0);
             this.dgvCost.Name = "dgvCost";
             this.dgvCost.RowHeadersVisible = false;
@@ -349,6 +359,7 @@ namespace BedFactory
             // 
             // button7
             // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button7.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button7.Location = new System.Drawing.Point(820, 97);

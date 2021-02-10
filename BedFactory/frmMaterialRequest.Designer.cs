@@ -64,14 +64,17 @@ namespace BedFactory
             // 
             // btn2
             // 
+            this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn2.Location = new System.Drawing.Point(1234, 134);
             // 
             // btn3
             // 
+            this.btn3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn3.Location = new System.Drawing.Point(1163, 134);
             // 
             // btn5
             // 
+            this.btn5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn5.Location = new System.Drawing.Point(926, 134);
             this.btn5.Text = "엑셀 내보내기";
             // 
@@ -83,6 +86,7 @@ namespace BedFactory
             // 
             // btn1
             // 
+            this.btn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn1.Location = new System.Drawing.Point(1305, 134);
             // 
             // pnlDgv
@@ -93,6 +97,7 @@ namespace BedFactory
             // 
             // btn4
             // 
+            this.btn4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn4.Location = new System.Drawing.Point(1057, 134);
             // 
             // pnlSelect
@@ -180,6 +185,7 @@ namespace BedFactory
             // 
             // brnSave
             // 
+            this.brnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.brnSave.BackColor = System.Drawing.Color.LightSteelBlue;
             this.brnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.brnSave.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -192,6 +198,7 @@ namespace BedFactory
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -204,6 +211,7 @@ namespace BedFactory
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.Location = new System.Drawing.Point(12, 510);
@@ -216,6 +224,7 @@ namespace BedFactory
             // 
             // brnCancel
             // 
+            this.brnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.brnCancel.BackColor = System.Drawing.Color.LightSteelBlue;
             this.brnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.brnCancel.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -243,11 +252,12 @@ namespace BedFactory
             // 
             this.dgvMaSub.AllowUserToAddRows = false;
             this.dgvMaSub.AllowUserToResizeRows = false;
+            this.dgvMaSub.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMaSub.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvMaSub.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMaSub.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMaSub.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMaSub.Location = new System.Drawing.Point(0, 0);
             this.dgvMaSub.Name = "dgvMaSub";
             this.dgvMaSub.RowHeadersVisible = false;
@@ -260,6 +270,9 @@ namespace BedFactory
             // 
             // searchLocationControl1
             // 
+            this.searchLocationControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.searchLocationControl1.ColumnCount = 10;
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
@@ -280,7 +293,6 @@ namespace BedFactory
             this.searchLocationControl1.Controls.Add(this.label5, 0, 1);
             this.searchLocationControl1.Controls.Add(this.label12, 6, 0);
             this.searchLocationControl1.Controls.Add(this.label9, 3, 0);
-            this.searchLocationControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchLocationControl1.Location = new System.Drawing.Point(0, 0);
             this.searchLocationControl1.Name = "searchLocationControl1";
             this.searchLocationControl1.RowCount = 2;
@@ -331,11 +343,12 @@ namespace BedFactory
             // 
             this.dgvWorkOrder.AllowUserToAddRows = false;
             this.dgvWorkOrder.AllowUserToResizeRows = false;
+            this.dgvWorkOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvWorkOrder.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvWorkOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvWorkOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvWorkOrder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWorkOrder.Location = new System.Drawing.Point(0, 0);
             this.dgvWorkOrder.Name = "dgvWorkOrder";
             this.dgvWorkOrder.RowHeadersVisible = false;
@@ -360,7 +373,7 @@ namespace BedFactory
             this.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMaterialRequest";
-            this.Text = "frmMaterialRequest";
+            this.Text = "자재불출요청";
             this.Load += new System.EventHandler(this.frmMaterialRequest_Load);
             this.Controls.SetChildIndex(this.pnlSelect, 0);
             this.Controls.SetChildIndex(this.btn4, 0);

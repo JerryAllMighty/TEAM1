@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -104,7 +104,7 @@ namespace BedFactory
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(558, 11);
+            this.comboBox1.Location = new System.Drawing.Point(558, 14);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(235, 25);
             this.comboBox1.TabIndex = 80;
@@ -259,7 +259,7 @@ namespace BedFactory
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(558, 60);
+            this.comboBox2.Location = new System.Drawing.Point(558, 63);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(235, 25);
             this.comboBox2.TabIndex = 82;
@@ -268,7 +268,7 @@ namespace BedFactory
             // 
             this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(977, 11);
+            this.comboBox3.Location = new System.Drawing.Point(977, 14);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(235, 25);
             this.comboBox3.TabIndex = 83;
@@ -280,14 +280,14 @@ namespace BedFactory
             this.dgvWO.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvWO.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvWO.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvWO.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvWO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWO.Location = new System.Drawing.Point(0, 0);
             this.dgvWO.Name = "dgvWO";
             this.dgvWO.RowHeadersVisible = false;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvWO.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvWO.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvWO.RowTemplate.Height = 23;
             this.dgvWO.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvWO.Size = new System.Drawing.Size(1358, 684);
