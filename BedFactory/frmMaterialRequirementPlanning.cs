@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmMaterialRequirementPlanning : Form
+    public partial class frmMaterialRequirementPlanning : BedFactory.BaseForms.BaseForm2
     {
         public frmMaterialRequirementPlanning()
         {

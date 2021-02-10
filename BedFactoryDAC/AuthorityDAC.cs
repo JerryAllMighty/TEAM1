@@ -89,13 +89,19 @@ namespace BedFactoryDAC
                     cmd.CommandText = @"insert into tblAuthority (ListNum, Auth_Name, FirstMan, LastMan, IsDeleted)
                                             values(@ListNum, @Auth_Name, @FirstMan, @LastMan, @IsDeleted)";
 
+                    cmd.Parameters.Add("@ListNum", System.Data.SqlDbType.Int);
+                    cmd.Parameters.Add("@Auth_Name", System.Data.SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@FirstMan", System.Data.SqlDbType.Int);
+                    cmd.Parameters.Add("@LastMan", System.Data.SqlDbType.Int);
+                    cmd.Parameters.Add("@IsDeleted", System.Data.SqlDbType.NChar);
+
                     for (int i = 0; i < list.Count; i ++)
                     {
-                        cmd.Parameters.AddWithValue("@ListNum", list[i].ListNum);
-                        cmd.Parameters.AddWithValue("@Auth_Name", list[i].Auth_Name);
-                        cmd.Parameters.AddWithValue("@FirstMan", list[i].FirstMan);
-                        cmd.Parameters.AddWithValue("@LastMan", list[i].LastMan);
-                        cmd.Parameters.AddWithValue("@IsDeleted", list[i].IsDeleted);
+                        cmd.Parameters["@ListNum"].Value = list[i].ListNum;
+                        cmd.Parameters["@Auth_Name"].Value = list[i].Auth_Name;
+                        cmd.Parameters["@FirstMan"].Value = list[i].FirstMan;
+                        cmd.Parameters["@LastMan"].Value = list[i].LastMan;
+                        cmd.Parameters["@IsDeleted"].Value = list[i].IsDeleted;
 
                         int iRowAffect = cmd.ExecuteNonQuery();
 

@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmSalesMasterUpload : Form
+    public partial class frmSalesMasterUpload : BedFactory.BaseForms.BaseForm1
     {
         public DataTable datasource { get {return (DataTable)dgvSalesMasterUpload.DataSource; }
             set { dgvSalesMasterUpload.DataSource = value; } }
@@ -36,12 +36,10 @@ namespace BedFactory
             InitializeComponent();
         }
 
-        //영업 마스터 업로드 팝업을 띄운다
+        //
         private void button1_Click(object sender, EventArgs e)
         {
-            frmSalesMasterRegister frm = new frmSalesMasterRegister(this);
-            frm.ShowDialog();
-            frm.Activate();
+           
         }
 
         /// <summary>
@@ -67,11 +65,33 @@ namespace BedFactory
         }
 
         /// <summary>
-        /// 영업마스터 테이블에 등록한다
+        /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        /// <summary>
+        /// 영업 마스터 업로드 팝업을 띄운다
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn3_Click(object sender, EventArgs e)
+        {
+            frmSalesMasterRegister frm = new frmSalesMasterRegister(this);
+            frm.ShowDialog();
+            frm.Activate();
+        }
+
+        /// <summary>
+        /// 영업마스터 테이블에 등록한다
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn2_Click(object sender, EventArgs e)
         {
             SalesMasterService service = new SalesMasterService();
             if (service.InsertSalesMaster(SalesInfo))

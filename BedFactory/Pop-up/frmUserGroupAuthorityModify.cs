@@ -26,7 +26,6 @@ namespace BedFactory
             InitializeComponent();
             lblGroupCodeBinding.Text = groupCode;
             lblGroupNameBinding.Text = groupName;
-
         }
 
         /// <summary>
@@ -37,27 +36,22 @@ namespace BedFactory
         private void frmUserGroupAuthorityModify_Load(object sender, EventArgs e)
         {
             //전체화면목록 세팅
-            dgvEveryScreen.SetGridViewColumn("화면번호", "Auth_Num");
-            dgvEveryScreen.SetGridViewColumn("화면명", "Auth_Name", 150);
+            dgvEveryScreen.SetGridViewColumn("권한 번호", "Code_Num");
+            dgvEveryScreen.SetGridViewColumn("메뉴명", "Code_Name", 150);
             dgvEveryScreen.AddGridButton("추가", "btnAdd", "+", new Padding(0, 0, 0, 0), 100);
             dgvEveryScreen.CellClick += DatagridviewControl1_CellClick;
 
             //추가할 권한
             dgvAddAuthority.AddGridButton("제외", "btnSubtract", "-", new Padding(0, 0, 0, 0), 100);
-            dgvAddAuthority.SetGridViewColumn("화면번호", "Auth_Num");
-            dgvAddAuthority.SetGridViewColumn("화면명", "Auth_Name");
+            dgvAddAuthority.SetGridViewColumn("메뉴명", "Auth_Name");
             
             dgvAddAuthority.CellClick += DatagridviewControl2_CellClick;
-            //datagridviewControl2.SetGridViewColumn("화면명", "Create");
-            //datagridviewControl2.SetGridViewColumn("화면명", "Read");
-            //datagridviewControl2.SetGridViewColumn("화면명", "Update");
-            //datagridviewControl2.SetGridViewColumn("화면명", "Delete");
 
             LoadData();
         }
 
         /// <summary>
-        /// -
+        /// 추가할 화면 목록에서 제외시키기
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -84,7 +78,6 @@ namespace BedFactory
                 AddAuthorityList.Add(new AuthorityVO
                 {
                     ListNum = GetAuthorityListNum(),
-                    Auth_Num = Convert.ToInt32(dgvEveryScreen[0, e.RowIndex].Value.ToString()),
                     Auth_Name = dgvEveryScreen[1, e.RowIndex].Value.ToString(),
                     FirstMan = 1,
                     LastMan = 1,
@@ -94,6 +87,7 @@ namespace BedFactory
                 dgvAddAuthority.DataSource = AddAuthorityList;
             }
         }
+
         private int GetAuthorityListNum()
         {
             AuthorityService service = new AuthorityService();
@@ -106,12 +100,12 @@ namespace BedFactory
         /// </summary>
         private void LoadData()
         {
-            AuthorityService service = new AuthorityService();
-            List<AuthorityVO> list = service.GetAuthorityInfo();
-            if (list != null)
-            {
-                dgvEveryScreen.DataSource = list;
-            }
+            List<CommonCodeVO> list = frmCommonCode.CheckCommonInfo();
+            var MenuList = (from items in list
+             where items.Category == "메뉴"
+             select items).ToList();
+
+            dgvEveryScreen.DataSource = MenuList;
         }
 
         /// <summary>
@@ -131,5 +125,6 @@ namespace BedFactory
                 MessageBox.Show(BedFactory.Properties.Settings.Default.InsertFail);
             }
         }
+
     }
 }

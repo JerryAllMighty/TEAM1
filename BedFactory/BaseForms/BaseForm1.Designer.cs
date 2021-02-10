@@ -121,6 +121,7 @@ namespace BedFactory.BaseForms
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "BaseForm1";
             this.Text = "BaseForm1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 
