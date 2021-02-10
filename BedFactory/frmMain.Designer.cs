@@ -32,11 +32,12 @@ namespace BadFactory
             this.pnMenu1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.pnMenu2 = new System.Windows.Forms.Panel();
+            this.tvMenu = new System.Windows.Forms.TreeView();
             this.btnMenuPut = new System.Windows.Forms.Button();
             this.pnSplitScreen = new System.Windows.Forms.Panel();
             this.pnNewTab = new System.Windows.Forms.Panel();
             this.btnTabPut = new System.Windows.Forms.Button();
-            this.tvMenu = new System.Windows.Forms.TreeView();
+            this.pnMenu = new System.Windows.Forms.Panel();
             this.tabControl1 = new BadFactory.TabCustomControl1();
             this.pnMenu1.SuspendLayout();
             this.pnMenu2.SuspendLayout();
@@ -45,6 +46,7 @@ namespace BadFactory
             // 
             // pnMenu1
             // 
+            this.pnMenu1.Controls.Add(this.tvMenu);
             this.pnMenu1.Controls.Add(this.button3);
             this.pnMenu1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnMenu1.Location = new System.Drawing.Point(0, 0);
@@ -64,13 +66,22 @@ namespace BadFactory
             // 
             // pnMenu2
             // 
-            this.pnMenu2.Controls.Add(this.tvMenu);
+            this.pnMenu2.Controls.Add(this.pnMenu);
             this.pnMenu2.Controls.Add(this.btnMenuPut);
             this.pnMenu2.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnMenu2.Location = new System.Drawing.Point(0, 100);
             this.pnMenu2.Name = "pnMenu2";
             this.pnMenu2.Size = new System.Drawing.Size(200, 761);
             this.pnMenu2.TabIndex = 6;
+            // 
+            // tvMenu
+            // 
+            this.tvMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tvMenu.Location = new System.Drawing.Point(491, 12);
+            this.tvMenu.Name = "tvMenu";
+            this.tvMenu.Size = new System.Drawing.Size(181, 65);
+            this.tvMenu.TabIndex = 1;
+            this.tvMenu.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvMenu_NodeMouseDoubleClick);
             // 
             // btnMenuPut
             // 
@@ -119,14 +130,14 @@ namespace BadFactory
             this.btnTabPut.UseVisualStyleBackColor = false;
             this.btnTabPut.Click += new System.EventHandler(this.btnTabPut_Click);
             // 
-            // tvMenu
+            // pnMenu
             // 
-            this.tvMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvMenu.Location = new System.Drawing.Point(0, 0);
-            this.tvMenu.Name = "tvMenu";
-            this.tvMenu.Size = new System.Drawing.Size(181, 761);
-            this.tvMenu.TabIndex = 1;
-            this.tvMenu.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvMenu_NodeMouseDoubleClick);
+            this.pnMenu.BackColor = System.Drawing.Color.White;
+            this.pnMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnMenu.Name = "pnMenu";
+            this.pnMenu.Size = new System.Drawing.Size(181, 761);
+            this.pnMenu.TabIndex = 1;
             // 
             // tabControl1
             // 
@@ -172,5 +183,6 @@ namespace BadFactory
         private System.Windows.Forms.Panel pnNewTab;
         private System.Windows.Forms.Button btnTabPut;
         private System.Windows.Forms.TreeView tvMenu;
+        private System.Windows.Forms.Panel pnMenu;
     }
 }

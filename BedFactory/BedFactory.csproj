@@ -78,6 +78,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseForms\BaseForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForms\BaseForm1.Designer.cs">
+      <DependentUpon>BaseForm1.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseForms\BaseForm2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,18 @@
     </Compile>
     <Compile Include="frmErrorList.Designer.cs">
       <DependentUpon>frmErrorList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGroupManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGroupManagement.Designer.cs">
+      <DependentUpon>frmGroupManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuManagement.Designer.cs">
+      <DependentUpon>frmMenuManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProcessManagement.cs">
       <SubType>Form</SubType>
@@ -342,17 +360,11 @@
     <Compile Include="frmCommonCode.Designer.cs">
       <DependentUpon>frmCommonCode.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUserGroupAuthorityModify.cs">
+    <Compile Include="Pop-up\frmUserGroupAuthorityModify.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUserGroupAuthorityModify.Designer.cs">
+    <Compile Include="Pop-up\frmUserGroupAuthorityModify.Designer.cs">
       <DependentUpon>frmUserGroupAuthorityModify.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmGroupManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmGroupManagement.Designer.cs">
-      <DependentUpon>frmGroupManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -372,16 +384,10 @@
     <Compile Include="Pop-up\frmMaterials.Designer.cs">
       <DependentUpon>frmMaterials.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMenuManagement.cs">
+    <Compile Include="Pop-up\frmMenuRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMenuManagement.Designer.cs">
-      <DependentUpon>frmMenuManagement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMenuRegister.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMenuRegister.Designer.cs">
+    <Compile Include="Pop-up\frmMenuRegister.Designer.cs">
       <DependentUpon>frmMenuRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPurchasingOrder.cs">
@@ -401,12 +407,6 @@
     </Compile>
     <Compile Include="Pop-up\frmPurchasing.Designer.cs">
       <DependentUpon>frmPurchasing.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmScreenManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmScreenManagement.Designer.cs">
-      <DependentUpon>frmScreenManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="frmShiftInfo.cs">
       <SubType>Form</SubType>
@@ -504,6 +504,9 @@
     <Compile Include="Util\Helper.cs" />
     <Compile Include="Util\CommonUtil.cs" />
     <Compile Include="Util\ServiceHelp.cs" />
+    <EmbeddedResource Include="BaseForms\BaseForm1.resx">
+      <DependentUpon>BaseForm1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\BaseForm2.resx">
       <DependentUpon>BaseForm2.cs</DependentUpon>
     </EmbeddedResource>
@@ -545,6 +548,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmErrorList.resx">
       <DependentUpon>frmErrorList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGroupManagement.resx">
+      <DependentUpon>frmGroupManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuManagement.resx">
+      <DependentUpon>frmMenuManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcessManagement.resx">
       <DependentUpon>frmProcessManagement.cs</DependentUpon>
@@ -636,11 +645,8 @@
     <EmbeddedResource Include="frmCommonCode.resx">
       <DependentUpon>frmCommonCode.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUserGroupAuthorityModify.resx">
+    <EmbeddedResource Include="Pop-up\frmUserGroupAuthorityModify.resx">
       <DependentUpon>frmUserGroupAuthorityModify.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmGroupManagement.resx">
-      <DependentUpon>frmGroupManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -651,10 +657,7 @@
     <EmbeddedResource Include="Pop-up\frmMaterials.resx">
       <DependentUpon>frmMaterials.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMenuManagement.resx">
-      <DependentUpon>frmMenuManagement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMenuRegister.resx">
+    <EmbeddedResource Include="Pop-up\frmMenuRegister.resx">
       <DependentUpon>frmMenuRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPurchasingOrder.resx">
@@ -665,9 +668,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmPurchasing.resx">
       <DependentUpon>frmPurchasing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmScreenManagement.resx">
-      <DependentUpon>frmScreenManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmShiftInfo.resx">
       <DependentUpon>frmShiftInfo.cs</DependentUpon>

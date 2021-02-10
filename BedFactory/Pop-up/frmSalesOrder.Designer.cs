@@ -188,23 +188,27 @@ namespace BedFactory.Pop_up
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.Location = new System.Drawing.Point(226, 334);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(120, 50);
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "저장";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Location = new System.Drawing.Point(353, 334);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(120, 50);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "취소";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             // 
-            // frmDemandPlan
+            // frmSalesOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -213,7 +217,7 @@ namespace BedFactory.Pop_up
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel1);
-            this.Name = "frmDemandPlan";
+            this.Name = "frmSalesOrder";
             this.Text = "S/O";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

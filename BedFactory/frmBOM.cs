@@ -30,9 +30,9 @@ namespace BedFactory
             CommonCodeService service1 = new CommonCodeService();
 
             commonList = (from common in service1.GetCommonCodeInfo()
-                          where common.Category.Equals("자재종류")
+                          where common.Category.Equals("자재구분")
                           select common).ToList();
-            CommonUtil.CommonCodeBindig(cbbKind, commonList, "자재종류", "전체");
+            CommonUtil.CommonCodeBindig(cbbKind, commonList, "자재구분", "전체");
             #endregion
 
             #region 자재종류 버튼 바인딩
@@ -41,28 +41,16 @@ namespace BedFactory
             {
                 Button btn = new Button();
                 btn.Size = new Size(220, 40);
-                btn.Location = new Point(5, 3 + 41 * y);
+                btn.Location = new Point(5, 45 + 41 * y);
                 btn.Text = vo.Code_Name;
                 btn.Tag = vo.Code_Num;
                 btn.Click += Btn_Click;
                 btn.FlatStyle = FlatStyle.Popup;
                 btn.BackColor = Color.LightSteelBlue;
-                pnlKindBtn.Controls.Add(btn);
+                splitContainer1.Panel1.Controls.Add(btn);
                 y++;
             }
             #endregion
-
-            #region 자재정보 호출
-            ServiceHelp serviceHelp = new ServiceHelp();
-            APIMessage<List<MaterialsVO>> result = serviceHelp.GetApiCaller<List<MaterialsVO>>("api/Materials/GetAllMaterials");    //자재정보 출력(API)
-            if (result != null)
-            {
-                result.Data.ForEach(p => list.Add(new CommonCodeVO { Code_Num = p.Mat_Num, Code_Name = p.Mat_Name, Category = p.Mat_Category }));
-            }
-            #endregion
-
-            dgvList.SetGridViewColumn("자재코드", "Mat_Num", visibility: false);
-            dgvList.SetGridViewColumn("자재명", "Mat_Name", textAlign : DataGridViewContentAlignment.MiddleLeft);
         }
 
         /// <summary>
@@ -97,6 +85,31 @@ namespace BedFactory
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //자재 콤보박스 바인딩
+        private void cbbKind_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectName;
+            cbbName.DataSource = null;
+            list.Clear();
+
+            ServiceHelp serviceHelp = new ServiceHelp();
+            APIMessage<List<MaterialsVO>> result = serviceHelp.GetApiCaller<List<MaterialsVO>>("api/Mat/GetAllMaterials");    //자재정보 출력(API)
+            if (result != null)
+            {
+                result.Data.ForEach(p => list.Add(new CommonCodeVO { Code_Num = p.Mat_Num, Code_Name = p.Mat_Name, Category = p.Mat_Category }));
+            }
+
+            if (cbbKind.Text == "전체")
+            {
+                selectName = "";
+            }
+            else
+            {
+                selectName = cbbKind.Text;
+            }
+            CommonUtil.CommonCodeBindig(cbbName, list, selectName, "선택");
         }
     }
 }

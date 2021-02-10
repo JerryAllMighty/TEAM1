@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmUserGroupAuthorityModify : Form
+    public partial class frmUserGroupAuthorityModify : BedFactory.BaseForms.BaseForm2
     {
         List<AuthorityVO> AddAuthorityList = new List<AuthorityVO>();
 
@@ -37,17 +37,17 @@ namespace BedFactory
         private void frmUserGroupAuthorityModify_Load(object sender, EventArgs e)
         {
             //전체화면목록 세팅
-            datagridviewControl1.SetGridViewColumn("화면번호", "Auth_Num");
-            datagridviewControl1.SetGridViewColumn("화면명", "Auth_Name", 150);
-            datagridviewControl1.AddGridButton("추가", "btnAdd", "+", new Padding(0, 0, 0, 0), 100);
-            datagridviewControl1.CellClick += DatagridviewControl1_CellClick;
+            dgvEveryScreen.SetGridViewColumn("화면번호", "Auth_Num");
+            dgvEveryScreen.SetGridViewColumn("화면명", "Auth_Name", 150);
+            dgvEveryScreen.AddGridButton("추가", "btnAdd", "+", new Padding(0, 0, 0, 0), 100);
+            dgvEveryScreen.CellClick += DatagridviewControl1_CellClick;
 
             //추가할 권한
-            datagridviewControl2.AddGridButton("제외", "btnSubtract", "-", new Padding(0, 0, 0, 0), 100);
-            datagridviewControl2.SetGridViewColumn("화면번호", "Auth_Num");
-            datagridviewControl2.SetGridViewColumn("화면명", "Auth_Name");
+            dgvAddAuthority.AddGridButton("제외", "btnSubtract", "-", new Padding(0, 0, 0, 0), 100);
+            dgvAddAuthority.SetGridViewColumn("화면번호", "Auth_Num");
+            dgvAddAuthority.SetGridViewColumn("화면명", "Auth_Name");
             
-            datagridviewControl2.CellClick += DatagridviewControl2_CellClick;
+            dgvAddAuthority.CellClick += DatagridviewControl2_CellClick;
             //datagridviewControl2.SetGridViewColumn("화면명", "Create");
             //datagridviewControl2.SetGridViewColumn("화면명", "Read");
             //datagridviewControl2.SetGridViewColumn("화면명", "Update");
@@ -65,15 +65,15 @@ namespace BedFactory
         {
             if (e.ColumnIndex == 0)
             {
-                AddAuthorityList.Remove(  AddAuthorityList.Find(p => p.Auth_Num == Convert.ToInt32(datagridviewControl2[1, e.RowIndex].Value.ToString())));
-                datagridviewControl2.DataSource = null; //**
-                datagridviewControl2.DataSource = AddAuthorityList;
+                AddAuthorityList.Remove(  AddAuthorityList.Find(p => p.Auth_Num == Convert.ToInt32(dgvAddAuthority[1, e.RowIndex].Value.ToString())));
+                dgvAddAuthority.DataSource = null; //**
+                dgvAddAuthority.DataSource = AddAuthorityList;
             }
         }
 
 
         /// <summary>
-        /// +
+        /// 추가할 권한 리스트에 추가, 그리드 뷰에 바인딩
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -83,22 +83,52 @@ namespace BedFactory
             {
                 AddAuthorityList.Add(new AuthorityVO
                 {
-                    Auth_Num = Convert.ToInt32(datagridviewControl1[0, e.RowIndex].Value.ToString()),
-                    Auth_Name = datagridviewControl1[1, e.RowIndex].Value.ToString()
+                    ListNum = GetAuthorityListNum(),
+                    Auth_Num = Convert.ToInt32(dgvEveryScreen[0, e.RowIndex].Value.ToString()),
+                    Auth_Name = dgvEveryScreen[1, e.RowIndex].Value.ToString(),
+                    FirstMan = 1,
+                    LastMan = 1,
+                    IsDeleted = "N"
                 });
-                datagridviewControl2.DataSource = null; //**
-                datagridviewControl2.DataSource = AddAuthorityList;
+                dgvAddAuthority.DataSource = null; //**
+                dgvAddAuthority.DataSource = AddAuthorityList;
             }
         }
+        private int GetAuthorityListNum()
+        {
+            AuthorityService service = new AuthorityService();
+            return service.GetAuthorityListNum(lblGroupCodeBinding.Text);
+        }
 
+
+        /// <summary>
+        /// 전체 화면 목록을 그리드 뷰에 바인딩 시켜주는 함수
+        /// </summary>
         private void LoadData()
         {
-            //DB 한 번만 갔다올 수 있게 체크해봐
             AuthorityService service = new AuthorityService();
             List<AuthorityVO> list = service.GetAuthorityInfo();
             if (list != null)
             {
-                datagridviewControl1.DataSource = list;
+                dgvEveryScreen.DataSource = list;
+            }
+        }
+
+        /// <summary>
+        /// 추가할 권한을 DB에 저장
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn1_Click_1(object sender, EventArgs e)
+        {
+            AuthorityService service = new AuthorityService();
+            if (service.InsertAuthority(AddAuthorityList))
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.InsertSuccess);
+            }
+            else
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.InsertFail);
             }
         }
     }
