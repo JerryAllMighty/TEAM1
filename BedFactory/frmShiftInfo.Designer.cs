@@ -91,16 +91,16 @@ namespace BedFactory
             // 
             this.cboWork.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboWork.FormattingEnabled = true;
-            this.cboWork.Location = new System.Drawing.Point(126, 21);
+            this.cboWork.Location = new System.Drawing.Point(139, 21);
             this.cboWork.Name = "cboWork";
-            this.cboWork.Size = new System.Drawing.Size(215, 25);
+            this.cboWork.Size = new System.Drawing.Size(235, 25);
             this.cboWork.TabIndex = 42;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 23);
+            this.label2.Location = new System.Drawing.Point(50, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 17);
             this.label2.TabIndex = 40;
@@ -112,7 +112,7 @@ namespace BedFactory
             this.btnSelect.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSelect.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSelect.Location = new System.Drawing.Point(1275, 16);
+            this.btnSelect.Location = new System.Drawing.Point(1271, 16);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(70, 30);
             this.btnSelect.TabIndex = 38;
@@ -167,15 +167,14 @@ namespace BedFactory
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
             this.searchLocationControl1.Controls.Add(this.btnSelect, 9, 0);
             this.searchLocationControl1.Controls.Add(this.label2, 0, 0);
             this.searchLocationControl1.Controls.Add(this.cboWork, 1, 0);
             this.searchLocationControl1.Location = new System.Drawing.Point(0, 0);
             this.searchLocationControl1.Name = "searchLocationControl1";
-            this.searchLocationControl1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.searchLocationControl1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.searchLocationControl1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.searchLocationControl1.Size = new System.Drawing.Size(1356, 63);
             this.searchLocationControl1.TabIndex = 0;
             // 
