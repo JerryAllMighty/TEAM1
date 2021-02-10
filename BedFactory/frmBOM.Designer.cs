@@ -29,10 +29,10 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,9 +47,9 @@ namespace BedFactory
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.datagridviewControl2 = new BedFactory.DatagridviewControl();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.nmrCnt = new System.Windows.Forms.NumericUpDown();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.nmrCnt = new System.Windows.Forms.NumericUpDown();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -162,7 +162,7 @@ namespace BedFactory
             this.cbbKind.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbKind.FormattingEnabled = true;
-            this.cbbKind.Location = new System.Drawing.Point(136, 19);
+            this.cbbKind.Location = new System.Drawing.Point(136, 21);
             this.cbbKind.Name = "cbbKind";
             this.cbbKind.Size = new System.Drawing.Size(231, 25);
             this.cbbKind.TabIndex = 1;
@@ -173,7 +173,7 @@ namespace BedFactory
             this.cbbName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbName.FormattingEnabled = true;
-            this.cbbName.Location = new System.Drawing.Point(553, 19);
+            this.cbbName.Location = new System.Drawing.Point(553, 21);
             this.cbbName.Name = "cbbName";
             this.cbbName.Size = new System.Drawing.Size(231, 25);
             this.cbbName.TabIndex = 18;
@@ -194,7 +194,9 @@ namespace BedFactory
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -255,15 +257,15 @@ namespace BedFactory
             this.datagridviewControl1.AllowUserToAddRows = false;
             this.datagridviewControl1.AllowUserToResizeRows = false;
             this.datagridviewControl1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.datagridviewControl1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.datagridviewControl1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.datagridviewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridviewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.datagridviewControl1.Location = new System.Drawing.Point(3, 22);
             this.datagridviewControl1.Name = "datagridviewControl1";
             this.datagridviewControl1.RowHeadersVisible = false;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.datagridviewControl1.RowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.datagridviewControl1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.datagridviewControl1.RowTemplate.Height = 23;
             this.datagridviewControl1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.datagridviewControl1.Size = new System.Drawing.Size(500, 680);
@@ -285,15 +287,15 @@ namespace BedFactory
             this.datagridviewControl2.AllowUserToAddRows = false;
             this.datagridviewControl2.AllowUserToResizeRows = false;
             this.datagridviewControl2.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.datagridviewControl2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.datagridviewControl2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.datagridviewControl2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridviewControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.datagridviewControl2.Location = new System.Drawing.Point(3, 22);
             this.datagridviewControl2.Name = "datagridviewControl2";
             this.datagridviewControl2.RowHeadersVisible = false;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.datagridviewControl2.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.datagridviewControl2.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.datagridviewControl2.RowTemplate.Height = 23;
             this.datagridviewControl2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.datagridviewControl2.Size = new System.Drawing.Size(500, 680);
@@ -316,18 +318,17 @@ namespace BedFactory
             this.tableLayoutPanel3.Size = new System.Drawing.Size(94, 705);
             this.tableLayoutPanel3.TabIndex = 7;
             // 
-            // nmrCnt
+            // btnDel
             // 
-            this.nmrCnt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nmrCnt.Location = new System.Drawing.Point(17, 339);
-            this.nmrCnt.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.nmrCnt.Name = "nmrCnt";
-            this.nmrCnt.Size = new System.Drawing.Size(59, 26);
-            this.nmrCnt.TabIndex = 9;
+            this.btnDel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDel.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDel.Location = new System.Drawing.Point(27, 390);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(40, 40);
+            this.btnDel.TabIndex = 10;
+            this.btnDel.Text = "◀";
+            this.btnDel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDel.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
@@ -341,17 +342,18 @@ namespace BedFactory
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // btnDel
+            // nmrCnt
             // 
-            this.btnDel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDel.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnDel.Location = new System.Drawing.Point(27, 390);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(40, 40);
-            this.btnDel.TabIndex = 10;
-            this.btnDel.Text = "◀";
-            this.btnDel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDel.UseVisualStyleBackColor = true;
+            this.nmrCnt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nmrCnt.Location = new System.Drawing.Point(17, 339);
+            this.nmrCnt.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.nmrCnt.Name = "nmrCnt";
+            this.nmrCnt.Size = new System.Drawing.Size(59, 26);
+            this.nmrCnt.TabIndex = 9;
             // 
             // frmBOM
             // 
