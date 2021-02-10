@@ -19,6 +19,11 @@ namespace BedFactory
         int id = 0;
         string category = string.Empty;
 
+        public frmBusinessCostManagement()
+        {
+            InitializeComponent();
+        }
+
         public frmBusinessCostManagement(string category)
         {
             InitializeComponent();
@@ -65,8 +70,8 @@ namespace BedFactory
 
         private void btn2_Click(object sender, EventArgs e) //등록
         {
-            frmMaterials frm = new frmMaterials(id, this.Text, "수정", null);
-            if (frm.DialogResult == DialogResult.OK)
+            frmMaterials frm = new frmMaterials(id, this.Text, "등록", null);
+            if (frm.ShowDialog() == DialogResult.OK)
             {
                 DataLoad();
             }
@@ -86,7 +91,7 @@ namespace BedFactory
             };
 
             frmMaterials frm = new frmMaterials(id, this.Text, "수정", vo);
-            if (frm.DialogResult == DialogResult.OK)
+            if (frm.ShowDialog() == DialogResult.OK)
             {
                 DataLoad();
             }
@@ -105,10 +110,15 @@ namespace BedFactory
             };
 
             frmMaterials frm = new frmMaterials(id, this.Text, "복사", vo);
-            if (frm.DialogResult == DialogResult.OK)
+            if (frm.ShowDialog() == DialogResult.OK)
             {
                 DataLoad();
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            DataLoad();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using BedFactory.Pop_up;
+﻿using BedFactory.BaseForms;
+using BedFactory.Pop_up;
 using BedFactoryService;
 using BedFactoryVO;
 using System;
@@ -13,9 +14,11 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmShiftMangement : Form
+    public partial class frmShiftMangement : BaseForm2
     {
-        bool first = false;
+        List<ShiftVO> list;
+        DateTime bFrom;
+        DateTime bTo;
 
         public frmShiftMangement()
         {
@@ -24,30 +27,54 @@ namespace BedFactory
 
         private void frmShiftMangement_Load(object sender, EventArgs e)
         {
+            bFrom = DateTime.Now.AddYears(3333);
+            bTo = DateTime.Now.AddYears(3333);
+
             dtpFrom.Value = DateTime.Now.Date.AddDays(-7);
             dtpTo.MinDate = dtpFrom.Value.Date;
-            first = true;
 
             GridColumnDateSet();
         }
 
         private void GridColumnDateSet()
         {
-            dgvShift.Columns.Clear();
+            if (bFrom.ToShortDateString() != dtpFrom.Value.ToShortDateString() || bTo.ToShortDateString() != dtpTo.Value.ToShortDateString())
+            {
+                dgvShift.Columns.Clear();
+
+                dgvShift.SetGridViewColumn("Shift 번호", "Shift_Num", visibility: false);
+                dgvShift.SetGridViewColumn("작업장 번호", "WP_Num");
+                dgvShift.SetGridViewColumn("Shift", "Shift_Name");
+
+                List<DateTime> DayList = GetFromToDays(dtpFrom.Value.Date, dtpTo.Value.Date);
+                DayList.ForEach(p =>
+                {
+                    dgvShift.SetGridViewColumn($"{p.ToShortDateString()}", $"{p.ToShortDateString()}");
+                });
+
+                ShiftsService service = new ShiftsService();
+                list = service.ShiftChangeSelect();
+
+                var item = list.GroupBy(p => p.WP_Num);
+                List<string> temp = item.Select(p => p.Key.ToString()).ToList();
+                temp.Insert(0, "전체");
+                cboWork.DisplayMember = "WP_Num";
+                cboWork.DataSource = temp;
+            }
+
+            List<ShiftVO> shiftsList = new List<ShiftVO>();
+            if (cboWork.SelectedIndex == 0)
+            {
+                shiftsList = list;
+            }
+            else
+            {
+                shiftsList = list.Where(p => p.WP_Num == int.Parse(cboWork.Text)).ToList();
+            }
+
             dgvShift.Rows.Clear();
 
-            dgvShift.SetGridViewColumn("Shift 번호", "Shift_Num", visibility:false);
-            dgvShift.SetGridViewColumn("작업장 번호", "WP_Num");
-            dgvShift.SetGridViewColumn("Shift", "Shift_Name");
-            List<DateTime> DayList = GetFromToDays(dtpFrom.Value.Date, dtpTo.Value.Date);
-            DayList.ForEach(p =>
-            {
-                dgvShift.SetGridViewColumn($"{p.ToShortDateString()}", $"{p.ToShortDateString()}");
-            });
-
-            ShiftsService service = new ShiftsService();
-            List<ShiftVO> list = service.ShiftChangeSelect();
-            list.ForEach(p =>
+            shiftsList.ForEach(p =>
             {
                 bool isChange = false;
 
@@ -145,6 +172,9 @@ namespace BedFactory
                 }
                 
             });
+
+            bFrom = dtpFrom.Value.Date;
+            bTo = dtpTo.Value.Date;
         }
 
         private List<DateTime> GetFromToDays(DateTime FromDate, DateTime ToDate)
@@ -161,15 +191,6 @@ namespace BedFactory
             }
 
             return DayList;
-        }
-
-        private void dtpFrom_ValueChanged(object sender, EventArgs e)
-        {
-            if (first)
-            {
-                dtpTo.MinDate = dtpFrom.Value.Date;
-                GridColumnDateSet();
-            }
         }
 
         private void btnChange_Click(object sender, EventArgs e)
@@ -201,6 +222,13 @@ namespace BedFactory
 
             frmShiftChange frm = new frmShiftChange(dgvShift[0, i].Value.ToString(), changeDic);
             frm.Show();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            dtpTo.MinDate = dtpFrom.Value.Date;
+            GridColumnDateSet();
+            dgvShift.ClearSelection();
         }
     }
 }

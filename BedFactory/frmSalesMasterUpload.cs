@@ -23,15 +23,11 @@ namespace BedFactory
             {
                 return new SalesMasterVO
                 {
-                    Order_Num = Convert.ToInt32(dgvSalesMasterUpload[0, 0].Value.ToString()),
-                    Com_Num = Convert.ToInt32(dgvSalesMasterUpload[1, 0].Value.ToString()),
-                    Mat_Name = dgvSalesMasterUpload[2, 0].Value.ToString(),
-                    TotalCnt = Convert.ToInt32(dgvSalesMasterUpload[3, 0].Value.ToString()),
-                    Ship_Cnt = Convert.ToInt32(dgvSalesMasterUpload[4, 0].Value.ToString()),
-                    Deadline = Convert.ToDateTime(dgvSalesMasterUpload[5, 0].Value.ToString().Replace("-","")),
-                    UploadDate = Convert.ToDateTime(dgvSalesMasterUpload[6, 0].Value.ToString().Replace("-", "")),
-                    Firstman = Convert.ToInt32(dgvSalesMasterUpload[7, 0].Value.ToString()),
-                    Lastman = Convert.ToInt32(dgvSalesMasterUpload[9, 0].Value.ToString())
+                    Order_Num = dgvSalesMasterUpload[0, 0].Value.ToString(),
+                    Deadline = dgvSalesMasterUpload[5, 0].Value.ToString(),
+                    UploadDate = dgvSalesMasterUpload[5, 0].Value.ToString(),
+                    Firstman = dgvSalesMasterUpload[9, 0].Value.ToString(),
+                    Lastman = dgvSalesMasterUpload[11, 0].Value.ToString()
                 };
             }
         }
@@ -55,17 +51,19 @@ namespace BedFactory
         /// <param name="e"></param>
         private void frmSalesMasterUpload_Load(object sender, EventArgs e)
         {
-            dgvSalesMasterUpload.SetGridViewColumn("주문 번호", "Order_Num");
-            dgvSalesMasterUpload.SetGridViewColumn("업체 번호", "Com_Num");
-            dgvSalesMasterUpload.SetGridViewColumn("품목명", "Mat_Name");
-            dgvSalesMasterUpload.SetGridViewColumn("총 수량", "TotalCnt");
-            dgvSalesMasterUpload.SetGridViewColumn("출고 수량", "Ship_Cnt");
-            dgvSalesMasterUpload.SetGridViewColumn("납기일", "Deadline");
-            dgvSalesMasterUpload.SetGridViewColumn("업로드 날짜", "UploadDate");
-            dgvSalesMasterUpload.SetGridViewColumn("최초 등록자", "Firstman");
-            dgvSalesMasterUpload.SetGridViewColumn("최초 등록일", "FirstDate");
-            dgvSalesMasterUpload.SetGridViewColumn("최종 등록자", "Lastman");
-            dgvSalesMasterUpload.SetGridViewColumn("최종 등록일", "LastDate");
+            dgvSalesMasterUpload.SetGridViewColumn("주문 번호", "주문번호");
+            dgvSalesMasterUpload.SetGridViewColumn("주문 상세 번호", "주문상세번호");
+            dgvSalesMasterUpload.SetGridViewColumn("품목 번호", "자재번호");
+            dgvSalesMasterUpload.SetGridViewColumn("품목명", "자재명");
+            dgvSalesMasterUpload.SetGridViewColumn("주문 수량", "수량");
+            dgvSalesMasterUpload.SetGridViewColumn("주문 날짜", "주문날짜");
+            dgvSalesMasterUpload.SetGridViewColumn("주문 상태", "주문상태");
+            dgvSalesMasterUpload.SetGridViewColumn("거래처번호", "거래처번호");
+            dgvSalesMasterUpload.SetGridViewColumn("주문취소여부", "주문취소여부");
+            dgvSalesMasterUpload.SetGridViewColumn("최초 등록자", "최초등록자");
+            dgvSalesMasterUpload.SetGridViewColumn("최초 등록일", "최초등록일");
+            dgvSalesMasterUpload.SetGridViewColumn("최종 등록자", "최종등록자");
+            dgvSalesMasterUpload.SetGridViewColumn("최종 등록일", "최종등록일");
         }
 
         /// <summary>
