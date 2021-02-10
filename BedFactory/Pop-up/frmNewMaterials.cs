@@ -253,6 +253,12 @@ namespace BedFactory.Pop_up
             view.Size = new Size(490, 40);
             panel1.Controls.Add(view);
             CommonUtil.CommonCodeBindig(view.cboText.cbo, codeList, "", "선택");
+            view.btnDel.Click += BtnDel_Click;
+        }
+
+        private void BtnDel_Click(object sender, EventArgs e)
+        {
+            
         }
 
         /// <summary>
