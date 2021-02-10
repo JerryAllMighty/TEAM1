@@ -22,9 +22,9 @@ namespace BedFactory
         private void frmWorkplaceManagement_Load(object sender, EventArgs e)
         {
             dgvWorkplace.SetGridCheckBox("선택");
-            dgvWorkplace.SetGridViewColumn("상세공정명", "Process_Name_Detail");
             dgvWorkplace.SetGridViewColumn("작업장번호", "WP_Num");
             dgvWorkplace.SetGridViewColumn("작업장명", "WP_Name"); // 공정명 + 숫자로 등록
+            dgvWorkplace.SetGridViewColumn("상세공정명", "Process_Name_Detail");
             dgvWorkplace.SetGridViewColumn("특이사항", "WP_Note");
             dgvWorkplace.SetGridViewColumn("비고", "WP_Other"); 
             dgvWorkplace.SetGridViewColumn("정보삭제여부", "IsDeleted");
@@ -91,7 +91,27 @@ namespace BedFactory
         //삭제버튼
         public override void btn1_Click(object sender, EventArgs e)
         {
+            if (dgvWorkplace.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("삭제할 작업장 정보를 선택해주세요.");
+                return;
+            }
 
+            if (MessageBox.Show($"{dgvWorkplace[1, dgvWorkplace.SelectedRows[0].Index].Value} 번 공정정보를 삭제하시겠습니까?"
+                , "삭제확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                WorkplaceService service = new WorkplaceService();
+                bool result = service.DeleteWorkplaceInfo(Convert.ToInt32(dgvWorkplace[1, dgvWorkplace.SelectedRows[0].Index].Value));
+
+                if (result)
+                {
+                    MessageBox.Show(BedFactory.Properties.Settings.Default.DeleteSuccess);
+                }
+                else
+                {
+                    MessageBox.Show(BedFactory.Properties.Settings.Default.DeleteFail);
+                }
+            }
         }
     }
 }

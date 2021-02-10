@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
@@ -44,15 +44,14 @@ namespace BedFactory
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcessInfo)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnUpdate
+            // btn2
             // 
-            this.btn2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn2.Text = "수정";
-
             // 
-            // btnInsert
+            // btn3
             // 
-            this.btn3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn3.Text = "등록";
             // 
             // btn5
@@ -65,9 +64,9 @@ namespace BedFactory
             this.label1.Size = new System.Drawing.Size(88, 25);
             this.label1.Text = "공정정보";
             // 
-            // btnDelete
+            // btn1
             // 
-            this.btn1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn1.Text = "삭제";
             // 
             // pnlDgv
@@ -81,10 +80,9 @@ namespace BedFactory
             // 
             // pnlSelect
             // 
+            this.pnlSelect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSelect.Controls.Add(this.searchLocationControl1);
-            // 
-            // btnExcel
-            // 
             // 
             // searchLocationControl1
             // 
@@ -168,16 +166,16 @@ namespace BedFactory
             this.dgvProcessInfo.AllowUserToAddRows = false;
             this.dgvProcessInfo.AllowUserToResizeRows = false;
             this.dgvProcessInfo.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvProcessInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvProcessInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProcessInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProcessInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProcessInfo.Location = new System.Drawing.Point(0, 0);
             this.dgvProcessInfo.Name = "dgvProcessInfo";
             this.dgvProcessInfo.RowHeadersVisible = false;
             this.dgvProcessInfo.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvProcessInfo.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvProcessInfo.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProcessInfo.RowTemplate.Height = 27;
             this.dgvProcessInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProcessInfo.Size = new System.Drawing.Size(1358, 711);

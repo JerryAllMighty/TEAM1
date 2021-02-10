@@ -59,7 +59,7 @@ namespace BedFactory.Util
                 }
                 return msg;
             }
-            catch
+            catch(Exception err)
             {
                 return msg;
             }

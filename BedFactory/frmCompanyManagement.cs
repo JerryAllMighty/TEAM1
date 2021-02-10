@@ -23,7 +23,7 @@ namespace BedFactory
 
         {
             dgvComList.SetGridCheckBox("선택");
-            dgvComList.SetGridViewColumn("업체번호", "Com_Num", visibility : false);
+            dgvComList.SetGridViewColumn("업체번호", "Com_Num");
             dgvComList.SetGridViewColumn("업체코드", "Com_Code", visibility : false);
             dgvComList.SetGridViewColumn("업체구분", "Com_Type");
             dgvComList.SetGridViewColumn("업체이름", "Com_Name");
@@ -86,5 +86,37 @@ namespace BedFactory
             frm.IsEditMode = true;
             frm.ShowDialog();
         }
+
+
+
+        //삭제버튼
+        private void btn1_Click_1(object sender, EventArgs e)
+        {
+            //삭제
+
+                if (dgvComList.SelectedRows.Count < 1)
+                {
+                    MessageBox.Show("삭제할 BOR정보를 선택해주세요.");
+                    return;
+                }
+
+                if (MessageBox.Show($"{dgvComList[1, dgvComList.SelectedRows[0].Index].Value} 번 근무일정을 삭제하시겠습니까?"
+                    , "삭제확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                   CompanyService service = new CompanyService();
+                    bool result = service.DeleteComInfo(Convert.ToInt32(dgvComList[1, dgvComList.SelectedRows[0].Index].Value));
+
+                    if (result)
+                    {
+                        MessageBox.Show(BedFactory.Properties.Settings.Default.DeleteSuccess);
+                    }
+                    else
+                    {
+                        MessageBox.Show(BedFactory.Properties.Settings.Default.DeleteFail);
+                    }
+                
+            }
+        }
+
     }
 }

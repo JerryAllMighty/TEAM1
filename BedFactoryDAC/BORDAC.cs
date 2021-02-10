@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BedFactoryDAC
 {
-    public class BORDAC:ConnectionAccess, IDisposable
+    public class BORDAC : ConnectionAccess, IDisposable
     {
         string strConn;
         SqlConnection Conn;
@@ -25,6 +25,32 @@ namespace BedFactoryDAC
             if (Conn != null)
             {
                 this.Dispose();
+            }
+        }
+
+        /// <summary>
+        /// BOR 정보를 모두 가져오는 함수
+        /// </summary>
+        /// <returns></returns>
+        public List<BORVO> GetBORAllInfo()
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = Conn;
+                    cmd.CommandText = @"select BOR_Num, Process_Num, WP_Num, Mat_Num, Tact_Time, IsUse, BOR_Comment, Firstman, Firstdate, Lastman, Lastdate
+                                            from tblBOR";
+
+                    List<BORVO> list = Helper.DataReaderMapToList<BORVO>(cmd.ExecuteReader());
+                    return list != null ? list : null;
+                }
+            }
+
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
             }
         }
 
@@ -73,7 +99,7 @@ namespace BedFactoryDAC
                 }
 
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 Log.WriteError(err.Message);
                 return null;
@@ -92,20 +118,18 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = Conn;
-                    cmd.CommandText = @"insert into tblBOR (Process_Num, WP_Num, Mat_Num, BOR_Comment,
-                                                    Tact_Time, IsUse, Firstman,  Lastman)
-                                        values (@Process_Num, @WP_Num, @Mat_Num, @Tact_Time,
-                                                @IsUse,@BOR_Comment, @Firstman, @Lastman) ";
-  
+                    cmd.CommandText = @"insert into tblBOR (Process_Num, WP_Num, Mat_Num, Tact_Time, IsUse, BOR_Comment, Firstman, Lastman)
+                                        values (@Process_Num, @WP_Num, @Mat_Num, @Tact_Time, @IsUse, @BOR_Comment, @Firstman, @Lastman) ";
+
                     cmd.Parameters.AddWithValue("@Process_Num", vo.Process_Num);
                     cmd.Parameters.AddWithValue("@WP_Num", vo.WP_Num);
                     cmd.Parameters.AddWithValue("@Mat_Num", vo.Mat_Num);
                     cmd.Parameters.AddWithValue("@Tact_Time", vo.Tact_Time);
                     cmd.Parameters.AddWithValue("@IsUse", vo.IsUse);
                     cmd.Parameters.AddWithValue("@BOR_Comment", vo.BOR_Comment);
-                    cmd.Parameters.AddWithValue("@Firstman", vo.Firstman);   
+                    cmd.Parameters.AddWithValue("@Firstman", vo.Firstman);
                     cmd.Parameters.AddWithValue("@Lastman", vo.Lastman);
-      
+
 
                     int iRowAffect = cmd.ExecuteNonQuery();
                     Conn.Close();
@@ -126,28 +150,67 @@ namespace BedFactoryDAC
         /// </summary>
         /// <param name="vo"></param>
         /// <returns></returns>
-        public bool UpdateBORInfo(BORVO vo)  // => update 구문 두번 써야 하므로 프로시저 사용
+        public bool UpdateBORInfo(BORVO vo) 
         {
-            using (SqlCommand cmd = new SqlCommand())
+            try
             {
-                cmd.Connection = Conn;
-                cmd.CommandText = @"update tblBOR set Process_Num=@Process_Num, WP_Num=@WP_Num, Mat_Num=@Mat_Num, 
-				                    Tact_Time=@Tact_Time, IsUse=@IsUse, BOR_Comment = @BOR_Comment, Lastman=@Lastman, Lastdate=getdate()
-				                    where BOR_Num = @BOR_Num ";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = Conn;
+                    cmd.CommandText = @"update tblBOR set Process_Num = @Process_Num, WP_Num= @WP_Num, 
+			                       	  Mat_Num= @Mat_Num, Tact_Time= @Tact_Time, IsUse= @IsUse, 
+		                            BOR_Comment= @BOR_Comment, Lastman= @Lastman, Lastdate= getdate()
+		                            where BOR_Num = @BOR_Num ";
 
-               
-                cmd.Parameters.AddWithValue("@Process_Num", vo.Process_Num);
-                cmd.Parameters.AddWithValue("@WP_Num", vo.WP_Num);
-                cmd.Parameters.AddWithValue("@Mat_Num", vo.Mat_Num);
-                cmd.Parameters.AddWithValue("@Tact_Time", vo.Tact_Time);
-                cmd.Parameters.AddWithValue("@IsUse", vo.IsUse);
-                cmd.Parameters.AddWithValue("@BOR_Comment", vo.BOR_Comment);
-                cmd.Parameters.AddWithValue("@Lastman", vo.Lastman);
-                cmd.Parameters.AddWithValue("@BOR_Num", vo.BOR_Num);
 
-                int iRowAffect = cmd.ExecuteNonQuery();
+                    cmd.Parameters.AddWithValue("@Process_Num", vo.Process_Num);
+                    cmd.Parameters.AddWithValue("@WP_Num", vo.WP_Num);
+                    cmd.Parameters.AddWithValue("@Mat_Num", vo.Mat_Num);
+                    cmd.Parameters.AddWithValue("@Tact_Time", vo.Tact_Time);
+                    cmd.Parameters.AddWithValue("@IsUse", vo.IsUse);
+                    cmd.Parameters.AddWithValue("@BOR_Comment", vo.BOR_Comment);
+                    cmd.Parameters.AddWithValue("@Lastman", vo.Lastman);
+                    cmd.Parameters.AddWithValue("@BOR_Num", vo.BOR_Num);
 
-                return iRowAffect > 0 ? true : false;
+                    int iRowAffect = cmd.ExecuteNonQuery();
+
+                    return iRowAffect > 0 ? true : false;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// BOR정보 삭제
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public bool DeleteBORInfo(int num)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = Conn;
+                    cmd.CommandText = @"delete 
+                                        from tblBOR
+                                        where BOR_Num = @BOR_Num";
+
+                    cmd.Parameters.AddWithValue("@BOR_Num", num);
+
+                    int iRowAffect = cmd.ExecuteNonQuery();
+
+                    return iRowAffect > 0 ? true : false;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
             }
         }
 

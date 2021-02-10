@@ -70,6 +70,7 @@ namespace BedFactory
             this.btn1.Location = new System.Drawing.Point(1305, 100);
             this.btn1.TabIndex = 7;
             this.btn1.Text = "삭제";
+            this.btn1.Click += new System.EventHandler(this.btn1_Click_1);
             // 
             // pnlDgv
             // 

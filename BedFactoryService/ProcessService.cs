@@ -28,6 +28,12 @@ namespace BedFactoryService
             return dac.UpdateProcessInfo(vo);
         }
 
+        public bool DeleteProcessInfo(int num)
+        {
+            ProcessDAC dac = new ProcessDAC();
+            return dac.DeleteProcessInfo(num);
+        }
+
 
         // 상세공정명 데이터를 콤보박스에 가져오기
         public List<CommonCodeVO> GetProcessCombo()

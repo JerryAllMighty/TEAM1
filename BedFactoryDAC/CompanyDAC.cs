@@ -87,7 +87,7 @@ namespace BedFactoryDAC
                     cmd.CommandText = @"insert into tblCompany (Com_Code, Com_Name, Com_Addr, Com_Represent,
                                                                 Com_Phone, Com_Info, IsUse, FirstMan, LastMan)
                                         values (@Com_Code, @Com_Name, @Com_Addr, @Com_Represent, @Com_Phone, 
-                                                  Com_Manager, @Com_Info, @IsUse, @FirstMan, @LastMan) ";
+                                                  @Com_Manager, @Com_Info, @IsUse, @FirstMan, @LastMan) ";
 
                     cmd.Parameters.AddWithValue("Com_Code", vo.Com_Code);
                     cmd.Parameters.AddWithValue("Com_Name", vo.Com_Name);
@@ -154,6 +154,10 @@ namespace BedFactoryDAC
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<CompanyVO> GetEveryCompanyName()
         {
             try
@@ -172,6 +176,36 @@ namespace BedFactoryDAC
             {
                 Log.WriteError(err.Message);
                 return null;
+            }
+        }
+
+        /// <summary>
+        /// 회사정보삭제
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public bool DeleteComInfo(int num)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = Conn;
+                    cmd.CommandText = @"delete 
+                                        from tblCompany
+                                        where Com_Num = @Com_Num";
+
+                    cmd.Parameters.AddWithValue("@Com_Num", num);
+
+                    int iRowAffect = cmd.ExecuteNonQuery();
+
+                    return iRowAffect > 0 ? true : false;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
             }
         }
     }

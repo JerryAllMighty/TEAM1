@@ -70,6 +70,7 @@ namespace BedFactory
             // btn1
             // 
             this.btn1.Text = "삭제";
+            this.btn1.Click += new System.EventHandler(this.btn1_Click_1);
             // 
             // pnlDgv
             // 

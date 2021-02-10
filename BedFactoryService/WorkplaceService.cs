@@ -31,6 +31,12 @@ namespace BedFactoryService
             return dac.UpdateWorkplaceInfo(vo);
         }
 
+        //삭제
+        public bool DeleteWorkplaceInfo(int num)
+        {
+            WorkplaceDAC dac = new WorkplaceDAC();
+            return dac.DeleteWorkplaceInfo(num);
+        }
 
         /// <summary>
         /// 작업장명을 가져옴
