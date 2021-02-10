@@ -22,6 +22,10 @@ namespace BedFactory
         public frmBusinessCostManagement()
         {
             InitializeComponent();
+
+            this.category = "주문업체";
+            label1.Text = "영업단가관리";
+            this.Text = "영업단가관리";
         }
 
         public frmBusinessCostManagement(string category)

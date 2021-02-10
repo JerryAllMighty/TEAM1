@@ -33,10 +33,10 @@ namespace BedFactory
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSelect = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cboProcessName = new System.Windows.Forms.ComboBox();
             this.txtPlaceName = new System.Windows.Forms.TextBox();
+            this.btnSelect = new System.Windows.Forms.Button();
             this.dgvWorkplace = new BedFactory.DatagridviewControl();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
@@ -95,10 +95,10 @@ namespace BedFactory
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
             this.searchLocationControl1.Controls.Add(this.label2, 0, 0);
-            this.searchLocationControl1.Controls.Add(this.btnSelect, 9, 0);
             this.searchLocationControl1.Controls.Add(this.label3, 3, 0);
             this.searchLocationControl1.Controls.Add(this.cboProcessName, 1, 0);
             this.searchLocationControl1.Controls.Add(this.txtPlaceName, 4, 0);
+            this.searchLocationControl1.Controls.Add(this.btnSelect, 9, 0);
             this.searchLocationControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchLocationControl1.Location = new System.Drawing.Point(0, 0);
             this.searchLocationControl1.Name = "searchLocationControl1";
@@ -118,19 +118,6 @@ namespace BedFactory
             this.label2.TabIndex = 21;
             this.label2.Text = "상세공정명";
             // 
-            // btnSelect
-            // 
-            this.btnSelect.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSelect.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSelect.Location = new System.Drawing.Point(1275, 16);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(70, 30);
-            this.btnSelect.TabIndex = 20;
-            this.btnSelect.Text = "조회";
-            this.btnSelect.UseVisualStyleBackColor = false;
-            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
-            // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -145,7 +132,7 @@ namespace BedFactory
             // 
             this.cboProcessName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboProcessName.FormattingEnabled = true;
-            this.cboProcessName.Location = new System.Drawing.Point(126, 20);
+            this.cboProcessName.Location = new System.Drawing.Point(126, 16);
             this.cboProcessName.Name = "cboProcessName";
             this.cboProcessName.Size = new System.Drawing.Size(215, 31);
             this.cboProcessName.TabIndex = 23;
@@ -157,6 +144,19 @@ namespace BedFactory
             this.txtPlaceName.Name = "txtPlaceName";
             this.txtPlaceName.Size = new System.Drawing.Size(215, 30);
             this.txtPlaceName.TabIndex = 24;
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSelect.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSelect.Location = new System.Drawing.Point(1275, 16);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(70, 30);
+            this.btnSelect.TabIndex = 25;
+            this.btnSelect.Text = "조회";
+            this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // dgvWorkplace
             // 
@@ -198,10 +198,10 @@ namespace BedFactory
 
         private Controls.SearchLocationControl searchLocationControl1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboProcessName;
         private System.Windows.Forms.TextBox txtPlaceName;
         private DatagridviewControl dgvWorkplace;
+        private System.Windows.Forms.Button btnSelect;
     }
 }

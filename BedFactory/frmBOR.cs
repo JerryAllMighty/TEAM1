@@ -79,14 +79,14 @@ namespace BedFactory
         }
 
         //등록
-        private void btn3_Click_1(object sender, EventArgs e)
+        public override void btn3_Click(object sender, EventArgs e)
         {
             frmBORreg frm = new frmBORreg();
             frm.ShowDialog();
         }
 
         //수정
-        private void btn2_Click_1(object sender, EventArgs e)
+        public override void btn2_Click(object sender, EventArgs e)
         {
             if (dgvBOR.SelectedRows.Count < 1) return;
 
@@ -123,7 +123,7 @@ namespace BedFactory
         }
 
         //삭제
-        private void btn1_Click_1(object sender, EventArgs e)
+        public override void btn1_Click(object sender, EventArgs e)
         {
             if (dgvBOR.SelectedRows.Count < 1)
             {

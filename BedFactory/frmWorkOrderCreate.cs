@@ -18,7 +18,6 @@ namespace BedFactory
         private void frmWorkOrderCreate_Load(object sender, EventArgs e)
         {
             dgvWOS.SetGridCheckBox("선택");
-         //   dgvWOS.SetGridViewColumn("작업지시번호", )
         }
     }
 }
