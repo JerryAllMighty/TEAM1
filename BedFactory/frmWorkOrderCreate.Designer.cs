@@ -117,7 +117,6 @@ namespace BedFactory
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.36364F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.81818F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.363636F));
-            this.searchLocationControl1.Controls.Add(this.btnSelect, 9, 1);
             this.searchLocationControl1.Controls.Add(this.label2, 0, 0);
             this.searchLocationControl1.Controls.Add(this.label6, 3, 0);
             this.searchLocationControl1.Controls.Add(this.comboBox2, 4, 0);
@@ -125,6 +124,7 @@ namespace BedFactory
             this.searchLocationControl1.Controls.Add(this.comboBox5, 7, 0);
             this.searchLocationControl1.Controls.Add(this.label8, 0, 1);
             this.searchLocationControl1.Controls.Add(this.comboBox1, 1, 1);
+            this.searchLocationControl1.Controls.Add(this.btnSelect, 9, 1);
             this.searchLocationControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchLocationControl1.Location = new System.Drawing.Point(0, 0);
             this.searchLocationControl1.Name = "searchLocationControl1";
@@ -206,7 +206,7 @@ namespace BedFactory
             this.btnSelect.Location = new System.Drawing.Point(1275, 58);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(70, 30);
-            this.btnSelect.TabIndex = 17;
+            this.btnSelect.TabIndex = 49;
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = false;
             // 

@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
             this.cboPrc = new System.Windows.Forms.ComboBox();
             this.btnSelect = new System.Windows.Forms.Button();
@@ -50,12 +50,10 @@ namespace BedFactory
             // btn2
             // 
             this.btn2.Text = "수정";
-            this.btn2.Click += new System.EventHandler(this.btn2_Click_1);
             // 
             // btn3
             // 
             this.btn3.Text = "등록";
-            this.btn3.Click += new System.EventHandler(this.btn3_Click_1);
             // 
             // btn5
             // 
@@ -70,11 +68,9 @@ namespace BedFactory
             // btn1
             // 
             this.btn1.Text = "삭제";
-            this.btn1.Click += new System.EventHandler(this.btn1_Click_1);
             // 
             // pnlDgv
             // 
-            this.pnlDgv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlDgv.Controls.Add(this.dgvBOR);
             // 
             // btn4
@@ -184,6 +180,7 @@ namespace BedFactory
             // 
             // btnExcel
             // 
+            this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExcel.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExcel.Location = new System.Drawing.Point(1095, 99);
@@ -198,16 +195,16 @@ namespace BedFactory
             this.dgvBOR.AllowUserToAddRows = false;
             this.dgvBOR.AllowUserToResizeRows = false;
             this.dgvBOR.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvBOR.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvBOR.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvBOR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBOR.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBOR.Location = new System.Drawing.Point(0, 0);
             this.dgvBOR.Name = "dgvBOR";
             this.dgvBOR.RowHeadersVisible = false;
             this.dgvBOR.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvBOR.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvBOR.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvBOR.RowTemplate.Height = 27;
             this.dgvBOR.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBOR.Size = new System.Drawing.Size(1358, 711);
