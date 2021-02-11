@@ -310,7 +310,7 @@ namespace BedFactory.Pop_up
                 view.Location = new Point(3, 4 + 40 * cnt);
                 view.Size = new Size(490, 40);
                 panel1.Controls.Add(view);
-                CommonUtil.CommonCodeBindig(view.cboText.cbo, codeList, "", "");
+                CommonUtil.CommonCodeBindig(view.cboText.cbo, codeList, "", "선택");
                 view.cboText.cbo.Text = item.CheckKind;
             }
             #endregion
