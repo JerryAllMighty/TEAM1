@@ -58,6 +58,7 @@ namespace BedFactory.Controls
             this.btnDel.TabIndex = 3;
             this.btnDel.Text = "삭 제";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // MaterialsCheckList
             // 

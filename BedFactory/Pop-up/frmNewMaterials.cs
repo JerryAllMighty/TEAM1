@@ -251,14 +251,22 @@ namespace BedFactory.Pop_up
             MaterialsCheckList view = new MaterialsCheckList();
             view.Location = new Point(3, 4 + 40 * cnt);
             view.Size = new Size(490, 40);
+            view.btnDel.Click += BtnDel_Click;
             panel1.Controls.Add(view);
             CommonUtil.CommonCodeBindig(view.cboText.cbo, codeList, "", "선택");
-            view.btnDel.Click += BtnDel_Click;
         }
 
+        /// <summary>
+        /// 항목 삭제 시 재정렬
+        /// </summary>
         private void BtnDel_Click(object sender, EventArgs e)
         {
-            
+            int i = 0;
+            foreach(MaterialsCheckList view in panel1.Controls)
+            {
+                view.Location = new Point(3, 4 + 40 * i);
+                i++;
+            }
         }
 
         /// <summary>
