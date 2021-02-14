@@ -40,7 +40,7 @@ namespace BedFactory
             this.cbbName = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAll = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.datagridviewControl1 = new BedFactory.DatagridviewControl();
@@ -162,7 +162,7 @@ namespace BedFactory
             this.cbbKind.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbKind.FormattingEnabled = true;
-            this.cbbKind.Location = new System.Drawing.Point(136, 21);
+            this.cbbKind.Location = new System.Drawing.Point(136, 18);
             this.cbbKind.Name = "cbbKind";
             this.cbbKind.Size = new System.Drawing.Size(231, 25);
             this.cbbKind.TabIndex = 1;
@@ -173,7 +173,7 @@ namespace BedFactory
             this.cbbName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbName.FormattingEnabled = true;
-            this.cbbName.Location = new System.Drawing.Point(553, 21);
+            this.cbbName.Location = new System.Drawing.Point(553, 18);
             this.cbbName.Name = "cbbName";
             this.cbbName.Size = new System.Drawing.Size(231, 25);
             this.cbbName.TabIndex = 18;
@@ -203,7 +203,7 @@ namespace BedFactory
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.AutoScroll = true;
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.btnAll);
             // 
             // splitContainer1.Panel2
             // 
@@ -212,17 +212,17 @@ namespace BedFactory
             this.splitContainer1.SplitterDistance = 230;
             this.splitContainer1.TabIndex = 0;
             // 
-            // button1
+            // btnAll
             // 
-            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(5, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(220, 40);
-            this.button1.TabIndex = 0;
-            this.button1.Tag = "";
-            this.button1.Text = "전체";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAll.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAll.Location = new System.Drawing.Point(5, 3);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.Size = new System.Drawing.Size(220, 40);
+            this.btnAll.TabIndex = 0;
+            this.btnAll.Tag = "";
+            this.btnAll.Text = "전체";
+            this.btnAll.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel2
             // 
@@ -394,7 +394,7 @@ namespace BedFactory
         private System.Windows.Forms.ComboBox cbbName;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAll;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.GroupBox groupBox1;
         private DatagridviewControl datagridviewControl1;
