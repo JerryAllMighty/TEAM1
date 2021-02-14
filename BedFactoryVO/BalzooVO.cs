@@ -18,5 +18,7 @@ namespace BedFactoryVO
         public string Bz_D_Status { get; set; } //처리현황
         public DateTime ExpectedDate { get; set; } //예상납기일
         public string Bz_IsCancel { get; set; } //취소여부
+        public int Mat_Cnt { get; set; } //입고 수량
+        public int R_Quantity { get; set; } //잔량 수량
     }
 }

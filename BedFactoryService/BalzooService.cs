@@ -22,10 +22,10 @@ namespace BedFactoryService
             return dac.WarehousingWait(fromDate, toDate);
         }
 
-        public bool StateIsWait(string num)
+        public bool StateIsWait(WearingVO vo)
         {
             BalzooDAC dac = new BalzooDAC();
-            return dac.StateIsWait(num);
+            return dac.StateIsWait(vo);
         }
     }
 }

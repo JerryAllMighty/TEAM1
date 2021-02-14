@@ -105,8 +105,6 @@ namespace BedFactory
             // 
             // pnlSelect
             // 
-            this.pnlSelect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSelect.Controls.Add(this.searchLocationControl1);
             this.pnlSelect.Location = new System.Drawing.Point(16, 12);
             this.pnlSelect.Size = new System.Drawing.Size(1356, 65);
@@ -231,7 +229,7 @@ namespace BedFactory
             // 
             this.cboCompany.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(975, 18);
+            this.cboCompany.Location = new System.Drawing.Point(975, 21);
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(235, 25);
             this.cboCompany.TabIndex = 41;
@@ -297,9 +295,6 @@ namespace BedFactory
             // 
             // searchLocationControl1
             // 
-            this.searchLocationControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.searchLocationControl1.ColumnCount = 10;
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
@@ -318,6 +313,7 @@ namespace BedFactory
             this.searchLocationControl1.Controls.Add(this.txtMaterial, 4, 0);
             this.searchLocationControl1.Controls.Add(this.dtpDate, 1, 0);
             this.searchLocationControl1.Controls.Add(this.label6, 3, 0);
+            this.searchLocationControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchLocationControl1.Location = new System.Drawing.Point(0, 0);
             this.searchLocationControl1.Name = "searchLocationControl1";
             this.searchLocationControl1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -341,12 +337,11 @@ namespace BedFactory
             // 
             this.dgvCost.AllowUserToAddRows = false;
             this.dgvCost.AllowUserToResizeRows = false;
-            this.dgvCost.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCost.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvCost.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCost.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCost.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCost.Location = new System.Drawing.Point(0, 0);
             this.dgvCost.Name = "dgvCost";
             this.dgvCost.RowHeadersVisible = false;
@@ -391,7 +386,7 @@ namespace BedFactory
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Name = "frmBusinessCostManagement";
-            this.Text = "frmBusinessCostManagement";
+            this.Text = "영업 단가 관리";
             this.Load += new System.EventHandler(this.frmBusinessCostManagement_Load);
             this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.button2, 0);

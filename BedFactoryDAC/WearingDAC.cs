@@ -188,5 +188,69 @@ namespace BedFactoryDAC
                 return null;
             }
         }
+
+        /// <summary>
+        /// 겸사여부에 따른 입고대기 항목 출력
+        /// </summary>
+        /// <param name="fromDate"></param>
+        /// <param name="toDate"></param>
+        /// <returns></returns>
+        public List<WearingVO> WarehousingStart(DateTime fromDate, DateTime toDate)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"select C.Com_Name, M.Mat_Name, M.Mat_Category, isnull(Error_Detail, '미검사') Error_Detail
+                                          	   , Error_Cnt, isnull((W.Mat_Cnt - Error_Cnt), Mat_Cnt) Mat_Cnt, BD.ExpectedDate, W.W_Category, Wearing_Num
+                                          from tblWearing W left outer join tblCheckHistory CH on Check_Subject_Num = cast(W.Wearing_Num as nchar(10))
+                                          	   left outer join tblErrorHistory EH on Ch.Check_History_Num = EH.Check_History_Num
+                                               join tblBalzoo_D BD on BD.Bz_D_Num = W.Bz_D_Num join tblBalzoo B on BD.Bz_Num = B.Bz_Num 
+                                          	   join tblCompany C on B.Com_Num = C.Com_Num join tblMaterials M on W.Mat_Num = M.Mat_Num
+                                         where W_Category = '입고대기' and ExpectedDate >= @fromDate and ExpectedDate <= @toDate";
+                    cmd.Parameters.AddWithValue("@fromDate", fromDate.Date);
+                    cmd.Parameters.AddWithValue("@toDate", toDate.Date);
+
+                    List<WearingVO> list = Helper.DataReaderMapToList<WearingVO>(cmd.ExecuteReader());
+                    conn.Close();
+                    return list;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 입고대기를 구매입고로 변경
+        /// </summary>
+        /// <param name="W_Num"></param>
+        /// <param name="M_Num"></param>
+        /// <returns></returns>
+        public bool BuyWarehousing(int W_Num, int M_Num)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"update tblWearing set Mat_Cnt = @Mat_Cnt, W_Category = '구매입고' where Wearing_Num = @Wearing_Num";
+                    cmd.Parameters.AddWithValue("@Mat_Cnt", M_Num);
+                    cmd.Parameters.AddWithValue("@Wearing_Num", W_Num);
+
+                    int cnt = cmd.ExecuteNonQuery();
+                    conn.Close();
+                    return cnt > 0;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
     }
 }

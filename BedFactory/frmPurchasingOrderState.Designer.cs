@@ -56,14 +56,12 @@ namespace BedFactory
             // 
             // btn2
             // 
-            this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn2.Location = new System.Drawing.Point(1247, 134);
             this.btn2.Size = new System.Drawing.Size(125, 25);
             this.btn2.Text = "엑셀 내보내기";
             // 
             // btn3
             // 
-            this.btn3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn3.Location = new System.Drawing.Point(1141, 134);
             this.btn3.Size = new System.Drawing.Size(100, 25);
             this.btn3.Text = "발주취소";
@@ -71,33 +69,30 @@ namespace BedFactory
             // 
             // btn5
             // 
-            this.btn5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn5.Location = new System.Drawing.Point(904, 134);
             this.btn5.Text = "납기일자변경";
             this.btn5.Click += new System.EventHandler(this.btn5_Click_1);
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.Location = new System.Drawing.Point(14, 134);
             this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.Text = "발주현황";
             // 
             // btn1
             // 
-            this.btn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn1.Location = new System.Drawing.Point(833, 134);
             this.btn1.Visible = false;
             // 
             // pnlDgv
             // 
+            this.pnlDgv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlDgv.Controls.Add(this.dgvOrder);
             this.pnlDgv.Location = new System.Drawing.Point(14, 165);
             this.pnlDgv.Size = new System.Drawing.Size(1358, 684);
             // 
             // btn4
             // 
-            this.btn4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn4.Location = new System.Drawing.Point(1035, 134);
             this.btn4.Text = "발주서출력";
             // 
@@ -125,9 +120,11 @@ namespace BedFactory
             // 
             // dtpTo
             // 
-            this.dtpTo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpTo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTo.Location = new System.Drawing.Point(122, 0);
+            this.dtpTo.Location = new System.Drawing.Point(122, 1);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(113, 25);
             this.dtpTo.TabIndex = 71;
@@ -135,7 +132,9 @@ namespace BedFactory
             // 
             // dtpFrom
             // 
-            this.dtpFrom.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpFrom.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFrom.Location = new System.Drawing.Point(0, 0);
             this.dtpFrom.Name = "dtpFrom";
@@ -236,12 +235,13 @@ namespace BedFactory
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(109, 3);
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 17);
+            this.label3.Size = new System.Drawing.Size(235, 26);
             this.label3.TabIndex = 1;
             this.label3.Text = "~";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // searchLocationControl2
             // 
@@ -281,12 +281,11 @@ namespace BedFactory
             // 
             this.dgvOrder.AllowUserToAddRows = false;
             this.dgvOrder.AllowUserToResizeRows = false;
-            this.dgvOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvOrder.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvOrder.Location = new System.Drawing.Point(0, 0);
             this.dgvOrder.Name = "dgvOrder";
             this.dgvOrder.RowHeadersVisible = false;
@@ -313,7 +312,6 @@ namespace BedFactory
             this.pnlDgv.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.searchLocationControl2.ResumeLayout(false);
             this.searchLocationControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();

@@ -108,7 +108,7 @@ namespace BedFactory
             // 
             this.cboCom.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboCom.FormattingEnabled = true;
-            this.cboCom.Location = new System.Drawing.Point(558, 11);
+            this.cboCom.Location = new System.Drawing.Point(558, 14);
             this.cboCom.Name = "cboCom";
             this.cboCom.Size = new System.Drawing.Size(235, 25);
             this.cboCom.TabIndex = 72;
@@ -145,7 +145,7 @@ namespace BedFactory
             // 
             this.cboBnum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboBnum.FormattingEnabled = true;
-            this.cboBnum.Location = new System.Drawing.Point(139, 60);
+            this.cboBnum.Location = new System.Drawing.Point(139, 63);
             this.cboBnum.Name = "cboBnum";
             this.cboBnum.Size = new System.Drawing.Size(235, 25);
             this.cboBnum.TabIndex = 60;
@@ -319,6 +319,7 @@ namespace BedFactory
             this.dgvWait.TabIndex = 0;
             this.dgvWait.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWait_CellContentClick);
             this.dgvWait.CurrentCellDirtyStateChanged += new System.EventHandler(this.CurrentCellDirtyStateChanged);
+            this.dgvWait.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvWait_KeyPress);
             // 
             // dgvCheck
             // 
@@ -354,7 +355,7 @@ namespace BedFactory
             this.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmSupplierWarehousingWait";
-            this.Text = "frmSupplierWarehousingWait";
+            this.Text = "입고대기";
             this.Load += new System.EventHandler(this.frmSupplierWarehousingWait_Load);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.button4, 0);

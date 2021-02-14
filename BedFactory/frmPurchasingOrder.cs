@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BedFactory.BaseForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmPurchasingOrder : Form
+    public partial class frmPurchasingOrder : BaseForm2
     {
         public frmPurchasingOrder()
         {
