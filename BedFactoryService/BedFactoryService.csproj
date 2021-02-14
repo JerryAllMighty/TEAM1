@@ -48,6 +48,7 @@
     <Compile Include="CompanyService.cs" />
     <Compile Include="CommonCodeService.cs" />
     <Compile Include="DemandPlanService.cs" />
+    <Compile Include="EmployeesService.cs" />
     <Compile Include="MaterialsService.cs" />
     <Compile Include="ProcessService.cs" />
     <Compile Include="ProductionPlanService.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="ShipmentService.cs" />
     <Compile Include="UnitCostService.cs" />
     <Compile Include="WearingService.cs" />
+    <Compile Include="WorkHistoryService.cs" />
     <Compile Include="WorkOrderService.cs" />
     <Compile Include="WorkplaceService.cs" />
   </ItemGroup>

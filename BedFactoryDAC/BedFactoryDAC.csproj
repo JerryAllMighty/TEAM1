@@ -55,6 +55,7 @@
     <Compile Include="CompanyDAC.cs" />
     <Compile Include="ConnectionAccess.cs" />
     <Compile Include="DemandPlanDAC.cs" />
+    <Compile Include="EmployeeDAC.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="LoggingUtillity.cs" />
     <Compile Include="MaterialsDAC.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="ShipmentDAC.cs" />
     <Compile Include="UnitCostDAC.cs" />
     <Compile Include="WearingDAC.cs" />
+    <Compile Include="WorkHistoryDAC.cs" />
     <Compile Include="WorkOrderDAC.cs" />
     <Compile Include="WorkplaceDAC.cs" />
   </ItemGroup>

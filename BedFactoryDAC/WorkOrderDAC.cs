@@ -18,10 +18,15 @@ namespace BedFactoryDAC
             conn = new SqlConnection(strConn);
             conn.Open();
         }
-
+        /// <summary>
+        /// 공정 번호로 작업 지시 가져오기
+        /// </summary>
+        /// <param name="ProcessCode"></param>
+        /// <returns></returns>
         public List<WorkOrderVO> GetWorkOrder(string ProcessCode)
         {
-            try {
+            try
+            {
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
@@ -53,6 +58,83 @@ namespace BedFactoryDAC
             }
         }
 
+        /// <summary>
+        /// 작업자 할당을 새롭게 할 때 작업지시내용 업데이트
+        /// </summary>
+        /// <param name="WOList"></param>
+        /// <param name="EmpList"></param>
+        /// <returns></returns>
+        public bool UpdateWorkOrder(List<WorkOrderVO> WOList, List<EmployeeVO> EmpList)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"update tblWorkOrders
+                                            set WO_D_Emp_Num = @WO_D_Emp_Num
+                                            where WO_Num = @WO_Num ";
+
+                    cmd.Parameters.Add("@WO_D_Emp_Num", System.Data.SqlDbType.Int);
+                    cmd.Parameters.Add("@WO_Num", System.Data.SqlDbType.Int);
+
+                    for (int i = 0; i < EmpList.Count; i++)
+                    {
+                        cmd.Parameters["@WO_Num"].Value = Convert.ToInt32(WOList[i].WO_Num);
+                        cmd.Parameters["@WO_D_Emp_Num"].Value = Convert.ToInt32(EmpList[i].Emp_Num);
+
+                        int iRowAffect = cmd.ExecuteNonQuery();
+
+                        if (iRowAffect < 1)
+                            return false;
+                    }
+
+
+                    return true;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
+
+
+
+        /// <summary>
+        /// 현장 마감을 하여 작업 지시 상태를 현장마감으로 바꿔준다
+        /// </summary>
+        /// <param name="WOList"></param>
+        /// <param name="EmpList"></param>
+        /// <returns></returns>
+        public bool FinishWorkOrder(string WO_Num)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"update tblWorkOrders
+                                                set WO_Status = '작업 마감'
+                                                where WO_Num = @WO_Num";
+
+                    cmd.Parameters.Add("@WO_Num", System.Data.SqlDbType.Int);
+
+
+                    cmd.Parameters["@WO_Num"].Value = Convert.ToInt32(WO_Num);
+
+                    int iRowAffect = cmd.ExecuteNonQuery();
+
+                    return iRowAffect > 0 ? true : false;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
         public void Dispose()
         {
             conn.Close();

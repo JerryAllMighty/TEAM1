@@ -194,6 +194,10 @@
       <Project>{ae37a2c5-fb35-466a-a9fd-dfde4cdab745}</Project>
       <Name>BedFactoryVO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BedFactory\BedFactory.csproj">
+      <Project>{43efffd2-03b0-483a-a38d-d3c7978edf84}</Project>
+      <Name>BedFactory</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
