@@ -15,6 +15,8 @@ namespace BedFactory
 {
     public partial class frmSupplierWarehousingWait : BaseForm2
     {
+        int id = 1;
+
         CheckBox headerCheck = new CheckBox();
         CheckBox headerCheckz = new CheckBox();
 
@@ -36,7 +38,8 @@ namespace BedFactory
             dgvCheck.SetGridViewColumn("거래처명", "Com_Name");
             dgvCheck.SetGridViewColumn("자재명", "Mat_Name");
             dgvCheck.SetGridViewColumn("발주수량", "Bz_Cnt");
-            dgvCheck.SetGridViewColumn("발주상태", "Bz_D_Status");
+            dgvCheck.SetGridViewColumn("입고수량", "Mat_Cnt");
+            dgvCheck.SetGridViewColumn("잔량", "R_Quantity");
             dgvCheck.SetGridViewColumn("예상납기일", "ExpectedDate");
 
             Point point = dgvCheck.GetCellDisplayRectangle(0, -1, true).Location;
@@ -51,7 +54,8 @@ namespace BedFactory
             dgvWait.SetGridViewColumn("거래처명", "Com_Name");
             dgvWait.SetGridViewColumn("자재명", "Mat_Name");
             dgvWait.SetGridViewColumn("발주수량", "Bz_Cnt");
-            dgvWait.SetGridViewColumn("발주상태", "Bz_D_Status");
+            dgvWait.SetGridViewColumn("입고수량", "Mat_Cnt");
+            dgvWait.SetGridViewColumn("잔량", "R_Quantity");
             dgvWait.SetGridViewColumn("예상납기일", "ExpectedDate");
 
             Point pointz = dgvWait.GetCellDisplayRectangle(0, -1, true).Location;
@@ -164,6 +168,7 @@ namespace BedFactory
                 }
             }
 
+            copy.ForEach(p => p.Mat_Cnt = 0);
             dgvWait.DataSource = null;
             dgvWait.Rows.Clear();
             dgvWait.DataSource = copy;
@@ -189,22 +194,32 @@ namespace BedFactory
 
         private void btn5_Click(object sender, EventArgs e) //입고대기처리
         {
-            foreach (DataGridViewRow row in dgvWait.Rows)
+            if(Convert.ToInt32(dgvWait[5, dgvWait.SelectedRows[0].Index].Value) != 0)
             {
-                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chkBalzoo"];
-                if (Convert.ToBoolean(chk.Value) == true)
+                foreach (DataGridViewRow row in dgvWait.Rows)
                 {
-                    BalzooService service = new BalzooService();
-                    service.StateIsWait(dgvWait[1, row.Index].Value.ToString());
-                    copy.RemoveAt(row.Index);
-                }
-            }
+                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chkBalzoo"];
+                    if (Convert.ToBoolean(chk.Value) == true)
+                    {
+                        WearingVO vo = new WearingVO
+                        {
+                            Bz_D_Num = dgvWait[1, row.Index].Value.ToString(),
+                            FirstMan = id,
+                            Mat_Cnt = Convert.ToInt32(dgvWait[5, dgvWait.SelectedRows[0].Index].Value)
+                        };
 
-            dgvWait.DataSource = null;
-            dgvWait.Rows.Clear();
-            dgvWait.DataSource = copy;
-            headerCheckz.Checked = false;
-            DataLoad();
+                        BalzooService service = new BalzooService();
+                        service.StateIsWait(vo);
+                        copy.RemoveAt(row.Index);
+                    }
+                }
+
+                dgvWait.DataSource = null;
+                dgvWait.Rows.Clear();
+                dgvWait.DataSource = copy;
+                headerCheckz.Checked = false;
+                DataLoad();
+            }
         }
 
         private void dgvCheck_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -257,7 +272,7 @@ namespace BedFactory
 
         private void btnSerch_Click(object sender, EventArgs e)
         {
-            if (bFrom.Date != dtpFrom.Value.Date && bTo.Date != dtpTo.Value.Date)
+            if (bFrom.Date != dtpFrom.Value.Date || bTo.Date != dtpTo.Value.Date)
                 DataLoad();
 
             var item = (from temp in list
@@ -267,6 +282,33 @@ namespace BedFactory
                         select temp).ToList();
 
             dgvCheck.DataSource = item;
+        }
+
+        private void dgvWait_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                if (Convert.ToInt32(dgvWait[5, dgvWait.SelectedRows[0].Index].Value.ToString() + e.KeyChar) <= Convert.ToInt32(dgvWait[6, dgvWait.SelectedRows[0].Index].Value))
+                {
+                    dgvWait[5, dgvWait.SelectedRows[0].Index].Value = int.Parse(dgvWait[5, dgvWait.SelectedRows[0].Index].Value.ToString() + e.KeyChar);
+                }
+            }
+
+            if (e.KeyChar == 8)
+            {
+                if (dgvWait[5, dgvWait.SelectedRows[0].Index].Value != null)
+                {
+                    string str = dgvCheck[5, dgvWait.SelectedRows[0].Index].Value.ToString();
+                    if (str.Length - 1 == 0)
+                    {
+                        dgvWait[5, dgvCheck.SelectedRows[0].Index].Value = null;
+                    }
+                    else
+                    {
+                        dgvWait[5, dgvCheck.SelectedRows[0].Index].Value = int.Parse(str.Substring(0, str.Length - 1));
+                    }
+                }
+            }
         }
     }
 }

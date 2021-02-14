@@ -157,24 +157,6 @@ namespace BadFactory
             List<CommonCodeVO> list = frmCommonCode.CheckCommonInfo();
             List<CommonCodeVO> pList = list.Where(p => p.Category == "메뉴").ToList();
 
-            pList.ForEach(p =>
-            {
-                List<CommonCodeVO> cList = list.Where(n => n.P_Code == p.Code_Num).ToList();
-                TreeNode node = new TreeNode(p.Code_Name);
-                cList.ForEach(W =>
-                {
-                    TreeNode node1 = new TreeNode(W.Code_Name);
-                    list.ForEach(j =>
-                    {
-                        if (W.Code_Name == j.Category)
-                            node1.Nodes.Add(j.Code_Name);
-                    });
-                    node.Nodes.Add(node1);
-                });
-
-                tvMenu.Nodes.Add(node);
-            });
-
             tv.Size = new Size(200, 300);
             tv.BorderStyle = BorderStyle.None;
             tv.Dock = DockStyle.Fill;
@@ -334,8 +316,5 @@ namespace BadFactory
                 f.WindowState = FormWindowState.Maximized;
             }
         }
-
-        //__________________________________________________________
-
     }
 }
