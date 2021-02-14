@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmProductionPlanning : Form
+    public partial class frmProductionPlanning : BedFactory.BaseForms.BaseForm2
     {
         public frmProductionPlanning()
         {

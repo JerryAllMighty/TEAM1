@@ -59,6 +59,7 @@
     <Compile Include="ShipmentVO.cs" />
     <Compile Include="UnitCostVO.cs" />
     <Compile Include="WearingVO.cs" />
+    <Compile Include="WorkOrderVO.cs" />
     <Compile Include="WorkplaceVO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

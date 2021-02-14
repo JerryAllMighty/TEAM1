@@ -44,10 +44,9 @@ namespace BedFactory
         //조회버튼
         private void btnSelect_Click(object sender, EventArgs e)
         {
-
             int prcNum = 0;
             if (cboProcessName.SelectedValue != null)
-                prcNum = (cboProcessName.SelectedValue.ToString() =="") ? 0 : Convert.ToInt32(cboProcessName.SelectedValue);
+                prcNum = (cboProcessName.SelectedValue.ToString() == "") ? 0 : Convert.ToInt32(cboProcessName.SelectedValue);
 
             string wpName = txtPlaceName.Text.Trim();
 
@@ -113,5 +112,7 @@ namespace BedFactory
                 }
             }
         }
+
+
     }
 }

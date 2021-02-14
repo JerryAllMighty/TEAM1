@@ -66,6 +66,7 @@
     <Compile Include="ShipmentDAC.cs" />
     <Compile Include="UnitCostDAC.cs" />
     <Compile Include="WearingDAC.cs" />
+    <Compile Include="WorkOrderDAC.cs" />
     <Compile Include="WorkplaceDAC.cs" />
   </ItemGroup>
   <ItemGroup>

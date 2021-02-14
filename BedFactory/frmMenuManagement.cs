@@ -76,5 +76,10 @@ namespace BedFactory
             frmMenuRegister frm = new frmMenuRegister();
             frm.ShowDialog();
         }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

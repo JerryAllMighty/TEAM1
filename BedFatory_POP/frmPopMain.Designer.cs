@@ -1,5 +1,5 @@
 ﻿
-namespace BedFatory_POP.BaseForms
+namespace BedFatory_POP
 {
     partial class frmPopMain
     {
@@ -29,194 +29,221 @@ namespace BedFatory_POP.BaseForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel2.SuspendLayout();
+            this.pnlChild = new System.Windows.Forms.Panel();
+            this.btnMinimize = new FontAwesome.Sharp.IconButton();
+            this.btnCancel = new FontAwesome.Sharp.IconButton();
+            this.btnHome = new FontAwesome.Sharp.IconButton();
+            this.lblChildName = new System.Windows.Forms.Label();
+            this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnError = new System.Windows.Forms.Button();
+            this.btnPacking = new System.Windows.Forms.Button();
+            this.btnDrilling = new System.Windows.Forms.Button();
+            this.btnSawing = new System.Windows.Forms.Button();
+            this.btnNonOperation = new System.Windows.Forms.Button();
+            this.btnPlaning = new System.Windows.Forms.Button();
+            this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlChild
             // 
-            this.panel1.Location = new System.Drawing.Point(12, 132);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1258, 423);
-            this.panel1.TabIndex = 0;
+            this.pnlChild.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlChild.Location = new System.Drawing.Point(10, 85);
+            this.pnlChild.Name = "pnlChild";
+            this.pnlChild.Size = new System.Drawing.Size(1000, 755);
+            this.pnlChild.TabIndex = 0;
             // 
-            // iconButton1
+            // btnMinimize
             // 
-            this.iconButton1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(1019, 30);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(114, 57);
-            this.iconButton1.TabIndex = 1;
-            this.iconButton1.Text = "최소화";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnMinimize.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.btnMinimize.IconColor = System.Drawing.Color.Black;
+            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimize.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMinimize.Location = new System.Drawing.Point(988, 2);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(188, 75);
+            this.btnMinimize.TabIndex = 1;
+            this.btnMinimize.Text = "최소화";
+            this.btnMinimize.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // iconButton2
+            // btnCancel
             // 
-            this.iconButton2.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(1156, 30);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(114, 57);
-            this.iconButton2.TabIndex = 2;
-            this.iconButton2.Text = "닫기";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCancel.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCancel.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnCancel.IconColor = System.Drawing.Color.Black;
+            this.btnCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(1182, 2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(188, 75);
+            this.btnCancel.TabIndex = 2;
+            this.btnCancel.Text = "닫기";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // iconButton3
+            // btnHome
             // 
-            this.iconButton3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(873, 30);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(114, 57);
-            this.iconButton3.TabIndex = 3;
-            this.iconButton3.Text = "홈";
-            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton3.UseVisualStyleBackColor = true;
+            this.btnHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHome.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnHome.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnHome.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.btnHome.IconColor = System.Drawing.Color.Black;
+            this.btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Location = new System.Drawing.Point(794, 2);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(188, 75);
+            this.btnHome.TabIndex = 3;
+            this.btnHome.Text = "홈";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // label1
+            // lblChildName
             // 
-            this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(428, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 43);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "차일드폼 이름 여기에 나타남";
+            this.lblChildName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblChildName.Font = new System.Drawing.Font("맑은 고딕", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblChildName.Location = new System.Drawing.Point(12, 19);
+            this.lblChildName.Name = "lblChildName";
+            this.lblChildName.Size = new System.Drawing.Size(286, 49);
+            this.lblChildName.TabIndex = 4;
+            this.lblChildName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel2
+            // pnlMenu
             // 
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button7);
-            this.panel2.Controls.Add(this.button6);
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(12, 561);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1258, 180);
-            this.panel2.TabIndex = 5;
+            this.pnlMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlMenu.Controls.Add(this.btnError);
+            this.pnlMenu.Controls.Add(this.btnPacking);
+            this.pnlMenu.Controls.Add(this.btnDrilling);
+            this.pnlMenu.Controls.Add(this.btnSawing);
+            this.pnlMenu.Controls.Add(this.btnNonOperation);
+            this.pnlMenu.Controls.Add(this.btnPlaning);
+            this.pnlMenu.Location = new System.Drawing.Point(1016, 85);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Size = new System.Drawing.Size(354, 755);
+            this.pnlMenu.TabIndex = 5;
             // 
-            // button7
+            // btnError
             // 
-            this.button7.Location = new System.Drawing.Point(1047, 12);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(168, 165);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "포장";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnError.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnError.Font = new System.Drawing.Font("맑은 고딕", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnError.Location = new System.Drawing.Point(3, 124);
+            this.btnError.Name = "btnError";
+            this.btnError.Size = new System.Drawing.Size(349, 113);
+            this.btnError.TabIndex = 9;
+            this.btnError.Text = "불량 관리";
+            this.btnError.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btnPacking
             // 
-            this.button6.Location = new System.Drawing.Point(873, 12);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(168, 165);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "평삭";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnPacking.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPacking.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnPacking.Font = new System.Drawing.Font("맑은 고딕", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnPacking.Location = new System.Drawing.Point(3, 604);
+            this.btnPacking.Name = "btnPacking";
+            this.btnPacking.Size = new System.Drawing.Size(349, 113);
+            this.btnPacking.TabIndex = 13;
+            this.btnPacking.Text = "포장";
+            this.btnPacking.UseVisualStyleBackColor = false;
+            this.btnPacking.Click += new System.EventHandler(this.btnPacking_Click_1);
             // 
-            // button5
+            // btnDrilling
             // 
-            this.button5.Location = new System.Drawing.Point(699, 12);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(168, 165);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "제재";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnDrilling.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDrilling.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnDrilling.Font = new System.Drawing.Font("맑은 고딕", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDrilling.Location = new System.Drawing.Point(3, 484);
+            this.btnDrilling.Name = "btnDrilling";
+            this.btnDrilling.Size = new System.Drawing.Size(349, 113);
+            this.btnDrilling.TabIndex = 14;
+            this.btnDrilling.Text = "착조";
+            this.btnDrilling.UseVisualStyleBackColor = false;
+            this.btnDrilling.Click += new System.EventHandler(this.btnDrilling_Click_1);
             // 
-            // button4
+            // btnSawing
             // 
-            this.button4.Location = new System.Drawing.Point(351, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(168, 165);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "비가동 관리";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnSawing.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSawing.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSawing.Font = new System.Drawing.Font("맑은 고딕", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSawing.Location = new System.Drawing.Point(3, 364);
+            this.btnSawing.Name = "btnSawing";
+            this.btnSawing.Size = new System.Drawing.Size(349, 113);
+            this.btnSawing.TabIndex = 12;
+            this.btnSawing.Text = "평삭";
+            this.btnSawing.UseVisualStyleBackColor = false;
+            this.btnSawing.Click += new System.EventHandler(this.btnSawing_Click_1);
             // 
-            // button3
+            // btnNonOperation
             // 
-            this.button3.Location = new System.Drawing.Point(177, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(168, 165);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "불량 관리";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnNonOperation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNonOperation.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnNonOperation.Font = new System.Drawing.Font("맑은 고딕", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnNonOperation.Location = new System.Drawing.Point(3, 3);
+            this.btnNonOperation.Name = "btnNonOperation";
+            this.btnNonOperation.Size = new System.Drawing.Size(349, 113);
+            this.btnNonOperation.TabIndex = 10;
+            this.btnNonOperation.Text = "비가동관리";
+            this.btnNonOperation.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnPlaning
             // 
-            this.button1.Location = new System.Drawing.Point(3, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 165);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "작업 지시 생성";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(525, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(168, 165);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "착조";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnPlaning.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPlaning.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnPlaning.Font = new System.Drawing.Font("맑은 고딕", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnPlaning.Location = new System.Drawing.Point(3, 244);
+            this.btnPlaning.Name = "btnPlaning";
+            this.btnPlaning.Size = new System.Drawing.Size(349, 113);
+            this.btnPlaning.TabIndex = 11;
+            this.btnPlaning.Text = "제재";
+            this.btnPlaning.UseVisualStyleBackColor = false;
+            this.btnPlaning.Click += new System.EventHandler(this.btnPlaning_Click_1);
             // 
             // frmPopMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(34F, 81F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1282, 753);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.iconButton3);
-            this.Controls.Add(this.iconButton2);
-            this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1382, 853);
+            this.ControlBox = false;
+            this.Controls.Add(this.pnlMenu);
+            this.Controls.Add(this.lblChildName);
+            this.Controls.Add(this.btnHome);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnMinimize);
+            this.Controls.Add(this.pnlChild);
+            this.Font = new System.Drawing.Font("맑은 고딕", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Name = "frmPopMain";
-            this.Text = "POP 메인";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.panel2.ResumeLayout(false);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPopMain_FormClosed);
+            this.Load += new System.EventHandler(this.frmPopMain_Load);
+            this.pnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel pnlChild;
+        private FontAwesome.Sharp.IconButton btnMinimize;
+        private FontAwesome.Sharp.IconButton btnCancel;
+        private FontAwesome.Sharp.IconButton btnHome;
+        private System.Windows.Forms.Label lblChildName;
+        private System.Windows.Forms.Panel pnlMenu;
+        private System.Windows.Forms.Button btnError;
+        private System.Windows.Forms.Button btnPacking;
+        private System.Windows.Forms.Button btnDrilling;
+        private System.Windows.Forms.Button btnSawing;
+        private System.Windows.Forms.Button btnNonOperation;
+        private System.Windows.Forms.Button btnPlaning;
     }
 }
