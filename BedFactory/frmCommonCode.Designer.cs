@@ -139,10 +139,10 @@ namespace BedFactory
             this.btnInsert.AutoSize = true;
             this.btnInsert.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnInsert.Location = new System.Drawing.Point(541, 15);
+            this.btnInsert.Location = new System.Drawing.Point(520, 15);
             this.btnInsert.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(58, 33);
+            this.btnInsert.Size = new System.Drawing.Size(100, 33);
             this.btnInsert.TabIndex = 4;
             this.btnInsert.Text = "등록";
             this.btnInsert.UseVisualStyleBackColor = false;
@@ -196,6 +196,7 @@ namespace BedFactory
             this.dgvCommonCode.Size = new System.Drawing.Size(683, 843);
             this.dgvCommonCode.TabIndex = 17;
             this.dgvCommonCode.Text = "datagridviewControl1";
+            this.dgvCommonCode.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCommonCode_CellDoubleClick_1);
             // 
             // tableLayoutPanel1
             // 

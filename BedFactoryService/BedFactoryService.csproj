@@ -57,6 +57,7 @@
     <Compile Include="ShipmentService.cs" />
     <Compile Include="UnitCostService.cs" />
     <Compile Include="WearingService.cs" />
+    <Compile Include="WorkOrderService.cs" />
     <Compile Include="WorkplaceService.cs" />
   </ItemGroup>
   <ItemGroup>

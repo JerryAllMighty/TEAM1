@@ -183,13 +183,15 @@ namespace BedFactory
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dgvCommonCode_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvCommonCode_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             txtCode_Num.Text = dgvCommonCode[0, e.RowIndex].Value.ToString();
             txtCode_Name.Text = dgvCommonCode[1, e.RowIndex].Value.ToString();
             txtCode_Category.Text = dgvCommonCode[2, e.RowIndex].Value.ToString();
-            txtCode_P_Code.Text = dgvCommonCode[3, e.RowIndex].Value.ToString();
-
+            if (dgvCommonCode[3, e.RowIndex].Value != null)
+            {
+                txtCode_P_Code.Text = dgvCommonCode[3, e.RowIndex].Value.ToString();
+            }
         }
     }
 }

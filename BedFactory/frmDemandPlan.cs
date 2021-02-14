@@ -1,4 +1,5 @@
-﻿using BedFactoryService;
+﻿using BedFactory.Pop_up;
+using BedFactoryService;
 using BedFactoryVO;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace BedFactory
         public DemandVO demandinfo { get {
                 return new DemandVO
                 {
-                    Demand_Plan_Num = txtDemandPlan_Num.Text,
+                    Demand_Plan_Num = lblSalesMaster_Num.Text,
                     Com_Name = cboCompany.Text,
                     LastDate = dtpFrom.Value.ToString("yyyy-MM-dd"),
                     Mat_Name = txtSubjectName.Text
@@ -59,13 +60,16 @@ namespace BedFactory
         }
 
         /// <summary>
-        /// 생산계획 생성 버튼 클릭시, 수요 계획을 바탕으로 생산 계획 생성
+        /// 생산계획 생성 버튼 클릭시, 수동으로 생산계획을 만들 수 있는 팝업 호출
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btn2_Click_1(object sender, EventArgs e)
         {
-           // ProductionPlanService 
+            frmSalesOrder frm = new frmSalesOrder();
+            frm.Show();
+            frm.Activate();
         }
+
     }
 }
