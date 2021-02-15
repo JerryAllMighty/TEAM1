@@ -46,7 +46,8 @@ namespace BedFactory
             }
             CommonUtil.CommonCodeBindig(cboName, list, "", "선택");
             #endregion
-
+            
+            #region 그리드뷰 세팅
             dgvCheckInfo.SetGridViewColumn("검사항목 번호", "Check_Info_Num", visibility: false);
             dgvCheckInfo.SetGridViewColumn("검사항목", "CheckName", 500);
             dgvCheckInfo.SetGridViewColumn("검사항목 종류", "CheckKind", 200);
@@ -56,6 +57,7 @@ namespace BedFactory
             dgvCheckInfo.SetGridViewColumn("최종등록자", "Lastman", visibility: false);
             dgvCheckInfo.SetGridViewColumn("최종등록일", "Lastdate", visibility: false);
             dgvCheckInfo.AddGridButton("수정하기", "update", "수 정", new Padding(10, 0, 10, 0), 100);
+            #endregion
         }
 
         /// <summary>
