@@ -282,11 +282,11 @@
     <Compile Include="frmUserGroupAuthority.Designer.cs">
       <DependentUpon>frmUserGroupAuthority.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmWorkOrderCreate.cs">
+    <Compile Include="frmWorkOrdersCreate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmWorkOrderCreate.Designer.cs">
-      <DependentUpon>frmWorkOrderCreate.cs</DependentUpon>
+    <Compile Include="frmWorkOrdersCreate.Designer.cs">
+      <DependentUpon>frmWorkOrdersCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="frmWorkOrderStatus.cs">
       <SubType>Form</SubType>
@@ -606,8 +606,8 @@
     <EmbeddedResource Include="frmUserGroupAuthority.resx">
       <DependentUpon>frmUserGroupAuthority.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmWorkOrderCreate.resx">
-      <DependentUpon>frmWorkOrderCreate.cs</DependentUpon>
+    <EmbeddedResource Include="frmWorkOrdersCreate.resx">
+      <DependentUpon>frmWorkOrdersCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmWorkOrderStatus.resx">
       <DependentUpon>frmWorkOrderStatus.cs</DependentUpon>

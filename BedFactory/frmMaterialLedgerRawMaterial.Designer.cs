@@ -76,7 +76,7 @@ namespace BedFactory
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.Location = new System.Drawing.Point(12, 134);
-            this.label1.Size = new System.Drawing.Size(84, 20);
+            this.label1.Size = new System.Drawing.Size(107, 25);
             this.label1.Text = "원자재불출";
             // 
             // btn1
@@ -104,26 +104,26 @@ namespace BedFactory
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(558, 14);
+            this.comboBox1.Location = new System.Drawing.Point(558, 13);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(235, 25);
+            this.comboBox1.Size = new System.Drawing.Size(235, 29);
             this.comboBox1.TabIndex = 80;
             // 
             // textBox2
             // 
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(139, 61);
+            this.textBox2.Location = new System.Drawing.Point(139, 59);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(235, 25);
+            this.textBox2.Size = new System.Drawing.Size(235, 29);
             this.textBox2.TabIndex = 79;
             // 
             // label12
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(50, 65);
+            this.label12.Location = new System.Drawing.Point(45, 62);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(34, 17);
+            this.label12.Size = new System.Drawing.Size(44, 23);
             this.label12.TabIndex = 75;
             this.label12.Text = "자재";
             // 
@@ -131,9 +131,9 @@ namespace BedFactory
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(443, 16);
+            this.label5.Location = new System.Drawing.Point(430, 13);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 17);
+            this.label5.Size = new System.Drawing.Size(112, 23);
             this.label5.TabIndex = 69;
             this.label5.Text = "작업지시번호";
             // 
@@ -202,7 +202,7 @@ namespace BedFactory
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpTo.Location = new System.Drawing.Point(122, 0);
             this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(113, 25);
+            this.dtpTo.Size = new System.Drawing.Size(113, 29);
             this.dtpTo.TabIndex = 71;
             this.dtpTo.ValueChanged += new System.EventHandler(this.dtpFrom_ValueChanged);
             // 
@@ -212,7 +212,7 @@ namespace BedFactory
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFrom.Location = new System.Drawing.Point(0, 0);
             this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(113, 25);
+            this.dtpFrom.Size = new System.Drawing.Size(113, 29);
             this.dtpFrom.TabIndex = 70;
             this.dtpFrom.ValueChanged += new System.EventHandler(this.dtpFrom_ValueChanged);
             // 
@@ -221,7 +221,7 @@ namespace BedFactory
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(109, 3);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(17, 17);
+            this.label7.Size = new System.Drawing.Size(22, 23);
             this.label7.TabIndex = 1;
             this.label7.Text = "~";
             // 
@@ -229,9 +229,9 @@ namespace BedFactory
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 16);
+            this.label3.Location = new System.Drawing.Point(37, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 17);
+            this.label3.Size = new System.Drawing.Size(61, 23);
             this.label3.TabIndex = 78;
             this.label3.Text = "요청일";
             // 
@@ -239,9 +239,9 @@ namespace BedFactory
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(456, 65);
+            this.label6.Location = new System.Drawing.Point(447, 62);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 17);
+            this.label6.Size = new System.Drawing.Size(78, 23);
             this.label6.TabIndex = 81;
             this.label6.Text = "자재유형";
             // 
@@ -249,9 +249,9 @@ namespace BedFactory
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(888, 16);
+            this.label2.Location = new System.Drawing.Point(883, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 17);
+            this.label2.Size = new System.Drawing.Size(44, 23);
             this.label2.TabIndex = 80;
             this.label2.Text = "상태";
             // 
@@ -259,18 +259,18 @@ namespace BedFactory
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(558, 63);
+            this.comboBox2.Location = new System.Drawing.Point(558, 62);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(235, 25);
+            this.comboBox2.Size = new System.Drawing.Size(235, 29);
             this.comboBox2.TabIndex = 82;
             // 
             // comboBox3
             // 
             this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(977, 14);
+            this.comboBox3.Location = new System.Drawing.Point(977, 13);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(235, 25);
+            this.comboBox3.Size = new System.Drawing.Size(235, 29);
             this.comboBox3.TabIndex = 83;
             // 
             // dgvWO
@@ -286,6 +286,7 @@ namespace BedFactory
             this.dgvWO.Location = new System.Drawing.Point(0, 0);
             this.dgvWO.Name = "dgvWO";
             this.dgvWO.RowHeadersVisible = false;
+            this.dgvWO.RowHeadersWidth = 51;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
             this.dgvWO.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvWO.RowTemplate.Height = 23;
@@ -308,7 +309,7 @@ namespace BedFactory
             // 
             // frmMaterialLedgerRawMaterial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1384, 861);
