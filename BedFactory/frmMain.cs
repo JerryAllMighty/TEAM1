@@ -17,6 +17,7 @@ namespace BadFactory
     public partial class frmMain : Form
     {
         TreeView tv = new TreeView();
+        public EmployeeVO emp_Info { get; set; }    //로그인한 회원정보
 
         public frmMain()
         {
@@ -154,6 +155,14 @@ namespace BadFactory
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            #region 회원정보 바인딩
+            lblEmpName.Text = emp_Info.Emp_Name;
+            lblEmpID.Text = emp_Info.Emp_ID;
+            lblEmpCategory.Text = emp_Info.Emp_Category;
+            lblEmpDepartment.Text = emp_Info.Emp_Department;
+            lblEmpEmail.Text = emp_Info.Emp_Email;
+            #endregion
+
             List<CommonCodeVO> list = frmCommonCode.CheckCommonInfo();
             List<CommonCodeVO> pList = list.Where(p => p.Category == "메뉴").ToList();
 

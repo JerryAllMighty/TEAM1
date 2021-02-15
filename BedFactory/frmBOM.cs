@@ -120,7 +120,11 @@ namespace BedFactory
             dgvMat.DataSource = list;
         }
 
-        //자재 콤보박스 바인딩
+        /// <summary>
+        /// 자재종류에 따른 자재명 콤보박스 필터링
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbbKind_SelectedIndexChanged(object sender, EventArgs e)
         {
             string mat_Category;

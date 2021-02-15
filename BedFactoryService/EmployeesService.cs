@@ -18,8 +18,12 @@ namespace BedFactoryService
         {
             EmployeeDAC dac = new EmployeeDAC();
             return dac.GetEmployeeListByWPNum(WPNum);
-
         }
 
+        public List<EmployeeVO> Login(string id, string pw)
+        {
+            EmployeeDAC dac = new EmployeeDAC();
+            return dac.Login(id, pw);
+        }
     }
 }
