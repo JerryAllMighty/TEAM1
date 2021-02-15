@@ -20,5 +20,11 @@ namespace BedFactoryVO
         public string Bz_IsCancel { get; set; } //취소여부
         public int Mat_Cnt { get; set; } //입고 수량
         public int R_Quantity { get; set; } //잔량 수량
+
+        public int MaterialUse_Cnt { get; set; } //입고 수량
+        public int FirstMan { get; set; } //최초등록자
+        public DateTime FirstDate { get; set; } //최초등록일
+        public int Demand_Plan_Num { get; set; } //수요계획번호
+        public string Com_Code { get; set; } //거래처코드
     }
 }

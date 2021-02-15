@@ -142,6 +142,7 @@ namespace BedFactory
                 if (result)
                 {
                     MessageBox.Show(BedFactory.Properties.Settings.Default.DeleteSuccess);
+                    DataLoad();
                 }
                 else
                 {
