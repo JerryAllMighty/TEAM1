@@ -99,12 +99,6 @@
     <Compile Include="frmPopMain.Designer.cs">
       <DependentUpon>frmPopMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProductionResultReg.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmProductionResultReg.Designer.cs">
-      <DependentUpon>frmProductionResultReg.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmSawing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,9 +139,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPopMain.resx">
       <DependentUpon>frmPopMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmProductionResultReg.resx">
-      <DependentUpon>frmProductionResultReg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSawing.resx">
       <DependentUpon>frmSawing.cs</DependentUpon>

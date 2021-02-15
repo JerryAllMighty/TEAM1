@@ -53,7 +53,7 @@ namespace BedFatory_POP
 
         private void Timer2_Tick(object sender, EventArgs e)
         {
-            timerCount2++;
+            timerCount2 ++;
             if (timerCount2 < 60)
             {
                 sec2 = timerCount2;
@@ -137,7 +137,7 @@ namespace BedFatory_POP
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            timerCount++;
+            timerCount ++;
             if (timerCount < 60)
             {
                 sec = timerCount;
@@ -164,7 +164,14 @@ namespace BedFatory_POP
         private void btnFinish_Click(object sender, EventArgs e)
         {
             WorkOrderService service = new WorkOrderService();
-            service.FinishWorkOrder(list[cboWorkPlace.SelectedIndex].WO_Num);
+            if(service.FinishWorkOrder(list[cboWorkPlace.SelectedIndex].WO_Num))
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.UpdateSuccess);
+            }
+            else
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.UpdateFail);
+            }
         }
 
         /// <summary>
@@ -176,7 +183,14 @@ namespace BedFatory_POP
         {
             WorkHistoryService service = new WorkHistoryService();
             //마감 시점에 양품수량, 작업 시간, 작업 중지 시간, 작업 지시번호
-            service.UpdateWorkHistoryCnt(workhistoryinfo);
+            if (service.UpdateWorkHistoryCnt(workhistoryinfo))
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.UpdateSuccess);
+            }
+            else
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.UpdateFail);
+            }
         }
     }
 }
