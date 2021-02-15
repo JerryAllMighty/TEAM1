@@ -48,7 +48,6 @@ namespace BedFactory.Pop_up
             this.label1 = new System.Windows.Forms.Label();
             this.lctProductName = new BedFactory.LabelComboText();
             this.search = new System.Windows.Forms.Button();
-            this.btnRange = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -73,7 +72,6 @@ namespace BedFactory.Pop_up
             this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
             this.splitContainer1.Panel2.Controls.Add(this.lctKind);
-            this.splitContainer1.Panel2.Controls.Add(this.btnDelete);
             this.splitContainer1.Panel2.Controls.Add(this.btnUpdate);
             this.splitContainer1.Panel2.Controls.Add(this.btnInsert);
             this.splitContainer1.Panel2.Controls.Add(this.ontSizeZ);
@@ -84,7 +82,7 @@ namespace BedFactory.Pop_up
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.lctProductName);
             this.splitContainer1.Panel2.Controls.Add(this.search);
-            this.splitContainer1.Panel2.Controls.Add(this.btnRange);
+            this.splitContainer1.Panel2.Controls.Add(this.btnDelete);
             this.splitContainer1.Size = new System.Drawing.Size(1184, 459);
             this.splitContainer1.SplitterDistance = 199;
             this.splitContainer1.TabIndex = 0;
@@ -300,18 +298,6 @@ namespace BedFactory.Pop_up
             this.search.UseVisualStyleBackColor = false;
             this.search.Click += new System.EventHandler(this.search_Click);
             // 
-            // btnRange
-            // 
-            this.btnRange.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnRange.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnRange.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRange.Location = new System.Drawing.Point(874, 410);
-            this.btnRange.Name = "btnRange";
-            this.btnRange.Size = new System.Drawing.Size(70, 25);
-            this.btnRange.TabIndex = 25;
-            this.btnRange.Text = "정 렬";
-            this.btnRange.UseVisualStyleBackColor = false;
-            // 
             // frmNewMaterials
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -352,6 +338,5 @@ namespace BedFactory.Pop_up
         private LabelComboText lctCategory;
         private System.Windows.Forms.Button search;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnRange;
     }
 }
