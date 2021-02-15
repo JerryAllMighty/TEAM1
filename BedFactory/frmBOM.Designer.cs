@@ -36,16 +36,20 @@ namespace BedFactory
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbbKind = new System.Windows.Forms.ComboBox();
-            this.cbbName = new System.Windows.Forms.ComboBox();
+            this.cboKind = new System.Windows.Forms.ComboBox();
+            this.cboName = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.rdbBack = new System.Windows.Forms.RadioButton();
+            this.rdbGo = new System.Windows.Forms.RadioButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnAll = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.datagridviewControl1 = new BedFactory.DatagridviewControl();
+            this.dgvMat = new BedFactory.DatagridviewControl();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.datagridviewControl2 = new BedFactory.DatagridviewControl();
+            this.dgvBOM = new BedFactory.DatagridviewControl();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -53,34 +57,33 @@ namespace BedFactory
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridviewControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMat)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridviewControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBOM)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrCnt)).BeginInit();
             this.SuspendLayout();
             // 
             // btn2
             // 
-            this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn2.Location = new System.Drawing.Point(1305, 99);
             this.btn2.Text = "변경";
+            this.btn2.Click += new System.EventHandler(this.btn2_Click_1);
             // 
             // btn3
             // 
-            this.btn3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn3.Location = new System.Drawing.Point(1234, 99);
             this.btn3.Text = "프린트";
             // 
             // btn5
             // 
-            this.btn5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn5.Location = new System.Drawing.Point(1103, 99);
             this.btn5.Text = "Excel내보내기";
             // 
@@ -91,7 +94,6 @@ namespace BedFactory
             // 
             // btn1
             // 
-            this.btn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn1.Location = new System.Drawing.Point(1129, 99);
             this.btn1.Visible = false;
             // 
@@ -101,14 +103,11 @@ namespace BedFactory
             // 
             // btn4
             // 
-            this.btn4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn4.Location = new System.Drawing.Point(1117, 99);
             this.btn4.Visible = false;
             // 
             // pnlSelect
             // 
-            this.pnlSelect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSelect.Controls.Add(this.tableLayoutPanel1);
             // 
             // tableLayoutPanel1
@@ -126,9 +125,11 @@ namespace BedFactory
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.Controls.Add(this.label3, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cbbKind, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cbbName, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cboKind, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cboName, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSearch, 9, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 6, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 7, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -157,27 +158,26 @@ namespace BedFactory
             this.label2.TabIndex = 0;
             this.label2.Text = "* 자재종류";
             // 
-            // cbbKind
+            // cboKind
             // 
-            this.cbbKind.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbbKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbKind.FormattingEnabled = true;
-            this.cbbKind.Location = new System.Drawing.Point(136, 18);
-            this.cbbKind.Name = "cbbKind";
-            this.cbbKind.Size = new System.Drawing.Size(231, 25);
-            this.cbbKind.TabIndex = 1;
-            this.cbbKind.SelectedIndexChanged += new System.EventHandler(this.cbbKind_SelectedIndexChanged);
+            this.cboKind.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboKind.FormattingEnabled = true;
+            this.cboKind.Location = new System.Drawing.Point(136, 18);
+            this.cboKind.Name = "cboKind";
+            this.cboKind.Size = new System.Drawing.Size(231, 25);
+            this.cboKind.TabIndex = 1;
+            this.cboKind.SelectedIndexChanged += new System.EventHandler(this.cbbKind_SelectedIndexChanged);
             // 
-            // cbbName
+            // cboName
             // 
-            this.cbbName.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbbName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbName.FormattingEnabled = true;
-            this.cbbName.Location = new System.Drawing.Point(553, 18);
-            this.cbbName.Name = "cbbName";
-            this.cbbName.Size = new System.Drawing.Size(231, 25);
-            this.cbbName.TabIndex = 18;
-            this.cbbName.SelectedIndexChanged += new System.EventHandler(this.cbbName_SelectedIndexChanged);
+            this.cboName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboName.FormattingEnabled = true;
+            this.cboName.Location = new System.Drawing.Point(553, 21);
+            this.cboName.Name = "cboName";
+            this.cboName.Size = new System.Drawing.Size(231, 25);
+            this.cboName.TabIndex = 18;
             // 
             // btnSearch
             // 
@@ -191,6 +191,48 @@ namespace BedFactory
             this.btnSearch.Text = "조 회";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(874, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 19);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "* 비 고";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.rdbBack);
+            this.panel1.Controls.Add(this.rdbGo);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(970, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(234, 57);
+            this.panel1.TabIndex = 23;
+            // 
+            // rdbBack
+            // 
+            this.rdbBack.AutoSize = true;
+            this.rdbBack.Location = new System.Drawing.Point(104, 20);
+            this.rdbBack.Name = "rdbBack";
+            this.rdbBack.Size = new System.Drawing.Size(69, 23);
+            this.rdbBack.TabIndex = 1;
+            this.rdbBack.TabStop = true;
+            this.rdbBack.Text = "역전개";
+            this.rdbBack.UseVisualStyleBackColor = true;
+            // 
+            // rdbGo
+            // 
+            this.rdbGo.AutoSize = true;
+            this.rdbGo.Location = new System.Drawing.Point(3, 20);
+            this.rdbGo.Name = "rdbGo";
+            this.rdbGo.Size = new System.Drawing.Size(69, 23);
+            this.rdbGo.TabIndex = 0;
+            this.rdbGo.TabStop = true;
+            this.rdbGo.Text = "정전개";
+            this.rdbGo.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
             // 
@@ -223,6 +265,7 @@ namespace BedFactory
             this.btnAll.Tag = "";
             this.btnAll.Text = "전체";
             this.btnAll.UseVisualStyleBackColor = false;
+            this.btnAll.Click += new System.EventHandler(this.Btn_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -243,7 +286,7 @@ namespace BedFactory
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.datagridviewControl1);
+            this.groupBox1.Controls.Add(this.dgvMat);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
@@ -252,28 +295,29 @@ namespace BedFactory
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "자재목록";
             // 
-            // datagridviewControl1
+            // dgvMat
             // 
-            this.datagridviewControl1.AllowUserToAddRows = false;
-            this.datagridviewControl1.AllowUserToResizeRows = false;
-            this.datagridviewControl1.BackgroundColor = System.Drawing.Color.White;
+            this.dgvMat.AllowUserToAddRows = false;
+            this.dgvMat.AllowUserToResizeRows = false;
+            this.dgvMat.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.datagridviewControl1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.datagridviewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridviewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datagridviewControl1.Location = new System.Drawing.Point(3, 22);
-            this.datagridviewControl1.Name = "datagridviewControl1";
-            this.datagridviewControl1.RowHeadersVisible = false;
+            this.dgvMat.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvMat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMat.Location = new System.Drawing.Point(3, 22);
+            this.dgvMat.Name = "dgvMat";
+            this.dgvMat.RowHeadersVisible = false;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.datagridviewControl1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.datagridviewControl1.RowTemplate.Height = 23;
-            this.datagridviewControl1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridviewControl1.Size = new System.Drawing.Size(500, 680);
-            this.datagridviewControl1.TabIndex = 0;
+            this.dgvMat.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMat.RowTemplate.Height = 23;
+            this.dgvMat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMat.Size = new System.Drawing.Size(500, 680);
+            this.dgvMat.TabIndex = 0;
+            this.dgvMat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMat_CellClick);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.datagridviewControl2);
+            this.groupBox2.Controls.Add(this.dgvBOM);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(615, 3);
             this.groupBox2.Name = "groupBox2";
@@ -282,24 +326,25 @@ namespace BedFactory
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "BOM목록";
             // 
-            // datagridviewControl2
+            // dgvBOM
             // 
-            this.datagridviewControl2.AllowUserToAddRows = false;
-            this.datagridviewControl2.AllowUserToResizeRows = false;
-            this.datagridviewControl2.BackgroundColor = System.Drawing.Color.White;
+            this.dgvBOM.AllowUserToAddRows = false;
+            this.dgvBOM.AllowUserToResizeRows = false;
+            this.dgvBOM.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.datagridviewControl2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.datagridviewControl2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridviewControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datagridviewControl2.Location = new System.Drawing.Point(3, 22);
-            this.datagridviewControl2.Name = "datagridviewControl2";
-            this.datagridviewControl2.RowHeadersVisible = false;
+            this.dgvBOM.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvBOM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBOM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBOM.Location = new System.Drawing.Point(3, 22);
+            this.dgvBOM.Name = "dgvBOM";
+            this.dgvBOM.RowHeadersVisible = false;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.datagridviewControl2.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.datagridviewControl2.RowTemplate.Height = 23;
-            this.datagridviewControl2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridviewControl2.Size = new System.Drawing.Size(500, 680);
-            this.datagridviewControl2.TabIndex = 1;
+            this.dgvBOM.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvBOM.RowTemplate.Height = 23;
+            this.dgvBOM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBOM.Size = new System.Drawing.Size(500, 680);
+            this.dgvBOM.TabIndex = 1;
+            this.dgvBOM.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBOM_CellClick);
             // 
             // tableLayoutPanel3
             // 
@@ -329,6 +374,7 @@ namespace BedFactory
             this.btnDel.Text = "◀";
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnAdd
             // 
@@ -341,6 +387,7 @@ namespace BedFactory
             this.btnAdd.Text = "▶";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // nmrCnt
             // 
@@ -369,15 +416,17 @@ namespace BedFactory
             this.pnlSelect.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.datagridviewControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMat)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.datagridviewControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBOM)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nmrCnt)).EndInit();
             this.ResumeLayout(false);
@@ -390,19 +439,23 @@ namespace BedFactory
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbbKind;
-        private System.Windows.Forms.ComboBox cbbName;
+        private System.Windows.Forms.ComboBox cboKind;
+        private System.Windows.Forms.ComboBox cboName;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button btnAll;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DatagridviewControl datagridviewControl1;
+        private DatagridviewControl dgvMat;
         private System.Windows.Forms.GroupBox groupBox2;
-        private DatagridviewControl datagridviewControl2;
+        private DatagridviewControl dgvBOM;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.NumericUpDown nmrCnt;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton rdbBack;
+        private System.Windows.Forms.RadioButton rdbGo;
     }
 }

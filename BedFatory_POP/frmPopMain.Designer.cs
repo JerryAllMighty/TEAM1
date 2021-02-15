@@ -110,11 +110,11 @@ namespace BedFatory_POP
             // 
             // lblChildName
             // 
-            this.lblChildName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblChildName.AutoSize = true;
             this.lblChildName.Font = new System.Drawing.Font("맑은 고딕", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblChildName.Location = new System.Drawing.Point(12, 19);
             this.lblChildName.Name = "lblChildName";
-            this.lblChildName.Size = new System.Drawing.Size(286, 49);
+            this.lblChildName.Size = new System.Drawing.Size(0, 106);
             this.lblChildName.TabIndex = 4;
             this.lblChildName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -228,6 +228,7 @@ namespace BedFatory_POP
             this.Load += new System.EventHandler(this.frmPopMain_Load);
             this.pnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

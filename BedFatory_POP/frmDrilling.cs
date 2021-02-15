@@ -15,6 +15,24 @@ namespace BedFatory_POP
     public partial class frmDrilling : Form
     {
         List<WorkOrderVO> list;
+        int hour = 0, min = 0, sec = 0;
+        int timerCount = 0;
+        int hour2 = 0, min2 = 0, sec2 = 0;
+        int timerCount2 = 0;
+
+        public WorkHistoryVO workhistoryinfo {
+            get
+            {
+                return new WorkHistoryVO
+                {
+                    WO_Num = list[cboWorkPlace.SelectedIndex].WO_Num,
+                    WorkCnt = lblOkayProductCnt.Text,
+                    WO_StartTime = lblWorkDuration.Text,
+                    WO_FinishTime = lblWorkStopTime.Text
+
+                };
+            }
+        }
 
         public frmDrilling()
         {
@@ -22,12 +40,36 @@ namespace BedFatory_POP
         }
 
         /// <summary>
-        /// 현재 폼의 데이터를 다시 바인딩해준다
+        /// 작업을 중지시킨다
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnWO_Click(object sender, EventArgs e)
         {
+            timer1.Stop();
+            timer2.Start();
+            timer2.Tick += Timer2_Tick;
+        }
+
+        private void Timer2_Tick(object sender, EventArgs e)
+        {
+            timerCount2 ++;
+            if (timerCount2 < 60)
+            {
+                sec2 = timerCount2;
+            }
+            else if (timerCount2 < 3600)
+            {
+                min2 = timerCount2 / 60;
+                sec2 = timerCount2 % 60;
+            }
+            else
+            {
+                hour2 = timerCount2 / 3600;
+                min2 = (timerCount2 % 3600) / 60;
+                sec2 = ((timerCount2 % 3600) % 60);
+            }
+            lblWorkStopTime.Text = hour2.ToString("00") + ":" + min2.ToString("00") + ":" + sec2.ToString("00");
         }
 
 
@@ -38,7 +80,7 @@ namespace BedFatory_POP
         /// <param name="e"></param>
         private void btnWA_Click(object sender, EventArgs e)
         {
-            frmWorkerAllocation frm = new frmWorkerAllocation();
+            frmWorkerAllocation frm = new frmWorkerAllocation(list);
             frm.Show();
             frm.Activate();
         }
@@ -79,6 +121,76 @@ namespace BedFatory_POP
             lblErrorCnt.Text = list[cboWorkPlace.SelectedIndex].Error_Cnt;
             //오더 잔량
             lblOrderLeftCnt.Text = (Convert.ToInt32(list[cboWorkPlace.SelectedIndex].WO_Order_Cnt) - Convert.ToInt32(list[cboWorkPlace.SelectedIndex].WorkCnt)).ToString();
+        }
+
+        /// <summary>
+        /// 작업 시작
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnWS_Click(object sender, EventArgs e)
+        {
+            timer2.Stop();
+            timer1.Start();
+            timer1.Tick += Timer1_Tick;
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            timerCount ++;
+            if (timerCount < 60)
+            {
+                sec = timerCount;
+            }
+            else if (timerCount < 3600)
+            {
+                min = timerCount / 60;
+                sec = timerCount % 60;
+            }
+            else 
+            {
+                hour = timerCount / 3600;
+                min = (timerCount % 3600) / 60;
+                sec = ((timerCount % 3600) % 60);
+            }
+            lblWorkDuration.Text = hour.ToString("00")+ ":" + min.ToString("00") + ":" + sec.ToString("00");
+        }
+
+        /// <summary>
+        /// 현장 마감
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnFinish_Click(object sender, EventArgs e)
+        {
+            WorkOrderService service = new WorkOrderService();
+            if(service.FinishWorkOrder(list[cboWorkPlace.SelectedIndex].WO_Num))
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.UpdateSuccess);
+            }
+            else
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.UpdateFail);
+            }
+        }
+
+        /// <summary>
+        /// 생산 실적 등록
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAddCnt_Click(object sender, EventArgs e)
+        {
+            WorkHistoryService service = new WorkHistoryService();
+            //마감 시점에 양품수량, 작업 시간, 작업 중지 시간, 작업 지시번호
+            if (service.UpdateWorkHistoryCnt(workhistoryinfo))
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.UpdateSuccess);
+            }
+            else
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.UpdateFail);
+            }
         }
     }
 }

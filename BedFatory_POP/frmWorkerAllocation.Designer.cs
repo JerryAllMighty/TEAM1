@@ -29,185 +29,259 @@ namespace BedFatory_POP
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.cboWorkPlace = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.btnCancel = new FontAwesome.Sharp.IconButton();
+            this.btnMinimize = new FontAwesome.Sharp.IconButton();
+            this.btnAllocateWorker = new FontAwesome.Sharp.IconButton();
+            this.btnDeallocateWorker = new FontAwesome.Sharp.IconButton();
+            this.btnSave = new FontAwesome.Sharp.IconButton();
+            this.lblWorkPlace = new System.Windows.Forms.Label();
+            this.lblWorker = new System.Windows.Forms.Label();
+            this.lblWorkerAvailable = new System.Windows.Forms.Label();
+            this.dgvWorkerAvailable = new BedFactory.DatagridviewControl();
+            this.dgvWorker = new BedFactory.DatagridviewControl();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWorkerAvailable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWorker)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // cboWorkPlace
             // 
-            this.label1.Font = new System.Drawing.Font("맑은 고딕", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(24, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 46);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "작업장";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("맑은 고딕", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(172, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(319, 45);
-            this.comboBox1.TabIndex = 1;
+            this.cboWorkPlace.Font = new System.Drawing.Font("맑은 고딕", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboWorkPlace.FormattingEnabled = true;
+            this.cboWorkPlace.Location = new System.Drawing.Point(167, 6);
+            this.cboWorkPlace.Name = "cboWorkPlace";
+            this.cboWorkPlace.Size = new System.Drawing.Size(466, 67);
+            this.cboWorkPlace.TabIndex = 1;
+            this.cboWorkPlace.SelectedIndexChanged += new System.EventHandler(this.cboWorkPlace_SelectedIndexChanged);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.cboWorkPlace);
+            this.panel1.Controls.Add(this.lblWorkPlace);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(534, 100);
+            this.panel1.Size = new System.Drawing.Size(636, 100);
             this.panel1.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(580, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(690, 100);
-            this.panel2.TabIndex = 3;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("맑은 고딕", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(294, 22);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(319, 45);
-            this.comboBox2.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(24, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(197, 46);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "할당 작업자수";
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(868, 240);
+            this.panel3.Controls.Add(this.dgvWorker);
+            this.panel3.Location = new System.Drawing.Point(654, 240);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(402, 444);
+            this.panel3.Size = new System.Drawing.Size(373, 444);
             this.panel3.TabIndex = 4;
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.dgvWorkerAvailable);
             this.panel4.Location = new System.Drawing.Point(12, 240);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(534, 444);
+            this.panel4.Size = new System.Drawing.Size(344, 444);
             this.panel4.TabIndex = 5;
             // 
-            // label3
+            // btnCancel
             // 
-            this.label3.Font = new System.Drawing.Font("맑은 고딕", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(861, 170);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(178, 46);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "대상 작업자";
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCancel.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCancel.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnCancel.IconColor = System.Drawing.Color.Black;
+            this.btnCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(848, 7);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(188, 75);
+            this.btnCancel.TabIndex = 11;
+            this.btnCancel.Text = "닫기";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // label4
+            // btnMinimize
             // 
-            this.label4.Font = new System.Drawing.Font("맑은 고딕", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(12, 170);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(240, 46);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "할당 가능 작업자";
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnMinimize.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.btnMinimize.IconColor = System.Drawing.Color.Black;
+            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimize.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMinimize.Location = new System.Drawing.Point(654, 7);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(188, 75);
+            this.btnMinimize.TabIndex = 10;
+            this.btnMinimize.Text = "최소화";
+            this.btnMinimize.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // iconButton1
+            // btnAllocateWorker
             // 
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(580, 240);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(257, 138);
-            this.iconButton1.TabIndex = 7;
-            this.iconButton1.Text = "작업자 할당";
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.btnAllocateWorker.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnAllocateWorker.Font = new System.Drawing.Font("맑은 고딕", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnAllocateWorker.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
+            this.btnAllocateWorker.IconColor = System.Drawing.Color.Black;
+            this.btnAllocateWorker.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAllocateWorker.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAllocateWorker.Location = new System.Drawing.Point(362, 240);
+            this.btnAllocateWorker.Name = "btnAllocateWorker";
+            this.btnAllocateWorker.Size = new System.Drawing.Size(283, 138);
+            this.btnAllocateWorker.TabIndex = 7;
+            this.btnAllocateWorker.Text = "작업자 할당";
+            this.btnAllocateWorker.UseVisualStyleBackColor = false;
+            this.btnAllocateWorker.Click += new System.EventHandler(this.btnAllocateWorker_Click);
             // 
-            // iconButton2
+            // btnDeallocateWorker
             // 
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(580, 393);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(257, 138);
-            this.iconButton2.TabIndex = 8;
-            this.iconButton2.Text = "작업자 해제";
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.btnDeallocateWorker.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnDeallocateWorker.Font = new System.Drawing.Font("맑은 고딕", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDeallocateWorker.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
+            this.btnDeallocateWorker.IconColor = System.Drawing.Color.Black;
+            this.btnDeallocateWorker.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDeallocateWorker.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDeallocateWorker.Location = new System.Drawing.Point(362, 393);
+            this.btnDeallocateWorker.Name = "btnDeallocateWorker";
+            this.btnDeallocateWorker.Size = new System.Drawing.Size(283, 138);
+            this.btnDeallocateWorker.TabIndex = 8;
+            this.btnDeallocateWorker.Text = "작업자 해제";
+            this.btnDeallocateWorker.UseVisualStyleBackColor = false;
+            this.btnDeallocateWorker.Click += new System.EventHandler(this.btnDeallocateWorker_Click);
             // 
-            // iconButton3
+            // btnSave
             // 
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(580, 546);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(257, 138);
-            this.iconButton3.TabIndex = 9;
-            this.iconButton3.Text = "작업자 전체 해제";
-            this.iconButton3.UseVisualStyleBackColor = true;
+            this.btnSave.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSave.Font = new System.Drawing.Font("맑은 고딕", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSave.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnSave.IconColor = System.Drawing.Color.Black;
+            this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSave.Location = new System.Drawing.Point(362, 546);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(283, 138);
+            this.btnSave.TabIndex = 9;
+            this.btnSave.Text = "저장";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // lblWorkPlace
+            // 
+            this.lblWorkPlace.Font = new System.Drawing.Font("맑은 고딕", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblWorkPlace.Location = new System.Drawing.Point(3, 6);
+            this.lblWorkPlace.Name = "lblWorkPlace";
+            this.lblWorkPlace.Size = new System.Drawing.Size(158, 64);
+            this.lblWorkPlace.TabIndex = 0;
+            this.lblWorkPlace.Text = "작업장";
+            // 
+            // lblWorker
+            // 
+            this.lblWorker.Font = new System.Drawing.Font("맑은 고딕", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblWorker.Location = new System.Drawing.Point(644, 154);
+            this.lblWorker.Name = "lblWorker";
+            this.lblWorker.Size = new System.Drawing.Size(286, 62);
+            this.lblWorker.TabIndex = 2;
+            this.lblWorker.Text = "대상 작업자";
+            // 
+            // lblWorkerAvailable
+            // 
+            this.lblWorkerAvailable.Font = new System.Drawing.Font("맑은 고딕", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblWorkerAvailable.Location = new System.Drawing.Point(12, 154);
+            this.lblWorkerAvailable.Name = "lblWorkerAvailable";
+            this.lblWorkerAvailable.Size = new System.Drawing.Size(367, 62);
+            this.lblWorkerAvailable.TabIndex = 6;
+            this.lblWorkerAvailable.Text = "할당 가능 작업자";
+            // 
+            // dgvWorkerAvailable
+            // 
+            this.dgvWorkerAvailable.AllowUserToAddRows = false;
+            this.dgvWorkerAvailable.AllowUserToResizeRows = false;
+            this.dgvWorkerAvailable.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvWorkerAvailable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvWorkerAvailable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWorkerAvailable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvWorkerAvailable.Location = new System.Drawing.Point(0, 0);
+            this.dgvWorkerAvailable.Name = "dgvWorkerAvailable";
+            this.dgvWorkerAvailable.RowHeadersVisible = false;
+            this.dgvWorkerAvailable.RowHeadersWidth = 51;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvWorkerAvailable.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvWorkerAvailable.RowTemplate.Height = 27;
+            this.dgvWorkerAvailable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvWorkerAvailable.Size = new System.Drawing.Size(344, 444);
+            this.dgvWorkerAvailable.TabIndex = 0;
+            // 
+            // dgvWorker
+            // 
+            this.dgvWorker.AllowUserToAddRows = false;
+            this.dgvWorker.AllowUserToResizeRows = false;
+            this.dgvWorker.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold);
+            this.dgvWorker.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvWorker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWorker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvWorker.Location = new System.Drawing.Point(0, 0);
+            this.dgvWorker.Name = "dgvWorker";
+            this.dgvWorker.RowHeadersVisible = false;
+            this.dgvWorker.RowHeadersWidth = 51;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvWorker.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvWorker.RowTemplate.Height = 27;
+            this.dgvWorker.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvWorker.Size = new System.Drawing.Size(373, 444);
+            this.dgvWorker.TabIndex = 0;
             // 
             // frmWorkerAllocation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1282, 753);
-            this.Controls.Add(this.iconButton3);
-            this.Controls.Add(this.iconButton2);
-            this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(1039, 702);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnMinimize);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnDeallocateWorker);
+            this.Controls.Add(this.btnAllocateWorker);
+            this.Controls.Add(this.lblWorkerAvailable);
+            this.Controls.Add(this.lblWorker);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmWorkerAllocation";
-            this.Text = "작업자할당";
+            this.Load += new System.EventHandler(this.frmWorkerAllocation_Load);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWorkerAvailable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWorker)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboWorkPlace;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private BedFactory.DatagridviewControl dgvWorkerAvailable;
+        private FontAwesome.Sharp.IconButton btnCancel;
+        private FontAwesome.Sharp.IconButton btnMinimize;
+        private System.Windows.Forms.Label lblWorkPlace;
+        private FontAwesome.Sharp.IconButton btnAllocateWorker;
+        private FontAwesome.Sharp.IconButton btnDeallocateWorker;
+        private FontAwesome.Sharp.IconButton btnSave;
+        private System.Windows.Forms.Label lblWorker;
+        private System.Windows.Forms.Label lblWorkerAvailable;
+        private BedFactory.DatagridviewControl dgvWorker;
     }
 }

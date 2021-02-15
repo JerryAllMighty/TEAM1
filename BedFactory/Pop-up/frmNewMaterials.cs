@@ -55,6 +55,11 @@ namespace BedFactory.Pop_up
         /// </summary>
         private void TreeNodeBinding()
         {
+            if(trvMaterials.Nodes.Count > 0)
+            {
+                trvMaterials.Nodes.Clear();
+            }
+
             #region 트리노드 바인딩(카테고리)
             List<CommonCodeVO> p_List = new List<CommonCodeVO>();
             CommonCodeService service1 = new CommonCodeService();
@@ -118,11 +123,16 @@ namespace BedFactory.Pop_up
 
                 foreach (MaterialsCheckList item in panel1.Controls)
                 {
-                    service2.InsertCheck(id, int.Parse(item.cboText.cbo.Name), 1);
+                    if(item.cboText.cbo.SelectedIndex < 1)
+                    {
+                        MessageBox.Show("검사항목을 선택하여주시오.");
+                        return;
+                    }
+                    service2.InsertCheck(id, Convert.ToInt32(item.cboText.cbo.SelectedValue), 1);
                     bFlag = true;
                 }
             }
-            catch
+            catch(Exception err)
             {
                 bFlag = false;
             }
@@ -132,6 +142,9 @@ namespace BedFactory.Pop_up
             {
                 MessageBox.Show("성공적으로 저장하였습니다.");
                 search.PerformClick();
+                lctProductName.text.Text = ontSizeX.Text = ontSizeY.Text = ontSizeZ.Text = "";
+                lctCategory.cbo.SelectedIndex = lctKind.cbo.SelectedIndex = 0;
+                panel1.Controls.Clear();
             }
             else
             {
@@ -170,13 +183,15 @@ namespace BedFactory.Pop_up
             CheckService service2 = new CheckService();
             bool bFlag = false;
             
+            //기존정보 자재정보 수정 및 검사항목 삭제
             if (service1.UpdateMaterilas(materialsVO) && service2.DeleteCheck(materialID))
             {
                 try
                 {
                     foreach (MaterialsCheckList item in panel1.Controls)
                     {
-                        service2.InsertCheck(materialID, int.Parse(item.cboText.cbo.Name), 1);
+                        //수정 후 검사항목 재등록
+                        service2.InsertCheck(materialID, Convert.ToInt32(item.cboText.cbo.SelectedValue), 1);
                         bFlag = true;
                     }
                 }
@@ -213,8 +228,6 @@ namespace BedFactory.Pop_up
             CheckService service2 = new CheckService();
             ci_list = service2.GetCheckInfo();
             ci_list.ForEach(p => codeList.Add(new CommonCodeVO { Code_Num = p.Check_Info_Num.ToString(), Code_Name = p.CheckName, Category = p.CheckKind }));
-
-
         }
 
         /// <summary>

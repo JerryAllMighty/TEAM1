@@ -6,7 +6,7 @@
     //  PropertyChanged 이벤트는 설정 값이 변경된 후에 발생합니다.
     //  SettingsLoaded 이벤트는 설정 값이 로드된 후에 발생합니다.
     //  SettingsSaving 이벤트는 설정 값이 저장되기 전에 발생합니다.
-    internal sealed partial class Settings {
+    public sealed partial class Settings {
         
         public Settings() {
             // // 설정을 저장 및 변경하기 위한 이벤트 처리기를 추가하려면 아래 줄에서 주석 처리를 제거하세요.

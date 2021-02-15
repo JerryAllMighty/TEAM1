@@ -51,6 +51,7 @@
     <Compile Include="CommonCodeVO.cs" />
     <Compile Include="CompanyVO.cs" />
     <Compile Include="DemandVO.cs" />
+    <Compile Include="EmployeeVO.cs" />
     <Compile Include="MaterialsVO.cs" />
     <Compile Include="ProcessVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="ShipmentVO.cs" />
     <Compile Include="UnitCostVO.cs" />
     <Compile Include="WearingVO.cs" />
+    <Compile Include="WorkHistoryVO.cs" />
     <Compile Include="WorkOrderVO.cs" />
     <Compile Include="WorkplaceVO.cs" />
   </ItemGroup>

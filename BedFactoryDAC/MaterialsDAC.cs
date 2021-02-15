@@ -13,12 +13,6 @@ namespace BedFactoryDAC
         string strConn;
         SqlConnection conn;
 
-        public MaterialsDAC(string strConn) 
-        { 
-            conn = new SqlConnection(strConn);
-            conn.Open();
-        }
-
         public MaterialsDAC()
         {
             strConn = this.ConnectionString;
@@ -64,7 +58,7 @@ namespace BedFactoryDAC
                     cmd.Connection = conn;
                     cmd.CommandText = @"insert into tblMaterials (Mat_Num, Mat_Name, Mat_Category, Mat_Kind, Mat_Size, FirstMan, LastMan)
                                         values (
-	                                        (select left(Code_Num, 2) + (select REPLICATE(0, 8 - len(count(*))) + CONVERT(varchar, count(*)) from tblMaterials) from CommonCode where Code_Name = @Mat_Category),
+	                                        (select left(Code_Num, 2) + (select REPLICATE(0, 8 - len(count(*))) + CONVERT(varchar, count(*)) from tblMaterials) from tblCommonCode where Code_Name = @Mat_Category),
 	                                        @Mat_Name, @Mat_Category, @Mat_Kind, @Mat_Size, @FirstMan, @LastMan
                                         )";
                     cmd.Parameters.AddWithValue("@Mat_Name", vo.Mat_Name);
@@ -75,7 +69,7 @@ namespace BedFactoryDAC
                     cmd.Parameters.AddWithValue("@LastMan", vo.LastMan);
                     cmd.ExecuteNonQuery();
 
-                    cmd.CommandText = @"select top 1 Mat_Num from tblMaterials order by FirstDate";
+                    cmd.CommandText = @"select top 1 Mat_Num from tblMaterials order by FirstDate desc";
                     string i = cmd.ExecuteScalar().ToString();
 
                     return i;

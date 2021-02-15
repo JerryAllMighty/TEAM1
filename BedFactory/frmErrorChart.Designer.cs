@@ -145,7 +145,7 @@ namespace BedFactory
             this.cbbKind.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbKind.FormattingEnabled = true;
-            this.cbbKind.Location = new System.Drawing.Point(138, 5);
+            this.cbbKind.Location = new System.Drawing.Point(138, 3);
             this.cbbKind.Name = "cbbKind";
             this.cbbKind.Size = new System.Drawing.Size(231, 25);
             this.cbbKind.TabIndex = 1;
@@ -155,7 +155,7 @@ namespace BedFactory
             this.cbbStats.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbStats.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbStats.FormattingEnabled = true;
-            this.cbbStats.Location = new System.Drawing.Point(557, 3);
+            this.cbbStats.Location = new System.Drawing.Point(557, 5);
             this.cbbStats.Name = "cbbStats";
             this.cbbStats.Size = new System.Drawing.Size(231, 25);
             this.cbbStats.TabIndex = 18;
@@ -175,7 +175,7 @@ namespace BedFactory
             this.cbbResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbResult.FormattingEnabled = true;
-            this.cbbResult.Location = new System.Drawing.Point(976, 3);
+            this.cbbResult.Location = new System.Drawing.Point(976, 5);
             this.cbbResult.Name = "cbbResult";
             this.cbbResult.Size = new System.Drawing.Size(231, 25);
             this.cbbResult.TabIndex = 20;
@@ -226,7 +226,7 @@ namespace BedFactory
             this.cbbWorkPlace.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbWorkPlace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbWorkPlace.FormattingEnabled = true;
-            this.cbbWorkPlace.Location = new System.Drawing.Point(138, 34);
+            this.cbbWorkPlace.Location = new System.Drawing.Point(138, 37);
             this.cbbWorkPlace.Name = "cbbWorkPlace";
             this.cbbWorkPlace.Size = new System.Drawing.Size(231, 25);
             this.cbbWorkPlace.TabIndex = 25;
