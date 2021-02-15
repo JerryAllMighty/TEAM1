@@ -130,7 +130,7 @@ namespace BedFactoryDAC
         }
 
         /// <summary>
-        /// 자재번호 당 검사항목 수정
+        /// 자재번호 당 검사항목 등록
         /// </summary>
         /// <param name="vo"></param>
         /// <param name="check_Info_Num">검사항목</param>
@@ -142,7 +142,8 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"insert into tblCheck set Mat_Num = @Mat_Num, Check_Info_Num = @Check_Info_Num, Lastman = @Lastman, Lastdate = getdate()";
+                    cmd.CommandText = @"insert into tblCheck(Mat_Num, Check_Info_Num, LastMan, LastDate)
+                                        values(@Mat_Num, @Check_Info_Num, @Lastman, getdate())";
                     cmd.Parameters.AddWithValue("@Mat_Num", mat_Num);
                     cmd.Parameters.AddWithValue("@Check_Info_Num", check_Info_Num);
                     cmd.Parameters.AddWithValue("@Lastman", lastMan);
@@ -159,6 +160,10 @@ namespace BedFactoryDAC
             }
         }
 
+        /// <summary>
+        /// 자재번호 당 검사항목 삭제
+        /// </summary>
+        /// <param name="mat_Num">자재번호</param>
         public bool DeleteCheck(string mat_Num)
         {
             try

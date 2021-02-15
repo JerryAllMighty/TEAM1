@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AuthorityService.cs" />
     <Compile Include="BalzooService.cs" />
+    <Compile Include="BOMService.cs" />
     <Compile Include="BORService.cs" />
     <Compile Include="CheckService.cs" />
     <Compile Include="CompanyService.cs" />
