@@ -39,6 +39,10 @@ namespace BedFactory
             this.cboKind = new System.Windows.Forms.ComboBox();
             this.cboName = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.rdbBack = new System.Windows.Forms.RadioButton();
+            this.rdbGo = new System.Windows.Forms.RadioButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnAll = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -53,6 +57,7 @@ namespace BedFactory
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -70,6 +75,7 @@ namespace BedFactory
             // 
             this.btn2.Location = new System.Drawing.Point(1305, 99);
             this.btn2.Text = "변경";
+            this.btn2.Click += new System.EventHandler(this.btn2_Click_1);
             // 
             // btn3
             // 
@@ -122,6 +128,8 @@ namespace BedFactory
             this.tableLayoutPanel1.Controls.Add(this.cboKind, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.cboName, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSearch, 9, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 6, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 7, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -166,7 +174,7 @@ namespace BedFactory
             this.cboName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cboName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboName.FormattingEnabled = true;
-            this.cboName.Location = new System.Drawing.Point(553, 18);
+            this.cboName.Location = new System.Drawing.Point(553, 21);
             this.cboName.Name = "cboName";
             this.cboName.Size = new System.Drawing.Size(231, 25);
             this.cboName.TabIndex = 18;
@@ -183,6 +191,48 @@ namespace BedFactory
             this.btnSearch.Text = "조 회";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(874, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 19);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "* 비 고";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.rdbBack);
+            this.panel1.Controls.Add(this.rdbGo);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(970, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(234, 57);
+            this.panel1.TabIndex = 23;
+            // 
+            // rdbBack
+            // 
+            this.rdbBack.AutoSize = true;
+            this.rdbBack.Location = new System.Drawing.Point(104, 20);
+            this.rdbBack.Name = "rdbBack";
+            this.rdbBack.Size = new System.Drawing.Size(69, 23);
+            this.rdbBack.TabIndex = 1;
+            this.rdbBack.TabStop = true;
+            this.rdbBack.Text = "역전개";
+            this.rdbBack.UseVisualStyleBackColor = true;
+            // 
+            // rdbGo
+            // 
+            this.rdbGo.AutoSize = true;
+            this.rdbGo.Location = new System.Drawing.Point(3, 20);
+            this.rdbGo.Name = "rdbGo";
+            this.rdbGo.Size = new System.Drawing.Size(69, 23);
+            this.rdbGo.TabIndex = 0;
+            this.rdbGo.TabStop = true;
+            this.rdbGo.Text = "정전개";
+            this.rdbGo.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
             // 
@@ -263,6 +313,7 @@ namespace BedFactory
             this.dgvMat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMat.Size = new System.Drawing.Size(500, 680);
             this.dgvMat.TabIndex = 0;
+            this.dgvMat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMat_CellClick);
             // 
             // groupBox2
             // 
@@ -293,6 +344,7 @@ namespace BedFactory
             this.dgvBOM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBOM.Size = new System.Drawing.Size(500, 680);
             this.dgvBOM.TabIndex = 1;
+            this.dgvBOM.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBOM_CellClick);
             // 
             // tableLayoutPanel3
             // 
@@ -322,6 +374,7 @@ namespace BedFactory
             this.btnDel.Text = "◀";
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnAdd
             // 
@@ -334,6 +387,7 @@ namespace BedFactory
             this.btnAdd.Text = "▶";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // nmrCnt
             // 
@@ -362,6 +416,8 @@ namespace BedFactory
             this.pnlSelect.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -397,5 +453,9 @@ namespace BedFactory
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.NumericUpDown nmrCnt;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton rdbBack;
+        private System.Windows.Forms.RadioButton rdbGo;
     }
 }

@@ -18,6 +18,10 @@ namespace BedFactory
     {
         List<CommonCodeVO> list = new List<CommonCodeVO>(); //자재정보리스트
         APIMessage<List<MaterialsVO>> mat_List = new APIMessage<List<MaterialsVO>>();
+        List<BOMVO> bom_List = new List<BOMVO>();
+        List<int> bom_Num = new List<int>();
+        BOMVO Add_mat, Del_mat;
+        int rowIndext = -1;
 
         public frmBOM()
         {
@@ -33,6 +37,7 @@ namespace BedFactory
             commonList = (from common in service1.GetCommonCodeInfo()
                           where common.Category.Equals("자재구분")
                           select common).ToList();
+
             CommonUtil.CommonCodeBindig(cboKind, commonList, "자재구분", "전체");
             #endregion
 
@@ -40,7 +45,6 @@ namespace BedFactory
             int y = 0;
             foreach(CommonCodeVO vo in commonList)
             {
-                if(vo.Code_Name == "완제품"){ continue; }    //완제품 버튼생성x
                 Button btn = new Button();
                 btn.Size = new Size(220, 40);
                 btn.Location = new Point(5, 45 + 41 * y);
@@ -82,8 +86,10 @@ namespace BedFactory
             #region BOM 그리드뷰 설정
             dgvBOM.SetGridViewColumn("BOM번호", "BOM_Num", visibility: false);
             dgvBOM.SetGridViewColumn("자재번호", "Mat_Num", visibility: false);
-            dgvBOM.SetGridViewColumn("자재이름", "Mat_Name", 500);
+            dgvBOM.SetGridViewColumn("사용자재번호", "Use_Mat_Num", visibility: false);
+            dgvBOM.SetGridViewColumn("자재이름", "Mat_Name", 400);
             dgvBOM.SetGridViewColumn("자재구분", "Mat_Category", 200);
+            dgvBOM.SetGridViewColumn("사용개수", "Cnt", 100);
             dgvMat.SetGridViewColumn("최초등록자", "FirstMan", visibility: false);
             dgvMat.SetGridViewColumn("최초등록일", "FirstDate", visibility: false);
             dgvMat.SetGridViewColumn("최종등록자", "LastMan", visibility: false);
@@ -103,9 +109,12 @@ namespace BedFactory
                 btnCartegory = "";
             }
 
-            list = (from mat in mat_List.Data
-                    where mat.Mat_Category.Contains(btnCartegory)
-                    select mat).ToList();
+            if (mat_List != null)
+            {
+                list = (from mat in mat_List.Data
+                        where mat.Mat_Category.Contains(btnCartegory)
+                        select mat).ToList();
+            }
 
             dgvMat.DataSource = null;
             dgvMat.DataSource = list;
@@ -118,10 +127,17 @@ namespace BedFactory
             if(cboKind.Text == "전체")
             {
                 mat_Category = "";
+                label4.Visible = rdbGo.Visible = rdbBack.Visible = false;
+            }
+            else if(cboKind.Text == "반제품")
+            {
+                mat_Category = cboKind.Text;
+                label4.Visible = rdbGo.Visible = rdbBack.Visible = rdbGo.Checked = true;    //반제품일 경우 라디오박스 활성화
             }
             else
             {
                 mat_Category = cboKind.Text;
+                label4.Visible = rdbGo.Visible = rdbBack.Visible = false;
             }
             cboName.DataSource = null;
             CommonUtil.CommonCodeBindig(cboName, list, mat_Category, "선택");
@@ -129,13 +145,183 @@ namespace BedFactory
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            bom_List.Clear();
+
             //BOM바인딩
-            List<BOMVO> bom_List = new List<BOMVO>();
             BOMService service = new BOMService();
-            bom_List = service.GetBOM(cboName.SelectedItem.ToString());
+            List<BOMVO> bom_All = new List<BOMVO>();
+            bom_All = service.GetBOM(cboName.SelectedItem.ToString());
+
+            if(!label4.Visible || bom_All.Count < 1)
+            {
+                bom_List = bom_All;
+            }
+            else if (rdbGo.Checked) //반제품 역전개
+            {
+                bom_List = (from bom in bom_All
+                            where bom.Mat_Category.Equals("완제품")
+                            select bom).ToList();
+            }
+            else if (!rdbGo.Checked)    //반제품 정전개
+            {
+                bom_List = (from bom in bom_All
+                            where bom.Mat_Category != "완제품"
+                            select bom).ToList();
+            }
 
             dgvBOM.DataSource = null;
             dgvBOM.DataSource = bom_List;
+        }
+
+        /// <summary>
+        /// BOM추가
+        /// </summary>
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            bool bflag = true;
+
+            if(rowIndext < 0)
+            {
+                MessageBox.Show("추가할 자재를 선택해주세요.");
+                return;
+            }
+
+            //현재 있는 자재에서 수량 추가
+            foreach(DataGridViewRow row in dgvBOM.Rows)
+            {
+                if (row.Cells["Use_Mat_Num"].Value.ToString() == Add_mat.Use_Mat_Num)
+                {
+                    row.Cells["Cnt"].Value = Convert.ToInt32(row.Cells["Cnt"].Value) + Convert.ToInt32(nmrCnt.Value);
+                    bflag = false;
+                    return;
+                }
+            }
+
+            //새로운 BOM생성
+            if(dgvBOM.RowCount < 1 || bflag)
+            {
+                Add_mat.Cnt = Convert.ToInt32(nmrCnt.Value);
+                bom_List.Add(Add_mat);
+                dgvBOM.DataSource = null;
+                dgvBOM.DataSource = bom_List;
+            }
+        }
+
+        /// <summary>
+        /// 추가할 자재목록 선택
+        /// </summary>
+        private void dgvMat_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex < 0) { return; }
+            rowIndext = e.RowIndex;
+
+            Add_mat = new BOMVO
+            {
+                BOM_Num = -1,
+                Mat_Num = cboName.SelectedItem.ToString(),
+                Use_Mat_Num = dgvMat["Mat_Num", e.RowIndex].Value.ToString(),
+                Mat_Name = dgvMat["Mat_Name", e.RowIndex].Value.ToString(),
+                Mat_Category = dgvMat["Mat_Category", e.RowIndex].Value.ToString(),
+                Firstman = 1,
+                Lastman = 1
+            };
+        }
+
+        /// <summary>
+        /// 삭제할 BOM목록 선택
+        /// </summary>
+        private void dgvBOM_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) { return; }
+            rowIndext = e.RowIndex;
+
+            Del_mat = new BOMVO
+            {
+                Mat_Num = dgvBOM["Mat_Num", e.RowIndex].Value.ToString(),
+                Use_Mat_Num = dgvBOM["Use_Mat_Num", e.RowIndex].Value.ToString(),
+                Mat_Name = dgvBOM["Mat_Name", e.RowIndex].Value.ToString(),
+                Mat_Category = dgvBOM["Mat_Category", e.RowIndex].Value.ToString(),
+            };
+        }
+
+        /// <summary>
+        /// BOM등록 및 수정
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn2_Click_1(object sender, EventArgs e)
+        {
+            BOMService service = new BOMService();
+
+            //BOM등록 및 수정
+            foreach (DataGridViewRow row in dgvBOM.Rows)
+            {
+                BOMVO vo = new BOMVO
+                {
+                    BOM_Num = Convert.ToInt32(row.Cells["BOM_Num"].Value),
+                    Mat_Num = cboName.SelectedItem.ToString(),
+                    Use_Mat_Num = row.Cells["Use_Mat_Num"].Value.ToString(),
+                    Cnt = Convert.ToInt32(row.Cells["Cnt"].Value)
+                };
+
+                //신규 BOM등록
+                if (vo.BOM_Num == -1)
+                {
+                    vo.Firstman = 1;
+                    vo.Lastman = 1;
+
+                    service.InsertBOM(vo);
+                }
+                //BOM수정
+                else
+                {
+                    vo.Lastman = 1;
+
+                    service.UpdateBOM(vo);
+                }
+            }
+
+            //BOM삭제
+            foreach(int bomNum in bom_Num)
+            {
+                service.DeleteBOM(bomNum);
+            }
+        }
+
+        /// <summary>
+        /// BOM삭제
+        /// </summary>
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            if (rowIndext < 0)
+            {
+                MessageBox.Show("삭제할 자재를 선택해주세요.");
+                return;
+            }
+            bom_Num.Clear();
+
+            //현재 있는 자재에서 수량 감소
+            foreach (DataGridViewRow row in dgvBOM.Rows)
+            {
+                if (row.Cells["Use_Mat_Num"].Value.ToString() == Del_mat.Use_Mat_Num)
+                {
+                    row.Cells["Cnt"].Value = Convert.ToInt32(row.Cells["Cnt"].Value) - Convert.ToInt32(nmrCnt.Value);
+
+                    //개수가 0이하일 경우 해당 항목 삭제
+                    if(Convert.ToInt32(row.Cells["Cnt"].Value) < 1)
+                    {
+                        //등록되어 있는 BOM
+                        if (Convert.ToInt32(row.Cells["BOM_Num"].Value) > 0)
+                        {
+                            bom_Num.Add(Convert.ToInt32(row.Cells["BOM_Num"].Value));
+                        }
+                        bom_List.RemoveAll(p => p.Use_Mat_Num.Equals(Del_mat.Use_Mat_Num));
+                        dgvBOM.DataSource = null;
+                        dgvBOM.DataSource = bom_List;
+                    }
+                    return;
+                }
+            }
         }
     }
 }
