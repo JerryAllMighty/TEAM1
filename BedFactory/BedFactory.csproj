@@ -743,6 +743,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Library\EncryptDecryp.dll" />
+    <None Include="Resources\pngwing.com %281%29.png" />
+    <None Include="Resources\pngwing.com.png" />
+    <None Include="Resources\free-icon-hotel-bed-1274839.png" />
     <None Include="Resources\pngegg %281%29.png" />
     <None Include="Resources\pngegg %282%29.png" />
   </ItemGroup>

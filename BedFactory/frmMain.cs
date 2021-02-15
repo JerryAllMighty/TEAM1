@@ -160,6 +160,8 @@ namespace BadFactory
             tv.Size = new Size(200, 300);
             tv.BorderStyle = BorderStyle.None;
             tv.Dock = DockStyle.Fill;
+            tv.Font = new Font("맑은 고딕", 9.75F);
+            tv.Indent = 5;
             tv.NodeMouseDoubleClick += tvMenu_NodeMouseDoubleClick;
             pnMenu.Controls.Add(tv);
             tv.Visible = false;
@@ -199,7 +201,7 @@ namespace BadFactory
 
             if(btn.BackColor != Color.Lavender)
             {
-                for (int i = pnMenu.Controls.Count - 1; i >= 0; i--)
+                for (int i = pnMenu.Controls.Count - 1; i >= 0; i--) //int i = pnMenu.Controls.Count - 1; i >= 0; i--
                 {
                     if(pnMenu.Controls[i] as Button != null)
                     {

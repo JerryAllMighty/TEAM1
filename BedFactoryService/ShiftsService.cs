@@ -40,7 +40,7 @@ namespace BedFactoryService
             return dac.ShiftChangeSelect();
         }
 
-        public int ShiftChangeIandU(ShiftVO shift)
+        public bool ShiftChangeIandU(ShiftVO shift)
         {
             ShiftsDAC dac = new ShiftsDAC();
             return dac.ShiftChangeIandU(shift);

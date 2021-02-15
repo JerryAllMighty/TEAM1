@@ -44,7 +44,7 @@ namespace BedFactoryDAC
                     cmd.ExecuteNonQuery();
 
                     cmd.CommandType = System.Data.CommandType.Text;
-                    cmd.CommandText = @"select Ship_D_Num, WO_D_Num, S.Firstdate, M.Mat_Name, M.Mat_Category, SD.Str_Num, Ship_Cnt
+                    cmd.CommandText = @"select Ship_D_Num, WO_Num, S.Firstdate, M.Mat_Name, M.Mat_Category, SD.Str_Num, Ship_Cnt
                                         from tblShipment_D SD join tblShipment S on SD.Ship_Num = S.Ship_Num
                                         join tblMaterials M on SD.Mat_Num = M.Mat_Num
                                         where Ship_Status = '출고대기'
@@ -82,7 +82,7 @@ namespace BedFactoryDAC
                                         from tblWorkOrders WO join tblProductionPlan_D PPD on WO.ProductionPlan_D_Num = PPD.ProductionPlan_D_Num
                                         	 join tblWorkplace WP on WO.WP_Num = WP.WP_Num join tblProcess P on P.Process_Num = WO.Process_Num
                                         	 join tblMaterials M on WO.Mat_Num = M.Mat_Num
-                                        where WO_Status = '작업지시' and ProductionDate >= @fromDate and ProductionDate <= @toDate";
+                                        where WO_Status = '작업 예정' and ProductionDate >= @fromDate and ProductionDate <= @toDate";
                     cmd.Parameters.AddWithValue("@fromDate", fromDate.Date);
                     cmd.Parameters.AddWithValue("@toDate", toDate.Date);
 
@@ -160,6 +160,29 @@ namespace BedFactoryDAC
                     conn.Close();
 
                     return true;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
+
+        public bool ShipmentFinish(string num)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"update tblShipment_D set Ship_Status = '출고완료' where Ship_D_Num = @Ship_D_Num";
+                    cmd.Parameters.AddWithValue("@Ship_D_Num", num);
+
+                    int cnt = cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    return cnt > 0;
                 }
             }
             catch (Exception err)
