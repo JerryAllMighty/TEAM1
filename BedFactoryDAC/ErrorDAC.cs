@@ -34,6 +34,7 @@ namespace BedFactoryDAC
 
                     List<ErrorHistoryVO> list = Helper.DataReaderMapToList<ErrorHistoryVO>(cmd.ExecuteReader());
 
+
                     return list;
                 }
             }

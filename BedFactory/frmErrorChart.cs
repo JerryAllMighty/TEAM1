@@ -118,7 +118,7 @@ namespace BedFactory
             dgvErrorList.DataSource = null;
             dgvErrorList.DataSource = (from list in vo
                                        where list.Mat_Category.Contains(category1) && list.Mat_Name.Contains(category2) && list.ErrorKind.Contains(category3)
-                                       select list).ToList();
+                                       select list).ToList(); 
         }
     }
 }
