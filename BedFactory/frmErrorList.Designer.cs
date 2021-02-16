@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -133,7 +133,7 @@ namespace BedFactory
             this.cboKind.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cboKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboKind.FormattingEnabled = true;
-            this.cboKind.Location = new System.Drawing.Point(136, 18);
+            this.cboKind.Location = new System.Drawing.Point(136, 21);
             this.cboKind.Name = "cboKind";
             this.cboKind.Size = new System.Drawing.Size(231, 25);
             this.cboKind.TabIndex = 1;
@@ -144,7 +144,7 @@ namespace BedFactory
             this.cboName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cboName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboName.FormattingEnabled = true;
-            this.cboName.Location = new System.Drawing.Point(553, 21);
+            this.cboName.Location = new System.Drawing.Point(553, 18);
             this.cboName.Name = "cboName";
             this.cboName.Size = new System.Drawing.Size(231, 25);
             this.cboName.TabIndex = 18;
@@ -167,15 +167,15 @@ namespace BedFactory
             this.dgvCheckInfo.AllowUserToAddRows = false;
             this.dgvCheckInfo.AllowUserToResizeRows = false;
             this.dgvCheckInfo.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvCheckInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvCheckInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCheckInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCheckInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCheckInfo.Location = new System.Drawing.Point(0, 0);
             this.dgvCheckInfo.Name = "dgvCheckInfo";
             this.dgvCheckInfo.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvCheckInfo.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvCheckInfo.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCheckInfo.RowTemplate.Height = 23;
             this.dgvCheckInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCheckInfo.Size = new System.Drawing.Size(1358, 711);
@@ -189,7 +189,7 @@ namespace BedFactory
             this.Font = new System.Drawing.Font("맑은 고딕", 10F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmErrorList";
-            this.Text = "frmErrorList";
+            this.Text = "검사항목관리";
             this.Load += new System.EventHandler(this.frmErrorList_Load);
             this.pnlDgv.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
