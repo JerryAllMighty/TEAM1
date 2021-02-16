@@ -1,6 +1,7 @@
 ﻿using BedFactory;
 using BedFactory.BaseForms;
 using BedFactory.Pop_up;
+using BedFactoryService;
 using BedFactoryVO;
 using System;
 using System.Collections.Generic;
@@ -166,8 +167,10 @@ namespace BadFactory
             }
             #endregion
 
+            AuthorityService service = new AuthorityService();
             List<CommonCodeVO> list = frmCommonCode.CheckCommonInfo();
-            List<CommonCodeVO> pList = list.Where(p => p.Category == "메뉴").ToList();
+            //List<CommonCodeVO> pList = list.Where(p => p.Category == "메뉴").ToList();
+            List<AuthorityVO> pList = service.GetEmployeeAuthName(emp_Info.Emp_Num);
 
             tv.Size = new Size(200, 300);
             tv.BorderStyle = BorderStyle.None;
@@ -179,11 +182,11 @@ namespace BadFactory
             tv.Visible = false;
 
             int k = 1;
-            pList.OrderByDescending(l => l.Code_Num).ToList().ForEach(p =>
+            pList.OrderBy(l => l.Auth_Num).ToList().ForEach(p =>
             {
-                List<CommonCodeVO> cList = list.Where(i => i.P_Code == p.Code_Num).ToList();
+                List<CommonCodeVO> cList = list.Where(i => i.P_Code == p.Auth_Name).ToList();
                 Button btn = new Button();
-                btn.Text = p.Code_Name;
+                btn.Text = p.Auth_Name;
                 btn.Tag = k;
                 btn.Size = new Size(200, 30);
                 btn.FlatStyle = FlatStyle.Popup;
