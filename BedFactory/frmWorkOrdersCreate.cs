@@ -36,13 +36,13 @@ namespace BedFactory
             dgvWOC.SetGridViewColumn("작업장명", "WP_Name");
             dgvWOC.SetGridViewColumn("자재명", "Mat_Name");
             dgvWOC.SetGridViewColumn("작업지시상태", "WO_Status");
-            dgvWOC.SetGridViewColumn("계획시작일", "ProductionDate");
-            dgvWOC.SetGridViewColumn("계획납기일", "DeadLine");
             dgvWOC.SetGridViewColumn("계획수량", "WO_Plan_Cnt");
             dgvWOC.SetGridViewColumn("지시수량", "WO_Order_Cnt");
             dgvWOC.SetGridViewColumn("작업내용", "WO_Detail");
             dgvWOC.SetGridViewColumn("작업담당자", "WO_D_Emp_Num");
             dgvWOC.SetGridViewColumn("출고여부", "IsShip");
+            dgvWOC.SetGridViewColumn("계획시작일", "ProductionDate");
+            dgvWOC.SetGridViewColumn("계획납기일", "DeadLine");
             dgvWOC.SetGridViewColumn("작업경과시간", "WO_StartTime");
             dgvWOC.SetGridViewColumn("작업중지시간", "WO_FinishTime");
 
@@ -110,8 +110,8 @@ namespace BedFactory
             DateTime dtTo = dtpTo.Value;
 
 
-            WorkOrdersService service = new WorkOrdersService();
-            List<WorkOrdersVO> wolist = service.GetWorkOrdersInfo(wpNum, matNum, wsNum, dtFrom, dtTo);
+            WorkOrderService service = new WorkOrderService();
+            List<WorkOrderVO> wolist = service.GetWorkOrdersInfo(wpNum, matNum, wsNum, dtFrom, dtTo);
             dgvWOC.DataSource = wolist;
         }
 
@@ -128,7 +128,7 @@ namespace BedFactory
                 bool isCellChecked = (bool)dgvWOC.Rows[i].Cells["chk"].EditedFormattedValue;
                 if (isCellChecked == true)
                 {
-                  chkWoList.Add(Convert.ToInt32(dgvWOC.Rows[i].Cells[1].Value));
+                    chkWoList.Add(Convert.ToInt32(dgvWOC.Rows[i].Cells[1].Value));
                 }
             }
 
@@ -145,30 +145,37 @@ namespace BedFactory
         //작업지시 삭제
         private void btnWOdelete_Click(object sender, EventArgs e)
         {
+            if (dgvWOC.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("삭제할 작업지시정보를 선택해주세요.");
+                return;
+            }
+
+            else if (MessageBox.Show($"작업지시정보를 삭제하시겠습니까?", "삭제확인", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+
+            List<int> nums = new List<int>();
             foreach (DataGridViewRow row in dgvWOC.Rows)
             {
-                if (dgvWOC.SelectedRows.Count < 1)
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk"];
+                if ((bool)chk.Value)
                 {
-                    MessageBox.Show("삭제할 작업지시정보를 선택해주세요.");
-                    return;
-                }
+                    nums.Add(Convert.ToInt32(row.Cells["WO_Num"].Value));
+                }   
+            }
 
-                if (MessageBox.Show($"{dgvWOC[1, dgvWOC.SelectedRows[0].Index].Value} 번 작업지시정보를 삭제하시겠습니까?"
-                    , "삭제확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    WorkOrdersService service = new WorkOrdersService();
+            WorkOrderService service = new WorkOrderService();
+            bool result = service.DeleteWorkOrdersInfo(nums);
 
-                    bool result = service.DeleteWorkOrdersInfo(Convert.ToInt32(dgvWOC[1, dgvWOC.SelectedRows[0].Index].Value));
-
-                    if (result)
-                    {
-                        MessageBox.Show(BedFactory.Properties.Settings.Default.DeleteSuccess);
-                    }
-                    else
-                    {
-                        MessageBox.Show(BedFactory.Properties.Settings.Default.DeleteFail);
-                    }
-                }
+            if (result)
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.DeleteSuccess);
+            }
+            else
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.DeleteFail);
             }
         }
     }
