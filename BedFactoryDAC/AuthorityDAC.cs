@@ -140,6 +140,38 @@ namespace BedFactoryDAC
             }
         }
 
+        /// <summary>
+        /// 직원이 가지고 있는 권한의 메뉴리스트
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public List<AuthorityVO> GetEmployeeAuthName(int num)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"select A.Auth_Name
+                                          from tblEmployees E 
+                                          	 join tblAuthorityList AL on E.Emp_Department = AL.Auth_Department
+                                          	 join tblAuthority A on AL.ListNum = A.ListNum
+                                          	 where E.Emp_Num = @Emp_Num";
+
+                    cmd.Parameters.AddWithValue("@Emp_Num", num);
+
+                    List<AuthorityVO> list = Helper.DataReaderMapToList<AuthorityVO>(cmd.ExecuteReader());
+
+                    return list != null ? list : null;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
+            }
+        }
+
         public void Dispose()
         {
             conn.Close();
