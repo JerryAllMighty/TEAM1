@@ -50,5 +50,11 @@ namespace BedFactoryService
             WearingDAC dac = new WearingDAC();
             return dac.BuyWarehousing(W_Num, M_Num);
         }
+
+        public List<WearingVO> GetAllWearHouse()
+        {
+            WearingDAC dac = new WearingDAC();
+            return dac.GetAllWearHouse();
+        }
     }
 }

@@ -191,5 +191,33 @@ namespace BedFactoryDAC
                 return false;
             }
         }
+
+        public bool InsertShipment()
+        {
+            SqlTransaction trans = conn.BeginTransaction();
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.Transaction = trans;
+                    cmd.CommandText = @"insert ";
+                    cmd.Parameters.AddWithValue("@Ship_D_Num", "");
+
+                    int cnt = cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    trans.Commit();
+                    return cnt > 0;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                trans.Rollback();
+                return false;
+            }
+        }
     }
 }

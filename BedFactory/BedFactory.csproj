@@ -188,6 +188,18 @@
     <Compile Include="frmMaterialLedgerRawMaterial.Designer.cs">
       <DependentUpon>frmMaterialLedgerRawMaterial.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMaterialLedgerStockWarehousing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaterialLedgerStockWarehousing.Designer.cs">
+      <DependentUpon>frmMaterialLedgerStockWarehousing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaterialLedgerStockWarehousingState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaterialLedgerStockWarehousingState.Designer.cs">
+      <DependentUpon>frmMaterialLedgerStockWarehousingState.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenuManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,23 +218,17 @@
     <Compile Include="frmSalesMaster.Designer.cs">
       <DependentUpon>frmSalesMaster.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmShipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShipment.Designer.cs">
+      <DependentUpon>frmShipment.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStockStatusProcess.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmStockStatusProcess.Designer.cs">
       <DependentUpon>frmStockStatusProcess.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMaterialLedgerStockWarehousing.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMaterialLedgerStockWarehousing.Designer.cs">
-      <DependentUpon>frmMaterialLedgerStockWarehousing.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMaterialLedgerStockWarehousingState.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMaterialLedgerStockWarehousingState.Designer.cs">
-      <DependentUpon>frmMaterialLedgerStockWarehousingState.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMaterialRequest.cs">
       <SubType>Form</SubType>
@@ -380,6 +386,12 @@
     <Compile Include="frmCommonCode.Designer.cs">
       <DependentUpon>frmCommonCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pop-up\frmShipmentOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pop-up\frmShipmentOrders.Designer.cs">
+      <DependentUpon>frmShipmentOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pop-up\frmUserGroupAuthorityModify.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -521,6 +533,7 @@
       <DependentUpon>TabCustomControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="Util\ExcelExportImport.cs" />
     <Compile Include="Util\Helper.cs" />
     <Compile Include="Util\CommonUtil.cs" />
     <Compile Include="Util\ServiceHelp.cs" />
@@ -578,6 +591,12 @@
     <EmbeddedResource Include="frmMaterialLedgerRawMaterial.resx">
       <DependentUpon>frmMaterialLedgerRawMaterial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMaterialLedgerStockWarehousing.resx">
+      <DependentUpon>frmMaterialLedgerStockWarehousing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaterialLedgerStockWarehousingState.resx">
+      <DependentUpon>frmMaterialLedgerStockWarehousingState.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMenuManagement.resx">
       <DependentUpon>frmMenuManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -587,14 +606,11 @@
     <EmbeddedResource Include="frmSalesMaster.resx">
       <DependentUpon>frmSalesMaster.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmShipment.resx">
+      <DependentUpon>frmShipment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmStockStatusProcess.resx">
       <DependentUpon>frmStockStatusProcess.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMaterialLedgerStockWarehousing.resx">
-      <DependentUpon>frmMaterialLedgerStockWarehousing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMaterialLedgerStockWarehousingState.resx">
-      <DependentUpon>frmMaterialLedgerStockWarehousingState.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMaterialRequest.resx">
       <DependentUpon>frmMaterialRequest.cs</DependentUpon>
@@ -673,6 +689,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCommonCode.resx">
       <DependentUpon>frmCommonCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pop-up\frmShipmentOrders.resx">
+      <DependentUpon>frmShipmentOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmUserGroupAuthorityModify.resx">
       <DependentUpon>frmUserGroupAuthorityModify.cs</DependentUpon>

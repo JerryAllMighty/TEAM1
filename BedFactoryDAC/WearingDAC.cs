@@ -52,6 +52,31 @@ namespace BedFactoryDAC
             }
         }
 
+        /// <summary>
+        /// 창고목록 호출
+        /// </summary>
+        public List<WearingVO> GetAllWearHouse()
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"select Str_Num, Str_Kind, FirstMan, FirstDate, LastMan, LastDate, IsDeleted from tblStorages
+                                        where IsDeleted = 'N'";
+
+                    List<WearingVO> list = Helper.DataReaderMapToList<WearingVO>(cmd.ExecuteReader());
+                    conn.Close();
+                    return list;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
+            }
+        }
+
         public int WarehousingCancel(int wearingNum, int cancelCnt)
         {
             try
