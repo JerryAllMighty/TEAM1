@@ -25,6 +25,95 @@ namespace BedFactoryDAC
             conn.Close();
         }
 
+        /// <summary>
+        ///  발주 PK를 가져오는 함수
+        /// </summary>
+        /// <returns></returns>
+        public int GetBalzooNum()
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"select max(Bz_Num) from tblBalzoo";
+
+                    int iRowAffect = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    return iRowAffect > 0 ? iRowAffect : 0;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return 0;
+            }
+        }
+
+        /// <summary>
+        /// 계획 생성시 발주 마스터를 넣는 함수
+        /// </summary>
+        /// <param name="Com_Num"></param>
+        /// <param name="FirstMan"></param>
+        /// <returns></returns>
+        public bool InsertMasterBalzoo(int Com_Num, int FirstMan)
+        {
+            try {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"insert into tblBalzoo(Com_Num, FirstMan)
+                                            values(@Com_Num, @FirstMan)";
+                    cmd.Parameters.AddWithValue("@Com_Num", Com_Num);
+                    cmd.Parameters.AddWithValue("@FirstMan", FirstMan);
+
+                    int iRowAffect = cmd.ExecuteNonQuery();
+
+                    return iRowAffect > 0 ? true : false;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 발주 상세 테이블 입력
+        /// </summary>
+        /// <param name="Com_Num"></param>
+        /// <param name="FirstMan"></param>
+        /// <returns></returns>
+        public bool InsertDetailBalzoo(string Bz_D_Num,int Bz_Num, string Mat_Num, int BzCnt, string Status, string expecteddate, string isCancel)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"insert into tblBalzoo_D(Bz_D_Num,Bz_Num, Mat_Num, Bz_Cnt, Bz_D_Status, ExpectedDate, Bz_IsCancel)
+                                            values(@Bz_D_Num,@Bz_Num, @Mat_Num, @Bz_Cnt, @Bz_D_Status, @ExpectedDate, @Bz_IsCancel)";
+                    cmd.Parameters.AddWithValue("@Bz_D_Num", Bz_D_Num);
+                    cmd.Parameters.AddWithValue("@Bz_Num", Bz_Num);
+                    cmd.Parameters.AddWithValue("@Mat_Num", Mat_Num);
+                    cmd.Parameters.AddWithValue("@Bz_Cnt", BzCnt);
+                    cmd.Parameters.AddWithValue("@Bz_D_Status", Status);
+                    cmd.Parameters.AddWithValue("@ExpectedDate", expecteddate);
+                    cmd.Parameters.AddWithValue("@Bz_IsCancel", isCancel);
+
+
+                    int iRowAffect = cmd.ExecuteNonQuery();
+
+                    return iRowAffect > 0 ? true : false;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
         public List<BalzooVO> BalzooSelect(DateTime fromDate, DateTime toDate)
         {
             try

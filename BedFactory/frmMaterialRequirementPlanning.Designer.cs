@@ -39,21 +39,46 @@ namespace BedFactory
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
             this.label = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
-            this.datagridviewControl1 = new BedFactory.DatagridviewControl();
+            this.dgvMRP = new BedFactory.DatagridviewControl();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.searchLocationControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridviewControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMRP)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btn2
+            // 
+            this.btn2.Location = new System.Drawing.Point(1014, 99);
+            this.btn2.Visible = false;
+            // 
+            // btn3
+            // 
+            this.btn3.Location = new System.Drawing.Point(943, 99);
+            this.btn3.Visible = false;
+            // 
+            // btn5
+            // 
+            this.btn5.Location = new System.Drawing.Point(706, 99);
+            this.btn5.Visible = false;
             // 
             // label1
             // 
             this.label1.Size = new System.Drawing.Size(126, 25);
             this.label1.Text = "자재소요계획";
             // 
+            // btn1
+            // 
+            this.btn1.Location = new System.Drawing.Point(1085, 99);
+            this.btn1.Visible = false;
+            // 
             // pnlDgv
             // 
-            this.pnlDgv.Controls.Add(this.datagridviewControl1);
+            this.pnlDgv.Controls.Add(this.dgvMRP);
+            // 
+            // btn4
+            // 
+            this.btn4.Location = new System.Drawing.Point(837, 99);
+            this.btn4.Visible = false;
             // 
             // pnlSelect
             // 
@@ -61,7 +86,8 @@ namespace BedFactory
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(558, 5);
+            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dateTimePicker1.Location = new System.Drawing.Point(558, 16);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(236, 30);
@@ -69,8 +95,9 @@ namespace BedFactory
             // 
             // comboBox3
             // 
+            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(977, 5);
+            this.comboBox3.Location = new System.Drawing.Point(977, 20);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(236, 31);
@@ -78,8 +105,9 @@ namespace BedFactory
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(842, 0);
+            this.label5.Location = new System.Drawing.Point(883, 20);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 23);
@@ -88,8 +116,9 @@ namespace BedFactory
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(423, 0);
+            this.label3.Location = new System.Drawing.Point(444, 20);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 23);
@@ -98,8 +127,9 @@ namespace BedFactory
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(139, 5);
+            this.comboBox1.Location = new System.Drawing.Point(139, 20);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(236, 31);
@@ -135,8 +165,9 @@ namespace BedFactory
             // 
             // label
             // 
+            this.label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(4, 0);
+            this.label.Location = new System.Drawing.Point(5, 20);
             this.label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(124, 23);
@@ -153,33 +184,34 @@ namespace BedFactory
             this.btnSelect.TabIndex = 50;
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
-            // datagridviewControl1
+            // dgvMRP
             // 
-            this.datagridviewControl1.AllowUserToAddRows = false;
-            this.datagridviewControl1.AllowUserToResizeRows = false;
-            this.datagridviewControl1.BackgroundColor = System.Drawing.Color.White;
+            this.dgvMRP.AllowUserToAddRows = false;
+            this.dgvMRP.AllowUserToResizeRows = false;
+            this.dgvMRP.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.datagridviewControl1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.datagridviewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridviewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datagridviewControl1.Location = new System.Drawing.Point(0, 0);
-            this.datagridviewControl1.Name = "datagridviewControl1";
-            this.datagridviewControl1.RowHeadersVisible = false;
-            this.datagridviewControl1.RowHeadersWidth = 51;
+            this.dgvMRP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvMRP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMRP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMRP.Location = new System.Drawing.Point(0, 0);
+            this.dgvMRP.Name = "dgvMRP";
+            this.dgvMRP.RowHeadersVisible = false;
+            this.dgvMRP.RowHeadersWidth = 51;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.datagridviewControl1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.datagridviewControl1.RowTemplate.Height = 27;
-            this.datagridviewControl1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridviewControl1.Size = new System.Drawing.Size(1358, 711);
-            this.datagridviewControl1.TabIndex = 0;
+            this.dgvMRP.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMRP.RowTemplate.Height = 27;
+            this.dgvMRP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMRP.Size = new System.Drawing.Size(1358, 711);
+            this.dgvMRP.TabIndex = 0;
             // 
             // frmMaterialRequirementPlanning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1602, 1055);
+            this.ClientSize = new System.Drawing.Size(1382, 853);
             this.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.Name = "frmMaterialRequirementPlanning";
             this.Text = "자재소요계획";
@@ -187,7 +219,7 @@ namespace BedFactory
             this.pnlSelect.ResumeLayout(false);
             this.searchLocationControl1.ResumeLayout(false);
             this.searchLocationControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridviewControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMRP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,6 +234,6 @@ namespace BedFactory
         private Controls.SearchLocationControl searchLocationControl1;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Button btnSelect;
-        private DatagridviewControl datagridviewControl1;
+        private DatagridviewControl dgvMRP;
     }
 }

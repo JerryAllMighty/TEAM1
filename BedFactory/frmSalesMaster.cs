@@ -78,15 +78,6 @@ namespace BedFactory
             dgvSalesMaster.SetGridViewColumn("최종 등록일", "LastDate");
         }
 
-        /// <summary>
-        /// 컨트롤 포커스 받을시 콤보 박스 바인딩
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void cboStatus_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         /// <summary>
         /// 컨트롤 포커스 받을시 콤보 박스 바인딩
@@ -106,15 +97,7 @@ namespace BedFactory
             }
         }
 
-        /// <summary>
-        /// 컨트롤 포커스 받을시 콤보 박스 바인딩
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void cboDestination_Enter(object sender, EventArgs e)
-        {
-
-        }
+       
 
 
         /// <summary>
@@ -125,25 +108,65 @@ namespace BedFactory
         private void btn3_Click_1(object sender, EventArgs e)
         {
             DemandPlanService service = new DemandPlanService();
-            if (service.InsertDemandPlan(demandinfo))
+            //수요 계획 생성
+            if (!service.InsertDemandPlan(demandinfo))
             {
-                MessageBox.Show(BedFactory.Properties.Settings.Default.InsertSuccess);
+                MessageBox.Show(BedFactory.Properties.Settings.Default.InsertFail);
+                //MessageBox.Show(BedFactory.Properties.Settings.Default.InsertSuccess);
             }
-            else
+            //생성된 수요계획 PK
+            string demandnum = service.getdemandNum();
+
+
+
+            ProductionPlanService service2 = new ProductionPlanService();
+            //마스터 생산 계획 생성
+            if (!service2.InsertMasterProductionPlan(demandinfo, demandnum))
             {
                 MessageBox.Show(BedFactory.Properties.Settings.Default.InsertFail);
             }
-
-            string demandnum = service.getdemandNum();
-
-            ProductionPlanService service2 = new ProductionPlanService();
+           
+            //생성된 마스터 생산계획 PK
             int ProductionPlanNum = service2.GetPlanNum();
-            List<BOMVO> list = service2.GetBOMInfo(demandinfo);
-            if (list != null)
+
+            MRPService service3 = new MRPService();
+            List<BOMVO> list2 = service3.GetBOMInfo(demandinfo);
+            bool BalzooFlag = false;
+            int CurrentStock = Convert.ToInt32(list2[0].CurrentResourceStock);
+            if (list2 != null)
             {
-                service2.InsertPlanService(demandinfo, list, demandnum, ProductionPlanNum);
+                for (int i=0;i<list2.Count; i++)
+                {
+                    //반제품 당 필요 원자재양을 현재 재고 양과 비교한다
+                    if (CurrentStock >= Convert.ToInt32(list2[i].Resource_Cnt))
+                    //현재 재고> 필요 원자재 >> 필요 원자재 양만큼 생산하다
+                    {
+                        service2.InsertDetailProductionPlan(demandinfo, Convert.ToInt32(list2[i].Resource_Cnt), list2[i].WP_Num, list2[i].Use_Mat_Num, ProductionPlanNum, i);
+                        service3.InsertMaterialUsePlan(demandnum, list2[i].Use_Resource_Num, Convert.ToInt32(list2[i].Resource_Cnt));
+                        CurrentStock = CurrentStock - Convert.ToInt32(list2[i].Resource_Cnt);
+                    }
+                    else
+                    //현재 재고< 필요 원자재 >> 남은 만큼 발주를 넣어준다
+                    {
+                        BalzooService service4 = new BalzooService();
+                        //처음 한 번만 발주 마스터를 생성
+                        if (!BalzooFlag)
+                        {
+                            service4.InsertMasterBalzoo(5, 1);
+                            BalzooFlag = true;
+                        }
+                        string expecteddate = DateTime.Now.AddDays(7).ToString("yyyy-MM-dd");
+                        int Bz_Num= service4.GetBalzooNum();
+                        Random rnd = new Random();
+                        int randomNum = rnd.Next(0,100);
+                        string Bz_D_Num = "A" + "0000000" + randomNum.ToString();
+                        service4.InsertDetailBalzoo(Bz_D_Num, Bz_Num, list2[i].Use_Resource_Num, Convert.ToInt32(list2[i].Resource_Cnt), "N", expecteddate, "N");
+
+                    }
+                }
+
             }
-            
+
 
 
         }

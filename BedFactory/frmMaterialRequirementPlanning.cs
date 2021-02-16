@@ -21,5 +21,16 @@ namespace BedFactory
         {
 
         }
+
+        /// <summary>
+        /// 필요정보 검색
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
