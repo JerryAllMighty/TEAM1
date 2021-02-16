@@ -28,5 +28,24 @@ namespace BedFactory
             tblParent.Visible = true;
             tblChild.Visible = false;
         }
+
+        /// <summary>
+        /// 취소 버튼. 폼 닫기
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        /// <summary>
+        /// 메뉴 등록
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -54,6 +54,32 @@ namespace BedFactoryDAC
         }
 
         /// <summary>
+        /// 검사항목 정보삭제
+        /// </summary>
+        /// <param name="checkInfoNum">검사항목 번호</param>
+        public bool DeleteCheckInfo(int checkInfoNum)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"deleted from tblCheckInfo where Check_Info_Num = @Check_Info_Num";                    
+                    cmd.Parameters.AddWithValue("@Check_Info_Num", checkInfoNum);
+
+                    int iRowAffect = cmd.ExecuteNonQuery();
+
+                    return iRowAffect > 0 ? true : false;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
+
+        /// <summary>
         /// 검사항목정보 출력
         /// </summary>
         /// <returns></returns>
@@ -84,13 +110,12 @@ namespace BedFactoryDAC
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = @"update tblCheckInfo
-                                        set CheckName = @CheckName, CheckKind = @CheckKind, Check_Detail = @Check_Detail, Lastman = @Lastman, Lastdate = @Lastdate)
+                                        set CheckName = @CheckName, CheckKind = @CheckKind, Check_Detail = @Check_Detail, Lastman = @Lastman, Lastdate = getdate())
                                         where Check_Info_Num = @Check_Info_Num";
                     cmd.Parameters.AddWithValue("@CheckName", vo.CheckName);
                     cmd.Parameters.AddWithValue("@CheckKind", vo.CheckKind);
                     cmd.Parameters.AddWithValue("@Check_Detail", vo.Check_Detail);
                     cmd.Parameters.AddWithValue("@Lastman", vo.Lastman);
-                    cmd.Parameters.AddWithValue("@Lastdate", vo.Lastdate);
                     cmd.Parameters.AddWithValue("@Check_Info_Num", vo.Check_Info_Num);
 
                     int iRowAffect = cmd.ExecuteNonQuery();
@@ -117,9 +142,9 @@ namespace BedFactoryDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select Check_Num, CheckKind, Lastman, Lastdate, Mat_Num, Check_Info_Num
+                cmd.CommandText = @"select Check_Num, CheckKind, c.Lastman, c.Lastdate, Mat_Num, c.Check_Info_Num
                                     from tblCheck as c
-                                    join tblCheckinfo as ci on c.Check_Num = ci.Check_Num
+                                    join tblCheckinfo as ci on c.Check_Info_Num = ci.Check_Info_Num
                                     where Mat_Num = @Mat_Num";
                 cmd.Parameters.AddWithValue("@Mat_Num", mat_Num);
 
@@ -130,7 +155,7 @@ namespace BedFactoryDAC
         }
 
         /// <summary>
-        /// 자재번호 당 검사항목 수정
+        /// 자재번호 당 검사항목 등록
         /// </summary>
         /// <param name="vo"></param>
         /// <param name="check_Info_Num">검사항목</param>
@@ -142,7 +167,8 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"insert into tblCheck set Mat_Num = @Mat_Num, Check_Info_Num = @Check_Info_Num, Lastman = @Lastman, Lastdate = getdate()";
+                    cmd.CommandText = @"insert into tblCheck(Mat_Num, Check_Info_Num, LastMan, LastDate)
+                                        values(@Mat_Num, @Check_Info_Num, @Lastman, getdate())";
                     cmd.Parameters.AddWithValue("@Mat_Num", mat_Num);
                     cmd.Parameters.AddWithValue("@Check_Info_Num", check_Info_Num);
                     cmd.Parameters.AddWithValue("@Lastman", lastMan);
@@ -159,6 +185,10 @@ namespace BedFactoryDAC
             }
         }
 
+        /// <summary>
+        /// 자재번호 당 검사항목 삭제
+        /// </summary>
+        /// <param name="mat_Num">자재번호</param>
         public bool DeleteCheck(string mat_Num)
         {
             try
@@ -169,9 +199,9 @@ namespace BedFactoryDAC
                     cmd.CommandText = @"delete from tblCheck where Mat_Num = @Mat_Num";
                     cmd.Parameters.AddWithValue("@Mat_Num", mat_Num);
 
-                    int iRowAffect = cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
 
-                    return iRowAffect > 0 ? true : false;
+                    return true;
                 }
             }
             catch (Exception err)

@@ -38,5 +38,17 @@ namespace BedFactoryService
             WearingDAC dac = new WearingDAC();
             return dac.WOState(fromDate, toDate);
         }
+
+        public List<WearingVO> WarehousingStart(DateTime fromDate, DateTime toDate)
+        {
+            WearingDAC dac = new WearingDAC();
+            return dac.WarehousingStart(fromDate, toDate);
+        }
+
+        public bool BuyWarehousing(int W_Num, int M_Num)
+        {
+            WearingDAC dac = new WearingDAC();
+            return dac.BuyWarehousing(W_Num, M_Num);
+        }
     }
 }

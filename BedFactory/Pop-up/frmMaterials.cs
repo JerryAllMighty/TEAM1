@@ -17,10 +17,16 @@ namespace BedFactory.Pop_up
     {
         string type = string.Empty; //등록, 수정 여부
         UnitCostVO unit;
+        string category;
 
         public frmMaterials(int id, string category, string type, UnitCostVO vo)
         {
             InitializeComponent();
+
+            if (category.Contains("영업"))
+                this.category = "주문";
+            else
+                this.category = "발주";
 
             this.Text = category;
             txtBeforeCost.Text = "0";
@@ -39,23 +45,25 @@ namespace BedFactory.Pop_up
         private void frmMaterials_Load(object sender, EventArgs e)
         {
             UnitCostService service = new UnitCostService();
-            List<CommonCodeVO> list = service.UnitCostCombo();
+            List<CommonCodeVO> list = service.UnitCostCombo(category);
             CommonUtil.ComboBinding(cboCompany, list, "거래처", true, "선택");
             CommonUtil.ComboBinding(cboMaterial, list, "자재", true, "선택");
 
             if (type.Equals("수정"))
             {
                 lblCostNum.Text = unit.UnitCost_Num.ToString();
-                cboCompany.SelectedValue = unit.Com_Num;
+                cboCompany.SelectedValue = unit.Com_Num.ToString();
                 cboMaterial.SelectedValue = unit.Mat_Num;
                 txtNowCost.Text = unit.Now_UnitCost.ToString();
                 txtBeforeCost.Text = unit.Before_UnitCost.ToString();
                 dtpStartDate.Value = unit.Start_Date;
                 txtEndDate.Text = unit.End_Date.ToShortDateString();
+
+                cboCompany.Enabled = cboMaterial.Enabled = false;
             }
             else if (type.Equals("복사"))
             {
-                cboCompany.SelectedValue = unit.Com_Num;
+                cboCompany.SelectedValue = unit.Com_Num.ToString();
                 cboMaterial.SelectedValue = unit.Mat_Num;
                 txtNowCost.Text = unit.Now_UnitCost.ToString();
                 txtBeforeCost.Text = unit.Before_UnitCost.ToString();

@@ -52,19 +52,6 @@ namespace BedFactory
             }
         }
 
-        /// <summary>
-        /// 메뉴 대분류 더블 클릭시 소분류에 해당 정보 바인딩하는 함수
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dgvMenuBigCategory_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            var MenuList = (from items in frmCommonCode.CheckCommonInfo()
-                            where items.P_Code == dgvMenuBigCategory[0, e.RowIndex].Value.ToString()
-                            select items).ToList();
-
-            dgvMenu.DataSource = MenuList;
-        }
 
         /// <summary>
         ///  메뉴 추가 팝업을 띄우는 버튼
@@ -75,6 +62,20 @@ namespace BedFactory
         {
             frmMenuRegister frm = new frmMenuRegister();
             frm.ShowDialog();
+        }
+        /// <summary>
+        /// 메뉴 대분류 더블 클릭시 소분류에 해당 정보 바인딩하는 함수
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvMenuBigCategory_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            var MenuList = (from items in frmCommonCode.CheckCommonInfo()
+                            where items.P_Code == dgvMenuBigCategory[0, e.RowIndex].Value.ToString()
+                            select items).ToList();
+
+            dgvMenu.DataSource = MenuList;
+
         }
     }
 }

@@ -27,6 +27,8 @@ namespace BedFactory
 
         private void frmStockWOState_Load(object sender, EventArgs e)
         {
+            btn1.Visible = btn2.Visible = btn3.Visible = btn4.Visible = false;
+
             dgvWO.SetGridViewColumn("입출고일", "FirstDate");
             dgvWO.SetGridViewColumn("구분", "Category");
             dgvWO.SetGridViewColumn("카테고리", "W_Category");

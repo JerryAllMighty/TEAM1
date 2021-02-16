@@ -46,8 +46,17 @@ namespace BedFactory
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             this.SuspendLayout();
             // 
+            // btn2
+            // 
+            this.btn2.Location = new System.Drawing.Point(999, 99);
+            // 
+            // btn3
+            // 
+            this.btn3.Location = new System.Drawing.Point(1070, 99);
+            // 
             // btn5
             // 
+            this.btn5.Location = new System.Drawing.Point(1247, 99);
             this.btn5.Text = "엑셀 내보내기";
             // 
             // label1
@@ -55,12 +64,17 @@ namespace BedFactory
             this.label1.Size = new System.Drawing.Size(99, 20);
             this.label1.Text = "자재재고현황";
             // 
+            // btn1
+            // 
+            this.btn1.Location = new System.Drawing.Point(928, 99);
+            // 
             // pnlDgv
             // 
             this.pnlDgv.Controls.Add(this.dgvStock);
             // 
             // btn4
             // 
+            this.btn4.Location = new System.Drawing.Point(1141, 99);
             this.btn4.Text = "이력조회";
             this.btn4.Click += new System.EventHandler(this.btn4_Click);
             // 
@@ -80,7 +94,7 @@ namespace BedFactory
             // 
             this.cboCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Location = new System.Drawing.Point(977, 21);
+            this.cboCategory.Location = new System.Drawing.Point(977, 18);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(235, 25);
             this.cboCategory.TabIndex = 67;
@@ -109,7 +123,7 @@ namespace BedFactory
             // 
             this.cboStorage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboStorage.FormattingEnabled = true;
-            this.cboStorage.Location = new System.Drawing.Point(139, 21);
+            this.cboStorage.Location = new System.Drawing.Point(139, 18);
             this.cboStorage.Name = "cboStorage";
             this.cboStorage.Size = new System.Drawing.Size(235, 25);
             this.cboStorage.TabIndex = 63;
@@ -195,7 +209,7 @@ namespace BedFactory
             this.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmStockState";
-            this.Text = "frmStockState";
+            this.Text = "자재재고현황";
             this.Load += new System.EventHandler(this.frmStockState_Load);
             this.pnlDgv.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);

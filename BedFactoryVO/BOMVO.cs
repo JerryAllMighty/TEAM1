@@ -17,5 +17,14 @@ namespace BedFactoryVO
         public int Lastman { get; set; }
         public DateTime Lastdate { get; set; }
         public char IsDeleted { get; set; }
+
+        public string Mat_Name { get; set; }
+        public string Mat_Category { get; set; }
+        public string WP_Name { get; set; }
+        public string WP_Num { get; set; }
+        public string Use_Resource_Num { get; set; }
+        public string Resource_Cnt { get; set; }
+        public string CurrentResourceStock { get; set; }
+
     }
 }

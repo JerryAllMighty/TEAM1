@@ -39,7 +39,7 @@ namespace BedFactory
             this.lblDate = new System.Windows.Forms.Label();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.btnSelect = new System.Windows.Forms.Button();
-            this.txtDemandPlan_Num = new System.Windows.Forms.TextBox();
+            this.lblSalesMaster_Num = new System.Windows.Forms.TextBox();
             this.txtSubjectName = new System.Windows.Forms.TextBox();
             this.dgvDemandPlan = new BedFactory.DatagridviewControl();
             this.pnlDgv.SuspendLayout();
@@ -50,20 +50,19 @@ namespace BedFactory
             // 
             // btn2
             // 
-            this.btn2.Location = new System.Drawing.Point(1199, 156);
-            this.btn2.Size = new System.Drawing.Size(100, 25);
+            this.btn2.Location = new System.Drawing.Point(1149, 156);
+            this.btn2.Size = new System.Drawing.Size(150, 25);
             this.btn2.Text = "생산계획생성";
             this.btn2.Click += new System.EventHandler(this.btn2_Click_1);
             // 
             // btn3
             // 
-            this.btn3.Location = new System.Drawing.Point(1128, 156);
-            this.btn3.Text = "수동";
+            this.btn3.Location = new System.Drawing.Point(1078, 157);
             this.btn3.Visible = false;
             // 
             // btn5
             // 
-            this.btn5.Location = new System.Drawing.Point(891, 156);
+            this.btn5.Location = new System.Drawing.Point(841, 156);
             this.btn5.Visible = false;
             // 
             // label1
@@ -85,7 +84,7 @@ namespace BedFactory
             // 
             // btn4
             // 
-            this.btn4.Location = new System.Drawing.Point(1022, 156);
+            this.btn4.Location = new System.Drawing.Point(972, 156);
             this.btn4.Visible = false;
             // 
             // pnlSelect
@@ -113,7 +112,7 @@ namespace BedFactory
             this.searchLocationControl1.Controls.Add(this.lblDate, 6, 0);
             this.searchLocationControl1.Controls.Add(this.dtpFrom, 7, 0);
             this.searchLocationControl1.Controls.Add(this.btnSelect, 9, 1);
-            this.searchLocationControl1.Controls.Add(this.txtDemandPlan_Num, 1, 0);
+            this.searchLocationControl1.Controls.Add(this.lblSalesMaster_Num, 1, 0);
             this.searchLocationControl1.Controls.Add(this.txtSubjectName, 1, 1);
             this.searchLocationControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchLocationControl1.Location = new System.Drawing.Point(0, 0);
@@ -128,11 +127,11 @@ namespace BedFactory
             // 
             this.lblPlanID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPlanID.AutoSize = true;
-            this.lblPlanID.Location = new System.Drawing.Point(5, 13);
+            this.lblPlanID.Location = new System.Drawing.Point(11, 1);
             this.lblPlanID.Name = "lblPlanID";
-            this.lblPlanID.Size = new System.Drawing.Size(112, 23);
+            this.lblPlanID.Size = new System.Drawing.Size(101, 46);
             this.lblPlanID.TabIndex = 11;
-            this.lblPlanID.Text = "수요계획번호";
+            this.lblPlanID.Text = "영업마스터 번호";
             // 
             // lblSubject
             // 
@@ -193,13 +192,13 @@ namespace BedFactory
             this.btnSelect.UseVisualStyleBackColor = false;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
-            // txtDemandPlan_Num
+            // lblSalesMaster_Num
             // 
-            this.txtDemandPlan_Num.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDemandPlan_Num.Location = new System.Drawing.Point(126, 9);
-            this.txtDemandPlan_Num.Name = "txtDemandPlan_Num";
-            this.txtDemandPlan_Num.Size = new System.Drawing.Size(215, 30);
-            this.txtDemandPlan_Num.TabIndex = 20;
+            this.lblSalesMaster_Num.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSalesMaster_Num.Location = new System.Drawing.Point(126, 9);
+            this.lblSalesMaster_Num.Name = "lblSalesMaster_Num";
+            this.lblSalesMaster_Num.Size = new System.Drawing.Size(215, 30);
+            this.lblSalesMaster_Num.TabIndex = 20;
             // 
             // txtSubjectName
             // 
@@ -256,7 +255,7 @@ namespace BedFactory
         private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.Button btnSelect;
         private DatagridviewControl dgvDemandPlan;
-        private System.Windows.Forms.TextBox txtDemandPlan_Num;
+        private System.Windows.Forms.TextBox lblSalesMaster_Num;
         private System.Windows.Forms.TextBox txtSubjectName;
     }
 }

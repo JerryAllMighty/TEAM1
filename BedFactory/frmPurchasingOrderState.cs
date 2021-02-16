@@ -1,6 +1,7 @@
 ﻿using BedFactory.BaseForms;
 using BedFactory.Pop_up;
 using BedFactoryService;
+using BedFactoryVO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,10 @@ namespace BedFactory
     public partial class frmPurchasingOrderState : BaseForm2
     {
         CheckBox headerCheck = new CheckBox();
+        List<BalzooVO> list;
+
+        DateTime bFrom = DateTime.Parse("9999-12-30");
+        DateTime bTo = DateTime.Parse("9999-12-30");
 
         public frmPurchasingOrderState()
         {
@@ -41,6 +46,8 @@ namespace BedFactory
 
             dtpTo.MinDate = dtpFrom.Value.AddDays(-7);
             dtpTo.Value = DateTime.Now.AddDays(7);
+
+            cboState.SelectedItem = "전체";
         }
 
         private void HeaderCheck_Click(object sender, EventArgs e)
@@ -57,7 +64,17 @@ namespace BedFactory
         private void DataLoad()
         {
             BalzooService service = new BalzooService();
-            dgvOrder.DataSource = service.BalzooSelect(dtpFrom.Value.Date, dtpTo.Value.Date);
+            list = service.BalzooSelect(dtpFrom.Value.Date, dtpTo.Value.Date);
+            dgvOrder.DataSource = list;
+
+            var item = list.GroupBy(p => p.Com_Name);
+            List<string> temp = item.Select(p => p.Key.ToString()).ToList();
+            temp.Insert(0, "전체");
+            cboCompany.DisplayMember = "Com_Name";
+            cboCompany.DataSource = temp;
+
+            bFrom = dtpFrom.Value.Date;
+            bTo = dtpTo.Value.Date;
         }
 
         /// <summary>
@@ -96,8 +113,7 @@ namespace BedFactory
         }
 
         private void dtpFrom_ValueChanged(object sender, EventArgs e)
-        {
-            DataLoad();
+        {           
             dtpTo.MinDate = dtpFrom.Value;
         }
 
@@ -110,24 +126,80 @@ namespace BedFactory
             {
                 DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk"];
                 if (Convert.ToBoolean(chk.Value) == true)
-                {                    
-                    list.Add(dgvOrder[1, row.Index].Value.ToString());
-                    if (date.ToShortDateString() == "9999-12-30")
-                        date = Convert.ToDateTime(dgvOrder[6, row.Index].Value);
+                {
+                    if (dgvOrder[5, row.Index].Value.ToString() == "N")
+                    {
+                        list.Add(dgvOrder[1, row.Index].Value.ToString());
+                        if (date.ToShortDateString() == "9999-12-30")
+                            date = Convert.ToDateTime(dgvOrder[6, row.Index].Value);
+                    }
                 }
             }
 
-            if(list != null) 
+            if(list.Count > 0) 
             {
                 frmDuedateChange frm = new frmDuedateChange(list, date);
                 frm.Show();
+                headerCheck.Checked = false;
+                DataLoad();
             }
-            headerCheck.Checked = false;
         }
 
         private void btn3_Click_1(object sender, EventArgs e) //발주취소
         {
+            bool bChange = false;
 
+            if (MessageBox.Show("선택된 발주항목들을 취소하겠습니까?", "취소확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                List<string> list = new List<string>();
+
+                foreach (DataGridViewRow row in dgvOrder.Rows)
+                {
+                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk"];
+                    if (Convert.ToBoolean(chk.Value) == true)
+                    {
+                        if (dgvOrder[5, row.Index].Value.ToString() == "N")
+                        {
+                            list.Add(dgvOrder[1, row.Index].Value.ToString());
+                            bChange = true;
+                        }
+                    }
+                }
+
+                if (bChange)
+                {
+                    BalzooService service = new BalzooService();
+                    if (service.BalzooCancel(list))
+                    {
+                        headerCheck.Checked = false;
+                        MessageBox.Show(Properties.Settings.Default.DeleteSuccess); 
+                        DataLoad();
+                    }
+                    else
+                    {
+                        MessageBox.Show(Properties.Settings.Default.DeleteFail);
+                    }
+                }
+                    
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (bFrom.Date != dtpFrom.Value.Date && bTo.Date != dtpTo.Value.Date)
+                DataLoad();
+
+            if(list != null)
+            {
+                var item = (from temp in list
+                            where (cboCompany.SelectedIndex == 0 ? true : temp.Com_Name == cboCompany.Text)
+                                  && (cboState.SelectedItem.ToString() == "전체" ? true : (cboState.SelectedItem.ToString() == "처리중") ? temp.Bz_D_Status == "N" : temp.Bz_D_Status == "Y")
+                                  && (txtMaterial.Text.Length < 1 ? true : temp.Mat_Name.Contains(txtMaterial.Text))
+                                  && (txtOrderNum.Text.Length < 1 ? true : temp.Bz_D_Num.ToString().Contains(txtOrderNum.Text))
+                            select temp).ToList();
+
+                dgvOrder.DataSource = item;
+            }            
         }
     }
 }

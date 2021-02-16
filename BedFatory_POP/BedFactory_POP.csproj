@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\DatagridviewControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DatagridviewControl.Designer.cs">
+      <DependentUpon>DatagridviewControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDrilling.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,12 +74,6 @@
     </Compile>
     <Compile Include="frmError.Designer.cs">
       <DependentUpon>frmError.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmLoadWorkOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmLoadWorkOrder.Designer.cs">
-      <DependentUpon>frmLoadWorkOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNonOperation.cs">
       <SubType>Form</SubType>
@@ -99,24 +99,6 @@
     <Compile Include="frmPopMain.Designer.cs">
       <DependentUpon>frmPopMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProcessConditionReg.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmProcessConditionReg.Designer.cs">
-      <DependentUpon>frmProcessConditionReg.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmProductionOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmProductionOrder.Designer.cs">
-      <DependentUpon>frmProductionOrder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmProductionResultReg.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmProductionResultReg.Designer.cs">
-      <DependentUpon>frmProductionResultReg.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmSawing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,12 +111,6 @@
     <Compile Include="frmWorkerAllocation.Designer.cs">
       <DependentUpon>frmWorkerAllocation.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmWorkOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmWorkOrder.Designer.cs">
-      <DependentUpon>frmWorkOrder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pop-Up\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,14 +119,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\DatagridviewControl.resx">
+      <DependentUpon>DatagridviewControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDrilling.resx">
       <DependentUpon>frmDrilling.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmError.resx">
       <DependentUpon>frmError.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmLoadWorkOrder.resx">
-      <DependentUpon>frmLoadWorkOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNonOperation.resx">
       <DependentUpon>frmNonOperation.cs</DependentUpon>
@@ -164,23 +140,11 @@
     <EmbeddedResource Include="frmPopMain.resx">
       <DependentUpon>frmPopMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProcessConditionReg.resx">
-      <DependentUpon>frmProcessConditionReg.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmProductionOrder.resx">
-      <DependentUpon>frmProductionOrder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmProductionResultReg.resx">
-      <DependentUpon>frmProductionResultReg.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmSawing.resx">
       <DependentUpon>frmSawing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmWorkerAllocation.resx">
       <DependentUpon>frmWorkerAllocation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmWorkOrder.resx">
-      <DependentUpon>frmWorkOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-Up\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -207,6 +171,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BedFactoryDAC\BedFactoryDAC.csproj">
+      <Project>{501bc76c-86d9-4224-a2da-be1f08ce8b4f}</Project>
+      <Name>BedFactoryDAC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BedFactoryService\BedFactoryService.csproj">
+      <Project>{fe7b7bdb-bd0f-48ea-b928-17debb269f03}</Project>
+      <Name>BedFactoryService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BedFactoryVO\BedFactoryVO.csproj">
+      <Project>{ae37a2c5-fb35-466a-a9fd-dfde4cdab745}</Project>
+      <Name>BedFactoryVO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BedFactory\BedFactory.csproj">
+      <Project>{43efffd2-03b0-483a-a38d-d3c7978edf84}</Project>
+      <Name>BedFactory</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

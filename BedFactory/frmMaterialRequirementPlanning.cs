@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace BedFactory
 {
-    public partial class frmMaterialRequirementPlanning : Form
+    public partial class frmMaterialRequirementPlanning : BedFactory.BaseForms.BaseForm2
     {
         public frmMaterialRequirementPlanning()
         {
@@ -21,5 +21,16 @@ namespace BedFactory
         {
 
         }
+
+        /// <summary>
+        /// 필요정보 검색
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

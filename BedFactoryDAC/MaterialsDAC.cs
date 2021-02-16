@@ -13,12 +13,6 @@ namespace BedFactoryDAC
         string strConn;
         SqlConnection conn;
 
-        public MaterialsDAC(string strConn)
-        {
-            conn = new SqlConnection(strConn);
-            conn.Open();
-        }
-
         public MaterialsDAC()
         {
             strConn = this.ConnectionString;
@@ -64,7 +58,7 @@ namespace BedFactoryDAC
                     cmd.Connection = conn;
                     cmd.CommandText = @"insert into tblMaterials (Mat_Num, Mat_Name, Mat_Category, Mat_Kind, Mat_Size, FirstMan, LastMan)
                                         values (
-	                                        (select left(Code_Num, 2) + (select REPLICATE(0, 8 - len(count(*))) + CONVERT(varchar, count(*)) from tblMaterials) from CommonCode where Code_Name = @Mat_Category),
+	                                        (select left(Code_Num, 2) + (select REPLICATE(0, 8 - len(count(*))) + CONVERT(varchar, count(*)) from tblMaterials) from tblCommonCode where Code_Name = @Mat_Category),
 	                                        @Mat_Name, @Mat_Category, @Mat_Kind, @Mat_Size, @FirstMan, @LastMan
                                         )";
                     cmd.Parameters.AddWithValue("@Mat_Name", vo.Mat_Name);
@@ -75,7 +69,7 @@ namespace BedFactoryDAC
                     cmd.Parameters.AddWithValue("@LastMan", vo.LastMan);
                     cmd.ExecuteNonQuery();
 
-                    cmd.CommandText = @"select top 1 Mat_Num from tblMaterials order by FirstDate";
+                    cmd.CommandText = @"select top 1 Mat_Num from tblMaterials order by FirstDate desc";
                     string i = cmd.ExecuteScalar().ToString();
 
                     return i;
@@ -104,6 +98,7 @@ namespace BedFactoryDAC
                                         set Mat_Name = @Mat_Name, Mat_Category = @Mat_Category, Mat_Kind = @Mat_Kind, Mat_Size = @Mat_Size,
 	                                        LastMan = @LastMan, LastDate = getdate()
                                         where Mat_Num = @Mat_Num";
+                    cmd.Parameters.AddWithValue("@Mat_Num", vo.Mat_Num);
                     cmd.Parameters.AddWithValue("@Mat_Name", vo.Mat_Name);
                     cmd.Parameters.AddWithValue("@Mat_Category", vo.Mat_Category);
                     cmd.Parameters.AddWithValue("@Mat_Kind", vo.Mat_Kind);
@@ -146,46 +141,6 @@ namespace BedFactoryDAC
                 conn.Close();
 
                 return list;
-            }
-        }
-
-        /// <summary>
-        /// 작업지시생성에서 자재 검색
-        /// </summary>
-        /// <param name="matNum"></param>
-        /// <returns></returns>
-        public List<MaterialsVO> GetMatCodeInfo(string matNum)
-        {
-            try
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.Append(@"select M.Mat_Num, M.Mat_Name,WO_Plan_Cnt
-                        from  tblWorkOrders WO inner join tblMaterials M on WO.Mat_Num = M.Mat_Num
-                        where 1=1 ");
-
-                if (!string.IsNullOrEmpty(matNum))
-                    sb.Append(" and M.Mat_Num = @matNum");
-
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = conn;
-                    cmd.CommandText = sb.ToString();
-
-                    if (!string.IsNullOrEmpty(matNum))
-                        cmd.Parameters.AddWithValue("@matNum", matNum);
-
-
-                    List<MaterialsVO> list = Helper.DataReaderMapToList<MaterialsVO>(cmd.ExecuteReader());
-                    conn.Close();
-
-                    return list;
-                }
-            }
-
-            catch (Exception err)
-            {
-                Log.WriteError(err.Message);
-                return null;
             }
         }
     }

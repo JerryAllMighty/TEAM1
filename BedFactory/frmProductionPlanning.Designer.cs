@@ -29,203 +29,205 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.cboWorkPlace = new System.Windows.Forms.ComboBox();
+            this.dtpUploadDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.cboDemandPlanNum = new System.Windows.Forms.ComboBox();
+            this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
+            this.lblDemandPlan = new System.Windows.Forms.Label();
+            this.btnSelect = new System.Windows.Forms.Button();
+            this.dgvProductionPlan = new BedFactory.DatagridviewControl();
+            this.pnlDgv.SuspendLayout();
+            this.pnlSelect.SuspendLayout();
+            this.searchLocationControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductionPlan)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // btn2
             // 
-            this.panel1.Controls.Add(this.comboBox3);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(13, 13);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1257, 88);
-            this.panel1.TabIndex = 0;
+            this.btn2.Location = new System.Drawing.Point(1303, 99);
+            this.btn2.Visible = false;
             // 
-            // button1
+            // btn3
             // 
-            this.button1.Location = new System.Drawing.Point(1150, 50);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 32);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "조회";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn3.Location = new System.Drawing.Point(1232, 99);
+            this.btn3.Visible = false;
             // 
-            // label5
+            // btn5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(633, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(18, 15);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "~";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(657, 13);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 25);
-            this.dateTimePicker2.TabIndex = 9;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(427, 13);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
-            this.dateTimePicker1.TabIndex = 8;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(960, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 25);
-            this.textBox1.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(897, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 15);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "품목";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(365, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Date";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(132, 50);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(213, 23);
-            this.comboBox2.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(365, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "작업장";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(132, 15);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(213, 23);
-            this.comboBox1.TabIndex = 1;
+            this.btn5.Location = new System.Drawing.Point(995, 99);
+            this.btn5.Visible = false;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "수요 계획 번호";
+            this.label1.Size = new System.Drawing.Size(88, 25);
+            this.label1.Text = "생산게획";
             // 
-            // panel2
+            // btn1
             // 
-            this.panel2.Location = new System.Drawing.Point(13, 186);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1254, 540);
-            this.panel2.TabIndex = 1;
+            this.btn1.Location = new System.Drawing.Point(1405, 99);
             // 
-            // button2
+            // pnlDgv
             // 
-            this.button2.Location = new System.Drawing.Point(1171, 145);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 35);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "엑셀";
-            this.button2.UseVisualStyleBackColor = true;
+            this.pnlDgv.Controls.Add(this.dgvProductionPlan);
+            this.pnlDgv.Size = new System.Drawing.Size(1358, 811);
             // 
-            // comboBox3
+            // btn4
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(427, 53);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(213, 23);
-            this.comboBox3.TabIndex = 13;
+            this.btn4.Location = new System.Drawing.Point(1126, 99);
+            this.btn4.Visible = false;
             // 
-            // label6
+            // pnlSelect
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(70, 53);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 15);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "공정";
+            this.pnlSelect.Controls.Add(this.searchLocationControl1);
+            // 
+            // cboWorkPlace
+            // 
+            this.cboWorkPlace.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboWorkPlace.FormattingEnabled = true;
+            this.cboWorkPlace.Location = new System.Drawing.Point(988, 20);
+            this.cboWorkPlace.Name = "cboWorkPlace";
+            this.cboWorkPlace.Size = new System.Drawing.Size(213, 31);
+            this.cboWorkPlace.TabIndex = 13;
+            // 
+            // dtpUploadDate
+            // 
+            this.dtpUploadDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpUploadDate.Location = new System.Drawing.Point(576, 16);
+            this.dtpUploadDate.Name = "dtpUploadDate";
+            this.dtpUploadDate.Size = new System.Drawing.Size(200, 30);
+            this.dtpUploadDate.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(456, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 23);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "납기일";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(875, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 23);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "작업장";
+            // 
+            // cboDemandPlanNum
+            // 
+            this.cboDemandPlanNum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboDemandPlanNum.FormattingEnabled = true;
+            this.cboDemandPlanNum.Location = new System.Drawing.Point(150, 20);
+            this.cboDemandPlanNum.Name = "cboDemandPlanNum";
+            this.cboDemandPlanNum.Size = new System.Drawing.Size(213, 31);
+            this.cboDemandPlanNum.TabIndex = 1;
+            // 
+            // searchLocationControl1
+            // 
+            this.searchLocationControl1.ColumnCount = 10;
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
+            this.searchLocationControl1.Controls.Add(this.cboWorkPlace, 7, 0);
+            this.searchLocationControl1.Controls.Add(this.lblDemandPlan, 0, 0);
+            this.searchLocationControl1.Controls.Add(this.cboDemandPlanNum, 1, 0);
+            this.searchLocationControl1.Controls.Add(this.label3, 3, 0);
+            this.searchLocationControl1.Controls.Add(this.dtpUploadDate, 4, 0);
+            this.searchLocationControl1.Controls.Add(this.label2, 6, 0);
+            this.searchLocationControl1.Controls.Add(this.btnSelect, 9, 0);
+            this.searchLocationControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchLocationControl1.Location = new System.Drawing.Point(0, 0);
+            this.searchLocationControl1.Name = "searchLocationControl1";
+            this.searchLocationControl1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.searchLocationControl1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.searchLocationControl1.Size = new System.Drawing.Size(1356, 63);
+            this.searchLocationControl1.TabIndex = 0;
+            // 
+            // lblDemandPlan
+            // 
+            this.lblDemandPlan.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDemandPlan.AutoSize = true;
+            this.lblDemandPlan.Location = new System.Drawing.Point(5, 20);
+            this.lblDemandPlan.Name = "lblDemandPlan";
+            this.lblDemandPlan.Size = new System.Drawing.Size(124, 23);
+            this.lblDemandPlan.TabIndex = 1;
+            this.lblDemandPlan.Text = "수요 계획 번호";
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSelect.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSelect.Location = new System.Drawing.Point(1271, 16);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(70, 30);
+            this.btnSelect.TabIndex = 49;
+            this.btnSelect.Text = "조회";
+            this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
+            // dgvProductionPlan
+            // 
+            this.dgvProductionPlan.AllowUserToAddRows = false;
+            this.dgvProductionPlan.AllowUserToResizeRows = false;
+            this.dgvProductionPlan.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvProductionPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvProductionPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductionPlan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProductionPlan.Location = new System.Drawing.Point(0, 0);
+            this.dgvProductionPlan.Name = "dgvProductionPlan";
+            this.dgvProductionPlan.RowHeadersVisible = false;
+            this.dgvProductionPlan.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvProductionPlan.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvProductionPlan.RowTemplate.Height = 27;
+            this.dgvProductionPlan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProductionPlan.Size = new System.Drawing.Size(1358, 811);
+            this.dgvProductionPlan.TabIndex = 0;
             // 
             // frmProductionPlanning
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1282, 753);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1382, 853);
             this.Name = "frmProductionPlanning";
             this.Text = "생산계획";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Load += new System.EventHandler(this.frmProductionPlanning_Load);
+            this.pnlDgv.ResumeLayout(false);
+            this.pnlSelect.ResumeLayout(false);
+            this.searchLocationControl1.ResumeLayout(false);
+            this.searchLocationControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductionPlan)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker dtpUploadDate;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cboDemandPlanNum;
+        private System.Windows.Forms.ComboBox cboWorkPlace;
+        private Controls.SearchLocationControl searchLocationControl1;
+        private System.Windows.Forms.Label lblDemandPlan;
+        private System.Windows.Forms.Button btnSelect;
+        private DatagridviewControl dgvProductionPlan;
     }
 }

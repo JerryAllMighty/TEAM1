@@ -18,5 +18,13 @@ namespace BedFactory.Controls
             InitializeComponent();
             cboText = labelComboText1;
         }
+
+        /// <summary>
+        /// 삭제버튼
+        /// </summary>        
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

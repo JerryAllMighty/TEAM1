@@ -55,6 +55,11 @@ namespace BedFactory.Pop_up
         /// </summary>
         private void TreeNodeBinding()
         {
+            if(trvMaterials.Nodes.Count > 0)
+            {
+                trvMaterials.Nodes.Clear();
+            }
+
             #region 트리노드 바인딩(카테고리)
             List<CommonCodeVO> p_List = new List<CommonCodeVO>();
             CommonCodeService service1 = new CommonCodeService();
@@ -118,7 +123,12 @@ namespace BedFactory.Pop_up
 
                 foreach (MaterialsCheckList item in panel1.Controls)
                 {
-                    service2.InsertCheck(id, int.Parse(item.cboText.cbo.Name), 1);
+                    if(item.cboText.cbo.SelectedIndex < 1)
+                    {
+                        MessageBox.Show("검사항목을 선택하여주시오.");
+                        return;
+                    }
+                    service2.InsertCheck(id, Convert.ToInt32(item.cboText.cbo.SelectedValue), 1);
                     bFlag = true;
                 }
             }
@@ -132,6 +142,9 @@ namespace BedFactory.Pop_up
             {
                 MessageBox.Show("성공적으로 저장하였습니다.");
                 search.PerformClick();
+                lctProductName.text.Text = ontSizeX.Text = ontSizeY.Text = ontSizeZ.Text = "";
+                lctCategory.cbo.SelectedIndex = lctKind.cbo.SelectedIndex = 0;
+                panel1.Controls.Clear();
             }
             else
             {
@@ -169,14 +182,16 @@ namespace BedFactory.Pop_up
             MaterialsService service1 = new MaterialsService();
             CheckService service2 = new CheckService();
             bool bFlag = false;
-            
+
+            //기존정보 자재정보 수정 및 검사항목 삭제
             if (service1.UpdateMaterilas(materialsVO) && service2.DeleteCheck(materialID))
             {
                 try
                 {
                     foreach (MaterialsCheckList item in panel1.Controls)
                     {
-                        service2.InsertCheck(materialID, int.Parse(item.cboText.cbo.Name), 1);
+                        //수정 후 검사항목 재등록
+                        service2.InsertCheck(materialID, Convert.ToInt32(item.cboText.cbo.SelectedValue), 1);
                         bFlag = true;
                     }
                 }
@@ -189,6 +204,9 @@ namespace BedFactory.Pop_up
                 {
                     MessageBox.Show("성공적으로 수정하였습니다.");
                     search.PerformClick();
+                    lctProductName.text.Text = ontSizeX.Text = ontSizeY.Text = ontSizeZ.Text = "";
+                    lctCategory.cbo.SelectedIndex = lctKind.cbo.SelectedIndex = 0;
+                    panel1.Controls.Clear();
                 }
                 else
                 {
@@ -209,12 +227,11 @@ namespace BedFactory.Pop_up
             TreeNodeBinding();
 
             //검사항목 콤보박스 바인딩
+            codeList.Clear();
             List<CheckInfoVO> ci_list = new List<CheckInfoVO>();
             CheckService service2 = new CheckService();
             ci_list = service2.GetCheckInfo();
             ci_list.ForEach(p => codeList.Add(new CommonCodeVO { Code_Num = p.Check_Info_Num.ToString(), Code_Name = p.CheckName, Category = p.CheckKind }));
-
-
         }
 
         /// <summary>
@@ -234,6 +251,9 @@ namespace BedFactory.Pop_up
             {
                 MessageBox.Show("성공적으로 삭제하였습니다.");
                 search.PerformClick();
+                lctProductName.text.Text = ontSizeX.Text = ontSizeY.Text = ontSizeZ.Text = "";
+                lctCategory.cbo.SelectedIndex = lctKind.cbo.SelectedIndex = 0;
+                panel1.Controls.Clear();
             }
             else
             {
@@ -251,8 +271,22 @@ namespace BedFactory.Pop_up
             MaterialsCheckList view = new MaterialsCheckList();
             view.Location = new Point(3, 4 + 40 * cnt);
             view.Size = new Size(490, 40);
+            view.btnDel.Click += BtnDel_Click;
             panel1.Controls.Add(view);
             CommonUtil.CommonCodeBindig(view.cboText.cbo, codeList, "", "선택");
+        }
+
+        /// <summary>
+        /// 항목 삭제 시 재정렬
+        /// </summary>
+        private void BtnDel_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            foreach(MaterialsCheckList view in panel1.Controls)
+            {
+                view.Location = new Point(3, 4 + 40 * i);
+                i++;
+            }
         }
 
         /// <summary>
@@ -287,7 +321,7 @@ namespace BedFactory.Pop_up
             List<CommonCodeVO> codeList = new List<CommonCodeVO>();
 
             panel1.Controls.Clear();
-            ci_list.ForEach(p => codeList.Add(new CommonCodeVO { Code_Num = p.Check_Info_Num.ToString(), Code_Name = p.CheckKind }));
+            ci_list.ForEach(p => codeList.Add(new CommonCodeVO { Code_Num = p.Check_Info_Num.ToString(), Code_Name = p.CheckKind, Category = p.CheckKind }));
 
             foreach(CheckVO item in c_list)
             {
@@ -296,7 +330,7 @@ namespace BedFactory.Pop_up
                 view.Location = new Point(3, 4 + 40 * cnt);
                 view.Size = new Size(490, 40);
                 panel1.Controls.Add(view);
-                CommonUtil.CommonCodeBindig(view.cboText.cbo, codeList, "", "");
+                CommonUtil.CommonCodeBindig(view.cboText.cbo, codeList, "", "선택");
                 view.cboText.cbo.Text = item.CheckKind;
             }
             #endregion

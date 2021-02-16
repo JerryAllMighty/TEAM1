@@ -1,6 +1,7 @@
 ﻿using BedFactory;
 using BedFactory.BaseForms;
 using BedFactory.Pop_up;
+using BedFactoryService;
 using BedFactoryVO;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace BadFactory
     public partial class frmMain : Form
     {
         TreeView tv = new TreeView();
+        public EmployeeVO emp_Info { get; set; }    //로그인한 회원정보
 
         public frmMain()
         {
@@ -154,40 +156,37 @@ namespace BadFactory
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            List<CommonCodeVO> list = frmCommonCode.CheckCommonInfo();
-            List<CommonCodeVO> pList = list.Where(p => p.Category == "메뉴").ToList();
-
-            pList.ForEach(p =>
+            #region 회원정보 바인딩
+            if (emp_Info != null)
             {
-                List<CommonCodeVO> cList = list.Where(n => n.P_Code == p.Code_Num).ToList();
-                TreeNode node = new TreeNode(p.Code_Name);
-                cList.ForEach(W =>
-                {
-                    TreeNode node1 = new TreeNode(W.Code_Name);
-                    list.ForEach(j =>
-                    {
-                        if (W.Code_Name == j.Category)
-                            node1.Nodes.Add(j.Code_Name);
-                    });
-                    node.Nodes.Add(node1);
-                });
+                lblEmpName.Text = emp_Info.Emp_Name;
+                lblEmpID.Text = emp_Info.Emp_ID;
+                lblEmpCategory.Text = emp_Info.Emp_Category;
+                lblEmpDepartment.Text = emp_Info.Emp_Department;
+                lblEmpEmail.Text = emp_Info.Emp_Email;
+            }
+            #endregion
 
-                tvMenu.Nodes.Add(node);
-            });
+            AuthorityService service = new AuthorityService();
+            List<CommonCodeVO> list = frmCommonCode.CheckCommonInfo();
+            //List<CommonCodeVO> pList = list.Where(p => p.Category == "메뉴").ToList();
+            List<AuthorityVO> pList = service.GetEmployeeAuthName(emp_Info.Emp_Num);
 
             tv.Size = new Size(200, 300);
             tv.BorderStyle = BorderStyle.None;
             tv.Dock = DockStyle.Fill;
+            tv.Font = new Font("맑은 고딕", 9.75F);
+            tv.Indent = 5;
             tv.NodeMouseDoubleClick += tvMenu_NodeMouseDoubleClick;
             pnMenu.Controls.Add(tv);
             tv.Visible = false;
 
             int k = 1;
-            pList.OrderByDescending(l => l.Code_Num).ToList().ForEach(p =>
+            pList.OrderBy(l => l.Auth_Num).ToList().ForEach(p =>
             {
-                List<CommonCodeVO> cList = list.Where(i => i.P_Code == p.Code_Num).ToList();
+                List<CommonCodeVO> cList = list.Where(i => i.P_Code == p.Auth_Name).ToList();
                 Button btn = new Button();
-                btn.Text = p.Code_Name;
+                btn.Text = p.Auth_Name;
                 btn.Tag = k;
                 btn.Size = new Size(200, 30);
                 btn.FlatStyle = FlatStyle.Popup;
@@ -217,7 +216,7 @@ namespace BadFactory
 
             if(btn.BackColor != Color.Lavender)
             {
-                for (int i = pnMenu.Controls.Count - 1; i >= 0; i--)
+                for (int i = pnMenu.Controls.Count - 1; i >= 0; i--) //int i = pnMenu.Controls.Count - 1; i >= 0; i--
                 {
                     if(pnMenu.Controls[i] as Button != null)
                     {
@@ -334,8 +333,5 @@ namespace BadFactory
                 f.WindowState = FormWindowState.Maximized;
             }
         }
-
-        //__________________________________________________________
-
     }
 }

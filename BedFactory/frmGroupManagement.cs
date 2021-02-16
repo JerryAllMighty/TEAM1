@@ -91,10 +91,10 @@ namespace BedFactory
         /// <param name="e"></param>
         private void btn2_Click_1(object sender, EventArgs e)
         {
-            if (lblGroupCode.Text.Length > 0)
+            if (txtGroupCode.Text.Length > 0)
             {
                 service = new CommonCodeService();
-                if (service.UpdateCommonCode(CommonCodeInfo, txtGroupCode.Text))
+                if (service.UpdateCommonCode(CommonCodeInfo, dgvGroupList.CurrentRow.Cells[0].Value.ToString()))
                 {
                     MessageBox.Show(BedFactory.Properties.Settings.Default.UpdateSuccess);
                     UpdateCommonList();
@@ -135,58 +135,50 @@ namespace BedFactory
         }
 
         /// <summary>
+        /// 그룹 목록에서 더블 클릭시 그룹 수정 목록에 바인딩시키는 함수
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvGroupList_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            txtGroupCode.Text = dgvGroupList[0, e.RowIndex].Value.ToString();
+            txtGroupName.Text = dgvGroupList[1, e.RowIndex].Value.ToString();
+        }
+        /// <summary>
         /// 수정할 그룹 코드 값을 입력시 전역 변수에 담아준다.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void txtGroupCode_TextChanged(object sender, EventArgs e)
+        private void txtGroupCode_TextChanged_1(object sender, EventArgs e)
         {
             GroupCode = txtGroupCode.Text;
         }
-
-        /// <summary>
-        /// 수정할 그룹 이름 값을 입력시 전역 변수에 담아준다.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void txtGroupName_TextChanged(object sender, EventArgs e)
-        {
-            GroupName = txtGroupName.Text;
-        }
-
-       
-
         /// <summary>
         /// 추가할 그룹 코드 값을 입력시 전역 변수에 담아준다
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void txtGroupCode2_TextChanged(object sender, EventArgs e)
+        private void txtGroupCode2_TextChanged_1(object sender, EventArgs e)
         {
             GroupCode = txtGroupCode2.Text;
         }
-
+        /// <summary>
+        /// 수정할 그룹 이름 값을 입력시 전역 변수에 담아준다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtGroupName_TextChanged_1(object sender, EventArgs e)
+        {
+            GroupName = txtGroupName.Text;
+        }
         /// <summary>
         /// 추가할 그룹 이름 값을 입력시 전역 변수에 담아준다.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void txtGroupName2_TextChanged(object sender, EventArgs e)
+        private void txtGroupName2_TextChanged_1(object sender, EventArgs e)
         {
             GroupName = txtGroupName2.Text;
         }
-
-        /// <summary>
-        /// 그룹 목록에서 더블 클릭시 그룹 수정 목록에 바인딩시키는 함수
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dgvGroupList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtGroupCode.Text = dgvGroupList[0, e.RowIndex].Value.ToString();
-            txtGroupName.Text = dgvGroupList[1, e.RowIndex].Value.ToString();
-        }
-
-       
     }
 }

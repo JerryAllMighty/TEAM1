@@ -28,6 +28,8 @@ namespace BedFactory
 
         private void frmMaterialLedgerStockWarehousingState_Load(object sender, EventArgs e)
         {
+            btn1.Visible = btn2.Visible = btn3.Visible = false;
+
             dgvState.SetGridCheckBox("chk");
             dgvState.SetGridViewColumn("입고번호", "Wearing_Num");
             dgvState.SetGridViewColumn("납품업체", "Com_Name");
@@ -90,6 +92,8 @@ namespace BedFactory
 
         private void dtpFrom_ValueChanged(object sender, EventArgs e)
         {
+            bFrom = dtpFrom.Value.Date;
+            bTo = dtpTo.Value.Date;
             dtpTo.MinDate = dtpFrom.Value;
         }
 
@@ -116,7 +120,11 @@ namespace BedFactory
                 }
 
                 if (bChange)
+                {
+                    headerCheck.Checked = false;
                     DataLoad();
+                }
+                    
             }            
         }
 
@@ -159,16 +167,16 @@ namespace BedFactory
 
             if(e.KeyChar == 8)
             {
-                if (dgvState[6, dgvState.SelectedRows[0].Index].Value != null)
+                if (dgvState[7, dgvState.SelectedRows[0].Index].Value != null)
                 {
-                    string str = dgvState[6, dgvState.SelectedRows[0].Index].Value.ToString();
+                    string str = dgvState[7, dgvState.SelectedRows[0].Index].Value.ToString();
                     if(str.Length - 1 == 0)
                     {
-                        dgvState[6, dgvState.SelectedRows[0].Index].Value = null;
+                        dgvState[7, dgvState.SelectedRows[0].Index].Value = null;
                     }
                     else
                     {
-                        dgvState[6, dgvState.SelectedRows[0].Index].Value = int.Parse(str.Substring(0, str.Length - 1));
+                        dgvState[7, dgvState.SelectedRows[0].Index].Value = int.Parse(str.Substring(0, str.Length - 1));
                     }                    
                 }
             }
@@ -182,7 +190,7 @@ namespace BedFactory
             var item = (from temp in list
                         where (cboCom.SelectedIndex == 0 ? true : temp.Com_Name == cboCom.Text)
                               && (txtMaterial.Text.Length < 1 ? true : temp.Mat_Name.Contains(txtMaterial.Text))
-                              && (txtWearing.Text.Length < 1 ? true : temp.Wearing_Num.ToString().Contains(txtMaterial.Text))
+                              && (txtWearing.Text.Length < 1 ? true : temp.Wearing_Num.ToString().Contains(txtWearing.Text))
                         select temp).ToList();
 
             dgvState.DataSource = item;

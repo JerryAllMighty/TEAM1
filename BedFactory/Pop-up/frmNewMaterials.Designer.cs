@@ -72,7 +72,6 @@ namespace BedFactory.Pop_up
             this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
             this.splitContainer1.Panel2.Controls.Add(this.lctKind);
-            this.splitContainer1.Panel2.Controls.Add(this.btnDelete);
             this.splitContainer1.Panel2.Controls.Add(this.btnUpdate);
             this.splitContainer1.Panel2.Controls.Add(this.btnInsert);
             this.splitContainer1.Panel2.Controls.Add(this.ontSizeZ);
@@ -83,6 +82,7 @@ namespace BedFactory.Pop_up
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.lctProductName);
             this.splitContainer1.Panel2.Controls.Add(this.search);
+            this.splitContainer1.Panel2.Controls.Add(this.btnDelete);
             this.splitContainer1.Size = new System.Drawing.Size(1184, 459);
             this.splitContainer1.SplitterDistance = 199;
             this.splitContainer1.TabIndex = 0;

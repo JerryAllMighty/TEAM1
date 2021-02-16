@@ -81,11 +81,15 @@ namespace BedFactoryDAC
         public bool InsertDemandPlan(DemandVO demandinfo)
         {
             try {
+
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
+                    //cmd.CommandText = "SP_Plan";
+                    //cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.CommandText = @"insert into tblDemandPlan(Order_Num, SalesMaster_Num, FirstMan, LastMan)
 	                                            values (@Order_Num, @SalesMaster_Num, @FirstMan,  @LastMan)";
+
                     cmd.Parameters.AddWithValue("@Order_Num", demandinfo.Order_Num);
                     cmd.Parameters.AddWithValue("@SalesMaster_Num", demandinfo.SalesMaster_Num);
                     cmd.Parameters.AddWithValue("@FirstMan", demandinfo.FirstMan);
@@ -102,6 +106,28 @@ namespace BedFactoryDAC
             {
                 Log.WriteError(err.Message);
                 return false;
+            }
+        }
+
+        public string getdemandNum()
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    StringBuilder sb = new StringBuilder();
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"select max(Demand_Plan_Num) from tblDemandPlan";
+
+                    string demandnum = cmd.ExecuteScalar().ToString();
+
+                    return demandnum;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
             }
         }
         public void Dispose()

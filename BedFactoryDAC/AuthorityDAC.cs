@@ -89,13 +89,19 @@ namespace BedFactoryDAC
                     cmd.CommandText = @"insert into tblAuthority (ListNum, Auth_Name, FirstMan, LastMan, IsDeleted)
                                             values(@ListNum, @Auth_Name, @FirstMan, @LastMan, @IsDeleted)";
 
+                    cmd.Parameters.Add("@ListNum", System.Data.SqlDbType.Int);
+                    cmd.Parameters.Add("@Auth_Name", System.Data.SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@FirstMan", System.Data.SqlDbType.Int);
+                    cmd.Parameters.Add("@LastMan", System.Data.SqlDbType.Int);
+                    cmd.Parameters.Add("@IsDeleted", System.Data.SqlDbType.NChar);
+
                     for (int i = 0; i < list.Count; i ++)
                     {
-                        cmd.Parameters.AddWithValue("@ListNum", list[i].ListNum);
-                        cmd.Parameters.AddWithValue("@Auth_Name", list[i].Auth_Name);
-                        cmd.Parameters.AddWithValue("@FirstMan", list[i].FirstMan);
-                        cmd.Parameters.AddWithValue("@LastMan", list[i].LastMan);
-                        cmd.Parameters.AddWithValue("@IsDeleted", list[i].IsDeleted);
+                        cmd.Parameters["@ListNum"].Value = list[i].ListNum;
+                        cmd.Parameters["@Auth_Name"].Value = list[i].Auth_Name;
+                        cmd.Parameters["@FirstMan"].Value = list[i].FirstMan;
+                        cmd.Parameters["@LastMan"].Value = list[i].LastMan;
+                        cmd.Parameters["@IsDeleted"].Value = list[i].IsDeleted;
 
                         int iRowAffect = cmd.ExecuteNonQuery();
 
@@ -131,6 +137,38 @@ namespace BedFactoryDAC
             {
                 Log.WriteError(err.Message);
                 return 0;
+            }
+        }
+
+        /// <summary>
+        /// 직원이 가지고 있는 권한의 메뉴리스트
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public List<AuthorityVO> GetEmployeeAuthName(int num)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"select A.Auth_Name
+                                          from tblEmployees E 
+                                          	 join tblAuthorityList AL on E.Emp_Department = AL.Auth_Department
+                                          	 join tblAuthority A on AL.ListNum = A.ListNum
+                                          	 where E.Emp_Num = @Emp_Num";
+
+                    cmd.Parameters.AddWithValue("@Emp_Num", num);
+
+                    List<AuthorityVO> list = Helper.DataReaderMapToList<AuthorityVO>(cmd.ExecuteReader());
+
+                    return list != null ? list : null;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
             }
         }
 

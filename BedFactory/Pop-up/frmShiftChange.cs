@@ -30,8 +30,8 @@ namespace BedFactory.Pop_up
 
         private void cboDate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtStartTime.Text = dic[cboDate.SelectedItem.ToString()][0].ToString();
-            txtEndTime.Text = dic[cboDate.SelectedItem.ToString()][1].ToString();
+            txtStartTime.Text = dic[cboDate.SelectedItem.ToString()][0].ToString().PadLeft(6, '0');
+            txtEndTime.Text = dic[cboDate.SelectedItem.ToString()][1].ToString().PadLeft(6, '0');
             nudPeopleCnt.Value = dic[cboDate.SelectedItem.ToString()][2];
         }
 
@@ -56,11 +56,11 @@ namespace BedFactory.Pop_up
             };
 
             ShiftsService service = new ShiftsService();
-            int cnt = service.ShiftInsert(vo);
-
-            if (cnt < 2)
+            if (service.ShiftChangeIandU(vo))
             {
                 MessageBox.Show(BedFactory.Properties.Settings.Default.InsertSuccess);
+                this.DialogResult = DialogResult.Yes;
+                this.Close();
             }
             else
             {

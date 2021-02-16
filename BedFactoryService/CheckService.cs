@@ -45,5 +45,11 @@ namespace BedFactoryService
             CheckDAC dac = new CheckDAC();
             return dac.DeleteCheck(mat_Num);
         }
+
+        public bool DeleteCheckInfo(int checkInfoNum)
+        {
+            CheckDAC dac = new CheckDAC();
+            return dac.DeleteCheckInfo(checkInfoNum);
+        }
     }
 }

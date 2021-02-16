@@ -18,6 +18,7 @@ namespace BedFactoryVO
         //수요계획 검색 조건에 활용되는 프로퍼티
         public string Com_Name { get; set; }
         public string Mat_Name { get; set; }
+        public string UploadDate { get; set; }
 
 
     }
