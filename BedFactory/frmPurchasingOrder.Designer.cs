@@ -48,13 +48,19 @@ namespace BedFactory
             ((System.ComponentModel.ISupportInitialize)(this.dgvBalzoo)).BeginInit();
             this.SuspendLayout();
             // 
+            // btn2
+            // 
+            this.btn2.Location = new System.Drawing.Point(997, 99);
+            // 
             // btn3
             // 
+            this.btn3.Location = new System.Drawing.Point(1174, 99);
             this.btn3.Text = "발주";
             this.btn3.Click += new System.EventHandler(this.btn3_Click_1);
             // 
             // btn5
             // 
+            this.btn5.Location = new System.Drawing.Point(1245, 99);
             this.btn5.Text = "엑셀 내보내기";
             // 
             // label1
@@ -62,9 +68,17 @@ namespace BedFactory
             this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.Text = "정규발주";
             // 
+            // btn1
+            // 
+            this.btn1.Location = new System.Drawing.Point(926, 99);
+            // 
             // pnlDgv
             // 
             this.pnlDgv.Controls.Add(this.dgvBalzoo);
+            // 
+            // btn4
+            // 
+            this.btn4.Location = new System.Drawing.Point(1068, 99);
             // 
             // pnlSelect
             // 

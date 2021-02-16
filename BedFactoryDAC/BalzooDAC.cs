@@ -200,14 +200,14 @@ namespace BedFactoryDAC
 
                     cmd.CommandText = @"insert into tblBalzoo_D (Bz_D_Num, Bz_Num, Mat_Num, Bz_Cnt)
 				                                         values (@Bz_D_Num, @Bz_Num, @Mat_Num, @Bz_Cnt)";
-                    cmd.Parameters.Add("@Bz_D_Num", System.Data.SqlDbType.Int);
+                    cmd.Parameters.Add("@Bz_D_Num", System.Data.SqlDbType.NChar);
                     cmd.Parameters.Add("@Bz_Num", System.Data.SqlDbType.Int);
                     cmd.Parameters.Add("@Mat_Num", System.Data.SqlDbType.NChar);
                     cmd.Parameters.Add("@Bz_Cnt", System.Data.SqlDbType.Int);
                     foreach(BalzooVO vo in list)
                     {
                         cmd.Parameters["@Bz_D_Num"].Value = "A" + DateTime.Now.ToString("yyMMddfff");
-                        cmd.Parameters["@Bz_Num"].Value = vo.Bz_Num;
+                        cmd.Parameters["@Bz_Num"].Value = cnt;
                         cmd.Parameters["@Mat_Num"].Value = vo.Mat_Num;
                         cmd.Parameters["@Bz_Cnt"].Value = vo.Bz_Cnt;
 

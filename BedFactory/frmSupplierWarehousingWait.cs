@@ -33,6 +33,9 @@ namespace BedFactory
 
         private void frmSupplierWarehousingWait_Load(object sender, EventArgs e)
         {
+            btn1.Visible = false;
+            btn4.Visible = false;
+
             dgvCheck.SetGridCheckBox("chkBalzoo");
             dgvCheck.SetGridViewColumn("발주번호", "Bz_D_Num");
             dgvCheck.SetGridViewColumn("거래처명", "Com_Name");
@@ -298,14 +301,14 @@ namespace BedFactory
             {
                 if (dgvWait[5, dgvWait.SelectedRows[0].Index].Value != null)
                 {
-                    string str = dgvCheck[5, dgvWait.SelectedRows[0].Index].Value.ToString();
+                    string str = dgvWait[5, dgvWait.SelectedRows[0].Index].Value.ToString();
                     if (str.Length - 1 == 0)
                     {
-                        dgvWait[5, dgvCheck.SelectedRows[0].Index].Value = null;
+                        dgvWait[5, dgvWait.SelectedRows[0].Index].Value = null;
                     }
                     else
                     {
-                        dgvWait[5, dgvCheck.SelectedRows[0].Index].Value = int.Parse(str.Substring(0, str.Length - 1));
+                        dgvWait[5, dgvWait.SelectedRows[0].Index].Value = int.Parse(str.Substring(0, str.Length - 1));
                     }
                 }
             }

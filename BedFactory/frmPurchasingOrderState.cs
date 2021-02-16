@@ -46,6 +46,8 @@ namespace BedFactory
 
             dtpTo.MinDate = dtpFrom.Value.AddDays(-7);
             dtpTo.Value = DateTime.Now.AddDays(7);
+
+            cboState.SelectedItem = "전체";
         }
 
         private void HeaderCheck_Click(object sender, EventArgs e)
@@ -70,6 +72,9 @@ namespace BedFactory
             temp.Insert(0, "전체");
             cboCompany.DisplayMember = "Com_Name";
             cboCompany.DataSource = temp;
+
+            bFrom = dtpFrom.Value.Date;
+            bTo = dtpTo.Value.Date;
         }
 
         /// <summary>
@@ -108,9 +113,7 @@ namespace BedFactory
         }
 
         private void dtpFrom_ValueChanged(object sender, EventArgs e)
-        {
-            bFrom = dtpFrom.Value.Date;
-            bTo = dtpTo.Value.Date;
+        {           
             dtpTo.MinDate = dtpFrom.Value;
         }
 
@@ -138,6 +141,7 @@ namespace BedFactory
                 frmDuedateChange frm = new frmDuedateChange(list, date);
                 frm.Show();
                 headerCheck.Checked = false;
+                DataLoad();
             }
         }
 
@@ -185,14 +189,17 @@ namespace BedFactory
             if (bFrom.Date != dtpFrom.Value.Date && bTo.Date != dtpTo.Value.Date)
                 DataLoad();
 
-            var item = (from temp in list
-                        where (cboCompany.SelectedIndex == 0 ? true : temp.Com_Name == cboCompany.Text)
-                              && (cboState.SelectedIndex == 0 ? true : (cboState.SelectedItem.ToString() == "처리중") ? temp.Bz_D_Status == "N" : temp.Bz_D_Status == "Y")
-                              && (txtMaterial.Text.Length < 1 ? true : temp.Mat_Name.Contains(txtMaterial.Text))
-                              && (txtOrderNum.Text.Length < 1 ? true : temp.Bz_D_Num.ToString().Contains(txtOrderNum.Text))
-                        select temp).ToList();
+            if(list != null)
+            {
+                var item = (from temp in list
+                            where (cboCompany.SelectedIndex == 0 ? true : temp.Com_Name == cboCompany.Text)
+                                  && (cboState.SelectedItem.ToString() == "전체" ? true : (cboState.SelectedItem.ToString() == "처리중") ? temp.Bz_D_Status == "N" : temp.Bz_D_Status == "Y")
+                                  && (txtMaterial.Text.Length < 1 ? true : temp.Mat_Name.Contains(txtMaterial.Text))
+                                  && (txtOrderNum.Text.Length < 1 ? true : temp.Bz_D_Num.ToString().Contains(txtOrderNum.Text))
+                            select temp).ToList();
 
-            dgvOrder.DataSource = item;
+                dgvOrder.DataSource = item;
+            }            
         }
     }
 }

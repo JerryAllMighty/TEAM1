@@ -29,6 +29,8 @@ namespace BedFactory
 
         private void frmMaterialRequest_Load(object sender, EventArgs e)
         {
+            btn1.Visible = btn2.Visible = btn3.Visible = btn4.Visible = false;
+
             dgvWorkOrder.SetGridViewColumn("계획시작일자", "ProductionDate");
             dgvWorkOrder.SetGridViewColumn("작업지시번호", "WO_Num");
             dgvWorkOrder.SetGridViewColumn("작업장명", "WP_Name");
@@ -170,7 +172,7 @@ namespace BedFactory
                         WO_Num = Convert.ToInt32(dgvMaSub[6, row.Index].Value),
                         Ship_Cnt = Convert.ToInt32(dgvMaSub[5, row.Index].Value),
                         Mat_Category = dgvMaSub[2, row.Index].Value.ToString(),
-                        Mat_Num = Convert.ToInt32(dgvMaSub[7, row.Index].Value)
+                        Mat_Num = dgvMaSub[7, row.Index].Value.ToString()
                     };
 
                     ShipmentService service = new ShipmentService();

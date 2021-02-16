@@ -25,9 +25,11 @@ namespace BedFactory
         {
             InitializeComponent();
 
+            btn1.Visible = btn2.Visible = btn4.Visible = false;
+
             dgvWO.SetGridCheckBox("chk");
             dgvWO.SetGridViewColumn("출고번호", "Ship_D_Num", visibility: false);
-            dgvWO.SetGridViewColumn("작업지시서", "WO_D_Num");
+            dgvWO.SetGridViewColumn("작업지시서", "WO_Num");
             dgvWO.SetGridViewColumn("요청일", "Firstdate");
             dgvWO.SetGridViewColumn("자재명", "Mat_Name");
             dgvWO.SetGridViewColumn("자재유형", "Mat_Category");

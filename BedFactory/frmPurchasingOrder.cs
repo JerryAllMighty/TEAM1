@@ -17,8 +17,6 @@ namespace BedFactory
     public partial class frmPurchasingOrder : BaseForm2
     {
         List<BalzooVO> list;
-        DateTime bFrom;
-        DateTime bTo;
 
         public frmPurchasingOrder()
         {
@@ -27,8 +25,7 @@ namespace BedFactory
 
         private void frmPurchasingOrder_Load(object sender, EventArgs e)
         {
-            bFrom = DateTime.Now.AddYears(3333);
-            bTo = DateTime.Now.AddYears(3333);
+            btn1.Visible = btn2.Visible = btn4.Visible = false;
 
             dtpTo.Value = DateTime.Now.Date.AddDays(14);
             dtpTo.MinDate = dtpFrom.Value.Date;
@@ -42,22 +39,19 @@ namespace BedFactory
 
         private void GridColumnDateSet()
         {
-            if (bFrom.ToShortDateString() != dtpFrom.Value.ToShortDateString() || bTo.ToShortDateString() != dtpTo.Value.ToShortDateString())
+            dgvBalzoo.Columns.Clear();
+
+            dgvBalzoo.SetGridViewColumn("자재명", "Mat_Num");
+            dgvBalzoo.SetGridViewColumn("카테고리", "Category");
+
+            List<DateTime> DayList = GetFromToDays(dtpFrom.Value.Date, dtpTo.Value.Date);
+            DayList.ForEach(p =>
             {
-                dgvBalzoo.Columns.Clear();
+                dgvBalzoo.SetGridViewColumn($"{p.ToShortDateString()}", $"{p.ToShortDateString()}");
+            });
 
-                dgvBalzoo.SetGridViewColumn("자재명", "Mat_Num");
-                dgvBalzoo.SetGridViewColumn("카테고리", "Category");
-
-                List<DateTime> DayList = GetFromToDays(dtpFrom.Value.Date, dtpTo.Value.Date);
-                DayList.ForEach(p =>
-                {
-                    dgvBalzoo.SetGridViewColumn($"{p.ToShortDateString()}", $"{p.ToShortDateString()}");
-                });
-
-                BalzooService service = new BalzooService();
-                list = service.BalzooAndM_Use(int.Parse(cboPlan.Text));
-            }
+            BalzooService service = new BalzooService();
+            list = service.BalzooAndM_Use(int.Parse(cboPlan.Text));
 
             dgvBalzoo.Rows.Clear();
 
@@ -111,9 +105,6 @@ namespace BedFactory
                 }
 
             });
-
-            bFrom = dtpFrom.Value.Date;
-            bTo = dtpTo.Value.Date;
         }
 
         private List<DateTime> GetFromToDays(DateTime FromDate, DateTime ToDate)
@@ -139,7 +130,12 @@ namespace BedFactory
                 dtpTo.MinDate = dtpFrom.Value.Date;
                 GridColumnDateSet();
                 dgvBalzoo.ClearSelection();
-            }            
+            }
+            else
+            {
+                dgvBalzoo.Columns.Clear();
+                dgvBalzoo.Rows.Clear();
+            }
         }
 
         private void btn3_Click_1(object sender, EventArgs e) //발주
