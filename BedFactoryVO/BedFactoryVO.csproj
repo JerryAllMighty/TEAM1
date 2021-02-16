@@ -53,16 +53,20 @@
     <Compile Include="CommonCodeVO.cs" />
     <Compile Include="CompanyVO.cs" />
     <Compile Include="DemandVO.cs" />
+    <Compile Include="EmployeeVO.cs" />
+    <Compile Include="ErrorHistoryVO.cs" />
     <Compile Include="MaterialsVO.cs" />
     <Compile Include="MRPVO.cs" />
     <Compile Include="ProcessVO.cs" />
+    <Compile Include="ProductionPlanVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalesMasterVO.cs" />
     <Compile Include="ShiftVO.cs" />
     <Compile Include="ShipmentVO.cs" />
     <Compile Include="UnitCostVO.cs" />
     <Compile Include="WearingVO.cs" />
-    <Compile Include="WorkOrdersVO.cs" />
+    <Compile Include="WorkHistoryVO.cs" />
+    <Compile Include="WorkOrderVO.cs" />
     <Compile Include="WorkplaceVO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -25,6 +25,7 @@ namespace BedFactoryDAC
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
+                    StringBuilder sb = new StringBuilder();
                     cmd.Connection = conn;
                     cmd.CommandText = @"select Convert(nchar(10), M.MatarialUsePlan_Num) MatarialUsePlan_Num, 
 					   Convert(nchar(10), M.Demand_Plan_Num) Demand_Plan_Num,
@@ -43,6 +44,10 @@ namespace BedFactoryDAC
 
                     cmd.Parameters.AddWithValue("@Deadline", deadline);
 
+                    if ()
+                    { }
+                    if ()
+                    { }
                     List<MRPVO> list = Helper.DataReaderMapToList<MRPVO>(cmd.ExecuteReader());
                     return list != null ? list : null;
                 }

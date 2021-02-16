@@ -43,12 +43,16 @@
   <ItemGroup>
     <Compile Include="AuthorityService.cs" />
     <Compile Include="BalzooService.cs" />
+    <Compile Include="BOMService.cs" />
     <Compile Include="BORService.cs" />
     <Compile Include="CheckService.cs" />
     <Compile Include="CompanyService.cs" />
     <Compile Include="CommonCodeService.cs" />
     <Compile Include="DemandPlanService.cs" />
+    <Compile Include="EmployeesService.cs" />
+    <Compile Include="ErrorService.cs" />
     <Compile Include="MaterialsService.cs" />
+    <Compile Include="MRPService.cs" />
     <Compile Include="ProcessService.cs" />
     <Compile Include="ProductionPlanService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,7 +61,8 @@
     <Compile Include="ShipmentService.cs" />
     <Compile Include="UnitCostService.cs" />
     <Compile Include="WearingService.cs" />
-    <Compile Include="WorkOrdersService.cs" />
+    <Compile Include="WorkHistoryService.cs" />
+    <Compile Include="WorkOrderService.cs" />
     <Compile Include="WorkplaceService.cs" />
   </ItemGroup>
   <ItemGroup>
