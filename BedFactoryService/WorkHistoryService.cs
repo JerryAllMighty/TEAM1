@@ -10,10 +10,10 @@ namespace BedFactoryService
 {
     public class WorkHistoryService
     {
-        public bool UpdateWorkHistoryCnt(WorkHistoryVO workhistoryinfo)
+        public bool UpdateWorkHistoryCnt(WorkHistoryVO workhistoryinfo, string ErrorKind, int ErrorCnt)
         {
             WorkHistoryDAC dac = new WorkHistoryDAC();
-            return dac.UpdateWorkHistoryCnt(workhistoryinfo);
+            return dac.UpdateWorkHistoryCnt(workhistoryinfo, ErrorKind, ErrorCnt);
         }
     }
 }

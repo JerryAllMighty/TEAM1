@@ -156,6 +156,8 @@ namespace BedFatory_POP
         /// <param name="e"></param>
         private void btnFinish_Click(object sender, EventArgs e)
         {
+            timer1.Stop();
+            timer2.Stop();
             WorkOrderService service = new WorkOrderService();
             if (service.FinishWorkOrder(list[cboWorkPlace.SelectedIndex].WO_Num))
             {
@@ -173,9 +175,27 @@ namespace BedFatory_POP
         /// <param name="e"></param>
         private void btnAddCnt_Click(object sender, EventArgs e)
         {
+            Random rnd = new Random();
+            int randNum = rnd.Next(1, 4);
+            string ErrorKind;
+            //호환 불량
+            //규격 불량
+            //내구성 불량
+            if (randNum == 1)
+            {
+                ErrorKind = "호환 불량";
+            }
+            else if (randNum == 2)
+            {
+                ErrorKind = "규격 불량";
+            }
+            else
+            {
+                ErrorKind = "내구성 불량";
+            }
             WorkHistoryService service = new WorkHistoryService();
             //마감 시점에 양품수량, 작업 시간, 작업 중지 시간, 작업 지시번호
-            if (service.UpdateWorkHistoryCnt(workhistoryinfo))
+            if (service.UpdateWorkHistoryCnt(workhistoryinfo, ErrorKind, randNum))
             {
                 MessageBox.Show(BedFactory.Properties.Settings.Default.UpdateSuccess);
             }
