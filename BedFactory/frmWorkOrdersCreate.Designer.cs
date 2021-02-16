@@ -57,7 +57,6 @@ namespace BedFactory
             // 
             this.btn2.Location = new System.Drawing.Point(1304, 133);
             this.btn2.Text = "등록";
-            this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
             // btn3
             // 

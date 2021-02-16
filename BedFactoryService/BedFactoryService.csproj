@@ -53,7 +53,6 @@
     <Compile Include="ErrorService.cs" />
     <Compile Include="MaterialsService.cs" />
     <Compile Include="MRPService.cs" />
-    <Compile Include="PLCService.cs" />
     <Compile Include="ProcessService.cs" />
     <Compile Include="ProductionPlanService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,7 +63,6 @@
     <Compile Include="WearingService.cs" />
     <Compile Include="WorkHistoryService.cs" />
     <Compile Include="WorkOrderService.cs" />
-    <Compile Include="WorkOrdersService.cs" />
     <Compile Include="WorkplaceService.cs" />
   </ItemGroup>
   <ItemGroup>

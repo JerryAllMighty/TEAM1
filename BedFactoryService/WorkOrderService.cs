@@ -41,5 +41,49 @@ namespace BedFactoryService
             return dac.FinishWorkOrder(WO_Num);
         }
 
+        /// <summary>
+        /// 작업지시정보조회
+        /// </summary>
+        /// <param name="wpNum"></param>
+        /// <param name="matNum"></param>
+        /// <param name="wsNum"></param>
+        /// <param name="dtFrom"></param>
+        /// <param name="dtTo"></param>
+        /// <returns></returns>
+        public List<WorkOrderVO> GetWorkOrdersInfo(int wpNum, string matNum, int wsNum, string dtFrom, string dtTo)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.GetWorkOrdersInfo(wpNum, matNum, wsNum, dtFrom, dtTo);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public bool DeleteWorkOrdersInfo(List<int> nums)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.DeleteWorkOrdersInfo(nums);
+        }
+
+        /// <summary>
+        /// 작업지시상태 업데이트
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public bool UpdateStatusWorkOrdersInfo(List<int> nums)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.UpdateStatusWorkOrdersInfo(nums);
+        }
+
+
+        //자재코드정보조회
+        public List<WorkOrderVO> GetMatCodeInfo(string matNum)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.GetMatCodeInfo(matNum);
+        }
     }
 }
