@@ -40,8 +40,8 @@ namespace BedFactory
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.cboM_Category = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.dgvWO = new BedFactory.DatagridviewControl();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
@@ -97,7 +97,7 @@ namespace BedFactory
             // 
             this.cboWO.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboWO.FormattingEnabled = true;
-            this.cboWO.Location = new System.Drawing.Point(558, 21);
+            this.cboWO.Location = new System.Drawing.Point(558, 18);
             this.cboWO.Name = "cboWO";
             this.cboWO.Size = new System.Drawing.Size(235, 25);
             this.cboWO.TabIndex = 80;
@@ -205,6 +205,15 @@ namespace BedFactory
             this.label3.TabIndex = 78;
             this.label3.Text = "요청일";
             // 
+            // cboM_Category
+            // 
+            this.cboM_Category.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboM_Category.FormattingEnabled = true;
+            this.cboM_Category.Location = new System.Drawing.Point(977, 18);
+            this.cboM_Category.Name = "cboM_Category";
+            this.cboM_Category.Size = new System.Drawing.Size(235, 25);
+            this.cboM_Category.TabIndex = 82;
+            // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -214,15 +223,6 @@ namespace BedFactory
             this.label6.Size = new System.Drawing.Size(60, 17);
             this.label6.TabIndex = 81;
             this.label6.Text = "자재유형";
-            // 
-            // cboM_Category
-            // 
-            this.cboM_Category.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboM_Category.FormattingEnabled = true;
-            this.cboM_Category.Location = new System.Drawing.Point(977, 21);
-            this.cboM_Category.Name = "cboM_Category";
-            this.cboM_Category.Size = new System.Drawing.Size(235, 25);
-            this.cboM_Category.TabIndex = 82;
             // 
             // dgvWO
             // 
@@ -243,6 +243,7 @@ namespace BedFactory
             this.dgvWO.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvWO.Size = new System.Drawing.Size(1358, 720);
             this.dgvWO.TabIndex = 0;
+            this.dgvWO.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvWO_CurrentCellDirtyStateChanged);
             // 
             // frmMaterialLedgerRawMaterial
             // 
