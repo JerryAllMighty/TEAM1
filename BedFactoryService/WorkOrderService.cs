@@ -50,12 +50,17 @@ namespace BedFactoryService
         /// <param name="dtFrom"></param>
         /// <param name="dtTo"></param>
         /// <returns></returns>
-        public List<WorkOrderVO> GetWorkOrdersInfo(int wpNum, string matNum, int wsNum, DateTime dtFrom, DateTime dtTo)
+        public List<WorkOrderVO> GetWorkOrdersInfo(int wpNum, string matNum, int wsNum, string dtFrom, string dtTo)
         {
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.GetWorkOrdersInfo(wpNum, matNum, wsNum, dtFrom, dtTo);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
         public bool DeleteWorkOrdersInfo(List<int> nums)
         {
             WorkOrderDAC dac = new WorkOrderDAC();
@@ -71,6 +76,14 @@ namespace BedFactoryService
         {
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.UpdateStatusWorkOrdersInfo(nums);
+        }
+
+
+        //자재코드정보조회
+        public List<WorkOrderVO> GetMatCodeInfo(string matNum)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.GetMatCodeInfo(matNum);
         }
     }
 }

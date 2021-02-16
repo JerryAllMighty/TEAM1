@@ -145,13 +145,13 @@ namespace BedFactoryDAC
         /// <param name="dtFrom"></param>
         /// <param name="dtTo"></param>
         /// <returns></returns>
-        public List<WorkOrderVO> GetWorkOrdersInfo(int wpNum, string matNum, int wsNum, DateTime dtFrom, DateTime dtTo)
+        public List<WorkOrderVO> GetWorkOrdersInfo(int wpNum, string matNum, int wsNum, string dtFrom, string dtTo)
         {
             try
             {
                 StringBuilder sb = new StringBuilder();
-                sb.Append(@"select Convert(nchar(10), WO.WO_Num)WO_Num, P.Process_Name_D, WP.WP_Name, M.Mat_Name, Convert(nchar(10), PP.ProductionDate, 23) as FirstDate,
-         Convert(nchar(10),SM.LastDate, 23)LastDate, WO.WO_Status, Convert(nchar(10), WO.WO_Plan_Cnt) WO_Plan_Cnt,
+                sb.Append(@"select Convert(nchar(10), WO.WO_Num)WO_Num, P.Process_Name_D, WP.WP_Name, M.Mat_Name, Convert(nchar(10), PP.ProductionDate, 23) as ProductionDate,
+         Convert(nchar(10),SM.Deadline, 23) DeadLine, WO.WO_Status, Convert(nchar(10), WO.WO_Plan_Cnt) WO_Plan_Cnt,
                                       Convert(nchar(10), WO.WO_Order_Cnt)WO_Order_Cnt, WO.WO_Detail, WO.IsShip, Convert(nchar(10), WO.WO_D_Emp_Num) WO_D_Emp_Num,
                                       convert(char(8), WO.WO_StartTime, 24) as WO_StartTime, convert(char(8), WO.WO_FinishTime, 24) as WO_FinishTime
                                from tblWorkOrders WO inner join tblWorkplace WP on WO.WP_Num = WP.WP_Num
@@ -180,8 +180,8 @@ namespace BedFactoryDAC
                     if (wsNum > 0)
                         cmd.Parameters.AddWithValue("@wsNum", wsNum);
 
-                    cmd.Parameters.AddWithValue("@dtFrom", dtFrom.ToShortDateString());
-                    cmd.Parameters.AddWithValue("@dtTo", dtTo.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@dtFrom", dtFrom.ToString());
+                    cmd.Parameters.AddWithValue("@dtTo", dtTo.ToString());
 
                     List<WorkOrderVO> list = Helper.DataReaderMapToList<WorkOrderVO>(cmd.ExecuteReader());
                     conn.Close();
@@ -262,6 +262,46 @@ namespace BedFactoryDAC
             {
                 Log.WriteError(err.Message);
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// 작업지시생성에서 자재 검색
+        /// </summary>
+        /// <param name="matNum"></param>
+        /// <returns></returns>
+        public List<WorkOrderVO> GetMatCodeInfo(string matNum)
+        {
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append(@"select M.Mat_Num, M.Mat_Name,WO_Plan_Cnt
+                        from  tblWorkOrders WO inner join tblMaterials M on WO.Mat_Num = M.Mat_Num
+                        where 1=1 ");
+
+                if (!string.IsNullOrEmpty(matNum))
+                    sb.Append(" and M.Mat_Num = @matNum");
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = sb.ToString();
+
+                    if (!string.IsNullOrEmpty(matNum))
+                        cmd.Parameters.AddWithValue("@matNum", matNum);
+
+
+                    List<WorkOrderVO> list = Helper.DataReaderMapToList<WorkOrderVO>(cmd.ExecuteReader());
+                    conn.Close();
+
+                    return list;
+                }
+            }
+
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
             }
         }
     }

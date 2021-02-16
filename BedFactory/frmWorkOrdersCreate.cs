@@ -106,8 +106,8 @@ namespace BedFactory
                 wsNum = (cboWs.SelectedValue.ToString() == "") ? 0 : Convert.ToInt32(cboWs.SelectedValue);
 
 
-            DateTime dtFrom = dtpFrom.Value;
-            DateTime dtTo = dtpTo.Value;
+            string dtFrom = dtpFrom.Value.ToShortDateString();
+            string dtTo = dtpTo.Value.ToShortDateString();
 
 
             WorkOrderService service = new WorkOrderService();

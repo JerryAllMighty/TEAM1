@@ -144,45 +144,7 @@ namespace BedFactoryDAC
             }
         }
 
-        /// <summary>
-        /// 작업지시생성에서 자재 검색
-        /// </summary>
-        /// <param name="matNum"></param>
-        /// <returns></returns>
-        public List<MaterialsVO> GetMatCodeInfo(string matNum)
-        {
-            try
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.Append(@"select M.Mat_Num, M.Mat_Name,WO_Plan_Cnt
-                        from  tblWorkOrders WO inner join tblMaterials M on WO.Mat_Num = M.Mat_Num
-                        where 1=1 ");
-
-                if (!string.IsNullOrEmpty(matNum))
-                    sb.Append(" and M.Mat_Num = @matNum");
-
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = conn;
-                    cmd.CommandText = sb.ToString();
-
-                    if (!string.IsNullOrEmpty(matNum))
-                        cmd.Parameters.AddWithValue("@matNum", matNum);
-
-
-                    List<MaterialsVO> list = Helper.DataReaderMapToList<MaterialsVO>(cmd.ExecuteReader());
-                    conn.Close();
-
-                    return list;
-                }
-            }
-
-            catch (Exception err)
-            {
-                Log.WriteError(err.Message);
-                return null;
-            }
-        }
+        
 
     }
 

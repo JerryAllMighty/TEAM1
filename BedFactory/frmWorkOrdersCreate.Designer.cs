@@ -57,7 +57,6 @@ namespace BedFactory
             // 
             this.btn2.Location = new System.Drawing.Point(1304, 133);
             this.btn2.Text = "등록";
-            this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
             // btn3
             // 
@@ -165,7 +164,7 @@ namespace BedFactory
             // 
             this.cboWp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboWp.FormattingEnabled = true;
-            this.cboWp.Location = new System.Drawing.Point(558, 13);
+            this.cboWp.Location = new System.Drawing.Point(558, 9);
             this.cboWp.Name = "cboWp";
             this.cboWp.Size = new System.Drawing.Size(235, 31);
             this.cboWp.TabIndex = 80;
@@ -266,7 +265,7 @@ namespace BedFactory
             // 
             this.cboMat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboMat.FormattingEnabled = true;
-            this.cboMat.Location = new System.Drawing.Point(977, 13);
+            this.cboMat.Location = new System.Drawing.Point(977, 9);
             this.cboMat.Name = "cboMat";
             this.cboMat.Size = new System.Drawing.Size(235, 31);
             this.cboMat.TabIndex = 83;
@@ -275,7 +274,7 @@ namespace BedFactory
             // 
             this.cboWs.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboWs.FormattingEnabled = true;
-            this.cboWs.Location = new System.Drawing.Point(139, 62);
+            this.cboWs.Location = new System.Drawing.Point(139, 58);
             this.cboWs.Name = "cboWs";
             this.cboWs.Size = new System.Drawing.Size(235, 31);
             this.cboWs.TabIndex = 84;

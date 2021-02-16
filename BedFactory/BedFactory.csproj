@@ -206,12 +206,6 @@
     <Compile Include="frmStockStatusProcess.Designer.cs">
       <DependentUpon>frmStockStatusProcess.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMaterialLedgerRawMaterial.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMaterialLedgerRawMaterial.Designer.cs">
-      <DependentUpon>frmMaterialLedgerRawMaterial.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMaterialLedgerStockWarehousing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -586,9 +580,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmStockStatusProcess.resx">
       <DependentUpon>frmStockStatusProcess.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMaterialLedgerRawMaterial.resx">
-      <DependentUpon>frmMaterialLedgerRawMaterial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMaterialLedgerStockWarehousing.resx">
       <DependentUpon>frmMaterialLedgerStockWarehousing.cs</DependentUpon>

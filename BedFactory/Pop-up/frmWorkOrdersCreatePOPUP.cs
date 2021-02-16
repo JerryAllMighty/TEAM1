@@ -22,9 +22,9 @@ namespace BedFactory.Pop_up
 
         private void frmWorkOrdersCreatePOPUP_Load(object sender, EventArgs e)
         {
-            dgvWOmat.SetGridViewColumn("자재코드", " ");
-            dgvWOmat.SetGridViewColumn("자재명", " ");
-            dgvWOmat.SetGridViewColumn("주문수량", " ");
+            dgvWOmat.SetGridViewColumn("자재코드", "Mat_Num");
+            dgvWOmat.SetGridViewColumn("자재명", "Mat_Name");
+            dgvWOmat.SetGridViewColumn("주문수량", "WO_Plan_Cnt");
 
             // 자재명 콤보박스 바인딩 (DAC단으로 연결)
             MaterialsService matService = new MaterialsService();
@@ -40,9 +40,9 @@ namespace BedFactory.Pop_up
             if (cboMat.SelectedValue != null)
                 matNum = (cboMat.SelectedValue.ToString() == null) ? "" : cboMat.SelectedValue.ToString();
 
-            MaterialsService service = new MaterialsService();
-            List<MaterialsVO> matlist = service.GetMatCodeInfo(matNum);
-            dgvWOmat.DataSource = matlist;
+            WorkOrderService service = new WorkOrderService();
+            List<WorkOrderVO> list = service.GetMatCodeInfo(matNum);
+            dgvWOmat.DataSource = list;
         }
 
         //등록
