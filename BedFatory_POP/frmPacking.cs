@@ -73,7 +73,7 @@ namespace BedFatory_POP
             timer1.Start();
             timer1.Tick += Timer1_Tick;
 
-            string server = @"C:\Users\USER\source\repos\Final\OutputTcpServer\bin\Debug\OutputTcpServer.exe";
+            string server = @"C:\Users\USER\source\repos\Final\OutputTcpServer\bin\Debug\OutputTcpServer.exe"; //입고 추가
             Process pro = Process.Start(server, $"9999 127.0.0.1 8800");
             process_id = pro.Id;
 
