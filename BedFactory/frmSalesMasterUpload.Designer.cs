@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvSalesMasterUpload = new BedFactory.DatagridviewControl();
             this.pnlDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesMasterUpload)).BeginInit();
@@ -38,21 +38,25 @@ namespace BedFactory
             // 
             // btn2
             // 
-            this.btn2.Location = new System.Drawing.Point(1192, 12);
-            this.btn2.Size = new System.Drawing.Size(170, 25);
+            this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn2.Location = new System.Drawing.Point(1192, 5);
+            this.btn2.Size = new System.Drawing.Size(170, 30);
             this.btn2.Text = "영업마스터 저장";
             this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
             // btn3
             // 
-            this.btn3.Location = new System.Drawing.Point(1016, 12);
-            this.btn3.Size = new System.Drawing.Size(170, 25);
+            this.btn3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn3.Location = new System.Drawing.Point(1016, 5);
+            this.btn3.Size = new System.Drawing.Size(170, 30);
             this.btn3.Text = "영업마스터 업로드";
             this.btn3.Click += new System.EventHandler(this.btn3_Click);
             // 
             // btn5
             // 
+            this.btn5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn5.Location = new System.Drawing.Point(779, 12);
+            this.btn5.Visible = false;
             // 
             // label1
             // 
@@ -66,15 +70,17 @@ namespace BedFactory
             // 
             // btn4
             // 
+            this.btn4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn4.Location = new System.Drawing.Point(910, 12);
+            this.btn4.Visible = false;
             // 
             // dgvSalesMasterUpload
             // 
             this.dgvSalesMasterUpload.AllowUserToAddRows = false;
             this.dgvSalesMasterUpload.AllowUserToResizeRows = false;
             this.dgvSalesMasterUpload.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvSalesMasterUpload.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvSalesMasterUpload.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSalesMasterUpload.ColumnHeadersHeight = 29;
             this.dgvSalesMasterUpload.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSalesMasterUpload.Location = new System.Drawing.Point(0, 0);
@@ -82,8 +88,8 @@ namespace BedFactory
             this.dgvSalesMasterUpload.Name = "dgvSalesMasterUpload";
             this.dgvSalesMasterUpload.RowHeadersVisible = false;
             this.dgvSalesMasterUpload.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvSalesMasterUpload.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvSalesMasterUpload.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSalesMasterUpload.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSalesMasterUpload.Size = new System.Drawing.Size(1350, 798);
             this.dgvSalesMasterUpload.TabIndex = 1;

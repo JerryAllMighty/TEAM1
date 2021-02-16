@@ -118,10 +118,9 @@ namespace BedFactoryDAC
                     cmd.Connection = conn;
                     cmd.CommandText = @"insert into tblSalesMaster (Order_Num, TotalCnt, Deadline, UploadDate, Firstman, Lastman)
                                                    values(Convert(int, @Order_Num), Convert(int, (select sum(Product_Cnt) from tblOrders_D where Order_Num = @Order_Num)),
-		                                        Convert(nvarchar(10), @Deadline), Convert(nvarchar(10), @UploadDate), Convert(int, @Firstman), Convert(int, @Lastman))";
+		                                        Convert(nvarchar(10), @Deadline), Convert(nvarchar(10), getdate()), Convert(int, @Firstman), Convert(int, @Lastman))";
                     cmd.Parameters.AddWithValue("@Order_Num", salesmasterinfo.Order_Num);
                     cmd.Parameters.AddWithValue("@Deadline", salesmasterinfo.Deadline);
-                    cmd.Parameters.AddWithValue("@UploadDate", salesmasterinfo.UploadDate);
                     cmd.Parameters.AddWithValue("@Firstman", salesmasterinfo.Firstman);
                     cmd.Parameters.AddWithValue("@Lastman", salesmasterinfo.Lastman);
 

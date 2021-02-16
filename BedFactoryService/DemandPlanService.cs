@@ -31,5 +31,12 @@ namespace BedFactoryService
             DemandPlanDAC dac = new DemandPlanDAC();
             return dac.InsertDemandPlan(demandinfo);
         }
+
+        
+        public string getdemandNum()
+        {
+            DemandPlanDAC dac = new DemandPlanDAC();
+            return dac.getdemandNum();
+        }
     }
 }

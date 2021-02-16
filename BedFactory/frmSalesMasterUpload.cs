@@ -24,7 +24,7 @@ namespace BedFactory
                 return new SalesMasterVO
                 {
                     Order_Num = dgvSalesMasterUpload[0, 0].Value.ToString(),
-                    Deadline = dgvSalesMasterUpload[5, 0].Value.ToString(),
+                    Deadline = Convert.ToDateTime(dgvSalesMasterUpload[5, 0].Value.ToString()).AddDays(7).ToShortDateString(),
                     UploadDate = dgvSalesMasterUpload[5, 0].Value.ToString(),
                     Firstman = dgvSalesMasterUpload[9, 0].Value.ToString(),
                     Lastman = dgvSalesMasterUpload[11, 0].Value.ToString()
@@ -54,8 +54,8 @@ namespace BedFactory
             dgvSalesMasterUpload.SetGridViewColumn("품목 번호", "자재번호");
             dgvSalesMasterUpload.SetGridViewColumn("품목명", "자재명");
             dgvSalesMasterUpload.SetGridViewColumn("주문 수량", "수량");
-            dgvSalesMasterUpload.SetGridViewColumn("주문 날짜", "주문날짜");
-            dgvSalesMasterUpload.SetGridViewColumn("주문 상태", "주문상태");
+            dgvSalesMasterUpload.SetGridViewColumn("주문 날짜", "주문 날짜");
+            dgvSalesMasterUpload.SetGridViewColumn("주문 상태", "주문 상태");
             dgvSalesMasterUpload.SetGridViewColumn("거래처번호", "거래처번호");
             dgvSalesMasterUpload.SetGridViewColumn("주문취소여부", "주문취소여부");
             dgvSalesMasterUpload.SetGridViewColumn("최초 등록자", "최초등록자");
