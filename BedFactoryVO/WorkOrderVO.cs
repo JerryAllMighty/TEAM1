@@ -30,6 +30,7 @@ namespace BedFactoryVO
         //작업 지시 테이블에는 존재하지 않지만 데이터를 활용하기 위해서 추가한 프로퍼티
         public string WorkCnt { get; set; }
         public string Error_Cnt { get; set; }
+        public string WO_Date { get; set; }
 
     }
 }

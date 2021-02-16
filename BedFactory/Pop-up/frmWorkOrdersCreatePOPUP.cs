@@ -48,6 +48,29 @@ namespace BedFactory.Pop_up
         //등록
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            if (cboMat.SelectedValue == null)
+                return;
+
+
+            if (cboMat.SelectedValue.ToString().Length < 1)
+                return;
+
+            WorkOrderService service = new WorkOrderService();
+            bool bResult = false;
+
+            WorkOrderVO vo = new WorkOrderVO
+            {
+                //Mat_Num = 
+                //Mat_Name = 
+                //WO_Plan_Cnt = 
+            };
+
+            //bResult = service.InsertBORInfo(vo);
+            if (bResult)
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.InsertSuccess);
+                this.Close();
+            }
 
         }
 

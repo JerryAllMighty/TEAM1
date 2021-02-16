@@ -66,6 +66,7 @@
     <Compile Include="UnitCostVO.cs" />
     <Compile Include="WearingVO.cs" />
     <Compile Include="WorkHistoryVO.cs" />
+    <Compile Include="WorkOrderStatusVO.cs" />
     <Compile Include="WorkOrderVO.cs" />
     <Compile Include="WorkplaceVO.cs" />
   </ItemGroup>

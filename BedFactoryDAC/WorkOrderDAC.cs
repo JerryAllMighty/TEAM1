@@ -275,7 +275,7 @@ namespace BedFactoryDAC
             try
             {
                 StringBuilder sb = new StringBuilder();
-                sb.Append(@"select M.Mat_Num, M.Mat_Name,WO_Plan_Cnt
+                sb.Append(@"select M.Mat_Num, M.Mat_Name, Convert(nchar(10), WO_Plan_Cnt) as WO_Plan_Cnt
                         from  tblWorkOrders WO inner join tblMaterials M on WO.Mat_Num = M.Mat_Num
                         where 1=1 ");
 
@@ -292,6 +292,86 @@ namespace BedFactoryDAC
 
 
                     List<WorkOrderVO> list = Helper.DataReaderMapToList<WorkOrderVO>(cmd.ExecuteReader());
+                    conn.Close();
+
+                    return list;
+                }
+            }
+
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
+            }
+        }
+
+
+        /// <summary>
+        /// 작업지시확정할때 날짜 등록
+        /// </summary>
+        /// <param name="vo"></param>
+        /// <returns></returns>
+        public bool UpdateWorkOrderDate(WorkOrderVO vo)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"insert into tblWorkOrders (WO_Date) 
+                                                           values (@WO_Date) ";
+
+                    cmd.Parameters.AddWithValue("@WO_Date", vo.WO_Date);
+
+                    int iRowAffect = cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    return iRowAffect > 0 ? true : false;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
+
+        public List<WorkOrderStatusVO> GetWorkOrdersStatusInfo(int wpNum, string matNum, int wsNum, string dtFrom, string dtTo)
+        {
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append(@"select O.WO_Date, W.WP_Name, O.Mat_Num, M.Mat_Name, WO_Status, S.Str_Kind, WO_Order_Cnt, H.ErrorCnt, H.WorkCnt-H.ErrorCnt as GoodsCnt
+                            from tblWorkOrders O inner join tblCommonCode C on O.Mat_Num = C.Code_Num
+					                             inner join tblMaterials M on O.Mat_Num = M.Mat_Num
+			    	                             inner join tblStorages S on O.Str_Num = S.Str_Num
+					                             inner join tblWorkHistory H on O.WH_Num = H.WH_Num
+					                             inner join tblWorkplace W on O.WP_Num = W.WP_Num
+                            where WO_Date = getdate() ");
+
+                if (wpNum > 0)
+                    sb.Append(" and WP.WP_Name = @wpNum");
+                if (!string.IsNullOrEmpty(matNum))
+                    sb.Append(" and  M.Mat_Name = @matNum");
+                if (wsNum > 0)
+                    sb.Append(" and WO_Status = @wsNum");
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = sb.ToString();
+                    cmd.Connection = conn;
+
+                    if (wpNum > 0)
+                        cmd.Parameters.AddWithValue("@wpNum", wpNum);
+                    if (!string.IsNullOrEmpty(matNum))
+                        cmd.Parameters.AddWithValue("@matNum", matNum);
+                    if (wsNum > 0)
+                        cmd.Parameters.AddWithValue("@wsNum", wsNum);
+
+                    cmd.Parameters.AddWithValue("@dtFrom", dtFrom.ToString());
+                    cmd.Parameters.AddWithValue("@dtTo", dtTo.ToString());
+
+                    List<WorkOrderStatusVO> list = Helper.DataReaderMapToList<WorkOrderStatusVO>(cmd.ExecuteReader());
                     conn.Close();
 
                     return list;

@@ -44,8 +44,6 @@ namespace BedFactory
             this.label12 = new System.Windows.Forms.Label();
             this.cboMat = new System.Windows.Forms.ComboBox();
             this.cboWs = new System.Windows.Forms.ComboBox();
-            this.cboCompleter = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.dgvWOS = new BedFactory.DatagridviewControl();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
@@ -118,8 +116,6 @@ namespace BedFactory
             this.searchLocationControl1.Controls.Add(this.label12, 0, 1);
             this.searchLocationControl1.Controls.Add(this.cboMat, 7, 0);
             this.searchLocationControl1.Controls.Add(this.cboWs, 1, 1);
-            this.searchLocationControl1.Controls.Add(this.cboCompleter, 4, 1);
-            this.searchLocationControl1.Controls.Add(this.label4, 3, 1);
             this.searchLocationControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchLocationControl1.Location = new System.Drawing.Point(0, 0);
             this.searchLocationControl1.Name = "searchLocationControl1";
@@ -150,6 +146,7 @@ namespace BedFactory
             this.btnSelect.TabIndex = 7;
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // panel2
             // 
@@ -193,11 +190,11 @@ namespace BedFactory
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 13);
+            this.label3.Location = new System.Drawing.Point(28, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 23);
+            this.label3.Size = new System.Drawing.Size(78, 23);
             this.label3.TabIndex = 78;
-            this.label3.Text = "계획시작일";
+            this.label3.Text = "투입시간";
             // 
             // label5
             // 
@@ -247,25 +244,6 @@ namespace BedFactory
             this.cboWs.Size = new System.Drawing.Size(235, 31);
             this.cboWs.TabIndex = 5;
             // 
-            // cboCompleter
-            // 
-            this.cboCompleter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboCompleter.FormattingEnabled = true;
-            this.cboCompleter.Location = new System.Drawing.Point(558, 62);
-            this.cboCompleter.Name = "cboCompleter";
-            this.cboCompleter.Size = new System.Drawing.Size(235, 31);
-            this.cboCompleter.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(456, 62);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 23);
-            this.label4.TabIndex = 87;
-            this.label4.Text = "완료자";
-            // 
             // dgvWOS
             // 
             this.dgvWOS.AllowUserToAddRows = false;
@@ -291,6 +269,7 @@ namespace BedFactory
             this.ClientSize = new System.Drawing.Size(1382, 853);
             this.Name = "frmWorkOrdersStatus";
             this.Text = "작업지시현황";
+            this.Load += new System.EventHandler(this.frmWorkOrdersStatus_Load);
             this.pnlDgv.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
             this.searchLocationControl1.ResumeLayout(false);
@@ -319,7 +298,5 @@ namespace BedFactory
         private System.Windows.Forms.ComboBox cboMat;
         private System.Windows.Forms.ComboBox cboWs;
         private DatagridviewControl dgvWOS;
-        private System.Windows.Forms.ComboBox cboCompleter;
-        private System.Windows.Forms.Label label4;
     }
 }

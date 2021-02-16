@@ -73,7 +73,7 @@ namespace BedFactory
         }
 
         //전체체크/해제
-        private void HeaderCheck_Click(object sender, EventArgs e) // ?
+        private void HeaderCheck_Click(object sender, EventArgs e) 
         {
             dgvWOC.EndEdit();
 
@@ -120,9 +120,15 @@ namespace BedFactory
         {
             dgvWOC.EndEdit();
 
-            //체크된 정보 얻어오는것
+            
+            bool bResult = false;
             List<int> chkWoList = new List<int>();
 
+            WorkOrderVO vo = new WorkOrderVO();
+            WorkOrderService service = new WorkOrderService();
+            bResult = service.UpdateWorkOrderDate(vo);
+
+            //체크된 정보 얻어오는것
             for (int i = 0; i < dgvWOC.Rows.Count; i++)
             {
                 bool isCellChecked = (bool)dgvWOC.Rows[i].Cells["chk"].EditedFormattedValue;
@@ -178,5 +184,6 @@ namespace BedFactory
                 MessageBox.Show(BedFactory.Properties.Settings.Default.DeleteFail);
             }
         }
+
     }
 }
