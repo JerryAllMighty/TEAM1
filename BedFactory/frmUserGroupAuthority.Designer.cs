@@ -29,21 +29,21 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvGroupList = new BedFactory.DatagridviewControl();
             this.dgvAllowedAuthorities = new BedFactory.DatagridviewControl();
+            this.dgvGroupList = new BedFactory.DatagridviewControl();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllowedAuthorities)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupList)).BeginInit();
             this.SuspendLayout();
             // 
             // btn2
@@ -154,25 +154,6 @@ namespace BedFactory
             this.label2.Text = "그룹 목록";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dgvGroupList
-            // 
-            this.dgvGroupList.AllowUserToAddRows = false;
-            this.dgvGroupList.AllowUserToResizeRows = false;
-            this.dgvGroupList.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvGroupList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvGroupList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGroupList.Location = new System.Drawing.Point(3, 38);
-            this.dgvGroupList.Name = "dgvGroupList";
-            this.dgvGroupList.RowHeadersVisible = false;
-            this.dgvGroupList.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvGroupList.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvGroupList.RowTemplate.Height = 27;
-            this.dgvGroupList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGroupList.Size = new System.Drawing.Size(673, 668);
-            this.dgvGroupList.TabIndex = 13;
-            // 
             // dgvAllowedAuthorities
             // 
             this.dgvAllowedAuthorities.AllowUserToAddRows = false;
@@ -181,6 +162,7 @@ namespace BedFactory
             dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvAllowedAuthorities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAllowedAuthorities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAllowedAuthorities.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAllowedAuthorities.Location = new System.Drawing.Point(682, 38);
             this.dgvAllowedAuthorities.Name = "dgvAllowedAuthorities";
             this.dgvAllowedAuthorities.RowHeadersVisible = false;
@@ -192,6 +174,27 @@ namespace BedFactory
             this.dgvAllowedAuthorities.Size = new System.Drawing.Size(673, 668);
             this.dgvAllowedAuthorities.TabIndex = 18;
             // 
+            // dgvGroupList
+            // 
+            this.dgvGroupList.AllowUserToAddRows = false;
+            this.dgvGroupList.AllowUserToResizeRows = false;
+            this.dgvGroupList.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvGroupList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvGroupList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGroupList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvGroupList.Location = new System.Drawing.Point(3, 38);
+            this.dgvGroupList.Name = "dgvGroupList";
+            this.dgvGroupList.RowHeadersVisible = false;
+            this.dgvGroupList.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvGroupList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvGroupList.RowTemplate.Height = 27;
+            this.dgvGroupList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGroupList.Size = new System.Drawing.Size(673, 668);
+            this.dgvGroupList.TabIndex = 13;
+            this.dgvGroupList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroupList_CellDoubleClick_1);
+            // 
             // frmUserGroupAuthority
             // 
             this.ClientSize = new System.Drawing.Size(1382, 853);
@@ -201,8 +204,8 @@ namespace BedFactory
             this.pnlDgv.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllowedAuthorities)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

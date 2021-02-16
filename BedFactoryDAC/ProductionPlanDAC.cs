@@ -37,69 +37,88 @@ namespace BedFactoryDAC
                 return 0;
             }
         }
-        public List<BOMVO> GetBOMInfo(DemandVO demandinfo)
+        //public List<BOMVO> GetBOMInfo(DemandVO demandinfo)
+        //{
+        //    try
+        //    {
+        //        using (SqlCommand cmd = new SqlCommand())
+        //        {
+        //            cmd.Connection = conn;
+        //            cmd.CommandText = @"select Convert(nchar(10), B.Mat_Num) Mat_Num , 
+        //                                     Convert(nchar(10), B.Use_Mat_Num) Use_Mat_Num,
+        //                                    (B.Cnt * OD.Product_Cnt) Cnt,
+        //                                    Convert(nchar(10), WP.WP_Num) WP_Num
+        //                                    from tblBOM B
+        //                                    inner join tblOrders_D OD
+        //                                    on OD.Mat_Num =  B.Mat_Num
+        //                                    inner join tblOrders O
+        //                                    on O.Order_Num = OD.Order_Num
+        //                                    inner join tblWorkplace WP
+        //                                    on WP.Mat_Num = B.Use_Mat_Num
+        //                                    where B.Mat_Num = (
+        //                                    select Mat_Num from tblOrders O
+        //                                    inner join tblOrders_D OD
+        //                                    on O.Order_Num= OD.Order_Num
+        //                                    where O.Order_Num = @Order_Num
+        //                                    )";
+
+        //            cmd.Parameters.AddWithValue("@Order_Num", demandinfo.Order_Num);
+
+
+        //            List<BOMVO> list = Helper.DataReaderMapToList<BOMVO>(cmd.ExecuteReader());
+        //            return list != null ? list : null;
+        //        }
+        //    }
+        //    catch (Exception err)
+        //    {
+        //        Log.WriteError(err.Message);
+        //        return null;
+        //    }
+        //}
+
+        /// <summary>
+        /// 마스터 생산계획을 생성하는 함수
+        /// </summary>
+        /// <returns></returns>
+        public bool InsertMasterProductionPlan(DemandVO demandinfo, string demandnum)
         {
             try
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select Convert(nchar(10), B.Mat_Num) Mat_Num , 
-                                             Convert(nchar(10), B.Use_Mat_Num) Use_Mat_Num,
-                                            (B.Cnt * OD.Product_Cnt) Cnt,
-                                            Convert(nchar(10), WP.WP_Num) WP_Num
-                                            from tblBOM B
-                                            inner join tblOrders_D OD
-                                            on OD.Mat_Num =  B.Mat_Num
-                                            inner join tblOrders O
-                                            on O.Order_Num = OD.Order_Num
-                                            inner join tblWorkplace WP
-                                            on WP.Mat_Num = B.Use_Mat_Num
-                                            where B.Mat_Num = (
-                                            select Mat_Num from tblOrders O
-                                            inner join tblOrders_D OD
-                                            on O.Order_Num= OD.Order_Num
-                                            where O.Order_Num = 10
-                                            )";
-
-                    cmd.Parameters.AddWithValue("Order_Num", demandinfo.Order_Num);
-
-
-                    List<BOMVO> list = Helper.DataReaderMapToList<BOMVO>(cmd.ExecuteReader());
-                    return list != null ? list : null;
-                }
-            }
-            catch (Exception err)
-            {
-                Log.WriteError(err.Message);
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// 생산계획을 생성하는 함수
-        /// </summary>
-        /// <returns></returns>
-        public bool InsertProductionPlan(DemandVO demandinfo, List<BOMVO> list, string demandnum, int ProductionPlanNum)
-        {
-            SqlTransaction trans = conn.BeginTransaction();
-            try {
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    
-                    cmd.Connection = conn;
-                    cmd.Transaction = trans;
                     cmd.CommandText = @"insert into tblProductionPlan(Demand_Plan_Num, Firstman, LastMan)
                                         values (@Demand_Plan_Num, @Firstman, @LastMan)";
                     cmd.Parameters.AddWithValue("@Demand_Plan_Num", demandnum);
                     cmd.Parameters.AddWithValue("@Firstman", demandinfo.FirstMan);
                     cmd.Parameters.AddWithValue("@LastMan", demandinfo.LastMan);
 
-                    if (cmd.ExecuteNonQuery() < 1)
-                    {
-                        trans.Rollback();
-                        return false;
-                    }
+                    int iRowAffect = cmd.ExecuteNonQuery();
+
+                    return iRowAffect > 0 ? true : false;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
+
+
+        /// <summary>
+        /// 디테일 생산계획을 생성하는 함수
+        /// </summary>
+        /// <returns></returns>
+        public bool InsertDetailProductionPlan(DemandVO demandinfo, int cnt, string WP_Num, string Mat_Num,int ProductionPlanNum, int adddays)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"insert into tblProductionPlan_D(ProductionPlan_Num, ProductionDate, ProductionCnt,WP_Num, Mat_Num)
+                        values(@ProductionPlan_Num, @ProductionDate, @ProductionCnt,@WP_Num, @Mat_Num)";
 
                     cmd.Parameters.Add("@ProductionPlan_Num", System.Data.SqlDbType.Int);
                     cmd.Parameters.Add("@ProductionDate", System.Data.SqlDbType.DateTime);
@@ -107,38 +126,29 @@ namespace BedFactoryDAC
                     cmd.Parameters.Add("@WP_Num", System.Data.SqlDbType.Int);
                     cmd.Parameters.Add("@Mat_Num", System.Data.SqlDbType.NChar);
 
+                    cmd.Parameters["@ProductionPlan_Num"].Value = ProductionPlanNum + 1;
+                    cmd.Parameters["@ProductionDate"].Value = Convert.ToDateTime(demandinfo.UploadDate).AddDays(adddays);
+                    cmd.Parameters["@ProductionCnt"].Value = cnt;
+                    cmd.Parameters["@WP_Num"].Value = WP_Num;
+                    cmd.Parameters["@Mat_Num"].Value = Mat_Num;
 
-                    for (int i =0; i < list.Count; i++)
+                    int iRowAffect = cmd.ExecuteNonQuery();
+
+                    if (iRowAffect < 1)
                     {
-                        cmd.CommandText = @"insert into tblProductionPlan_D(ProductionPlan_Num, ProductionDate, ProductionCnt,WP_Num, Mat_Num)
-                        values(@ProductionPlan_Num, @ProductionDate, @ProductionCnt,@WP_Num, @Mat_Num)";
-                        cmd.Parameters["@ProductionPlan_Num"].Value = ProductionPlanNum + 1;
-                        cmd.Parameters["@ProductionDate"].Value = Convert.ToDateTime(demandinfo.UploadDate).AddDays(i);
-                        cmd.Parameters["@ProductionCnt"].Value = list[i].Cnt;
-                        cmd.Parameters["@WP_Num"].Value = list[i].WP_Num;
-                        cmd.Parameters["@Mat_Num"].Value = list[i].Mat_Num;
-
-                        int iRowAffect = cmd.ExecuteNonQuery();
-
-                        if (iRowAffect < 1)
-                        {
-                            trans.Rollback();
-                            return false;
-                        }
-
+                        return false;
                     }
-                    trans.Commit();
+
+
                     return true;
                 }
             }
             catch (Exception err)
             {
                 Log.WriteError(err.Message);
-                trans.Rollback();
                 return false;
             }
         }
-
         public List<ProductionPlanVO> GetProductionPlanInfo(ProductionPlanVO productionplaninfo, string date)
         {
             try
@@ -160,8 +170,8 @@ namespace BedFactoryDAC
 										where S.Deadline = @Deadline" + sb.ToString();
 
                     cmd.Parameters.AddWithValue("@Deadline", date);
-                   
-                    
+
+
 
                     if (productionplaninfo.Demand_Plan_Num.Length > 0)
                     {

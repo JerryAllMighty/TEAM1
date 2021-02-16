@@ -52,6 +52,7 @@
     <Compile Include="CompanyVO.cs" />
     <Compile Include="DemandVO.cs" />
     <Compile Include="EmployeeVO.cs" />
+    <Compile Include="ErrorHistoryVO.cs" />
     <Compile Include="MaterialsVO.cs" />
     <Compile Include="ProcessVO.cs" />
     <Compile Include="ProductionPlanVO.cs" />

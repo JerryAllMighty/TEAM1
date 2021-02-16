@@ -50,7 +50,9 @@
     <Compile Include="CommonCodeService.cs" />
     <Compile Include="DemandPlanService.cs" />
     <Compile Include="EmployeesService.cs" />
+    <Compile Include="ErrorService.cs" />
     <Compile Include="MaterialsService.cs" />
+    <Compile Include="MRPService.cs" />
     <Compile Include="ProcessService.cs" />
     <Compile Include="ProductionPlanService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
