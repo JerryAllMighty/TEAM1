@@ -36,7 +36,7 @@ namespace BedFactoryService
             return dac.GetMaterialsCombo();
         }
 
-        //자재코드정도
+        //자재코드정보
         public List<MaterialsVO> GetMatCodeInfo(string matNum)
         {
             MaterialsDAC dac = new MaterialsDAC();

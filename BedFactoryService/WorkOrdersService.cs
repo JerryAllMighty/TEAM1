@@ -21,5 +21,16 @@ namespace BedFactoryService
             WorkOrdersDAC dac = new WorkOrdersDAC();
             return dac.DeleteWorkOrdersInfo(num);
         }
+
+        /// <summary>
+        /// 작업지시상태 업데이트
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public bool UpdateStatusWorkOrdersInfo(List<int> nums)
+        {
+            WorkOrdersDAC dac = new WorkOrdersDAC();
+            return dac.UpdateStatusWorkOrdersInfo(nums);
+        }
     }
 }

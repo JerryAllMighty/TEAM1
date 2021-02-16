@@ -88,7 +88,12 @@ namespace BedFactoryDAC
             }
         }
 
-        public bool DeleteWorkOrdersInfo(int num)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public bool DeleteWorkOrdersInfo(List<int> nums)
         {
             try
             {
@@ -99,11 +104,49 @@ namespace BedFactoryDAC
                                         from tblWorkOrders
                                         where WO_Num = @WO_Num";
 
-                    cmd.Parameters.AddWithValue("@WO_Num", num);
+                    int iRowAffect = 0;
+                    foreach (int num in nums)
+                    {
+                        cmd.Parameters["@WO_Num"].Value = num;
 
-                    int iRowAffect = cmd.ExecuteNonQuery();
+                        iRowAffect += cmd.ExecuteNonQuery();
+                    }
 
                     return iRowAffect > 0 ? true : false;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 작업지시상태 작업지시확정으로 업데이트
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public bool UpdateStatusWorkOrdersInfo(List<int> nums)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = Conn;
+                    cmd.CommandText = @"update tblWorkOrders set WO_Status = 'WO002'  
+                                        where WO_Num = @WO_Num"; // WO002 = 작업지시확정
+                    cmd.Parameters.Add(new SqlParameter("@WO_Num", System.Data.SqlDbType.Int));
+
+                    int iRowAffect = 0;
+                    foreach (int num in nums)
+                    {
+                        cmd.Parameters["@WO_Num"].Value = num;
+
+                        iRowAffect += cmd.ExecuteNonQuery();
+                    }
+
+                    return (iRowAffect == nums.Count) ? true : false;
                 }
             }
             catch (Exception err)

@@ -24,7 +24,13 @@ namespace BedFactory
 
         private void frmWorkOrderCreate_Load(object sender, EventArgs e)
         {
-            dgvWOC.SetGridCheckBox("");
+            //dgvWOC.SetGridCheckBox("");
+            DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+            chk.HeaderText = "";
+            chk.Name = "chk";
+            chk.Width = 30;
+            dgvWOC.Columns.Add(chk);
+
             dgvWOC.SetGridViewColumn("작업지시번호", "WO_Num");
             dgvWOC.SetGridViewColumn("상세공정명", "Process_Name_D");
             dgvWOC.SetGridViewColumn("작업장명", "WP_Name");
@@ -115,18 +121,18 @@ namespace BedFactory
             dgvWOC.EndEdit();
 
             //체크된 정보 얻어오는것
-            List<WorkOrdersVO> chkWoList = new List<WorkOrdersVO>();
+            List<int> chkWoList = new List<int>();
 
             for (int i = 0; i < dgvWOC.Rows.Count; i++)
             {
                 bool isCellChecked = (bool)dgvWOC.Rows[i].Cells["chk"].EditedFormattedValue;
                 if (isCellChecked == true)
                 {
-                  // chkWoList.Add(dgvWOC.Rows[i].Cells[1].Value.ToString());
+                  chkWoList.Add(Convert.ToInt32(dgvWOC.Rows[i].Cells[1].Value));
                 }
             }
 
-            MessageBox.Show(String.Join(", ", chkWoList));
+            //MessageBox.Show(String.Join(", ", chkWoList));
         }
 
         //작업지시 등록 버튼

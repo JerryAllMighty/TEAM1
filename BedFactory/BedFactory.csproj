@@ -456,18 +456,6 @@
     <Compile Include="Pop-up\frmUserRegister.Designer.cs">
       <DependentUpon>frmUserRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="Off-pumpDetailCategorization.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Off-pumpDetailCategorization.designer.cs">
-      <DependentUpon>Off-pumpDetailCategorization.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Off-pumpLargeCategory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Off-pumpLargeCategory.designer.cs">
-      <DependentUpon>Off-pumpLargeCategory.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pop-up\frmBORreg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -629,6 +617,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmWorkplaceManagement.resx">
       <DependentUpon>frmWorkplaceManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkResultReg.resx">
+      <DependentUpon>frmWorkResultReg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmCheckInfo.resx">
       <DependentUpon>frmCheckInfo.cs</DependentUpon>
