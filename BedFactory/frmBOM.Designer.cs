@@ -156,14 +156,14 @@ namespace BedFactory
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 19);
             this.label2.TabIndex = 0;
-            this.label2.Text = "* 자재종류";
+            this.label2.Text = "* 자재구분";
             // 
             // cboKind
             // 
             this.cboKind.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cboKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboKind.FormattingEnabled = true;
-            this.cboKind.Location = new System.Drawing.Point(136, 18);
+            this.cboKind.Location = new System.Drawing.Point(136, 21);
             this.cboKind.Name = "cboKind";
             this.cboKind.Size = new System.Drawing.Size(231, 25);
             this.cboKind.TabIndex = 1;
@@ -174,7 +174,7 @@ namespace BedFactory
             this.cboName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cboName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboName.FormattingEnabled = true;
-            this.cboName.Location = new System.Drawing.Point(553, 21);
+            this.cboName.Location = new System.Drawing.Point(553, 18);
             this.cboName.Name = "cboName";
             this.cboName.Size = new System.Drawing.Size(231, 25);
             this.cboName.TabIndex = 18;

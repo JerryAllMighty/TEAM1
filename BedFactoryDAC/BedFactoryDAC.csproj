@@ -57,6 +57,7 @@
     <Compile Include="ConnectionAccess.cs" />
     <Compile Include="DemandPlanDAC.cs" />
     <Compile Include="EmployeeDAC.cs" />
+    <Compile Include="ErrorDAC.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="LoggingUtillity.cs" />
     <Compile Include="MaterialsDAC.cs" />

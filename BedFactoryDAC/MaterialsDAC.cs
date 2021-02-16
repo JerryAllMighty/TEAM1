@@ -98,6 +98,7 @@ namespace BedFactoryDAC
                                         set Mat_Name = @Mat_Name, Mat_Category = @Mat_Category, Mat_Kind = @Mat_Kind, Mat_Size = @Mat_Size,
 	                                        LastMan = @LastMan, LastDate = getdate()
                                         where Mat_Num = @Mat_Num";
+                    cmd.Parameters.AddWithValue("@Mat_Num", vo.Mat_Num);
                     cmd.Parameters.AddWithValue("@Mat_Name", vo.Mat_Name);
                     cmd.Parameters.AddWithValue("@Mat_Category", vo.Mat_Category);
                     cmd.Parameters.AddWithValue("@Mat_Kind", vo.Mat_Kind);
