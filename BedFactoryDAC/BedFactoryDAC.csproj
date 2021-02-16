@@ -49,19 +49,15 @@
     <Compile Include="AESSalt.cs" />
     <Compile Include="AuthorityDAC.cs" />
     <Compile Include="BalzooDAC.cs" />
-    <Compile Include="BOMDAC.cs" />
     <Compile Include="BORDAC.cs" />
     <Compile Include="CheckDAC.cs" />
     <Compile Include="CommonCodeDAC.cs" />
     <Compile Include="CompanyDAC.cs" />
     <Compile Include="ConnectionAccess.cs" />
     <Compile Include="DemandPlanDAC.cs" />
-    <Compile Include="EmployeeDAC.cs" />
-    <Compile Include="ErrorDAC.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="LoggingUtillity.cs" />
     <Compile Include="MaterialsDAC.cs" />
-    <Compile Include="MRPDAC.cs" />
     <Compile Include="ProcessDAC.cs" />
     <Compile Include="ProductionPlanDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,8 +66,7 @@
     <Compile Include="ShipmentDAC.cs" />
     <Compile Include="UnitCostDAC.cs" />
     <Compile Include="WearingDAC.cs" />
-    <Compile Include="WorkHistoryDAC.cs" />
-    <Compile Include="WorkOrderDAC.cs" />
+    <Compile Include="WorkOrdersDAC.cs" />
     <Compile Include="WorkplaceDAC.cs" />
   </ItemGroup>
   <ItemGroup>

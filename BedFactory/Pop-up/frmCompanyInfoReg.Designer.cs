@@ -56,8 +56,6 @@ namespace BedFactory.Pop_up
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.btnRegAddr = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -84,7 +82,7 @@ namespace BedFactory.Pop_up
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(19, 286);
+            this.label39.Location = new System.Drawing.Point(19, 210);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(17, 23);
             this.label39.TabIndex = 114;
@@ -93,7 +91,7 @@ namespace BedFactory.Pop_up
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(40, 284);
+            this.label40.Location = new System.Drawing.Point(40, 208);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(78, 23);
             this.label40.TabIndex = 112;
@@ -101,7 +99,7 @@ namespace BedFactory.Pop_up
             // 
             // txtInfo
             // 
-            this.txtInfo.Location = new System.Drawing.Point(134, 281);
+            this.txtInfo.Location = new System.Drawing.Point(134, 205);
             this.txtInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtInfo.Multiline = true;
             this.txtInfo.Name = "txtInfo";
@@ -112,7 +110,7 @@ namespace BedFactory.Pop_up
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Lavender;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancel.Location = new System.Drawing.Point(342, 522);
+            this.btnCancel.Location = new System.Drawing.Point(342, 442);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(120, 50);
@@ -124,7 +122,7 @@ namespace BedFactory.Pop_up
             // 
             this.btnSave.BackColor = System.Drawing.Color.Lavender;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSave.Location = new System.Drawing.Point(193, 522);
+            this.btnSave.Location = new System.Drawing.Point(193, 442);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(120, 50);
@@ -328,24 +326,6 @@ namespace BedFactory.Pop_up
             this.label5.TabIndex = 149;
             this.label5.Text = "업체주소";
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(134, 195);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 10);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(505, 34);
-            this.textBox2.TabIndex = 152;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(134, 233);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 10);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(505, 34);
-            this.textBox3.TabIndex = 153;
-            // 
             // btnRegAddr
             // 
             this.btnRegAddr.BackColor = System.Drawing.Color.Lavender;
@@ -363,10 +343,8 @@ namespace BedFactory.Pop_up
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(656, 587);
+            this.ClientSize = new System.Drawing.Size(656, 503);
             this.Controls.Add(this.btnRegAddr);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
@@ -432,8 +410,6 @@ namespace BedFactory.Pop_up
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button btnRegAddr;
     }
 }

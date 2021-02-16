@@ -290,17 +290,11 @@
     <Compile Include="frmUserGroupAuthority.Designer.cs">
       <DependentUpon>frmUserGroupAuthority.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmWorkOrderCreate.cs">
+    <Compile Include="frmWorkOrdersCreate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmWorkOrderCreate.Designer.cs">
-      <DependentUpon>frmWorkOrderCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmWorkOrderStatus.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmWorkOrderStatus.Designer.cs">
-      <DependentUpon>frmWorkOrderStatus.cs</DependentUpon>
+    <Compile Include="frmWorkOrdersCreate.Designer.cs">
+      <DependentUpon>frmWorkOrdersCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCompanyManagement.cs">
       <SubType>Form</SubType>
@@ -308,11 +302,23 @@
     <Compile Include="frmCompanyManagement.Designer.cs">
       <DependentUpon>frmCompanyManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmWorkOrdersStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkOrdersStatus.Designer.cs">
+      <DependentUpon>frmWorkOrdersStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmWorkplaceManagement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmWorkplaceManagement.Designer.cs">
       <DependentUpon>frmWorkplaceManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWorkResultReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkResultReg.Designer.cs">
+      <DependentUpon>frmWorkResultReg.cs</DependentUpon>
     </Compile>
     <Compile Include="Pop-up\frmCheckInfo.cs">
       <SubType>Form</SubType>
@@ -464,18 +470,6 @@
     <Compile Include="Pop-up\frmUserRegister.Designer.cs">
       <DependentUpon>frmUserRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="Off-pumpDetailCategorization.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Off-pumpDetailCategorization.designer.cs">
-      <DependentUpon>Off-pumpDetailCategorization.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Off-pumpLargeCategory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Off-pumpLargeCategory.designer.cs">
-      <DependentUpon>Off-pumpLargeCategory.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pop-up\frmBORreg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -487,6 +481,12 @@
     </Compile>
     <Compile Include="Pop-up\frmCompanyInfoReg.Designer.cs">
       <DependentUpon>frmCompanyInfoReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pop-up\frmWorkOrdersCreatePOPUP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pop-up\frmWorkOrdersCreatePOPUP.Designer.cs">
+      <DependentUpon>frmWorkOrdersCreatePOPUP.cs</DependentUpon>
     </Compile>
     <Compile Include="Pop-up\frmWorkplaceReg.cs">
       <SubType>Form</SubType>
@@ -629,17 +629,20 @@
     <EmbeddedResource Include="frmUserGroupAuthority.resx">
       <DependentUpon>frmUserGroupAuthority.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmWorkOrderCreate.resx">
-      <DependentUpon>frmWorkOrderCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmWorkOrderStatus.resx">
-      <DependentUpon>frmWorkOrderStatus.cs</DependentUpon>
+    <EmbeddedResource Include="frmWorkOrdersCreate.resx">
+      <DependentUpon>frmWorkOrdersCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCompanyManagement.resx">
       <DependentUpon>frmCompanyManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkOrdersStatus.resx">
+      <DependentUpon>frmWorkOrdersStatus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmWorkplaceManagement.resx">
       <DependentUpon>frmWorkplaceManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkResultReg.resx">
+      <DependentUpon>frmWorkResultReg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmCheckInfo.resx">
       <DependentUpon>frmCheckInfo.cs</DependentUpon>
@@ -721,6 +724,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmCompanyInfoReg.resx">
       <DependentUpon>frmCompanyInfoReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pop-up\frmWorkOrdersCreatePOPUP.resx">
+      <DependentUpon>frmWorkOrdersCreatePOPUP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmWorkplaceReg.resx">
       <DependentUpon>frmWorkplaceReg.cs</DependentUpon>
