@@ -19,7 +19,73 @@ namespace BedFactoryDAC
             conn = new SqlConnection(strConn);
             conn.Open();
         }
+        /// <summary>
+        /// 해당 그룹에 해당하는 직원들 데려오기
+        /// </summary>
+        /// <param name="empname"></param>
+        /// <returns></returns>
+        public List<EmployeeVO> GetMembersofGroup(string GroupName)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"select Convert(nchar(10), Emp_Num) Emp_Num, Emp_Name, Emp_Category
+											from tblEmployees where Emp_Department= @Emp_Department";
 
+                    cmd.Parameters.AddWithValue("@Emp_Department", GroupName);
+
+                    List<EmployeeVO> list = Helper.DataReaderMapToList<EmployeeVO>(cmd.ExecuteReader());
+                    return list != null ? list : null;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
+            }
+
+        }
+
+        /// <summary>
+        /// 직원 이름으로 정보 검색해오기
+        /// </summary>
+        /// <param name="WPNum"></param>
+        /// <returns></returns>
+        public List<EmployeeVO> GetEmployeeListByEmpName(string empname)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"select Convert(nchar(10), E.Emp_Num) Emp_Num , E.Emp_Category, E.Emp_Name, E.Emp_Department, 
+											Convert(nchar(10), AL.ListNum)ListNum
+											from tblEmployees E
+											inner join tblAuthorityList AL
+											on E.ListNum = AL.ListNum
+											where Emp_Name = @Emp_Name";
+
+                    cmd.Parameters.AddWithValue("@Emp_Name", empname);
+
+                    List<EmployeeVO> list = Helper.DataReaderMapToList<EmployeeVO>(cmd.ExecuteReader());
+                    return list != null ? list : null;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
+            }
+
+        }
+
+        /// <summary>
+        /// 작업장 번호로 작업 가능한 직원들 불러오기
+        /// </summary>
+        /// <param name="WPNum"></param>
+        /// <returns></returns>
         public List<EmployeeVO> GetEmployeeListByWPNum(string WPNum)
         {
             try {

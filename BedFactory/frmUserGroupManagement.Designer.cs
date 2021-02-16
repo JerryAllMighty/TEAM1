@@ -29,36 +29,36 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtEmpName = new System.Windows.Forms.TextBox();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
             this.lblEmployeeName = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblGroupEmpList = new System.Windows.Forms.Label();
-            this.lblUserList = new System.Windows.Forms.Label();
-            this.lblUserGroupList = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dgvUserList = new BedFactory.DatagridviewControl();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.dgvUserGroupList = new BedFactory.DatagridviewControl();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvGroupEmpList = new BedFactory.DatagridviewControl();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dgvUserGroupList = new BedFactory.DatagridviewControl();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dgvUserList = new BedFactory.DatagridviewControl();
+            this.lblUserList = new System.Windows.Forms.Label();
+            this.lblUserGroupList = new System.Windows.Forms.Label();
+            this.lblGroupEmpList = new System.Windows.Forms.Label();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.searchLocationControl1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUserList)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUserGroupList)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroupEmpList)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserGroupList)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserList)).BeginInit();
             this.SuspendLayout();
             // 
             // btn2
@@ -80,6 +80,7 @@ namespace BedFactory
             // btn1
             // 
             this.btn1.Text = "저장";
+            this.btn1.Visible = false;
             this.btn1.Click += new System.EventHandler(this.btn1_Click_1);
             // 
             // pnlDgv
@@ -150,6 +151,7 @@ namespace BedFactory
             this.btnSelect.TabIndex = 49;
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -171,97 +173,6 @@ namespace BedFactory
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1358, 704);
             this.tableLayoutPanel1.TabIndex = 10;
-            // 
-            // lblGroupEmpList
-            // 
-            this.lblGroupEmpList.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblGroupEmpList.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblGroupEmpList.Location = new System.Drawing.Point(907, 0);
-            this.lblGroupEmpList.Name = "lblGroupEmpList";
-            this.lblGroupEmpList.Size = new System.Drawing.Size(185, 35);
-            this.lblGroupEmpList.TabIndex = 9;
-            this.lblGroupEmpList.Text = "그룹별 직원 리스트";
-            this.lblGroupEmpList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblUserList
-            // 
-            this.lblUserList.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblUserList.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblUserList.Location = new System.Drawing.Point(3, 0);
-            this.lblUserList.Name = "lblUserList";
-            this.lblUserList.Size = new System.Drawing.Size(132, 35);
-            this.lblUserList.TabIndex = 7;
-            this.lblUserList.Text = "사용자목록";
-            this.lblUserList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblUserGroupList
-            // 
-            this.lblUserGroupList.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblUserGroupList.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblUserGroupList.Location = new System.Drawing.Point(455, 0);
-            this.lblUserGroupList.Name = "lblUserGroupList";
-            this.lblUserGroupList.Size = new System.Drawing.Size(182, 35);
-            this.lblUserGroupList.TabIndex = 8;
-            this.lblUserGroupList.Text = "사용자 그룹 목록";
-            this.lblUserGroupList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.dgvUserList);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 38);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(446, 663);
-            this.panel2.TabIndex = 12;
-            // 
-            // dgvUserList
-            // 
-            this.dgvUserList.AllowUserToAddRows = false;
-            this.dgvUserList.AllowUserToResizeRows = false;
-            this.dgvUserList.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvUserList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvUserList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUserList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvUserList.Location = new System.Drawing.Point(0, 0);
-            this.dgvUserList.Name = "dgvUserList";
-            this.dgvUserList.RowHeadersVisible = false;
-            this.dgvUserList.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvUserList.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvUserList.RowTemplate.Height = 27;
-            this.dgvUserList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUserList.Size = new System.Drawing.Size(446, 663);
-            this.dgvUserList.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.dgvUserGroupList);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(455, 38);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(446, 663);
-            this.panel3.TabIndex = 13;
-            // 
-            // dgvUserGroupList
-            // 
-            this.dgvUserGroupList.AllowUserToAddRows = false;
-            this.dgvUserGroupList.AllowUserToResizeRows = false;
-            this.dgvUserGroupList.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvUserGroupList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvUserGroupList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUserGroupList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvUserGroupList.Location = new System.Drawing.Point(0, 0);
-            this.dgvUserGroupList.Name = "dgvUserGroupList";
-            this.dgvUserGroupList.RowHeadersVisible = false;
-            this.dgvUserGroupList.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvUserGroupList.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvUserGroupList.RowTemplate.Height = 27;
-            this.dgvUserGroupList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUserGroupList.Size = new System.Drawing.Size(446, 663);
-            this.dgvUserGroupList.TabIndex = 0;
             // 
             // panel4
             // 
@@ -292,6 +203,99 @@ namespace BedFactory
             this.dgvGroupEmpList.Size = new System.Drawing.Size(448, 663);
             this.dgvGroupEmpList.TabIndex = 0;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dgvUserGroupList);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(455, 38);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(446, 663);
+            this.panel3.TabIndex = 13;
+            // 
+            // dgvUserGroupList
+            // 
+            this.dgvUserGroupList.AllowUserToAddRows = false;
+            this.dgvUserGroupList.AllowUserToResizeRows = false;
+            this.dgvUserGroupList.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvUserGroupList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvUserGroupList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUserGroupList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUserGroupList.Location = new System.Drawing.Point(0, 0);
+            this.dgvUserGroupList.Name = "dgvUserGroupList";
+            this.dgvUserGroupList.RowHeadersVisible = false;
+            this.dgvUserGroupList.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvUserGroupList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvUserGroupList.RowTemplate.Height = 27;
+            this.dgvUserGroupList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUserGroupList.Size = new System.Drawing.Size(446, 663);
+            this.dgvUserGroupList.TabIndex = 0;
+            this.dgvUserGroupList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserGroupList_CellDoubleClick);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dgvUserList);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 38);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(446, 663);
+            this.panel2.TabIndex = 12;
+            // 
+            // dgvUserList
+            // 
+            this.dgvUserList.AllowUserToAddRows = false;
+            this.dgvUserList.AllowUserToResizeRows = false;
+            this.dgvUserList.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvUserList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvUserList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUserList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUserList.Location = new System.Drawing.Point(0, 0);
+            this.dgvUserList.Name = "dgvUserList";
+            this.dgvUserList.RowHeadersVisible = false;
+            this.dgvUserList.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvUserList.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvUserList.RowTemplate.Height = 27;
+            this.dgvUserList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUserList.Size = new System.Drawing.Size(446, 663);
+            this.dgvUserList.TabIndex = 0;
+            this.dgvUserList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserList_CellDoubleClick);
+            // 
+            // lblUserList
+            // 
+            this.lblUserList.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblUserList.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblUserList.Location = new System.Drawing.Point(3, 0);
+            this.lblUserList.Name = "lblUserList";
+            this.lblUserList.Size = new System.Drawing.Size(132, 35);
+            this.lblUserList.TabIndex = 7;
+            this.lblUserList.Text = "사용자목록";
+            this.lblUserList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblUserGroupList
+            // 
+            this.lblUserGroupList.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblUserGroupList.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblUserGroupList.Location = new System.Drawing.Point(455, 0);
+            this.lblUserGroupList.Name = "lblUserGroupList";
+            this.lblUserGroupList.Size = new System.Drawing.Size(182, 35);
+            this.lblUserGroupList.TabIndex = 8;
+            this.lblUserGroupList.Text = "사용자 그룹 목록";
+            this.lblUserGroupList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblGroupEmpList
+            // 
+            this.lblGroupEmpList.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblGroupEmpList.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblGroupEmpList.Location = new System.Drawing.Point(907, 0);
+            this.lblGroupEmpList.Name = "lblGroupEmpList";
+            this.lblGroupEmpList.Size = new System.Drawing.Size(185, 35);
+            this.lblGroupEmpList.TabIndex = 9;
+            this.lblGroupEmpList.Text = "그룹별 직원 리스트";
+            this.lblGroupEmpList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // frmUserGroupManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -299,19 +303,19 @@ namespace BedFactory
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1382, 853);
             this.Name = "frmUserGroupManagement";
-            this.Text = "사용자 그룹 관리";
+            this.Text = "사용자 그룹 조회";
             this.Load += new System.EventHandler(this.frmUserGroupManagement_Load);
             this.pnlDgv.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
             this.searchLocationControl1.ResumeLayout(false);
             this.searchLocationControl1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUserList)).EndInit();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUserGroupList)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroupEmpList)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserGroupList)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
