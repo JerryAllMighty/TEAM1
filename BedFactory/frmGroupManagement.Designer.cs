@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblGroupModify = new System.Windows.Forms.Label();
             this.lblAddGroup = new System.Windows.Forms.Label();
             this.txtGroupName = new System.Windows.Forms.TextBox();
@@ -100,7 +100,7 @@ namespace BedFactory
             // 
             this.lblGroupModify.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblGroupModify.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblGroupModify.Location = new System.Drawing.Point(36, 104);
+            this.lblGroupModify.Location = new System.Drawing.Point(36, 0);
             this.lblGroupModify.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblGroupModify.Name = "lblGroupModify";
             this.lblGroupModify.Size = new System.Drawing.Size(95, 25);
@@ -112,7 +112,7 @@ namespace BedFactory
             // 
             this.lblAddGroup.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblAddGroup.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblAddGroup.Location = new System.Drawing.Point(372, 104);
+            this.lblAddGroup.Location = new System.Drawing.Point(372, 0);
             this.lblAddGroup.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblAddGroup.Name = "lblAddGroup";
             this.lblAddGroup.Size = new System.Drawing.Size(95, 25);
@@ -123,18 +123,19 @@ namespace BedFactory
             // txtGroupName
             // 
             this.txtGroupName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtGroupName.Location = new System.Drawing.Point(172, 572);
+            this.txtGroupName.Location = new System.Drawing.Point(172, 524);
             this.txtGroupName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtGroupName.Name = "txtGroupName";
             this.txtGroupName.Size = new System.Drawing.Size(160, 30);
             this.txtGroupName.TabIndex = 8;
+            this.txtGroupName.TextChanged += new System.EventHandler(this.txtGroupName_TextChanged_1);
             // 
             // lblGroupName
             // 
             this.lblGroupName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblGroupName.AutoSize = true;
             this.lblGroupName.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblGroupName.Location = new System.Drawing.Point(49, 575);
+            this.lblGroupName.Location = new System.Drawing.Point(49, 526);
             this.lblGroupName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGroupName.Name = "lblGroupName";
             this.lblGroupName.Size = new System.Drawing.Size(69, 25);
@@ -144,18 +145,19 @@ namespace BedFactory
             // txtGroupCode
             // 
             this.txtGroupCode.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtGroupCode.Location = new System.Drawing.Point(172, 337);
+            this.txtGroupCode.Location = new System.Drawing.Point(172, 192);
             this.txtGroupCode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtGroupCode.Name = "txtGroupCode";
             this.txtGroupCode.Size = new System.Drawing.Size(160, 30);
             this.txtGroupCode.TabIndex = 6;
+            this.txtGroupCode.TextChanged += new System.EventHandler(this.txtGroupCode_TextChanged_1);
             // 
             // lblGroupCode
             // 
             this.lblGroupCode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblGroupCode.AutoSize = true;
             this.lblGroupCode.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblGroupCode.Location = new System.Drawing.Point(40, 340);
+            this.lblGroupCode.Location = new System.Drawing.Point(40, 195);
             this.lblGroupCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGroupCode.Name = "lblGroupCode";
             this.lblGroupCode.Size = new System.Drawing.Size(88, 25);
@@ -165,20 +167,22 @@ namespace BedFactory
             // txtGroupName2
             // 
             this.txtGroupName2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtGroupName2.Location = new System.Drawing.Point(508, 572);
+            this.txtGroupName2.Location = new System.Drawing.Point(508, 524);
             this.txtGroupName2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtGroupName2.Name = "txtGroupName2";
             this.txtGroupName2.Size = new System.Drawing.Size(161, 30);
             this.txtGroupName2.TabIndex = 12;
+            this.txtGroupName2.TextChanged += new System.EventHandler(this.txtGroupName2_TextChanged_1);
             // 
             // txtGroupCode2
             // 
             this.txtGroupCode2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtGroupCode2.Location = new System.Drawing.Point(508, 337);
+            this.txtGroupCode2.Location = new System.Drawing.Point(508, 192);
             this.txtGroupCode2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtGroupCode2.Name = "txtGroupCode2";
             this.txtGroupCode2.Size = new System.Drawing.Size(161, 30);
             this.txtGroupCode2.TabIndex = 10;
+            this.txtGroupCode2.TextChanged += new System.EventHandler(this.txtGroupCode2_TextChanged_1);
             // 
             // lblGroupName2
             // 
@@ -186,7 +190,7 @@ namespace BedFactory
             this.lblGroupName2.AutoSize = true;
             this.lblGroupName2.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGroupName2.ForeColor = System.Drawing.Color.Red;
-            this.lblGroupName2.Location = new System.Drawing.Point(381, 575);
+            this.lblGroupName2.Location = new System.Drawing.Point(381, 526);
             this.lblGroupName2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGroupName2.Name = "lblGroupName2";
             this.lblGroupName2.Size = new System.Drawing.Size(78, 25);
@@ -199,7 +203,7 @@ namespace BedFactory
             this.lblGroupCode2.AutoSize = true;
             this.lblGroupCode2.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGroupCode2.ForeColor = System.Drawing.Color.Red;
-            this.lblGroupCode2.Location = new System.Drawing.Point(371, 340);
+            this.lblGroupCode2.Location = new System.Drawing.Point(371, 195);
             this.lblGroupCode2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGroupCode2.Name = "lblGroupCode2";
             this.lblGroupCode2.Size = new System.Drawing.Size(97, 25);
@@ -264,20 +268,21 @@ namespace BedFactory
             this.dgvGroupList.AllowUserToAddRows = false;
             this.dgvGroupList.AllowUserToResizeRows = false;
             this.dgvGroupList.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvGroupList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvGroupList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvGroupList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGroupList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvGroupList.Location = new System.Drawing.Point(0, 0);
             this.dgvGroupList.Name = "dgvGroupList";
             this.dgvGroupList.RowHeadersVisible = false;
             this.dgvGroupList.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvGroupList.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvGroupList.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvGroupList.RowTemplate.Height = 27;
             this.dgvGroupList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGroupList.Size = new System.Drawing.Size(671, 701);
             this.dgvGroupList.TabIndex = 0;
+            this.dgvGroupList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroupList_CellDoubleClick_1);
             // 
             // frmGroupManagement
             // 

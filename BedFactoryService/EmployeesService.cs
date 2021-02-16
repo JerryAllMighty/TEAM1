@@ -25,5 +25,22 @@ namespace BedFactoryService
             EmployeeDAC dac = new EmployeeDAC();
             return dac.Login(id, pw);
         }
+        /// <summary>
+        /// 직원 이름으로 검색해온다
+        /// </summary>
+        /// <param name="WPNum"></param>
+        /// <returns></returns>
+        public List<EmployeeVO> GetEmployeeListByEmpName(string EmpName)
+        {
+            EmployeeDAC dac = new EmployeeDAC();
+            return dac.GetEmployeeListByEmpName(EmpName);
+        }
+
+        public List<EmployeeVO> GetMembersofGroup(string GroupName)
+        {
+            EmployeeDAC dac = new EmployeeDAC();
+            return dac.GetMembersofGroup(GroupName);
+        }
+
     }
 }

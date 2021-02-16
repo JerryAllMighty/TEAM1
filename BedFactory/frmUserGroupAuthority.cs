@@ -62,7 +62,7 @@ namespace BedFactory
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dgvGroupList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvGroupList_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             AuthorityService service = new AuthorityService();
             List<AuthorityVO> authList = service.GetAuthorityInfoByGroupName(dgvGroupList[1, e.RowIndex].Value.ToString());
@@ -70,7 +70,6 @@ namespace BedFactory
             {
                 dgvAllowedAuthorities.DataSource = authList;
             }
-
         }
     }
 }
