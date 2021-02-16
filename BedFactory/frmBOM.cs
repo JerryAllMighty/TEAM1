@@ -290,6 +290,7 @@ namespace BedFactory
             {
                 service.DeleteBOM(bomNum);
             }
+            bom_Num.Clear();
         }
 
         /// <summary>
@@ -302,7 +303,6 @@ namespace BedFactory
                 MessageBox.Show("삭제할 자재를 선택해주세요.");
                 return;
             }
-            bom_Num.Clear();
 
             //현재 있는 자재에서 수량 감소
             foreach (DataGridViewRow row in dgvBOM.Rows)

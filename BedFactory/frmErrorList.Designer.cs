@@ -46,15 +46,18 @@ namespace BedFactory
             // 
             // btn2
             // 
+            this.btn2.Location = new System.Drawing.Point(1305, 99);
             this.btn2.Text = "등 록";
+            this.btn2.Click += new System.EventHandler(this.btn2_Click_1);
             // 
             // btn3
             // 
+            this.btn3.Location = new System.Drawing.Point(1014, 99);
             this.btn3.Visible = false;
             // 
             // btn5
             // 
-            this.btn5.Location = new System.Drawing.Point(1103, 99);
+            this.btn5.Location = new System.Drawing.Point(1174, 99);
             this.btn5.Text = "엑셀 내보내기";
             // 
             // label1
@@ -64,7 +67,8 @@ namespace BedFactory
             // 
             // btn1
             // 
-            this.btn1.Text = "삭 제";
+            this.btn1.Location = new System.Drawing.Point(1032, 99);
+            this.btn1.Visible = false;
             // 
             // pnlDgv
             // 
@@ -156,6 +160,7 @@ namespace BedFactory
             this.btnSearch.TabIndex = 21;
             this.btnSearch.Text = "조 회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dgvCheckInfo
             // 
@@ -175,6 +180,7 @@ namespace BedFactory
             this.dgvCheckInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCheckInfo.Size = new System.Drawing.Size(1358, 711);
             this.dgvCheckInfo.TabIndex = 0;
+            this.dgvCheckInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCheckInfo_CellContentClick);
             // 
             // frmErrorList
             // 

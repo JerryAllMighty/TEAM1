@@ -55,6 +55,7 @@ namespace BedFactory.Pop_up
             // btnOk
             // 
             this.btnOk.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOk.Location = new System.Drawing.Point(273, 317);
             this.btnOk.Name = "btnOk";
