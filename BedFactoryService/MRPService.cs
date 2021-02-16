@@ -10,6 +10,17 @@ namespace BedFactoryService
 {
     public class MRPService
     {
+        public List<MRPVO> GetMRPInfo(string deadline)
+        {
+            MRPDAC dac = new MRPDAC();
+            return dac.GetMRPInfo(deadline);
+        }
+
+        /// <summary>
+        /// 주문 들어온 제품에 대한 반제품과 원자재, 제작에 필요한 양과 현재 재고를 비교
+        /// </summary>
+        /// <param name="demandinfo"></param>
+        /// <returns></returns>
         public List<BOMVO> GetBOMInfo(DemandVO demandinfo)
         {
             MRPDAC dac = new MRPDAC();
