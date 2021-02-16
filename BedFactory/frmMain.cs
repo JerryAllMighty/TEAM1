@@ -156,11 +156,14 @@ namespace BadFactory
         private void frmMain_Load(object sender, EventArgs e)
         {
             #region 회원정보 바인딩
-            lblEmpName.Text = emp_Info.Emp_Name;
-            lblEmpID.Text = emp_Info.Emp_ID;
-            lblEmpCategory.Text = emp_Info.Emp_Category;
-            lblEmpDepartment.Text = emp_Info.Emp_Department;
-            lblEmpEmail.Text = emp_Info.Emp_Email;
+            if (emp_Info != null)
+            {
+                lblEmpName.Text = emp_Info.Emp_Name;
+                lblEmpID.Text = emp_Info.Emp_ID;
+                lblEmpCategory.Text = emp_Info.Emp_Category;
+                lblEmpDepartment.Text = emp_Info.Emp_Department;
+                lblEmpEmail.Text = emp_Info.Emp_Email;
+            }
             #endregion
 
             List<CommonCodeVO> list = frmCommonCode.CheckCommonInfo();
