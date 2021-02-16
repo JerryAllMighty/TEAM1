@@ -31,6 +31,8 @@ namespace BedFactory
 
         private void frmMaterialLedgerStockWarehousing_Load(object sender, EventArgs e)
         {
+            btn1.Visible = false;
+
             dgvWait.SetGridCheckBox("chk");
             dgvWait.SetGridViewColumn("거래처명", "Com_Name");
             dgvWait.SetGridViewColumn("자재명", "Mat_Name");
@@ -142,19 +144,20 @@ namespace BedFactory
 
         private void btn3_Click_1(object sender, EventArgs e) //선택
         {
-            if (dgvWait[5, dgvWait.SelectedRows[0].Index].Value != null)
+
+            foreach (DataGridViewRow row in dgvWait.Rows)
             {
-                foreach (DataGridViewRow row in dgvWait.Rows)
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk"];
+                if (Convert.ToBoolean(chk.Value) == true)
                 {
-                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk"];
-                    if (Convert.ToBoolean(chk.Value) == true)
+                    if (dgvWait[4, row.Index].Value.ToString() != "미검사")
                     {
                         if (dgvWearing.Rows.Count < 1)
                             copy.Add(list.Where(p => p.Wearing_Num == Convert.ToInt32(dgvWait[9, row.Index].Value)).ToList()[0]);
 
-                        foreach (DataGridViewRow search in dgvWait.Rows)
+                        foreach (DataGridViewRow search in dgvWearing.Rows)
                         {
-                            if (dgvWait[9, search.Index].Value != dgvWearing[9, row.Index].Value)
+                            if (dgvWait[9, row.Index].Value != dgvWearing[6, search.Index].Value)
                             {
                                 copy.Add(list.Where(p => p.Wearing_Num == Convert.ToInt32(dgvWait[9, row.Index].Value)).ToList()[0]);
                             }
@@ -163,13 +166,13 @@ namespace BedFactory
                         chk.Value = false;
                     }
                 }
-
-                copy.ForEach(p => p.Mat_Cnt = 0);
-                dgvWait.DataSource = null;
-                dgvWait.Rows.Clear();
-                dgvWait.DataSource = copy;
-                headerCheck.Checked = false;
             }
+
+            //copy.ForEach(p => p.Mat_Cnt = 0);
+            dgvWearing.DataSource = null;
+            dgvWearing.Rows.Clear();
+            dgvWearing.DataSource = copy;
+            headerCheck.Checked = false;
         }
 
         private void btn2_Click_1(object sender, EventArgs e) //취소

@@ -51,5 +51,16 @@ namespace BedFactoryService
             AuthorityDAC dac = new AuthorityDAC();
             return dac.GetAuthorityListNum(GroupCode);
         }
+
+        /// <summary>
+        /// 직원이 가지고 있는 권한의 메뉴리스트
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public List<AuthorityVO> GetEmployeeAuthName(int num)
+        {
+            AuthorityDAC dac = new AuthorityDAC();
+            return dac.GetEmployeeAuthName(num);
+        }
     }
 }

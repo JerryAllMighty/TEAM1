@@ -24,6 +24,6 @@ namespace BedFactoryVO
         public string Bz_D_Num { get; set; } //발주번호
 
         public string Error_Detail { get; set; } //불량내용
-        public string Error_Cnt { get; set; } //불량
+        public int Error_Cnt { get; set; } //불량
     }
 }

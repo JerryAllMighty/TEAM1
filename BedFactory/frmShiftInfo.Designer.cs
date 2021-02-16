@@ -85,7 +85,7 @@ namespace BedFactory
             // 
             this.cboWork.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboWork.FormattingEnabled = true;
-            this.cboWork.Location = new System.Drawing.Point(139, 18);
+            this.cboWork.Location = new System.Drawing.Point(139, 21);
             this.cboWork.Name = "cboWork";
             this.cboWork.Size = new System.Drawing.Size(235, 25);
             this.cboWork.TabIndex = 42;

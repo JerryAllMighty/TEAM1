@@ -24,7 +24,7 @@ namespace BedFactory
         {
             InitializeComponent();
 
-            this.category = "발주업체";
+            this.category = "발주";
             label1.Text = "자재단가관리";
             this.Text = "자재단가관리";
         }
@@ -49,14 +49,11 @@ namespace BedFactory
             dgvCost.SetGridViewColumn("거래처명", "Com_Name");
             dgvCost.SetGridViewColumn("자재번호", "Mat_Num");
             dgvCost.SetGridViewColumn("자재명", "Mat_Name");
+            dgvCost.SetGridViewColumn("자재유형", "Mat_Category");
             dgvCost.SetGridViewColumn("현재단가", "Now_UnitCost");
             dgvCost.SetGridViewColumn("이전단가", "Before_UnitCost");
             dgvCost.SetGridViewColumn("시작일", "Start_Date");
             dgvCost.SetGridViewColumn("종료일", "End_Date");
-            dgvCost.SetGridViewColumn("최초등록자", "FirstMan");
-            dgvCost.SetGridViewColumn("최초등록일", "FirstDate");
-            dgvCost.SetGridViewColumn("최종등록자", "LastMan");
-            dgvCost.SetGridViewColumn("최종등록일", "LastDate");
 
             DataLoad();
         }
@@ -77,10 +74,10 @@ namespace BedFactory
                 UnitCost_Num = Convert.ToInt32(dgvCost[0, dgvCost.SelectedRows[0].Index].Value),
                 Com_Num = Convert.ToInt32(dgvCost[2, dgvCost.SelectedRows[0].Index].Value),
                 Mat_Num = dgvCost[4, dgvCost.SelectedRows[0].Index].Value.ToString(),
-                Now_UnitCost = Convert.ToInt32(dgvCost[6, dgvCost.SelectedRows[0].Index].Value),
-                Before_UnitCost = Convert.ToInt32(dgvCost[7, dgvCost.SelectedRows[0].Index].Value),
-                Start_Date = Convert.ToDateTime(dgvCost[8, dgvCost.SelectedRows[0].Index].Value),
-                End_Date = Convert.ToDateTime(dgvCost[9, dgvCost.SelectedRows[0].Index].Value)
+                Now_UnitCost = Convert.ToInt32(dgvCost[7, dgvCost.SelectedRows[0].Index].Value),
+                Before_UnitCost = Convert.ToInt32(dgvCost[8, dgvCost.SelectedRows[0].Index].Value),
+                Start_Date = Convert.ToDateTime(dgvCost[9, dgvCost.SelectedRows[0].Index].Value),
+                End_Date = Convert.ToDateTime(dgvCost[10, dgvCost.SelectedRows[0].Index].Value)
             };
 
             frmMaterials frm = new frmMaterials(id, this.Text, "수정", vo);

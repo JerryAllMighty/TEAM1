@@ -63,19 +63,21 @@ namespace BedFactory
             // 
             // btn2
             // 
-            this.btn2.Location = new System.Drawing.Point(1307, 525);
+            this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn2.Location = new System.Drawing.Point(1311, 530);
             this.btn2.Text = "취소";
             this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
             // btn3
             // 
-            this.btn3.Location = new System.Drawing.Point(1236, 134);
+            this.btn3.Location = new System.Drawing.Point(1311, 134);
             this.btn3.Text = "선택";
             this.btn3.Click += new System.EventHandler(this.btn3_Click);
             // 
             // btn5
             // 
-            this.btn5.Location = new System.Drawing.Point(1176, 525);
+            this.btn5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn5.Location = new System.Drawing.Point(1180, 530);
             this.btn5.Text = "입고대기처리";
             this.btn5.Click += new System.EventHandler(this.btn5_Click);
             // 
@@ -87,7 +89,7 @@ namespace BedFactory
             // 
             // btn1
             // 
-            this.btn1.Location = new System.Drawing.Point(1307, 134);
+            this.btn1.Location = new System.Drawing.Point(1134, 134);
             // 
             // pnlDgv
             // 
@@ -97,7 +99,7 @@ namespace BedFactory
             // 
             // btn4
             // 
-            this.btn4.Location = new System.Drawing.Point(1130, 134);
+            this.btn4.Location = new System.Drawing.Point(1205, 134);
             // 
             // pnlSelect
             // 
@@ -108,7 +110,7 @@ namespace BedFactory
             // 
             this.cboCom.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboCom.FormattingEnabled = true;
-            this.cboCom.Location = new System.Drawing.Point(558, 14);
+            this.cboCom.Location = new System.Drawing.Point(558, 11);
             this.cboCom.Name = "cboCom";
             this.cboCom.Size = new System.Drawing.Size(235, 25);
             this.cboCom.TabIndex = 72;
@@ -145,7 +147,7 @@ namespace BedFactory
             // 
             this.cboBnum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboBnum.FormattingEnabled = true;
-            this.cboBnum.Location = new System.Drawing.Point(139, 63);
+            this.cboBnum.Location = new System.Drawing.Point(139, 60);
             this.cboBnum.Name = "cboBnum";
             this.cboBnum.Size = new System.Drawing.Size(235, 25);
             this.cboBnum.TabIndex = 60;
@@ -186,9 +188,10 @@ namespace BedFactory
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(14, 530);
+            this.label3.Location = new System.Drawing.Point(14, 535);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 20);
             this.label3.TabIndex = 65;
@@ -288,8 +291,7 @@ namespace BedFactory
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.dgvWait);
             this.panel2.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));

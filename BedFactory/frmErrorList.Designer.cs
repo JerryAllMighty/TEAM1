@@ -116,7 +116,7 @@ namespace BedFactory
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 19);
             this.label3.TabIndex = 17;
-            this.label3.Text = "* 자재명";
+            this.label3.Text = "* 검사명";
             // 
             // label2
             // 
@@ -126,7 +126,7 @@ namespace BedFactory
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 19);
             this.label2.TabIndex = 0;
-            this.label2.Text = "* 자재종류";
+            this.label2.Text = "* 검사종류";
             // 
             // cboKind
             // 
@@ -189,7 +189,7 @@ namespace BedFactory
             this.Font = new System.Drawing.Font("맑은 고딕", 10F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmErrorList";
-            this.Text = "frmErrorList";
+            this.Text = "검사항목관리";
             this.Load += new System.EventHandler(this.frmErrorList_Load);
             this.pnlDgv.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);

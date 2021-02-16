@@ -64,15 +64,15 @@ namespace BedFactory
             // 
             // btn2
             // 
-            this.btn2.Location = new System.Drawing.Point(1234, 134);
+            this.btn2.Location = new System.Drawing.Point(999, 134);
             // 
             // btn3
             // 
-            this.btn3.Location = new System.Drawing.Point(1163, 134);
+            this.btn3.Location = new System.Drawing.Point(1070, 134);
             // 
             // btn5
             // 
-            this.btn5.Location = new System.Drawing.Point(926, 134);
+            this.btn5.Location = new System.Drawing.Point(1247, 134);
             this.btn5.Text = "엑셀 내보내기";
             // 
             // label1
@@ -83,7 +83,7 @@ namespace BedFactory
             // 
             // btn1
             // 
-            this.btn1.Location = new System.Drawing.Point(1305, 134);
+            this.btn1.Location = new System.Drawing.Point(928, 134);
             // 
             // pnlDgv
             // 
@@ -93,7 +93,7 @@ namespace BedFactory
             // 
             // btn4
             // 
-            this.btn4.Location = new System.Drawing.Point(1057, 134);
+            this.btn4.Location = new System.Drawing.Point(1141, 134);
             // 
             // pnlSelect
             // 
@@ -181,7 +181,7 @@ namespace BedFactory
             // 
             // brnSave
             // 
-            this.brnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.brnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.brnSave.BackColor = System.Drawing.Color.LightSteelBlue;
             this.brnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.brnSave.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -195,7 +195,7 @@ namespace BedFactory
             // 
             // btnAdd
             // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -209,6 +209,7 @@ namespace BedFactory
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("맑은 고딕", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.Location = new System.Drawing.Point(12, 510);
@@ -221,7 +222,7 @@ namespace BedFactory
             // 
             // brnCancel
             // 
-            this.brnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.brnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.brnCancel.BackColor = System.Drawing.Color.LightSteelBlue;
             this.brnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.brnCancel.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -234,8 +235,7 @@ namespace BedFactory
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.dgvMaSub);
             this.panel1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));

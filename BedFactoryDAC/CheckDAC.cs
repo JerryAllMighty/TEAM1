@@ -142,9 +142,9 @@ namespace BedFactoryDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select Check_Num, CheckKind, Lastman, Lastdate, Mat_Num, Check_Info_Num
+                cmd.CommandText = @"select Check_Num, CheckKind, c.Lastman, c.Lastdate, Mat_Num, c.Check_Info_Num
                                     from tblCheck as c
-                                    join tblCheckinfo as ci on c.Check_Num = ci.Check_Num
+                                    join tblCheckinfo as ci on c.Check_Info_Num = ci.Check_Info_Num
                                     where Mat_Num = @Mat_Num";
                 cmd.Parameters.AddWithValue("@Mat_Num", mat_Num);
 
@@ -199,9 +199,9 @@ namespace BedFactoryDAC
                     cmd.CommandText = @"delete from tblCheck where Mat_Num = @Mat_Num";
                     cmd.Parameters.AddWithValue("@Mat_Num", mat_Num);
 
-                    int iRowAffect = cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
 
-                    return iRowAffect > 0 ? true : false;
+                    return true;
                 }
             }
             catch (Exception err)

@@ -54,16 +54,16 @@ namespace BedFactory
             // 
             // btn2
             // 
-            this.btn2.Location = new System.Drawing.Point(1234, 134);
+            this.btn2.Location = new System.Drawing.Point(997, 134);
             // 
             // btn3
             // 
-            this.btn3.Location = new System.Drawing.Point(1163, 134);
-            this.btn3.Text = "엑셀";
+            this.btn3.Location = new System.Drawing.Point(1068, 134);
             // 
             // btn5
             // 
-            this.btn5.Location = new System.Drawing.Point(926, 134);
+            this.btn5.Location = new System.Drawing.Point(1245, 134);
+            this.btn5.Text = "엑셀 내보내기";
             // 
             // label1
             // 
@@ -73,7 +73,7 @@ namespace BedFactory
             // 
             // btn1
             // 
-            this.btn1.Location = new System.Drawing.Point(1305, 134);
+            this.btn1.Location = new System.Drawing.Point(926, 134);
             // 
             // pnlDgv
             // 
@@ -83,7 +83,7 @@ namespace BedFactory
             // 
             // btn4
             // 
-            this.btn4.Location = new System.Drawing.Point(1057, 134);
+            this.btn4.Location = new System.Drawing.Point(1139, 134);
             this.btn4.Text = "입고취소";
             this.btn4.Click += new System.EventHandler(this.btn4_Click);
             // 
@@ -112,7 +112,7 @@ namespace BedFactory
             // 
             this.cboCom.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboCom.FormattingEnabled = true;
-            this.cboCom.Location = new System.Drawing.Point(558, 14);
+            this.cboCom.Location = new System.Drawing.Point(558, 11);
             this.cboCom.Name = "cboCom";
             this.cboCom.Size = new System.Drawing.Size(235, 25);
             this.cboCom.TabIndex = 72;

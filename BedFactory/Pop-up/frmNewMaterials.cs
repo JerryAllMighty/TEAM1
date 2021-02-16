@@ -132,7 +132,7 @@ namespace BedFactory.Pop_up
                     bFlag = true;
                 }
             }
-            catch(Exception err)
+            catch
             {
                 bFlag = false;
             }
@@ -182,7 +182,7 @@ namespace BedFactory.Pop_up
             MaterialsService service1 = new MaterialsService();
             CheckService service2 = new CheckService();
             bool bFlag = false;
-            
+
             //기존정보 자재정보 수정 및 검사항목 삭제
             if (service1.UpdateMaterilas(materialsVO) && service2.DeleteCheck(materialID))
             {
@@ -204,6 +204,9 @@ namespace BedFactory.Pop_up
                 {
                     MessageBox.Show("성공적으로 수정하였습니다.");
                     search.PerformClick();
+                    lctProductName.text.Text = ontSizeX.Text = ontSizeY.Text = ontSizeZ.Text = "";
+                    lctCategory.cbo.SelectedIndex = lctKind.cbo.SelectedIndex = 0;
+                    panel1.Controls.Clear();
                 }
                 else
                 {
@@ -224,6 +227,7 @@ namespace BedFactory.Pop_up
             TreeNodeBinding();
 
             //검사항목 콤보박스 바인딩
+            codeList.Clear();
             List<CheckInfoVO> ci_list = new List<CheckInfoVO>();
             CheckService service2 = new CheckService();
             ci_list = service2.GetCheckInfo();
@@ -247,6 +251,9 @@ namespace BedFactory.Pop_up
             {
                 MessageBox.Show("성공적으로 삭제하였습니다.");
                 search.PerformClick();
+                lctProductName.text.Text = ontSizeX.Text = ontSizeY.Text = ontSizeZ.Text = "";
+                lctCategory.cbo.SelectedIndex = lctKind.cbo.SelectedIndex = 0;
+                panel1.Controls.Clear();
             }
             else
             {
@@ -314,7 +321,7 @@ namespace BedFactory.Pop_up
             List<CommonCodeVO> codeList = new List<CommonCodeVO>();
 
             panel1.Controls.Clear();
-            ci_list.ForEach(p => codeList.Add(new CommonCodeVO { Code_Num = p.Check_Info_Num.ToString(), Code_Name = p.CheckKind }));
+            ci_list.ForEach(p => codeList.Add(new CommonCodeVO { Code_Num = p.Check_Info_Num.ToString(), Code_Name = p.CheckKind, Category = p.CheckKind }));
 
             foreach(CheckVO item in c_list)
             {

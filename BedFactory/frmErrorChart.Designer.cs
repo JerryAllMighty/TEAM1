@@ -29,23 +29,21 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dgvErrorList = new BedFactory.DatagridviewControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbbKind = new System.Windows.Forms.ComboBox();
-            this.cbbStats = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbbResult = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.cbbWorkPlace = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cboKind = new System.Windows.Forms.ComboBox();
+            this.cboName = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cboErrorKind = new System.Windows.Forms.ComboBox();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvErrorList)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn2
@@ -76,7 +74,7 @@ namespace BedFactory
             // 
             // pnlDgv
             // 
-            this.pnlDgv.Controls.Add(this.dataGridView1);
+            this.pnlDgv.Controls.Add(this.dgvErrorList);
             // 
             // btn4
             // 
@@ -87,160 +85,126 @@ namespace BedFactory
             // 
             this.pnlSelect.Controls.Add(this.tableLayoutPanel1);
             // 
+            // dgvErrorList
+            // 
+            this.dgvErrorList.AllowUserToAddRows = false;
+            this.dgvErrorList.AllowUserToResizeRows = false;
+            this.dgvErrorList.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvErrorList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvErrorList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvErrorList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvErrorList.Location = new System.Drawing.Point(0, 0);
+            this.dgvErrorList.Name = "dgvErrorList";
+            this.dgvErrorList.RowHeadersVisible = false;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvErrorList.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvErrorList.RowTemplate.Height = 23;
+            this.dgvErrorList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvErrorList.Size = new System.Drawing.Size(1358, 711);
+            this.dgvErrorList.TabIndex = 0;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 10;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
-            this.tableLayoutPanel1.Controls.Add(this.label3, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cbbKind, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cbbStats, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 6, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cbbResult, 7, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 9, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cbbWorkPlace, 1, 1);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.63943F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.15097F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.54293F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.63943F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.15097F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.54293F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.63943F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.15097F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.54293F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.label5, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cboKind, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cboName, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnSearch, 9, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 6, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cboErrorKind, 7, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1356, 63);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(457, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 19);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "* 상  태";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 19);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "* 종  류";
-            // 
-            // cbbKind
-            // 
-            this.cbbKind.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbbKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbKind.FormattingEnabled = true;
-            this.cbbKind.Location = new System.Drawing.Point(138, 5);
-            this.cbbKind.Name = "cbbKind";
-            this.cbbKind.Size = new System.Drawing.Size(231, 25);
-            this.cbbKind.TabIndex = 1;
-            // 
-            // cbbStats
-            // 
-            this.cbbStats.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbbStats.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbStats.FormattingEnabled = true;
-            this.cbbStats.Location = new System.Drawing.Point(557, 3);
-            this.cbbStats.Name = "cbbStats";
-            this.cbbStats.Size = new System.Drawing.Size(231, 25);
-            this.cbbStats.TabIndex = 18;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(876, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 19);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "* 결  과";
-            // 
-            // cbbResult
-            // 
-            this.cbbResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbbResult.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbResult.FormattingEnabled = true;
-            this.cbbResult.Location = new System.Drawing.Point(976, 3);
-            this.cbbResult.Name = "cbbResult";
-            this.cbbResult.Size = new System.Drawing.Size(231, 25);
-            this.cbbResult.TabIndex = 20;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(1271, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 26);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "조 회";
-            this.button1.UseVisualStyleBackColor = false;
+            this.tableLayoutPanel1.TabIndex = 2;
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(36, 37);
+            this.label5.Location = new System.Drawing.Point(452, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 19);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "* 작업장";
+            this.label5.TabIndex = 17;
+            this.label5.Text = "* 자재명";
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(457, 37);
+            this.label6.Location = new System.Drawing.Point(28, 22);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 19);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "* 일  시";
+            this.label6.Size = new System.Drawing.Size(76, 19);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "* 자재구분";
             // 
-            // dateTimePicker1
+            // cboKind
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(557, 34);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(94, 25);
-            this.dateTimePicker1.TabIndex = 23;
+            this.cboKind.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboKind.FormattingEnabled = true;
+            this.cboKind.Location = new System.Drawing.Point(136, 18);
+            this.cboKind.Name = "cboKind";
+            this.cboKind.Size = new System.Drawing.Size(231, 25);
+            this.cboKind.TabIndex = 1;
+            this.cboKind.SelectedIndexChanged += new System.EventHandler(this.cbbKind_SelectedIndexChanged);
             // 
-            // cbbWorkPlace
+            // cboName
             // 
-            this.cbbWorkPlace.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbbWorkPlace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbWorkPlace.FormattingEnabled = true;
-            this.cbbWorkPlace.Location = new System.Drawing.Point(138, 34);
-            this.cbbWorkPlace.Name = "cbbWorkPlace";
-            this.cbbWorkPlace.Size = new System.Drawing.Size(231, 25);
-            this.cbbWorkPlace.TabIndex = 25;
+            this.cboName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboName.FormattingEnabled = true;
+            this.cboName.Location = new System.Drawing.Point(553, 21);
+            this.cboName.Name = "cboName";
+            this.cboName.Size = new System.Drawing.Size(231, 25);
+            this.cboName.TabIndex = 18;
             // 
-            // dataGridView1
+            // btnSearch
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1358, 711);
-            this.dataGridView1.TabIndex = 0;
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSearch.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSearch.Location = new System.Drawing.Point(1268, 18);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(70, 26);
+            this.btnSearch.TabIndex = 21;
+            this.btnSearch.Text = "조 회";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(862, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(76, 19);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "* 불량유형";
+            // 
+            // cboErrorKind
+            // 
+            this.cboErrorKind.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboErrorKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboErrorKind.FormattingEnabled = true;
+            this.cboErrorKind.Location = new System.Drawing.Point(970, 18);
+            this.cboErrorKind.Name = "cboErrorKind";
+            this.cboErrorKind.Size = new System.Drawing.Size(231, 25);
+            this.cboErrorKind.TabIndex = 23;
             // 
             // frmErrorChart
             // 
@@ -249,31 +213,27 @@ namespace BedFactory
             this.ClientSize = new System.Drawing.Size(1384, 861);
             this.Font = new System.Drawing.Font("맑은 고딕", 10F);
             this.Name = "frmErrorChart";
-            this.Text = "frmErrorChart";
+            this.Text = "불량관리";
+            this.Load += new System.EventHandler(this.frmErrorChart_Load);
             this.pnlDgv.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvErrorList)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
+        private DatagridviewControl dgvErrorList;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbbKind;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbbStats;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbbResult;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbbWorkPlace;
+        private System.Windows.Forms.ComboBox cboKind;
+        private System.Windows.Forms.ComboBox cboName;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cboErrorKind;
     }
 }

@@ -52,7 +52,7 @@ namespace BedFactory.Pop_up
             if (type.Equals("수정"))
             {
                 lblCostNum.Text = unit.UnitCost_Num.ToString();
-                cboCompany.SelectedText = unit.Com_Name;
+                cboCompany.SelectedValue = unit.Com_Num.ToString();
                 cboMaterial.SelectedValue = unit.Mat_Num;
                 txtNowCost.Text = unit.Now_UnitCost.ToString();
                 txtBeforeCost.Text = unit.Before_UnitCost.ToString();
@@ -63,8 +63,7 @@ namespace BedFactory.Pop_up
             }
             else if (type.Equals("복사"))
             {
-                cboCompany.Text = "";
-                cboCompany.SelectedText = unit.Com_Name;
+                cboCompany.SelectedValue = unit.Com_Num.ToString();
                 cboMaterial.SelectedValue = unit.Mat_Num;
                 txtNowCost.Text = unit.Now_UnitCost.ToString();
                 txtBeforeCost.Text = unit.Before_UnitCost.ToString();
