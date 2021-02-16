@@ -106,5 +106,178 @@ namespace BedFactoryDAC
                 return false;
             }
         }
+
+        public List<BalzooVO> BalzooAndM_Use(int dNum)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"select M.Mat_Name, MaterialUse_Cnt, MP.Firstdate, Mat_Cnt, MP.Mat_Num
+                                          from tblMaterialUsePlan MP join tblMaterials M on MP.Mat_Num = M.Mat_Num
+                                          	   join (select  W.Mat_Num, (W.Mat_Cnt - isnull(SD.Ship_Cnt, 0)) Mat_Cnt
+                                          		     from(
+                                          		          select Str_Num, Mat_Num, Sum(Mat_Cnt) Mat_Cnt 
+                                          			   	  from tblWearing group by Str_Num, Mat_Num
+                                          			      ) W join tblStorages S on W.Str_Num = S.Str_Num
+                                          			     join tblMaterials M on W.Mat_Num = M.Mat_Num
+                                          		         left outer join (select Str_Num, Mat_Num, sum(Ship_Cnt) Ship_Cnt 
+                                          		                          from tblShipment_D group by Str_Num, Mat_Num) SD 
+                                          	          on SD.Str_Num = W.Str_Num and SD.Mat_Num = W.Mat_Num) A
+                                          	   on A.Mat_Num = MP.Mat_Num
+                                         where MP.Demand_Plan_Num = @Demand_Plan_Num";
+                    cmd.Parameters.AddWithValue("@Demand_Plan_Num", dNum);
+
+                    List<BalzooVO> list = Helper.DataReaderMapToList<BalzooVO>(cmd.ExecuteReader());
+                    conn.Close();
+                    return list;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
+            }
+        }
+
+        public List<BalzooVO> SearchPlanNum()
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"select Demand_Plan_Num from tblDemandPlan";
+
+                    List<BalzooVO> list = Helper.DataReaderMapToList<BalzooVO>(cmd.ExecuteReader());
+                    conn.Close();
+                    return list;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
+            }
+        }
+
+        public List<BalzooVO> BalzooCompany()
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"select Com_Code, Com_Name, Com_Num from tblCompany where Com_Type = '발주'";
+
+                    List<BalzooVO> list = Helper.DataReaderMapToList<BalzooVO>(cmd.ExecuteReader());
+                    conn.Close();
+                    return list;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
+            }
+        }
+
+        public bool BalzooInsert(List<BalzooVO> list, int comNum, int id)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"insert into tblBalzoo (Com_Num, FirstMan)
+                                        			   values (@Com_Num, @id)
+                                        select MAX(Bz_Num) from tblBalzoo";
+                    cmd.Parameters.AddWithValue("@Com_Num", comNum);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    int cnt = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    cmd.CommandText = @"insert into tblBalzoo_D (Bz_D_Num, Bz_Num, Mat_Num, Bz_Cnt)
+				                                         values (@Bz_D_Num, @Bz_Num, @Mat_Num, @Bz_Cnt)";
+                    cmd.Parameters.Add("@Bz_D_Num", System.Data.SqlDbType.Int);
+                    cmd.Parameters.Add("@Bz_Num", System.Data.SqlDbType.Int);
+                    cmd.Parameters.Add("@Mat_Num", System.Data.SqlDbType.NChar);
+                    cmd.Parameters.Add("@Bz_Cnt", System.Data.SqlDbType.Int);
+                    foreach(BalzooVO vo in list)
+                    {
+                        cmd.Parameters["@Bz_D_Num"].Value = "A" + DateTime.Now.ToString("yyMMddfff");
+                        cmd.Parameters["@Bz_Num"].Value = vo.Bz_Num;
+                        cmd.Parameters["@Mat_Num"].Value = vo.Mat_Num;
+                        cmd.Parameters["@Bz_Cnt"].Value = vo.Bz_Cnt;
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
+
+        public bool BalzooDateUpdate(List<string> list, DateTime date)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"update tblBalzoo_D set ExpectedDate = @Date where Bz_D_Num = @Bz_D_Num";
+                    cmd.Parameters.AddWithValue("@Date", date);
+                    cmd.Parameters.Add("@Bz_D_Num", System.Data.SqlDbType.NChar);
+
+                    foreach (string num in list)
+                    {
+                        cmd.Parameters["@Bz_D_Num"].Value = num;
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
+
+        public bool BalzooCancel(List<string> list)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"update tblBalzoo_D set Bz_IsCancel = 'Y' where Bz_D_Num = @Bz_D_Num";
+                    cmd.Parameters.Add("@Bz_D_Num", System.Data.SqlDbType.NChar);
+
+                    foreach (string num in list)
+                    {
+                        cmd.Parameters["@Bz_D_Num"].Value = num;
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
     }
 }

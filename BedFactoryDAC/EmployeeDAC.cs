@@ -46,10 +46,33 @@ namespace BedFactoryDAC
         
         }
 
+        /// <summary>
+        /// 로그인
+        /// </summary>
+        /// <returns></returns>
+        public List<EmployeeVO> Login(string id, string pw)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"select Emp_Num, Emp_Category, Emp_Name, Emp_Department, StartDate, FinishDate, Emp_ID, Emp_Pwd, Emp_Phone, Emp_Birth, Emp_Email, Emp_Addr, ListNum, FirstMan, FirstDate, LastMan, LastDate, IsDeleted
+                                        from tblEmployees
+                                        where Emp_ID = @Emp_ID and Emp_Pwd = @Emp_Pwd";
+                    cmd.Parameters.AddWithValue("@Emp_ID", id);
+                    cmd.Parameters.AddWithValue("@Emp_Pwd", pw);
 
-
-
-
+                    List<EmployeeVO> list = Helper.DataReaderMapToList<EmployeeVO>(cmd.ExecuteReader());
+                    return list != null ? list : null;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
+            }
+        }
 
         public void Dispose()
         {

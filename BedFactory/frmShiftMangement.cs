@@ -195,6 +195,9 @@ namespace BedFactory
 
         private void btnChange_Click(object sender, EventArgs e)
         {
+            if (dgvShift.SelectedRows.Count < 1)
+                return;
+
             int i = dgvShift.SelectedRows[0].Index;
             while (dgvShift[0, i].Value.ToString().Trim().Equals(""))
             {
@@ -220,8 +223,17 @@ namespace BedFactory
                 }                
             }
 
-            frmShiftChange frm = new frmShiftChange(dgvShift[0, i].Value.ToString(), changeDic);
-            frm.Show();
+            if (changeDic.Count > 0)
+            {
+                frmShiftChange frm = new frmShiftChange(dgvShift[0, i].Value.ToString(), changeDic);
+                if(frm.ShowDialog() == DialogResult.Yes)
+                {
+                    bFrom = DateTime.Now.AddYears(3333);
+                    bTo = DateTime.Now.AddYears(3333);
+
+                    GridColumnDateSet();
+                }                
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

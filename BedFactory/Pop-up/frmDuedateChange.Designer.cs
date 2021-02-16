@@ -61,6 +61,7 @@ namespace BedFactory.Pop_up
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "등록";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // panel2
             // 
@@ -112,7 +113,7 @@ namespace BedFactory.Pop_up
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(364, 235);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);

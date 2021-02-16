@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BedFactoryService;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,11 +21,27 @@ namespace BedFactory.Pop_up
 
             this.list = list;
             dtpB.Value = date;
+
+            dtpB.Enabled = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            BalzooService service = new BalzooService();
+            if(service.BalzooDateUpdate(list, dtpA.Value.Date))
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.UpdateSuccess);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.UpdateFail);
+            }
         }
     }
 }

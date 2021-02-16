@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboWork = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -38,10 +38,10 @@ namespace BedFactory
             this.btnChange = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
@@ -129,15 +129,15 @@ namespace BedFactory
             this.dgvShift.AllowUserToAddRows = false;
             this.dgvShift.AllowUserToResizeRows = false;
             this.dgvShift.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvShift.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvShift.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvShift.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvShift.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvShift.Location = new System.Drawing.Point(0, 0);
             this.dgvShift.Name = "dgvShift";
             this.dgvShift.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvShift.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvShift.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvShift.RowTemplate.Height = 23;
             this.dgvShift.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvShift.Size = new System.Drawing.Size(1358, 711);
@@ -192,6 +192,16 @@ namespace BedFactory
             this.searchLocationControl1.Size = new System.Drawing.Size(1356, 63);
             this.searchLocationControl1.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(37, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 17);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "적용일자";
+            // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -224,16 +234,6 @@ namespace BedFactory
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(113, 25);
             this.dtpFrom.TabIndex = 70;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 17);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "적용일자";
             // 
             // label7
             // 

@@ -131,7 +131,9 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"delete from tblShifts where Shift_Num = @Shift_Num";
+                    cmd.CommandText = @"delete from tblShifts_D where Shift_Num = @Shift_Num
+                                        delete from tblShifts where Shift_Num = @Shift_Num";
+                    cmd.Parameters.AddWithValue("@Shift_Num", num);
                     int cnt = cmd.ExecuteNonQuery();
                     conn.Close();
                     return cnt > 0;
@@ -168,7 +170,7 @@ namespace BedFactoryDAC
             }
         }
 
-        public int ShiftChangeIandU(ShiftVO shift)
+        public bool ShiftChangeIandU(ShiftVO shift)
         {
             try
             {
@@ -177,9 +179,6 @@ namespace BedFactoryDAC
                     cmd.Connection = conn;
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.CommandText = @"SP_ShiftDateChange";
-
-                    cmd.Parameters.Add("@Amount", System.Data.SqlDbType.Int);
-                    cmd.Parameters["@Amount"].Direction = System.Data.ParameterDirection.Output;
 
                     cmd.Parameters.AddWithValue("@Shift_Num", shift.Shift_Num);
                     cmd.Parameters.AddWithValue("@Start_Time", shift.Start_Time);
@@ -190,13 +189,13 @@ namespace BedFactoryDAC
                     cmd.ExecuteNonQuery();
                     conn.Close();
 
-                    return Convert.ToInt32(cmd.Parameters["@Amount"].Value);
+                    return true;
                 }
             }
             catch (Exception err)
             {
                 Log.WriteError(err.Message);
-                return 2;
+                return false;
             }
         }
     }

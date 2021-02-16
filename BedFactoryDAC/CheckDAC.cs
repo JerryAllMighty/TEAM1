@@ -54,6 +54,32 @@ namespace BedFactoryDAC
         }
 
         /// <summary>
+        /// 검사항목 정보삭제
+        /// </summary>
+        /// <param name="checkInfoNum">검사항목 번호</param>
+        public bool DeleteCheckInfo(int checkInfoNum)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"deleted from tblCheckInfo where Check_Info_Num = @Check_Info_Num";                    
+                    cmd.Parameters.AddWithValue("@Check_Info_Num", checkInfoNum);
+
+                    int iRowAffect = cmd.ExecuteNonQuery();
+
+                    return iRowAffect > 0 ? true : false;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
+
+        /// <summary>
         /// 검사항목정보 출력
         /// </summary>
         /// <returns></returns>
@@ -84,13 +110,12 @@ namespace BedFactoryDAC
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = @"update tblCheckInfo
-                                        set CheckName = @CheckName, CheckKind = @CheckKind, Check_Detail = @Check_Detail, Lastman = @Lastman, Lastdate = @Lastdate)
+                                        set CheckName = @CheckName, CheckKind = @CheckKind, Check_Detail = @Check_Detail, Lastman = @Lastman, Lastdate = getdate())
                                         where Check_Info_Num = @Check_Info_Num";
                     cmd.Parameters.AddWithValue("@CheckName", vo.CheckName);
                     cmd.Parameters.AddWithValue("@CheckKind", vo.CheckKind);
                     cmd.Parameters.AddWithValue("@Check_Detail", vo.Check_Detail);
                     cmd.Parameters.AddWithValue("@Lastman", vo.Lastman);
-                    cmd.Parameters.AddWithValue("@Lastdate", vo.Lastdate);
                     cmd.Parameters.AddWithValue("@Check_Info_Num", vo.Check_Info_Num);
 
                     int iRowAffect = cmd.ExecuteNonQuery();

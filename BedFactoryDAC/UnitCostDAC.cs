@@ -108,8 +108,8 @@ namespace BedFactoryDAC
                     cmd.Parameters.AddWithValue("@Before_UnitCost", vo.Before_UnitCost);
                     cmd.Parameters.AddWithValue("@Start_Date", vo.Start_Date);
                     cmd.Parameters.AddWithValue("@End_Date", vo.End_Date);
-                    cmd.Parameters.AddWithValue("@LastMan", vo.FirstMan);
-                    cmd.Parameters.AddWithValue("@LastDate", vo.FirstDate);
+                    cmd.Parameters.AddWithValue("@LastMan", vo.LastMan);
+                    cmd.Parameters.AddWithValue("@LastDate", vo.LastDate);
 
                     cmd.ExecuteNonQuery();
                     conn.Close();
@@ -124,17 +124,18 @@ namespace BedFactoryDAC
             }
         }
 
-        public List<CommonCodeVO> UnitCostCombo()
+        public List<CommonCodeVO> UnitCostCombo(string category)
         {
             try
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select cast(Com_Num as VARCHAR) Code_Num, Com_Name Code_Name, '거래처' Category from tblCompany
+                    cmd.CommandText = @"select cast(Com_Num as VARCHAR) Code_Num, Com_Name Code_Name, '거래처' Category from tblCompany where Com_Type = @Category
                                         union
                                         select Mat_Num Code_Num, Mat_Name Code_Name, '자재' Category from tblMaterials";
 
+                    cmd.Parameters.AddWithValue("@Category", category);
                     List<CommonCodeVO> list = Helper.DataReaderMapToList<CommonCodeVO>(cmd.ExecuteReader());
                     conn.Close();
                     return list;
@@ -144,6 +145,31 @@ namespace BedFactoryDAC
             {
                 Log.WriteError(err.Message);
                 return null;
+            }
+        }
+
+        public bool UnitCostDelete(int num)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"delete from tblUnitCost where UnitCost_Num = @UnitCost_Num";
+
+                    cmd.Parameters.Add("@UnitCost_Num", System.Data.SqlDbType.NChar);
+                    cmd.Parameters["@UnitCost_Num"].Value = num;
+
+                    cmd.ExecuteNonQuery();
+
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
             }
         }
     }

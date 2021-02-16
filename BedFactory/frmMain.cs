@@ -17,6 +17,7 @@ namespace BadFactory
     public partial class frmMain : Form
     {
         TreeView tv = new TreeView();
+        public EmployeeVO emp_Info { get; set; }    //로그인한 회원정보
 
         public frmMain()
         {
@@ -154,12 +155,25 @@ namespace BadFactory
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            #region 회원정보 바인딩
+            if (emp_Info != null)
+            {
+                lblEmpName.Text = emp_Info.Emp_Name;
+                lblEmpID.Text = emp_Info.Emp_ID;
+                lblEmpCategory.Text = emp_Info.Emp_Category;
+                lblEmpDepartment.Text = emp_Info.Emp_Department;
+                lblEmpEmail.Text = emp_Info.Emp_Email;
+            }
+            #endregion
+
             List<CommonCodeVO> list = frmCommonCode.CheckCommonInfo();
             List<CommonCodeVO> pList = list.Where(p => p.Category == "메뉴").ToList();
 
             tv.Size = new Size(200, 300);
             tv.BorderStyle = BorderStyle.None;
             tv.Dock = DockStyle.Fill;
+            tv.Font = new Font("맑은 고딕", 9.75F);
+            tv.Indent = 5;
             tv.NodeMouseDoubleClick += tvMenu_NodeMouseDoubleClick;
             pnMenu.Controls.Add(tv);
             tv.Visible = false;
@@ -199,7 +213,7 @@ namespace BadFactory
 
             if(btn.BackColor != Color.Lavender)
             {
-                for (int i = pnMenu.Controls.Count - 1; i >= 0; i--)
+                for (int i = pnMenu.Controls.Count - 1; i >= 0; i--) //int i = pnMenu.Controls.Count - 1; i >= 0; i--
                 {
                     if(pnMenu.Controls[i] as Button != null)
                     {
