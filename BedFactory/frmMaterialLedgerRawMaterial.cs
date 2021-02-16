@@ -25,7 +25,7 @@ namespace BedFactory
         {
             InitializeComponent();
 
-            btn1.Visible = btn2.Visible = btn4.Visible = false;
+            btn1.Visible = btn2.Visible = btn4.Visible = btn5.Visible = false;
 
             dgvWO.SetGridCheckBox("chk");
             dgvWO.SetGridViewColumn("출고번호", "Ship_D_Num", visibility: false);

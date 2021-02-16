@@ -284,7 +284,7 @@ namespace BedFatory_POP
             this.lblWorkStopTime.ForeColor = System.Drawing.Color.Red;
             this.lblWorkStopTime.Location = new System.Drawing.Point(987, 10);
             this.lblWorkStopTime.Name = "lblWorkStopTime";
-            this.lblWorkStopTime.Size = new System.Drawing.Size(0, 51);
+            this.lblWorkStopTime.Size = new System.Drawing.Size(0, 41);
             this.lblWorkStopTime.TabIndex = 24;
             // 
             // lblWorkDuration
@@ -293,7 +293,7 @@ namespace BedFatory_POP
             this.lblWorkDuration.ForeColor = System.Drawing.Color.Lime;
             this.lblWorkDuration.Location = new System.Drawing.Point(312, 10);
             this.lblWorkDuration.Name = "lblWorkDuration";
-            this.lblWorkDuration.Size = new System.Drawing.Size(0, 51);
+            this.lblWorkDuration.Size = new System.Drawing.Size(0, 41);
             this.lblWorkDuration.TabIndex = 23;
             // 
             // lblWorkTime
@@ -303,7 +303,7 @@ namespace BedFatory_POP
             this.lblWorkTime.Font = new System.Drawing.Font("맑은 고딕", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblWorkTime.Location = new System.Drawing.Point(26, 10);
             this.lblWorkTime.Name = "lblWorkTime";
-            this.lblWorkTime.Size = new System.Drawing.Size(174, 51);
+            this.lblWorkTime.Size = new System.Drawing.Size(138, 41);
             this.lblWorkTime.TabIndex = 21;
             this.lblWorkTime.Text = "작업시간";
             // 
@@ -314,7 +314,7 @@ namespace BedFatory_POP
             this.lblWorkStop.Font = new System.Drawing.Font("맑은 고딕", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblWorkStop.Location = new System.Drawing.Point(587, 10);
             this.lblWorkStop.Name = "lblWorkStop";
-            this.lblWorkStop.Size = new System.Drawing.Size(276, 51);
+            this.lblWorkStop.Size = new System.Drawing.Size(220, 41);
             this.lblWorkStop.TabIndex = 22;
             this.lblWorkStop.Text = "작업 중지 시간";
             // 
@@ -340,7 +340,7 @@ namespace BedFatory_POP
             this.txtSubject.Font = new System.Drawing.Font("맑은 고딕", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSubject.Location = new System.Drawing.Point(319, 162);
             this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Size = new System.Drawing.Size(486, 57);
+            this.txtSubject.Size = new System.Drawing.Size(486, 47);
             this.txtSubject.TabIndex = 18;
             // 
             // txtWorker
@@ -349,7 +349,7 @@ namespace BedFatory_POP
             this.txtWorker.Font = new System.Drawing.Font("맑은 고딕", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtWorker.Location = new System.Drawing.Point(319, 87);
             this.txtWorker.Name = "txtWorker";
-            this.txtWorker.Size = new System.Drawing.Size(486, 57);
+            this.txtWorker.Size = new System.Drawing.Size(486, 47);
             this.txtWorker.TabIndex = 17;
             // 
             // txtWO_Num
@@ -358,7 +358,7 @@ namespace BedFatory_POP
             this.txtWO_Num.Font = new System.Drawing.Font("맑은 고딕", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtWO_Num.Location = new System.Drawing.Point(319, 14);
             this.txtWO_Num.Name = "txtWO_Num";
-            this.txtWO_Num.Size = new System.Drawing.Size(486, 57);
+            this.txtWO_Num.Size = new System.Drawing.Size(486, 47);
             this.txtWO_Num.TabIndex = 16;
             // 
             // lblWO_Num
@@ -368,7 +368,7 @@ namespace BedFatory_POP
             this.lblWO_Num.Font = new System.Drawing.Font("맑은 고딕", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblWO_Num.Location = new System.Drawing.Point(24, 14);
             this.lblWO_Num.Name = "lblWO_Num";
-            this.lblWO_Num.Size = new System.Drawing.Size(250, 51);
+            this.lblWO_Num.Size = new System.Drawing.Size(198, 41);
             this.lblWO_Num.TabIndex = 13;
             this.lblWO_Num.Text = "작업지시번호";
             // 
@@ -379,7 +379,7 @@ namespace BedFatory_POP
             this.lblSubject.Font = new System.Drawing.Font("맑은 고딕", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblSubject.Location = new System.Drawing.Point(24, 150);
             this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(174, 51);
+            this.lblSubject.Size = new System.Drawing.Size(138, 41);
             this.lblSubject.TabIndex = 15;
             this.lblSubject.Text = "작업품목";
             // 
@@ -390,7 +390,7 @@ namespace BedFatory_POP
             this.lblWorker_Num.Font = new System.Drawing.Font("맑은 고딕", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblWorker_Num.Location = new System.Drawing.Point(24, 82);
             this.lblWorker_Num.Name = "lblWorker_Num";
-            this.lblWorker_Num.Size = new System.Drawing.Size(136, 51);
+            this.lblWorker_Num.Size = new System.Drawing.Size(108, 41);
             this.lblWorker_Num.TabIndex = 14;
             this.lblWorker_Num.Text = "작업자";
             // 
@@ -413,7 +413,7 @@ namespace BedFatory_POP
             this.cboWorkPlace.FormattingEnabled = true;
             this.cboWorkPlace.Location = new System.Drawing.Point(321, 10);
             this.cboWorkPlace.Name = "cboWorkPlace";
-            this.cboWorkPlace.Size = new System.Drawing.Size(486, 58);
+            this.cboWorkPlace.Size = new System.Drawing.Size(486, 49);
             this.cboWorkPlace.TabIndex = 3;
             this.cboWorkPlace.SelectedIndexChanged += new System.EventHandler(this.cboWorkPlace_SelectedIndexChanged);
             // 
@@ -424,7 +424,7 @@ namespace BedFatory_POP
             this.lblWorkPlace.Font = new System.Drawing.Font("맑은 고딕", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblWorkPlace.Location = new System.Drawing.Point(26, 4);
             this.lblWorkPlace.Name = "lblWorkPlace";
-            this.lblWorkPlace.Size = new System.Drawing.Size(136, 51);
+            this.lblWorkPlace.Size = new System.Drawing.Size(108, 41);
             this.lblWorkPlace.TabIndex = 2;
             this.lblWorkPlace.Text = "작업장";
             // 
@@ -449,8 +449,9 @@ namespace BedFatory_POP
             this.lblTotalOrderCnt.ForeColor = System.Drawing.Color.Lime;
             this.lblTotalOrderCnt.Location = new System.Drawing.Point(30, 97);
             this.lblTotalOrderCnt.Name = "lblTotalOrderCnt";
-            this.lblTotalOrderCnt.Size = new System.Drawing.Size(0, 159);
+            this.lblTotalOrderCnt.Size = new System.Drawing.Size(167, 128);
             this.lblTotalOrderCnt.TabIndex = 2;
+            this.lblTotalOrderCnt.Text = "15";
             // 
             // lblTotCnt
             // 
@@ -459,7 +460,7 @@ namespace BedFatory_POP
             this.lblTotCnt.Font = new System.Drawing.Font("맑은 고딕", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblTotCnt.Location = new System.Drawing.Point(3, 6);
             this.lblTotCnt.Name = "lblTotCnt";
-            this.lblTotCnt.Size = new System.Drawing.Size(187, 51);
+            this.lblTotCnt.Size = new System.Drawing.Size(149, 41);
             this.lblTotCnt.TabIndex = 1;
             this.lblTotCnt.Text = "총 오더량";
             // 
@@ -496,7 +497,7 @@ namespace BedFatory_POP
             this.lblTotalProductCnt.ForeColor = System.Drawing.Color.Yellow;
             this.lblTotalProductCnt.Location = new System.Drawing.Point(19, 64);
             this.lblTotalProductCnt.Name = "lblTotalProductCnt";
-            this.lblTotalProductCnt.Size = new System.Drawing.Size(0, 106);
+            this.lblTotalProductCnt.Size = new System.Drawing.Size(0, 86);
             this.lblTotalProductCnt.TabIndex = 0;
             // 
             // groupBox4
@@ -519,7 +520,7 @@ namespace BedFatory_POP
             this.lblErrorCnt.ForeColor = System.Drawing.Color.Red;
             this.lblErrorCnt.Location = new System.Drawing.Point(44, 64);
             this.lblErrorCnt.Name = "lblErrorCnt";
-            this.lblErrorCnt.Size = new System.Drawing.Size(0, 106);
+            this.lblErrorCnt.Size = new System.Drawing.Size(0, 86);
             this.lblErrorCnt.TabIndex = 3;
             // 
             // groupBox3
@@ -542,7 +543,7 @@ namespace BedFatory_POP
             this.lblOkayProductCnt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblOkayProductCnt.Location = new System.Drawing.Point(24, 64);
             this.lblOkayProductCnt.Name = "lblOkayProductCnt";
-            this.lblOkayProductCnt.Size = new System.Drawing.Size(0, 106);
+            this.lblOkayProductCnt.Size = new System.Drawing.Size(0, 86);
             this.lblOkayProductCnt.TabIndex = 2;
             // 
             // groupBox2
@@ -564,7 +565,7 @@ namespace BedFatory_POP
             this.lblOrderLeftCnt.Font = new System.Drawing.Font("맑은 고딕", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblOrderLeftCnt.Location = new System.Drawing.Point(22, 64);
             this.lblOrderLeftCnt.Name = "lblOrderLeftCnt";
-            this.lblOrderLeftCnt.Size = new System.Drawing.Size(0, 106);
+            this.lblOrderLeftCnt.Size = new System.Drawing.Size(0, 86);
             this.lblOrderLeftCnt.TabIndex = 1;
             // 
             // timer1
@@ -577,7 +578,7 @@ namespace BedFatory_POP
             // 
             // frmPacking
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(24F, 54F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 45F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1282, 982);
