@@ -31,15 +31,15 @@ namespace BedFactory
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblSubject = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
-            this.label = new System.Windows.Forms.Label();
+            this.lblDemandPlan = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
             this.dgvMRP = new BedFactory.DatagridviewControl();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.dtpDeadLine = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.searchLocationControl1.SuspendLayout();
@@ -84,52 +84,22 @@ namespace BedFactory
             // 
             this.pnlSelect.Controls.Add(this.searchLocationControl1);
             // 
-            // dateTimePicker1
+            // lblSubject
             // 
-            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dateTimePicker1.Location = new System.Drawing.Point(558, 16);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(236, 30);
-            this.dateTimePicker1.TabIndex = 11;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(977, 20);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(236, 31);
-            this.comboBox3.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(883, 20);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 23);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "품목";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(444, 20);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 23);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "납기 기한";
+            this.lblSubject.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSubject.AutoSize = true;
+            this.lblSubject.Location = new System.Drawing.Point(883, 20);
+            this.lblSubject.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSubject.Name = "lblSubject";
+            this.lblSubject.Size = new System.Drawing.Size(44, 23);
+            this.lblSubject.TabIndex = 8;
+            this.lblSubject.Text = "품목";
             // 
             // comboBox1
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(139, 20);
+            this.comboBox1.Location = new System.Drawing.Point(139, 16);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(236, 31);
@@ -148,12 +118,12 @@ namespace BedFactory
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
-            this.searchLocationControl1.Controls.Add(this.label, 0, 0);
+            this.searchLocationControl1.Controls.Add(this.lblDemandPlan, 0, 0);
             this.searchLocationControl1.Controls.Add(this.comboBox1, 1, 0);
-            this.searchLocationControl1.Controls.Add(this.dateTimePicker1, 4, 0);
+            this.searchLocationControl1.Controls.Add(this.dtpDeadLine, 4, 0);
             this.searchLocationControl1.Controls.Add(this.comboBox3, 7, 0);
             this.searchLocationControl1.Controls.Add(this.label3, 3, 0);
-            this.searchLocationControl1.Controls.Add(this.label5, 6, 0);
+            this.searchLocationControl1.Controls.Add(this.lblSubject, 6, 0);
             this.searchLocationControl1.Controls.Add(this.btnSelect, 9, 0);
             this.searchLocationControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchLocationControl1.Location = new System.Drawing.Point(0, 0);
@@ -163,16 +133,16 @@ namespace BedFactory
             this.searchLocationControl1.Size = new System.Drawing.Size(1356, 63);
             this.searchLocationControl1.TabIndex = 0;
             // 
-            // label
+            // lblDemandPlan
             // 
-            this.label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(5, 20);
-            this.label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(124, 23);
-            this.label.TabIndex = 1;
-            this.label.Text = "수요 계획 번호";
+            this.lblDemandPlan.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDemandPlan.AutoSize = true;
+            this.lblDemandPlan.Location = new System.Drawing.Point(5, 20);
+            this.lblDemandPlan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDemandPlan.Name = "lblDemandPlan";
+            this.lblDemandPlan.Size = new System.Drawing.Size(124, 23);
+            this.lblDemandPlan.TabIndex = 1;
+            this.lblDemandPlan.Text = "수요 계획 번호";
             // 
             // btnSelect
             // 
@@ -206,6 +176,36 @@ namespace BedFactory
             this.dgvMRP.Size = new System.Drawing.Size(1358, 711);
             this.dgvMRP.TabIndex = 0;
             // 
+            // comboBox3
+            // 
+            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(977, 16);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(236, 31);
+            this.comboBox3.TabIndex = 9;
+            // 
+            // dtpDeadLine
+            // 
+            this.dtpDeadLine.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpDeadLine.Location = new System.Drawing.Point(558, 16);
+            this.dtpDeadLine.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtpDeadLine.Name = "dtpDeadLine";
+            this.dtpDeadLine.Size = new System.Drawing.Size(236, 30);
+            this.dtpDeadLine.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(444, 20);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 23);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "납기 기한";
+            // 
             // frmMaterialRequirementPlanning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -215,6 +215,7 @@ namespace BedFactory
             this.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.Name = "frmMaterialRequirementPlanning";
             this.Text = "자재소요계획";
+            this.Load += new System.EventHandler(this.frmMaterialRequirementPlanning_Load);
             this.pnlDgv.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
             this.searchLocationControl1.ResumeLayout(false);
@@ -226,14 +227,14 @@ namespace BedFactory
         }
 
         #endregion
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblSubject;
         private System.Windows.Forms.ComboBox comboBox1;
         private Controls.SearchLocationControl searchLocationControl1;
-        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label lblDemandPlan;
         private System.Windows.Forms.Button btnSelect;
         private DatagridviewControl dgvMRP;
+        private System.Windows.Forms.DateTimePicker dtpDeadLine;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label3;
     }
 }

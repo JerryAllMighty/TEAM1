@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BedFactoryService;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,12 +17,6 @@ namespace BedFactory
         {
             InitializeComponent();
         }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         /// <summary>
         /// 필요정보 검색
         /// </summary>
@@ -29,8 +24,26 @@ namespace BedFactory
         /// <param name="e"></param>
         private void btnSelect_Click(object sender, EventArgs e)
         {
-
+            MRPService service = new MRPService();
+            service.GetMRPInfo(dtpDeadLine.Value.ToString("yyyy-MM-dd"));
         }
 
+        /// <summary>
+        /// 데이터 그리드 뷰 세팅
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void frmMaterialRequirementPlanning_Load(object sender, EventArgs e)
+        {
+            dgvMRP.SetGridViewColumn("자재계획번호", "MatarialUsePlan_Num");
+            dgvMRP.SetGridViewColumn("수요계획번호", "Demand_Plan_Num");
+            dgvMRP.SetGridViewColumn("자재번호", "Mat_Num");
+            dgvMRP.SetGridViewColumn("소요량", "MaterialUse_Cnt");
+            dgvMRP.SetGridViewColumn("최초등록자", "Firstman");
+            dgvMRP.SetGridViewColumn("최초등록일", "Firstdate");
+            dgvMRP.SetGridViewColumn("최종등록자", "Lastman");
+            dgvMRP.SetGridViewColumn("최종등록일", "Lastdate");
+            
+        }
     }
 }

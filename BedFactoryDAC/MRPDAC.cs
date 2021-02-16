@@ -19,7 +19,47 @@ namespace BedFactoryDAC
             conn = new SqlConnection(strConn);
             conn.Open();
         }
+        public List<MRPVO> GetMRPInfo(string deadline)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"select Convert(nchar(10), M.MatarialUsePlan_Num) MatarialUsePlan_Num, 
+					   Convert(nchar(10), M.Demand_Plan_Num) Demand_Plan_Num,
+					   M.Mat_Num,
+					   Convert(nchar(10), M.MaterialUse_Cnt) MaterialUse_Cnt, 
+					   Convert(nchar(10), M.Firstman) Firstman,
+					   Convert(nchar(10), M.Firstdate, 23) Firstdate,
+					   Convert(nchar(10), M.Lastman) Lastman,
+					   Convert(nchar(10), M.Lastdate, 23) Lastdate
+					   from tblMaterialUsePlan M 
+					   inner join tblDemandPlan D
+					   on D.Demand_Plan_Num = M.Demand_Plan_Num
+					   inner join tblSalesMaster SM
+					   on D.SalesMaster_Num = SM.SalesMaster_Num
+					   where SM.Deadline = @Deadline;";
 
+                    cmd.Parameters.AddWithValue("@Deadline", deadline);
+
+                    List<MRPVO> list = Helper.DataReaderMapToList<MRPVO>(cmd.ExecuteReader());
+                    return list != null ? list : null;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
+            }
+        }
+
+
+        /// <summary>
+        /// 주문 들어온 제품에 대한 반제품과 원자재, 제작에 필요한 양과 현재 재고를 비교
+        /// </summary>
+        /// <param name="demandinfo"></param>
+        /// <returns></returns>
         public List<BOMVO> GetBOMInfo(DemandVO demandinfo)
         {
             try

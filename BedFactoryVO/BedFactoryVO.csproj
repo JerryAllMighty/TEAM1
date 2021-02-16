@@ -54,6 +54,7 @@
     <Compile Include="EmployeeVO.cs" />
     <Compile Include="ErrorHistoryVO.cs" />
     <Compile Include="MaterialsVO.cs" />
+    <Compile Include="MRPVO.cs" />
     <Compile Include="ProcessVO.cs" />
     <Compile Include="ProductionPlanVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
