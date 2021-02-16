@@ -1,7 +1,7 @@
 ﻿
 namespace BedFactory
 {
-    partial class frmWorkOrdersCreate
+    partial class frmWorkOrdersStatus
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -29,10 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvWOC = new BedFactory.DatagridviewControl();
-            this.btnWOdelete = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
             this.cboWp = new System.Windows.Forms.ComboBox();
             this.btnSelect = new System.Windows.Forms.Button();
@@ -46,89 +44,57 @@ namespace BedFactory
             this.label12 = new System.Windows.Forms.Label();
             this.cboMat = new System.Windows.Forms.ComboBox();
             this.cboWs = new System.Windows.Forms.ComboBox();
+            this.cboCompleter = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dgvWOS = new BedFactory.DatagridviewControl();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWOC)).BeginInit();
             this.searchLocationControl1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWOS)).BeginInit();
             this.SuspendLayout();
             // 
             // btn2
             // 
-            this.btn2.Location = new System.Drawing.Point(1304, 133);
-            this.btn2.Text = "등록";
-            this.btn2.Click += new System.EventHandler(this.btn2_Click);
+            this.btn2.Location = new System.Drawing.Point(1234, 134);
+            this.btn2.Visible = false;
             // 
             // btn3
             // 
-            this.btn3.Location = new System.Drawing.Point(936, 134);
+            this.btn3.Location = new System.Drawing.Point(1163, 134);
             this.btn3.Visible = false;
             // 
             // btn5
             // 
-            this.btn5.Location = new System.Drawing.Point(1173, 134);
-            this.btn5.Text = "작업지시확정";
-            this.btn5.Click += new System.EventHandler(this.btn5_Click);
+            this.btn5.Location = new System.Drawing.Point(926, 134);
+            this.btn5.Visible = false;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(12, 132);
+            this.label1.Location = new System.Drawing.Point(12, 133);
             this.label1.Size = new System.Drawing.Size(126, 25);
-            this.label1.Text = "작업지시생성";
+            this.label1.Text = "작업지시현황";
             // 
             // btn1
             // 
-            this.btn1.Location = new System.Drawing.Point(759, 134);
+            this.btn1.Location = new System.Drawing.Point(1305, 134);
             this.btn1.Visible = false;
             // 
             // pnlDgv
             // 
-            this.pnlDgv.Controls.Add(this.dgvWOC);
+            this.pnlDgv.Controls.Add(this.dgvWOS);
             this.pnlDgv.Location = new System.Drawing.Point(12, 165);
             this.pnlDgv.Size = new System.Drawing.Size(1358, 676);
             // 
             // btn4
             // 
-            this.btn4.Location = new System.Drawing.Point(830, 134);
+            this.btn4.Location = new System.Drawing.Point(1057, 134);
             this.btn4.Visible = false;
             // 
             // pnlSelect
             // 
             this.pnlSelect.Controls.Add(this.searchLocationControl1);
             this.pnlSelect.Size = new System.Drawing.Size(1358, 100);
-            // 
-            // dgvWOC
-            // 
-            this.dgvWOC.AllowUserToAddRows = false;
-            this.dgvWOC.AllowUserToResizeRows = false;
-            this.dgvWOC.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvWOC.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvWOC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvWOC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvWOC.Location = new System.Drawing.Point(0, 0);
-            this.dgvWOC.Name = "dgvWOC";
-            this.dgvWOC.RowHeadersVisible = false;
-            this.dgvWOC.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvWOC.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvWOC.RowTemplate.Height = 27;
-            this.dgvWOC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvWOC.Size = new System.Drawing.Size(1358, 676);
-            this.dgvWOC.TabIndex = 0;
-            // 
-            // btnWOdelete
-            // 
-            this.btnWOdelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnWOdelete.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnWOdelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnWOdelete.Location = new System.Drawing.Point(1007, 134);
-            this.btnWOdelete.Name = "btnWOdelete";
-            this.btnWOdelete.Size = new System.Drawing.Size(160, 25);
-            this.btnWOdelete.TabIndex = 52;
-            this.btnWOdelete.Text = "작업지시계획삭제";
-            this.btnWOdelete.UseVisualStyleBackColor = false;
-            this.btnWOdelete.Click += new System.EventHandler(this.btnWOdelete_Click);
             // 
             // searchLocationControl1
             // 
@@ -152,6 +118,8 @@ namespace BedFactory
             this.searchLocationControl1.Controls.Add(this.label12, 0, 1);
             this.searchLocationControl1.Controls.Add(this.cboMat, 7, 0);
             this.searchLocationControl1.Controls.Add(this.cboWs, 1, 1);
+            this.searchLocationControl1.Controls.Add(this.cboCompleter, 4, 1);
+            this.searchLocationControl1.Controls.Add(this.label4, 3, 1);
             this.searchLocationControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchLocationControl1.Location = new System.Drawing.Point(0, 0);
             this.searchLocationControl1.Name = "searchLocationControl1";
@@ -159,16 +127,16 @@ namespace BedFactory
             this.searchLocationControl1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.searchLocationControl1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.searchLocationControl1.Size = new System.Drawing.Size(1356, 98);
-            this.searchLocationControl1.TabIndex = 1;
+            this.searchLocationControl1.TabIndex = 2;
             // 
             // cboWp
             // 
             this.cboWp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboWp.FormattingEnabled = true;
-            this.cboWp.Location = new System.Drawing.Point(558, 13);
+            this.cboWp.Location = new System.Drawing.Point(558, 9);
             this.cboWp.Name = "cboWp";
             this.cboWp.Size = new System.Drawing.Size(235, 31);
-            this.cboWp.TabIndex = 80;
+            this.cboWp.TabIndex = 3;
             // 
             // btnSelect
             // 
@@ -179,10 +147,9 @@ namespace BedFactory
             this.btnSelect.Location = new System.Drawing.Point(1271, 58);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(70, 30);
-            this.btnSelect.TabIndex = 68;
+            this.btnSelect.TabIndex = 7;
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = false;
-            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // panel2
             // 
@@ -202,7 +169,7 @@ namespace BedFactory
             this.dtpTo.Location = new System.Drawing.Point(122, 0);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(113, 30);
-            this.dtpTo.TabIndex = 71;
+            this.dtpTo.TabIndex = 2;
             // 
             // dtpFrom
             // 
@@ -211,7 +178,7 @@ namespace BedFactory
             this.dtpFrom.Location = new System.Drawing.Point(0, 0);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(113, 30);
-            this.dtpFrom.TabIndex = 70;
+            this.dtpFrom.TabIndex = 1;
             // 
             // label7
             // 
@@ -266,43 +233,71 @@ namespace BedFactory
             // 
             this.cboMat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboMat.FormattingEnabled = true;
-            this.cboMat.Location = new System.Drawing.Point(977, 13);
+            this.cboMat.Location = new System.Drawing.Point(977, 9);
             this.cboMat.Name = "cboMat";
             this.cboMat.Size = new System.Drawing.Size(235, 31);
-            this.cboMat.TabIndex = 83;
+            this.cboMat.TabIndex = 4;
             // 
             // cboWs
             // 
             this.cboWs.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboWs.FormattingEnabled = true;
-            this.cboWs.Location = new System.Drawing.Point(139, 62);
+            this.cboWs.Location = new System.Drawing.Point(139, 58);
             this.cboWs.Name = "cboWs";
             this.cboWs.Size = new System.Drawing.Size(235, 31);
-            this.cboWs.TabIndex = 84;
+            this.cboWs.TabIndex = 5;
             // 
-            // frmWorkOrdersCreate
+            // cboCompleter
+            // 
+            this.cboCompleter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboCompleter.FormattingEnabled = true;
+            this.cboCompleter.Location = new System.Drawing.Point(558, 58);
+            this.cboCompleter.Name = "cboCompleter";
+            this.cboCompleter.Size = new System.Drawing.Size(235, 31);
+            this.cboCompleter.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(456, 62);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 23);
+            this.label4.TabIndex = 87;
+            this.label4.Text = "완료자";
+            // 
+            // dgvWOS
+            // 
+            this.dgvWOS.AllowUserToAddRows = false;
+            this.dgvWOS.AllowUserToResizeRows = false;
+            this.dgvWOS.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvWOS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvWOS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWOS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvWOS.Location = new System.Drawing.Point(0, 0);
+            this.dgvWOS.Name = "dgvWOS";
+            this.dgvWOS.RowHeadersVisible = false;
+            this.dgvWOS.RowHeadersWidth = 51;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvWOS.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvWOS.RowTemplate.Height = 27;
+            this.dgvWOS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvWOS.Size = new System.Drawing.Size(1358, 676);
+            this.dgvWOS.TabIndex = 0;
+            // 
+            // frmWorkOrdersStatus
             // 
             this.ClientSize = new System.Drawing.Size(1382, 853);
-            this.Controls.Add(this.btnWOdelete);
-            this.Name = "frmWorkOrdersCreate";
-            this.Text = "작업지시생성";
-            this.Load += new System.EventHandler(this.frmWorkOrderCreate_Load);
-            this.Controls.SetChildIndex(this.btnWOdelete, 0);
-            this.Controls.SetChildIndex(this.pnlSelect, 0);
-            this.Controls.SetChildIndex(this.btn4, 0);
-            this.Controls.SetChildIndex(this.pnlDgv, 0);
-            this.Controls.SetChildIndex(this.btn1, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.btn5, 0);
-            this.Controls.SetChildIndex(this.btn3, 0);
-            this.Controls.SetChildIndex(this.btn2, 0);
+            this.Name = "frmWorkOrdersStatus";
+            this.Text = "작업지시현황";
             this.pnlDgv.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWOC)).EndInit();
             this.searchLocationControl1.ResumeLayout(false);
             this.searchLocationControl1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWOS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,8 +305,6 @@ namespace BedFactory
 
         #endregion
 
-        private DatagridviewControl dgvWOC;
-        private System.Windows.Forms.Button btnWOdelete;
         private Controls.SearchLocationControl searchLocationControl1;
         private System.Windows.Forms.ComboBox cboWp;
         protected System.Windows.Forms.Button btnSelect;
@@ -325,5 +318,8 @@ namespace BedFactory
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cboMat;
         private System.Windows.Forms.ComboBox cboWs;
+        private DatagridviewControl dgvWOS;
+        private System.Windows.Forms.ComboBox cboCompleter;
+        private System.Windows.Forms.Label label4;
     }
 }

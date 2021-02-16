@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BedFactoryDAC
 {
-    public class WorkOrdersDAC:ConnectionAccess, IDisposable
+    public class WorkOrdersDAC : ConnectionAccess, IDisposable
     {
         string strConn;
         SqlConnection Conn;
@@ -28,29 +28,89 @@ namespace BedFactoryDAC
             }
         }
 
-        public WorkOrdersVO GetWorkOrdersInfo(DateTime dtFrom, DateTime dtTo, int wpName, string matName, string woStatus)
+
+        /// <summary>
+        /// 조건으로 작업지시현황 조회
+        /// </summary>
+        /// <param name="wpNum"></param>
+        /// <param name="matNum"></param>
+        /// <param name="wsNum"></param>
+        /// <param name="dtFrom"></param>
+        /// <param name="dtTo"></param>
+        /// <returns></returns>
+        public List<WorkOrdersVO> GetWorkOrdersInfo(int wpNum, string matNum, int wsNum, DateTime dtFrom, DateTime dtTo)
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(@"select WO_Num, P.Process_Name_D, WP.WP_Name, M.Mat_Name, PP.ProductionDate, SM.LastDate
-	                           WO_Status, WO_Plan_Cnt, WO_Order_Cnt, WO_Detail, IsShip
-                               from tblWorkOrders WO inner join tblWorkplace WP on WO.WO_Num = WP.WP_Num
-					           inner join tblProcess P on WO.Process_Num = P.Process_Num
-					           inner join tblMaterials M on WO.Mat_Num = M.Mat_Num
-					           inner join tblProductionPlan_D PP on WO.ProductionPlan_D_Num = PP.ProductionPlan_D_Num
-					           inner join tblSalesMaster SM on WO.SalesMaster_Num = SM.SalesMaster_Num
-                       where 1=1 ");
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append(@"select WO.WO_Num, P.Process_Name_D, WP.WP_Name, M.Mat_Name, PP.ProductionDate as FirstDate, SM.LastDate, WO.WO_Status, WO.WO_Plan_Cnt,
+                                      WO.WO_Order_Cnt, WO.WO_Detail, WO.IsShip, WO.WO_D_Emp_Num, convert(char(8), WO.WO_StartTime, 24) as WO_StartTime, convert(char(8), WO.WO_FinishTime, 24) as WO_FinishTime
+                               from tblWorkOrders WO inner join tblWorkplace WP on WO.WP_Num = WP.WP_Num
+                               inner join tblProcess P on WO.Process_Num = P.Process_Num
+                               inner join tblMaterials M on WO.Mat_Num = M.Mat_Num
+                               inner join tblProductionPlan_D PP on WO.ProductionPlan_D_Num = PP.ProductionPlan_D_Num
+                               inner join tblSalesMaster SM on WO.SalesMaster_Num = SM.SalesMaster_Num
+                       where PP.ProductionDate >= @dtFrom and SM.LastDate <= @dtTo ");
 
-            if (!string.IsNullOrEmpty(dtFrom))
-                sb.Append(" and Process_Code = @prcCode");
-            if (!string.IsNullOrEmpty(dtTo))
-                sb.Append(" and Process_Code = @prcCode");
-            if (!string.IsNullOrEmpty(wpName))
-                sb.Append(" and Process_Code = @prcCode");
-            if (!string.IsNullOrEmpty(matName))
-                sb.Append(" and Process_Code = @prcCode");
-            if (!string.IsNullOrEmpty(woStatus))
-                sb.Append(" and Process_Code = @prcCode");
+                if (wpNum > 0)
+                    sb.Append(" and WP.WP_Name = @wpNum");
+                if (!string.IsNullOrEmpty(matNum))
+                    sb.Append(" and  M.Mat_Name = @matNum");
+                if (wsNum > 0)
+                    sb.Append(" and WO_Status = @wsNum");
 
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = sb.ToString();
+                    cmd.Connection = Conn;
+
+                    if (wpNum > 0)
+                        cmd.Parameters.AddWithValue("@wpNum", wpNum);
+                    if (!string.IsNullOrEmpty(matNum))
+                        cmd.Parameters.AddWithValue("@matNum", matNum);
+                    if (wsNum > 0)
+                        cmd.Parameters.AddWithValue("@wsNum", wsNum);
+
+                    cmd.Parameters.AddWithValue("@dtFrom", dtFrom.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@dtTo", dtTo.ToShortDateString());
+
+                    List<WorkOrdersVO> list = Helper.DataReaderMapToList<WorkOrdersVO>(cmd.ExecuteReader());
+                    Conn.Close();
+
+                    return list;
+                }
+            }
+
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
+            }
+        }
+
+        public bool DeleteWorkOrdersInfo(int num)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = Conn;
+                    cmd.CommandText = @"delete 
+                                        from tblWorkOrders
+                                        where WO_Num = @WO_Num";
+
+                    cmd.Parameters.AddWithValue("@WO_Num", num);
+
+                    int iRowAffect = cmd.ExecuteNonQuery();
+
+                    return iRowAffect > 0 ? true : false;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
         }
     }
 }

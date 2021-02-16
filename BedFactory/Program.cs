@@ -19,7 +19,7 @@ namespace BedFactory
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmBOM());
+            Application.Run(new frmWorkOrdersCreate());
         }
     }
 }
