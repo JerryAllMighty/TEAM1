@@ -114,12 +114,11 @@ namespace BedFactory
             ErrorService service = new ErrorService();
             List<ErrorHistoryVO> vo = new List<ErrorHistoryVO>();
             vo = service.GetErrorHistory();
-
+            
             dgvErrorList.DataSource = null;
-            dgvErrorList.DataSource = vo;
-            //dgvErrorList.DataSource = (from list in vo
-            //                           where list.Mat_Category.Equals(category1) && list.Mat_Name.Equals(category2) && list.ErrorKind.Equals(category3)
-            //                           select list).ToList();
+            dgvErrorList.DataSource = (from list in vo
+                                       where list.Mat_Category.Contains(category1) && list.Mat_Name.Contains(category2) && list.ErrorKind.Contains(category3)
+                                       select list).ToList(); 
         }
     }
 }
