@@ -120,7 +120,11 @@ namespace BedFactory
             dgvMat.DataSource = list;
         }
 
-        //자재 콤보박스 바인딩
+        /// <summary>
+        /// 자재종류에 따른 자재명 콤보박스 필터링
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbbKind_SelectedIndexChanged(object sender, EventArgs e)
         {
             string mat_Category;
@@ -286,6 +290,7 @@ namespace BedFactory
             {
                 service.DeleteBOM(bomNum);
             }
+            bom_Num.Clear();
         }
 
         /// <summary>
@@ -298,7 +303,6 @@ namespace BedFactory
                 MessageBox.Show("삭제할 자재를 선택해주세요.");
                 return;
             }
-            bom_Num.Clear();
 
             //현재 있는 자재에서 수량 감소
             foreach (DataGridViewRow row in dgvBOM.Rows)

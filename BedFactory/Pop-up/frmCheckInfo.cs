@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BedFactoryService;
 using BedFactoryVO;
+using BadFactory;
 
 namespace BedFactory.Pop_up
 {
@@ -42,6 +43,7 @@ namespace BedFactory.Pop_up
             else
             {
                 btnOk.Text = "수 정";
+                lctCheckName.text.Text = Info.CheckName;
                 lctCheckKind.cbo.Text = Info.CheckKind;
                 lctCheckDetail.text.Text = Info.Check_Detail;
                 checkInfoNum = Info.Check_Info_Num;
@@ -64,6 +66,8 @@ namespace BedFactory.Pop_up
             vo.CheckName = lctCheckName.text.Text;
             vo.CheckKind = lctCheckKind.cbo.Text;
             vo.Check_Detail = lctCheckDetail.text.Text;
+            vo.Firstman = 1;
+            vo.Lastman = 1;
 
             if(btnOk.Text.Replace(" ", "") == "등록")
             {

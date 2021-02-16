@@ -44,7 +44,8 @@ namespace BedFactory
                     Order_Num = dgvSalesMaster.CurrentRow.Cells[1].Value.ToString(),
                     SalesMaster_Num = dgvSalesMaster.CurrentRow.Cells[0].Value.ToString(),
                     FirstMan = dgvSalesMaster.CurrentRow.Cells[9].Value.ToString(),
-                    LastMan = dgvSalesMaster.CurrentRow.Cells[11].Value.ToString()
+                    LastMan = dgvSalesMaster.CurrentRow.Cells[11].Value.ToString(),
+                    UploadDate = dgvSalesMaster.CurrentRow.Cells[8].Value.ToString()
                 }
                 ;
             }
@@ -117,7 +118,7 @@ namespace BedFactory
 
 
         /// <summary>
-        /// 수요계획 생성
+        /// 수요계획 생성 후 생산 계획과 자재 소요계획 자동으로 생성
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -132,6 +133,18 @@ namespace BedFactory
             {
                 MessageBox.Show(BedFactory.Properties.Settings.Default.InsertFail);
             }
+
+            string demandnum = service.getdemandNum();
+
+            ProductionPlanService service2 = new ProductionPlanService();
+            int ProductionPlanNum = service2.GetPlanNum();
+            List<BOMVO> list = service2.GetBOMInfo(demandinfo);
+            if (list != null)
+            {
+                service2.InsertPlanService(demandinfo, list, demandnum, ProductionPlanNum);
+            }
+            
+
 
         }
 

@@ -31,19 +31,19 @@ namespace BedFactory
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cboWorkPlace = new System.Windows.Forms.ComboBox();
+            this.dtpUploadDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboDemandPlanNum = new System.Windows.Forms.ComboBox();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
             this.lblDemandPlan = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
-            this.datagridviewControl1 = new BedFactory.DatagridviewControl();
+            this.dgvProductionPlan = new BedFactory.DatagridviewControl();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.searchLocationControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridviewControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductionPlan)).BeginInit();
             this.SuspendLayout();
             // 
             // btn2
@@ -72,7 +72,7 @@ namespace BedFactory
             // 
             // pnlDgv
             // 
-            this.pnlDgv.Controls.Add(this.datagridviewControl1);
+            this.pnlDgv.Controls.Add(this.dgvProductionPlan);
             this.pnlDgv.Size = new System.Drawing.Size(1358, 811);
             // 
             // btn4
@@ -84,22 +84,22 @@ namespace BedFactory
             // 
             this.pnlSelect.Controls.Add(this.searchLocationControl1);
             // 
-            // comboBox3
+            // cboWorkPlace
             // 
-            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(988, 20);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(213, 31);
-            this.comboBox3.TabIndex = 13;
+            this.cboWorkPlace.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboWorkPlace.FormattingEnabled = true;
+            this.cboWorkPlace.Location = new System.Drawing.Point(988, 20);
+            this.cboWorkPlace.Name = "cboWorkPlace";
+            this.cboWorkPlace.Size = new System.Drawing.Size(213, 31);
+            this.cboWorkPlace.TabIndex = 13;
             // 
-            // dateTimePicker1
+            // dtpUploadDate
             // 
-            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dateTimePicker1.Location = new System.Drawing.Point(576, 16);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 30);
-            this.dateTimePicker1.TabIndex = 8;
+            this.dtpUploadDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpUploadDate.Location = new System.Drawing.Point(576, 16);
+            this.dtpUploadDate.Name = "dtpUploadDate";
+            this.dtpUploadDate.Size = new System.Drawing.Size(200, 30);
+            this.dtpUploadDate.TabIndex = 8;
             // 
             // label3
             // 
@@ -121,14 +121,14 @@ namespace BedFactory
             this.label2.TabIndex = 2;
             this.label2.Text = "작업장";
             // 
-            // comboBox1
+            // cboDemandPlanNum
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(150, 20);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(213, 31);
-            this.comboBox1.TabIndex = 1;
+            this.cboDemandPlanNum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboDemandPlanNum.FormattingEnabled = true;
+            this.cboDemandPlanNum.Location = new System.Drawing.Point(150, 20);
+            this.cboDemandPlanNum.Name = "cboDemandPlanNum";
+            this.cboDemandPlanNum.Size = new System.Drawing.Size(213, 31);
+            this.cboDemandPlanNum.TabIndex = 1;
             // 
             // searchLocationControl1
             // 
@@ -143,11 +143,11 @@ namespace BedFactory
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
-            this.searchLocationControl1.Controls.Add(this.comboBox3, 7, 0);
+            this.searchLocationControl1.Controls.Add(this.cboWorkPlace, 7, 0);
             this.searchLocationControl1.Controls.Add(this.lblDemandPlan, 0, 0);
-            this.searchLocationControl1.Controls.Add(this.comboBox1, 1, 0);
+            this.searchLocationControl1.Controls.Add(this.cboDemandPlanNum, 1, 0);
             this.searchLocationControl1.Controls.Add(this.label3, 3, 0);
-            this.searchLocationControl1.Controls.Add(this.dateTimePicker1, 4, 0);
+            this.searchLocationControl1.Controls.Add(this.dtpUploadDate, 4, 0);
             this.searchLocationControl1.Controls.Add(this.label2, 6, 0);
             this.searchLocationControl1.Controls.Add(this.btnSelect, 9, 0);
             this.searchLocationControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -178,26 +178,27 @@ namespace BedFactory
             this.btnSelect.TabIndex = 49;
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
-            // datagridviewControl1
+            // dgvProductionPlan
             // 
-            this.datagridviewControl1.AllowUserToAddRows = false;
-            this.datagridviewControl1.AllowUserToResizeRows = false;
-            this.datagridviewControl1.BackgroundColor = System.Drawing.Color.White;
+            this.dgvProductionPlan.AllowUserToAddRows = false;
+            this.dgvProductionPlan.AllowUserToResizeRows = false;
+            this.dgvProductionPlan.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.datagridviewControl1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.datagridviewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridviewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datagridviewControl1.Location = new System.Drawing.Point(0, 0);
-            this.datagridviewControl1.Name = "datagridviewControl1";
-            this.datagridviewControl1.RowHeadersVisible = false;
-            this.datagridviewControl1.RowHeadersWidth = 51;
+            this.dgvProductionPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvProductionPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductionPlan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProductionPlan.Location = new System.Drawing.Point(0, 0);
+            this.dgvProductionPlan.Name = "dgvProductionPlan";
+            this.dgvProductionPlan.RowHeadersVisible = false;
+            this.dgvProductionPlan.RowHeadersWidth = 51;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.datagridviewControl1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.datagridviewControl1.RowTemplate.Height = 27;
-            this.datagridviewControl1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridviewControl1.Size = new System.Drawing.Size(1358, 811);
-            this.datagridviewControl1.TabIndex = 0;
+            this.dgvProductionPlan.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvProductionPlan.RowTemplate.Height = 27;
+            this.dgvProductionPlan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProductionPlan.Size = new System.Drawing.Size(1358, 811);
+            this.dgvProductionPlan.TabIndex = 0;
             // 
             // frmProductionPlanning
             // 
@@ -207,25 +208,26 @@ namespace BedFactory
             this.ClientSize = new System.Drawing.Size(1382, 853);
             this.Name = "frmProductionPlanning";
             this.Text = "생산계획";
+            this.Load += new System.EventHandler(this.frmProductionPlanning_Load);
             this.pnlDgv.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
             this.searchLocationControl1.ResumeLayout(false);
             this.searchLocationControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridviewControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductionPlan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpUploadDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboDemandPlanNum;
+        private System.Windows.Forms.ComboBox cboWorkPlace;
         private Controls.SearchLocationControl searchLocationControl1;
         private System.Windows.Forms.Label lblDemandPlan;
         private System.Windows.Forms.Button btnSelect;
-        private DatagridviewControl datagridviewControl1;
+        private DatagridviewControl dgvProductionPlan;
     }
 }

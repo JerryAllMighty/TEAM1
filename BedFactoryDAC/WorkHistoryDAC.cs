@@ -24,7 +24,7 @@ namespace BedFactoryDAC
         /// </summary>
         /// <param name="workhistoryinfo"></param>
         /// <returns></returns>
-        public bool UpdateWorkHistoryCnt(WorkHistoryVO workhistoryinfo)
+        public bool UpdateWorkHistoryCnt(WorkHistoryVO workhistoryinfo, string ErrorKind, int ErrorCnt)
         {
             try
             {
@@ -37,7 +37,8 @@ namespace BedFactoryDAC
                     cmd.Parameters.AddWithValue("@WO_Num", workhistoryinfo.WO_Num);
                     cmd.Parameters.AddWithValue("@WO_StartTime", workhistoryinfo.WO_StartTime);
                     cmd.Parameters.AddWithValue("@WO_FinishTime", workhistoryinfo.WO_FinishTime);
-
+                    cmd.Parameters.AddWithValue("@ErrorCnt", ErrorCnt);
+                    cmd.Parameters.AddWithValue("@ErrorKind", ErrorKind);
                     int iRowAffect = cmd.ExecuteNonQuery();
                     return iRowAffect > 0 ? true : false;
                 }
