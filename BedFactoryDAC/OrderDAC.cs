@@ -27,7 +27,7 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select Order_Num, Order_Date, Order_Status, od.Com_Num, IsCanceled, od.FirstMan, od.FirstDate, od.LastMan, od.LastDate
+                    cmd.CommandText = @"select Order_Num, Order_Date, Order_Status, od.Com_Num, IsCanceled, od.FirstMan, od.FirstDate, od.LastMan, od.LastDate, Com_Name
                                         from tblOrders as od
                                         join tblCompany as cp on od.Com_Num = cp.Com_Num";
 

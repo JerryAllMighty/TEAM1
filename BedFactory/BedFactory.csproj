@@ -192,6 +192,12 @@
     <Compile Include="frmMaterialLedgerStockWarehousingState.Designer.cs">
       <DependentUpon>frmMaterialLedgerStockWarehousingState.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMaterialRequirementPlanning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaterialRequirementPlanning.Designer.cs">
+      <DependentUpon>frmMaterialRequirementPlanning.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenuManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,12 +275,6 @@
     </Compile>
     <Compile Include="frmSupplierWarehousingWait.Designer.cs">
       <DependentUpon>frmSupplierWarehousingWait.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMaterialRequirementPlanning.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMaterialRequirementPlanning.Designer.cs">
-      <DependentUpon>frmMaterialRequirementPlanning.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProductionPlanning.cs">
       <SubType>Form</SubType>
@@ -589,6 +589,9 @@
     <EmbeddedResource Include="frmMaterialLedgerStockWarehousingState.resx">
       <DependentUpon>frmMaterialLedgerStockWarehousingState.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMaterialRequirementPlanning.resx">
+      <DependentUpon>frmMaterialRequirementPlanning.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMenuManagement.resx">
       <DependentUpon>frmMenuManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -627,9 +630,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSupplierWarehousingWait.resx">
       <DependentUpon>frmSupplierWarehousingWait.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMaterialRequirementPlanning.resx">
-      <DependentUpon>frmMaterialRequirementPlanning.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductionPlanning.resx">
       <DependentUpon>frmProductionPlanning.cs</DependentUpon>

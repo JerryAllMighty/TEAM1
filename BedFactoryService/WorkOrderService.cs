@@ -87,7 +87,7 @@ namespace BedFactoryService
         }
 
         //작업지시확성 일자 등록
-        public bool UpdateWorkOrderDate(WorkOrderVO vo)
+        public bool UpdateWorkOrderDate(List<int> vo)
         {
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.UpdateWorkOrderDate(vo);

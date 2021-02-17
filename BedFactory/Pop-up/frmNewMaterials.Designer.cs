@@ -37,7 +37,6 @@ namespace BedFactory.Pop_up
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lctKind = new BedFactory.LabelComboText();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.ontSizeZ = new BedFactory.Controls.OnlyNumberTextBox();
@@ -48,6 +47,7 @@ namespace BedFactory.Pop_up
             this.label1 = new System.Windows.Forms.Label();
             this.lctProductName = new BedFactory.LabelComboText();
             this.search = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -98,7 +98,7 @@ namespace BedFactory.Pop_up
             // 
             // btnAdd
             // 
-            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdd.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Location = new System.Drawing.Point(899, 15);
@@ -111,7 +111,7 @@ namespace BedFactory.Pop_up
             // 
             // lctCategory
             // 
-            this.lctCategory.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lctCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lctCategory.BackColor = System.Drawing.Color.Transparent;
             this.lctCategory.BoxKind = BedFactory.LabelComboText.Kind.combo;
             this.lctCategory.ComboData = null;
@@ -128,6 +128,7 @@ namespace BedFactory.Pop_up
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.Location = new System.Drawing.Point(50, 19);
@@ -138,6 +139,7 @@ namespace BedFactory.Pop_up
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.Location = new System.Drawing.Point(465, 19);
@@ -148,7 +150,7 @@ namespace BedFactory.Pop_up
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.AutoScroll = true;
             this.panel1.Location = new System.Drawing.Point(469, 43);
             this.panel1.Name = "panel1";
@@ -157,7 +159,7 @@ namespace BedFactory.Pop_up
             // 
             // lctKind
             // 
-            this.lctKind.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lctKind.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lctKind.BackColor = System.Drawing.Color.Transparent;
             this.lctKind.BoxKind = BedFactory.LabelComboText.Kind.combo;
             this.lctKind.ComboData = null;
@@ -172,22 +174,9 @@ namespace BedFactory.Pop_up
             this.lctKind.Size = new System.Drawing.Size(413, 38);
             this.lctKind.TabIndex = 6;
             // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnDelete.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDelete.Location = new System.Drawing.Point(844, 397);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(125, 50);
-            this.btnDelete.TabIndex = 10;
-            this.btnDelete.Text = "삭 제";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // btnUpdate
             // 
-            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnUpdate.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Location = new System.Drawing.Point(713, 397);
@@ -200,7 +189,7 @@ namespace BedFactory.Pop_up
             // 
             // btnInsert
             // 
-            this.btnInsert.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnInsert.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnInsert.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnInsert.Location = new System.Drawing.Point(582, 397);
@@ -213,7 +202,7 @@ namespace BedFactory.Pop_up
             // 
             // ontSizeZ
             // 
-            this.ontSizeZ.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ontSizeZ.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ontSizeZ.Decimal = false;
             this.ontSizeZ.Location = new System.Drawing.Point(374, 144);
             this.ontSizeZ.Name = "ontSizeZ";
@@ -222,7 +211,7 @@ namespace BedFactory.Pop_up
             // 
             // ontSizeY
             // 
-            this.ontSizeY.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ontSizeY.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ontSizeY.Decimal = false;
             this.ontSizeY.Location = new System.Drawing.Point(260, 144);
             this.ontSizeY.Name = "ontSizeY";
@@ -231,7 +220,7 @@ namespace BedFactory.Pop_up
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(350, 147);
             this.label3.Name = "label3";
@@ -241,7 +230,7 @@ namespace BedFactory.Pop_up
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(236, 147);
             this.label2.Name = "label2";
@@ -251,7 +240,7 @@ namespace BedFactory.Pop_up
             // 
             // ontSizeX
             // 
-            this.ontSizeX.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ontSizeX.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ontSizeX.Decimal = false;
             this.ontSizeX.Location = new System.Drawing.Point(146, 144);
             this.ontSizeX.Name = "ontSizeX";
@@ -260,7 +249,7 @@ namespace BedFactory.Pop_up
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(50, 147);
             this.label1.Name = "label1";
@@ -270,7 +259,7 @@ namespace BedFactory.Pop_up
             // 
             // lctProductName
             // 
-            this.lctProductName.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lctProductName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lctProductName.BackColor = System.Drawing.Color.Transparent;
             this.lctProductName.BoxKind = BedFactory.LabelComboText.Kind.text;
             this.lctProductName.ComboData = null;
@@ -287,7 +276,7 @@ namespace BedFactory.Pop_up
             // 
             // search
             // 
-            this.search.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.search.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.search.BackColor = System.Drawing.Color.LightSteelBlue;
             this.search.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.search.Location = new System.Drawing.Point(260, 354);
@@ -297,6 +286,19 @@ namespace BedFactory.Pop_up
             this.search.Text = "등 록";
             this.search.UseVisualStyleBackColor = false;
             this.search.Click += new System.EventHandler(this.search_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDelete.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.Location = new System.Drawing.Point(844, 397);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(125, 50);
+            this.btnDelete.TabIndex = 10;
+            this.btnDelete.Text = "삭 제";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // frmNewMaterials
             // 
