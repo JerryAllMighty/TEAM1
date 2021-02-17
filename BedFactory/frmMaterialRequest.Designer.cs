@@ -139,7 +139,7 @@ namespace BedFactory
             // 
             this.cboWP.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboWP.FormattingEnabled = true;
-            this.cboWP.Location = new System.Drawing.Point(139, 63);
+            this.cboWP.Location = new System.Drawing.Point(139, 60);
             this.cboWP.Name = "cboWP";
             this.cboWP.Size = new System.Drawing.Size(235, 25);
             this.cboWP.TabIndex = 66;
