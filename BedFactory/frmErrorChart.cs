@@ -116,6 +116,8 @@ namespace BedFactory
             vo = service.GetErrorHistory();
             
             dgvErrorList.DataSource = null;
+
+            if(vo == null) { return; }
             dgvErrorList.DataSource = (from list in vo
                                        where list.Mat_Category.Contains(category1) && list.Mat_Name.Contains(category2) && list.ErrorKind.Contains(category3)
                                        select list).ToList(); 

@@ -335,6 +335,7 @@ namespace BadFactory
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
+            
             this.Owner.Show();
         }
     }
