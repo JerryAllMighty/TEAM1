@@ -1,4 +1,5 @@
-﻿using BedFactoryService;
+﻿using BedFactory.Util;
+using BedFactoryService;
 using BedFactoryVO;
 using System;
 using System.Collections.Generic;
@@ -22,11 +23,15 @@ namespace BedFactory.Pop_up
         {
             InitializeComponent();
 
+            WorkplaceService service = new WorkplaceService();
+            CommonUtil.ComboBinding(cboWP, service.GetWorkplaceCombo(), "작업장", true, "선택");
+
             type = "I";
             lblMan.Text = "*등록자";
             lblDate.Text = "*등록일";
 
             cboIsUse.SelectedIndex = 0;
+            cboShift.SelectedIndex = 0;
 
             SetShow();
         }
@@ -35,10 +40,13 @@ namespace BedFactory.Pop_up
         {
             InitializeComponent();
 
+            WorkplaceService service = new WorkplaceService();
+            CommonUtil.ComboBinding(cboWP, service.GetWorkplaceCombo(), "작업장", true, "선택");
+
             type = "U";
             lblShift.Tag = vo.Shift_Num;
             cboShift.Text = vo.Shift_Name;
-            txtWp.Text = vo.WP_Num.ToString();
+            cboWP.SelectedValue = vo.WP_Num.ToString();
             txtStartTime.Text = vo.Start_Time.ToString();
             txtEndTime.Text = vo.End_Time.ToString();
             dtpStartDate.Value = vo.Start_Date.Date;
@@ -53,12 +61,15 @@ namespace BedFactory.Pop_up
         {
             InitializeComponent();
 
+            WorkplaceService service = new WorkplaceService();
+            CommonUtil.ComboBinding(cboWP, service.GetWorkplaceCombo(), "작업장", true, "선택");
+
             type = "I";
             lblMan.Text = "*등록자";
             lblDate.Text = "*등록일";
 
             cboShift.Text = vo.Shift_Name;
-            txtWp.Text = vo.WP_Num.ToString();
+            cboWP.SelectedValue = vo.WP_Num.ToString();
             txtStartTime.Text = vo.Start_Time.ToString();
             txtEndTime.Text = vo.End_Time.ToString();
             dtpStartDate.Value = vo.Start_Date.Date;
@@ -90,7 +101,7 @@ namespace BedFactory.Pop_up
                 return;
             }
 
-            if (txtWp.Text.Length < 1 || txtPeopleCnt.Text.Length < 1)
+            if (cboWP.SelectedIndex == 0 || txtPeopleCnt.Text.Length < 1)
             {
                 MessageBox.Show("필수 입력사항입니다.");
                 return;
@@ -101,7 +112,7 @@ namespace BedFactory.Pop_up
                 ShiftVO vo = new ShiftVO
                 {
                     Shift_Name = cboShift.Text,
-                    WP_Num = int.Parse(txtWp.Text),
+                    WP_Num = Convert.ToInt32(cboWP.SelectedValue),
                     Start_Time = txtStartTime.Text,
                     End_Time = txtEndTime.Text,
                     Start_Date = dtpStartDate.Value.Date,
@@ -134,7 +145,7 @@ namespace BedFactory.Pop_up
                 {
                     Shift_Num = Convert.ToInt32(lblShift.Tag),
                     Shift_Name = cboShift.Text,
-                    WP_Num = int.Parse(txtWp.Text),
+                    WP_Num = Convert.ToInt32(cboWP.SelectedValue),
                     Start_Time = txtStartTime.Text,
                     End_Time = txtEndTime.Text,
                     Start_Date = dtpStartDate.Value.Date,

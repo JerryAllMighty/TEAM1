@@ -32,17 +32,13 @@ namespace BedFactory.Pop_up
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtPeopleCnt = new BedFactory.Controls.OnlyNumberTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cboShift = new System.Windows.Forms.ComboBox();
             this.lblShift = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.txtWp = new System.Windows.Forms.TextBox();
             this.txtMan = new System.Windows.Forms.TextBox();
-            this.txtEndTime = new BedFactory.Controls.OnlyNumberTextBox();
-            this.txtStartTime = new BedFactory.Controls.OnlyNumberTextBox();
             this.lblMan = new System.Windows.Forms.Label();
             this.cboIsUse = new System.Windows.Forms.ComboBox();
             this.lblDate = new System.Windows.Forms.Label();
@@ -52,6 +48,10 @@ namespace BedFactory.Pop_up
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cboWP = new System.Windows.Forms.ComboBox();
+            this.txtPeopleCnt = new BedFactory.Controls.OnlyNumberTextBox();
+            this.txtEndTime = new BedFactory.Controls.OnlyNumberTextBox();
+            this.txtStartTime = new BedFactory.Controls.OnlyNumberTextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +82,7 @@ namespace BedFactory.Pop_up
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.cboWP);
             this.panel2.Controls.Add(this.txtPeopleCnt);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.cboShift);
@@ -89,7 +90,6 @@ namespace BedFactory.Pop_up
             this.panel2.Controls.Add(this.dtpDate);
             this.panel2.Controls.Add(this.dtpEndDate);
             this.panel2.Controls.Add(this.dtpStartDate);
-            this.panel2.Controls.Add(this.txtWp);
             this.panel2.Controls.Add(this.txtMan);
             this.panel2.Controls.Add(this.txtEndTime);
             this.panel2.Controls.Add(this.txtStartTime);
@@ -107,14 +107,6 @@ namespace BedFactory.Pop_up
             this.panel2.Size = new System.Drawing.Size(759, 256);
             this.panel2.TabIndex = 5;
             // 
-            // txtPeopleCnt
-            // 
-            this.txtPeopleCnt.Decimal = false;
-            this.txtPeopleCnt.Location = new System.Drawing.Point(526, 161);
-            this.txtPeopleCnt.Name = "txtPeopleCnt";
-            this.txtPeopleCnt.Size = new System.Drawing.Size(176, 25);
-            this.txtPeopleCnt.TabIndex = 91;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -127,6 +119,7 @@ namespace BedFactory.Pop_up
             // 
             // cboShift
             // 
+            this.cboShift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboShift.FormattingEnabled = true;
             this.cboShift.Items.AddRange(new object[] {
             "주간",
@@ -171,37 +164,12 @@ namespace BedFactory.Pop_up
             this.dtpStartDate.TabIndex = 85;
             this.dtpStartDate.ValueChanged += new System.EventHandler(this.dtpStartDate_ValueChanged);
             // 
-            // txtWp
-            // 
-            this.txtWp.Location = new System.Drawing.Point(178, 67);
-            this.txtWp.Name = "txtWp";
-            this.txtWp.Size = new System.Drawing.Size(176, 25);
-            this.txtWp.TabIndex = 84;
-            // 
             // txtMan
             // 
             this.txtMan.Location = new System.Drawing.Point(178, 209);
             this.txtMan.Name = "txtMan";
             this.txtMan.Size = new System.Drawing.Size(176, 25);
             this.txtMan.TabIndex = 83;
-            // 
-            // txtEndTime
-            // 
-            this.txtEndTime.Decimal = false;
-            this.txtEndTime.Location = new System.Drawing.Point(178, 113);
-            this.txtEndTime.MaxLength = 6;
-            this.txtEndTime.Name = "txtEndTime";
-            this.txtEndTime.Size = new System.Drawing.Size(176, 25);
-            this.txtEndTime.TabIndex = 82;
-            // 
-            // txtStartTime
-            // 
-            this.txtStartTime.Decimal = false;
-            this.txtStartTime.Location = new System.Drawing.Point(526, 67);
-            this.txtStartTime.MaxLength = 6;
-            this.txtStartTime.Name = "txtStartTime";
-            this.txtStartTime.Size = new System.Drawing.Size(176, 25);
-            this.txtStartTime.TabIndex = 81;
             // 
             // lblMan
             // 
@@ -214,6 +182,7 @@ namespace BedFactory.Pop_up
             // 
             // cboIsUse
             // 
+            this.cboIsUse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboIsUse.FormattingEnabled = true;
             this.cboIsUse.Items.AddRange(new object[] {
             "Y",
@@ -293,6 +262,44 @@ namespace BedFactory.Pop_up
             this.label1.TabIndex = 65;
             this.label1.Text = "*작업장명";
             // 
+            // cboWP
+            // 
+            this.cboWP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboWP.FormattingEnabled = true;
+            this.cboWP.Items.AddRange(new object[] {
+            "주간",
+            "야산"});
+            this.cboWP.Location = new System.Drawing.Point(178, 67);
+            this.cboWP.Name = "cboWP";
+            this.cboWP.Size = new System.Drawing.Size(176, 25);
+            this.cboWP.TabIndex = 92;
+            // 
+            // txtPeopleCnt
+            // 
+            this.txtPeopleCnt.Decimal = false;
+            this.txtPeopleCnt.Location = new System.Drawing.Point(526, 161);
+            this.txtPeopleCnt.Name = "txtPeopleCnt";
+            this.txtPeopleCnt.Size = new System.Drawing.Size(176, 25);
+            this.txtPeopleCnt.TabIndex = 91;
+            // 
+            // txtEndTime
+            // 
+            this.txtEndTime.Decimal = false;
+            this.txtEndTime.Location = new System.Drawing.Point(178, 113);
+            this.txtEndTime.MaxLength = 6;
+            this.txtEndTime.Name = "txtEndTime";
+            this.txtEndTime.Size = new System.Drawing.Size(176, 25);
+            this.txtEndTime.TabIndex = 82;
+            // 
+            // txtStartTime
+            // 
+            this.txtStartTime.Decimal = false;
+            this.txtStartTime.Location = new System.Drawing.Point(526, 67);
+            this.txtStartTime.MaxLength = 6;
+            this.txtStartTime.Name = "txtStartTime";
+            this.txtStartTime.Size = new System.Drawing.Size(176, 25);
+            this.txtStartTime.TabIndex = 81;
+            // 
             // frmShift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -330,7 +337,6 @@ namespace BedFactory.Pop_up
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMan;
-        private System.Windows.Forms.TextBox txtWp;
         private System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.DateTimePicker dtpDate;
@@ -338,5 +344,6 @@ namespace BedFactory.Pop_up
         private System.Windows.Forms.ComboBox cboShift;
         private Controls.OnlyNumberTextBox txtPeopleCnt;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cboWP;
     }
 }

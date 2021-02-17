@@ -101,8 +101,9 @@ namespace BedFactory
             // cboCompany
             // 
             this.cboCompany.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(558, 11);
+            this.cboCompany.Location = new System.Drawing.Point(558, 14);
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(235, 25);
             this.cboCompany.TabIndex = 73;
@@ -180,12 +181,13 @@ namespace BedFactory
             // cboState
             // 
             this.cboState.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboState.FormattingEnabled = true;
             this.cboState.Items.AddRange(new object[] {
             "전체",
             "처리중",
             "처리완료"});
-            this.cboState.Location = new System.Drawing.Point(139, 60);
+            this.cboState.Location = new System.Drawing.Point(139, 63);
             this.cboState.Name = "cboState";
             this.cboState.Size = new System.Drawing.Size(235, 25);
             this.cboState.TabIndex = 65;

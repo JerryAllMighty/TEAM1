@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboWO = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
@@ -95,8 +95,9 @@ namespace BedFactory
             // cboWO
             // 
             this.cboWO.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboWO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboWO.FormattingEnabled = true;
-            this.cboWO.Location = new System.Drawing.Point(558, 18);
+            this.cboWO.Location = new System.Drawing.Point(558, 21);
             this.cboWO.Name = "cboWO";
             this.cboWO.Size = new System.Drawing.Size(235, 25);
             this.cboWO.TabIndex = 80;
@@ -208,8 +209,9 @@ namespace BedFactory
             // cboM_Category
             // 
             this.cboM_Category.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboM_Category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboM_Category.FormattingEnabled = true;
-            this.cboM_Category.Location = new System.Drawing.Point(977, 18);
+            this.cboM_Category.Location = new System.Drawing.Point(977, 21);
             this.cboM_Category.Name = "cboM_Category";
             this.cboM_Category.Size = new System.Drawing.Size(235, 25);
             this.cboM_Category.TabIndex = 82;
@@ -229,16 +231,16 @@ namespace BedFactory
             this.dgvWO.AllowUserToAddRows = false;
             this.dgvWO.AllowUserToResizeRows = false;
             this.dgvWO.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvWO.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvWO.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvWO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWO.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWO.Location = new System.Drawing.Point(0, 0);
             this.dgvWO.Name = "dgvWO";
             this.dgvWO.RowHeadersVisible = false;
             this.dgvWO.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvWO.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvWO.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvWO.RowTemplate.Height = 23;
             this.dgvWO.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvWO.Size = new System.Drawing.Size(1358, 720);

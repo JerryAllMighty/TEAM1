@@ -45,7 +45,7 @@ namespace BedFactory
                 dgvShift.Columns.Clear();
 
                 dgvShift.SetGridViewColumn("Shift번호", "Shift_Num", visibility: false);
-                dgvShift.SetGridViewColumn("작업장명", "WP_Name");
+                dgvShift.SetGridViewColumn("작업장명", "WP_Name", 200);
                 dgvShift.SetGridViewColumn("Shift", "Shift_Name");
 
                 List<DateTime> DayList = GetFromToDays(dtpFrom.Value.Date, dtpTo.Value.Date);
@@ -60,7 +60,7 @@ namespace BedFactory
                 var item = list.GroupBy(p => p.WP_Name);
                 List<string> temp = item.Select(p => p.Key.ToString()).ToList();
                 temp.Insert(0, "전체");
-                cboWork.DisplayMember = "WP_Num";
+                cboWork.DisplayMember = "WP_Name";
                 cboWork.DataSource = temp;
             }
 
@@ -71,7 +71,7 @@ namespace BedFactory
             }
             else
             {
-                shiftsList = list.Where(p => p.WP_Num == int.Parse(cboWork.Text)).ToList();
+                shiftsList = list.Where(p => p.WP_Name == cboWork.Text).ToList();
             }
 
             dgvShift.Rows.Clear();
@@ -102,7 +102,7 @@ namespace BedFactory
                 {
                     object[] ob1 = new object[dgvShift.ColumnCount];
                     ob1[0] = p.Shift_Num;
-                    ob1[1] = p.WP_Num;
+                    ob1[1] = p.WP_Name;
                     ob1[2] = p.Shift_Name;
                     for (int i = 3; i < ob1.Length; i++)
                     {

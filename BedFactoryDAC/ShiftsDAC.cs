@@ -33,7 +33,7 @@ namespace BedFactoryDAC
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = @"select Shift_Num, Shift_Name, S.WP_Num, WP.WP_Name, Start_Time, End_Time, Start_Date
-                                               , End_Date, IsUse
+                                               , End_Date, IsUse, S.LastMan, S.LastDate
                                                , Convert(int, Row_Number() over(order by Shift_Num)) Rownum
                                                , PeopleCnt
                                           from tblShifts S join tblWorkplace WP on S.WP_Num = WP.WP_Num";
