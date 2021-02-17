@@ -3,7 +3,9 @@ using BedFactoryVO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -86,6 +88,9 @@ namespace BedFatory_POP
             frm.Show();
             frm.Activate();
         }
+
+        int process_id = 0;
+        PLCService m_thread;
         /// <summary>
         /// 작업 시작
         /// </summary>
@@ -93,10 +98,47 @@ namespace BedFatory_POP
         /// <param name="e"></param>
         private void btnWS_Click(object sender, EventArgs e)
         {
+            if (lblOrderLeftCnt.Text.Length > 0 && lblOrderLeftCnt.Text == lblTotalOrderCnt.Text)
+                return;
+
             timer2.Stop();
             timer1.Start();
             timer1.Tick += Timer1_Tick;
+
+            string server = ConfigurationManager.AppSettings["PLC"]; //입고 추가
+            Process pro = Process.Start(server, $"PLC 127.0.0.1 8800");
+            process_id = pro.Id;
+
+            m_thread = new PLCService("127.0.0.1", 8800, "9999", "127.0.0.1");
+            m_thread.ReadData += M_thread_ReadData;
+            m_thread.ThreadStart();
         }
+
+        private void M_thread_ReadData(object sender, ReadDataEventArgs args)
+        {
+            this.Invoke((MethodInvoker)(() => {
+                string[] arrData = args.Data.Replace("", "").Replace("", "").Trim().Split('|');
+
+                if (lblOrderLeftCnt.Text.Length > 0 && int.Parse(lblOrderLeftCnt.Text) <= 3)
+                {
+                    btnWStop.PerformClick();
+                    lblOkayProductCnt.Text = (int.Parse(lblOkayProductCnt.Text) + int.Parse(lblOrderLeftCnt.Text)).ToString();
+                    lblTotalProductCnt.Text = (int.Parse(lblOkayProductCnt.Text) + int.Parse(lblErrorCnt.Text)).ToString();
+                    lblOrderLeftCnt.Text = "0";
+                    return;
+                }
+
+                if (lblOkayProductCnt.Text.Length < 1)
+                    lblOkayProductCnt.Text = "0";
+                if (lblErrorCnt.Text.Length < 1)
+                    lblErrorCnt.Text = "0";
+                lblOkayProductCnt.Text = (int.Parse(lblOkayProductCnt.Text) + int.Parse(arrData[0])).ToString();
+                lblErrorCnt.Text = (int.Parse(lblErrorCnt.Text) + int.Parse(arrData[1])).ToString();
+                lblTotalProductCnt.Text = (int.Parse(lblOkayProductCnt.Text) + int.Parse(lblErrorCnt.Text)).ToString();
+                lblOrderLeftCnt.Text = (int.Parse(lblTotalOrderCnt.Text) - int.Parse(lblOkayProductCnt.Text)).ToString();
+            }));
+        }
+
         private void Timer1_Tick(object sender, EventArgs e)
         {
             timerCount++;
@@ -128,6 +170,15 @@ namespace BedFatory_POP
             timer1.Stop();
             timer2.Start();
             timer2.Tick += Timer2_Tick;
+
+            foreach (Process process in Process.GetProcesses())
+            {
+                if (process.Id.Equals(process_id))
+                {
+                    process.Kill();
+                    break;
+                }
+            }
         }
         private void Timer2_Tick(object sender, EventArgs e)
         {
