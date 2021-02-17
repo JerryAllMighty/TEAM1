@@ -19,7 +19,7 @@ namespace BedFactoryDAC
             conn = new SqlConnection(strConn);
             conn.Open();
         }
-        public List<MRPVO> GetMRPInfo(string deadline)
+        public List<MRPVO> GetMRPInfo(string deadline, string demandplannum, string subject)
         {
             try
             {
@@ -34,20 +34,29 @@ namespace BedFactoryDAC
 					   Convert(nchar(10), M.Firstman) Firstman,
 					   Convert(nchar(10), M.Firstdate, 23) Firstdate,
 					   Convert(nchar(10), M.Lastman) Lastman,
-					   Convert(nchar(10), M.Lastdate, 23) Lastdate
+					   Convert(nchar(10), M.Lastdate, 23) Lastdate,
+					   Ma.Mat_Name
 					   from tblMaterialUsePlan M 
 					   inner join tblDemandPlan D
 					   on D.Demand_Plan_Num = M.Demand_Plan_Num
 					   inner join tblSalesMaster SM
 					   on D.SalesMaster_Num = SM.SalesMaster_Num
-					   where SM.Deadline = @Deadline;";
+					   inner join tblMaterials Ma
+					   on Ma.Mat_Num = M.Mat_Num
+					   where SM.Deadline = @Deadline" + sb.ToString();
 
                     cmd.Parameters.AddWithValue("@Deadline", deadline);
 
-                    //if ()
-                    //{ }
-                    //if ()
-                    //{ }
+                    if (demandplannum.Length > 0)
+                    {
+                        sb.Append(" and M.Demand_Plan_Num = @Demand_Plan_Num");
+                        cmd.Parameters.AddWithValue("@Demand_Plan_Num", demandplannum);
+                    }
+                    if (subject.Length > 0)
+                    {
+                        sb.Append(" and Ma.Mat_Name = @Mat_Name");
+                        cmd.Parameters.AddWithValue("@Mat_Name", subject);
+                    }
                     List<MRPVO> list = Helper.DataReaderMapToList<MRPVO>(cmd.ExecuteReader());
                     return list != null ? list : null;
                 }

@@ -10,10 +10,10 @@ namespace BedFactoryService
 {
     public class MRPService
     {
-        public List<MRPVO> GetMRPInfo(string deadline)
+        public List<MRPVO> GetMRPInfo(string deadline, string demandplannum, string subject)
         {
             MRPDAC dac = new MRPDAC();
-            return dac.GetMRPInfo(deadline);
+            return dac.GetMRPInfo(deadline, demandplannum, subject);
         }
 
         /// <summary>
