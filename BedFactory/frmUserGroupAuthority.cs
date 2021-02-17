@@ -14,6 +14,8 @@ namespace BedFactory
 {
     public partial class frmUserGroupAuthority : BedFactory.BaseForms.BaseForm2
     {
+        List<AuthorityVO> authList;
+
         public frmUserGroupAuthority()
         {
             InitializeComponent();
@@ -44,7 +46,7 @@ namespace BedFactory
         }
 
         /// <summary>
-        /// 
+        /// 해당 그룹 권한 수정 폼 열기
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -52,7 +54,7 @@ namespace BedFactory
         {
             if (e.ColumnIndex == 2)
             {
-                frmUserGroupAuthorityModify frm = new frmUserGroupAuthorityModify(dgvGroupList[0, e.RowIndex].Value.ToString(), dgvGroupList[1, e.RowIndex].Value.ToString());
+                frmUserGroupAuthorityModify frm = new frmUserGroupAuthorityModify(dgvGroupList[0, e.RowIndex].Value.ToString(), dgvGroupList[1, e.RowIndex].Value.ToString(), authList);
                 frm.ShowDialog();
             }
         }
@@ -65,7 +67,7 @@ namespace BedFactory
         private void dgvGroupList_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             AuthorityService service = new AuthorityService();
-            List<AuthorityVO> authList = service.GetAuthorityInfoByGroupName(dgvGroupList[1, e.RowIndex].Value.ToString());
+            authList = service.GetAuthorityInfoByGroupName(dgvGroupList[1, e.RowIndex].Value.ToString());
             if (authList != null)
             {
                 dgvAllowedAuthorities.DataSource = authList;
