@@ -34,8 +34,8 @@ namespace BedFactory
             btn1.Visible = btn5.Visible = false;
 
             dgvWait.SetGridCheckBox("chk");
-            dgvWait.SetGridViewColumn("거래처명", "Com_Name");
-            dgvWait.SetGridViewColumn("자재명", "Mat_Name");
+            dgvWait.SetGridViewColumn("거래처명", "Com_Name", 150);
+            dgvWait.SetGridViewColumn("자재명", "Mat_Name", 150);
             dgvWait.SetGridViewColumn("자재유형", "Mat_Category");
             dgvWait.SetGridViewColumn("검사내용", "Error_Detail");
             dgvWait.SetGridViewColumn("불량", "Error_Cnt");
@@ -52,9 +52,9 @@ namespace BedFactory
             dgvWait.Controls.Add(headerCheck);
 
             dgvWearing.SetGridCheckBox("chk");
-            dgvWearing.SetGridViewColumn("자재명", "Mat_Name");
+            dgvWearing.SetGridViewColumn("자재명", "Mat_Name", 150);
             dgvWearing.SetGridViewColumn("자재유형", "Mat_Category");
-            dgvWearing.SetGridViewColumn("창고번호", "Str_Num");
+            dgvWearing.SetGridViewColumn("창고번호", "Str_Num", 50);
             dgvWearing.SetGridViewColumn("창고유형", "Str_Kind");
             dgvWearing.SetGridViewColumn("입고량", "Mat_Cnt");
             dgvWearing.SetGridViewColumn("입고번호", "Wearing_Num", visibility: false);
@@ -102,6 +102,7 @@ namespace BedFactory
         {
             WearingService service = new WearingService();
             list = service.WarehousingStart(dtpFrom.Value.Date, dtpTo.Value.Date);
+            list.ForEach(p => p.ExpectedDate = p.ExpectedDate.Date);
             dgvWait.DataSource = list;
 
             List<string> temp = list.GroupBy(p => p.Com_Name).Select(p => p.Key.ToString()).ToList();

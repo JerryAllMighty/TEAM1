@@ -31,17 +31,17 @@ namespace BedFactory
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.btnSelect = new System.Windows.Forms.Button();
+            this.dgvProcessInfo = new BedFactory.DatagridviewControl();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cboCategory_Code = new System.Windows.Forms.ComboBox();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.btnSelect = new System.Windows.Forms.Button();
-            this.dgvProcessInfo = new BedFactory.DatagridviewControl();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
-            this.searchLocationControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcessInfo)).BeginInit();
+            this.searchLocationControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn2
@@ -79,82 +79,19 @@ namespace BedFactory
             // 
             this.pnlSelect.Controls.Add(this.searchLocationControl1);
             // 
-            // searchLocationControl1
-            // 
-            this.searchLocationControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.searchLocationControl1.ColumnCount = 10;
-            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
-            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
-            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13F));
-            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
-            this.searchLocationControl1.Controls.Add(this.label2, 0, 0);
-            this.searchLocationControl1.Controls.Add(this.label3, 3, 0);
-            this.searchLocationControl1.Controls.Add(this.cboCategory_Code, 1, 0);
-            this.searchLocationControl1.Controls.Add(this.txtName, 4, 0);
-            this.searchLocationControl1.Controls.Add(this.btnSelect, 9, 0);
-            this.searchLocationControl1.Location = new System.Drawing.Point(0, 0);
-            this.searchLocationControl1.Name = "searchLocationControl1";
-            this.searchLocationControl1.RowCount = 1;
-            this.searchLocationControl1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.searchLocationControl1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.searchLocationControl1.Size = new System.Drawing.Size(1356, 63);
-            this.searchLocationControl1.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 23);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "공정분류";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(394, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 23);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "상세공정명";
-            // 
-            // cboCategory_Code
-            // 
-            this.cboCategory_Code.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboCategory_Code.FormattingEnabled = true;
-            this.cboCategory_Code.Location = new System.Drawing.Point(126, 20);
-            this.cboCategory_Code.Name = "cboCategory_Code";
-            this.cboCategory_Code.Size = new System.Drawing.Size(215, 31);
-            this.cboCategory_Code.TabIndex = 23;
-            // 
-            // txtName
-            // 
-            this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtName.Location = new System.Drawing.Point(506, 16);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(215, 30);
-            this.txtName.TabIndex = 24;
-            // 
             // btnSelect
             // 
             this.btnSelect.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSelect.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSelect.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSelect.Location = new System.Drawing.Point(1275, 16);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(70, 30);
-            this.btnSelect.TabIndex = 25;
+            this.btnSelect.TabIndex = 69;
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = false;
-            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click_1);
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // dgvProcessInfo
             // 
@@ -176,6 +113,70 @@ namespace BedFactory
             this.dgvProcessInfo.Size = new System.Drawing.Size(1358, 711);
             this.dgvProcessInfo.TabIndex = 0;
             // 
+            // searchLocationControl1
+            // 
+            this.searchLocationControl1.ColumnCount = 10;
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13F));
+            this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
+            this.searchLocationControl1.Controls.Add(this.label2, 0, 0);
+            this.searchLocationControl1.Controls.Add(this.label3, 3, 0);
+            this.searchLocationControl1.Controls.Add(this.cboCategory_Code, 1, 0);
+            this.searchLocationControl1.Controls.Add(this.txtName, 4, 0);
+            this.searchLocationControl1.Controls.Add(this.btnSelect, 9, 0);
+            this.searchLocationControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchLocationControl1.Location = new System.Drawing.Point(0, 0);
+            this.searchLocationControl1.Name = "searchLocationControl1";
+            this.searchLocationControl1.RowCount = 1;
+            this.searchLocationControl1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.searchLocationControl1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.searchLocationControl1.Size = new System.Drawing.Size(1356, 63);
+            this.searchLocationControl1.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 23);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "공정분류 ";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(391, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 23);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "상세공정명 ";
+            // 
+            // cboCategory_Code
+            // 
+            this.cboCategory_Code.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboCategory_Code.FormattingEnabled = true;
+            this.cboCategory_Code.Location = new System.Drawing.Point(126, 20);
+            this.cboCategory_Code.Name = "cboCategory_Code";
+            this.cboCategory_Code.Size = new System.Drawing.Size(215, 31);
+            this.cboCategory_Code.TabIndex = 23;
+            // 
+            // txtName
+            // 
+            this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtName.Location = new System.Drawing.Point(506, 16);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(215, 30);
+            this.txtName.TabIndex = 24;
+            // 
             // frmProcessManagement
             // 
             this.ClientSize = new System.Drawing.Size(1382, 853);
@@ -184,22 +185,21 @@ namespace BedFactory
             this.Load += new System.EventHandler(this.frmFacilitiesManagement_Load);
             this.pnlDgv.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProcessInfo)).EndInit();
             this.searchLocationControl1.ResumeLayout(false);
             this.searchLocationControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProcessInfo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Controls.SearchLocationControl searchLocationControl1;
         private DatagridviewControl dgvProcessInfo;
+        protected System.Windows.Forms.Button btnSelect;
+        private Controls.SearchLocationControl searchLocationControl1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboCategory_Code;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Button btnSelect;
     }
 }

@@ -736,6 +736,9 @@
     <EmbeddedResource Include="Pop-up\frmCompanyInfoReg.resx">
       <DependentUpon>frmCompanyInfoReg.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pop-up\frmWorkOrdersCreatePOPUP.resx">
+      <DependentUpon>frmWorkOrdersCreatePOPUP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pop-up\frmWorkplaceReg.resx">
       <DependentUpon>frmWorkplaceReg.cs</DependentUpon>
     </EmbeddedResource>

@@ -53,10 +53,6 @@ namespace BedFactory.Pop_up
             this.rdoYes = new System.Windows.Forms.RadioButton();
             this.rdoNo = new System.Windows.Forms.RadioButton();
             this.cboComCode = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnRegAddr = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label12
@@ -82,7 +78,7 @@ namespace BedFactory.Pop_up
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(19, 210);
+            this.label39.Location = new System.Drawing.Point(19, 163);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(17, 23);
             this.label39.TabIndex = 114;
@@ -91,7 +87,7 @@ namespace BedFactory.Pop_up
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(40, 208);
+            this.label40.Location = new System.Drawing.Point(40, 161);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(78, 23);
             this.label40.TabIndex = 112;
@@ -99,7 +95,7 @@ namespace BedFactory.Pop_up
             // 
             // txtInfo
             // 
-            this.txtInfo.Location = new System.Drawing.Point(134, 205);
+            this.txtInfo.Location = new System.Drawing.Point(134, 158);
             this.txtInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtInfo.Multiline = true;
             this.txtInfo.Name = "txtInfo";
@@ -110,7 +106,7 @@ namespace BedFactory.Pop_up
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Lavender;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancel.Location = new System.Drawing.Point(342, 442);
+            this.btnCancel.Location = new System.Drawing.Point(342, 395);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(120, 50);
@@ -122,7 +118,7 @@ namespace BedFactory.Pop_up
             // 
             this.btnSave.BackColor = System.Drawing.Color.Lavender;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSave.Location = new System.Drawing.Point(193, 442);
+            this.btnSave.Location = new System.Drawing.Point(193, 395);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(120, 50);
@@ -297,57 +293,12 @@ namespace BedFactory.Pop_up
             this.cboComCode.Size = new System.Drawing.Size(175, 31);
             this.cboComCode.TabIndex = 1;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(134, 157);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 10);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(314, 34);
-            this.textBox1.TabIndex = 151;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(19, 165);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(17, 23);
-            this.label2.TabIndex = 150;
-            this.label2.Text = "*";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(40, 163);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 23);
-            this.label5.TabIndex = 149;
-            this.label5.Text = "업체주소";
-            // 
-            // btnRegAddr
-            // 
-            this.btnRegAddr.BackColor = System.Drawing.Color.Lavender;
-            this.btnRegAddr.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRegAddr.Location = new System.Drawing.Point(464, 157);
-            this.btnRegAddr.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnRegAddr.Name = "btnRegAddr";
-            this.btnRegAddr.Size = new System.Drawing.Size(175, 34);
-            this.btnRegAddr.TabIndex = 8;
-            this.btnRegAddr.Text = "주소등록";
-            this.btnRegAddr.UseVisualStyleBackColor = false;
-            // 
             // frmCompanyInfoReg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(656, 503);
-            this.Controls.Add(this.btnRegAddr);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(656, 469);
             this.Controls.Add(this.cboComCode);
             this.Controls.Add(this.rdoYes);
             this.Controls.Add(this.rdoNo);
@@ -407,9 +358,5 @@ namespace BedFactory.Pop_up
         private System.Windows.Forms.RadioButton rdoYes;
         private System.Windows.Forms.RadioButton rdoNo;
         private System.Windows.Forms.ComboBox cboComCode;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnRegAddr;
     }
 }

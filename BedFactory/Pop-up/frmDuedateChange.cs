@@ -36,6 +36,7 @@ namespace BedFactory.Pop_up
             if(service.BalzooDateUpdate(list, dtpA.Value.Date))
             {
                 MessageBox.Show(BedFactory.Properties.Settings.Default.UpdateSuccess);
+                this.DialogResult = DialogResult.Yes;
                 this.Close();
             }
             else

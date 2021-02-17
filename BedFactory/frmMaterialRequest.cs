@@ -33,14 +33,14 @@ namespace BedFactory
 
             dgvWorkOrder.SetGridViewColumn("계획시작일자", "ProductionDate");
             dgvWorkOrder.SetGridViewColumn("작업지시번호", "WO_Num");
-            dgvWorkOrder.SetGridViewColumn("작업장명", "WP_Name");
-            dgvWorkOrder.SetGridViewColumn("공정상세명", "Process_Name_D");
-            dgvWorkOrder.SetGridViewColumn("자재명", "Mat_Name");
+            dgvWorkOrder.SetGridViewColumn("작업장명", "WP_Name", 200);
+            dgvWorkOrder.SetGridViewColumn("공정상세명", "Process_Name_D", 200);
+            dgvWorkOrder.SetGridViewColumn("자재명", "Mat_Name", 150);
             dgvWorkOrder.SetGridViewColumn("지시수량", "WO_Order_Cnt");
             dgvWorkOrder.SetGridViewColumn("상태명", "WO_Status");
 
             dgvMaSub.SetGridCheckBox("chk");
-            dgvMaSub.SetGridViewColumn("자재명", "Mat_Name");
+            dgvMaSub.SetGridViewColumn("자재명", "Mat_Name", 150);
             dgvMaSub.SetGridViewColumn("자재유형", "Mat_Category");
             dgvMaSub.SetGridViewColumn("창고유형", "Str_Kind");
             dgvMaSub.SetGridViewColumn("요청수량", "WO_Order_Cnt");

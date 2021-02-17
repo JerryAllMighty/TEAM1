@@ -144,7 +144,7 @@ namespace BedFactory
             // 
             this.cboComType_Code.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboComType_Code.FormattingEnabled = true;
-            this.cboComType_Code.Location = new System.Drawing.Point(126, 16);
+            this.cboComType_Code.Location = new System.Drawing.Point(126, 20);
             this.cboComType_Code.Name = "cboComType_Code";
             this.cboComType_Code.Size = new System.Drawing.Size(215, 31);
             this.cboComType_Code.TabIndex = 1;
@@ -174,6 +174,7 @@ namespace BedFactory
             this.btnExcel.TabIndex = 4;
             this.btnExcel.Text = "액셀";
             this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Visible = false;
             // 
             // dgvComList
             // 
