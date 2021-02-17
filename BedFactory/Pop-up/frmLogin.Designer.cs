@@ -106,6 +106,7 @@ namespace BedFactory.Pop_up
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "로그인";
             this.ResumeLayout(false);
             this.PerformLayout();
