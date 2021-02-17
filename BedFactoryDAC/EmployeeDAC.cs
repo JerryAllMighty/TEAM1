@@ -31,8 +31,8 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select Convert(nchar(10), Emp_Num) Emp_Num, Emp_Name, Emp_Category
-											from tblEmployees where Emp_Department= @Emp_Department";
+                    cmd.CommandText = @"select Emp_Num, Emp_Name, Emp_Category
+											from tblEmployees where Emp_Department = @Emp_Department";
 
                     cmd.Parameters.AddWithValue("@Emp_Department", GroupName);
 
@@ -60,12 +60,12 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select Convert(nchar(10), E.Emp_Num) Emp_Num , E.Emp_Category, E.Emp_Name, E.Emp_Department, 
-											Convert(nchar(10), AL.ListNum)ListNum
+                    cmd.CommandText = @"select E.Emp_Num, E.Emp_Category, E.Emp_Name, E.Emp_Department, 
+											 AL.ListNum
 											from tblEmployees E
 											inner join tblAuthorityList AL
 											on E.ListNum = AL.ListNum
-											where Emp_Name = @Emp_Name";
+											where E.Emp_Name = @Emp_Name";
 
                     cmd.Parameters.AddWithValue("@Emp_Name", empname);
 
