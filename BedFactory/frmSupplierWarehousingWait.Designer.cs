@@ -110,7 +110,7 @@ namespace BedFactory
             // 
             this.cboCom.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboCom.FormattingEnabled = true;
-            this.cboCom.Location = new System.Drawing.Point(558, 11);
+            this.cboCom.Location = new System.Drawing.Point(558, 14);
             this.cboCom.Name = "cboCom";
             this.cboCom.Size = new System.Drawing.Size(235, 25);
             this.cboCom.TabIndex = 72;
@@ -147,7 +147,7 @@ namespace BedFactory
             // 
             this.cboBnum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboBnum.FormattingEnabled = true;
-            this.cboBnum.Location = new System.Drawing.Point(139, 60);
+            this.cboBnum.Location = new System.Drawing.Point(139, 63);
             this.cboBnum.Name = "cboBnum";
             this.cboBnum.Size = new System.Drawing.Size(235, 25);
             this.cboBnum.TabIndex = 60;

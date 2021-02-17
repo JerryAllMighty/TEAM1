@@ -197,12 +197,12 @@ namespace BedFactory
 
         private void btn5_Click(object sender, EventArgs e) //입고대기처리
         {
-            if(Convert.ToInt32(dgvWait[5, dgvWait.SelectedRows[0].Index].Value) != 0)
+            foreach (DataGridViewRow row in dgvWait.Rows)
             {
-                foreach (DataGridViewRow row in dgvWait.Rows)
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chkBalzoo"];
+                if (Convert.ToBoolean(chk.Value) == true)
                 {
-                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chkBalzoo"];
-                    if (Convert.ToBoolean(chk.Value) == true)
+                    if (Convert.ToInt32(dgvWait[5, row.Index].Value) != 0)
                     {
                         WearingVO vo = new WearingVO
                         {
@@ -216,14 +216,15 @@ namespace BedFactory
                         copy.RemoveAt(row.Index);
                     }
                 }
-
-                dgvWait.DataSource = null;
-                dgvWait.Rows.Clear();
-                dgvWait.DataSource = copy;
-                headerCheckz.Checked = false;
-                DataLoad();
             }
+
+            dgvWait.DataSource = null;
+            dgvWait.Rows.Clear();
+            dgvWait.DataSource = copy;
+            headerCheckz.Checked = false;
+            DataLoad();
         }
+
 
         private void dgvCheck_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -26,6 +26,8 @@ namespace BedFactory.Pop_up
             lblMan.Text = "*등록자";
             lblDate.Text = "*등록일";
 
+            cboIsUse.SelectedIndex = 0;
+
             SetShow();
         }
 

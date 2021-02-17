@@ -3,6 +3,7 @@ using BedFactoryVO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
@@ -73,8 +74,8 @@ namespace BedFatory_POP
             timer1.Start();
             timer1.Tick += Timer1_Tick;
 
-            string server = @"C:\Users\USER\source\repos\Final\OutputTcpServer\bin\Debug\OutputTcpServer.exe"; //입고 추가
-            Process pro = Process.Start(server, $"9999 127.0.0.1 8800");
+            string server = ConfigurationManager.AppSettings["PLC"]; //입고 추가
+            Process pro = Process.Start(server, $"PLC 127.0.0.1 8800");
             process_id = pro.Id;
 
             m_thread = new PLCService("127.0.0.1", 8800, "9999", "127.0.0.1");
