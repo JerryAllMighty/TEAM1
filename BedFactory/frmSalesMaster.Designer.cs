@@ -53,14 +53,15 @@ namespace BedFactory
             // 
             // btn2
             // 
-            this.btn2.Location = new System.Drawing.Point(1305, 144);
+            this.btn2.Location = new System.Drawing.Point(1199, 144);
             this.btn2.Text = "수동";
+            this.btn2.Visible = false;
             this.btn2.Click += new System.EventHandler(this.btn2_Click_1);
             // 
             // btn3
             // 
-            this.btn3.Location = new System.Drawing.Point(1199, 143);
-            this.btn3.Size = new System.Drawing.Size(100, 25);
+            this.btn3.Location = new System.Drawing.Point(1270, 140);
+            this.btn3.Size = new System.Drawing.Size(100, 30);
             this.btn3.Text = "수요 계획 생성";
             this.btn3.Click += new System.EventHandler(this.btn3_Click_1);
             // 
@@ -181,7 +182,7 @@ namespace BedFactory
             // 
             this.cboCompany.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(507, 13);
+            this.cboCompany.Location = new System.Drawing.Point(507, 9);
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(212, 31);
             this.cboCompany.TabIndex = 49;

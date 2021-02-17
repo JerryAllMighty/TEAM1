@@ -50,7 +50,7 @@ namespace BedFactory
         private void frmSalesMasterUpload_Load(object sender, EventArgs e)
         {
             dgvSalesMasterUpload.SetGridViewColumn("주문 번호", "주문번호");
-            dgvSalesMasterUpload.SetGridViewColumn("주문 상세 번호", "주문상세번호");
+            dgvSalesMasterUpload.SetGridViewColumn("주문 상세 번호", "주문상세번호", 150);
             dgvSalesMasterUpload.SetGridViewColumn("품목 번호", "자재번호");
             dgvSalesMasterUpload.SetGridViewColumn("품목명", "자재명");
             dgvSalesMasterUpload.SetGridViewColumn("주문 수량", "수량");
