@@ -38,7 +38,7 @@ namespace BedFactoryDAC
                                                 on P.Process_Num = W.Process_Num
                                                 left outer join tblWorkHistory WH
                                                 on W.WO_Num = WH.WO_Num
-                                                where WO_Status = '작업 지시 확정' and P.Process_Code = @Process_Code";
+                                                where WO_Status = '작업지시확정' and P.Process_Code = @Process_Code";
 
                     cmd.Parameters.AddWithValue("@Process_Code", ProcessCode);
 
