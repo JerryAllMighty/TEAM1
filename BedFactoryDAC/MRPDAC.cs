@@ -44,10 +44,10 @@ namespace BedFactoryDAC
 
                     cmd.Parameters.AddWithValue("@Deadline", deadline);
 
-                    if ()
-                    { }
-                    if ()
-                    { }
+                    //if ()
+                    //{ }
+                    //if ()
+                    //{ }
                     List<MRPVO> list = Helper.DataReaderMapToList<MRPVO>(cmd.ExecuteReader());
                     return list != null ? list : null;
                 }

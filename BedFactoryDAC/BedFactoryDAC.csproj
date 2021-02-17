@@ -72,7 +72,6 @@
     <Compile Include="WearingDAC.cs" />
     <Compile Include="WorkHistoryDAC.cs" />
     <Compile Include="WorkOrderDAC.cs" />
-    <Compile Include="WorkOrdersDAC.cs" />
     <Compile Include="WorkplaceDAC.cs" />
   </ItemGroup>
   <ItemGroup>
