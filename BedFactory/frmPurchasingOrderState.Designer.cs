@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboCompany = new System.Windows.Forms.ComboBox();
             this.txtOrderNum = new System.Windows.Forms.TextBox();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
@@ -101,6 +101,7 @@ namespace BedFactory
             // cboCompany
             // 
             this.cboCompany.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCompany.FormattingEnabled = true;
             this.cboCompany.Location = new System.Drawing.Point(558, 14);
             this.cboCompany.Name = "cboCompany";
@@ -180,6 +181,7 @@ namespace BedFactory
             // cboState
             // 
             this.cboState.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboState.FormattingEnabled = true;
             this.cboState.Items.AddRange(new object[] {
             "전체",
@@ -284,15 +286,15 @@ namespace BedFactory
             this.dgvOrder.AllowUserToAddRows = false;
             this.dgvOrder.AllowUserToResizeRows = false;
             this.dgvOrder.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvOrder.Location = new System.Drawing.Point(0, 0);
             this.dgvOrder.Name = "dgvOrder";
             this.dgvOrder.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvOrder.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvOrder.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvOrder.RowTemplate.Height = 23;
             this.dgvOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrder.Size = new System.Drawing.Size(1358, 684);

@@ -311,8 +311,9 @@ namespace BedFactory
             // cboCompany
             // 
             this.cboCompany.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(975, 18);
+            this.cboCompany.Location = new System.Drawing.Point(975, 21);
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(235, 25);
             this.cboCompany.TabIndex = 41;

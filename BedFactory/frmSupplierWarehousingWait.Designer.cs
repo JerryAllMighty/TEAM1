@@ -109,6 +109,7 @@ namespace BedFactory
             // cboCom
             // 
             this.cboCom.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboCom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCom.FormattingEnabled = true;
             this.cboCom.Location = new System.Drawing.Point(558, 11);
             this.cboCom.Name = "cboCom";
@@ -146,6 +147,7 @@ namespace BedFactory
             // cboBnum
             // 
             this.cboBnum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboBnum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboBnum.FormattingEnabled = true;
             this.cboBnum.Location = new System.Drawing.Point(139, 60);
             this.cboBnum.Name = "cboBnum";

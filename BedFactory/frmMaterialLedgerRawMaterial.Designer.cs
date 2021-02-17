@@ -59,6 +59,7 @@ namespace BedFactory
             // 
             this.btn3.Location = new System.Drawing.Point(1305, 98);
             this.btn3.Text = "출고";
+            this.btn3.Click += new System.EventHandler(this.btn3_Click_1);
             // 
             // btn5
             // 
@@ -94,8 +95,9 @@ namespace BedFactory
             // cboWO
             // 
             this.cboWO.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboWO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboWO.FormattingEnabled = true;
-            this.cboWO.Location = new System.Drawing.Point(558, 18);
+            this.cboWO.Location = new System.Drawing.Point(558, 21);
             this.cboWO.Name = "cboWO";
             this.cboWO.Size = new System.Drawing.Size(235, 25);
             this.cboWO.TabIndex = 80;
@@ -122,6 +124,7 @@ namespace BedFactory
             this.btnSelect.TabIndex = 68;
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // searchLocationControl1
             // 
@@ -206,8 +209,9 @@ namespace BedFactory
             // cboM_Category
             // 
             this.cboM_Category.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboM_Category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboM_Category.FormattingEnabled = true;
-            this.cboM_Category.Location = new System.Drawing.Point(977, 18);
+            this.cboM_Category.Location = new System.Drawing.Point(977, 21);
             this.cboM_Category.Name = "cboM_Category";
             this.cboM_Category.Size = new System.Drawing.Size(235, 25);
             this.cboM_Category.TabIndex = 82;

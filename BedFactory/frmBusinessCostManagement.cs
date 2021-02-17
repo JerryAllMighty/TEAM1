@@ -99,10 +99,10 @@ namespace BedFactory
                 Com_Num = Convert.ToInt32(dgvCost[2, dgvCost.SelectedRows[0].Index].Value),
                 Com_Name = dgvCost[3, dgvCost.SelectedRows[0].Index].Value.ToString(),
                 Mat_Num = dgvCost[4, dgvCost.SelectedRows[0].Index].Value.ToString(),
-                Now_UnitCost = Convert.ToInt32(dgvCost[6, dgvCost.SelectedRows[0].Index].Value),
-                Before_UnitCost = Convert.ToInt32(dgvCost[7, dgvCost.SelectedRows[0].Index].Value),
-                Start_Date = Convert.ToDateTime(dgvCost[8, dgvCost.SelectedRows[0].Index].Value),
-                End_Date = Convert.ToDateTime(dgvCost[9, dgvCost.SelectedRows[0].Index].Value)
+                Now_UnitCost = Convert.ToInt32(dgvCost[7, dgvCost.SelectedRows[0].Index].Value),
+                Before_UnitCost = Convert.ToInt32(dgvCost[8, dgvCost.SelectedRows[0].Index].Value),
+                Start_Date = Convert.ToDateTime(dgvCost[9, dgvCost.SelectedRows[0].Index].Value),
+                End_Date = Convert.ToDateTime(dgvCost[10, dgvCost.SelectedRows[0].Index].Value)
             };
 
             frmMaterials frm = new frmMaterials(id, this.Text, "복사", vo);

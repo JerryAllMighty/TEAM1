@@ -364,7 +364,7 @@ namespace BedFactoryDAC
 			    			inner join tblStorages S on O.Str_Num = S.Str_Num
 							inner join tblWorkHistory H on O.WH_Num = H.WH_Num
 							inner join tblWorkplace W on O.WP_Num = W.WP_Num
-                            where 1 = 1 ");
+                            where O.WO_Date >= @dtFrom and O.WO_Date < @dtTo ");
 
                 if (wpNum > 0)
                     sb.Append(" and WP.WP_Name = @wpNum");

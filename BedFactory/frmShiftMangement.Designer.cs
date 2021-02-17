@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboWork = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -89,6 +89,7 @@ namespace BedFactory
             // cboWork
             // 
             this.cboWork.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboWork.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboWork.FormattingEnabled = true;
             this.cboWork.Location = new System.Drawing.Point(558, 21);
             this.cboWork.Name = "cboWork";
@@ -99,11 +100,11 @@ namespace BedFactory
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(469, 23);
+            this.label3.Location = new System.Drawing.Point(456, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 17);
+            this.label3.Size = new System.Drawing.Size(60, 17);
             this.label3.TabIndex = 41;
-            this.label3.Text = "설비";
+            this.label3.Text = "작업장명";
             // 
             // btnSearch
             // 
@@ -124,15 +125,15 @@ namespace BedFactory
             this.dgvShift.AllowUserToAddRows = false;
             this.dgvShift.AllowUserToResizeRows = false;
             this.dgvShift.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvShift.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvShift.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvShift.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvShift.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvShift.Location = new System.Drawing.Point(0, 0);
             this.dgvShift.Name = "dgvShift";
             this.dgvShift.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvShift.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvShift.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvShift.RowTemplate.Height = 23;
             this.dgvShift.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvShift.Size = new System.Drawing.Size(1358, 711);

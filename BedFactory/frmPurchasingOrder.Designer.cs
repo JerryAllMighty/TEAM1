@@ -177,6 +177,7 @@ namespace BedFactory
             // cboPlan
             // 
             this.cboPlan.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboPlan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPlan.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboPlan.FormattingEnabled = true;
             this.cboPlan.Location = new System.Drawing.Point(139, 19);
