@@ -33,8 +33,8 @@ namespace BedFactory
             dgvWO.SetGridViewColumn("구분", "Category");
             dgvWO.SetGridViewColumn("카테고리", "W_Category");
             dgvWO.SetGridViewColumn("창고유형", "Str_Kind");
-            dgvWO.SetGridViewColumn("자재명", "Mat_Name");
-            dgvWO.SetGridViewColumn("자재분류", "Mat_Category");
+            dgvWO.SetGridViewColumn("자재명", "Mat_Name", 150);
+            dgvWO.SetGridViewColumn("자재유형", "Mat_Category");
             dgvWO.SetGridViewColumn("수불량", "Mat_Cnt");
 
             dtpTo.MinDate = dtpFrom.Value.AddDays(-7);
@@ -47,6 +47,7 @@ namespace BedFactory
         {
             WearingService service = new WearingService();
             list = service.WOState(dtpFrom.Value.Date, dtpTo.Value.Date);
+            list.ForEach(p => p.FirstDate = p.FirstDate.Date);
             dgvWO.DataSource = list;
 
             List<string> temp = list.GroupBy(p => p.Str_Kind).Select(p => p.Key.ToString()).ToList();

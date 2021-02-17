@@ -279,11 +279,12 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"insert into tblBalzoo (Com_Num, FirstMan)
-                                        			   values (@Com_Num, @id)
+                    cmd.CommandText = @"insert into tblBalzoo (Com_Num, FirstMan, FirstDate)
+                                        			   values (@Com_Num, @id, @Date)
                                         select MAX(Bz_Num) from tblBalzoo";
                     cmd.Parameters.AddWithValue("@Com_Num", comNum);
                     cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@Date", DateTime.Now.Date);
 
                     int cnt = Convert.ToInt32(cmd.ExecuteScalar());
 

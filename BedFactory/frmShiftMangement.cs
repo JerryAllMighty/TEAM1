@@ -46,7 +46,7 @@ namespace BedFactory
 
                 dgvShift.SetGridViewColumn("Shift번호", "Shift_Num", visibility: false);
                 dgvShift.SetGridViewColumn("작업장명", "WP_Name", 200);
-                dgvShift.SetGridViewColumn("Shift", "Shift_Name");
+                dgvShift.SetGridViewColumn("Shift", "Shift_Name", 60);
 
                 List<DateTime> DayList = GetFromToDays(dtpFrom.Value.Date, dtpTo.Value.Date);
                 DayList.ForEach(p =>

@@ -31,11 +31,11 @@ namespace BedFactory
             btn1.Visible = btn2.Visible = btn3.Visible = btn5.Visible = false;
 
             dgvState.SetGridCheckBox("chk");
-            dgvState.SetGridViewColumn("입고번호", "Wearing_Num");
-            dgvState.SetGridViewColumn("납품업체", "Com_Name");
-            dgvState.SetGridViewColumn("창고번호", "Str_Num");
+            dgvState.SetGridViewColumn("입고번호", "Wearing_Num", 80);
+            dgvState.SetGridViewColumn("납품업체", "Com_Name", 150);
+            dgvState.SetGridViewColumn("창고번호", "Str_Num", 50);
             dgvState.SetGridViewColumn("창고종류", "Str_Kind");
-            dgvState.SetGridViewColumn("자재명", "Mat_Name");
+            dgvState.SetGridViewColumn("자재명", "Mat_Name", 150);
             dgvState.SetGridViewColumn("자재수량", "Mat_Cnt");
             dgvState.SetGridViewColumn("취소수량", "Cancel_Cnt");
             dgvState.SetGridViewColumn("등록자", "FirstMan");
@@ -69,6 +69,7 @@ namespace BedFactory
         {
             WearingService service = new WearingService();
             list = service.WarehousingState(dtpFrom.Value.Date, dtpTo.Value.Date);
+            list.ForEach(p => p.FirstDate = p.FirstDate.Date);
             dgvState.DataSource = list;
 
             List<string> temp = list.GroupBy(p => p.Com_Name).Select(p => p.Key.ToString()).ToList();

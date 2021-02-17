@@ -27,11 +27,11 @@ namespace BedFactory.Pop_up
         private void frmPurchasing_Load(object sender, EventArgs e)
         {
             dgvCompany.SetGridViewColumn("거래처코드", "Com_Code");
-            dgvCompany.SetGridViewColumn("거래처명", "Com_Name");
+            dgvCompany.SetGridViewColumn("거래처명", "Com_Name", 150);
             dgvCompany.SetGridViewColumn("거래처번호", "Com_Num", visibility:false);
 
             dgvBalzoo.SetGridViewColumn("자재번호", "Mat_Num", visibility: false);
-            dgvBalzoo.SetGridViewColumn("자재명", "Mat_Name");
+            dgvBalzoo.SetGridViewColumn("자재명", "Mat_Name", 150);
             dgvBalzoo.SetGridViewColumn("납기일", "Firstdate");
             dgvBalzoo.SetGridViewColumn("현재고", "Mat_Cnt");
             dgvBalzoo.SetGridViewColumn("발주제안", "MaterialUse_Cnt");

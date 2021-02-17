@@ -29,10 +29,10 @@ namespace BedFactory
             btn1.Visible = btn2.Visible = btn3.Visible = btn5.Visible = false;
 
             dgvStock.SetGridCheckBox("chk");
-            dgvStock.SetGridViewColumn("창고번호", "Str_Num");
+            dgvStock.SetGridViewColumn("창고번호", "Str_Num", 80);
             dgvStock.SetGridViewColumn("창고유형", "Str_Kind");
             dgvStock.SetGridViewColumn("자재번호", "Mat_Num", visibility:false);
-            dgvStock.SetGridViewColumn("자재명", "Mat_Name");
+            dgvStock.SetGridViewColumn("자재명", "Mat_Name", 150);
             dgvStock.SetGridViewColumn("자재유형", "Mat_Category");
             dgvStock.SetGridViewColumn("재고량", "Mat_Cnt");
 

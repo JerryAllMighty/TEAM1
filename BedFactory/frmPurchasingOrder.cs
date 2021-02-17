@@ -41,7 +41,7 @@ namespace BedFactory
         {
             dgvBalzoo.Columns.Clear();
 
-            dgvBalzoo.SetGridViewColumn("자재명", "Mat_Num");
+            dgvBalzoo.SetGridViewColumn("자재명", "Mat_Num", 150);
             dgvBalzoo.SetGridViewColumn("카테고리", "Category");
 
             List<DateTime> DayList = GetFromToDays(dtpFrom.Value.Date, dtpTo.Value.Date);

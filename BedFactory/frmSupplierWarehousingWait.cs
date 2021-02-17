@@ -38,8 +38,8 @@ namespace BedFactory
 
             dgvCheck.SetGridCheckBox("chkBalzoo");
             dgvCheck.SetGridViewColumn("발주번호", "Bz_D_Num");
-            dgvCheck.SetGridViewColumn("거래처명", "Com_Name");
-            dgvCheck.SetGridViewColumn("자재명", "Mat_Name");
+            dgvCheck.SetGridViewColumn("거래처명", "Com_Name", 150);
+            dgvCheck.SetGridViewColumn("자재명", "Mat_Name", 150);
             dgvCheck.SetGridViewColumn("발주수량", "Bz_Cnt");
             dgvCheck.SetGridViewColumn("입고수량", "Mat_Cnt");
             dgvCheck.SetGridViewColumn("잔량", "R_Quantity");
@@ -54,8 +54,8 @@ namespace BedFactory
 
             dgvWait.SetGridCheckBox("chkBalzoo");
             dgvWait.SetGridViewColumn("발주번호", "Bz_D_Num");
-            dgvWait.SetGridViewColumn("거래처명", "Com_Name");
-            dgvWait.SetGridViewColumn("자재명", "Mat_Name");
+            dgvWait.SetGridViewColumn("거래처명", "Com_Name", 150);
+            dgvWait.SetGridViewColumn("자재명", "Mat_Name", 150);
             dgvWait.SetGridViewColumn("발주수량", "Bz_Cnt");
             dgvWait.SetGridViewColumn("입고수량", "Mat_Cnt");
             dgvWait.SetGridViewColumn("잔량", "R_Quantity");

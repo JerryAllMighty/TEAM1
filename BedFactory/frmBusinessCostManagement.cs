@@ -46,11 +46,11 @@ namespace BedFactory
         private void frmBusinessCostManagement_Load(object sender, EventArgs e)
         {
             dgvCost.SetGridViewColumn("단가번호", "UnitCost_Num", visibility: false);
-            dgvCost.SetGridViewColumn("No.", "RowNum");
+            dgvCost.SetGridViewColumn("No.", "RowNum", 50);
             dgvCost.SetGridViewColumn("거래처번호", "Com_Num");
-            dgvCost.SetGridViewColumn("거래처명", "Com_Name");
+            dgvCost.SetGridViewColumn("거래처명", "Com_Name", 150);
             dgvCost.SetGridViewColumn("자재번호", "Mat_Num");
-            dgvCost.SetGridViewColumn("자재명", "Mat_Name");
+            dgvCost.SetGridViewColumn("자재명", "Mat_Name", 150);
             dgvCost.SetGridViewColumn("자재유형", "Mat_Category");
             dgvCost.SetGridViewColumn("현재단가", "Now_UnitCost");
             dgvCost.SetGridViewColumn("이전단가", "Before_UnitCost");
