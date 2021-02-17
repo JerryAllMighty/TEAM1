@@ -137,7 +137,7 @@ namespace BedFactoryDAC
         }
 
         /// <summary>
-        /// 조건으로 작업지시현황 조회
+        /// 조건으로 작업지시정보 조회
         /// </summary>
         /// <param name="wpNum"></param>
         /// <param name="matNum"></param>
