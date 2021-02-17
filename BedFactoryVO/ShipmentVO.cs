@@ -21,6 +21,7 @@ namespace BedFactoryVO
         public int Ship_Cnt { get; set; } //출하수량
         public string Ship_Status { get; set; } //출하상태
         public int WO_D_Num { get; set; } //작업지시상세
+        public string Str_Kind { get; set; }    //창고이름
 
         public DateTime ProductionDate { get; set; } //지시일자
         public int WO_Num { get; set; } //작업지시번호

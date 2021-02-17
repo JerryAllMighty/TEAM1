@@ -62,6 +62,7 @@
     <Compile Include="LoggingUtillity.cs" />
     <Compile Include="MaterialsDAC.cs" />
     <Compile Include="MRPDAC.cs" />
+    <Compile Include="OrderDAC.cs" />
     <Compile Include="ProcessDAC.cs" />
     <Compile Include="ProductionPlanDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -39,5 +39,11 @@ namespace BedFactoryService
             ShipmentDAC dac = new ShipmentDAC();
             return dac.ShipmentFinish(num);
         }
+
+        public bool Shipmentcomplete(int Order_Num)
+        {
+            ShipmentDAC dac = new ShipmentDAC();
+            return dac.Shipmentcomplete(Order_Num);
+        }
     }
 }

@@ -66,6 +66,38 @@ namespace BedFactoryDAC
         }
 
         /// <summary>
+        /// 완제품 출하
+        /// </summary>
+        /// <param name="order_Num">주문번호</param>
+        public bool Shipmentcomplete(int order_Num)
+        {
+            SqlTransaction trans = conn.BeginTransaction();
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.Transaction = trans;
+                    cmd.CommandText = @"update tblOrders set Order_Status = '출하완료'
+                                        where Order_Num = @Order_Num";
+                    cmd.Parameters.AddWithValue("@Order_Num", order_Num);
+                    cmd.ExecuteNonQuery();
+
+                    trans.Commit();
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                trans.Rollback();
+                return false;
+            }
+        }
+
+        /// <summary>
         /// 자재불출에서 작업지시가져오기
         /// </summary>
         /// <param name="fromDate"></param>
@@ -202,7 +234,7 @@ namespace BedFactoryDAC
                 {
                     cmd.Connection = conn;
                     cmd.Transaction = trans;
-                    cmd.CommandText = @"insert ";
+                    cmd.CommandText = @"insert into tbl";
                     cmd.Parameters.AddWithValue("@Ship_D_Num", "");
 
                     int cnt = cmd.ExecuteNonQuery();

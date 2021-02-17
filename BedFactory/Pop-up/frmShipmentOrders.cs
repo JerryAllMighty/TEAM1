@@ -18,7 +18,7 @@ namespace BedFactory.Pop_up
         List<CommonCodeVO> matInfo_list = new List<CommonCodeVO>(); //자재정보리스트
         List<CommonCodeVO> wearhouse_list = new List<CommonCodeVO>(); //창고목록리스트
         APIMessage<List<MaterialsVO>> mat_List = new APIMessage<List<MaterialsVO>>();
-        List<WearingVO> vo_List = new List<WearingVO>();
+        List<ShipmentVO> vo_List = new List<ShipmentVO>();
 
         public int StorgeNum { get; set; }
 
@@ -57,7 +57,7 @@ namespace BedFactory.Pop_up
             #region 그리드뷰 세팅
             dgvShipmentList.SetGridViewColumn("자재번호", "Mat_Num", visibility: false);
             dgvShipmentList.SetGridViewColumn("자재명", "Mat_Name", 120);
-            dgvShipmentList.SetGridViewColumn("수량", "Mat_Cnt", 50);
+            dgvShipmentList.SetGridViewColumn("수량", "Ship_Cnt", 50);
             dgvShipmentList.SetGridViewColumn("창고번호", "Str_Num", visibility: false);
             dgvShipmentList.SetGridViewColumn("창고종류", "Str_Kind", 120);
             dgvShipmentList.AddGridButton("삭제", "Delete", "삭제", new Padding { Left = 3, Right = 3 }, 50);
@@ -96,17 +96,17 @@ namespace BedFactory.Pop_up
             //해당 자재가 이미 추가된 경우
             if (vo_List.FindAll(p => p.Mat_Num.Equals(cboName.SelectedValue.ToString())).Count > 0)
             {
-                vo_List.Find(p => p.Mat_Num.Equals(cboName.SelectedValue.ToString())).Mat_Cnt += Convert.ToInt32(nmrCnt.Value);
+                vo_List.Find(p => p.Mat_Num.Equals(cboName.SelectedValue.ToString())).Ship_Cnt += Convert.ToInt32(nmrCnt.Value);
             }
             //해당 자재가 없는 경우
             else
             {
-                WearingVO vo = new WearingVO();
+                ShipmentVO vo = new ShipmentVO();
                 vo.Mat_Num = cboName.SelectedValue.ToString();
                 vo.Mat_Name = cboName.Text;
                 vo.Str_Num = Convert.ToInt32(cboWearHouse.SelectedValue);
                 vo.Str_Kind = cboWearHouse.Text;
-                vo.Mat_Cnt = Convert.ToInt32(nmrCnt.Value);
+                vo.Ship_Cnt = Convert.ToInt32(nmrCnt.Value);
                 vo_List.Add(vo);
             }
 
@@ -133,7 +133,22 @@ namespace BedFactory.Pop_up
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
+            ShipmentVO vo = new ShipmentVO();
+            List<ShipmentVO> ship_List = new List<ShipmentVO>();
+            vo.Ship_Detail = cboKind.Text + " 출하";
+            vo.Firstman = 1;
+            vo.Lastman = 1;
 
+            foreach(DataGridViewRow row in dgvShipmentList.Rows)
+            {
+                ship_List.Add(new ShipmentVO
+                {
+                    Mat_Num = row.Cells["Mat_Num"].Value.ToString()
+                });
+            }
+
+            cboKind.SelectedIndex = cboName.SelectedIndex = cboWearHouse.SelectedIndex = 0;
+            nmrCnt.Value = 0;
         }
     }
 }
