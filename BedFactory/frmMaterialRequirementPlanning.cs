@@ -1,4 +1,5 @@
 ﻿using BedFactoryService;
+using BedFactoryVO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,7 +26,11 @@ namespace BedFactory
         private void btnSelect_Click(object sender, EventArgs e)
         {
             MRPService service = new MRPService();
-            service.GetMRPInfo(dtpDeadLine.Value.ToString("yyyy-MM-dd"));
+            List<MRPVO> list = service.GetMRPInfo(dtpDeadLine.Value.ToString("yyyy-MM-dd"), cboDemandPlan.Text, cboSubjectName.Text);
+            if (list != null)
+            {
+                dgvMRP.DataSource = list;
+            }
         }
 
         /// <summary>
@@ -38,6 +43,7 @@ namespace BedFactory
             dgvMRP.SetGridViewColumn("자재계획번호", "MatarialUsePlan_Num");
             dgvMRP.SetGridViewColumn("수요계획번호", "Demand_Plan_Num");
             dgvMRP.SetGridViewColumn("자재번호", "Mat_Num");
+            dgvMRP.SetGridViewColumn("자재명", "Mat_Name");
             dgvMRP.SetGridViewColumn("소요량", "MaterialUse_Cnt");
             dgvMRP.SetGridViewColumn("최초등록자", "Firstman");
             dgvMRP.SetGridViewColumn("최초등록일", "Firstdate");
