@@ -114,7 +114,7 @@ namespace BedFactory
             // cboPrc
             // 
             this.cboPrc.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboPrc.Location = new System.Drawing.Point(126, 16);
+            this.cboPrc.Location = new System.Drawing.Point(126, 20);
             this.cboPrc.Name = "cboPrc";
             this.cboPrc.Size = new System.Drawing.Size(215, 31);
             this.cboPrc.TabIndex = 1;
@@ -165,7 +165,7 @@ namespace BedFactory
             // cboWp
             // 
             this.cboWp.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboWp.Location = new System.Drawing.Point(506, 16);
+            this.cboWp.Location = new System.Drawing.Point(506, 20);
             this.cboWp.Name = "cboWp";
             this.cboWp.Size = new System.Drawing.Size(215, 31);
             this.cboWp.TabIndex = 2;
@@ -173,7 +173,7 @@ namespace BedFactory
             // cboMat
             // 
             this.cboMat.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboMat.Location = new System.Drawing.Point(886, 16);
+            this.cboMat.Location = new System.Drawing.Point(886, 20);
             this.cboMat.Name = "cboMat";
             this.cboMat.Size = new System.Drawing.Size(215, 31);
             this.cboMat.TabIndex = 3;
