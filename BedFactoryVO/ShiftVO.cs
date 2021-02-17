@@ -24,6 +24,7 @@ namespace BedFactoryVO
         public int PeopleCnt { get; set; } //인원
         public DateTime Change_Date { get; set; } //변경일자
 
+        public string WP_Name { get; set; } //작업장명
         public string Before_Start_Time { get; set; } //시작시간
         public string After_End_Time { get; set; } //완료시간
         public int Before_PeopleCnt { get; set; } //인원

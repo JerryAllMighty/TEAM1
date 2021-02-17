@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboWOcategory = new System.Windows.Forms.ComboBox();
             this.txtMaterial = new System.Windows.Forms.TextBox();
             this.cboStorage = new System.Windows.Forms.ComboBox();
@@ -95,6 +95,7 @@ namespace BedFactory
             // cboWOcategory
             // 
             this.cboWOcategory.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboWOcategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboWOcategory.FormattingEnabled = true;
             this.cboWOcategory.Location = new System.Drawing.Point(139, 63);
             this.cboWOcategory.Name = "cboWOcategory";
@@ -112,6 +113,7 @@ namespace BedFactory
             // cboStorage
             // 
             this.cboStorage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboStorage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStorage.FormattingEnabled = true;
             this.cboStorage.Location = new System.Drawing.Point(558, 14);
             this.cboStorage.Name = "cboStorage";
@@ -200,6 +202,7 @@ namespace BedFactory
             // cboMcategory
             // 
             this.cboMcategory.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboMcategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMcategory.FormattingEnabled = true;
             this.cboMcategory.Location = new System.Drawing.Point(977, 63);
             this.cboMcategory.Name = "cboMcategory";
@@ -279,6 +282,7 @@ namespace BedFactory
             // cboCategory
             // 
             this.cboCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategory.FormattingEnabled = true;
             this.cboCategory.Location = new System.Drawing.Point(558, 63);
             this.cboCategory.Name = "cboCategory";
@@ -290,15 +294,15 @@ namespace BedFactory
             this.dgvWO.AllowUserToAddRows = false;
             this.dgvWO.AllowUserToResizeRows = false;
             this.dgvWO.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvWO.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvWO.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvWO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWO.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWO.Location = new System.Drawing.Point(0, 0);
             this.dgvWO.Name = "dgvWO";
             this.dgvWO.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvWO.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvWO.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvWO.RowTemplate.Height = 23;
             this.dgvWO.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvWO.Size = new System.Drawing.Size(1358, 711);

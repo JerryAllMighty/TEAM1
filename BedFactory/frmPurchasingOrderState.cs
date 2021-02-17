@@ -33,8 +33,8 @@ namespace BedFactory
 
             dgvOrder.SetGridCheckBox("chk");
             dgvOrder.SetGridViewColumn("발주번호", "Bz_D_Num");
-            dgvOrder.SetGridViewColumn("거래처명", "Com_Name");
-            dgvOrder.SetGridViewColumn("자재명", "Mat_Name");
+            dgvOrder.SetGridViewColumn("거래처명", "Com_Name", 150);
+            dgvOrder.SetGridViewColumn("자재명", "Mat_Name", 150);
             dgvOrder.SetGridViewColumn("발주수량", "Bz_Cnt");
             dgvOrder.SetGridViewColumn("발주상태", "Bz_D_Status");
             dgvOrder.SetGridViewColumn("예상납기일", "ExpectedDate");
@@ -50,6 +50,7 @@ namespace BedFactory
             dtpTo.Value = DateTime.Now.AddDays(7);
 
             cboState.SelectedItem = "전체";
+            DataLoad();
         }
 
         private void HeaderCheck_Click(object sender, EventArgs e)
@@ -67,6 +68,7 @@ namespace BedFactory
         {
             BalzooService service = new BalzooService();
             list = service.BalzooSelect(dtpFrom.Value.Date, dtpTo.Value.Date);
+            list.ForEach(p => p.ExpectedDate = p.ExpectedDate.Date);
             dgvOrder.DataSource = list;
 
             var item = list.GroupBy(p => p.Com_Name);
@@ -141,9 +143,11 @@ namespace BedFactory
             if(list.Count > 0) 
             {
                 frmDuedateChange frm = new frmDuedateChange(list, date);
-                frm.Show();
-                headerCheck.Checked = false;
-                DataLoad();
+                if(frm.ShowDialog() == DialogResult.Yes)
+                {
+                    headerCheck.Checked = false;
+                    DataLoad();
+                }                
             }
         }
 

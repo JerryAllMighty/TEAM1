@@ -92,7 +92,7 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select Convert(nchar(10), E.Emp_Num) Emp_Num, Convert(nchar(10), E.Emp_Name) Emp_Name
+                    cmd.CommandText = @"select E.Emp_Num, E.Emp_Name
                                             from tblEmployees E
                                             inner join tblWorkOrders WO
                                             on WO.WO_D_Emp_Num != E.Emp_Num

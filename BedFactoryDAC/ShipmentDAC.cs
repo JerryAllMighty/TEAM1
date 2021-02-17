@@ -44,9 +44,10 @@ namespace BedFactoryDAC
                     cmd.ExecuteNonQuery();
 
                     cmd.CommandType = System.Data.CommandType.Text;
-                    cmd.CommandText = @"select Ship_D_Num, WO_Num, S.Firstdate, M.Mat_Name, M.Mat_Category, SD.Str_Num, Ship_Cnt
+                    cmd.CommandText = @"select Ship_D_Num, WO_Num, S.Firstdate, M.Mat_Name, M.Mat_Category, SS.Str_Kind, Ship_Cnt
                                         from tblShipment_D SD join tblShipment S on SD.Ship_Num = S.Ship_Num
                                         join tblMaterials M on SD.Mat_Num = M.Mat_Num
+                                        join tblStorages SS on SS.Str_Num = SD.Str_Num
                                         where Ship_Status = '출고대기'
                                               and S.FirstDate >= @fromDate and S.FirstDate <= @toDate";
                     cmd.Parameters.AddWithValue("@fromDate", fromDate.Date);

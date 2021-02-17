@@ -33,14 +33,14 @@ namespace BedFactory
 
             dgvWorkOrder.SetGridViewColumn("계획시작일자", "ProductionDate");
             dgvWorkOrder.SetGridViewColumn("작업지시번호", "WO_Num");
-            dgvWorkOrder.SetGridViewColumn("작업장명", "WP_Name");
-            dgvWorkOrder.SetGridViewColumn("공정상세명", "Process_Name_D");
-            dgvWorkOrder.SetGridViewColumn("자재명", "Mat_Name");
+            dgvWorkOrder.SetGridViewColumn("작업장명", "WP_Name", 200);
+            dgvWorkOrder.SetGridViewColumn("공정상세명", "Process_Name_D", 200);
+            dgvWorkOrder.SetGridViewColumn("자재명", "Mat_Name", 150);
             dgvWorkOrder.SetGridViewColumn("지시수량", "WO_Order_Cnt");
             dgvWorkOrder.SetGridViewColumn("상태명", "WO_Status");
 
             dgvMaSub.SetGridCheckBox("chk");
-            dgvMaSub.SetGridViewColumn("자재명", "Mat_Name");
+            dgvMaSub.SetGridViewColumn("자재명", "Mat_Name", 150);
             dgvMaSub.SetGridViewColumn("자재유형", "Mat_Category");
             dgvMaSub.SetGridViewColumn("창고유형", "Str_Kind");
             dgvMaSub.SetGridViewColumn("요청수량", "WO_Order_Cnt");
@@ -167,23 +167,60 @@ namespace BedFactory
                 DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk"];
                 if (Convert.ToBoolean(chk.Value) == true)
                 {
-                    ShipmentVO vo = new ShipmentVO
+                    if(Convert.ToInt32(dgvMaSub[5, row.Index].Value) > 0)
                     {
-                        WO_Num = Convert.ToInt32(dgvMaSub[6, row.Index].Value),
-                        Ship_Cnt = Convert.ToInt32(dgvMaSub[5, row.Index].Value),
-                        Mat_Category = dgvMaSub[2, row.Index].Value.ToString(),
-                        Mat_Num = dgvMaSub[7, row.Index].Value.ToString()
-                    };
+                        ShipmentVO vo = new ShipmentVO
+                        {
+                            WO_Num = Convert.ToInt32(dgvMaSub[6, row.Index].Value),
+                            Ship_Cnt = Convert.ToInt32(dgvMaSub[5, row.Index].Value),
+                            Mat_Category = dgvMaSub[2, row.Index].Value.ToString(),
+                            Mat_Num = dgvMaSub[7, row.Index].Value.ToString()
+                        };
 
-                    ShipmentService service = new ShipmentService();
-                    if(service.InsertShipment(vo, id))
-                    {
-                        sCnt++;
+                        ShipmentService service = new ShipmentService();
+                        if (service.InsertShipment(vo, id))
+                        {
+                            sCnt++;
+                        }
                     }
+                    
                 }
             }
 
             MessageBox.Show($"총 {sCnt}건의 자재를 출고했습니다.");
+        }
+
+        private void dgvMaSub_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                if (Convert.ToInt32(dgvMaSub[5, dgvMaSub.SelectedRows[0].Index].Value.ToString() + e.KeyChar) <= Convert.ToInt32(dgvMaSub[4, dgvMaSub.SelectedRows[0].Index].Value))
+                {
+                    dgvMaSub[5, dgvMaSub.SelectedRows[0].Index].Value = int.Parse(dgvMaSub[5, dgvMaSub.SelectedRows[0].Index].Value.ToString() + e.KeyChar);
+                }
+            }
+
+            if (e.KeyChar == 8)
+            {
+                if (dgvMaSub[5, dgvMaSub.SelectedRows[0].Index].Value != null)
+                {
+                    string str = dgvMaSub[5, dgvMaSub.SelectedRows[0].Index].Value.ToString();
+                    if (str.Length - 1 == 0)
+                    {
+                        dgvMaSub[5, dgvMaSub.SelectedRows[0].Index].Value = null;
+                    }
+                    else
+                    {
+                        dgvMaSub[5, dgvMaSub.SelectedRows[0].Index].Value = int.Parse(str.Substring(0, str.Length - 1));
+                    }
+                }
+            }
+        }
+
+        private void brnCancel_Click(object sender, EventArgs e) //취소
+        {
+            dgvMaSub.DataSource = null;
+            dgvMaSub.Rows.Clear();
         }
     }
 }

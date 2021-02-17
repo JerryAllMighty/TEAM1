@@ -83,6 +83,7 @@ namespace BedFactory
             // cboWork
             // 
             this.cboWork.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboWork.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboWork.FormattingEnabled = true;
             this.cboWork.Location = new System.Drawing.Point(139, 18);
             this.cboWork.Name = "cboWork";
@@ -93,11 +94,11 @@ namespace BedFactory
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 23);
+            this.label2.Location = new System.Drawing.Point(37, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 17);
+            this.label2.Size = new System.Drawing.Size(60, 17);
             this.label2.TabIndex = 40;
-            this.label2.Text = "설비";
+            this.label2.Text = "작업장명";
             // 
             // btnSelect
             // 

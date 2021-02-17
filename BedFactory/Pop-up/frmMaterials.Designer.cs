@@ -127,6 +127,7 @@ namespace BedFactory.Pop_up
             // 
             // cboMaterial
             // 
+            this.cboMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMaterial.FormattingEnabled = true;
             this.cboMaterial.Location = new System.Drawing.Point(431, 22);
             this.cboMaterial.Name = "cboMaterial";
@@ -135,6 +136,7 @@ namespace BedFactory.Pop_up
             // 
             // cboCompany
             // 
+            this.cboCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCompany.FormattingEnabled = true;
             this.cboCompany.Location = new System.Drawing.Point(138, 22);
             this.cboCompany.Name = "cboCompany";

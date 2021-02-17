@@ -23,6 +23,7 @@ namespace BedFactoryVO
         public string Com_Name { get; set; } //거래처명
         public string Bz_D_Num { get; set; } //발주번호
 
+        public DateTime ExpectedDate { get; set; } //예상납기일
         public string Error_Detail { get; set; } //불량내용
         public int Error_Cnt { get; set; } //불량
     }
