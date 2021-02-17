@@ -152,8 +152,8 @@ namespace BedFactoryDAC
                 StringBuilder sb = new StringBuilder();
                 sb.Append(@"select Convert(nchar(10), WO.WO_Num)WO_Num, P.Process_Name_D, WP.WP_Name, M.Mat_Name, Convert(nchar(10), PP.ProductionDate, 23) as ProductionDate,
          Convert(nchar(10),SM.Deadline, 23) DeadLine, WO.WO_Status, Convert(nchar(10), WO.WO_Plan_Cnt) WO_Plan_Cnt,
-                                      Convert(nchar(10), WO.WO_Order_Cnt)WO_Order_Cnt, WO.WO_Detail, WO.IsShip, Convert(nchar(10), WO.WO_D_Emp_Num) WO_D_Emp_Num,
-                                      convert(char(8), WO.WO_StartTime, 24) as WO_StartTime, convert(char(8), WO.WO_FinishTime, 24) as WO_FinishTime
+                                      Convert(nchar(10), WO.WO_Order_Cnt)WO_Order_Cnt, WO.WO_Detail, WO.IsShip, Convert(nchar(10), WO.WO_D_Emp_Num) WO_D_Emp_Num
+                                      
                                from tblWorkOrders WO inner join tblWorkplace WP on WO.WP_Num = WP.WP_Num
                                inner join tblProcess P on WO.Process_Num = P.Process_Num
                                inner join tblMaterials M on WO.Mat_Num = M.Mat_Num
@@ -266,7 +266,7 @@ namespace BedFactoryDAC
         }
 
         /// <summary>
-        /// 작업지시생성에서 자재 검색
+        /// 작업지시생성 등록에서 자재 검색
         /// </summary>
         /// <param name="matNum"></param>
         /// <returns></returns>
@@ -311,43 +311,60 @@ namespace BedFactoryDAC
         /// </summary>
         /// <param name="vo"></param>
         /// <returns></returns>
-        public bool UpdateWorkOrderDate(WorkOrderVO vo)
+        public bool UpdateWorkOrderDate(List<int> WO_Num)
         {
+            SqlTransaction trans = conn.BeginTransaction();
             try
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
+                    cmd.Transaction = trans;
                     cmd.Connection = conn;
-                    cmd.CommandText = @"insert into tblWorkOrders (WO_Date) 
-                                                           values (@WO_Date) ";
+                    cmd.CommandText = @"update tblWorkOrders set WO_Date = getdate(), WO_Status = '작업지시확정'
+                                        where WO_Num = @WO_Num";
 
-                    cmd.Parameters.AddWithValue("@WO_Date", vo.WO_Date);
+                    foreach(int num in WO_Num)
+                    {
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@WO_Num", num);
+                        cmd.ExecuteNonQuery();
+                    }
 
-                    int iRowAffect = cmd.ExecuteNonQuery();
+                    trans.Commit();
                     conn.Close();
 
-                    return iRowAffect > 0 ? true : false;
+                    return true;
                 }
             }
             catch (Exception err)
             {
                 Log.WriteError(err.Message);
+                trans.Rollback();
                 return false;
             }
         }
 
+        /// <summary>
+        /// 작업지시현황정보 조회
+        /// </summary>
+        /// <param name="wpNum"></param>
+        /// <param name="matNum"></param>
+        /// <param name="wsNum"></param>
+        /// <param name="dtFrom"></param>
+        /// <param name="dtTo"></param>
+        /// <returns></returns>
         public List<WorkOrderStatusVO> GetWorkOrdersStatusInfo(int wpNum, string matNum, int wsNum, string dtFrom, string dtTo)
         {
             try
             {
                 StringBuilder sb = new StringBuilder();
                 sb.Append(@"select O.WO_Date, W.WP_Name, O.Mat_Num, M.Mat_Name, WO_Status, S.Str_Kind, WO_Order_Cnt, H.ErrorCnt, H.WorkCnt-H.ErrorCnt as GoodsCnt
-                            from tblWorkOrders O inner join tblCommonCode C on O.Mat_Num = C.Code_Num
-					                             inner join tblMaterials M on O.Mat_Num = M.Mat_Num
-			    	                             inner join tblStorages S on O.Str_Num = S.Str_Num
-					                             inner join tblWorkHistory H on O.WH_Num = H.WH_Num
-					                             inner join tblWorkplace W on O.WP_Num = W.WP_Num
-                            where WO_Date = getdate() ");
+                            from tblWorkOrders O 
+							inner join tblMaterials M on O.Mat_Num = M.Mat_Num
+			    			inner join tblStorages S on O.Str_Num = S.Str_Num
+							inner join tblWorkHistory H on O.WH_Num = H.WH_Num
+							inner join tblWorkplace W on O.WP_Num = W.WP_Num
+                            where 1 = 1 ");
 
                 if (wpNum > 0)
                     sb.Append(" and WP.WP_Name = @wpNum");

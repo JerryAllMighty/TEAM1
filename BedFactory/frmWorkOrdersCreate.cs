@@ -43,8 +43,6 @@ namespace BedFactory
             dgvWOC.SetGridViewColumn("출고여부", "IsShip");
             dgvWOC.SetGridViewColumn("계획시작일", "ProductionDate");
             dgvWOC.SetGridViewColumn("계획납기일", "DeadLine");
-            dgvWOC.SetGridViewColumn("작업경과시간", "WO_StartTime");
-            dgvWOC.SetGridViewColumn("작업중지시간", "WO_FinishTime");
 
             // 작업장명 콤보박스 바인딩 (DAC단으로 연결)
             WorkplaceService wpService = new WorkplaceService();
@@ -120,22 +118,26 @@ namespace BedFactory
         {
             dgvWOC.EndEdit();
 
-            
-            bool bResult = false;
             List<int> chkWoList = new List<int>();
-
-            WorkOrderVO vo = new WorkOrderVO();
-            WorkOrderService service = new WorkOrderService();
-            bResult = service.UpdateWorkOrderDate(vo);
 
             //체크된 정보 얻어오는것
             for (int i = 0; i < dgvWOC.Rows.Count; i++)
             {
                 bool isCellChecked = (bool)dgvWOC.Rows[i].Cells["chk"].EditedFormattedValue;
-                if (isCellChecked == true)
+                if (isCellChecked)
                 {
-                    chkWoList.Add(Convert.ToInt32(dgvWOC.Rows[i].Cells[1].Value));
+                    chkWoList.Add(Convert.ToInt32(dgvWOC.Rows[i].Cells["WO_Num"].Value));
                 }
+            }
+
+            WorkOrderService service = new WorkOrderService();
+            if(service.UpdateWorkOrderDate(chkWoList))
+            {
+                btnSelect.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("실패");
             }
 
             //MessageBox.Show(String.Join(", ", chkWoList));
