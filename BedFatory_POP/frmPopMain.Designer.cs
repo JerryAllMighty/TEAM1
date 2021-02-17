@@ -143,6 +143,7 @@ namespace BedFatory_POP
             this.btnError.TabIndex = 9;
             this.btnError.Text = "불량 관리";
             this.btnError.UseVisualStyleBackColor = false;
+            this.btnError.Visible = false;
             // 
             // btnPacking
             // 
@@ -194,6 +195,7 @@ namespace BedFatory_POP
             this.btnNonOperation.TabIndex = 10;
             this.btnNonOperation.Text = "비가동관리";
             this.btnNonOperation.UseVisualStyleBackColor = false;
+            this.btnNonOperation.Visible = false;
             // 
             // btnPlaning
             // 

@@ -53,21 +53,21 @@ namespace BedFactory
             // 
             // btn2
             // 
-            this.btn2.Location = new System.Drawing.Point(1199, 144);
+            this.btn2.Location = new System.Drawing.Point(1149, 143);
             this.btn2.Text = "수동";
             this.btn2.Visible = false;
             this.btn2.Click += new System.EventHandler(this.btn2_Click_1);
             // 
             // btn3
             // 
-            this.btn3.Location = new System.Drawing.Point(1270, 140);
-            this.btn3.Size = new System.Drawing.Size(100, 30);
+            this.btn3.Location = new System.Drawing.Point(1220, 139);
+            this.btn3.Size = new System.Drawing.Size(150, 30);
             this.btn3.Text = "수요 계획 생성";
             this.btn3.Click += new System.EventHandler(this.btn3_Click_1);
             // 
             // btn5
             // 
-            this.btn5.Location = new System.Drawing.Point(962, 143);
+            this.btn5.Location = new System.Drawing.Point(912, 142);
             this.btn5.Visible = false;
             // 
             // label1
@@ -78,7 +78,7 @@ namespace BedFactory
             // 
             // btn1
             // 
-            this.btn1.Location = new System.Drawing.Point(891, 143);
+            this.btn1.Location = new System.Drawing.Point(841, 142);
             this.btn1.Visible = false;
             // 
             // pnlDgv
@@ -90,7 +90,7 @@ namespace BedFactory
             // 
             // btn4
             // 
-            this.btn4.Location = new System.Drawing.Point(1093, 143);
+            this.btn4.Location = new System.Drawing.Point(1043, 142);
             this.btn4.Visible = false;
             // 
             // pnlSelect
@@ -182,7 +182,7 @@ namespace BedFactory
             // 
             this.cboCompany.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(507, 9);
+            this.cboCompany.Location = new System.Drawing.Point(507, 13);
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(212, 31);
             this.cboCompany.TabIndex = 49;
