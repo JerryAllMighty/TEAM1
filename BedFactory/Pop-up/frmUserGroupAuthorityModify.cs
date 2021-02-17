@@ -15,17 +15,20 @@ namespace BedFactory
     public partial class frmUserGroupAuthorityModify : BedFactory.BaseForms.BaseForm2
     {
         List<AuthorityVO> AddAuthorityList = new List<AuthorityVO>();
+        List<AuthorityVO> AuthList;
+        
 
         /// <summary>
         /// 사용자 그룹별 권한관리 화면에서 수정을 원하는 그룹에 대한 정보가 바인딩되면서 폼이 로드
         /// </summary>
         /// <param name="groupCode"></param>
         /// <param name="groupName"></param>
-        public frmUserGroupAuthorityModify(string groupCode, string groupName)
+        public frmUserGroupAuthorityModify(string groupCode, string groupName, List<AuthorityVO> authList)
         {
             InitializeComponent();
             lblGroupCodeBinding.Text = groupCode;
             lblGroupNameBinding.Text = groupName;
+            AuthList = authList;
         }
 
         /// <summary>
@@ -43,8 +46,9 @@ namespace BedFactory
 
             //추가할 권한
             dgvAddAuthority.AddGridButton("제외", "btnSubtract", "-", new Padding(0, 0, 0, 0), 100);
+            dgvAddAuthority.SetGridViewColumn("권한 번호", "Auth_Num");
             dgvAddAuthority.SetGridViewColumn("메뉴명", "Auth_Name");
-            
+
             dgvAddAuthority.CellClick += DatagridviewControl2_CellClick;
 
             LoadData();
@@ -59,7 +63,7 @@ namespace BedFactory
         {
             if (e.ColumnIndex == 0)
             {
-                AddAuthorityList.Remove(  AddAuthorityList.Find(p => p.Auth_Num == Convert.ToInt32(dgvAddAuthority[1, e.RowIndex].Value.ToString())));
+                AddAuthorityList.Remove(AddAuthorityList.Find(p => p.Auth_Num == Convert.ToInt32(dgvAddAuthority[1, e.RowIndex].Value.ToString())));
                 dgvAddAuthority.DataSource = null; //**
                 dgvAddAuthority.DataSource = AddAuthorityList;
             }
@@ -101,10 +105,21 @@ namespace BedFactory
         private void LoadData()
         {
             List<CommonCodeVO> list = frmCommonCode.CheckCommonInfo();
-            var MenuList = (from items in list
-             where items.Category == "메뉴"
-             select items).ToList();
+            List<CommonCodeVO>  MenuList = (from items in list
+                        where items.Category == "메뉴"
+                        select items).ToList();
 
+            //이미 가지고 있는 권한인 경우 권한 추가 못하게 하기
+            for (int i = 0; i < MenuList.Count; i++)
+            {
+                for (int j = 0; j < AuthList.Count; j++)
+                {
+                    if (AuthList[i].Auth_Name == MenuList[i].Code_Name)
+                    {
+                        MenuList.RemoveAt(i);
+                    }
+                }
+            }
             dgvEveryScreen.DataSource = MenuList;
         }
 

@@ -85,7 +85,7 @@ namespace BedFactory
             // 
             // pnlDgv
             // 
-            this.pnlDgv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnlDgv.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnlDgv.Controls.Add(this.tableLayoutPanel1);
             this.pnlDgv.Size = new System.Drawing.Size(1358, 704);
             // 
