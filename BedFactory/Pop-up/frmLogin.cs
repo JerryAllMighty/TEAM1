@@ -32,8 +32,10 @@ namespace BedFactory.Pop_up
                 MessageBox.Show($"{vo[0].Emp_Name}님 환영합니다.");
                 frmMain frm = new frmMain();
                 frm.emp_Info = vo[0];
+                frm.Owner = this;
                 frm.Show();
                 this.Hide();
+                txtID.Text = txtPW.Text = "";
             }
             else
             {

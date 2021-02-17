@@ -18,7 +18,7 @@ namespace BadFactory
     public partial class frmMain : Form
     {
         TreeView tv = new TreeView();
-        public EmployeeVO emp_Info { get; set; }    //로그인한 회원정보
+        public EmployeeVO emp_Info;    //로그인한 회원정보
 
         public frmMain()
         {
@@ -56,7 +56,7 @@ namespace BadFactory
                     f.WindowState = FormWindowState.Maximized;
                 }
 
-                pnSplitScreen.Size = new Size(this.Width - pnMenu2.Width, (this.Height - pnMenu1.Height) / 2);
+                pnSplitScreen.Size = new Size(this.Width - pnMenu2.Width, this.Height / 2);
 
                 TabCustomControl1 tc = new TabCustomControl1();
                 tc.Name = "newTab";
@@ -143,7 +143,7 @@ namespace BadFactory
             else
             {
                 btnTabPut.Text = "▽";
-                pnSplitScreen.Size = new Size(this.Width - pnMenu2.Width, (this.Height - pnMenu1.Height) / 2);
+                pnSplitScreen.Size = new Size(this.Width - pnMenu2.Width, this.Height / 2);
             }
 
             if (tabControl1.Controls.Count > 0)
@@ -159,11 +159,11 @@ namespace BadFactory
             #region 회원정보 바인딩
             if (emp_Info != null)
             {
-                lblEmpName.Text = emp_Info.Emp_Name;
-                lblEmpID.Text = emp_Info.Emp_ID;
-                lblEmpCategory.Text = emp_Info.Emp_Category;
-                lblEmpDepartment.Text = emp_Info.Emp_Department;
-                lblEmpEmail.Text = emp_Info.Emp_Email;
+                //lblEmpName.Text = emp_Info.Emp_Name;
+                //lblEmpID.Text = emp_Info.Emp_ID;
+                //lblEmpCategory.Text = emp_Info.Emp_Category;
+                //lblEmpDepartment.Text = emp_Info.Emp_Department;
+                //lblEmpEmail.Text = emp_Info.Emp_Email;
             }
             #endregion
 
@@ -171,14 +171,14 @@ namespace BadFactory
             List<CommonCodeVO> list = frmCommonCode.CheckCommonInfo();
             //List<CommonCodeVO> pList = list.Where(p => p.Category == "메뉴").ToList();
             List<AuthorityVO> pList = service.GetEmployeeAuthName(emp_Info.Emp_Num);
-
+            
             tv.Size = new Size(200, 300);
             tv.BorderStyle = BorderStyle.None;
             tv.Dock = DockStyle.Fill;
             tv.Font = new Font("맑은 고딕", 9.75F);
             tv.Indent = 5;
             tv.NodeMouseDoubleClick += tvMenu_NodeMouseDoubleClick;
-            pnMenu.Controls.Add(tv);
+            panel1.Controls.Add(tv);
             tv.Visible = false;
 
             int k = 1;
@@ -193,7 +193,7 @@ namespace BadFactory
                 btn.Dock = DockStyle.Top;
                 btn.BackColor = Color.LightSteelBlue;
                 btn.Click += Btn_Click;
-                pnMenu.Controls.Add(btn);
+                panel1.Controls.Add(btn);
                 k++;
             });
         }
@@ -202,7 +202,7 @@ namespace BadFactory
         {
             Button btn = (Button)sender;
 
-            foreach (Control ctrl in pnMenu.Controls)
+            foreach (Control ctrl in panel1.Controls)
             {
                 if(tv.Visible)
                 {
@@ -216,16 +216,16 @@ namespace BadFactory
 
             if(btn.BackColor != Color.Lavender)
             {
-                for (int i = pnMenu.Controls.Count - 1; i >= 0; i--) //int i = pnMenu.Controls.Count - 1; i >= 0; i--
+                for (int i = panel1.Controls.Count - 1; i >= 0; i--) //int i = pnMenu.Controls.Count - 1; i >= 0; i--
                 {
-                    if(pnMenu.Controls[i] as Button != null)
+                    if(panel1.Controls[i] as Button != null)
                     {
-                        if (Convert.ToInt32(pnMenu.Controls[i].Tag) < Convert.ToInt32(btn.Tag))
+                        if (Convert.ToInt32(panel1.Controls[i].Tag) < Convert.ToInt32(btn.Tag))
                         {
-                            pnMenu.Controls[i].Dock = DockStyle.Bottom;
+                            panel1.Controls[i].Dock = DockStyle.Bottom;
                         }
 
-                        pnMenu.Controls[i].BackColor = Color.LightSteelBlue;
+                        panel1.Controls[i].BackColor = Color.LightSteelBlue;
                     }
                 }
 
@@ -249,7 +249,6 @@ namespace BadFactory
                 btn.BackColor = Color.Lavender;
                 return;
             }
-
             btn.BackColor = Color.LightSteelBlue;
         }
 
@@ -332,6 +331,11 @@ namespace BadFactory
                 f.WindowState = FormWindowState.Normal;
                 f.WindowState = FormWindowState.Maximized;
             }
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Owner.Show();
         }
     }
 }
