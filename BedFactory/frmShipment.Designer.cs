@@ -151,7 +151,7 @@ namespace BedFactory
             this.cboState.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cboState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboState.FormattingEnabled = true;
-            this.cboState.Location = new System.Drawing.Point(553, 21);
+            this.cboState.Location = new System.Drawing.Point(553, 18);
             this.cboState.Name = "cboState";
             this.cboState.Size = new System.Drawing.Size(231, 25);
             this.cboState.TabIndex = 18;
