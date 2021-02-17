@@ -134,10 +134,14 @@ namespace BedFactory
             if(service.UpdateWorkOrderDate(chkWoList))
             {
                 btnSelect.PerformClick();
+                if (MessageBox.Show($"작업지시를 확정하시겠습니까?", "확정확인", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
             }
-            else
+
+            else if(dgvWOC.SelectedRows.Count < 1)
             {
-                MessageBox.Show("실패");
+                MessageBox.Show("확정할 작업지시정보를 선택해주세요.");
+                return;
             }
 
             //MessageBox.Show(String.Join(", ", chkWoList));
