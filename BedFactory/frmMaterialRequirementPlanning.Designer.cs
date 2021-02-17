@@ -63,7 +63,7 @@ namespace BedFactory
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(99, 20);
+            this.label1.Size = new System.Drawing.Size(126, 25);
             this.label1.Text = "자재소요계획";
             // 
             // btn1
@@ -88,10 +88,10 @@ namespace BedFactory
             // 
             this.lblSubjectName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSubjectName.AutoSize = true;
-            this.lblSubjectName.Location = new System.Drawing.Point(880, 22);
+            this.lblSubjectName.Location = new System.Drawing.Point(875, 20);
             this.lblSubjectName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubjectName.Name = "lblSubjectName";
-            this.lblSubjectName.Size = new System.Drawing.Size(51, 19);
+            this.lblSubjectName.Size = new System.Drawing.Size(61, 23);
             this.lblSubjectName.TabIndex = 8;
             this.lblSubjectName.Text = "품목명";
             // 
@@ -99,10 +99,10 @@ namespace BedFactory
             // 
             this.cboDemandPlan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboDemandPlan.FormattingEnabled = true;
-            this.cboDemandPlan.Location = new System.Drawing.Point(139, 21);
+            this.cboDemandPlan.Location = new System.Drawing.Point(139, 20);
             this.cboDemandPlan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboDemandPlan.Name = "cboDemandPlan";
-            this.cboDemandPlan.Size = new System.Drawing.Size(236, 27);
+            this.cboDemandPlan.Size = new System.Drawing.Size(236, 31);
             this.cboDemandPlan.TabIndex = 1;
             // 
             // searchLocationControl1
@@ -137,40 +137,40 @@ namespace BedFactory
             // 
             this.lblDemandPlan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDemandPlan.AutoSize = true;
-            this.lblDemandPlan.Location = new System.Drawing.Point(16, 22);
+            this.lblDemandPlan.Location = new System.Drawing.Point(5, 20);
             this.lblDemandPlan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDemandPlan.Name = "lblDemandPlan";
-            this.lblDemandPlan.Size = new System.Drawing.Size(103, 19);
+            this.lblDemandPlan.Size = new System.Drawing.Size(124, 23);
             this.lblDemandPlan.TabIndex = 1;
             this.lblDemandPlan.Text = "수요 계획 번호";
             // 
             // dtpDeadLine
             // 
             this.dtpDeadLine.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtpDeadLine.Location = new System.Drawing.Point(558, 18);
+            this.dtpDeadLine.Location = new System.Drawing.Point(558, 16);
             this.dtpDeadLine.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpDeadLine.Name = "dtpDeadLine";
-            this.dtpDeadLine.Size = new System.Drawing.Size(236, 26);
+            this.dtpDeadLine.Size = new System.Drawing.Size(236, 30);
             this.dtpDeadLine.TabIndex = 11;
             // 
             // cboSubjectName
             // 
             this.cboSubjectName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboSubjectName.FormattingEnabled = true;
-            this.cboSubjectName.Location = new System.Drawing.Point(977, 21);
+            this.cboSubjectName.Location = new System.Drawing.Point(977, 20);
             this.cboSubjectName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboSubjectName.Name = "cboSubjectName";
-            this.cboSubjectName.Size = new System.Drawing.Size(236, 27);
+            this.cboSubjectName.Size = new System.Drawing.Size(236, 31);
             this.cboSubjectName.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(451, 22);
+            this.label3.Location = new System.Drawing.Point(444, 20);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 19);
+            this.label3.Size = new System.Drawing.Size(84, 23);
             this.label3.TabIndex = 4;
             this.label3.Text = "납기 기한";
             // 
@@ -208,7 +208,7 @@ namespace BedFactory
             // 
             // frmMaterialRequirementPlanning
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1382, 853);
