@@ -46,7 +46,7 @@ namespace BedFactory
 
 
         //조회버튼
-        private void btnSelect_Click_1(object sender, EventArgs e)
+        private void btnSelect_Click(object sender, EventArgs e)
         {
             string prcCode = (cboCategory_Code.SelectedValue == null) ? "" : cboCategory_Code.SelectedValue.ToString();
 

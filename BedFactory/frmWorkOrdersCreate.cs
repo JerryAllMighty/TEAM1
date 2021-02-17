@@ -116,6 +116,17 @@ namespace BedFactory
         //작업지시를 확정하는 버튼
         public override void btn5_Click(object sender, EventArgs e)
         {
+            if (dgvWOC.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("확정할 작업지시예정정보를 선택해주세요.");
+                return;
+            }
+
+            else if (MessageBox.Show($"이 자재의 작업지시예정을 확정하시겠습니까?", "확정확인", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+
             dgvWOC.EndEdit();
 
             List<int> chkWoList = new List<int>();
@@ -134,17 +145,8 @@ namespace BedFactory
             if(service.UpdateWorkOrderDate(chkWoList))
             {
                 btnSelect.PerformClick();
-                if (MessageBox.Show($"작업지시를 확정하시겠습니까?", "확정확인", MessageBoxButtons.YesNo) == DialogResult.No)
-                    return;
             }
 
-            else if(dgvWOC.SelectedRows.Count < 1)
-            {
-                MessageBox.Show("확정할 작업지시정보를 선택해주세요.");
-                return;
-            }
-
-            //MessageBox.Show(String.Join(", ", chkWoList));
         }
 
         //작업지시 등록 버튼

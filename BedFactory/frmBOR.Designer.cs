@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
             this.cboPrc = new System.Windows.Forms.ComboBox();
             this.btnSelect = new System.Windows.Forms.Button();
@@ -114,7 +114,7 @@ namespace BedFactory
             // cboPrc
             // 
             this.cboPrc.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboPrc.Location = new System.Drawing.Point(126, 20);
+            this.cboPrc.Location = new System.Drawing.Point(126, 16);
             this.cboPrc.Name = "cboPrc";
             this.cboPrc.Size = new System.Drawing.Size(215, 31);
             this.cboPrc.TabIndex = 1;
@@ -165,7 +165,7 @@ namespace BedFactory
             // cboWp
             // 
             this.cboWp.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboWp.Location = new System.Drawing.Point(506, 20);
+            this.cboWp.Location = new System.Drawing.Point(506, 16);
             this.cboWp.Name = "cboWp";
             this.cboWp.Size = new System.Drawing.Size(215, 31);
             this.cboWp.TabIndex = 2;
@@ -173,7 +173,7 @@ namespace BedFactory
             // cboMat
             // 
             this.cboMat.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboMat.Location = new System.Drawing.Point(886, 20);
+            this.cboMat.Location = new System.Drawing.Point(886, 16);
             this.cboMat.Name = "cboMat";
             this.cboMat.Size = new System.Drawing.Size(215, 31);
             this.cboMat.TabIndex = 3;
@@ -189,22 +189,23 @@ namespace BedFactory
             this.btnExcel.TabIndex = 17;
             this.btnExcel.Text = "엑셀";
             this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Visible = false;
             // 
             // dgvBOR
             // 
             this.dgvBOR.AllowUserToAddRows = false;
             this.dgvBOR.AllowUserToResizeRows = false;
             this.dgvBOR.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvBOR.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvBOR.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBOR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBOR.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBOR.Location = new System.Drawing.Point(0, 0);
             this.dgvBOR.Name = "dgvBOR";
             this.dgvBOR.RowHeadersVisible = false;
             this.dgvBOR.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvBOR.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvBOR.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBOR.RowTemplate.Height = 27;
             this.dgvBOR.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBOR.Size = new System.Drawing.Size(1358, 711);
