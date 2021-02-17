@@ -32,7 +32,6 @@ namespace BedFactory
             dgvWO.SetGridViewColumn("입출고일", "FirstDate");
             dgvWO.SetGridViewColumn("구분", "Category");
             dgvWO.SetGridViewColumn("카테고리", "W_Category");
-            dgvWO.SetGridViewColumn("창고번호", "Str_Num");
             dgvWO.SetGridViewColumn("창고유형", "Str_Kind");
             dgvWO.SetGridViewColumn("자재명", "Mat_Name");
             dgvWO.SetGridViewColumn("자재분류", "Mat_Category");

@@ -33,7 +33,7 @@ namespace BedFactory
             dgvWO.SetGridViewColumn("요청일", "Firstdate");
             dgvWO.SetGridViewColumn("자재명", "Mat_Name");
             dgvWO.SetGridViewColumn("자재유형", "Mat_Category");
-            dgvWO.SetGridViewColumn("창고", "Str_Num");
+            dgvWO.SetGridViewColumn("창고유형", "Str_Kind");
             dgvWO.SetGridViewColumn("요청수량", "Ship_Cnt");
 
             Point point = dgvWO.GetCellDisplayRectangle(0, -1, true).Location;

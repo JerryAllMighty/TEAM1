@@ -36,10 +36,6 @@ namespace BedFactory
             dgvShift.SetGridViewColumn("완료시간", "End_Time");
             dgvShift.SetGridViewColumn("적용시작일자", "Start_Date");
             dgvShift.SetGridViewColumn("적용완료일자", "End_Date");
-            dgvShift.SetGridViewColumn("최초등록자", "FirstMan");
-            dgvShift.SetGridViewColumn("최초등록일", "FirstDate");
-            dgvShift.SetGridViewColumn("최종등록자", "LastMan");
-            dgvShift.SetGridViewColumn("최종등록일", "LastDate");
             dgvShift.SetGridViewColumn("사용유무", "IsUse");
             dgvShift.SetGridViewColumn("투입인원", "PeopleCnt", visibility: false);
 
@@ -52,7 +48,7 @@ namespace BedFactory
             list = service.ShiftsSelect();
             dgvShift.DataSource = list;
 
-            var item = list.GroupBy(p => p.WP_Num);
+            var item = list.GroupBy(p => p.WP_Name);
             List<string> temp = item.Select(p => p.Key.ToString()).ToList();
             temp.Insert(0, "전체");
             cboWork.DisplayMember = "WP_Num";

@@ -50,6 +50,7 @@ namespace BedFactory
             dtpTo.Value = DateTime.Now.AddDays(7);
 
             cboState.SelectedItem = "전체";
+            DataLoad();
         }
 
         private void HeaderCheck_Click(object sender, EventArgs e)

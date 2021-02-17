@@ -186,7 +186,7 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select FirstDate, Category, W_Category, Str_Num, Str_Kind, Mat_Name, Mat_Category, Mat_Cnt
+                    cmd.CommandText = @"select FirstDate, Category, W_Category, Str_Kind, Mat_Name, Mat_Category, Mat_Cnt
                                         from
                                         (select W.FirstDate, '입고' Category, W_Category, W.Str_Num, S.Str_Kind, M.Mat_Name, M.Mat_Category, Mat_Cnt 
                                         from tblWearing W join tblStorages S on W.Str_Num = S.Str_Num

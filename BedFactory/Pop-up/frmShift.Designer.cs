@@ -32,6 +32,8 @@ namespace BedFactory.Pop_up
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtPeopleCnt = new BedFactory.Controls.OnlyNumberTextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.cboShift = new System.Windows.Forms.ComboBox();
             this.lblShift = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
@@ -39,6 +41,8 @@ namespace BedFactory.Pop_up
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.txtWp = new System.Windows.Forms.TextBox();
             this.txtMan = new System.Windows.Forms.TextBox();
+            this.txtEndTime = new BedFactory.Controls.OnlyNumberTextBox();
+            this.txtStartTime = new BedFactory.Controls.OnlyNumberTextBox();
             this.lblMan = new System.Windows.Forms.Label();
             this.cboIsUse = new System.Windows.Forms.ComboBox();
             this.lblDate = new System.Windows.Forms.Label();
@@ -48,10 +52,6 @@ namespace BedFactory.Pop_up
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtEndTime = new BedFactory.Controls.OnlyNumberTextBox();
-            this.txtStartTime = new BedFactory.Controls.OnlyNumberTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtPeopleCnt = new BedFactory.Controls.OnlyNumberTextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,6 +106,24 @@ namespace BedFactory.Pop_up
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(759, 256);
             this.panel2.TabIndex = 5;
+            // 
+            // txtPeopleCnt
+            // 
+            this.txtPeopleCnt.Decimal = false;
+            this.txtPeopleCnt.Location = new System.Drawing.Point(526, 161);
+            this.txtPeopleCnt.Name = "txtPeopleCnt";
+            this.txtPeopleCnt.Size = new System.Drawing.Size(176, 25);
+            this.txtPeopleCnt.TabIndex = 91;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(400, 167);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 17);
+            this.label4.TabIndex = 90;
+            this.label4.Text = "*투입인원";
             // 
             // cboShift
             // 
@@ -166,6 +184,24 @@ namespace BedFactory.Pop_up
             this.txtMan.Name = "txtMan";
             this.txtMan.Size = new System.Drawing.Size(176, 25);
             this.txtMan.TabIndex = 83;
+            // 
+            // txtEndTime
+            // 
+            this.txtEndTime.Decimal = false;
+            this.txtEndTime.Location = new System.Drawing.Point(178, 113);
+            this.txtEndTime.MaxLength = 6;
+            this.txtEndTime.Name = "txtEndTime";
+            this.txtEndTime.Size = new System.Drawing.Size(176, 25);
+            this.txtEndTime.TabIndex = 82;
+            // 
+            // txtStartTime
+            // 
+            this.txtStartTime.Decimal = false;
+            this.txtStartTime.Location = new System.Drawing.Point(526, 67);
+            this.txtStartTime.MaxLength = 6;
+            this.txtStartTime.Name = "txtStartTime";
+            this.txtStartTime.Size = new System.Drawing.Size(176, 25);
+            this.txtStartTime.TabIndex = 81;
             // 
             // lblMan
             // 
@@ -255,43 +291,7 @@ namespace BedFactory.Pop_up
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 17);
             this.label1.TabIndex = 65;
-            this.label1.Text = "*설비코드";
-            // 
-            // txtEndTime
-            // 
-            this.txtEndTime.Decimal = false;
-            this.txtEndTime.Location = new System.Drawing.Point(178, 113);
-            this.txtEndTime.MaxLength = 6;
-            this.txtEndTime.Name = "txtEndTime";
-            this.txtEndTime.Size = new System.Drawing.Size(176, 25);
-            this.txtEndTime.TabIndex = 82;
-            // 
-            // txtStartTime
-            // 
-            this.txtStartTime.Decimal = false;
-            this.txtStartTime.Location = new System.Drawing.Point(526, 67);
-            this.txtStartTime.MaxLength = 6;
-            this.txtStartTime.Name = "txtStartTime";
-            this.txtStartTime.Size = new System.Drawing.Size(176, 25);
-            this.txtStartTime.TabIndex = 81;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(400, 167);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 17);
-            this.label4.TabIndex = 90;
-            this.label4.Text = "*투입인원";
-            // 
-            // txtPeopleCnt
-            // 
-            this.txtPeopleCnt.Decimal = false;
-            this.txtPeopleCnt.Location = new System.Drawing.Point(526, 161);
-            this.txtPeopleCnt.Name = "txtPeopleCnt";
-            this.txtPeopleCnt.Size = new System.Drawing.Size(176, 25);
-            this.txtPeopleCnt.TabIndex = 91;
+            this.label1.Text = "*작업장명";
             // 
             // frmShift
             // 
