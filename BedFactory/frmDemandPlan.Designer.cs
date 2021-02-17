@@ -129,11 +129,11 @@ namespace BedFactory
             // 
             this.lblPlanID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPlanID.AutoSize = true;
-            this.lblPlanID.Location = new System.Drawing.Point(11, 1);
+            this.lblPlanID.Location = new System.Drawing.Point(5, 1);
             this.lblPlanID.Name = "lblPlanID";
-            this.lblPlanID.Size = new System.Drawing.Size(101, 46);
+            this.lblPlanID.Size = new System.Drawing.Size(113, 46);
             this.lblPlanID.TabIndex = 11;
-            this.lblPlanID.Text = "영업마스터 번호";
+            this.lblPlanID.Text = "영업마스터     번호";
             // 
             // lblSubject
             // 

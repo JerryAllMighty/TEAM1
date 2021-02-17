@@ -70,7 +70,7 @@ namespace BedFactory
 
             #region 자재종류 그리드뷰 설정
             dgvMat.SetGridViewColumn("자재번호", "Mat_Num", visibility: false);
-            dgvMat.SetGridViewColumn("자재이름", "Mat_Name", 500);
+            dgvMat.SetGridViewColumn("자재이름", "Mat_Name", 400);
             dgvMat.SetGridViewColumn("자재구분", "Mat_Category", 200);
             dgvMat.SetGridViewColumn("자재종류", "Mat_Kind", visibility: false);
             dgvMat.SetGridViewColumn("사이즈", "Mat_Size", visibility: false);
@@ -87,7 +87,7 @@ namespace BedFactory
             dgvBOM.SetGridViewColumn("BOM번호", "BOM_Num", visibility: false);
             dgvBOM.SetGridViewColumn("자재번호", "Mat_Num", visibility: false);
             dgvBOM.SetGridViewColumn("사용자재번호", "Use_Mat_Num", visibility: false);
-            dgvBOM.SetGridViewColumn("자재이름", "Mat_Name", 400);
+            dgvBOM.SetGridViewColumn("자재이름", "Mat_Name", 300);
             dgvBOM.SetGridViewColumn("자재구분", "Mat_Category", 200);
             dgvBOM.SetGridViewColumn("사용개수", "Cnt", 100);
             dgvMat.SetGridViewColumn("최초등록자", "FirstMan", visibility: false);

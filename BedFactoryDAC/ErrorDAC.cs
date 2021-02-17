@@ -27,7 +27,7 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select WH_Num, wh.WO_Num, WorkCnt, ErrorKind, ErrorCnt, wh.Firstman, wh.Firstdate, convert(decimal(8, 2), 100 * ErrorCnt / WorkCnt) as persent, Mat_Name, Mat_Category
+                    cmd.CommandText = @"select wh.WH_Num, wh.WO_Num, WorkCnt, ErrorKind, ErrorCnt, wh.Firstman, wh.Firstdate, convert(decimal(8, 2), 100 * ErrorCnt / WorkCnt) as persent, Mat_Name, Mat_Category
                                         from tblWorkHistory as wh
                                         join tblWorkOrders as wo on wh.WO_Num = wo.WO_Num
                                         join tblMaterials as mt on wo.Mat_Num = mt.Mat_Num";

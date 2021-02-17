@@ -49,7 +49,7 @@ namespace BedFactory
         /// <param name="e"></param>
         private void frmDemandPlan_Load(object sender, EventArgs e)
         {
-            dgvDemandPlan.SetGridViewColumn("수요 계획 번호","Demand_Plan_Num");
+            dgvDemandPlan.SetGridViewColumn("수요 계획 번호","Demand_Plan_Num", 150);
             dgvDemandPlan.SetGridViewColumn("주문 번호", "Order_Num");
             dgvDemandPlan.SetGridViewColumn("영업 마스터 번호", "SalesMaster_Num");
             dgvDemandPlan.SetGridViewColumn("업체명", "Com_Name");
