@@ -27,6 +27,8 @@ namespace BedFactory
 
         private void frmShiftMangement_Load(object sender, EventArgs e)
         {
+            btn5.Visible = false;
+
             bFrom = DateTime.Now.AddYears(3333);
             bTo = DateTime.Now.AddYears(3333);
 

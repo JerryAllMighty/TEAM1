@@ -28,7 +28,7 @@ namespace BedFactory
 
         private void frmMaterialLedgerStockWarehousingState_Load(object sender, EventArgs e)
         {
-            btn1.Visible = btn2.Visible = btn3.Visible = false;
+            btn1.Visible = btn2.Visible = btn3.Visible = btn5.Visible = false;
 
             dgvState.SetGridCheckBox("chk");
             dgvState.SetGridViewColumn("입고번호", "Wearing_Num");

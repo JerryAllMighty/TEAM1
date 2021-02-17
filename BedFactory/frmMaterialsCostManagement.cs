@@ -27,6 +27,8 @@ namespace BedFactory
             this.category = "발주";
             label1.Text = "자재단가관리";
             this.Text = "자재단가관리";
+
+            btn4.Visible = btn5.Visible = false;
         }
 
         private void DataLoad()

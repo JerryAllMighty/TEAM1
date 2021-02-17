@@ -53,22 +53,20 @@ namespace BedFactory
             // btn2
             // 
             this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn2.Location = new System.Drawing.Point(986, 98);
+            this.btn2.Location = new System.Drawing.Point(1128, 98);
             // 
             // btn3
             // 
-            this.btn3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn3.Location = new System.Drawing.Point(1305, 98);
             this.btn3.Text = "출고";
             // 
             // btn5
             // 
             this.btn5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn5.Location = new System.Drawing.Point(855, 98);
+            this.btn5.Location = new System.Drawing.Point(997, 98);
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.Location = new System.Drawing.Point(12, 98);
             this.label1.Size = new System.Drawing.Size(84, 20);
             this.label1.Text = "원자재불출";
@@ -76,7 +74,7 @@ namespace BedFactory
             // btn1
             // 
             this.btn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn1.Location = new System.Drawing.Point(784, 98);
+            this.btn1.Location = new System.Drawing.Point(926, 98);
             // 
             // pnlDgv
             // 
@@ -87,7 +85,7 @@ namespace BedFactory
             // btn4
             // 
             this.btn4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn4.Location = new System.Drawing.Point(1057, 98);
+            this.btn4.Location = new System.Drawing.Point(1199, 98);
             // 
             // pnlSelect
             // 
@@ -97,7 +95,7 @@ namespace BedFactory
             // 
             this.cboWO.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboWO.FormattingEnabled = true;
-            this.cboWO.Location = new System.Drawing.Point(558, 18);
+            this.cboWO.Location = new System.Drawing.Point(558, 21);
             this.cboWO.Name = "cboWO";
             this.cboWO.Size = new System.Drawing.Size(235, 25);
             this.cboWO.TabIndex = 80;
@@ -209,7 +207,7 @@ namespace BedFactory
             // 
             this.cboM_Category.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboM_Category.FormattingEnabled = true;
-            this.cboM_Category.Location = new System.Drawing.Point(977, 18);
+            this.cboM_Category.Location = new System.Drawing.Point(977, 21);
             this.cboM_Category.Name = "cboM_Category";
             this.cboM_Category.Size = new System.Drawing.Size(235, 25);
             this.cboM_Category.TabIndex = 82;

@@ -26,7 +26,7 @@ namespace BedFactory
 
         private void frmStockState_Load(object sender, EventArgs e)
         {
-            btn1.Visible = btn2.Visible = btn3.Visible = false;
+            btn1.Visible = btn2.Visible = btn3.Visible = btn5.Visible = false;
 
             dgvStock.SetGridCheckBox("chk");
             dgvStock.SetGridViewColumn("창고번호", "Str_Num");

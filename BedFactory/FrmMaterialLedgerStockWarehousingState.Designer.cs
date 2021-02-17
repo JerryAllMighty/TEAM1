@@ -55,30 +55,28 @@ namespace BedFactory
             // btn2
             // 
             this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn2.Location = new System.Drawing.Point(1234, 134);
+            this.btn2.Location = new System.Drawing.Point(997, 134);
             // 
             // btn3
             // 
             this.btn3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn3.Location = new System.Drawing.Point(1163, 134);
-            this.btn3.Text = "엑셀";
+            this.btn3.Location = new System.Drawing.Point(926, 134);
             // 
             // btn5
             // 
             this.btn5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn5.Location = new System.Drawing.Point(926, 134);
+            this.btn5.Location = new System.Drawing.Point(1139, 134);
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.Location = new System.Drawing.Point(12, 134);
-            this.label1.Size = new System.Drawing.Size(126, 25);
+            this.label1.Size = new System.Drawing.Size(99, 20);
             this.label1.Text = "자재입고현황";
             // 
             // btn1
             // 
             this.btn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn1.Location = new System.Drawing.Point(1305, 134);
+            this.btn1.Location = new System.Drawing.Point(1068, 134);
             // 
             // pnlDgv
             // 
@@ -88,8 +86,7 @@ namespace BedFactory
             // 
             // btn4
             // 
-            this.btn4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn4.Location = new System.Drawing.Point(1057, 134);
+            this.btn4.Location = new System.Drawing.Point(1270, 134);
             this.btn4.Text = "입고취소";
             this.btn4.Click += new System.EventHandler(this.btn4_Click);
             // 
@@ -101,35 +98,35 @@ namespace BedFactory
             // txtWearing
             // 
             this.txtWearing.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtWearing.Location = new System.Drawing.Point(139, 59);
+            this.txtWearing.Location = new System.Drawing.Point(139, 61);
             this.txtWearing.Name = "txtWearing";
-            this.txtWearing.Size = new System.Drawing.Size(235, 29);
+            this.txtWearing.Size = new System.Drawing.Size(235, 25);
             this.txtWearing.TabIndex = 74;
             // 
             // txtMaterial
             // 
             this.txtMaterial.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtMaterial.Location = new System.Drawing.Point(977, 10);
+            this.txtMaterial.Location = new System.Drawing.Point(977, 12);
             this.txtMaterial.Name = "txtMaterial";
-            this.txtMaterial.Size = new System.Drawing.Size(235, 29);
+            this.txtMaterial.Size = new System.Drawing.Size(235, 25);
             this.txtMaterial.TabIndex = 73;
             // 
             // cboCom
             // 
             this.cboCom.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboCom.FormattingEnabled = true;
-            this.cboCom.Location = new System.Drawing.Point(558, 9);
+            this.cboCom.Location = new System.Drawing.Point(558, 14);
             this.cboCom.Name = "cboCom";
-            this.cboCom.Size = new System.Drawing.Size(235, 29);
+            this.cboCom.Size = new System.Drawing.Size(235, 25);
             this.cboCom.TabIndex = 72;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(456, 13);
+            this.label2.Location = new System.Drawing.Point(463, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 23);
+            this.label2.Size = new System.Drawing.Size(47, 17);
             this.label2.TabIndex = 71;
             this.label2.Text = "거래처";
             // 
@@ -137,9 +134,9 @@ namespace BedFactory
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 62);
+            this.label6.Location = new System.Drawing.Point(37, 65);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 23);
+            this.label6.Size = new System.Drawing.Size(60, 17);
             this.label6.TabIndex = 67;
             this.label6.Text = "입고번호";
             // 
@@ -147,9 +144,9 @@ namespace BedFactory
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(875, 13);
+            this.label5.Location = new System.Drawing.Point(882, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 23);
+            this.label5.Size = new System.Drawing.Size(47, 17);
             this.label5.TabIndex = 65;
             this.label5.Text = "자재명";
             // 
@@ -205,9 +202,9 @@ namespace BedFactory
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 13);
+            this.label4.Location = new System.Drawing.Point(44, 16);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 23);
+            this.label4.Size = new System.Drawing.Size(47, 17);
             this.label4.TabIndex = 68;
             this.label4.Text = "입고일";
             // 
@@ -228,7 +225,7 @@ namespace BedFactory
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpTo.Location = new System.Drawing.Point(122, 0);
             this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(113, 29);
+            this.dtpTo.Size = new System.Drawing.Size(113, 25);
             this.dtpTo.TabIndex = 71;
             this.dtpTo.ValueChanged += new System.EventHandler(this.dtpFrom_ValueChanged);
             // 
@@ -238,7 +235,7 @@ namespace BedFactory
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFrom.Location = new System.Drawing.Point(0, 0);
             this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(113, 29);
+            this.dtpFrom.Size = new System.Drawing.Size(113, 25);
             this.dtpFrom.TabIndex = 70;
             this.dtpFrom.ValueChanged += new System.EventHandler(this.dtpFrom_ValueChanged);
             // 
@@ -247,7 +244,7 @@ namespace BedFactory
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(109, 3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(22, 23);
+            this.label3.Size = new System.Drawing.Size(17, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "~";
             // 
@@ -255,12 +252,11 @@ namespace BedFactory
             // 
             this.dgvState.AllowUserToAddRows = false;
             this.dgvState.AllowUserToResizeRows = false;
-            this.dgvState.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvState.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvState.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvState.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvState.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvState.Location = new System.Drawing.Point(0, 0);
             this.dgvState.Name = "dgvState";
             this.dgvState.RowHeadersVisible = false;
@@ -277,7 +273,7 @@ namespace BedFactory
             // 
             // frmMaterialLedgerStockWarehousingState
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1384, 861);

@@ -25,7 +25,7 @@ namespace BedFactory
 
         private void frmPurchasingOrder_Load(object sender, EventArgs e)
         {
-            btn1.Visible = btn2.Visible = btn4.Visible = false;
+            btn1.Visible = btn2.Visible = btn4.Visible = btn5.Visible = false;
 
             dtpTo.Value = DateTime.Now.Date.AddDays(14);
             dtpTo.MinDate = dtpFrom.Value.Date;

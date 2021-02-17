@@ -29,7 +29,7 @@ namespace BedFactory
 
         private void frmMaterialRequest_Load(object sender, EventArgs e)
         {
-            btn1.Visible = btn2.Visible = btn3.Visible = btn4.Visible = false;
+            btn1.Visible = btn2.Visible = btn3.Visible = btn4.Visible = btn5.Visible = false;
 
             dgvWorkOrder.SetGridViewColumn("계획시작일자", "ProductionDate");
             dgvWorkOrder.SetGridViewColumn("작업지시번호", "WO_Num");

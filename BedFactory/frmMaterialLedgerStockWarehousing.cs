@@ -31,7 +31,7 @@ namespace BedFactory
 
         private void frmMaterialLedgerStockWarehousing_Load(object sender, EventArgs e)
         {
-            btn1.Visible = false;
+            btn1.Visible = btn5.Visible = false;
 
             dgvWait.SetGridCheckBox("chk");
             dgvWait.SetGridViewColumn("거래처명", "Com_Name");

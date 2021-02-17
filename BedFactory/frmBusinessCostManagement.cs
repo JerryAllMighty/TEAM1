@@ -27,24 +27,8 @@ namespace BedFactory
             this.category = "주문";
             label1.Text = "영업단가관리";
             this.Text = "영업단가관리";
-        }
 
-        public frmBusinessCostManagement(string category)
-        {
-            InitializeComponent();
-
-            if (category.Equals("영업"))
-            {
-                this.category = "주문";
-                label1.Text = "영업단가관리";
-                this.Text = "영업단가관리";
-            }
-            else
-            {
-                this.category = "발주";
-                label1.Text = "자재단가관리";
-                this.Text = "자재단가관리";
-            }
+            btn4.Visible = btn5.Visible = false;
         }
 
         private void DataLoad()

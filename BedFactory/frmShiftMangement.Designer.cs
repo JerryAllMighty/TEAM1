@@ -52,19 +52,14 @@ namespace BedFactory
             // 
             // btn2
             // 
-            this.btn2.Location = new System.Drawing.Point(997, 99);
+            this.btn2.Location = new System.Drawing.Point(1128, 99);
             this.btn2.Visible = false;
             // 
             // btn3
             // 
-            this.btn3.Location = new System.Drawing.Point(1174, 99);
+            this.btn3.Location = new System.Drawing.Point(1305, 99);
             this.btn3.Text = "수정";
             this.btn3.Click += new System.EventHandler(this.btnChange_Click);
-            // 
-            // btn5
-            // 
-            this.btn5.Location = new System.Drawing.Point(1245, 99);
-            this.btn5.Text = "엑셀 내보내기";
             // 
             // label1
             // 
@@ -73,7 +68,7 @@ namespace BedFactory
             // 
             // btn1
             // 
-            this.btn1.Location = new System.Drawing.Point(926, 99);
+            this.btn1.Location = new System.Drawing.Point(1057, 99);
             this.btn1.Visible = false;
             // 
             // pnlDgv
@@ -84,7 +79,7 @@ namespace BedFactory
             // 
             // btn4
             // 
-            this.btn4.Location = new System.Drawing.Point(1068, 99);
+            this.btn4.Location = new System.Drawing.Point(1199, 99);
             this.btn4.Visible = false;
             // 
             // pnlSelect

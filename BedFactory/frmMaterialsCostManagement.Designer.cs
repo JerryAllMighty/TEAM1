@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
@@ -41,7 +41,6 @@ namespace BedFactory
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvCost = new BedFactory.DatagridviewControl();
             this.button7 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.searchLocationControl1.SuspendLayout();
@@ -50,20 +49,19 @@ namespace BedFactory
             // 
             // btn2
             // 
-            this.btn2.Location = new System.Drawing.Point(751, 99);
+            this.btn2.Location = new System.Drawing.Point(1092, 99);
             this.btn2.Text = "등록";
             this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
             // btn3
             // 
-            this.btn3.Location = new System.Drawing.Point(964, 99);
+            this.btn3.Location = new System.Drawing.Point(1305, 99);
             this.btn3.Text = "삭제";
             this.btn3.Click += new System.EventHandler(this.btn3_Click_1);
             // 
             // btn5
             // 
-            this.btn5.Location = new System.Drawing.Point(1141, 99);
-            this.btn5.Text = "양식 다운로드";
+            this.btn5.Location = new System.Drawing.Point(855, 99);
             // 
             // label1
             // 
@@ -72,7 +70,7 @@ namespace BedFactory
             // 
             // btn1
             // 
-            this.btn1.Location = new System.Drawing.Point(893, 99);
+            this.btn1.Location = new System.Drawing.Point(1234, 99);
             this.btn1.Text = "복사";
             this.btn1.Click += new System.EventHandler(this.btn1_Click);
             // 
@@ -82,8 +80,7 @@ namespace BedFactory
             // 
             // btn4
             // 
-            this.btn4.Location = new System.Drawing.Point(1272, 99);
-            this.btn4.Text = "가져오기";
+            this.btn4.Location = new System.Drawing.Point(986, 99);
             // 
             // pnlSelect
             // 
@@ -192,15 +189,15 @@ namespace BedFactory
             this.dgvCost.AllowUserToAddRows = false;
             this.dgvCost.AllowUserToResizeRows = false;
             this.dgvCost.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvCost.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvCost.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCost.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCost.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCost.Location = new System.Drawing.Point(0, 0);
             this.dgvCost.Name = "dgvCost";
             this.dgvCost.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvCost.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvCost.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCost.RowTemplate.Height = 23;
             this.dgvCost.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCost.Size = new System.Drawing.Size(1358, 711);
@@ -211,25 +208,13 @@ namespace BedFactory
             this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button7.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button7.Location = new System.Drawing.Point(822, 99);
+            this.button7.Location = new System.Drawing.Point(1163, 99);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(65, 25);
             this.button7.TabIndex = 33;
             this.button7.Text = "수정";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button12
-            // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button12.Location = new System.Drawing.Point(1035, 99);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(100, 25);
-            this.button12.TabIndex = 32;
-            this.button12.Text = "내보내기";
-            this.button12.UseVisualStyleBackColor = false;
             // 
             // frmMaterialsCostManagement
             // 
@@ -238,11 +223,11 @@ namespace BedFactory
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1384, 861);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button12);
             this.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMaterialsCostManagement";
             this.Text = "자재단가관리";
+            this.Load += new System.EventHandler(this.frmBusinessCostManagement_Load);
             this.Controls.SetChildIndex(this.pnlSelect, 0);
             this.Controls.SetChildIndex(this.btn4, 0);
             this.Controls.SetChildIndex(this.pnlDgv, 0);
@@ -251,7 +236,6 @@ namespace BedFactory
             this.Controls.SetChildIndex(this.btn5, 0);
             this.Controls.SetChildIndex(this.btn3, 0);
             this.Controls.SetChildIndex(this.btn2, 0);
-            this.Controls.SetChildIndex(this.button12, 0);
             this.Controls.SetChildIndex(this.button7, 0);
             this.pnlDgv.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
@@ -275,6 +259,5 @@ namespace BedFactory
         private System.Windows.Forms.Button btnSearch;
         private DatagridviewControl dgvCost;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button12;
     }
 }

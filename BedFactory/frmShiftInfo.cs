@@ -26,6 +26,8 @@ namespace BedFactory
 
         private void frmShiftInfo_Load(object sender, EventArgs e)
         {
+            btn4.Visible = btn5.Visible = false;
+
             dgvShift.SetGridViewColumn("NO.", "RowNum");
             dgvShift.SetGridViewColumn("Shift번호", "Shift_Num", visibility:false);
             dgvShift.SetGridViewColumn("Shift", "Shift_Name");
