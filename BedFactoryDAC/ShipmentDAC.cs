@@ -114,7 +114,7 @@ namespace BedFactoryDAC
                                         from tblWorkOrders WO join tblProductionPlan_D PPD on WO.ProductionPlan_D_Num = PPD.ProductionPlan_D_Num
                                         	 join tblWorkplace WP on WO.WP_Num = WP.WP_Num join tblProcess P on P.Process_Num = WO.Process_Num
                                         	 join tblMaterials M on WO.Mat_Num = M.Mat_Num
-                                        where WO_Status = '작업 예정' and ProductionDate >= @fromDate and ProductionDate <= @toDate";
+                                        where WO_Status = '작업예정' and ProductionDate >= @fromDate and ProductionDate <= @toDate";
                     cmd.Parameters.AddWithValue("@fromDate", fromDate.Date);
                     cmd.Parameters.AddWithValue("@toDate", toDate.Date);
 
