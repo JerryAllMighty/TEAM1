@@ -32,9 +32,9 @@ namespace BedFactoryDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select BOM_Num, bom.Mat_Num, Use_Mat_Num, Cnt, bom.Firstman, bom.Firstdate, bom.Lastman, bom.Lastdate, bom.IsDeleted
+                    cmd.CommandText = @"select BOM_Num, bom.Mat_Num, Use_Mat_Num, Cnt, bom.Firstman, bom.Firstdate, bom.Lastman, bom.Lastdate, bom.IsDeleted, Mat_Category, Mat_Name
                                         from tblBOM as bom
-                                        join tblMaterials as mat on bom.Mat_Num = mat.Mat_Num
+                                        join tblMaterials as mat on bom.Use_Mat_Num = mat.Mat_Num
                                         where bom.Mat_Num = @mat_Num and bom.IsDeleted = 'N'";
                     cmd.Parameters.AddWithValue("@mat_Num", mat_Num);
                     List<BOMVO> list = Helper.DataReaderMapToList<BOMVO>(cmd.ExecuteReader());
@@ -119,7 +119,34 @@ namespace BedFactoryDAC
                     cmd.CommandText = @"insert into tblBOM (Mat_Num, Use_Mat_Num, Cnt, Firstman, Lastman)
                                         values (@Mat_Num, @Use_Mat_Num, @Cnt, @Firstman, @Lastman)";
                     cmd.Parameters.AddWithValue("@Mat_Num", vo.Mat_Num);
-                    cmd.Parameters.AddWithValue("@Use_Mat_Num", vo.Mat_Num);
+                    cmd.Parameters.AddWithValue("@Use_Mat_Num", vo.Use_Mat_Num);
+                    cmd.Parameters.AddWithValue("@Cnt", vo.Cnt);
+                    cmd.Parameters.AddWithValue("@Firstman", vo.Firstman);
+                    cmd.Parameters.AddWithValue("@Lastman", vo.Lastman);
+
+                    int iRowAffect = cmd.ExecuteNonQuery();
+
+                    return iRowAffect > 0 ? true : false;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
+
+        public bool DropBOM(BOMVO vo)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"insert into tblBOM (Mat_Num, Use_Mat_Num, Cnt, Firstman, Lastman)
+                                        values (@Mat_Num, @Use_Mat_Num, @Cnt, @Firstman, @Lastman)";
+                    cmd.Parameters.AddWithValue("@Mat_Num", vo.Mat_Num);
+                    cmd.Parameters.AddWithValue("@Use_Mat_Num", vo.Use_Mat_Num);
                     cmd.Parameters.AddWithValue("@Cnt", vo.Cnt);
                     cmd.Parameters.AddWithValue("@Firstman", vo.Firstman);
                     cmd.Parameters.AddWithValue("@Lastman", vo.Lastman);

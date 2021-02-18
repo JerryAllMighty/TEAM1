@@ -16,7 +16,7 @@ namespace BedFactoryVO
         public DateTime Firstdate { get; set; }
         public int Lastman { get; set; }
         public DateTime Lastdate { get; set; }
-        public char IsDeleted { get; set; }
+        public string IsDeleted { get; set; }
 
         public string Mat_Name { get; set; }
         public string Mat_Category { get; set; }

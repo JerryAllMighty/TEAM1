@@ -149,7 +149,10 @@ namespace BedFactory
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            bom_List.Clear();
+            if (bom_List != null)
+            {
+                bom_List.Clear();
+            }
 
             //BOM바인딩
             BOMService service = new BOMService();
