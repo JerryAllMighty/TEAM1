@@ -134,7 +134,7 @@ namespace BedFatory_POP
             //오더 잔량
             lblOrderLeftCnt.Text = (Convert.ToInt32(list[cboWorkPlace.SelectedIndex].WO_Order_Cnt) - Convert.ToInt32(list[cboWorkPlace.SelectedIndex].WorkCnt)).ToString();
         }
-
+         
         int process_id = 0;
         PLCService m_thread;
         /// <summary>
