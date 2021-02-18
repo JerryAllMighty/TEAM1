@@ -72,7 +72,7 @@ namespace BedFactory
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(12, 132);
-            this.label1.Size = new System.Drawing.Size(126, 25);
+            this.label1.Size = new System.Drawing.Size(99, 20);
             this.label1.Text = "작업지시생성";
             // 
             // btn1
@@ -164,9 +164,9 @@ namespace BedFactory
             // 
             this.cboWp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboWp.FormattingEnabled = true;
-            this.cboWp.Location = new System.Drawing.Point(558, 13);
+            this.cboWp.Location = new System.Drawing.Point(558, 14);
             this.cboWp.Name = "cboWp";
-            this.cboWp.Size = new System.Drawing.Size(235, 31);
+            this.cboWp.Size = new System.Drawing.Size(235, 27);
             this.cboWp.TabIndex = 80;
             // 
             // btnSelect
@@ -200,7 +200,7 @@ namespace BedFactory
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpTo.Location = new System.Drawing.Point(122, 0);
             this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(113, 30);
+            this.dtpTo.Size = new System.Drawing.Size(113, 26);
             this.dtpTo.TabIndex = 71;
             // 
             // dtpFrom
@@ -209,7 +209,7 @@ namespace BedFactory
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFrom.Location = new System.Drawing.Point(0, 0);
             this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(113, 30);
+            this.dtpFrom.Size = new System.Drawing.Size(113, 26);
             this.dtpFrom.TabIndex = 70;
             // 
             // label7
@@ -217,7 +217,7 @@ namespace BedFactory
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(109, 3);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(22, 23);
+            this.label7.Size = new System.Drawing.Size(19, 19);
             this.label7.TabIndex = 1;
             this.label7.Text = "~";
             // 
@@ -225,9 +225,9 @@ namespace BedFactory
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 13);
+            this.label3.Location = new System.Drawing.Point(28, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 23);
+            this.label3.Size = new System.Drawing.Size(79, 19);
             this.label3.TabIndex = 78;
             this.label3.Text = "계획시작일";
             // 
@@ -235,9 +235,9 @@ namespace BedFactory
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(456, 13);
+            this.label5.Location = new System.Drawing.Point(461, 15);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 23);
+            this.label5.Size = new System.Drawing.Size(51, 19);
             this.label5.TabIndex = 69;
             this.label5.Text = "작업장";
             // 
@@ -245,9 +245,9 @@ namespace BedFactory
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(875, 13);
+            this.label2.Location = new System.Drawing.Point(880, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 23);
+            this.label2.Size = new System.Drawing.Size(51, 19);
             this.label2.TabIndex = 80;
             this.label2.Text = "자재명";
             // 
@@ -255,9 +255,9 @@ namespace BedFactory
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(28, 62);
+            this.label12.Location = new System.Drawing.Point(35, 64);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(78, 23);
+            this.label12.Size = new System.Drawing.Size(65, 19);
             this.label12.TabIndex = 75;
             this.label12.Text = "작업상태";
             // 
@@ -265,18 +265,18 @@ namespace BedFactory
             // 
             this.cboMat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboMat.FormattingEnabled = true;
-            this.cboMat.Location = new System.Drawing.Point(977, 13);
+            this.cboMat.Location = new System.Drawing.Point(977, 14);
             this.cboMat.Name = "cboMat";
-            this.cboMat.Size = new System.Drawing.Size(235, 31);
+            this.cboMat.Size = new System.Drawing.Size(235, 27);
             this.cboMat.TabIndex = 83;
             // 
             // cboWs
             // 
             this.cboWs.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboWs.FormattingEnabled = true;
-            this.cboWs.Location = new System.Drawing.Point(139, 62);
+            this.cboWs.Location = new System.Drawing.Point(139, 63);
             this.cboWs.Name = "cboWs";
-            this.cboWs.Size = new System.Drawing.Size(235, 31);
+            this.cboWs.Size = new System.Drawing.Size(235, 27);
             this.cboWs.TabIndex = 84;
             // 
             // frmWorkOrdersCreate

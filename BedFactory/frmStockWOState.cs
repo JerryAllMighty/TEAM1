@@ -35,7 +35,7 @@ namespace BedFactory
             dgvWO.SetGridViewColumn("창고유형", "Str_Kind");
             dgvWO.SetGridViewColumn("자재명", "Mat_Name", 150);
             dgvWO.SetGridViewColumn("자재유형", "Mat_Category");
-            dgvWO.SetGridViewColumn("수불량", "Mat_Cnt");
+            dgvWO.SetGridViewColumn("수량", "Mat_Cnt");
 
             dtpTo.MinDate = dtpFrom.Value.AddDays(-7);
             dtpFrom.Value = DateTime.Now.AddDays(-7);

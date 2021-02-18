@@ -282,6 +282,7 @@ namespace BedFactory
             this.dgvWearing.Size = new System.Drawing.Size(1356, 317);
             this.dgvWearing.TabIndex = 0;
             this.dgvWearing.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWearing_CellContentClick);
+            this.dgvWearing.CurrentCellDirtyStateChanged += new System.EventHandler(this.CurrentCellDirtyStateChanged);
             // 
             // dgvWait
             // 
@@ -302,6 +303,7 @@ namespace BedFactory
             this.dgvWait.Size = new System.Drawing.Size(1358, 349);
             this.dgvWait.TabIndex = 0;
             this.dgvWait.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWait_CellContentClick);
+            this.dgvWait.CurrentCellDirtyStateChanged += new System.EventHandler(this.CurrentCellDirtyStateChanged);
             // 
             // frmMaterialLedgerStockWarehousing
             // 

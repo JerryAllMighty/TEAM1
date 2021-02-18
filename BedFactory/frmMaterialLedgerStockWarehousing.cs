@@ -37,7 +37,7 @@ namespace BedFactory
             dgvWait.SetGridViewColumn("거래처명", "Com_Name", 150);
             dgvWait.SetGridViewColumn("자재명", "Mat_Name", 150);
             dgvWait.SetGridViewColumn("자재유형", "Mat_Category");
-            dgvWait.SetGridViewColumn("검사내용", "Error_Detail");
+            dgvWait.SetGridViewColumn("검사내용", "Error_Detail", 150);
             dgvWait.SetGridViewColumn("불량", "Error_Cnt");
             dgvWait.SetGridViewColumn("입고량", "Mat_Cnt");
             dgvWait.SetGridViewColumn("예상납기일", "ExpectedDate");
@@ -54,7 +54,7 @@ namespace BedFactory
             dgvWearing.SetGridCheckBox("chk");
             dgvWearing.SetGridViewColumn("자재명", "Mat_Name", 150);
             dgvWearing.SetGridViewColumn("자재유형", "Mat_Category");
-            dgvWearing.SetGridViewColumn("창고번호", "Str_Num", 50);
+            dgvWearing.SetGridViewColumn("창고번호", "Str_Num", 80);
             dgvWearing.SetGridViewColumn("창고유형", "Str_Kind");
             dgvWearing.SetGridViewColumn("입고량", "Mat_Cnt");
             dgvWearing.SetGridViewColumn("입고번호", "Wearing_Num", visibility: false);
@@ -153,15 +153,18 @@ namespace BedFactory
                 {
                     if (dgvWait[4, row.Index].Value.ToString() != "미검사")
                     {
-                        if (dgvWearing.Rows.Count < 1)
-                            copy.Add(list.Where(p => p.Wearing_Num == Convert.ToInt32(dgvWait[9, row.Index].Value)).ToList()[0]);
-
+                        bool isSame = false;
                         foreach (DataGridViewRow search in dgvWearing.Rows)
                         {
-                            if (dgvWait[9, row.Index].Value != dgvWearing[6, search.Index].Value)
+                            if (dgvWait[9, row.Index].Value.Equals(dgvWearing[6, search.Index].Value))
                             {
-                                copy.Add(list.Where(p => p.Wearing_Num == Convert.ToInt32(dgvWait[9, row.Index].Value)).ToList()[0]);
+                                isSame = true;
+                                break;
                             }
+                        }
+                        if (!isSame)
+                        {
+                            copy.Add(list.Where(p => p.Wearing_Num == Convert.ToInt32(dgvWait[9, row.Index].Value)).ToList()[0]);
                         }
 
                         chk.Value = false;
@@ -178,14 +181,17 @@ namespace BedFactory
 
         private void btn2_Click_1(object sender, EventArgs e) //취소
         {
+            List<int> delList = new List<int>();
             foreach (DataGridViewRow row in dgvWearing.Rows)
             {
                 DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk"];
                 if (Convert.ToBoolean(chk.Value) == true)
                 {
-                    copy.RemoveAt(row.Index);
+                    delList.Add(row.Index);
                 }
             }
+
+            delList.OrderByDescending(p=>p).ToList().ForEach(p => copy.RemoveAt(p));
 
             dgvWearing.DataSource = null;
             dgvWearing.Rows.Clear();
@@ -195,6 +201,7 @@ namespace BedFactory
 
         private void btn4_Click_1(object sender, EventArgs e) //입고처리
         {
+            List<int> delList = new List<int>();
             foreach (DataGridViewRow row in dgvWearing.Rows)
             {
                 DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk"];
@@ -202,9 +209,11 @@ namespace BedFactory
                 {
                     WearingService service = new WearingService();
                     service.BuyWarehousing(Convert.ToInt32(dgvWearing[6, row.Index].Value.ToString()), Convert.ToInt32(dgvWearing[5, row.Index].Value.ToString()));
-                    copy.RemoveAt(row.Index);
+                    delList.Add(row.Index);
                 }
             }
+
+            delList.OrderByDescending(p => p).ToList().ForEach(p => copy.RemoveAt(p));
 
             dgvWearing.DataSource = null;
             dgvWearing.Rows.Clear();
@@ -247,7 +256,7 @@ namespace BedFactory
 
                 for (int i = 0; i < dgvWearing.Rows.Count; i++)
                 {
-                    if (Convert.ToBoolean(dgvWait[0, i].Value))
+                    if (Convert.ToBoolean(dgvWearing[0, i].Value))
                     {
                         bCheck = true;
                         break;

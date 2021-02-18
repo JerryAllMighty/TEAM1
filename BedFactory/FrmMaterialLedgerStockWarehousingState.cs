@@ -33,13 +33,13 @@ namespace BedFactory
             dgvState.SetGridCheckBox("chk");
             dgvState.SetGridViewColumn("입고번호", "Wearing_Num", 80);
             dgvState.SetGridViewColumn("납품업체", "Com_Name", 150);
-            dgvState.SetGridViewColumn("창고번호", "Str_Num", 50);
+            dgvState.SetGridViewColumn("창고번호", "Str_Num", 80);
             dgvState.SetGridViewColumn("창고종류", "Str_Kind");
             dgvState.SetGridViewColumn("자재명", "Mat_Name", 150);
             dgvState.SetGridViewColumn("자재수량", "Mat_Cnt");
             dgvState.SetGridViewColumn("취소수량", "Cancel_Cnt");
-            dgvState.SetGridViewColumn("등록자", "FirstMan");
-            dgvState.SetGridViewColumn("등록일", "FirstDate");
+            dgvState.SetGridViewColumn("등록자", "FirstMan", visibility:false);
+            dgvState.SetGridViewColumn("등록일", "FirstDate", visibility: false);
 
             Point point = dgvState.GetCellDisplayRectangle(0, -1, true).Location;
             headerCheck.Location = new Point(point.X + 8, point.Y + 2);
