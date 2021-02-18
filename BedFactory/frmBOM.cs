@@ -154,7 +154,7 @@ namespace BedFactory
             //BOM바인딩
             BOMService service = new BOMService();
             List<BOMVO> bom_All = new List<BOMVO>();
-            bom_All = service.GetBOM(cboName.SelectedItem.ToString());
+            bom_All = service.GetBOM(cboName.SelectedValue.ToString());
 
             if(!label4.Visible || bom_All.Count < 1)
             {
@@ -222,7 +222,7 @@ namespace BedFactory
             Add_mat = new BOMVO
             {
                 BOM_Num = -1,
-                Mat_Num = cboName.SelectedItem.ToString(),
+                Mat_Num = cboName.SelectedValue.ToString(),
                 Use_Mat_Num = dgvMat["Mat_Num", e.RowIndex].Value.ToString(),
                 Mat_Name = dgvMat["Mat_Name", e.RowIndex].Value.ToString(),
                 Mat_Category = dgvMat["Mat_Category", e.RowIndex].Value.ToString(),
@@ -263,7 +263,7 @@ namespace BedFactory
                 BOMVO vo = new BOMVO
                 {
                     BOM_Num = Convert.ToInt32(row.Cells["BOM_Num"].Value),
-                    Mat_Num = cboName.SelectedItem.ToString(),
+                    Mat_Num = cboName.SelectedValue.ToString(),
                     Use_Mat_Num = row.Cells["Use_Mat_Num"].Value.ToString(),
                     Cnt = Convert.ToInt32(row.Cells["Cnt"].Value)
                 };
