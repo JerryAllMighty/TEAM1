@@ -97,5 +97,10 @@ namespace BedFactory.Pop_up
                 }
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

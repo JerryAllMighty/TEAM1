@@ -16,7 +16,10 @@ namespace BedFactory.Pop_up
     public partial class frmWorkOrdersCreatePOPUP : Form
     {
         ProductionPlanVO productionplan;
-        public WorkOrderVO workorderinfo { get
+
+        public WorkOrderVO workorderinfo
+        {
+            get
             {
                 return new WorkOrderVO
                 {
@@ -32,7 +35,7 @@ namespace BedFactory.Pop_up
                     IsShip = "N"
                 };
             }
-            }
+        }
         public frmWorkOrdersCreatePOPUP(ProductionPlanVO vo)
         {
             InitializeComponent();
@@ -48,26 +51,10 @@ namespace BedFactory.Pop_up
             txtOrderCnt.Text = productionplan.ProductionCnt;
 
 
-            ////콤보박스 바인딩(공통코드)  : 예시
-            //if (frmCommonCode.commonList == null) // 항상 널 체크
-            //    frmCommonCode.CheckCommonInfo();  // 널일때만 갖다오기
-
-            //CommonUtil.CommonCodeBindig(cboPrcName, frmCommonCode.commonList, "공정", "");
-
-            //// 작업장명 콤보박스 바인딩 (DAC단으로 연결)
-            //WorkplaceService wpService = new WorkplaceService();
-            //List<CommonCodeVO> wplist = wpService.GetWorkplaceCombo();
-            //CommonUtil.ComboBinding(cboWpName, wplist, "작업장");
-
-            //// 자재명 콤보박스 바인딩 (DAC단으로 연결)
-            //MaterialsService matService = new MaterialsService();
-            //List<CommonCodeVO> matlist = matService.GetMaterialsCombo();
-            //CommonUtil.ComboBinding(cboMatName, matlist, "자재");
-
-            ////콤보박스 바인딩(공통코드) 
-            //if (frmCommonCode.commonList == null) // 항상 널 체크
-            //    frmCommonCode.CheckCommonInfo();  // 널일때만 갖다오기
-            //CommonUtil.CommonCodeBindig(cboWOS, frmCommonCode.commonList, "작업상태", "");
+            //콤보박스 바인딩(공통코드) 
+            if (frmCommonCode.commonList == null) // 항상 널 체크
+                frmCommonCode.CheckCommonInfo();  // 널일때만 갖다오기
+            CommonUtil.CommonCodeBindig(cboWOS, frmCommonCode.commonList, "작업상태", "");
         }
 
 
@@ -95,10 +82,10 @@ namespace BedFactory.Pop_up
                 WO_Detail = txtDetail.Text,
                 WO_D_Emp_Num = txtDetail.Text,
                 IsShip = (rdoY.Checked) ? "Y" : "N",
-          //    ProductionDate = 
+                //    ProductionDate = 
             };
 
-      //      bResult = service.InsertWorkOrdderInfo(vo);
+            //      bResult = service.InsertWorkOrdderInfo(vo);
             if (bResult)
             {
                 MessageBox.Show(BedFactory.Properties.Settings.Default.InsertSuccess);
@@ -112,20 +99,6 @@ namespace BedFactory.Pop_up
             this.Close();
         }
 
-        private void rdoY_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rdoN_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
         /// <summary>
         /// 작업지시 저장
         /// </summary>
@@ -142,6 +115,11 @@ namespace BedFactory.Pop_up
             {
                 MessageBox.Show(BedFactory.Properties.Settings.Default.InsertFail);
             }
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

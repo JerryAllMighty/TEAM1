@@ -23,22 +23,25 @@ namespace BedFactory
 
         private void frmWorkOrdersStatus_Load(object sender, EventArgs e)
         {
+            //dgvWOC.SetGridCheckBox("");
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             chk.HeaderText = "";
             chk.Name = "chk";
             chk.Width = 30;
             dgvWOS.Columns.Add(chk);
 
-            dgvWOS.SetGridViewColumn("지시일", "WO_Date"); // 지시완료 버튼을 누른 순간 날짜를 저장
+            dgvWOS.SetGridViewColumn("작업지시번호", "WO_Num");
+            dgvWOS.SetGridViewColumn("상세공정명", "Process_Name_D");
             dgvWOS.SetGridViewColumn("작업장명", "WP_Name");
-            dgvWOS.SetGridViewColumn("자재코드", "Mat_Num");
             dgvWOS.SetGridViewColumn("자재명", "Mat_Name");
-            dgvWOS.SetGridViewColumn("작업상태", "WO_Status");
-            dgvWOS.SetGridViewColumn("창고", "Str_Kind"); // 창고테이블
-            dgvWOS.SetGridViewColumn("지시량", "WO_Order_Cnt"); //작업지시생성
-            dgvWOS.SetGridViewColumn("양품량", "GoodsCnt"); //직업이력테이블
-            dgvWOS.SetGridViewColumn("불량", "ErrorCnt");  //직업이력테이블
-
+            dgvWOS.SetGridViewColumn("작업지시상태", "WO_Status");
+            dgvWOS.SetGridViewColumn("계획수량", "WO_Plan_Cnt");
+            dgvWOS.SetGridViewColumn("지시수량", "WO_Order_Cnt");
+            dgvWOS.SetGridViewColumn("작업내용", "WO_Detail");
+            dgvWOS.SetGridViewColumn("작업담당자", "WO_D_Emp_Num");
+            dgvWOS.SetGridViewColumn("출고여부", "IsShip");
+            dgvWOS.SetGridViewColumn("계획시작일", "ProductionDate");
+            dgvWOS.SetGridViewColumn("계획납기일", "DeadLine");
 
             // 작업장명 콤보박스 바인딩 (DAC단으로 연결)
             WorkplaceService wpService = new WorkplaceService();
@@ -104,10 +107,85 @@ namespace BedFactory
 
 
             WorkOrderService service = new WorkOrderService();
-            List<WorkOrderStatusVO> wolist = service.GetWorkOrdersStatusInfo(wpNum, matNum, wsNum, dtFrom, dtTo);
+            List<WorkOrderVO> wolist = service.GetWorkOrdersInfo(wpNum, matNum, wsNum, dtFrom, dtTo);
             dgvWOS.DataSource = wolist;
         }
 
 
+        public override void btn5_Click(object sender, EventArgs e)
+        {
+            if (dgvWOS.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("확정할 작업지시예정정보를 선택해주세요.");
+                return;
+            }
+            else if (MessageBox.Show($"이 자재의 작업지시예정을 확정하시겠습니까?", "확정확인", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+
+            dgvWOS.EndEdit();
+
+            List<int> chkWoList = new List<int>();
+
+            //체크된 정보 얻어오는것
+            for (int i = 0; i < dgvWOS.Rows.Count; i++)
+            {
+                bool isCellChecked = (bool)dgvWOS.Rows[i].Cells["chk"].EditedFormattedValue;
+                if (isCellChecked)
+                {
+                    chkWoList.Add(Convert.ToInt32(dgvWOS.Rows[i].Cells["WO_Num"].Value));
+                }
+            }
+
+            WorkOrderService service = new WorkOrderService();
+            if (service.UpdateWorkOrderDate(chkWoList))
+            {
+                dgvWOS.ClearSelection();
+                btnSelect.PerformClick();
+            }
+        }
+
+        public override void btn1_Click(object sender, EventArgs e)
+        {
+            if (dgvWOS.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("삭제할 작업지시정보를 선택해주세요.");
+                return;
+            }
+
+            else if (MessageBox.Show($"작업지시정보를 삭제하시겠습니까?", "삭제확인", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+
+            dgvWOS.EndEdit();
+
+            List<int> nums = new List<int>();
+
+            //체크된 정보 얻어오는것
+            for (int i = 0; i < dgvWOS.Rows.Count; i++)
+            {
+                bool isCellChecked = (bool)dgvWOS.Rows[i].Cells["chk"].EditedFormattedValue;
+                if (isCellChecked)
+                {
+                    nums.Add(Convert.ToInt32(dgvWOS.Rows[i].Cells["WO_Num"].Value));
+                }
+            }
+
+            WorkOrderService service = new WorkOrderService();
+            bool result = service.DeleteWorkOrdersInfo(nums);
+
+            if (result)
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.DeleteSuccess);
+                dgvWOS.ClearSelection();
+                btnSelect.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.DeleteFail);
+            }
+        }
     }
 }

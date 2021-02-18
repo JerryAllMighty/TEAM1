@@ -95,6 +95,7 @@ namespace BedFactory.Pop_up
             this.btnCancel.TabIndex = 97;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label9
             // 

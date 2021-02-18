@@ -29,8 +29,8 @@ namespace BedFactory
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
             this.cboWp = new System.Windows.Forms.ComboBox();
             this.btnSelect = new System.Windows.Forms.Button();
@@ -54,18 +54,18 @@ namespace BedFactory
             // 
             // btn2
             // 
-            this.btn2.Location = new System.Drawing.Point(1234, 134);
+            this.btn2.Location = new System.Drawing.Point(1103, 134);
             this.btn2.Visible = false;
             // 
             // btn3
             // 
-            this.btn3.Location = new System.Drawing.Point(1163, 134);
+            this.btn3.Location = new System.Drawing.Point(1032, 134);
             this.btn3.Visible = false;
             // 
             // btn5
             // 
-            this.btn5.Location = new System.Drawing.Point(926, 134);
-            this.btn5.Visible = false;
+            this.btn5.Location = new System.Drawing.Point(1174, 133);
+            this.btn5.Text = "작업지시확정";
             // 
             // label1
             // 
@@ -76,7 +76,7 @@ namespace BedFactory
             // btn1
             // 
             this.btn1.Location = new System.Drawing.Point(1305, 134);
-            this.btn1.Visible = false;
+            this.btn1.Text = "삭제";
             // 
             // pnlDgv
             // 
@@ -86,7 +86,7 @@ namespace BedFactory
             // 
             // btn4
             // 
-            this.btn4.Location = new System.Drawing.Point(1057, 134);
+            this.btn4.Location = new System.Drawing.Point(926, 134);
             this.btn4.Visible = false;
             // 
             // pnlSelect
@@ -249,16 +249,16 @@ namespace BedFactory
             this.dgvWOS.AllowUserToAddRows = false;
             this.dgvWOS.AllowUserToResizeRows = false;
             this.dgvWOS.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvWOS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvWOS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvWOS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWOS.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWOS.Location = new System.Drawing.Point(0, 0);
             this.dgvWOS.Name = "dgvWOS";
             this.dgvWOS.RowHeadersVisible = false;
             this.dgvWOS.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.dgvWOS.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.dgvWOS.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvWOS.RowTemplate.Height = 27;
             this.dgvWOS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvWOS.Size = new System.Drawing.Size(1358, 676);

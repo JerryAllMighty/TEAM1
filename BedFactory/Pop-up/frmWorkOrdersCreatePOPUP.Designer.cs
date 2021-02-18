@@ -87,6 +87,7 @@ namespace BedFactory.Pop_up
             this.btnCancel.TabIndex = 205;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // btnSave
             // 
@@ -115,7 +116,6 @@ namespace BedFactory.Pop_up
             this.rdoN.Text = "N";
             this.rdoN.UseVisualStyleBackColor = true;
             this.rdoN.Visible = false;
-            this.rdoN.CheckedChanged += new System.EventHandler(this.rdoN_CheckedChanged);
             // 
             // rdoY
             // 
@@ -129,7 +129,6 @@ namespace BedFactory.Pop_up
             this.rdoY.Text = "Y";
             this.rdoY.UseVisualStyleBackColor = true;
             this.rdoY.Visible = false;
-            this.rdoY.CheckedChanged += new System.EventHandler(this.rdoY_CheckedChanged);
             // 
             // label13
             // 
@@ -180,7 +179,6 @@ namespace BedFactory.Pop_up
             this.label8.TabIndex = 194;
             this.label8.Text = "출고여부";
             this.label8.Visible = false;
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // txtDetail
             // 

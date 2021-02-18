@@ -18,6 +18,8 @@ namespace BedFactoryDAC
             conn = new SqlConnection(strConn);
             conn.Open();
         }
+
+
         public bool InsertWorkOrdderInfo(WorkOrderVO vo)
         {
             try
