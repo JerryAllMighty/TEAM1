@@ -60,8 +60,9 @@ namespace BedFactory
             // 
             // btn5
             // 
-            this.btn5.Location = new System.Drawing.Point(1244, 99);
+            this.btn5.Location = new System.Drawing.Point(1244, 97);
             this.btn5.Text = "엑셀 내보내기";
+            this.btn5.Visible = false;
             // 
             // label1
             // 
@@ -151,7 +152,7 @@ namespace BedFactory
             this.cboState.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cboState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboState.FormattingEnabled = true;
-            this.cboState.Location = new System.Drawing.Point(553, 18);
+            this.cboState.Location = new System.Drawing.Point(553, 21);
             this.cboState.Name = "cboState";
             this.cboState.Size = new System.Drawing.Size(231, 25);
             this.cboState.TabIndex = 18;

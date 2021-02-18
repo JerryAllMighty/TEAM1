@@ -81,11 +81,13 @@ namespace BedFactory
             // 
             this.btn3.Location = new System.Drawing.Point(1234, 99);
             this.btn3.Text = "프린트";
+            this.btn3.Visible = false;
             // 
             // btn5
             // 
             this.btn5.Location = new System.Drawing.Point(1103, 99);
             this.btn5.Text = "Excel내보내기";
+            this.btn5.Visible = false;
             // 
             // label1
             // 
@@ -163,7 +165,7 @@ namespace BedFactory
             this.cboKind.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cboKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboKind.FormattingEnabled = true;
-            this.cboKind.Location = new System.Drawing.Point(136, 21);
+            this.cboKind.Location = new System.Drawing.Point(136, 18);
             this.cboKind.Name = "cboKind";
             this.cboKind.Size = new System.Drawing.Size(231, 25);
             this.cboKind.TabIndex = 1;
@@ -174,7 +176,7 @@ namespace BedFactory
             this.cboName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cboName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboName.FormattingEnabled = true;
-            this.cboName.Location = new System.Drawing.Point(553, 18);
+            this.cboName.Location = new System.Drawing.Point(553, 21);
             this.cboName.Name = "cboName";
             this.cboName.Size = new System.Drawing.Size(231, 25);
             this.cboName.TabIndex = 18;
