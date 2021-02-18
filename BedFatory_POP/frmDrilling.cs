@@ -144,7 +144,7 @@ namespace BedFatory_POP
         /// <param name="e"></param>
         private void btnWS_Click(object sender, EventArgs e)
         {
-            if (lblOrderLeftCnt.Text.Length > 0 && lblOrderLeftCnt.Text == lblTotalOrderCnt.Text)
+            if (lblOrderLeftCnt.Text.Length > 0 && lblOkayProductCnt.Text == lblTotalOrderCnt.Text)
                 return;
 
             timer2.Stop();
