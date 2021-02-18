@@ -60,8 +60,9 @@ namespace BedFactory
             // 
             // btn5
             // 
-            this.btn5.Location = new System.Drawing.Point(1244, 99);
+            this.btn5.Location = new System.Drawing.Point(1244, 97);
             this.btn5.Text = "엑셀 내보내기";
+            this.btn5.Visible = false;
             // 
             // label1
             // 
