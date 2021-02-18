@@ -24,7 +24,7 @@ namespace BedFactory
         {
             #region 주문상태 콤보박스 바인딩
             cboState.Items.Add("전체");
-            cboState.Items.Add("상품준비중");
+            cboState.Items.Add("출고대기");
             cboState.Items.Add("출하완료");
             cboState.SelectedIndex = 0;
             #endregion
