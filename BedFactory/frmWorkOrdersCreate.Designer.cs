@@ -67,7 +67,6 @@ namespace BedFactory
             // 
             this.btn5.Location = new System.Drawing.Point(1173, 134);
             this.btn5.Text = "작업지시확정";
-            this.btn5.Click += new System.EventHandler(this.btn5_Click);
             // 
             // label1
             // 

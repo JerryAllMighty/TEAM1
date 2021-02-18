@@ -121,7 +121,6 @@ namespace BedFactory
                 MessageBox.Show("확정할 작업지시예정정보를 선택해주세요.");
                 return;
             }
-
             else if (MessageBox.Show($"이 자재의 작업지시예정을 확정하시겠습니까?", "확정확인", MessageBoxButtons.YesNo) == DialogResult.No)
             {
                 return;
@@ -144,6 +143,7 @@ namespace BedFactory
             WorkOrderService service = new WorkOrderService();
             if(service.UpdateWorkOrderDate(chkWoList))
             {
+                dgvWOC.ClearSelection();
                 btnSelect.PerformClick();
             }
 
@@ -170,14 +170,18 @@ namespace BedFactory
                 return;
             }
 
+            dgvWOC.EndEdit();
+
             List<int> nums = new List<int>();
-            foreach (DataGridViewRow row in dgvWOC.Rows)
+
+            //체크된 정보 얻어오는것
+            for (int i = 0; i < dgvWOC.Rows.Count; i++)
             {
-                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk"];
-                if ((bool)chk.Value)
+                bool isCellChecked = (bool)dgvWOC.Rows[i].Cells["chk"].EditedFormattedValue;
+                if (isCellChecked)
                 {
-                    nums.Add(Convert.ToInt32(row.Cells["WO_Num"].Value));
-                }   
+                    nums.Add(Convert.ToInt32(dgvWOC.Rows[i].Cells["WO_Num"].Value));
+                }
             }
 
             WorkOrderService service = new WorkOrderService();
@@ -186,6 +190,7 @@ namespace BedFactory
             if (result)
             {
                 MessageBox.Show(BedFactory.Properties.Settings.Default.DeleteSuccess);
+                btnSelect.PerformClick();
             }
             else
             {

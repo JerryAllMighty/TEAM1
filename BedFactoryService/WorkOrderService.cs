@@ -100,5 +100,12 @@ namespace BedFactoryService
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.GetWorkOrdersStatusInfo(wpNum, matNum, wsNum, dtFrom, dtTo);
         }
+
+        // 작업지시정보등록
+        public bool InsertWorkOrdderInfo(WorkOrderVO vo)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.InsertWorkOrdderInfo(vo);
+        }
     }
 }

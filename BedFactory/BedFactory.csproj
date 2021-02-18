@@ -246,12 +246,6 @@
     <Compile Include="frmProductShipment.Designer.cs">
       <DependentUpon>frmProductShipment.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegistrationOfWork.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmRegistrationOfWork.Designer.cs">
-      <DependentUpon>frmRegistrationOfWork.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmSales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -615,9 +609,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductShipment.resx">
       <DependentUpon>frmProductShipment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmRegistrationOfWork.resx">
-      <DependentUpon>frmRegistrationOfWork.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSales.resx">
       <DependentUpon>frmSales.cs</DependentUpon>

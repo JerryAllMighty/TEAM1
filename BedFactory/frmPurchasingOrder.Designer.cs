@@ -60,7 +60,7 @@ namespace BedFactory
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(69, 20);
+            this.label1.Size = new System.Drawing.Size(88, 25);
             this.label1.Text = "정규발주";
             // 
             // btn1
@@ -84,9 +84,9 @@ namespace BedFactory
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(469, 23);
+            this.label9.Location = new System.Drawing.Point(463, 20);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 17);
+            this.label9.Size = new System.Drawing.Size(46, 23);
             this.label9.TabIndex = 58;
             this.label9.Text = "Date";
             // 
@@ -150,7 +150,7 @@ namespace BedFactory
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpTo.Location = new System.Drawing.Point(122, 0);
             this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(113, 25);
+            this.dtpTo.Size = new System.Drawing.Size(113, 29);
             this.dtpTo.TabIndex = 71;
             // 
             // dtpFrom
@@ -161,7 +161,7 @@ namespace BedFactory
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFrom.Location = new System.Drawing.Point(0, 0);
             this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(113, 25);
+            this.dtpFrom.Size = new System.Drawing.Size(113, 29);
             this.dtpFrom.TabIndex = 70;
             // 
             // label7
@@ -180,9 +180,9 @@ namespace BedFactory
             this.cboPlan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPlan.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboPlan.FormattingEnabled = true;
-            this.cboPlan.Location = new System.Drawing.Point(139, 19);
+            this.cboPlan.Location = new System.Drawing.Point(139, 16);
             this.cboPlan.Name = "cboPlan";
-            this.cboPlan.Size = new System.Drawing.Size(235, 25);
+            this.cboPlan.Size = new System.Drawing.Size(235, 29);
             this.cboPlan.TabIndex = 58;
             // 
             // label2
@@ -190,9 +190,9 @@ namespace BedFactory
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(42, 23);
+            this.label2.Location = new System.Drawing.Point(34, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 17);
+            this.label2.Size = new System.Drawing.Size(66, 23);
             this.label2.TabIndex = 57;
             this.label2.Text = "Plan ID";
             // 
@@ -208,6 +208,7 @@ namespace BedFactory
             this.dgvBalzoo.Location = new System.Drawing.Point(0, 0);
             this.dgvBalzoo.Name = "dgvBalzoo";
             this.dgvBalzoo.RowHeadersVisible = false;
+            this.dgvBalzoo.RowHeadersWidth = 51;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 10F);
             this.dgvBalzoo.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBalzoo.RowTemplate.Height = 23;
@@ -217,7 +218,7 @@ namespace BedFactory
             // 
             // frmPurchasingOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1384, 861);
