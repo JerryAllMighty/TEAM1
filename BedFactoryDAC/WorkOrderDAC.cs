@@ -18,7 +18,44 @@ namespace BedFactoryDAC
             conn = new SqlConnection(strConn);
             conn.Open();
         }
+        public bool InsertWorkOrdderInfo(WorkOrderVO vo)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"insert into tblWorkOrders (ProductionPlan_D_Num, Process_Num, WP_Num, Mat_Num, SalesMaster_Num, 
+                                                WO_Status, WO_Plan_Cnt, WO_Order_Cnt, WO_Detail, IsShip, WO_D_Emp_Num)
+                                        values (@ProductionPlan_D_Num, @Process_Num, @WP_Num, @Mat_Num, @SalesMaster_Num, @Str_Num, @WH_Num, @WO_Status) ";
 
+                    cmd.Parameters.AddWithValue("@ProductionPlan_D_Num", vo.ProductionPlan_D_Num);
+                    cmd.Parameters.AddWithValue("@Process_Num", vo.Process_Num);
+                    cmd.Parameters.AddWithValue("@WP_Num", vo.WP_Num);
+                    cmd.Parameters.AddWithValue("@Mat_Num", vo.Mat_Num);
+                    cmd.Parameters.AddWithValue("@SalesMaster_Num", vo.SalesMaster_Num);
+                    cmd.Parameters.AddWithValue("@WO_Status", vo.WO_Status);
+                    cmd.Parameters.AddWithValue("@WO_Plan_Cnt", vo.WO_Plan_Cnt);
+                    cmd.Parameters.AddWithValue("@WO_Order_Cnt", vo.WO_Order_Cnt);
+                    cmd.Parameters.AddWithValue("@WO_Detail", vo.WO_Detail);
+                    cmd.Parameters.AddWithValue("@IsShip", vo.IsShip);
+                    cmd.Parameters.AddWithValue("@WO_D_Emp_Num", vo.WO_D_Emp_Num);
+
+
+                    int iRowAffect = cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    return iRowAffect > 0 ? true : false;
+                }
+            }
+
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
+  
         /// <summary>
         /// 공정 번호로 작업 지시 가져오기
         /// </summary>
@@ -137,48 +174,7 @@ namespace BedFactoryDAC
             conn.Close();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="vo"></param>
-        /// <returns></returns>
-        public bool InsertWorkOrdderInfo(WorkOrderVO vo)
-        {
-            try
-            {
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = conn;
-                    cmd.CommandText = @"insert into tblWorkOrders (ProductionPlan_D_Num, Process_Num, WP_Num, Mat_Num, SalesMaster_Num, 
-                                                WO_Status, WO_Plan_Cnt, WO_Order_Cnt, WO_Detail, IsShip, WO_D_Emp_Num)
-                                        values (@ProductionPlan_D_Num, @Process_Num, @WP_Num, @Mat_Num, @SalesMaster_Num, @Str_Num, @WH_Num, @WO_Status) ";
-
-                    cmd.Parameters.AddWithValue("@ProductionPlan_D_Num", vo.ProductionPlan_D_Num);
-                    cmd.Parameters.AddWithValue("@Process_Num", vo.Process_Num);
-                    cmd.Parameters.AddWithValue("@WP_Num", vo.WP_Num);
-                    cmd.Parameters.AddWithValue("@Mat_Num", vo.Mat_Num);
-                    cmd.Parameters.AddWithValue("@SalesMaster_Num", vo.SalesMaster_Num);
-                    cmd.Parameters.AddWithValue("@WO_Status", vo.WO_Status);
-                    cmd.Parameters.AddWithValue("@WO_Plan_Cnt", vo.WO_Plan_Cnt);
-                    cmd.Parameters.AddWithValue("@WO_Order_Cnt", vo.WO_Order_Cnt);
-                    cmd.Parameters.AddWithValue("@WO_Detail", vo.WO_Detail);
-                    cmd.Parameters.AddWithValue("@IsShip", vo.IsShip);
-                    cmd.Parameters.AddWithValue("@WO_D_Emp_Num", vo.WO_D_Emp_Num);
-
-
-                    int iRowAffect = cmd.ExecuteNonQuery();
-                    conn.Close();
-
-                    return iRowAffect > 0 ? true : false;
-                }
-            }
-
-            catch (Exception err)
-            {
-                Log.WriteError(err.Message);
-                return false;
-            }
-        }
+   
 
 
         /// <summary>

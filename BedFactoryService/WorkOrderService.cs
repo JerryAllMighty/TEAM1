@@ -10,16 +10,6 @@ namespace BedFactoryService
 {
     public class WorkOrderService
     {
-        /// <summary>
-        /// 작업지시등록
-        /// </summary>
-        /// <param name="vo"></param>
-        /// <returns></returns>
-        public bool InsertWorkOrdderInfo(WorkOrderVO vo)
-        {
-            WorkOrderDAC dac = new WorkOrderDAC();
-            return dac.InsertWorkOrdderInfo(vo);
-        }
 
         /// <summary>
         /// 공정 번호로 작업 지시 가져오기
@@ -111,12 +101,6 @@ namespace BedFactoryService
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.GetWorkOrdersStatusInfo(wpNum, matNum, wsNum, dtFrom, dtTo);
         }
-
-        // 작업지시정보등록
-        public bool InsertWorkOrdderInfo(WorkOrderVO vo)
-        {
-            WorkOrderDAC dac = new WorkOrderDAC();
-            return dac.InsertWorkOrdderInfo(vo);
-        }
+        
     }
 }

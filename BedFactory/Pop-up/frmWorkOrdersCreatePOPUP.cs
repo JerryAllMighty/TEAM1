@@ -72,7 +72,7 @@ namespace BedFactory.Pop_up
           //    ProductionDate = 
             };
 
-            bResult = service.InsertWorkOrdderInfo(vo);
+      //      bResult = service.InsertWorkOrdderInfo(vo);
             if (bResult)
             {
                 MessageBox.Show(BedFactory.Properties.Settings.Default.InsertSuccess);
