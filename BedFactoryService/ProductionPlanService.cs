@@ -10,6 +10,18 @@ namespace BedFactoryService
 {
     public class ProductionPlanService
     {
+
+        /// <summary>
+        /// 작업지시생성 전에 생산계획 상세 정보를 가져온다
+        /// </summary>
+        /// <param name="productionplaninfo"></param>
+        /// <param name="date"></param>
+        /// <returns></returns>
+             public List<ProductionPlanVO> GetProductionPlanDetail(string productiondate, string productionnum)
+        {
+            ProductionPlanDAC dac = new ProductionPlanDAC();
+            return dac.GetProductionPlanDetail(productiondate, productionnum);
+        }
         /// <summary>
         /// 생산 계획 마스터 만드는 함수
         /// </summary>

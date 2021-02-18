@@ -16,7 +16,7 @@ namespace BedFactory
     {
 
         CheckBox headerCheck = new CheckBox();
-
+        List<ProductionPlanVO> pplist;
         public frmWorkOrdersCreate()
         {
             InitializeComponent();
@@ -31,18 +31,26 @@ namespace BedFactory
             chk.Width = 30;
             dgvWOC.Columns.Add(chk);
 
-            dgvWOC.SetGridViewColumn("작업지시번호", "WO_Num");
-            dgvWOC.SetGridViewColumn("상세공정명", "Process_Name_D");
-            dgvWOC.SetGridViewColumn("작업장명", "WP_Name");
-            dgvWOC.SetGridViewColumn("자재명", "Mat_Name");
-            dgvWOC.SetGridViewColumn("작업지시상태", "WO_Status");
-            dgvWOC.SetGridViewColumn("계획수량", "WO_Plan_Cnt");
-            dgvWOC.SetGridViewColumn("지시수량", "WO_Order_Cnt");
-            dgvWOC.SetGridViewColumn("작업내용", "WO_Detail");
-            dgvWOC.SetGridViewColumn("작업담당자", "WO_D_Emp_Num");
-            dgvWOC.SetGridViewColumn("출고여부", "IsShip");
-            dgvWOC.SetGridViewColumn("계획시작일", "ProductionDate");
-            dgvWOC.SetGridViewColumn("계획납기일", "DeadLine");
+            //dgvWOC.SetGridViewColumn("작업지시번호", "WO_Num");
+            //dgvWOC.SetGridViewColumn("상세공정명", "Process_Name_D");
+            //dgvWOC.SetGridViewColumn("작업장명", "WP_Name");
+            //dgvWOC.SetGridViewColumn("자재명", "Mat_Name");
+            //dgvWOC.SetGridViewColumn("작업지시상태", "WO_Status");
+            //dgvWOC.SetGridViewColumn("계획수량", "WO_Plan_Cnt");
+            //dgvWOC.SetGridViewColumn("지시수량", "WO_Order_Cnt");
+            //dgvWOC.SetGridViewColumn("작업내용", "WO_Detail");
+            //dgvWOC.SetGridViewColumn("작업담당자", "WO_D_Emp_Num");
+            //dgvWOC.SetGridViewColumn("출고여부", "IsShip");
+            //dgvWOC.SetGridViewColumn("계획시작일", "ProductionDate");
+            //dgvWOC.SetGridViewColumn("계획납기일", "DeadLine");
+
+            dgvWOC.SetGridViewColumn("생산 계획 번호", "ProductionPlan_Num");
+            dgvWOC.SetGridViewColumn("생산 계획 상세 번호", "ProductionPlan_D_Num");
+            dgvWOC.SetGridViewColumn("생산 날짜", "ProductionDate");
+            dgvWOC.SetGridViewColumn("생산량", "ProductionCnt");
+            dgvWOC.SetGridViewColumn("작업장번호", "WP_Num");
+            dgvWOC.SetGridViewColumn("제작 물품 번호", "Mat_Num");
+            dgvWOC.SetGridViewColumn("제작 물품 명", "Mat_Name");
 
             // 작업장명 콤보박스 바인딩 (DAC단으로 연결)
             WorkplaceService wpService = new WorkplaceService();
@@ -108,9 +116,11 @@ namespace BedFactory
             string dtTo = dtpTo.Value.ToShortDateString();
 
 
-            WorkOrderService service = new WorkOrderService();
-            List<WorkOrderVO> wolist = service.GetWorkOrdersInfo(wpNum, matNum, wsNum, dtFrom, dtTo);
-            dgvWOC.DataSource = wolist;
+            ProductionPlanService service = new ProductionPlanService();
+            pplist = service.GetProductionPlanDetail(dtpFrom.Value.ToShortDateString(), txtProductionPlanNum.Text);
+            //WorkOrderService service = new WorkOrderService();
+            //List<WorkOrderVO> wolist = service.GetWorkOrdersInfo(wpNum, matNum, wsNum, dtFrom, dtTo);
+            dgvWOC.DataSource = pplist;
         }
 
         //작업지시를 확정하는 버튼
@@ -152,8 +162,7 @@ namespace BedFactory
         //작업지시 등록 버튼
         public override void btn2_Click(object sender, EventArgs e)
         {
-            frmWorkOrdersCreatePOPUP frm = new frmWorkOrdersCreatePOPUP();
-            frm.ShowDialog();
+            
         }
 
         //작업지시 삭제
@@ -196,6 +205,17 @@ namespace BedFactory
             {
                 MessageBox.Show(BedFactory.Properties.Settings.Default.DeleteFail);
             }
+        }
+
+        /// <summary>
+        /// 작업 지시 등록
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn2_Click_1(object sender, EventArgs e)
+        {
+            frmWorkOrdersCreatePOPUP frm = new frmWorkOrdersCreatePOPUP(dgvWOC.CurrentRow.DataBoundItem as ProductionPlanVO);
+            frm.ShowDialog();
         }
     }
 }

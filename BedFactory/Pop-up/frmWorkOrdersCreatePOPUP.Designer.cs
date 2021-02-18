@@ -48,16 +48,18 @@ namespace BedFactory.Pop_up
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cboMatName = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblWPNum = new System.Windows.Forms.Label();
             this.cboWpName = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cboPrcName = new System.Windows.Forms.ComboBox();
+            this.txtWpName = new System.Windows.Forms.TextBox();
+            this.txtMatName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtOrderCnt
             // 
             this.txtOrderCnt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtOrderCnt.Location = new System.Drawing.Point(545, 106);
+            this.txtOrderCnt.Location = new System.Drawing.Point(534, 8);
             this.txtOrderCnt.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.txtOrderCnt.Name = "txtOrderCnt";
             this.txtOrderCnt.Size = new System.Drawing.Size(261, 30);
@@ -66,7 +68,7 @@ namespace BedFactory.Pop_up
             // txtPlanCnt
             // 
             this.txtPlanCnt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPlanCnt.Location = new System.Drawing.Point(115, 106);
+            this.txtPlanCnt.Location = new System.Drawing.Point(128, 98);
             this.txtPlanCnt.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.txtPlanCnt.Name = "txtPlanCnt";
             this.txtPlanCnt.Size = new System.Drawing.Size(261, 30);
@@ -78,7 +80,7 @@ namespace BedFactory.Pop_up
             this.btnCancel.BackColor = System.Drawing.Color.Lavender;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCancel.Location = new System.Drawing.Point(429, 291);
+            this.btnCancel.Location = new System.Drawing.Point(420, 291);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(166, 42);
@@ -99,55 +101,60 @@ namespace BedFactory.Pop_up
             this.btnSave.TabIndex = 204;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // rdoN
             // 
             this.rdoN.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdoN.AutoSize = true;
-            this.rdoN.Location = new System.Drawing.Point(658, 146);
+            this.rdoN.Location = new System.Drawing.Point(751, 220);
             this.rdoN.Name = "rdoN";
             this.rdoN.Size = new System.Drawing.Size(44, 27);
             this.rdoN.TabIndex = 203;
             this.rdoN.TabStop = true;
             this.rdoN.Text = "N";
             this.rdoN.UseVisualStyleBackColor = true;
+            this.rdoN.Visible = false;
+            this.rdoN.CheckedChanged += new System.EventHandler(this.rdoN_CheckedChanged);
             // 
             // rdoY
             // 
             this.rdoY.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdoY.AutoSize = true;
-            this.rdoY.Location = new System.Drawing.Point(545, 146);
+            this.rdoY.Location = new System.Drawing.Point(638, 220);
             this.rdoY.Name = "rdoY";
             this.rdoY.Size = new System.Drawing.Size(41, 27);
             this.rdoY.TabIndex = 202;
             this.rdoY.TabStop = true;
             this.rdoY.Text = "Y";
             this.rdoY.UseVisualStyleBackColor = true;
+            this.rdoY.Visible = false;
+            this.rdoY.CheckedChanged += new System.EventHandler(this.rdoY_CheckedChanged);
             // 
             // label13
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(425, 187);
+            this.label13.Location = new System.Drawing.Point(8, 56);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(95, 23);
+            this.label13.Size = new System.Drawing.Size(78, 23);
             this.label13.TabIndex = 201;
-            this.label13.Text = "계획시작일";
+            this.label13.Text = "생산시작";
             // 
             // dtpFrom
             // 
             this.dtpFrom.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFrom.Location = new System.Drawing.Point(545, 185);
+            this.dtpFrom.Location = new System.Drawing.Point(128, 54);
             this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(125, 30);
+            this.dtpFrom.Size = new System.Drawing.Size(262, 30);
             this.dtpFrom.TabIndex = 199;
             // 
             // label11
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 187);
+            this.label11.Location = new System.Drawing.Point(416, 130);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 23);
             this.label11.TabIndex = 197;
@@ -157,7 +164,7 @@ namespace BedFactory.Pop_up
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 148);
+            this.label10.Location = new System.Drawing.Point(416, 91);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(95, 23);
             this.label10.TabIndex = 196;
@@ -167,16 +174,18 @@ namespace BedFactory.Pop_up
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(425, 148);
+            this.label8.Location = new System.Drawing.Point(416, 224);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 23);
             this.label8.TabIndex = 194;
             this.label8.Text = "출고여부";
+            this.label8.Visible = false;
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // txtDetail
             // 
             this.txtDetail.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDetail.Location = new System.Drawing.Point(115, 183);
+            this.txtDetail.Location = new System.Drawing.Point(534, 126);
             this.txtDetail.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
             this.txtDetail.Multiline = true;
             this.txtDetail.Name = "txtDetail";
@@ -186,7 +195,7 @@ namespace BedFactory.Pop_up
             // txtEmp
             // 
             this.txtEmp.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtEmp.Location = new System.Drawing.Point(115, 145);
+            this.txtEmp.Location = new System.Drawing.Point(534, 88);
             this.txtEmp.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.txtEmp.Name = "txtEmp";
             this.txtEmp.Size = new System.Drawing.Size(261, 30);
@@ -196,7 +205,7 @@ namespace BedFactory.Pop_up
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(425, 110);
+            this.label7.Location = new System.Drawing.Point(416, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 23);
             this.label7.TabIndex = 190;
@@ -206,7 +215,7 @@ namespace BedFactory.Pop_up
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(425, 64);
+            this.label6.Location = new System.Drawing.Point(416, 55);
             this.label6.Margin = new System.Windows.Forms.Padding(8, 11, 8, 11);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(112, 23);
@@ -217,7 +226,7 @@ namespace BedFactory.Pop_up
             // 
             this.cboWOS.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboWOS.FormattingEnabled = true;
-            this.cboWOS.Location = new System.Drawing.Point(545, 62);
+            this.cboWOS.Location = new System.Drawing.Point(534, 53);
             this.cboWOS.Margin = new System.Windows.Forms.Padding(8, 11, 8, 11);
             this.cboWOS.Name = "cboWOS";
             this.cboWOS.Size = new System.Drawing.Size(261, 31);
@@ -227,7 +236,7 @@ namespace BedFactory.Pop_up
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 109);
+            this.label5.Location = new System.Drawing.Point(8, 101);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 23);
             this.label5.TabIndex = 187;
@@ -237,7 +246,7 @@ namespace BedFactory.Pop_up
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 64);
+            this.label4.Location = new System.Drawing.Point(8, 139);
             this.label4.Margin = new System.Windows.Forms.Padding(8, 11, 8, 11);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 23);
@@ -248,49 +257,71 @@ namespace BedFactory.Pop_up
             // 
             this.cboMatName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboMatName.FormattingEnabled = true;
-            this.cboMatName.Location = new System.Drawing.Point(115, 62);
+            this.cboMatName.Location = new System.Drawing.Point(129, 256);
             this.cboMatName.Margin = new System.Windows.Forms.Padding(8, 11, 8, 11);
             this.cboMatName.Name = "cboMatName";
             this.cboMatName.Size = new System.Drawing.Size(261, 31);
             this.cboMatName.TabIndex = 185;
+            this.cboMatName.Visible = false;
             // 
-            // label3
+            // lblWPNum
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(425, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 23);
-            this.label3.TabIndex = 184;
-            this.label3.Text = "작업장명";
+            this.lblWPNum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblWPNum.AutoSize = true;
+            this.lblWPNum.Location = new System.Drawing.Point(8, 15);
+            this.lblWPNum.Name = "lblWPNum";
+            this.lblWPNum.Size = new System.Drawing.Size(95, 23);
+            this.lblWPNum.TabIndex = 184;
+            this.lblWPNum.Text = "작업장이름";
             // 
             // cboWpName
             // 
             this.cboWpName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboWpName.FormattingEnabled = true;
-            this.cboWpName.Location = new System.Drawing.Point(545, 16);
+            this.cboWpName.Location = new System.Drawing.Point(128, 221);
             this.cboWpName.Name = "cboWpName";
             this.cboWpName.Size = new System.Drawing.Size(261, 31);
             this.cboWpName.TabIndex = 183;
+            this.cboWpName.Visible = false;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 19);
+            this.label2.Location = new System.Drawing.Point(8, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 23);
             this.label2.TabIndex = 182;
             this.label2.Text = "상세공정명";
+            this.label2.Visible = false;
             // 
             // cboPrcName
             // 
             this.cboPrcName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboPrcName.FormattingEnabled = true;
-            this.cboPrcName.Location = new System.Drawing.Point(115, 16);
+            this.cboPrcName.Location = new System.Drawing.Point(128, 180);
             this.cboPrcName.Name = "cboPrcName";
             this.cboPrcName.Size = new System.Drawing.Size(261, 31);
             this.cboPrcName.TabIndex = 181;
+            this.cboPrcName.Visible = false;
+            // 
+            // txtWpName
+            // 
+            this.txtWpName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtWpName.Location = new System.Drawing.Point(129, 15);
+            this.txtWpName.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
+            this.txtWpName.Name = "txtWpName";
+            this.txtWpName.Size = new System.Drawing.Size(261, 30);
+            this.txtWpName.TabIndex = 208;
+            // 
+            // txtMatName
+            // 
+            this.txtMatName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtMatName.Location = new System.Drawing.Point(129, 139);
+            this.txtMatName.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
+            this.txtMatName.Name = "txtMatName";
+            this.txtMatName.Size = new System.Drawing.Size(261, 30);
+            this.txtMatName.TabIndex = 209;
             // 
             // frmWorkOrdersCreatePOPUP
             // 
@@ -298,6 +329,8 @@ namespace BedFactory.Pop_up
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(819, 349);
+            this.Controls.Add(this.txtMatName);
+            this.Controls.Add(this.txtWpName);
             this.Controls.Add(this.txtOrderCnt);
             this.Controls.Add(this.txtPlanCnt);
             this.Controls.Add(this.btnCancel);
@@ -317,7 +350,7 @@ namespace BedFactory.Pop_up
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cboMatName);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblWPNum);
             this.Controls.Add(this.cboWpName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cboPrcName);
@@ -351,9 +384,11 @@ namespace BedFactory.Pop_up
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboMatName;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblWPNum;
         private System.Windows.Forms.ComboBox cboWpName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboPrcName;
+        private System.Windows.Forms.TextBox txtWpName;
+        private System.Windows.Forms.TextBox txtMatName;
     }
 }

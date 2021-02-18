@@ -19,5 +19,7 @@ namespace BedFactoryVO
         public string ProductionCnt { get; set; }
         public string WP_Num { get; set; }
         public string Mat_Num { get; set; }
+        public string Mat_Name { get; set; }
+        public string WP_Name { get; set; }
     }
 }

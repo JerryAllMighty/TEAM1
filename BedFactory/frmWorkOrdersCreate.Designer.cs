@@ -34,18 +34,20 @@ namespace BedFactory
             this.dgvWOC = new BedFactory.DatagridviewControl();
             this.btnWOdelete = new System.Windows.Forms.Button();
             this.searchLocationControl1 = new BedFactory.Controls.SearchLocationControl();
-            this.cboWp = new System.Windows.Forms.ComboBox();
+            this.dtpTo = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.cboMat = new System.Windows.Forms.ComboBox();
             this.cboWs = new System.Windows.Forms.ComboBox();
+            this.cboWp = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblPlanNum = new System.Windows.Forms.Label();
+            this.txtProductionPlanNum = new System.Windows.Forms.TextBox();
             this.pnlDgv.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWOC)).BeginInit();
@@ -57,6 +59,7 @@ namespace BedFactory
             // 
             this.btn2.Location = new System.Drawing.Point(1304, 133);
             this.btn2.Text = "등록";
+            this.btn2.Click += new System.EventHandler(this.btn2_Click_1);
             // 
             // btn3
             // 
@@ -141,15 +144,19 @@ namespace BedFactory
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
             this.searchLocationControl1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
-            this.searchLocationControl1.Controls.Add(this.cboWp, 4, 0);
+            this.searchLocationControl1.Controls.Add(this.dtpTo, 4, 1);
+            this.searchLocationControl1.Controls.Add(this.label7, 3, 1);
             this.searchLocationControl1.Controls.Add(this.btnSelect, 9, 1);
             this.searchLocationControl1.Controls.Add(this.panel2, 1, 0);
             this.searchLocationControl1.Controls.Add(this.label3, 0, 0);
-            this.searchLocationControl1.Controls.Add(this.label5, 3, 0);
             this.searchLocationControl1.Controls.Add(this.label2, 6, 0);
             this.searchLocationControl1.Controls.Add(this.label12, 0, 1);
             this.searchLocationControl1.Controls.Add(this.cboMat, 7, 0);
             this.searchLocationControl1.Controls.Add(this.cboWs, 1, 1);
+            this.searchLocationControl1.Controls.Add(this.cboWp, 7, 1);
+            this.searchLocationControl1.Controls.Add(this.label5, 6, 1);
+            this.searchLocationControl1.Controls.Add(this.lblPlanNum, 3, 0);
+            this.searchLocationControl1.Controls.Add(this.txtProductionPlanNum, 4, 0);
             this.searchLocationControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchLocationControl1.Location = new System.Drawing.Point(0, 0);
             this.searchLocationControl1.Name = "searchLocationControl1";
@@ -159,8 +166,25 @@ namespace BedFactory
             this.searchLocationControl1.Size = new System.Drawing.Size(1356, 98);
             this.searchLocationControl1.TabIndex = 1;
             // 
-            // cboWp
+            // dtpTo
             // 
+            this.dtpTo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpTo.Location = new System.Drawing.Point(619, 58);
+            this.dtpTo.Name = "dtpTo";
+            this.dtpTo.Size = new System.Drawing.Size(113, 30);
+            this.dtpTo.TabIndex = 71;
+            this.dtpTo.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(422, 49);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(22, 23);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "~";
+            this.label7.Visible = false;
             this.cboWp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboWp.FormattingEnabled = true;
             this.cboWp.Location = new System.Drawing.Point(558, 14);
@@ -185,9 +209,7 @@ namespace BedFactory
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.Controls.Add(this.dtpTo);
             this.panel2.Controls.Add(this.dtpFrom);
-            this.panel2.Controls.Add(this.label7);
             this.panel2.Location = new System.Drawing.Point(139, 11);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(235, 26);
@@ -249,6 +271,7 @@ namespace BedFactory
             this.label2.Size = new System.Drawing.Size(51, 19);
             this.label2.TabIndex = 80;
             this.label2.Text = "자재명";
+            this.label2.Visible = false;
             // 
             // label12
             // 
@@ -259,6 +282,7 @@ namespace BedFactory
             this.label12.Size = new System.Drawing.Size(65, 19);
             this.label12.TabIndex = 75;
             this.label12.Text = "작업상태";
+            this.label12.Visible = false;
             // 
             // cboMat
             // 
@@ -268,6 +292,7 @@ namespace BedFactory
             this.cboMat.Name = "cboMat";
             this.cboMat.Size = new System.Drawing.Size(235, 27);
             this.cboMat.TabIndex = 83;
+            this.cboMat.Visible = false;
             // 
             // cboWs
             // 
@@ -277,6 +302,46 @@ namespace BedFactory
             this.cboWs.Name = "cboWs";
             this.cboWs.Size = new System.Drawing.Size(235, 27);
             this.cboWs.TabIndex = 84;
+            this.cboWs.Visible = false;
+            // 
+            // cboWp
+            // 
+            this.cboWp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboWp.FormattingEnabled = true;
+            this.cboWp.Location = new System.Drawing.Point(977, 62);
+            this.cboWp.Name = "cboWp";
+            this.cboWp.Size = new System.Drawing.Size(235, 31);
+            this.cboWp.TabIndex = 80;
+            this.cboWp.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(875, 62);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 23);
+            this.label5.TabIndex = 69;
+            this.label5.Text = "작업장";
+            this.label5.Visible = false;
+            // 
+            // lblPlanNum
+            // 
+            this.lblPlanNum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPlanNum.AutoSize = true;
+            this.lblPlanNum.Location = new System.Drawing.Point(430, 13);
+            this.lblPlanNum.Name = "lblPlanNum";
+            this.lblPlanNum.Size = new System.Drawing.Size(112, 23);
+            this.lblPlanNum.TabIndex = 85;
+            this.lblPlanNum.Text = "생산계획번호";
+            // 
+            // txtProductionPlanNum
+            // 
+            this.txtProductionPlanNum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtProductionPlanNum.Location = new System.Drawing.Point(558, 9);
+            this.txtProductionPlanNum.Name = "txtProductionPlanNum";
+            this.txtProductionPlanNum.Size = new System.Drawing.Size(235, 30);
+            this.txtProductionPlanNum.TabIndex = 86;
             // 
             // frmWorkOrdersCreate
             // 
@@ -300,7 +365,6 @@ namespace BedFactory
             this.searchLocationControl1.ResumeLayout(false);
             this.searchLocationControl1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,5 +387,7 @@ namespace BedFactory
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cboMat;
         private System.Windows.Forms.ComboBox cboWs;
+        private System.Windows.Forms.Label lblPlanNum;
+        private System.Windows.Forms.TextBox txtProductionPlanNum;
     }
 }
