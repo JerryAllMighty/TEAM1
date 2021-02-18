@@ -15,33 +15,59 @@ namespace BedFactory.Pop_up
 {
     public partial class frmWorkOrdersCreatePOPUP : Form
     {
-        public frmWorkOrdersCreatePOPUP()
+        ProductionPlanVO productionplan;
+        public WorkOrderVO workorderinfo { get
+            {
+                return new WorkOrderVO
+                {
+                    ProductionPlan_D_Num = productionplan.ProductionPlan_D_Num,
+                    WP_Num = productionplan.WP_Num,
+                    Mat_Num = productionplan.Mat_Num,
+                    WO_Status = cboWOS.Text,
+                    WO_Plan_Cnt = txtPlanCnt.Text,
+                    WO_Order_Cnt = txtOrderCnt.Text,
+                    WO_Detail = txtDetail.Text,
+                    WO_D_Emp_Num = txtEmp.Text,
+                    WO_Date = dtpFrom.Value.ToShortDateString(),
+                    IsShip = "N"
+                };
+            }
+            }
+        public frmWorkOrdersCreatePOPUP(ProductionPlanVO vo)
         {
             InitializeComponent();
+            productionplan = vo;
         }
 
         private void frmWorkOrdersCreatePOPUP_Load(object sender, EventArgs e)
         {
-            //콤보박스 바인딩(공통코드)  : 예시
-            if (frmCommonCode.commonList == null) // 항상 널 체크
-                frmCommonCode.CheckCommonInfo();  // 널일때만 갖다오기
+            txtWpName.Text = productionplan.WP_Name;
+            dtpFrom.Value = Convert.ToDateTime(productionplan.ProductionDate);
+            txtPlanCnt.Text = productionplan.ProductionCnt;
+            txtMatName.Text = productionplan.Mat_Name;
+            txtOrderCnt.Text = productionplan.ProductionCnt;
 
-            CommonUtil.CommonCodeBindig(cboPrcName, frmCommonCode.commonList, "공정", "");
 
-            // 작업장명 콤보박스 바인딩 (DAC단으로 연결)
-            WorkplaceService wpService = new WorkplaceService();
-            List<CommonCodeVO> wplist = wpService.GetWorkplaceCombo();
-            CommonUtil.ComboBinding(cboWpName, wplist, "작업장");
+            ////콤보박스 바인딩(공통코드)  : 예시
+            //if (frmCommonCode.commonList == null) // 항상 널 체크
+            //    frmCommonCode.CheckCommonInfo();  // 널일때만 갖다오기
 
-            // 자재명 콤보박스 바인딩 (DAC단으로 연결)
-            MaterialsService matService = new MaterialsService();
-            List<CommonCodeVO> matlist = matService.GetMaterialsCombo();
-            CommonUtil.ComboBinding(cboMatName, matlist, "자재");
+            //CommonUtil.CommonCodeBindig(cboPrcName, frmCommonCode.commonList, "공정", "");
 
-            //콤보박스 바인딩(공통코드) 
-            if (frmCommonCode.commonList == null) // 항상 널 체크
-                frmCommonCode.CheckCommonInfo();  // 널일때만 갖다오기
-            CommonUtil.CommonCodeBindig(cboWOS, frmCommonCode.commonList, "작업상태", "");
+            //// 작업장명 콤보박스 바인딩 (DAC단으로 연결)
+            //WorkplaceService wpService = new WorkplaceService();
+            //List<CommonCodeVO> wplist = wpService.GetWorkplaceCombo();
+            //CommonUtil.ComboBinding(cboWpName, wplist, "작업장");
+
+            //// 자재명 콤보박스 바인딩 (DAC단으로 연결)
+            //MaterialsService matService = new MaterialsService();
+            //List<CommonCodeVO> matlist = matService.GetMaterialsCombo();
+            //CommonUtil.ComboBinding(cboMatName, matlist, "자재");
+
+            ////콤보박스 바인딩(공통코드) 
+            //if (frmCommonCode.commonList == null) // 항상 널 체크
+            //    frmCommonCode.CheckCommonInfo();  // 널일때만 갖다오기
+            //CommonUtil.CommonCodeBindig(cboWOS, frmCommonCode.commonList, "작업상태", "");
         }
 
 
@@ -84,6 +110,38 @@ namespace BedFactory.Pop_up
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void rdoY_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdoN_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// 작업지시 저장
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            WorkOrderService service = new WorkOrderService();
+            if (service.InsertWorkOrdderInfo2(workorderinfo))
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.InsertSuccess);
+            }
+            else
+            {
+                MessageBox.Show(BedFactory.Properties.Settings.Default.InsertFail);
+            }
         }
     }
 }

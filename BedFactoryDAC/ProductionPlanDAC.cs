@@ -197,7 +197,53 @@ namespace BedFactoryDAC
                 return null;
             }
         }
+        /// <summary>
+        /// 생산계획과 생산 상세 계획을 모두 가져오는 함수
+        /// </summary>
+        /// <param name="productionplaninfo"></param>
+        /// <param name="date"></param>
+        /// <returns></returns>
+        public List<ProductionPlanVO> GetProductionPlanDetail(string productiondate, string productionplannum)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    StringBuilder sb = new StringBuilder();
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"select Convert(nchar(10), P.ProductionPlan_Num) ProductionPlan_Num, 
+                                            Convert(nchar(10), PD.ProductionPlan_D_Num) ProductionPlan_D_Num, 
+                                            Convert(nchar(10), PD.ProductionDate,23)ProductionDate,
+                                            Convert(nchar(10), PD.WP_Num) WP_Num, PD.Mat_Num, M.Mat_Name, Convert(nchar(10), PD.ProductionCnt) ProductionCnt,
+                                            WP.WP_Name
+                                            from tblProductionPlan P
+                                            inner join tblProductionPlan_D PD
+                                            on P.ProductionPlan_Num = PD.ProductionPlan_Num
+                                            inner join tblMaterials M
+                                            on M.Mat_Num = PD.Mat_Num
+                                            inner join tblWorkplace WP
+                                            on WP.WP_Num = PD.WP_Num
+                                            where PD.ProductionDate = @ProductionDate" + sb.ToString();
+                                            
+                    cmd.Parameters.AddWithValue("@ProductionDate", productiondate);
 
+                    if (productionplannum.Length > 0)
+                    {
+                        sb.Append(" and P.ProductionPlan_Num = @ProductionPlan_Num");
+                        cmd.Parameters.AddWithValue("@ProductionPlan_Num", productionplannum);
+                    }
+                    
+
+                    List<ProductionPlanVO> list = Helper.DataReaderMapToList<ProductionPlanVO>(cmd.ExecuteReader());
+                    return list != null ? list : null;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return null;
+            }
+        }
         public void Dispose()
         {
             conn.Close();

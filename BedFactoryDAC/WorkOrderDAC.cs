@@ -55,7 +55,44 @@ namespace BedFactoryDAC
                 return false;
             }
         }
-  
+
+        public bool InsertWorkOrdderInfo2(WorkOrderVO vo)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"insert into tblWorkOrders (ProductionPlan_D_Num, WP_Num,
+                                        Mat_Num, WO_Status,WO_Plan_Cnt, WO_Order_Cnt, WO_Detail, IsShip, WO_D_Emp_Num, WO_Date)
+                                        values(@ProductionPlan_D_Num, @WP_Num,
+                                        @Mat_Num, @WO_Status,@WO_Plan_Cnt, @WO_Order_Cnt,@WO_Detail, @IsShip, @WO_D_Emp_Num, @WO_Date)";
+
+                    cmd.Parameters.AddWithValue("@ProductionPlan_D_Num", Convert.ToInt32(vo.ProductionPlan_D_Num));
+                    cmd.Parameters.AddWithValue("@WP_Num", Convert.ToInt32(vo.WP_Num));
+                    cmd.Parameters.AddWithValue("@Mat_Num", vo.Mat_Num);
+                    cmd.Parameters.AddWithValue("@WO_Status", vo.WO_Status);
+                    cmd.Parameters.AddWithValue("@WO_Plan_Cnt", Convert.ToInt32(vo.WO_Plan_Cnt));
+                    cmd.Parameters.AddWithValue("@WO_Order_Cnt", Convert.ToInt32(vo.WO_Order_Cnt));
+                    cmd.Parameters.AddWithValue("@WO_Detail", vo.WO_Detail);
+                    cmd.Parameters.AddWithValue("@IsShip", vo.IsShip);
+                    cmd.Parameters.AddWithValue("@WO_D_Emp_Num", Convert.ToInt32(vo.WO_D_Emp_Num));
+                    cmd.Parameters.AddWithValue("@WO_Date", vo.WO_Date);
+
+
+                    int iRowAffect = cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    return iRowAffect > 0 ? true : false;
+                }
+            }
+
+            catch (Exception err)
+            {
+                Log.WriteError(err.Message);
+                return false;
+            }
+        }
         /// <summary>
         /// 공정 번호로 작업 지시 가져오기
         /// </summary>
