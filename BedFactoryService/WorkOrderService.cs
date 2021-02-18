@@ -11,6 +11,17 @@ namespace BedFactoryService
     public class WorkOrderService
     {
         /// <summary>
+        /// 작업지시등록
+        /// </summary>
+        /// <param name="vo"></param>
+        /// <returns></returns>
+        public bool InsertWorkOrdderInfo(WorkOrderVO vo)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.InsertWorkOrdderInfo(vo);
+        }
+
+        /// <summary>
         /// 공정 번호로 작업 지시 가져오기
         /// </summary>
         /// <param name="ProcessCode"></param>

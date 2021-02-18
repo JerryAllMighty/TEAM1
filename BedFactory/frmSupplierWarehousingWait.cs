@@ -180,14 +180,17 @@ namespace BedFactory
 
         private void btn2_Click(object sender, EventArgs e) //취소
         {
+            List<int> delList = new List<int>();
             foreach (DataGridViewRow row in dgvWait.Rows)
             {
                 DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chkBalzoo"];
                 if (Convert.ToBoolean(chk.Value) == true)
                 {
-                    copy.RemoveAt(row.Index);
+                    delList.Add(row.Index);
                 }
             }
+
+            delList.OrderByDescending(p => p).ToList().ForEach(p => copy.RemoveAt(p));
 
             dgvWait.DataSource = null;
             dgvWait.Rows.Clear();
@@ -197,6 +200,9 @@ namespace BedFactory
 
         private void btn5_Click(object sender, EventArgs e) //입고대기처리
         {
+
+
+            List<int> delList = new List<int>();
             foreach (DataGridViewRow row in dgvWait.Rows)
             {
                 DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chkBalzoo"];
@@ -208,15 +214,17 @@ namespace BedFactory
                         {
                             Bz_D_Num = dgvWait[1, row.Index].Value.ToString(),
                             FirstMan = id,
-                            Mat_Cnt = Convert.ToInt32(dgvWait[5, dgvWait.SelectedRows[0].Index].Value)
+                            Mat_Cnt = Convert.ToInt32(dgvWait[5, row.Index].Value)
                         };
 
                         BalzooService service = new BalzooService();
                         service.StateIsWait(vo);
-                        copy.RemoveAt(row.Index);
+                        delList.Add(row.Index);
                     }
                 }
             }
+
+            delList.OrderByDescending(p => p).ToList().ForEach(p => copy.RemoveAt(p));
 
             dgvWait.DataSource = null;
             dgvWait.Rows.Clear();

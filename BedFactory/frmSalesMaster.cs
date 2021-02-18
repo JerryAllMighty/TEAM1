@@ -167,7 +167,7 @@ namespace BedFactory
 
             }
 
-
+            MessageBox.Show(BedFactory.Properties.Settings.Default.InsertSuccess);
 
         }
 

@@ -36,13 +36,11 @@ namespace BedFactory.Pop_up
             this.rdoN = new System.Windows.Forms.RadioButton();
             this.rdoY = new System.Windows.Forms.RadioButton();
             this.label13 = new System.Windows.Forms.Label();
-            this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.tctDetail = new System.Windows.Forms.TextBox();
+            this.txtDetail = new System.Windows.Forms.TextBox();
             this.txtEmp = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -136,15 +134,6 @@ namespace BedFactory.Pop_up
             this.label13.TabIndex = 201;
             this.label13.Text = "계획시작일";
             // 
-            // dtpTo
-            // 
-            this.dtpTo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTo.Location = new System.Drawing.Point(680, 185);
-            this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(125, 30);
-            this.dtpTo.TabIndex = 200;
-            // 
             // dtpFrom
             // 
             this.dtpFrom.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -153,16 +142,6 @@ namespace BedFactory.Pop_up
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(125, 30);
             this.dtpFrom.TabIndex = 199;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(666, 192);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(22, 23);
-            this.label12.TabIndex = 198;
-            this.label12.Text = "~";
             // 
             // label11
             // 
@@ -194,15 +173,15 @@ namespace BedFactory.Pop_up
             this.label8.TabIndex = 194;
             this.label8.Text = "출고여부";
             // 
-            // tctDetail
+            // txtDetail
             // 
-            this.tctDetail.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tctDetail.Location = new System.Drawing.Point(115, 183);
-            this.tctDetail.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
-            this.tctDetail.Multiline = true;
-            this.tctDetail.Name = "tctDetail";
-            this.tctDetail.Size = new System.Drawing.Size(261, 72);
-            this.tctDetail.TabIndex = 192;
+            this.txtDetail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDetail.Location = new System.Drawing.Point(115, 183);
+            this.txtDetail.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
+            this.txtDetail.Multiline = true;
+            this.txtDetail.Name = "txtDetail";
+            this.txtDetail.Size = new System.Drawing.Size(261, 72);
+            this.txtDetail.TabIndex = 192;
             // 
             // txtEmp
             // 
@@ -326,13 +305,11 @@ namespace BedFactory.Pop_up
             this.Controls.Add(this.rdoN);
             this.Controls.Add(this.rdoY);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.dtpTo);
             this.Controls.Add(this.dtpFrom);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.tctDetail);
+            this.Controls.Add(this.txtDetail);
             this.Controls.Add(this.txtEmp);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -362,13 +339,11 @@ namespace BedFactory.Pop_up
         private System.Windows.Forms.RadioButton rdoN;
         private System.Windows.Forms.RadioButton rdoY;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DateTimePicker dtpTo;
         private System.Windows.Forms.DateTimePicker dtpFrom;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox tctDetail;
+        private System.Windows.Forms.TextBox txtDetail;
         private System.Windows.Forms.TextBox txtEmp;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

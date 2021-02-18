@@ -33,7 +33,7 @@ namespace BedFactory.Pop_up
         {
             if(list != null)
             {
-                dgvState.SetGridViewColumn("창고번호", "Str_Num", 50);
+                dgvState.SetGridViewColumn("창고번호", "Str_Num", 80);
                 dgvState.SetGridViewColumn("창고유형", "Str_Kind");
                 dgvState.SetGridViewColumn("자재명", "Mat_Name", 150);
                 dgvState.SetGridViewColumn("자재유형", "Mat_Category");

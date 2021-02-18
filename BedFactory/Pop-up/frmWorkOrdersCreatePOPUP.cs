@@ -48,11 +48,11 @@ namespace BedFactory.Pop_up
         //등록
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (cboMatName.SelectedValue == null)
+            if (cboPrcName.SelectedValue == null || cboWpName.SelectedValue == null || cboMatName.SelectedValue == null || cboWOS.SelectedValue == null)
                 return;
 
 
-            if (cboMatName.SelectedValue.ToString().Length < 1)
+            if (cboPrcName.SelectedValue.ToString().Length < 1 || cboWpName.SelectedValue.ToString().Length < 1 || cboMatName.SelectedValue.ToString().Length < 1 || cboWOS.SelectedValue.ToString().Length < 1)
                 return;
 
             WorkOrderService service = new WorkOrderService();
@@ -60,12 +60,19 @@ namespace BedFactory.Pop_up
 
             WorkOrderVO vo = new WorkOrderVO
             {
-                //Mat_Num = 
-                //Mat_Name = 
-                //WO_Plan_Cnt = 
+                Process_Num = cboMatName.SelectedValue.ToString(),
+                WP_Num = cboMatName.SelectedValue.ToString(),
+                Mat_Num = cboMatName.SelectedValue.ToString(),
+                WO_Status = cboWOS.SelectedValue.ToString(),
+                WO_Plan_Cnt = txtDetail.Text,
+                WO_Order_Cnt = txtDetail.Text,
+                WO_Detail = txtDetail.Text,
+                WO_D_Emp_Num = txtDetail.Text,
+                IsShip = (rdoY.Checked) ? "Y" : "N",
+          //    ProductionDate = 
             };
 
-            //bResult = service.InsertBORInfo(vo);
+            bResult = service.InsertWorkOrdderInfo(vo);
             if (bResult)
             {
                 MessageBox.Show(BedFactory.Properties.Settings.Default.InsertSuccess);
