@@ -43,6 +43,8 @@ namespace BedFactory
             headerCheck.Click += HeaderCheck_Click; ;
             dgvWO.Controls.Add(headerCheck);
 
+            dtpFrom.Value = DateTime.Now.AddDays(-7);
+            dtpTo.Value = DateTime.Now.AddDays(7);
             dtpTo.MinDate = dtpFrom.Value.AddDays(-7);
 
             DataLoad();

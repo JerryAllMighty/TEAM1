@@ -97,7 +97,7 @@ namespace BedFactory
             this.cboWO.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboWO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboWO.FormattingEnabled = true;
-            this.cboWO.Location = new System.Drawing.Point(558, 21);
+            this.cboWO.Location = new System.Drawing.Point(558, 18);
             this.cboWO.Name = "cboWO";
             this.cboWO.Size = new System.Drawing.Size(235, 25);
             this.cboWO.TabIndex = 80;
@@ -211,7 +211,7 @@ namespace BedFactory
             this.cboM_Category.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboM_Category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboM_Category.FormattingEnabled = true;
-            this.cboM_Category.Location = new System.Drawing.Point(977, 21);
+            this.cboM_Category.Location = new System.Drawing.Point(977, 18);
             this.cboM_Category.Name = "cboM_Category";
             this.cboM_Category.Size = new System.Drawing.Size(235, 25);
             this.cboM_Category.TabIndex = 82;
