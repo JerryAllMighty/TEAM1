@@ -60,6 +60,8 @@ namespace BedFactory
                               select order).ToList();
 
             dgvOrders.DataSource = null;
+
+            if (order_List == null) { return; }
             dgvOrders.DataSource = order_List;
         }
 
